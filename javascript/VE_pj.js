@@ -116,9 +116,14 @@ class PJ {
 		this._defn = 10 + Atributos.modif(this._atributos[atributos.atributoMod("DES")]);
 		this._pv = clase.pv(this._nivel);
 		this._nombre = raza.nombrepj();
-		this._talentos = raza.talentos;
-		var talentosclase = clase.talentos(this._nivel);
+		
 		var ital = 0;
+		this._talentos = [];
+		for (ital = 0; ital < raza.talentos.length; ital++) {
+			this._talentos.push(raza.talentos[ital]);
+		}
+		
+		var talentosclase = clase.talentos(this._nivel);
 		for (ital = 0; ital < talentosclase.length; ital++) {
 			this._talentos.push(talentosclase[ital]);
 		}

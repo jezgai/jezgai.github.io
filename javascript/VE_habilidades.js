@@ -2,7 +2,7 @@ class Habilidades {
 	constructor() {
 		this._ptos_ini = 4;
 		this._ptos_niv = 2;
-		this._habilidades = [ "Alerta", "Comunicacion", "Manipulacion", "Erudicion", "Subterfugio", "Supervivencia" ];
+		this._habilidades = [ "Alerta", "Comunicación", "Manipulación", "Erudición", "Subterfugio", "Supervivencia" ];
 	}
 	
 	habilidad(nombre) {

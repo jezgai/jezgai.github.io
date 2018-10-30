@@ -109,7 +109,7 @@ class Clases {
 		[
 			{
 			  nombre : "Guerrero",
-			  talentos : [ { niv : 1, tln : ["Lucha con X", "Ataques Multiples"]}, { niv : 6, tln : ["Ataque certero"]} ],
+			  talentos : [ { niv : 1, tln : ["Lucha con X", "Ataques Múltiples"]}, { niv : 6, tln : ["Ataque certero"]} ],
 			  daguante : 8,
 			  atrs : [ "FUE" , "CON", "DES" ],
 			  atq : [ 0, 1, 1, 2, 2, 3, 4, 5, 6, 7, 7, 8, 9, 9],
@@ -118,7 +118,7 @@ class Clases {
 			},
 			{
 			  nombre : "Hechicero",
-			  talentos : [ { niv : 1, tln : ["Sensibilidad Magica", "Transferir Esencia"]}, { niv : 6, tln : ["Sirviente animal"]} ],
+			  talentos : [ { niv : 1, tln : ["Sensibilidad Mágica", "Transferir Esencia"]}, { niv : 6, tln : ["Sirviente animal"]} ],
 			  daguante : 4,
 			  atrs : [ "INT" , "SAB", "CAR" ],
 			  atq : [ 0, 0, 0, 1, 1, 2, 2, 3, 3, 3, 4, 4, 4, 5],
@@ -127,7 +127,7 @@ class Clases {
 			},
 			{
 			  nombre : "Bribon",
-			  talentos : [ { niv : 1, tln : ["Emboscar" , "Dedos Agiles"]}, { niv : 6, tln : ["Leer magia"]} ],
+			  talentos : [ { niv : 1, tln : ["Emboscar" , "Dedos Ágiles"]}, { niv : 6, tln : ["Leer magia"]} ],
 			  daguante : 6,
 			  atrs : [ "DES" , "INT", "CAR" ],
 			  atq : [ 0, 0, 1, 1, 2, 2, 3, 3, 4, 5, 6, 6, 7, 7],
@@ -154,7 +154,7 @@ class Clases {
 			},
 			{
 			  nombre : "Multiforme",
-			  talentos : [ { niv : 1, tln : ["Transformacion" , "Guardabosques"]}, { niv : 6, tln : ["Habla animal"]} ],
+			  talentos : [ { niv : 1, tln : ["Transformación" , "Guardabosques"]}, { niv : 6, tln : ["Habla animal"]} ],
 			  daguante : 6,
 			  atrs : [ "DES" , "SAB", "FUE" ],
 			  atq : [ 0, 0, 1, 1, 2, 2, 3, 4, 5, 6, 6, 7, 7, 7],

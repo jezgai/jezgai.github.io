@@ -28,15 +28,15 @@ class Raza {
 class Razas {
 	constructor() {
 		this._razas = [];
-		this._razas.push( new Raza("Elfo",     [ "Vista Aguda" , "Infravision" ],         12, [ "Gharil", "Siriel", "Mitindel", "Varsil", "Deasing", "Gilead" ]) );
-		this._razas.push( new Raza("Enano",    [ "Afin a la Piedra" , "Infravision" ],     9, [ "Brom", "Grorea", "Dumgal", "Moregard", "Rundhas" ])             );
+		this._razas.push( new Raza("Elfo",     [ "Vista Aguda" , "Infravisión" ],         12, [ "Gharil", "Siriel", "Mitindel", "Varsil", "Deasing", "Gilead" ]) );
+		this._razas.push( new Raza("Enano",    [ "Afin a la Piedra" , "Infravisión" ],     9, [ "Brom", "Grorea", "Dumgal", "Moregard", "Rundhas" ])             );
 		this._razas.push( new Raza("Mediano",  [ "Escurridizo" , "Certero"  ],             9, [ "Senda", "Seraphin", "Resa", "Muf", "Milena" ])                  );
-		this._razas.push( new Raza("Humano",   [ "Impetu Emprendedor",  "Adaptable" ],    12, [ "Nat", "Patia", "Belf", "Sinta", "Wanla" ])                      );
-		this._razas.push( new Raza("Semielfo", [ "Vista Aguda" , "Impetu Emprendedor" ],  12, [ "Gharil", "Siriel", "Mitindel", "Varsil", "Deasing", "Gilead" ]) );
-		this._razas.push( new Raza("Gnomo",    [ "Don de lenguas" , "Infravision"  ],      9, [ "Senda", "Seraphin", "Resa", "Muf", "Milena" ])                  );
+		this._razas.push( new Raza("Humano",   [ "Ímpetu Emprendedor",  "Adaptable" ],    12, [ "Nat", "Patia", "Belf", "Sinta", "Wanla" ])                      );
+		this._razas.push( new Raza("Semielfo", [ "Vista Aguda" , "Ímpetu Emprendedor" ],  12, [ "Gharil", "Siriel", "Mitindel", "Varsil", "Deasing", "Gilead" ]) );
+		this._razas.push( new Raza("Gnomo",    [ "Don de lenguas" , "Infravisión"  ],      9, [ "Senda", "Seraphin", "Resa", "Muf", "Milena" ])                  );
 		this._razas.push( new Raza("Orco",     [ "Agresivo" , "Odio a la luz solar"  ],   12, [ "Grama", "Thrum", "Gorrum", "Agra", "Karg", "Dragga" ])          );
 		this._razas.push( new Raza("Trasgo",   [ "Escurridizo" , "Odio a la luz solar"  ], 9, [ "Grom", "Hargu", "Drog", "Igrim", "Harg", "Thurg", "Grima" ])    );
-		this._razas.push( new Raza("Semiorco", [ "Agresivo" , "Impetu Emprendedor" ],     12, [ "Grama", "Thrum", "Gorrum", "Agra", "Karg", "Dragga", "Wanla" ]) );
+		this._razas.push( new Raza("Semiorco", [ "Agresivo" , "Ímpetu Emprendedor" ],     12, [ "Grama", "Thrum", "Gorrum", "Agra", "Karg", "Dragga", "Wanla" ]) );
 	}
 	
 	get razas() {
