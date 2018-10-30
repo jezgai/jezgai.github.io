@@ -122,20 +122,20 @@
 		}
 		satrs += "</table>";
 		//pj.habilidades
-		var shabs = "<table border='1'><tr><td><strong>Habilidad</strong></td><td><strong>Valor</strong></td></tr>";
+		var shabs = "<table border='1' style='border-collapse:collapse;'><tr><td><strong>Habilidad</strong></td><td><strong>Valor</strong></td></tr>";
 		for (ihabs = 0; ihabs < pj.habilidades.length; ihabs++) {
 			shabs += "<tr><td>" + habilidades.habilidades[ihabs] + "</td><td align='center'>" + pj.habilidades[ihabs] + "</td></tr>";
 		}
 		shabs += "</table>";
 		
-		var stals = "<table border='1'><tr><td><strong>Talentos</strong></td></tr>";
+		var stals = "<table border='1' style='border-collapse:collapse;><tr><td><strong>Talentos</strong></td></tr>";
 		for (itals = 0; itals < pj.talentos.length; itals++) {
 			stals += "<tr><td>" + pj.talentos[itals] + "</td></tr>";
 		}
 		stals += "</table>";
 		
-		document.getElementById("datos").innerHTML = "<table border='1'><tr><td><strong>Nombre:</strong> " + pj.nombre + "</td><td><strong>Clase:</strong> " + pj.clase + "</td></tr></table>";
-		document.getElementById("rasgos").innerHTML = "<table border='1'><tr><td><strong>DA:</strong> d" + pj.daguante +
+		document.getElementById("datos").innerHTML = "<table border='1' style='border-collapse:collapse;><tr><td><strong>Nombre:</strong> " + pj.nombre + "</td><td><strong>Clase:</strong> " + pj.clase + "</td></tr></table>";
+		document.getElementById("rasgos").innerHTML = "<table border='1' style='border-collapse:collapse;><tr><td><strong>DA:</strong> d" + pj.daguante +
 													  "</td></tr><tr><td><strong>Atq:</strong> " + pj.atq +
             		                                  "</td></tr><tr><td><strong>pP!:</strong> " + pj.pP + 
 													  "</td></tr><tr><td><strong>Ins:</strong> " + pj.ins + 
