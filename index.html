@@ -43,7 +43,7 @@
 	function cargadesplegable() {
 		document.getElementById("desplegables").innerHTML = "";
 
-		var srazas="<strong>Raza:</strong> <select name='raza' onChange='seleccionaraza(this)'><option>--Aleatorio--</option>"
+		var srazas="<strong>Raza:</strong> <select class='w3-select'  name='raza' onChange='seleccionaraza(this)'><option>--Aleatorio--</option>"
 		//var srazas="<form action=''><table border='0'><tr><td><select name='rz' onchange='seleccionaraza(this.form)'><option selected value='-1'>--Aleatorio--</option>";
 		for (iraza=0; iraza< razas.razas.length; iraza++) {
 			//srazas += "<option value='" + iraza + "'>" + razas.razas[iraza].nombre + "</option>";
@@ -51,7 +51,7 @@
 		}
 		srazas += "</select>";
 		
-		var sclases=" <strong>Clase:</strong> <select name='clase' onchange='seleccionaclase(this)'><option>--Aleatorio--</option>";
+		var sclases=" <strong>Clase:</strong> <select class='w3-select'  name='clase' onchange='seleccionaclase(this)'><option>--Aleatorio--</option>";
 		//var sclases="<select name='cl' onchange='seleccionaclase(this.form)'><option selected value='-1'>--Aleatorio--</option>";
 		for (iclase=0; iclase< clases.clases.length; iclase++) {
 			//sclases += "<option value='" + iclase + "'>" + clases.clases[iclase].nombre + "</option>";
@@ -59,13 +59,13 @@
 		}
 		sclases += "</select>";
 		//var snivel="<select name='ni' onchange='seleccionanivel(this.form)'><option selected value='1'>1</option>";
-		var snivel=" <strong>Nivel:</strong> <select name='nivel' onchange='seleccionanivel(this)'><option>1</option>";
+		var snivel=" <strong>Nivel:</strong> <select class='w3-select'  name='nivel' onchange='seleccionanivel(this)'><option>1</option>";
 		for (inivel=2; inivel< 15; inivel++) {
 			//snivel += "<option value='" + inivel + "'>" + inivel + "</option>";
 			snivel += "<option>" + inivel + "</option>";
 		}
 		//snivel += "</select></td></tr></table></form>";
-		snivel += "</select> <button onclick='genera()'>Genera</button>";
+		snivel += "</select> <button class='w3-button w3-block w3-teal' onclick='genera()'>Genera</button>";
 		document.getElementById("desplegables").innerHTML = srazas + sclases + snivel;	
 	}	
 	
@@ -80,7 +80,7 @@
 		}
 		srazas += "</select>";*/
 		
-		var sclases="<strong>Clase:</strong> <select name='clase' onchange='seleccionaclase(this)'><option>--Aleatorio--</option>";
+		var sclases="<strong>Clase:</strong> <select class='w3-select'  name='clase' onchange='seleccionaclase(this)'><option>--Aleatorio--</option>";
 		//var sclases="<select name='cl' onchange='seleccionaclase(this.form)'><option selected value='-1'>--Aleatorio--</option>";
 		for (iclase=0; iclase< clasesP.clases.length; iclase++) {
 			//sclases += "<option value='" + iclase + "'>" + clases.clases[iclase].nombre + "</option>";
@@ -88,13 +88,13 @@
 		}
 		sclases += "</select>";
 		//var snivel="<select name='ni' onchange='seleccionanivel(this.form)'><option selected value='1'>1</option>";
-		var snivel=" <strong>Nivel:</strong> <select name='nivel' onchange='seleccionanivel(this)'><option>1</option>";
+		var snivel=" <strong>Nivel:</strong> <select class='w3-select'  name='nivel' onchange='seleccionanivel(this)'><option>1</option>";
 		for (inivel=2; inivel< 6; inivel++) {
 			//snivel += "<option value='" + inivel + "'>" + inivel + "</option>";
 			snivel += "<option>" + inivel + "</option>";
 		}
 		//snivel += "</select></td></tr></table></form>";
-		snivel += "</select> <button onclick='generaP()'>Genera</button>";
+		snivel += "</select> <button class='w3-button w3-block w3-teal' onclick='generaP()'>Genera</button>";
 		document.getElementById("desplegables").innerHTML = sclases + snivel;	
 	}	
 	
@@ -103,19 +103,19 @@
 
 		
 		
-		var sclases="<strong>Clase:</strong> <select name='clase' onchange='seleccionaclase(this)'><option>--Aleatorio--</option>";
+		var sclases="<strong>Clase:</strong> <select class='w3-select' name='clase' onchange='seleccionaclase(this)'><option>--Aleatorio--</option>";
 		for (iclase=0; iclase< clasesSO.clases.length; iclase++) {
 			sclases += "<option>" + clasesSO.clases[iclase].nombre + "</option>";
 		}
 		sclases += "</select>";
 		//var snivel="<select name='ni' onchange='seleccionanivel(this.form)'><option selected value='1'>1</option>";
-		var snivel=" <strong>Nivel:</strong> <select name='nivel' onchange='seleccionanivel(this)'><option>1</option>";
+		var snivel=" <strong>Nivel:</strong> <select class='w3-select'  name='nivel' onchange='seleccionanivel(this)'><option>1</option>";
 		for (inivel=2; inivel< 11; inivel++) {
 			//snivel += "<option value='" + inivel + "'>" + inivel + "</option>";
 			snivel += "<option>" + inivel + "</option>";
 		}
 		//snivel += "</select></td></tr></table></form>";
-		snivel += "</select> <button onclick='generaSO()'>Genera</button>";
+		snivel += "</select> <button class='w3-button w3-block w3-teal' onclick='generaSO()'>Genera</button>";
 		document.getElementById("desplegables").innerHTML = sclases + snivel;	
 	}	
 	
@@ -279,7 +279,7 @@
 <body >
 	<h2>Generador de personajes</h2>
 	<div class="w3-container">	
-		<select name="jdr" onChange="seleccionajdr(this)">
+		<select class="w3-select"  name="jdr" onChange="seleccionajdr(this)">
 			<option>--Selecciona--</option>
 			<option>Vieja Escuela: Jdr</option>
 			<option>Vieja Escuela: Pulp</option>
@@ -287,8 +287,6 @@
 			<option>Vieja Escuela: Salvaje Oeste</option>
 			<option>Vieja Escuela: Japon</option>
 		</select>
-	<!--<div style="clear:both"> <button onclick="cargadesplegable()">CargaDesplegables</button></div>-->
-	<!--<div style="clear:both"> <button onclick="genera()">Genera</button></div>-->
 	<div id="desplegables"></div>
 	<hr/>
 	
