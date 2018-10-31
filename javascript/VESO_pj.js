@@ -112,8 +112,8 @@ class PJSO {
 		this._atributos = atributos.valores(clase.atrs);
 		this._atq = clase.atq(this._nivel);
 		this._ins = clase.ins(this._nivel);
-		this._defn = 10 + Atributos.modif(this._atributos[atributos.atributoMod("DES")]);
-		this._pv = clase.pv(this._nivel);
+		this._defn = 14 + Atributos.modif(this._atributos[atributos.atributoMod("DES")]);
+		this._pv = clase.pv(this._nivel) + Atributos.modif(this._atributos[atributos.atributoMod("CON")]);
 		this._nombre = this._nombres[Comun.random( this._nombres.length ,0)] + " " + this._apellidos[Comun.random( this._apellidos.length ,0)];
 		this._talentos = [];
 		var talentosclase = clase.talentos(this._nivel);

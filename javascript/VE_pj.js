@@ -114,7 +114,7 @@ class PJ {
 		this._ins = clase.ins(this._nivel);
 		this._pod = clase.pod(this._nivel) + Atributos.modif(this._atributos[atributos.atributoMod("INT")]);
 		this._defn = 10 + Atributos.modif(this._atributos[atributos.atributoMod("DES")]);
-		this._pv = clase.pv(this._nivel);
+		this._pv = clase.pv(this._nivel) + Atributos.modif(this._atributos[atributos.atributoMod("CON")]);
 		this._nombre = raza.nombrepj();
 		
 		var ital = 0;
