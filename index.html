@@ -1,6 +1,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="javascript/VE_comun.js"></script>
 <script src="javascript/VE_razas.js"></script>
 <script src="javascript/VE_atributos.js"></script>
@@ -140,26 +141,26 @@
 		pj.genera();
 		//clase = clases.clase('random');
 		//clase.atq = clase.atq(1);
-		var satrs = "<table border='1' style='border-collapse:collapse;'><tr><td><strong>Atributo</strong></td><td><strong>Valor</strong></td><td><strong>Mod</strong><td><strong>Valor</strong></td></td></tr>";
+		var satrs = "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</strong></th><th>Valor</th><th>Mod</th><th>Valor</th></tr>";
 		for (iatrb = 0; iatrb < pj.atributos.length; iatrb++) {
 			satrs += "<tr><td>" + atributos.atributos[iatrb].nbatr + " </td><td align='center'>" + pj.atributos[iatrb] + " </td><td>" + atributos.atributos[iatrb].nbmod + " </td><td align='center'>" + Atributos.modif(pj.atributos[iatrb]) + " </td></tr>";
 		}
 		satrs += "</table>";
 		//pj.habilidades
-		var shabs = "<table border='1' style='border-collapse:collapse;'><tr><td><strong>Habilidad</strong></td><td><strong>Valor</strong></td></tr>";
+		var shabs = "<table class='w3-table  w3-striped w3-border'><tr><th>Habilidad</th><th>Valor</th></tr>";
 		for (ihabs = 0; ihabs < pj.habilidades.length; ihabs++) {
 			shabs += "<tr><td>" + habilidades.habilidades[ihabs] + " </td><td align='center'>" + pj.habilidades[ihabs] + " </td></tr>";
 		}
 		shabs += "</table>";
 		
-		var stals = "<table border='1' style='border-collapse:collapse;'><tr><td><strong>Talentos</strong></td></tr>";
+		var stals = "<table class='w3-table  w3-striped w3-border'><tr><th>Talentos</th></tr>";
 		for (itals = 0; itals < pj.talentos.length; itals++) {
 			stals += "<tr><td>" + pj.talentos[itals] + " </td></tr>";
 		}
 		stals += "</table>";
 		
-		document.getElementById("datos").innerHTML = "<table border='1' style='border-collapse:collapse;'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
-		document.getElementById("rasgos").innerHTML = "<table border='1' style='border-collapse:collapse;'><tr><td><strong>DA:</strong> d" + pj.daguante +
+		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
+		document.getElementById("rasgos").innerHTML = "<table  class='w3-table  w3-striped w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
 													  " </td></tr><tr><td><strong>Atq:</strong> " + pj.atq +
 													  " </td></tr><tr><td><strong>Ins:</strong> " + pj.ins + 
 													  " </td></tr><tr><td><strong>Def:</strong> " + pj.defn + 
@@ -183,26 +184,26 @@
 		pj.genera();
 		//clase = clases.clase('random');
 		//clase.atq = clase.atq(1);
-		var satrs = "<table border='1' style='border-collapse:collapse;'><tr><td><strong>Atributo</strong></td><td><strong>Valor</strong></td><td><strong>Mod</strong><td><strong>Valor</strong></td></td></tr>";
+		var satrs = "<table class='w3-table  w3-striped  w3-border'><tr><th>Atributo</th><th>Valor</th><th>Mod</th><th>Valor</th></tr>";
 		for (iatrb = 0; iatrb < pj.atributos.length; iatrb++) {
 			satrs += "<tr><td>" + atributos.atributos[iatrb].nbatr + " </td><td align='center'>" + pj.atributos[iatrb] + " </td><td>" + atributos.atributos[iatrb].nbmod + " </td><td align='center'>" + Atributos.modif(pj.atributos[iatrb]) + " </td></tr>";
 		}
 		satrs += "</table>";
 		//pj.habilidades
-		var shabs = "<table border='1' style='border-collapse:collapse;'><tr><td><strong>Habilidad</strong></td><td><strong>Valor</strong></td></tr>";
+		var shabs = "<table class='w3-table  w3-striped  w3-border'><tr><th>Habilidad</th><th>Valor</th></tr>";
 		for (ihabs = 0; ihabs < pj.habilidades.length; ihabs++) {
 			shabs += "<tr><td>" + habilidades.habilidades[ihabs] + " </td><td align='center'>" + pj.habilidades[ihabs] + " </td></tr>";
 		}
 		shabs += "</table>";
 		
-		var stals = "<table border='1' style='border-collapse:collapse;'><tr><td><strong>Talentos</strong></td></tr>";
+		var stals = "<table class='w3-table  w3-striped w3-border'><tr><th>Talentos</th></tr>";
 		for (itals = 0; itals < pj.talentos.length; itals++) {
 			stals += "<tr><td>" + pj.talentos[itals] + " </td></tr>";
 		}
 		stals += "</table>";
 		
-		document.getElementById("datos").innerHTML = "<table border='1' style='border-collapse:collapse;'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
-		document.getElementById("rasgos").innerHTML = "<table border='1' style='border-collapse:collapse;'><tr><td><strong>DA:</strong> d" + pj.daguante +
+		document.getElementById("datos").innerHTML = "<table class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
+		document.getElementById("rasgos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
 													  " </td></tr><tr><td><strong>Atq:</strong> " + pj.atq +
             		                                  " </td></tr><tr><td><strong>pP!:</strong> " + pj.pP + 
 													  " </td></tr><tr><td><strong>Ins:</strong> " + pj.ins + 
@@ -226,26 +227,26 @@
 		pj.genera();
 		//clase = clases.clase('random');
 		//clase.atq = clase.atq(1);
-		var satrs = "<table border='1' style='border-collapse:collapse;'><tr><td><strong>Atributo</strong></td><td><strong>Valor</strong></td><td><strong>Mod</strong><td><strong>Valor</strong></td></td></tr>";
+		var satrs = "<table  class='w3-table  w3-striped  w3-border' ><tr><th>Atributo</th><th>Valor</th><th>Mod</th><th>Valor</th></tr>";
 		for (iatrb = 0; iatrb < pj.atributos.length; iatrb++) {
 			satrs += "<tr><td>" + atributos.atributos[iatrb].nbatr + " </td><td align='center'>" + pj.atributos[iatrb] + " </td><td>" + atributos.atributos[iatrb].nbmod + " </td><td align='center'>" + Atributos.modif(pj.atributos[iatrb]) + " </td></tr>";
 		}
 		satrs += "</table>";
 		//pj.habilidades
-		var shabs = "<table border='1' style='border-collapse:collapse;'><tr><td><strong>Habilidad</strong></td><td><strong>Valor</strong></td></tr>";
+		var shabs = "<table  class='w3-table  w3-striped  w3-border'><tr><th>Habilidad</th><th>Valor</th></tr>";
 		for (ihabs = 0; ihabs < pj.habilidades.length; ihabs++) {
 			shabs += "<tr><td>" + habilidades.habilidades[ihabs] + " </td><td align='center'>" + pj.habilidades[ihabs] + " </td></tr>";
 		}
 		shabs += "</table>";
 		
-		var stals = "<table border='1' style='border-collapse:collapse;'><tr><td><strong>Talentos</strong></td></tr>";
+		var stals = "<table  class='w3-table w3-border'><tr><th>Talentos</th></tr>";
 		for (itals = 0; itals < pj.talentos.length; itals++) {
 			stals += "<tr><td>" + pj.talentos[itals] + " </td></tr>";
 		}
 		stals += "</table>";
 		
-		document.getElementById("datos").innerHTML = "<table border='1' style='border-collapse:collapse;'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Raza:</strong> " + pj.raza + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
-		document.getElementById("rasgos").innerHTML = "<table border='1' style='border-collapse:collapse;'><tr><td><strong>DA:</strong> d" + pj.daguante +
+		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Raza:</strong> " + pj.raza + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
+		document.getElementById("rasgos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
 													  " </td></tr><tr><td><strong>Atq:</strong> " + pj.atq +
             		                                  " </td></tr><tr><td><strong>Pod:</strong> " + pj.pod + 
 													  " </td></tr><tr><td><strong>Ins:</strong> " + pj.ins + 
@@ -277,7 +278,7 @@
 </head>
 <body >
 	<h2>Generador de personajes</h2>
-	<div style="clear:both">
+	<div class="w3-container">	
 		<select name="jdr" onChange="seleccionajdr(this)">
 			<option>--Selecciona--</option>
 			<option>Vieja Escuela: Jdr</option>
@@ -286,17 +287,23 @@
 			<option>Vieja Escuela: Salvaje Oeste</option>
 			<option>Vieja Escuela: Japon</option>
 		</select>
-	</div>
 	<!--<div style="clear:both"> <button onclick="cargadesplegable()">CargaDesplegables</button></div>-->
 	<!--<div style="clear:both"> <button onclick="genera()">Genera</button></div>-->
 	<div id="desplegables"></div>
 	<hr/>
-	<div style="padding-left: 25px;" id="datos"></div>
-	<div><br/></div>
-	<div style="float:left;padding-left: 25px;" id="atributos"></div>
-	<div style="float:left;padding-left: 25px;" id="habilidades"></div>
-	<div style="float:left;padding-left: 25px;" id="rasgos"></div>
-	<div style="float:left;padding-left: 25px;" id="talentos"></div>
-	<div style="clear:both;padding-left: 25px;" id="dinero"></div>
+	
+	<div class="w3-row">
+		<div class="w3-col s9 w3-center" id="datos"></div>
+	</div>
+	<div class="w3-row">
+		<div class="w3-col s9 w3-center" id="atributos"></div>
+		<div class="w3-col s3 w3-center" id="habilidades"></div>
+	</div>
+	<div class="w3-row">
+		<div class="w3-col s4 w3-center" id="rasgos"></div>
+		<div  class="w3-col s4 w3-center" id="talentos"></div>
+		<div class="w3-col s4 w3-center" id="dinero"></div>
+	</div>
+	</div>
 </body>
 </html>
