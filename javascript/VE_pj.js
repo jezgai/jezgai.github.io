@@ -101,6 +101,8 @@ class PJ {
 	}
 	
 	genera() {
+		habilidades.habilidadesGen();
+		habilidades.ptos_niv = 2;
 		atributos.ntiradasextras = 0;
 		atributos.excesoatributos = 1;
 		var raza = razas.raza(this._raza);

@@ -2,7 +2,10 @@ class Habilidades {
 	constructor() {
 		this._ptos_ini = 4;
 		this._ptos_niv = 2;
-		this._habilidades = [ "Alerta", "Comunicación", "Manipulación", "Erudición", "Subterfugio", "Supervivencia" ];
+		this._habilidadesGen = [ "Alerta", "Comunicación", "Manipulación", "Erudición", "Subterfugio", "Supervivencia" ];
+		this._habilidadesJap = [ "Alerta", "Callejeo", "Corte", "Guerra", "Manipulación", "Supervivencia" ];
+		this._habilidadesCyb = [ "Corporate", "Cyber", "Hardware", "Punk", "Savage", "Urban" ];
+		this._habilidades = this._habilidadesGen.slice(0);
 	}
 	
 	habilidad(nombre) {
@@ -13,11 +16,30 @@ class Habilidades {
 			}
 		}
 		return -1;
-		
+	}
+	
+	get ptos_niv() {
+		return this._ptos_niv;
+	}
+	
+	set ptos_niv(value) {
+		this._ptos_niv = value;
 	}
 	
 	get habilidades() {
 		return this._habilidades;
+	}
+	
+	habilidadesGen() {
+		this._habilidades = this._habilidadesGen.slice(0);
+	}
+	
+	habilidadesJap() {
+		this._habilidades = this._habilidadesJap.slice(0);
+	}
+	
+	habilidadesCyb() {
+		this._habilidades = this._habilidadesCyb.slice(0);
 	}
 	
 	puntuaciones(nivel) {

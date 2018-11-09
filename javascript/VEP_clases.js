@@ -60,7 +60,15 @@ class ClaseP {
 		var intal=0;
 		for (intal=0; intal<this._talentos.length && nivel>=this._talentos[intal].niv; intal++) {
 			var ital=0;
-			for (ital=0; ital < this._talentos[intal].tln.length; ital++) {
+			var tls = this._talentos[intal].tln.clone();
+			var num = this._talentos[intal].num ;
+			if ( num == 0 || num > this._talentos[intal].tln.length) {
+				num = this._talentos[intal].tln.length;
+			}
+			else {
+				tls = Comun.shuffle(tls);
+			}
+			for (ital=0; ital < num; ital++) {
 				tal.push(this._talentos[intal].tln[ital]);
 			}
 		}
@@ -109,7 +117,7 @@ class ClasesP {
 		[
 			{
 			  nombre : "Profesor/a",
-			  talentos : [ { niv : 1, tln : ["Lo leí en un libro", "Camaleón social"]} ],
+			  talentos : [ { niv : 1,num : 0,tln : ["Lo leí en un libro", "Camaleón social"]} ],
 			  daguante : 6,
 			  atrs : [ "INT" , "SAB" ],
 			  atq : [ 0, 0, 1, 2, 2],
@@ -118,7 +126,7 @@ class ClasesP {
 			},
 			{
 			  nombre : "Tipo/a duro/a",
-			  talentos : [ { niv : 1, tln : ["Con un par", "Resistente"]} ],
+			  talentos : [ { niv : 1,num : 0,tln : ["Con un par", "Resistente"]} ],
 			  daguante : 8,
 			  atrs : [ "FUE" , "CON" ],
 			  atq : [ 2, 3, 4, 5, 6],
@@ -127,7 +135,7 @@ class ClasesP {
 			},
 			{
 			  nombre : "Cazatesoros",
-			  talentos : [ { niv : 1, tln : ["Sonrisa angelical", "Ideas frescas"]} ],
+			  talentos : [ { niv : 1,num : 0,tln : ["Sonrisa angelical", "Ideas frescas"]} ],
 			  daguante : 6,
 			  atrs : [ "DES" , "FUE" ],
 			  atq : [ 1, 2, 3, 4, 5],
@@ -136,7 +144,7 @@ class ClasesP {
 			},
 			{
 			  nombre : "Mecenas",
-			  talentos : [ { niv : 1, tln : ["Herencia", "Contactos"]} ],
+			  talentos : [ { niv : 1,num : 0,tln : ["Herencia", "Contactos"]} ],
 			  daguante : 4,
 			  atrs : [ "CAR" , "INT" ],
 			  atq : [ 1, 2, 3, 4, 5],
@@ -145,7 +153,7 @@ class ClasesP {
 			},
 			{
 			  nombre : "Colega",
-			  talentos : [ { niv : 1, tln : ["Suerte", "Compañero/a fiel"]} ],
+			  talentos : [ { niv : 1,num : 0,tln : ["Suerte", "Compañero/a fiel"]} ],
 			  daguante : 4,
 			  atrs : [ "SAB" , "CON" ],
 			  atq : [ 0, 0, 1, 2, 3],

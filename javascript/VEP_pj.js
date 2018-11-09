@@ -95,6 +95,8 @@ class PJP {
 	}
 	
 	genera() {
+		habilidades.habilidadesGen();
+		habilidades.ptos_niv = 2;
 		atributos.ntiradasextras = 1;
 		atributos.excesoatributos = 0;
 		var clase = clasesP.clase(this._clase);

@@ -68,11 +68,13 @@ class ClaseJ {
 		if ( nivel > this._ntalentos.length ) {
 			intal = this._ntalentos.length - 1;
 		}
-		var tal1 = [];
+		//var tal1 = [];
 		var ital = 0;
-		for (ital = 0; ital < this._talentos.length ; ital++ ) {
+		/*for (ital = 0; ital < this._talentos.length ; ital++ ) {
 			tal1.push(this._talentos[ital]);
-		}
+		}*/
+		
+		var tal1 = this._talentos.clone();
 		tal1 = Comun.shuffle(tal1);
 		var taln = [];
 		for (ital = 0; ital < this._ntalentos[intal]; ital++ ) {
@@ -173,7 +175,7 @@ class ClasesJ {
 		var iclases=0;
 		for (iclases=0; iclases<this._clases.length; iclases++) {
 			if ( this._clases[iclases].nombre == nombre ) {
-				return new ClaseSO(this._clases[iclases]);
+				return new ClaseJ(this._clases[iclases]);
 			}
 		}
 		return new ClaseJ(this._clases[Comun.random(this._clases.length, 0)]);

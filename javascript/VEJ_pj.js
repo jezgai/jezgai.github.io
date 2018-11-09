@@ -14,8 +14,8 @@ class PJJ {
 		this._pv = 0;
 		this._def = 0;
 		this._daguante = 4;
-		this._nombres = [ "Mary Jane", "Tadeus", "Duncan", "Sally", "Steve", "Marcus", "John", "Arnold", "Bethesda", "Abigail" ];
-		this._apellidos = [ "Taylor", "O'Sullivan", "Slick", "Jackson", "Moore", "McMardiggan", "Whitman", "Flushing", "Zhao" ];
+		this._nombres = [ "Akio", "Natsuki", "Daiki", "Sachiko", "Hiroto", "Teiko", "Kaito", "Yoko", "Kazuki", "Fumiko", "Kenzo", "Aimi" ];
+		this._apellidos = [ "Akiyama","Fujimoto","Fujioka","Fukui","Hamasaki","Hashimoto","Hayashi","Himura","Hisakawa","Inoue","Ito","Kagome","Kawaguchi","Kimura","Kobayashi","Koizumi","Matsumoto","Matsuoka","Matsushita","Minami","Miyamoto" ];
 	}
 
 	get nombre() {
@@ -95,7 +95,13 @@ class PJJ {
 		this._daguante = value;
 	}
 	
+	get din() {
+		return this._din + " Ryō";
+	}
+	
 	genera() {
+		habilidades.habilidadesJap();
+		habilidades.ptos_niv = 1;
 		atributos.ntiradasextras = 1;
 		atributos.excesoatributos = 0;
 		var clase = clasesJ.clase(this._clase);
@@ -105,11 +111,12 @@ class PJJ {
 		this._atributos = atributos.valores(clase.atrs);
 		this._atq = clase.atq(this._nivel);
 		this._ins = clase.ins(this._nivel);
-		this._hon = clase.hon(this._nivel); // + AtributosP.modif(this._atributos[atributosP.atributoMod("INT")]);
-		this._def = 10 + Atributos.modif(this._atributos[atributos.atributoMod("DES")]);
-		this._pv = clase.pv(this._nivel) + Atributos.modif(this._atributos[atributos.atributoMod("CON")]);
+		this._hon = clase.hon;
+		this._def = 10 + Atributos.modifmas(this._atributos[atributos.atributoMod("DES")]);
+		this._pv = clase.pv(this._nivel) + Atributos.modifmas(this._atributos[atributos.atributoMod("CON")]);
 		this._nombre = this._nombres[Comun.random( this._nombres.length ,0)] + " " + this._apellidos[Comun.random( this._apellidos.length ,0)];
 		this._talentos = [];
+		this._din = clase.din;
 		var talentosclase = clase.talentos(this._nivel);
 		var ital = 0;
 		for (ital = 0; ital < talentosclase.length; ital++) {

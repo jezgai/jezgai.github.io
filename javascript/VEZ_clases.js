@@ -1,5 +1,5 @@
 
-class ClaseSO {
+class ClaseZ {
 
 	constructor(clase) {
 		this._nombre = clase.nombre;
@@ -8,7 +8,9 @@ class ClaseSO {
 		this._daguante = clase.daguante;
 		this._atrs = clase.atrs;
 		this._atq = clase.atq;
+		this._def = clase.def;
 		this._ins = clase.ins;
+		this._pS = clase.pS;
 	}
 		
 	get nombre() {
@@ -54,11 +56,13 @@ class ClaseSO {
 		if ( nivel > this._ntalentos.length ) {
 			intal = this._ntalentos.length - 1;
 		}
-		var tal1 = [];
+		//var tal1 = [];
 		var ital = 0;
-		for (ital = 0; ital < this._talentos.length ; ital++ ) {
+		/*for (ital = 0; ital < this._talentos.length ; ital++ ) {
 			tal1.push(this._talentos[ital]);
-		}
+		}*/
+		
+		var tal1 = this._talentos.clone();
 		tal1 = Comun.shuffle(tal1);
 		var taln = [];
 		for (ital = 0; ital < this._ntalentos[intal]; ital++ ) {
@@ -77,6 +81,23 @@ class ClaseSO {
 		return ptos;
 	}
 
+	defn(nivel) {
+		var idef = nivel - 1;
+		if ( nivel > this._def.length ) {
+			idef = this._def.length - 1;
+		}
+		return this._def[idef];
+	}
+	
+	
+	pS(nivel) {
+		var ipS = nivel - 1;
+		if ( nivel > this._pS.length ) {
+			ipS = this._pS.length - 1;
+		}
+		return this._pS[ipS];
+	}
+	
 	atq(nivel) {
 		var iatq = nivel - 1;
 		if ( nivel > this._atq.length ) {
@@ -95,46 +116,43 @@ class ClaseSO {
 
 }
 
-class ClasesSO {
+class ClasesZ {
 	
 	constructor() {
 		this._clases =
 		[
 			{
-			  nombre : "Explorador",
-			  talentos : [ "Nacido salvaje", "Hermano caballo", "Cazador nocturno", "Ojo de águila" ],
-			  ntalentos : [ 2, 2, 2, 2, 3, 3, 3, 3, 3, 3 ],
-			  daguante : 6,
-			  atrs : [ "SAB" , "DES" ],
-			  atq : [ 1, 1, 2, 2, 3, 3, 4, 5, 6, 7 ],
-			  ins : [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ],
-			},
-			{
-			  nombre : "Pistolero",
-			  talentos : [ "El más rápido del oeste", "La tumba puede esperar", "Le llamaban Dos pistolas", "Matador" ],
-			  ntalentos : [ 2, 2, 2, 2, 3, 3, 3, 3, 3, 3 ],
+			  nombre : "Héroe",
+			  talentos : [ "Acción heroica", "Entereza", "Cazador de engendros", "Reflejos de combate" ],
+			  ntalentos : [ 2, 2, 3, 3, 3 ],
 			  daguante : 8,
-			  atrs : [ "DES" , "FUE" ],
-			  atq : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
-			  ins : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+			  pS : [ 1, 1, 2, 2, 3 ],
+			  atrs : [ "FUE" , "CAR" ],
+			  atq : [ 1, 2, 3, 4, 5 ],
+			  def : [ 1, 1, 2, 2, 3 ],
+			  ins : [ 1, 2, 2, 3, 3 ],
 			},
 			{
-			  nombre : "Predicador",
-			  talentos : [ "Más sabe el diablo...", "La palabra de Dios", "El buen pastor", "Justicia divina" ],
-			  ntalentos : [ 2, 2, 2, 2, 3, 3, 3, 3, 3, 3 ],
-			  daguante : 4,
-			  atrs : [ "INT" , "CON" ],
-			  atq : [ 0, 0, 1, 1, 2, 2, 3, 3, 4, 4 ],
-			  ins : [ 0, 0, 1, 2, 3, 4, 5, 6, 7, 8 ],
-			},
-			{
-			  nombre : "Tahur",
-			  talentos : [ "Un as bajo la manga", "La mano del muerto", "Nos nada personal", "Nunca juegues de espaldas a la puerta" ],
-			  ntalentos : [ 2, 2, 2, 2, 3, 3, 3, 3, 3, 3 ],
+			  nombre : "Superviviente",
+			  talentos : [ "Duro de pelar", "Resistencia natural", "Ángel de la guarda", "Rata escurridiza" ],
+			  ntalentos : [ 2, 2, 3, 3, 3 ],
 			  daguante : 6,
-			  atrs : [ "CAR" , "SAB" ],
-			  atq : [ 0, 1, 1, 2, 2, 3, 3, 4, 4, 5 ],
-			  ins : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ],
+			  pS : [ 2, 2, 3, 3, 4 ],
+			  atrs : [ "CON" , "DES" ],
+			  atq : [ 0, 1, 1, 2, 2 ],
+			  def : [ 1, 1, 2, 2, 3 ],
+			  ins : [ 1, 2, 3, 4, 5 ],
+			},
+			{
+			  nombre : "Apto",
+			  talentos : [ "Trucos y recursos", "Versátil", "Pro", "Lumbreras" ],
+			  ntalentos : [ 2, 2, 3, 3, 3 ],
+			  daguante : 4,
+			  pS : [ 3, 3, 4, 4, 5 ],
+			  atrs : [ "INT" , "SAB" ],
+			  atq : [ 0, 1, 1, 2, 2 ],
+			  def : [ 0, 0, 1, 1, 2 ],
+			  ins : [ 0, 1, 1, 2, 2 ],
 			},
 		]
 	}
@@ -151,14 +169,14 @@ class ClasesSO {
 		var iclases=0;
 		for (iclases=0; iclases<this._clases.length; iclases++) {
 			if ( this._clases[iclases].nombre == nombre ) {
-				return new ClaseSO(this._clases[iclases]);
+				return new ClaseZ(this._clases[iclases]);
 			}
 		}
-		return new ClaseSO(this._clases[Comun.random(this._clases.length, 0)]);
+		return new ClaseZ(this._clases[Comun.random(this._clases.length, 0)]);
 	}
 }
 
-let clasesSO = new ClasesSO();
+let clasesZ = new ClasesZ();
 
 
 
