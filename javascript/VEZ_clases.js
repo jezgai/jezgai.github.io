@@ -1,4 +1,10 @@
 
+class TalentosComunes {
+	static talentos() {
+		return [ "Ambidextro","Chi","Emboscar","Espíritu americano","Forzudo","Inmunidad a la plaga","Luchador experto X","Mascota fiel","Meditación sanadora","Presencia influyente","Vigor","Vista aguda" ];
+	}
+}
+
 class ClaseZ {
 
 	constructor(clase) {
@@ -56,17 +62,19 @@ class ClaseZ {
 		if ( nivel > this._ntalentos.length ) {
 			intal = this._ntalentos.length - 1;
 		}
-		//var tal1 = [];
+		var haytalentoscomunes = Comun.random(10,1) % 2;
 		var ital = 0;
-		/*for (ital = 0; ital < this._talentos.length ; ital++ ) {
-			tal1.push(this._talentos[ital]);
-		}*/
-		
+				
 		var tal1 = this._talentos.clone();
 		tal1 = Comun.shuffle(tal1);
 		var taln = [];
-		for (ital = 0; ital < this._ntalentos[intal]; ital++ ) {
+		for (ital = 0; ital < this._ntalentos[intal] - haytalentoscomunes; ital++ ) {
 			taln.push(tal1[ital]);
+		}
+		var tcomunes = TalentosComunes.talentos();
+		tcomunes = Comun.shuffle(tcomunes);
+		for ( ital=0; ital < haytalentoscomunes; ital++) {
+			taln.push(tcomunes[ital]);
 		}
 		
 		return taln;
