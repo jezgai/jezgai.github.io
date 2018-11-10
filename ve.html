@@ -17,6 +17,8 @@
 <script src="javascript/VEJ_pj.js"></script>
 <script src="javascript/VEZ_clases.js"></script>
 <script src="javascript/VEZ_pj.js"></script>
+<script src="javascript/VECP_clases.js"></script>
+<script src="javascript/VECP_pj.js"></script>
 <script>
 
 	function seleccionaraza(thelist) {
@@ -161,6 +163,15 @@
 		document.getElementById("desplegables").innerHTML = sclases + snivel;	
 	}	
 	
+	function cargadesplegableCP() {
+		document.getElementById("desplegables").innerHTML = "";
+
+		var sclases = Comun.desplegableClases(clasesCP, "seleccionaclase");
+		var snivel = Comun.desplegableNivel(10, "seleccionanivel", "generaCP");
+		
+		
+		document.getElementById("desplegables").innerHTML = sclases + snivel;	
+	}	
 	
 	function vacia() {
 		document.getElementById("datos").innerHTML = "";
@@ -170,6 +181,45 @@
 		document.getElementById("habilidades").innerHTML = "";
 		document.getElementById("dinero").innerHTML = "";
 	}
+	
+	function generaCP() {
+		vacia();
+				
+		let pj = new PJCP(numeronivel);
+		pj.clase = nombreclase;
+		
+		pj.genera();
+		var satrs = "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</strong></th><th>Valor (mod)</th></tr>";
+		for (iatrb = 0; iatrb < pj.atributos.length; iatrb++) {
+			satrs += "<tr><td>" + atributos.atributos[iatrb].nbatr + " (" + atributos.atributos[iatrb].nbmod + ")</td><td align='center'>" + pj.atributos[iatrb] + " (" + Atributos.modifmas(pj.atributos[iatrb]) + ")</td></tr>";
+		}
+		satrs += "</table>";
+		
+		var shabs = "<table class='w3-table  w3-striped w3-border'><tr><th>Habilidad</th><th>Valor</th></tr>";
+		for (ihabs = 0; ihabs < pj.habilidades.length; ihabs++) {
+			shabs += "<tr><td>" + habilidades.habilidades[ihabs] + " </td><td align='center'>" + pj.habilidades[ihabs] + " </td></tr>";
+		}
+		shabs += "</table>";
+		
+		var stals = "<table class='w3-table  w3-striped w3-border'><tr><th>Talentos</th></tr>";
+		for (itals = 0; itals < pj.talentos.length; itals++) {
+			stals += "<tr><td>" + pj.talentos[itals] + " </td></tr>";
+		}
+		stals += "</table>";
+		
+		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
+		document.getElementById("rasgos").innerHTML = "<table  class='w3-table  w3-striped w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
+													  " </td></tr><tr><td><strong>Atq:</strong> " + pj.atq +
+													  " </td></tr><tr><td><strong>Ins:</strong> " + pj.ins + 
+													  " </td></tr><tr><td><strong>Def:</strong> " + pj.defn + 
+													  " </td></tr><tr><td><strong>Pow:</strong> " + pj.Pow + 
+													  " </td></tr><tr><td><strong>PV:</strong> " + pj.pv + "</td></tr></table";
+		document.getElementById("atributos").innerHTML = satrs;
+		document.getElementById("talentos").innerHTML = stals;
+		document.getElementById("habilidades").innerHTML = shabs;
+		document.getElementById("dinero").innerHTML = "<br/><strong>Dinero: </strong>" + pj.din + "<br/>" + pj.equipo();
+		
+	}	
 	
 	
 	function generaZ() {
@@ -391,7 +441,8 @@
 			cargadesplegableP();
 		}
 		else if ( idx == 3 ) {
-			document.getElementById("desplegables").innerHTML = "-- En desarrollo --";
+			//document.getElementById("desplegables").innerHTML = "-- En desarrollo --";
+			cargadesplegableCP();
 		}
 		else if ( idx == 4 ) {
 			cargadesplegableSO();
