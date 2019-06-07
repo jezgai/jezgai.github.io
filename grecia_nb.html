@@ -6,17 +6,17 @@
 <script src="js/g_comun.js"></script>
 <script src="js/g_nombres.js"></script>
 <script>
+	var numeronombres=0;
 	
-	function seleccionaNombres(thelist) {
-		var idx = thelist.selectedIndex;
+	function generanombres() {
 		var nombresf = "<h1>Nombres femeninos</h1>";
 		var nombresm = "<h1>Nombres masculinos</h1>";		
-		if ( idx > 0 )
+		if ( numeronombres > 0 )
 		{
 			var masculinos = nombres.masculinos;
 			var femeninos = nombres.femeninos;
 			var iatrb = 0;
-			for (iatrb = 0; iatrb < idx; iatrb++) {
+			for (iatrb = 0; iatrb < numeronombres; iatrb++) {
 				nombresf = nombresf + femeninos[iatrb] + "<br/>";
 				nombresm = nombresm + masculinos[iatrb] + "<br/>";
 			}
@@ -24,6 +24,11 @@
 		
 		document.getElementById("femeninos").innerHTML = nombresf;
 		document.getElementById("masculinos").innerHTML = nombresm;
+	}
+	
+	function seleccionaNombres(thelist) {
+		numeronombres = thelist.selectedIndex;
+		generanombres();
 	}
 	
 </script>
@@ -34,19 +39,26 @@
 	</div>
 	
 	<div class="w3-container w3-large">	
-		<select class="w3-select"  name="numero" onChange="seleccionaNombres(this)">
-			<option>---Selecciona número de nombres---</option>
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-			<option>5</option>
-			<option>6</option>
-			<option>7</option>
-			<option>8</option>
-			<option>9</option>
-			<option>10</option>
-		</select>
+		<div class="w3-row">
+			<div class="w3-col s9 w3-center" id="numeronombres">				
+				<select class="w3-select"  name="numero" onChange="seleccionaNombres(this)">
+					<option>---Selecciona número de nombres---</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+				</select>
+			</div>
+			<div class="w3-col s3 w3-center" id="refresca">
+				<button class='w3-button w3-block w3-teal' onclick='generanombres()'>Refresca</button>
+			</div>
+		</div>
 		<div class="w3-row">
 			<div class="w3-col s6 w3-center" id="femeninos"></div>
 			<div class="w3-col s6 w3-center" id="masculinos"></div>
