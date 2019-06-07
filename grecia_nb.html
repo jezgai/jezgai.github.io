@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="js/g_comun.js"></script>
+<script src="js/g_nombres.js"></script>
+<script>
+	
+	function seleccionaNombres(thelist) {
+		var idx = thelist.selectedIndex;
+		var nombresf = "<h1>Nombres femeninos</h1>";
+		var nombresm = "<h1>Nombres masculinos</h1>";		
+		if ( idx > 0 )
+		{
+			var masculinos = nombres.masculinos;
+			var femeninos = nombres.femeninos;
+			var iatrb = 0;
+			for (iatrb = 0; iatrb < idx; iatrb++) {
+				nombresf = nombresf + femeninos[iatrb] + "<br/>";
+				nombresm = nombresm + masculinos[iatrb] + "<br/>";
+			}
+		}
+		
+		document.getElementById("femeninos").innerHTML = nombresf;
+		document.getElementById("masculinos").innerHTML = nombresm;
+	}
+	
+</script>
+</head>
+<body >
+	<div class="w3-container w3-teal">
+	  <h2>Generador de nombres para Grecia el Juego de Rol</h2>
+	</div>
+	
+	<div class="w3-container w3-large">	
+		<select class="w3-select"  name="numero" onChange="seleccionaNombres(this)">
+			<option>---Selecciona número de nombres---</option>
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+		</select>
+		<div class="w3-row">
+			<div class="w3-col s6 w3-center" id="femeninos"></div>
+			<div class="w3-col s6 w3-center" id="masculinos"></div>
+		</div>
+		
+	</div>
+</body>
+</html>
