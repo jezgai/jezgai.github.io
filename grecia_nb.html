@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="js/g_comun.js"></script>
 <script src="js/g_nombres.js"></script>
+<script src="js/g_divinidades.js"></script>
+<script src="js/g_personaje.js"></script>
 <script>
 	var numeronombres=0;
 	
@@ -24,6 +26,30 @@
 		
 		document.getElementById("femeninos").innerHTML = nombresf;
 		document.getElementById("masculinos").innerHTML = nombresm;
+		var mascu = nombres.masculinos;
+		var femen = nombres.femeninos;
+		var diosas = divinidades.divinidades;
+		var n = Math.trunc(diosas.length / 2);
+		n += diosas.length % 2;
+		var indice=0;
+		var personajes = [];
+		for (indice=0; indice<n; indice++)
+		{
+			var person = new Personaje(femen[indice],"Femenino",diosas[indice]);
+			personajes.push(person);
+		}
+		for (; indice<diosas.length; indice++)
+		{
+			var person = new Personaje(mascu[indice-n],"Masculino",diosas[indice]);
+			personajes.push(person);
+		}
+		personajes = personajes.shuffle();
+		var listapersonajes = "<h1>Personajes</h1>";
+		for (indice=0; indice<personajes.length; indice++)
+		{
+			listapersonajes += "<b>" + personajes[indice].Nombre + "</b> (<u>" + personajes[indice].Genero + "</u>) recibe la bendición de <b>" + personajes[indice].Divinidad + "</b><br/>";
+		}
+		document.getElementById("personajes").innerHTML = listapersonajes;
 	}
 	
 	function seleccionaNombres(thelist) {
@@ -60,8 +86,9 @@
 			</div>
 		</div>
 		<div class="w3-row">
-			<div class="w3-col s6 w3-center" id="femeninos"></div>
-			<div class="w3-col s6 w3-center" id="masculinos"></div>
+			<div class="w3-col s3 w3-center" id="femeninos"></div>
+			<div class="w3-col s3 w3-center" id="masculinos"></div>
+			<div class="w3-col s6 w3-center" id="personajes"></div>
 		</div>
 		
 	</div>
