@@ -43,10 +43,13 @@
 				width: 582 px;
 			}
 		</style>
+		<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 	</head>
 
 	<body onload="cargaPersonaje()" >
 			<div id="main">
+				<button id="download" onclick="descargaPDF()">Descargar</button>
+				<br/>
 				<canvas id="canvas" width="582" height="826"></canvas>
 			</div>
 			<script>
@@ -59,7 +62,7 @@
 					// Public methods goes here ...
 					public.loadPicture = function(personaje) {
 						var imageObj = new Image();
-						imageObj.src = 'VE-SO-F1.png';
+						imageObj.src = 'VE-SO-F1.jpg';
 						imageObj.onload = function () {
 							context.drawImage( imageObj, 0, 0);
 							context.font = "10pt bold Arial";
@@ -237,6 +240,13 @@
 					return public;
 				} () );
 				
+				function descargaPDF() {
+					var imgData = canvas.toDataURL("image/jpeg", 1.0);
+					var pdf = new jsPDF();
+
+					pdf.addImage(imgData, 'JPEG', 0, 0);
+					pdf.save("VE-SO-PJ.pdf");
+				}
 				
 				function parse_query_string(query) {
 				  var vars = query.split("&");
