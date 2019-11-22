@@ -202,34 +202,37 @@
 								context.font = "14pt bold Arial";
 								context.fillText(personaje.mov, 512, 510)
 							}
+							
+
+							if ( typeof personaje.foto !== 'undefined') {
+								var imgpj = new Image();
+								imgpj.src = personaje.foto;
+								imgpj.onload = function () {
+									var w = 140;
+									var h = 190;
+									if ( (parseFloat(this.width) / parseFloat(w)) > (parseFloat(this.height) / parseFloat(h)) ) {
+										
+										h =  (parseFloat(w) / parseFloat(this.width)) * parseFloat(this.height);
+									}
+									else {
+										w =  (parseFloat(h) / parseFloat(this.height)) * parseFloat(this.width);
+									}
+									var posx = 30;
+									var posy = 30;
+									
+									if ( w < 140 ) {
+										posx = posx + ((140 - w) / 2)
+									}
+									if ( h < 190 ) {
+										posy = posy + ((190 - h) / 2)
+									}
+									
+									context.drawImage(imgpj, posx, posy, w, h);
+								}
+							}
+													
 						}
 						
-						if ( typeof personaje.foto !== 'undefined') {
-							var imgpj = new Image();
-							imgpj.src = personaje.foto;
-							imgpj.onload = function () {
-								var w = 140;
-								var h = 190;
-								if ( (parseFloat(this.width) / parseFloat(w)) > (parseFloat(this.height) / parseFloat(h)) ) {
-									
-									h =  (parseFloat(w) / parseFloat(this.width)) * parseFloat(this.height);
-								}
-								else {
-									w =  (parseFloat(h) / parseFloat(this.height)) * parseFloat(this.width);
-								}
-								var posx = 30;
-								var posy = 30;
-								
-								if ( w < 140 ) {
-									posx = posx + ((140 - w) / 2)
-								}
-								if ( h < 190 ) {
-									posy = posy + ((190 - h) / 2)
-								}
-								
-								context.drawImage(imgpj, posx, posy, w, h);
-							}
-						}
 					};
 					
 					public.getImgData = function () {
