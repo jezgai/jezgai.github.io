@@ -87,11 +87,24 @@
 							if (typeof personaje.trasfondo4 !== 'undefined') {
 								context.fillText(personaje.trasfondo4, 190, 208);
 							}
+							
 							if (typeof personaje.talento1 !== 'undefined') {
+								if ( personaje.talento1.length > 45 ) {
+									context.font = "9pt bold Arial";
+								}
 								context.fillText(personaje.talento1, 190, 258);
+								if ( personaje.talento1.length > 45 ) {
+									context.font = "10pt bold Arial";
+								}
 							}
 							if (typeof personaje.talento2 !== 'undefined') {
+								if ( personaje.talento2.length > 45 ) {
+									context.font = "9pt bold Arial";
+								}
 								context.fillText(personaje.talento2, 190, 280)
+								if ( personaje.talento2.length > 45 ) {
+									context.font = "10pt bold Arial";
+								}
 							}
 							if (typeof personaje.fue !== 'undefined') {
 								context.font = "14pt bold Arial";

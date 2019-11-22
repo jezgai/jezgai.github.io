@@ -46,6 +46,8 @@
 	let nombreraza = "random";
 	let nombreclase = "random";
 	let numeronivel = 1;
+	let parametrosimg = "";
+	let paginaimg = "";
 	
 	function cargadesplegable() {
 		document.getElementById("desplegables").innerHTML = "";
@@ -174,12 +176,15 @@
 	}	
 	
 	function vacia() {
+		parametrosimg = "";
+		paginaimg = "";
 		document.getElementById("datos").innerHTML = "";
 		document.getElementById("rasgos").innerHTML = "";
 		document.getElementById("atributos").innerHTML = "";
 		document.getElementById("talentos").innerHTML = "";
 		document.getElementById("habilidades").innerHTML = "";
 		document.getElementById("dinero").innerHTML = "";
+		document.getElementById("ficha").innerHTML = "";
 	}
 	
 	function generaCP() {
@@ -271,24 +276,38 @@
 		pj.genera();
 		//clase = clases.clase('random');
 		//clase.atq = clase.atq(1);
+		
+		parametrosimg = "?nombre="+pj.nombre+"&clase="+pj.clase+"&nivel="+numeronivel+"&niveladquisitivo="+pj.niveladq;
+		
 		var satrs = "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</strong></th><th>Valor (mod)</th></tr>";
 		for (iatrb = 0; iatrb < pj.atributos.length; iatrb++) {
 			satrs += "<tr><td>" + atributos.atributos[iatrb].nbatr + " (" + atributos.atributos[iatrb].nbmod + ")</td><td align='center'>" + pj.atributos[iatrb] + " (" + Atributos.modif(pj.atributos[iatrb]) + ")</td></tr>";
+			parametrosimg += "&" + atributos.atributos[iatrb].nbmod.toLowerCase() + "=" + pj.atributos[iatrb];
+			parametrosimg += "&m" + atributos.atributos[iatrb].nbmod.toLowerCase() + "=" + Atributos.modif(pj.atributos[iatrb]);
 		}
 		satrs += "</table>";
 		//pj.habilidades
 		var shabs = "<table class='w3-table  w3-striped w3-border'><tr><th>Habilidad</th><th>Valor</th></tr>";
 		for (ihabs = 0; ihabs < pj.habilidades.length; ihabs++) {
 			shabs += "<tr><td>" + habilidades.habilidades[ihabs] + " </td><td align='center'>" + pj.habilidades[ihabs] + " </td></tr>";
+			parametrosimg += "&" + habilidades.habilidades[ihabs].toLowerCase().substring(0,4) + "=" + pj.habilidades[ihabs];
 		}
 		shabs += "</table>";
 		
 		var stals = "<table class='w3-table  w3-striped w3-border'><tr><th>Talentos</th></tr>";
 		for (itals = 0; itals < pj.talentos.length; itals++) {
 			stals += "<tr><td>" + pj.talentos[itals] + " </td></tr>";
+			if ( itals%2 == 0 ) {
+				var numero=(itals/2)+1;
+				parametrosimg += "&talento" + numero + "=" + pj.talentos[itals];
+			}
+			else {
+				parametrosimg += ", " + pj.talentos[itals];
+			}
 		}
 		stals += "</table>";
 		
+		parametrosimg += "&pvt=" + pj.pv + "&atq=" + pj.atq + "&ins=" + pj.ins + "&def=" + pj.defn + "&mov=10";
 		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
 		document.getElementById("rasgos").innerHTML = "<table  class='w3-table  w3-striped w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
 													  " </td></tr><tr><td><strong>Atq:</strong> " + pj.atq +
@@ -299,7 +318,22 @@
 		document.getElementById("talentos").innerHTML = stals;
 		document.getElementById("habilidades").innerHTML = shabs;
 		document.getElementById("dinero").innerHTML = "<br/><strong>Nivel adquisitivo: </strong> " + pj.niveladq;
+		
+		
+		document.getElementById("ficha").innerHTML = "Dirección de imagen del personaje: <input type='text' id='FotoPJ' name='FotoPJ'><br/><button class='w3-button w3-block w3-teal' onclick='generaFicha()'>Genera Ficha</button>";
+		
+	    paginaimg = "ve-so-imagen.html";
+
 	}	
+	
+	function generaFicha() {
+		if ( paginaimg != "" && parametrosimg != "" ) {
+			if ( document.getElementById('FotoPJ').value != "" ) {
+				parametrosimg += "&foto="+document.getElementById('FotoPJ').value;
+			}
+			window.open("https://jezgai.github.io/" + paginaimg + parametrosimg, "_blank");
+		}
+	}
 	
 	function generaJ() {
 		vacia();
@@ -474,7 +508,7 @@
 		</select>
 	<div id="desplegables"></div>
 	<hr/>
-	
+	<div id="ficha"></div>
 	<div class="w3-row">
 		<div class="w3-col s9 w3-center" id="datos"></div>
 	</div>

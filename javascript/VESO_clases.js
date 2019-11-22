@@ -129,7 +129,7 @@ class ClasesSO {
 			},
 			{
 			  nombre : "Tahur",
-			  talentos : [ "Un as bajo la manga", "La mano del muerto", "Nos nada personal", "Nunca juegues de espaldas a la puerta" ],
+			  talentos : [ "Un as bajo la manga", "La mano del muerto", "No es nada personal", "Nunca juegues de espaldas a la puerta" ],
 			  ntalentos : [ 2, 2, 2, 2, 3, 3, 3, 3, 3, 3 ],
 			  daguante : 6,
 			  atrs : [ "CAR" , "SAB" ],
