@@ -1,0 +1,271 @@
+<!--
+   imagen.html
+   
+   Copyright 2019 Jose Luis Jiménez Marín <joseluis@Gran-Zenon>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+	<head>
+		<title>Testing canvas</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta name="generator" content="Geany 1.32" />
+		<style>
+			body {
+				background: #333:
+			}
+			#main {
+				margin-top: 100px;
+				text-align: center;
+			}
+			#canvas {
+				background-color: #000;
+				height: 826 px;
+				width: 582 px;
+			}
+		</style>
+	</head>
+
+	<body onload="cargaPersonaje()" >
+			<div id="main">
+				<canvas id="canvas" width="582" height="826"></canvas>
+			</div>
+			<script>
+				var app = ( function() {
+					context = canvas.getContext( '2d' ),
+					
+					// API
+					public = {};
+					
+					// Public methods goes here ...
+					public.loadPicture = function(personaje) {
+						var imageObj = new Image();
+						imageObj.src = 'VE-SO-F1.png';
+						imageObj.onload = function () {
+							context.drawImage( imageObj, 0, 0);
+							context.font = "10pt bold Arial";
+							if (typeof personaje.nombre !== 'undefined') {
+								context.fillText(personaje.nombre, 190, 55);
+							}
+							if (typeof personaje.clase !== 'undefined') {
+								context.fillText(personaje.clase, 190, 100);
+							}
+							if (typeof personaje.nivel !== 'undefined') {
+								context.fillText(personaje.nivel, 488, 55);
+							}
+							if (typeof personaje.niveladquisitivo !== 'undefined') {
+								context.fillText(personaje.niveladquisitivo, 350, 100);
+							}
+							if (typeof personaje.trasfondo1 !== 'undefined') {
+								context.fillText(personaje.trasfondo1, 190, 145);
+							}
+							if (typeof personaje.trasfondo2 !== 'undefined') {
+								context.fillText(personaje.trasfondo2, 190, 166);
+							}
+							if (typeof personaje.trasfondo3 !== 'undefined') {
+								context.fillText(personaje.trasfondo3, 190, 187);
+							}
+							if (typeof personaje.trasfondo4 !== 'undefined') {
+								context.fillText(personaje.trasfondo4, 190, 208);
+							}
+							if (typeof personaje.talento1 !== 'undefined') {
+								context.fillText(personaje.talento1, 190, 258);
+							}
+							if (typeof personaje.talento2 !== 'undefined') {
+								context.fillText(personaje.talento2, 190, 280)
+							}
+							if (typeof personaje.fue !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.fue, 92, 355)
+							}
+							if (typeof personaje.mfue !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.mfue, 138, 355)
+							}
+							if (typeof personaje.aler !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.aler, 355, 355)
+							}
+							if (typeof personaje.pvt !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.pvt, 512, 355)
+							}
+							if (typeof personaje.des !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.des, 92, 387)
+							}
+							if (typeof personaje.mdes !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.mdes, 138, 387)
+							}
+							if (typeof personaje.comu !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.comu, 355, 387)
+							}
+							if (typeof personaje.pva !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.pva, 512, 387)
+							}
+							if (typeof personaje.con !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.con, 92, 418)
+							}
+							if (typeof personaje.mcon !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.mcon, 138, 418)
+							}
+							if (typeof personaje.mani !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.mani, 355, 418)
+							}
+							if (typeof personaje.atq !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.atq, 512, 418)
+							}
+							if (typeof personaje.int !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.int, 92, 449)
+							}
+							if (typeof personaje.mint !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.mint, 138, 449)
+							}
+							if (typeof personaje.erud !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.erud, 355, 449)
+							}
+							if (typeof personaje.def !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.def, 512, 449)
+							}
+							if (typeof personaje.sab !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.sab, 92, 479)
+							}
+							if (typeof personaje.msab !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.msab, 138, 479)
+							}
+							if (typeof personaje.subt !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.subt, 355, 479)
+							}
+							if (typeof personaje.ins !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.ins, 512, 479)
+							}
+							if (typeof personaje.car !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.car, 92, 510)
+							}
+							if (typeof personaje.mcar !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.mcar, 138, 510)
+							}
+							if (typeof personaje.supe !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.supe, 355, 510)
+							}
+							if (typeof personaje.mov !== 'undefined') {
+								context.font = "14pt bold Arial";
+								context.fillText(personaje.mov, 512, 510)
+							}
+						}
+						
+						if ( typeof personaje.foto !== 'undefined') {
+							var imgpj = new Image();
+							imgpj.src = personaje.foto;
+							imgpj.onload = function () {
+								var w = 140;
+								var h = 190;
+								if ( (parseFloat(this.width) / parseFloat(w)) > (parseFloat(this.height) / parseFloat(h)) ) {
+									
+									h =  (parseFloat(w) / parseFloat(this.width)) * parseFloat(this.height);
+								}
+								else {
+									w =  (parseFloat(h) / parseFloat(this.height)) * parseFloat(this.width);
+								}
+								var posx = 30;
+								var posy = 30;
+								
+								if ( w < 140 ) {
+									posx = posx + ((140 - w) / 2)
+								}
+								if ( h < 190 ) {
+									posy = posy + ((190 - h) / 2)
+								}
+								
+								context.drawImage(imgpj, posx, posy, w, h);
+							}
+						}
+					};
+					
+					public.getImgData = function () {
+						return context.getImageData(0 , 0, canvas.width, canvas.height);
+					};
+					
+					public.save = function () {
+						var link = window.document.createElement( 'a' ),
+							url = canvas.toDataURL(),
+							filename = 'pj.png';
+						link.setAttribute( 'href', url);
+						link.setAttribute( 'download', filename);
+						link.style.visibility = 'hidden';
+						window.document.body.appendChild( link );
+						link.click();
+						window.document.body.removeChild( link );
+					};
+					return public;
+				} () );
+				
+				
+				function parse_query_string(query) {
+				  var vars = query.split("&");
+				  var query_string = {};
+				  for (var i = 0; i < vars.length; i++) {
+					var pair = vars[i].split("=");
+					var key = decodeURIComponent(pair[0]);
+					var value = decodeURIComponent(pair[1]);
+					// If first entry with this name
+					if (typeof query_string[key] === "undefined") {
+					  query_string[key] = decodeURIComponent(value);
+					  // If second entry with this name
+					} else if (typeof query_string[key] === "string") {
+					  var arr = [query_string[key], decodeURIComponent(value)];
+					  query_string[key] = arr;
+					  // If third or later entry with this name
+					} else {
+					  query_string[key].push(decodeURIComponent(value));
+					}
+				  }
+				  return query_string;
+				}
+				
+				function cargaPersonaje() {
+					var query = window.location.search.substring(1);
+					var pj = parse_query_string(query);
+					app.loadPicture(pj);
+				};
+			</script>
+	</body>
+
+</html>
