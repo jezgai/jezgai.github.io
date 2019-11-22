@@ -43,13 +43,10 @@
 				width: 582 px;
 			}
 		</style>
-		<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 	</head>
 
 	<body onload="cargaPersonaje()" >
 			<div id="main">
-				<button id="download" onclick="descargaPDF()">Descargar</button>
-				<br/>
 				<canvas id="canvas" width="582" height="826"></canvas>
 			</div>
 			<script>
@@ -240,13 +237,6 @@
 					return public;
 				} () );
 				
-				function descargaPDF() {
-					var imgData = canvas.toDataURL("image/jpeg", 1.0);
-					var pdf = new jsPDF();
-
-					pdf.addImage(imgData, 'JPEG', 0, 0);
-					pdf.save("VE-SO-PJ.pdf");
-				}
 				
 				function parse_query_string(query) {
 				  var vars = query.split("&");
