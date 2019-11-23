@@ -16,7 +16,7 @@
    You should have received a copy of the GNU General Public License
    along with this program; if not, write to the Free Software
    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
-   MA 02110-1301, USA.
+   MA 02110-1451, USA.
    
    
 -->
@@ -34,20 +34,24 @@
 				background: #333:
 			}
 			#main {
-				margin-top: 100px;
-				text-align: center;
+				margin-top: 0px;
+				text-align: left;
 			}
 			#canvas {
 				background-color: #000;
-				height: 826 px;
-				width: 582 px;
+				height: 1240 px;
+				width: 875 px;
 			}
 		</style>
+		<script src="javascript/FileSaver.js"></script>
+		<script>
+			let nombrePJ = "PJ-VE Salvaje Oeste";
+		</script>
 	</head>
 
 	<body onload="cargaPersonaje()" >
 			<div id="main">
-				<canvas id="canvas" width="582" height="826"></canvas>
+				<canvas id="canvas" width="875" height="1240"></canvas>
 			</div>
 			<script>
 				var app = ( function() {
@@ -62,145 +66,123 @@
 						imageObj.src = 'VE-SO-F1.jpg';
 						imageObj.onload = function () {
 							context.drawImage( imageObj, 0, 0);
-							context.font = "10pt bold Arial";
+							context.font = "12pt bold Arial";
 							if (typeof personaje.nombre !== 'undefined') {
-								context.fillText(personaje.nombre, 190, 55);
+								context.fillText(personaje.nombre, 287, 82);
+								nombrePJ = personaje.nombre;
 							}
 							if (typeof personaje.clase !== 'undefined') {
-								context.fillText(personaje.clase, 190, 100);
+								context.fillText(personaje.clase, 287, 150);
 							}
 							if (typeof personaje.nivel !== 'undefined') {
-								context.fillText(personaje.nivel, 488, 55);
+								context.fillText(personaje.nivel, 745, 82);
 							}
 							if (typeof personaje.niveladquisitivo !== 'undefined') {
-								context.fillText(personaje.niveladquisitivo, 350, 100);
+								context.fillText(personaje.niveladquisitivo, 525, 150);
 							}
 							if (typeof personaje.trasfondo1 !== 'undefined') {
-								context.fillText(personaje.trasfondo1, 190, 145);
+								context.fillText(personaje.trasfondo1, 287, 217);
 							}
 							if (typeof personaje.trasfondo2 !== 'undefined') {
-								context.fillText(personaje.trasfondo2, 190, 166);
+								context.fillText(personaje.trasfondo2, 287, 249);
 							}
 							if (typeof personaje.trasfondo3 !== 'undefined') {
-								context.fillText(personaje.trasfondo3, 190, 187);
+								context.fillText(personaje.trasfondo3, 287, 280);
 							}
 							if (typeof personaje.trasfondo4 !== 'undefined') {
-								context.fillText(personaje.trasfondo4, 190, 208);
+								context.fillText(personaje.trasfondo4, 287, 312);
 							}
 							
 							if (typeof personaje.talento1 !== 'undefined') {
-								if ( personaje.talento1.length > 45 ) {
-									context.font = "9pt bold Arial";
-								}
-								context.fillText(personaje.talento1, 190, 258);
-								if ( personaje.talento1.length > 45 ) {
+								if ( personaje.talento1.length > 63 ) {
 									context.font = "10pt bold Arial";
+								}
+								context.fillText(personaje.talento1, 287, 387);
+								if ( personaje.talento1.length > 63 ) {
+									context.font = "12pt bold Arial";
 								}
 							}
 							if (typeof personaje.talento2 !== 'undefined') {
-								if ( personaje.talento2.length > 45 ) {
-									context.font = "9pt bold Arial";
-								}
-								context.fillText(personaje.talento2, 190, 280)
-								if ( personaje.talento2.length > 45 ) {
+								if ( personaje.talento2.length > 63 ) {
 									context.font = "10pt bold Arial";
 								}
+								context.fillText(personaje.talento2, 287, 420)
+								if ( personaje.talento2.length > 63 ) {
+									context.font = "12pt bold Arial";
+								}
 							}
+							context.font = "18pt bold Arial";
 							if (typeof personaje.fue !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.fue, 92, 355)
+								context.fillText(personaje.fue, 138, 532)
 							}
 							if (typeof personaje.mfue !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.mfue, 138, 355)
+								context.fillText(personaje.mfue, 215, 532)
 							}
 							if (typeof personaje.aler !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.aler, 355, 355)
+								context.fillText(personaje.aler, 530, 532)
 							}
 							if (typeof personaje.pvt !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.pvt, 512, 355)
+								context.fillText(personaje.pvt, 768, 532)
 							}
 							if (typeof personaje.des !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.des, 92, 387)
+								context.fillText(personaje.des, 138, 580)
 							}
 							if (typeof personaje.mdes !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.mdes, 138, 387)
+								context.fillText(personaje.mdes, 215, 580)
 							}
 							if (typeof personaje.comu !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.comu, 355, 387)
+								context.fillText(personaje.comu, 530, 580)
 							}
 							if (typeof personaje.pva !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.pva, 512, 387)
+								context.fillText(personaje.pva, 768, 580)
 							}
 							if (typeof personaje.con !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.con, 92, 418)
+								context.fillText(personaje.con, 138, 627)
 							}
 							if (typeof personaje.mcon !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.mcon, 138, 418)
+								context.fillText(personaje.mcon, 215, 627)
 							}
 							if (typeof personaje.mani !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.mani, 355, 418)
+								context.fillText(personaje.mani, 530, 627)
 							}
 							if (typeof personaje.atq !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.atq, 512, 418)
+								context.fillText(personaje.atq, 768, 627)
 							}
 							if (typeof personaje.int !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.int, 92, 449)
+								context.fillText(personaje.int, 138, 673)
 							}
 							if (typeof personaje.mint !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.mint, 138, 449)
+								context.fillText(personaje.mint, 215, 673)
 							}
 							if (typeof personaje.erud !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.erud, 355, 449)
+								context.fillText(personaje.erud, 530, 673)
 							}
 							if (typeof personaje.def !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.def, 512, 449)
+								context.fillText(personaje.def, 768, 673)
 							}
 							if (typeof personaje.sab !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.sab, 92, 479)
+								context.fillText(personaje.sab, 138, 718)
 							}
 							if (typeof personaje.msab !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.msab, 138, 479)
+								context.fillText(personaje.msab, 215, 718)
 							}
 							if (typeof personaje.subt !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.subt, 355, 479)
+								context.fillText(personaje.subt, 530, 718)
 							}
 							if (typeof personaje.ins !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.ins, 512, 479)
+								context.fillText(personaje.ins, 768, 718)
 							}
 							if (typeof personaje.car !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.car, 92, 510)
+								context.fillText(personaje.car, 138, 765)
 							}
 							if (typeof personaje.mcar !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.mcar, 138, 510)
+								context.fillText(personaje.mcar, 215, 765)
 							}
 							if (typeof personaje.supe !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.supe, 355, 510)
+								context.fillText(personaje.supe, 530, 765)
 							}
 							if (typeof personaje.mov !== 'undefined') {
-								context.font = "14pt bold Arial";
-								context.fillText(personaje.mov, 512, 510)
+								context.fillText(personaje.mov, 768, 765)
 							}
 							
 
@@ -208,8 +190,8 @@
 								var imgpj = new Image();
 								imgpj.src = personaje.foto;
 								imgpj.onload = function () {
-									var w = 140;
-									var h = 190;
+									var w = 200;
+									var h = 280;
 									if ( (parseFloat(this.width) / parseFloat(w)) > (parseFloat(this.height) / parseFloat(h)) ) {
 										
 										h =  (parseFloat(w) / parseFloat(this.width)) * parseFloat(this.height);
@@ -217,21 +199,25 @@
 									else {
 										w =  (parseFloat(h) / parseFloat(this.height)) * parseFloat(this.width);
 									}
-									var posx = 30;
-									var posy = 30;
+									var posx = 52;
+									var posy = 49;
 									
-									if ( w < 140 ) {
-										posx = posx + ((140 - w) / 2)
+									if ( w < 200 ) {
+										posx = posx + ((200 - w) / 2)
 									}
-									if ( h < 190 ) {
-										posy = posy + ((190 - h) / 2)
+									if ( h < 280 ) {
+										posy = posy + ((280 - h) / 2)
 									}
 									
 									context.drawImage(imgpj, posx, posy, w, h);
 								}
 							}
-													
+							
+							/*canvas.toBlob(function(blob) {
+								saveAs(blob, nombrePJ + ".png");
+							});		*/			
 						}
+						
 						
 					};
 					
@@ -281,6 +267,7 @@
 					var pj = parse_query_string(query);
 					app.loadPicture(pj);
 				};
+				
 			</script>
 	</body>
 
