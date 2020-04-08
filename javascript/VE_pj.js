@@ -15,6 +15,7 @@ class PJ {
 		this._def = 0;
 		this._daguante = 4;
 		this._mov = 12;
+		this._trasfondo = "";
 	}
 
 	get nombre() {
@@ -108,6 +109,13 @@ class PJ {
 		this._mov = value;
 	}
 	
+	get trasfondo() {
+		return this._trasfondo;
+	}
+	set trasfondo(value) {
+		this._mov = _trasfondo;
+	}
+	
 	genera() {
 		habilidades.habilidadesGen();
 		habilidades.ptos_niv = 2;
@@ -127,6 +135,7 @@ class PJ {
 		this._pv = clase.pv(this._nivel) + Atributos.modif(this._atributos[atributos.atributoMod("CON")]);
 		this._nombre = raza.nombrepj();
 		this._mov = raza.mov;
+		this._trasfondo = trasfondos.trasfondo();
 		
 		var ital = 0;
 		this._talentos = [];

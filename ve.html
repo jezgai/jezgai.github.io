@@ -8,6 +8,7 @@
 <script src="javascript/VE_atributos.js"></script>
 <script src="javascript/VE_habilidades.js"></script>
 <script src="javascript/VE_clases.js"></script>
+<script src="javascript/VE_trasfondos.js"></script>
 <script src="javascript/VE_pj.js"></script>
 <script src="javascript/VEP_clases.js"></script>
 <script src="javascript/VEP_pj.js"></script>
@@ -432,6 +433,9 @@
 		//clase.atq = clase.atq(1);
 		let dinero = Comun.random(6,1) * 100;
 		parametrosimg = "?nombre="+pj.nombre+"&clase="+pj.clase+"&nivel="+numeronivel+"&dinero="+dinero;
+		if ( pj.trasfondo != "" ) {
+			parametrosimg += "&trasfondo1=" + pj.trasfondo;
+		}
 		var satrs = "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</strong></th><th>Valor (mod)</th></tr>";
 		for (iatrb = 0; iatrb < pj.atributos.length; iatrb++) {
 			satrs += "<tr><td>" + atributos.atributos[iatrb].nbatr + " (" + atributos.atributos[iatrb].nbmod + ")</td><td align='center'>" + pj.atributos[iatrb] + " (" + Atributos.modif(pj.atributos[iatrb]) + ")</td></tr>";
@@ -463,11 +467,12 @@
             		                                  " </td></tr><tr><td><strong>Pod:</strong> " + pj.pod + 
 													  " </td></tr><tr><td><strong>Ins:</strong> " + pj.ins + 
 													  " </td></tr><tr><td><strong>Def:</strong> " + pj.defn + 
-													  " </td></tr><tr><td><strong>PV:</strong> " + pj.pv + "</td></tr></table";
+													  " </td></tr><tr><td><strong>PV:</strong> " + pj.pv + 
+													  " </td></tr><tr><td><strong>Mov:</strong> " + pj.mov + "</td></tr></table";
 		document.getElementById("atributos").innerHTML = satrs;
 		document.getElementById("talentos").innerHTML = stals;
 		document.getElementById("habilidades").innerHTML = shabs;
-		document.getElementById("dinero").innerHTML = "<br/><strong>Dinero: </strong> " + dinero + " mo";
+		document.getElementById("dinero").innerHTML = "<br/><strong>Trasfondo y Dinero: </strong> " + pj.trasfondo + ". " + dinero + " mo";
 
 		document.getElementById("ficha").innerHTML = "Dirección de imagen del personaje: <input type='text' id='FotoPJ' name='FotoPJ'><br/><button class='w3-button w3-block w3-teal' onclick='generaFicha()'>Genera Ficha</button>";
 		
