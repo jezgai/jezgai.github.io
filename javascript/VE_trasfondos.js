@@ -40,7 +40,7 @@ class Trasfondos {
 		this._trasfondos.push( new Trasfondo(53,56,"Asistente"));
 		this._trasfondos.push( new Trasfondo(57,60,"Marinero"));
 		this._trasfondos.push( new Trasfondo(61,64,"Carpintero"));
-		this._trasfondos.push( new Trasfondo(65.68,"Sastre"));
+		this._trasfondos.push( new Trasfondo(65,68,"Sastre"));
 		this._trasfondos.push( new Trasfondo(69,72,"Pastor"));
 		this._trasfondos.push( new Trasfondo(73,76,"Tendero"));
 		this._trasfondos.push( new Trasfondo(77,78,"Informador"));
@@ -64,7 +64,7 @@ class Trasfondos {
 				return this._trasfondos[itras].NombreTrasfondo;
 			}
 		}
-		return "";
+		return this._trasfondos[Comun.random(this._trasfondos.length, 0)].NombreTrasfondo;
 	}
 }
 
