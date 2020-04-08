@@ -423,8 +423,6 @@
 	function genera() {
 		vacia();
 		
-
-		
 		let pj = new PJ(numeronivel);
 		pj.raza = nombreraza;
 		pj.clase = nombreclase;
@@ -432,24 +430,33 @@
 		pj.genera();
 		//clase = clases.clase('random');
 		//clase.atq = clase.atq(1);
+		let dinero = Comun.random(6,1) * 100;
+		parametrosimg = "?nombre="+pj.nombre+"&clase="+pj.clase+"&nivel="+numeronivel+"&dinero="+dinero;
 		var satrs = "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</strong></th><th>Valor (mod)</th></tr>";
 		for (iatrb = 0; iatrb < pj.atributos.length; iatrb++) {
 			satrs += "<tr><td>" + atributos.atributos[iatrb].nbatr + " (" + atributos.atributos[iatrb].nbmod + ")</td><td align='center'>" + pj.atributos[iatrb] + " (" + Atributos.modif(pj.atributos[iatrb]) + ")</td></tr>";
+			parametrosimg += "&" + atributos.atributos[iatrb].nbmod.toLowerCase() + "=" + pj.atributos[iatrb];
+			parametrosimg += "&m" + atributos.atributos[iatrb].nbmod.toLowerCase() + "=" + Atributos.modif(pj.atributos[iatrb]);
 		}
 		satrs += "</table>";
 		//pj.habilidades
 		var shabs = "<table  class='w3-table  w3-striped  w3-border'><tr><th>Habilidad</th><th>Valor</th></tr>";
 		for (ihabs = 0; ihabs < pj.habilidades.length; ihabs++) {
 			shabs += "<tr><td>" + habilidades.habilidades[ihabs] + " </td><td align='center'>" + pj.habilidades[ihabs] + " </td></tr>";
+			parametrosimg += "&" + habilidades.habilidades[ihabs].toLowerCase().substring(0,4) + "=" + pj.habilidades[ihabs];
 		}
 		shabs += "</table>";
 		
 		var stals = "<table  class='w3-table w3-border'><tr><th>Talentos</th></tr>";
 		for (itals = 0; itals < pj.talentos.length; itals++) {
 			stals += "<tr><td>" + pj.talentos[itals] + " </td></tr>";
+			var numero=itals+1;
+			parametrosimg += "&talento" + numero + "=" + pj.talentos[itals];
+
 		}
 		stals += "</table>";
 		
+		parametrosimg += "&pvt=" + pj.pv + "&atq=" + pj.atq + "&ins=" + pj.ins + "&def=" + pj.defn + "&pod=" + pj.pod + "&mov=" + pj.mov;
 		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Raza:</strong> " + pj.raza + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
 		document.getElementById("rasgos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
 													  " </td></tr><tr><td><strong>Atq:</strong> " + pj.atq +
@@ -460,7 +467,11 @@
 		document.getElementById("atributos").innerHTML = satrs;
 		document.getElementById("talentos").innerHTML = stals;
 		document.getElementById("habilidades").innerHTML = shabs;
-		document.getElementById("dinero").innerHTML = "<br/><strong>Dinero: </strong> " + Comun.random(6,1) * 100 + " mo";
+		document.getElementById("dinero").innerHTML = "<br/><strong>Dinero: </strong> " + dinero + " mo";
+
+		document.getElementById("ficha").innerHTML = "Dirección de imagen del personaje: <input type='text' id='FotoPJ' name='FotoPJ'><br/><button class='w3-button w3-block w3-teal' onclick='generaFicha()'>Genera Ficha</button>";
+		
+	    paginaimg = "ve-e-imagen.html";
 	}
 	
 	function seleccionajdr(thelist) {
