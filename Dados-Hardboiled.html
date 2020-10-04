@@ -4,6 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="javascript/HB_comun.js"></script>
+<script src="javascript/HB_PJ.js"></script>
 
 <script>
 	
@@ -42,9 +43,38 @@
 		}
 	}
 	function calcula() {
-		tiraatributos();
+		/*tiraatributos();
 		tirahabprimaria();
-		tirahabsecundaria();
+		tirahabsecundaria();*/
+		
+		var objselect = document.getElementById("nsecun");
+		var idx = objselect.selectedIndex;
+		var nhabsec = idx + 6;
+		
+		let pj = new HB_PJ();
+		pj.genera(4, nhabsec);
+		
+		
+		document.getElementById("atributos").innerHTML = "<strong>Vigor</strong>: " + pj.vigor + "<br/><strong>Destreza</strong>: " + pj.destreza + "<br/><strong>Perspicacia</strong>: " + pj.perspicacia + "<br/><strong>Carisma</strong>: " + pj.carisma + "<br/><strong>Suerte</strong>: " + pj.suerte;
+		document.getElementById("atributos").innerHTML += "<br/><br/><strong>PV</strong>: " + pj.pv + "<br/><strong>Pegada</strong>: " + pj.pegada + "<br/><strong>Movimiento</strong>: " + pj.mov;  
+		document.getElementById("atributos").innerHTML += "<br/><br/><hr/><strong>%habilidades por Perspicacia</strong>: +" + pj.porchabper + "%<br/><strong>%habilidades por Carisma</strong>: +" + pj.porchabcar + "%";
+		
+		document.getElementById("habprimaria").innerHTML="";
+		var indpri=0;
+		for (indpri=0;indpri<4;indpri++) {
+			var n=1+indpri;
+			var habn = pj.habprimarias[indpri];
+			document.getElementById("habprimaria").innerHTML += "<br/><strong>Habilidad " + n + "</strong>: " + habn;
+		}
+		
+		document.getElementById("habsecundaria").innerHTML="";
+		var indsec=0;
+		for (indsec=0;indsec<nhabsec;indsec++) {
+			var n=1+indsec;
+			var habn = pj.habsecundarias[indsec];
+			document.getElementById("habsecundaria").innerHTML += "<br/><strong>Habilidad " + n + "</strong>: " + habn;
+		}
+		
 	}
 	
 </script>
