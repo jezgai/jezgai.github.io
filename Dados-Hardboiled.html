@@ -1,0 +1,88 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="javascript/HB_comun.js"></script>
+
+<script>
+	
+	function tiraatributos() {
+		var vigor = Comun.atributo();
+		var destreza = Comun.atributo();
+		var perspicacia = Comun.atributo();
+		var carisma = Comun.atributo();
+		var suerte = Comun.suerte();
+		document.getElementById("atributos").innerHTML = "<strong>Vigor</strong>: " + vigor + "<br/><strong>Destreza</strong>: " + destreza + "<br/><strong>Perspicacia</strong>: " + perspicacia + "<br/><strong>Carisma</strong>: " + carisma + "<br/><strong>Suerte</strong>: " + suerte;
+	}
+	
+	function tirahabprimaria() {
+		var hab1 = Comun.habilidadprimaria();
+		var hab2 = Comun.habilidadprimaria();
+		var hab3 = Comun.habilidadprimaria();
+		var hab4 = Comun.habilidadprimaria();
+		document.getElementById("habprimaria").innerHTML = "<strong>Habilidad 1</strong>: " + hab1 + "<br/><strong>Habilidad 2</strong>: " + hab2 + "<br/><strong>Habilidad 3</strong>: " + hab3 + "<br/><strong>Habilidad 4</strong>: " + hab4;
+	}
+	
+	function tirahabsecundaria() {
+		var hab1 = Comun.habilidadsecundaria();
+		var hab2 = Comun.habilidadsecundaria();
+		var hab3 = Comun.habilidadsecundaria();
+		var hab4 = Comun.habilidadsecundaria();
+		var hab5 = Comun.habilidadsecundaria();
+		var hab6 = Comun.habilidadsecundaria();
+		
+		document.getElementById("habsecundaria").innerHTML = "<strong>Habilidad 1</strong>: " + hab1 + "<br/><strong>Habilidad 2</strong>: " + hab2 + "<br/><strong>Habilidad 3</strong>: " + hab3 + "<br/><strong>Habilidad 4</strong>: " + hab4 + "<br/><strong>Habilidad 5</strong>: " + hab5 + "<br/><strong>Habilidad 6</strong>: " + hab6;
+		var objselect = document.getElementById("nsecun");
+		var idx = objselect.selectedIndex;
+		for (indice=0;indice<idx;indice++) {
+			var n=7+indice;
+			var habn = Comun.habilidadsecundaria();
+			document.getElementById("habsecundaria").innerHTML += "<br/><strong>Habilidad " + n + "</strong>: " + habn;
+		}
+	}
+	function calcula() {
+		tiraatributos();
+		tirahabprimaria();
+		tirahabsecundaria();
+	}
+	
+</script>
+</head>
+<body >
+	<div class="w3-container w3-teal">
+	  <h2>Hardboiled - dados para crear personajes</h2>
+	</div>
+	<div class="w3-row">
+		<div class="w3-col s3"><p></p></div>
+		<div class="w3-col s6"><p><button class='w3-button w3-block w3-teal' onclick='calcula()'>Calcula</button></p></div>
+		<div class="w3-col s3"><p></p></div>
+	</div>
+	<div class="w3-row">
+		<div class="w3-col s3 w3-center">
+			<p><strong>Atributos</strong></p>
+		</div>
+		<div class="w3-col s3 w3-center">
+			<p><strong>Habilidades principales</strong></p>
+		</div>
+		<div class="w3-col s3 w3-center">
+			<p><strong>Habilidades secundarias</strong></p>
+		</div>
+		<div class="w3-col s3 w3-center">
+			<p><select class="w3-select"  name="numsecun" id="nsecun" >
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+			<option>10</option>
+		</select></p>
+		</div>
+	</div> 
+	<div class="w3-row">
+		<div class="w3-col s3 w3-center" id="atributos"></div>
+		<div class="w3-col s3 w3-center" id="habprimaria"></div>
+		<div class="w3-col s6 w3-center" id="habsecundaria"></div>
+	</div> 
+</body>
+</html>
+
