@@ -159,7 +159,7 @@
 		var habilidadessecun = "";
 		var dotesinvestigativas = "";
 		var requisitos = "";
-		
+		var nbprofesion = nombreprofesion;
 		if ( hayprofesiones == 1) {
 			profesion = profesiones.profesion(nombreprofesion);
 			nhabprin = profesion.nhabprincipales;
@@ -168,7 +168,7 @@
 			habilidadessecun = profesion.habsecundarias;
 			dotesinvestigativas = profesion.dotesinvestigativas;
 			requisitos = profesion.requisito;
-			nombreprofesion = profesion.nombre;
+			nbprofesion = profesion.nombre;
 		}
 		
 		pj = new HB_PJ();
@@ -196,7 +196,7 @@
 		document.getElementById("profesion").innerHTML="";
 		if ( hayprofesiones == 1 )
 		{
-			document.getElementById("profesion").innerHTML="<p><strong><center>" + nombreprofesion + "</center></strong></p>";
+			document.getElementById("profesion").innerHTML="<p><strong><center>" + nbprofesion + "</center></strong></p>";
 			document.getElementById("habprimaria").innerHTML += "<br/><br/><strong>" + habilidadesprin + "</strong>";
 			document.getElementById("habsecundaria").innerHTML += "<br/><br/><strong>" + habilidadessecun + "</strong>";
 			document.getElementById("dotesinvestigativas").innerHTML += "<br/><br/><strong>" + dotesinvestigativas + "</strong>";

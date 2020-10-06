@@ -100,24 +100,7 @@ class HB_PJ {
 		this._porchabcar = value;
 	}
 	
-	
-	genera(nhabprim, nhabsec) {
-		
-		this._vigor = Comun.atributo();
-		this._destreza = Comun.atributo();
-		this._perspicacia = Comun.atributo();
-		this._carisma = Comun.atributo();
-		this._suerte = Comun.suerte();
-		var ihabp=0;
-		for (ihabp=0;ihabp<nhabprim;ihabp++) {
-			this._habprimarias.push(Comun.habilidadprimaria());
-		}
-		var ihabs=0;
-		for (ihabs=0;ihabs<nhabsec;ihabs++) {
-			this._habsecundarias.push(Comun.habilidadsecundaria());
-		}
-		
-		// Puntos de vida y pegada
+	calculapegadapv() {
 		var ndadospv=5;
 		var modpv=50;
 		this._pegada = 10;
@@ -167,12 +150,14 @@ class HB_PJ {
 			this._pegada = 9;
 		}
 		var indados=0;
+		this._pv = 0;
 		for (indados=0;indados<ndadospv;indados++) {
 			this._pv += Comun.random(10,1);
 		}
 		this._pv += modpv;
-		
-		// Rango de movimiento
+	}
+	
+	rangomovimiento() {
 		var vigydes = this._vigor + this._destreza;
 		if ( vigydes <= 20 ) {
 			this._mov = 2;
@@ -195,8 +180,9 @@ class HB_PJ {
 		else {
 			this._mov = 8;
 		}
-		
-		// Porcentaje adicional a habilidades por perspicacia
+	}
+	
+	porcperspicacia() {
 		this._porchabper = 50;
 		if ( this._perspicacia <= 20 ) {
 			this._porchabper = 10;
@@ -213,7 +199,9 @@ class HB_PJ {
 		else if ( this._perspicacia <= 90 ) {
 			this._porchabper = 45;
 		}
-		// Porcentaje adicional a habilidades sociales por carisma
+	}
+	
+	porccarisma() {
 		this._porchabcar = 30;
 		if ( this._perspicacia <= 20 ) {
 			this._porchabcar = 5;
@@ -230,6 +218,35 @@ class HB_PJ {
 		else if ( this._perspicacia <= 90 ) {
 			this._porchabcar = 25;
 		}
+	}
+	
+	genera(nhabprim, nhabsec) {
+		
+		this._vigor = Comun.atributo();
+		this._destreza = Comun.atributo();
+		this._perspicacia = Comun.atributo();
+		this._carisma = Comun.atributo();
+		this._suerte = Comun.suerte();
+		var ihabp=0;
+		for (ihabp=0;ihabp<nhabprim;ihabp++) {
+			this._habprimarias.push(Comun.habilidadprimaria());
+		}
+		var ihabs=0;
+		for (ihabs=0;ihabs<nhabsec;ihabs++) {
+			this._habsecundarias.push(Comun.habilidadsecundaria());
+		}
+		
+		// Puntos de vida y pegada
+		this.calculapegadapv();
+		
+		// Rango de movimiento
+		this.rangomovimiento();
+		
+		// Porcentaje adicional a habilidades por perspicacia
+		this.porcperspicacia();
+		
+		// Porcentaje adicional a habilidades sociales por carisma
+		this.porccarisma();
 	}
 	
 }
