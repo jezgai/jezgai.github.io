@@ -113,6 +113,15 @@ class Profesiones {
 			  dotesinvestigativas : "Elige 7 dotes entre: Adulación, Alta Sociedad, Análisis de Textos, Antropología, Callejeo, Consuelo, Criptografía, Fabricar, Flirtear, Fotografía, Historia del Arte, Historia Oral, Idiomas, Imitar, Investigar, Lingüística, Ocultismo, Religión Comparada, Tozudo y Trivialidades",
 			  requisito : "Perspicacia 50",
 			},
+			{
+			  nombre : "Atleta",
+			  habprincipales : "Preparación, Presencia, Primeros Auxilios y Supervivencia",
+			  nhabprincipales : 4,
+			  habsecundarias : "Conducir, Disfraz, Disparar, Juego, Liderazgo, Montar, Pelear, Persuasión y Pilotar. Escoge una de entre Ciencia Natural o Humanidades, reflejando qué tipo de estudios ha tenido aparte de ser atleta",
+			  nhabsecundarias : 10,
+			  dotesinvestigativas : "Elige 6 dotes entre: Adulación, Alta Sociedad, Burocracia, Consuelo, Espionaje, Flirtear, Imitar, Intimidación y Trivialidades. Si como Habilidad secundaria ha escogido Ciencia Natural puede escoger también una de estas Dotes Investigativas como parte de las 6 que tiene que escoger: Biología, Botánica, Geología, Medicina o Química. Si como Habilidad secundaria ha escogido Humanidades puede escoger también una de estas Dotes Investigativas como parte de las 6 que tiene que escoger: Análisis de Textos, Fotografía, Historia, Historia del Arte, Idiomas o Lingüística",
+			  requisito : "Vigor y Destreza 50",
+			},
 		]
 	}
 	

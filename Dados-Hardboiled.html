@@ -153,8 +153,8 @@
 		var objselect = document.getElementById("nsecun");
 		//var idx = objselect.selectedIndex;
 		//var nhabsec = idx + 6;
-		var nhabprin = 4;
-		var nhabsec = 6;
+		var nhabprin = 5;
+		var nhabsec = 10;
 		var habilidadesprin = "";
 		var habilidadessecun = "";
 		var dotesinvestigativas = "";
@@ -179,10 +179,10 @@
 		
 		document.getElementById("habprimaria").innerHTML="";
 		var indpri=0;
-		for (indpri=0;indpri<4;indpri++) {
+		for (indpri=0;indpri<nhabprin;indpri++) {
 			var n=1+indpri;
 			var habn = pj.habprimarias[indpri];
-			document.getElementById("habprimaria").innerHTML += "<br/><strong>Habilidad " + n + "</strong>: " + habn;
+			document.getElementById("habprimaria").innerHTML += "<br/><strong>Puntuación " + n + "</strong>: " + habn;
 		}
 		
 		document.getElementById("habsecundaria").innerHTML="";
@@ -190,7 +190,7 @@
 		for (indsec=0;indsec<nhabsec;indsec++) {
 			var n=1+indsec;
 			var habn = pj.habsecundarias[indsec];
-			document.getElementById("habsecundaria").innerHTML += "<br/><strong>Habilidad " + n + "</strong>: " + habn;
+			document.getElementById("habsecundaria").innerHTML += "<br/><strong>Puntuación " + n + "</strong>: " + habn;
 		}
 		document.getElementById("dotesinvestigativas").innerHTML = "";
 		document.getElementById("profesion").innerHTML="";
@@ -200,6 +200,7 @@
 			document.getElementById("habprimaria").innerHTML += "<br/><br/><strong>" + habilidadesprin + "</strong>";
 			document.getElementById("habsecundaria").innerHTML += "<br/><br/><strong>" + habilidadessecun + "</strong>";
 			document.getElementById("dotesinvestigativas").innerHTML += "<br/><br/><strong>" + dotesinvestigativas + "</strong>";
+			document.getElementById("atributos").innerHTML += "<br/><br/><hr/><strong>Requisitos</strong>: " + requisitos;
 		}
 		
 	}
