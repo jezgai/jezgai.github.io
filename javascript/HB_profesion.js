@@ -131,6 +131,24 @@ class Profesiones {
 			  dotesinvestigativas : "Elige 6 dotes entre: Adulación, Alta Sociedad, Astronomía, Botánica, Callejeo, Demoliciones, Espionaje, Fabricar, Flirtear, Fotografía, Geología, Idiomas, Jerga Militar, Mecánica de Vehículos, Medicina, Química, Tozudo o Vigilancia Electrónica",
 			  requisito : "",
 			},
+			{
+			  nombre : "Científico",
+			  habprincipales : "Ciencia Natural, Conocimiento Académico, Mantenimiento y Primeros Auxilios",
+			  nhabprincipales : 4,
+			  habsecundarias : "Conducir, Explosivos, Humanidades, Negociar, Ocultar, Percepción, Persuasión y Preparación",
+			  nhabsecundarias : 8,
+			  dotesinvestigativas : "Elige 7 dotes entre: Adulación, Análisis de Datos, Análisis de Documentos, Análisis de Textos, Antropología, Antropología Forense, Arqueología, Arquitectura, Astronomía, Balística, Biología, Botánica, Burocracia, Criptografía, Demoliciones, Entomología Forense, Fabricar, Fotografía, Geología, Idiomas, Investigar, Medicina o Química",
+			  requisito : "Perspicacia 60",
+			},
+			{
+			  nombre : "Criminal",
+			  habprincipales : "Infiltración, Liderazgo, Pelear y Vigilancia",
+			  nhabprincipales : 4,
+			  habsecundarias : "Conducir, Disparar, Explosivos, Hurtar, Juego, Negociar, Ocultar, Percepción, Persuasión y Presencia",
+			  nhabsecundarias : 10,
+			  dotesinvestigativas : "Elige 6 dotes entre: Adulación, Balística, Callejeo, Cerrajería, Detección de Mentiras, Fotografía, Huellas Dactilares, Interrogatorio, Intimidación, Jerga Policial, Lengua de Plata, Negociador Innato, Recogida de Pruebas, Robar Coches o Vigilancia Electrónica",
+			  requisito : "",
+			},
 		]
 	}
 	
