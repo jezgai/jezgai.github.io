@@ -152,13 +152,13 @@
 													  "<tr><td><strong>Perspicacia</strong></td><td>" + pj.perspicacia +
 													  " </td><td>" + construyeBoton('perspicacia') + "</td></tr>" + 
 													  "<tr><td><strong>Carisma</strong></td><td>" + pj.carisma +
-													  " </td><td>" + construyeBoton('carisma') + "</td></tr></table";
-		document.getElementById("atributos").innerHTML += "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>Suerte</strong></td><td>" + pj.suerte + "</td></tr></table";
-		document.getElementById("atributos").innerHTML += "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>PV</strong></td><td>" + pj.pv + "</td></tr>" + 
+													  " </td><td>" + construyeBoton('carisma') + "</td></tr></table>";
+		document.getElementById("atributos").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border'><tr><td><strong>Suerte</strong></td><td>" + pj.suerte + "</td></tr></table";
+		document.getElementById("atributos").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border'><tr><td><strong>PV</strong></td><td>" + pj.pv + "</td></tr>" + 
             		                                  "<tr><td><strong>Pegada</strong></td><td>" + pj.pegada + "</td></tr>" +
-													  "<tr><td><strong>Movimiento</strong></td><td>" + pj.mov + "</td></tr></table";
-		document.getElementById("atributos").innerHTML += "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>% extra en habilidades</strong></td><td>" + pj.porchabper + "%</td></tr>" + 
-													  "<tr><td><strong>% extra en habilidades sociales</strong></td><td>" + pj.porchabcar + "%</td></tr></table";
+													  "<tr><td><strong>Movimiento</strong></td><td>" + pj.mov + "</td></tr></table>";
+		document.getElementById("atributos").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border'><tr><td><strong>% extra en habilidades</strong></td><td>" + pj.porchabper + "%</td></tr>" + 
+													  "<tr><td><strong>% extra en habilidades sociales</strong></td><td>" + pj.porchabcar + "%</td></tr></table>";
 	}
 	
 	
@@ -225,11 +225,11 @@
 		if ( hayprofesiones == 1 )
 		{
 			document.getElementById("profesion").innerHTML="<p><strong><center>PROFESIÓN: " + nbprofesion + "</center></strong></p>";
-			document.getElementById("habprimaria").innerHTML += "<br/><br/><strong>" + habilidadesprin + "</strong>";
-			document.getElementById("habsecundaria").innerHTML += "<br/><br/><strong>" + habilidadessecun + "</strong>";
-			document.getElementById("dotesinvestigativas").innerHTML += "<br/><br/><strong>" + dotesinvestigativas + "</strong>";
+			document.getElementById("habprimaria").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border' <tr><td><strong>Habilidades principales de " + nbprofesion + "</strong></td></tr><tr><td>" + habilidadesprin + "</td></tr></table>";
+			document.getElementById("habsecundaria").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border' <tr><td><strong>Habilidades secundarias de " + nbprofesion + "</strong></td></tr><tr><td>" + habilidadessecun + "</td></tr></table>";
+			document.getElementById("dotesinvestigativas").innerHTML += "<table class='w3-table  w3-striped  w3-border' <tr><td><strong>Dotes investigativas de " + nbprofesion + "</strong></td></tr><tr><td>" + dotesinvestigativas + "</td></tr></table>";
 			if ( requisitos != "" )
-				document.getElementById("atributos").innerHTML += "<br/><br/><hr/><strong>Requisitos</strong>: " + requisitos;
+				document.getElementById("atributos").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border' <tr><td><strong>Requisitos</strong></td><td>" + requisitos + "</td></tr></table>";
 		}
 		
 	}
@@ -285,8 +285,7 @@
 		</div>
 	</div> 
 	<div class="w3-row">
-		<div class="w3-col s2 w3-center" id="atributos"></div>
-		<div class="w3-col s1"><p></p></div>
+		<div class="w3-col s3 w3-center" id="atributos"></div>
 		<div class="w3-col s3 w3-center" id="habprimaria"></div>
 		<div class="w3-col s3 w3-center" id="habsecundaria"></div>
 		<div class="w3-col s3 w3-center" id="dotesinvestigativas"></div>
