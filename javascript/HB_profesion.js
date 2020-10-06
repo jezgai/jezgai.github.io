@@ -149,6 +149,42 @@ class Profesiones {
 			  dotesinvestigativas : "Elige 6 dotes entre: Adulación, Balística, Callejeo, Cerrajería, Detección de Mentiras, Fotografía, Huellas Dactilares, Interrogatorio, Intimidación, Jerga Policial, Lengua de Plata, Negociador Innato, Recogida de Pruebas, Robar Coches o Vigilancia Electrónica",
 			  requisito : "",
 			},
+			{
+			  nombre : "Detective privado",
+			  habprincipales : "Infiltración, Pelear, Percepción y Vigilancia",
+			  nhabprincipales : 4,
+			  habsecundarias : "Conducir, Conocimiento Académico, Disparar, Hurtar, Liderazgo, Juego, Ocultar, Persuasión, Primeros Auxilios y Presencia",
+			  nhabsecundarias : 10,
+			  dotesinvestigativas : "Elige 6 dotes entre: Adulación, Análisis de Datos, Arquitectura, Balística, Burocracia, Callejeo, Consuelo, Criptografía, Derecho, Detección de Mentiras, Espionaje, Fotografía, Huellas Dactilares, Interrogatorio, Intimidación, Investigar, Jerga Policial, Líder Innato, Mecánica de Vehículos, Recogida de Pruebas, Robar Coches o Tozudo",
+			  requisito : "",
+			},
+			{
+			  nombre : "Diletante",
+			  habprincipales : "Liderazgo, Negociar, Persuasión y Presencia",
+			  nhabprincipales : 4,
+			  habsecundarias : "Escoge 10 Habilidades (que no sean Habilidades principales)",
+			  nhabsecundarias : 10,
+			  dotesinvestigativas : "Elige 6 dotes entre: Adulación y Alta Sociedad son obligatorias para todos los diletantes. Deben escoger también entre Negociación o Negociador Innato. Y escogen 3 Dotes Investigativas más que deben estar relacionadas con las Habilidades principales o secundarias que tenga el personaje",
+			  requisito : "",
+			},
+			{
+			  nombre : "Diplomático",
+			  habprincipales : "Liderazgo, Negociar, Persuasión y Presencia",
+			  nhabprincipales : 4,
+			  habsecundarias : "Conocimiento Académico, Disparar, Humanidades, Juego, Montar, Pelear, Percepción, Preparación, Primeros Auxilios y Supervivencia",
+			  nhabsecundarias : 10,
+			  dotesinvestigativas : "Elige 6 dotes entre: Adulación, Alta Sociedad, Análisis de Datos, Análisis de Documentos, Análisis de Textos, Antropología, Arqueología, Burocracia, Contabilidad Forense, Criptografía, Derecho, Detección de Mentiras, Espionaje, Flirtear, Fotografía, Historia, Historia del Arte, Idiomas, Imitar, Interrogatorio, Intimidación, Lengua de Plata, Líder Innato, Negociación, Negociador Innato y Trivialidades",
+			  requisito : "Perspicacia 50",
+			},
+			{
+			  nombre : "Escritor",
+			  habprincipales : "Conocimiento Académico, Humanidades, Percepción y Persuasión",
+			  nhabprincipales : 4,
+			  habsecundarias : "Ciencia Natural, Conducir, Negociar, Pelear, Preparación y Presencia",
+			  nhabsecundarias : 6,
+			  dotesinvestigativas : "Elige 8 dotes entre: Adulación, Alta sociedad, Análisis de Datos, Análisis de Documentos, Análisis de Textos, Antropología, Arqueología, Astronomía, Balística, Callejeo, Consuelo, Criptografía, Detección de Mentiras, Espionaje, Flirtear, Historia, Historia del Arte, Historia Oral, Idiomas, Investigar, Lengua de Plata, Lingüística, Ocultismo, Religión Comparada, Tozudo o Trivialidades",
+			  requisito : "Perspicacia 60",
+			},
 		]
 	}
 	
