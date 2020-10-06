@@ -140,10 +140,27 @@
 	   return strbutton;
 	}
 	function pintaatributos() {
+		/*
 		document.getElementById("atributos").innerHTML = "<p align='right'><strong>Vigor</strong>: " + pj.vigor + " " + construyeBoton('vigor') + "<br/><strong>Destreza</strong>: " + pj.destreza + " " + construyeBoton('destreza') + "<br/><strong>Perspicacia</strong>: " + pj.perspicacia + " " + construyeBoton('perspicacia') + "<br/><strong>Carisma</strong>: " + pj.carisma + " " + construyeBoton('carisma') + "</p><br/><strong>Suerte</strong>: " + pj.suerte;
 		document.getElementById("atributos").innerHTML += "<br/><br/><strong>PV</strong>: " + pj.pv + "<br/><strong>Pegada</strong>: " + pj.pegada + "<br/><strong>Movimiento</strong>: " + pj.mov;  
 		document.getElementById("atributos").innerHTML += "<br/><br/><hr/><strong>% extra en habilidades</strong>: +" + pj.porchabper + "%<br/><strong>% extra en habilidades sociales</strong>: +" + pj.porchabcar + "%";
+		*/
+		document.getElementById("atributos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>Vigor</strong></td><td>" + pj.vigor +
+													  " </td><td>" + construyeBoton('vigor') + "</td></tr>" + 
+            		                                  "<tr><td><strong>Destreza</strong></td><td>" + pj.destreza +
+													  " </td><td>" + construyeBoton('destreza') + "</td></tr>" +
+													  "<tr><td><strong>Perspicacia</strong></td><td>" + pj.perspicacia +
+													  " </td><td>" + construyeBoton('perspicacia') + "</td></tr>" + 
+													  "<tr><td><strong>Carisma</strong></td><td>" + pj.carisma +
+													  " </td><td>" + construyeBoton('carisma') + "</td></tr></table";
+		document.getElementById("atributos").innerHTML += "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>Suerte</strong></td><td>" + pj.suerte + "</td></tr></table";
+		document.getElementById("atributos").innerHTML += "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>PV</strong></td><td>" + pj.pv + "</td></tr>" + 
+            		                                  "<tr><td><strong>Pegada</strong></td><td>" + pj.pegada + "</td></tr>" +
+													  "<tr><td><strong>Movimiento</strong></td><td>" + pj.mov + "</td></tr></table";
+		document.getElementById("atributos").innerHTML += "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>% extra en habilidades</strong></td><td>" + pj.porchabper + "%</td></tr>" + 
+													  "<tr><td><strong>% extra en habilidades sociales</strong></td><td>" + pj.porchabcar + "%</td></tr></table";
 	}
+	
 	
 	function calcula() {
 		/*tiraatributos();
@@ -177,26 +194,37 @@
 		
 		pintaatributos(pj);
 		
-		document.getElementById("habprimaria").innerHTML="";
+		var strtabla = "<table class='w3-table  w3-striped  w3-border'>";
 		var indpri=0;
+		
 		for (indpri=0;indpri<nhabprin;indpri++) {
 			var n=1+indpri;
 			var habn = pj.habprimarias[indpri];
-			document.getElementById("habprimaria").innerHTML += "<br/><strong>Puntuación " + n + "</strong>: " + habn;
+			//document.getElementById("habprimaria").innerHTML += "<br/><strong>Puntuación " + n + "</strong>: " + habn;
+			strtabla += "<tr><td><strong>Puntuación " + n + "</strong></td><td>" + habn + "</td></tr>";
 		}
+		strtabla += "</table>";
+		document.getElementById("habprimaria").innerHTML = strtabla;
+		//document.getElementById("habsecundaria").innerHTML="";
 		
-		document.getElementById("habsecundaria").innerHTML="";
+		strtabla = "<table class='w3-table  w3-striped  w3-border'>";
+		
 		var indsec=0;
 		for (indsec=0;indsec<nhabsec;indsec++) {
 			var n=1+indsec;
 			var habn = pj.habsecundarias[indsec];
-			document.getElementById("habsecundaria").innerHTML += "<br/><strong>Puntuación " + n + "</strong>: " + habn;
+			//document.getElementById("habsecundaria").innerHTML += "<br/><strong>Puntuación " + n + "</strong>: " + habn;
+			strtabla += "<tr><td><strong>Puntuación " + n + "</strong></td><td>" + habn + "</td></tr>";
 		}
+		
+		strtabla += "</table>";
+		document.getElementById("habsecundaria").innerHTML = strtabla;
+		
 		document.getElementById("dotesinvestigativas").innerHTML = "";
 		document.getElementById("profesion").innerHTML="";
 		if ( hayprofesiones == 1 )
 		{
-			document.getElementById("profesion").innerHTML="<p><strong><center>" + nbprofesion + "</center></strong></p>";
+			document.getElementById("profesion").innerHTML="<p><strong><center>PROFESIÓN: " + nbprofesion + "</center></strong></p>";
 			document.getElementById("habprimaria").innerHTML += "<br/><br/><strong>" + habilidadesprin + "</strong>";
 			document.getElementById("habsecundaria").innerHTML += "<br/><br/><strong>" + habilidadessecun + "</strong>";
 			document.getElementById("dotesinvestigativas").innerHTML += "<br/><br/><strong>" + dotesinvestigativas + "</strong>";
@@ -264,6 +292,7 @@
 		<div class="w3-col s3 w3-center" id="dotesinvestigativas"></div>
 	</div> 
 	<a id="downloadpjsonpj" style="display:none"></a>
+	<script>conprofesiones();</script>
 </body>
 </html>
 
