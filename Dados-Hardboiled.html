@@ -200,7 +200,8 @@
 			document.getElementById("habprimaria").innerHTML += "<br/><br/><strong>" + habilidadesprin + "</strong>";
 			document.getElementById("habsecundaria").innerHTML += "<br/><br/><strong>" + habilidadessecun + "</strong>";
 			document.getElementById("dotesinvestigativas").innerHTML += "<br/><br/><strong>" + dotesinvestigativas + "</strong>";
-			document.getElementById("atributos").innerHTML += "<br/><br/><hr/><strong>Requisitos</strong>: " + requisitos;
+			if ( requisitos != "" )
+				document.getElementById("atributos").innerHTML += "<br/><br/><hr/><strong>Requisitos</strong>: " + requisitos;
 		}
 		
 	}

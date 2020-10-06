@@ -122,6 +122,15 @@ class Profesiones {
 			  dotesinvestigativas : "Elige 6 dotes entre: Adulación, Alta Sociedad, Burocracia, Consuelo, Espionaje, Flirtear, Imitar, Intimidación y Trivialidades. Si como Habilidad secundaria ha escogido Ciencia Natural puede escoger también una de estas Dotes Investigativas como parte de las 6 que tiene que escoger: Biología, Botánica, Geología, Medicina o Química. Si como Habilidad secundaria ha escogido Humanidades puede escoger también una de estas Dotes Investigativas como parte de las 6 que tiene que escoger: Análisis de Textos, Fotografía, Historia, Historia del Arte, Idiomas o Lingüística",
 			  requisito : "Vigor y Destreza 50",
 			},
+			{
+			  nombre : "Aviador",
+			  habprincipales : "Disparar, Percepción, Pilotar y Supervivencia",
+			  nhabprincipales : 4,
+			  habsecundarias : "Ciencia Natural, Conducir, Explosivos, Humanidades, Juego, Liderazgo, Mantenimiento, Pelear, Preparación y Primeros Auxilios",
+			  nhabsecundarias : 10,
+			  dotesinvestigativas : "Elige 6 dotes entre: Adulación, Alta Sociedad, Astronomía, Botánica, Callejeo, Demoliciones, Espionaje, Fabricar, Flirtear, Fotografía, Geología, Idiomas, Jerga Militar, Mecánica de Vehículos, Medicina, Química, Tozudo o Vigilancia Electrónica",
+			  requisito : "",
+			},
 		]
 	}
 	
