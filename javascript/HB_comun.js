@@ -74,6 +74,16 @@ class Comun {
 		return numero;
 	}
 	
+	static desplegableProfesiones(aProfesiones, nbFuncSel) {
+		
+		var sprofesiones=" <strong>Profesion:</strong> <select class='w3-select'  name='profesion' onchange='" + nbFuncSel + "(this)'><option>--Aleatorio--</option>";
+		var iprofesion=0;
+		for (iprofesion=0; iprofesion< aProfesiones.profesiones.length; iprofesion++) {
+			sprofesiones += "<option>" + aProfesiones.profesiones[iprofesion].nombre + "</option>";
+		}
+		sprofesiones += "</select>";
+		return sprofesiones;
+	}
 		
 	/*static clone(ar) {
 		return ar.slice(0);

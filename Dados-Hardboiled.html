@@ -1,63 +1,181 @@
 <html>
 <head>
 <meta charset="utf-8" />
+<title>Hardboiled - Ayuda para crear personajes<</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="javascript/HB_comun.js"></script>
 <script src="javascript/HB_PJ.js"></script>
+<script src="javascript/HB_profesion.js"></script>
 
 <script>
 	
-	function tiraatributos() {
-		var vigor = Comun.atributo();
-		var destreza = Comun.atributo();
-		var perspicacia = Comun.atributo();
-		var carisma = Comun.atributo();
-		var suerte = Comun.suerte();
-		document.getElementById("atributos").innerHTML = "<strong>Vigor</strong>: " + vigor + "<br/><strong>Destreza</strong>: " + destreza + "<br/><strong>Perspicacia</strong>: " + perspicacia + "<br/><strong>Carisma</strong>: " + carisma + "<br/><strong>Suerte</strong>: " + suerte;
-	}
 	
-	function tirahabprimaria() {
-		var hab1 = Comun.habilidadprimaria();
-		var hab2 = Comun.habilidadprimaria();
-		var hab3 = Comun.habilidadprimaria();
-		var hab4 = Comun.habilidadprimaria();
-		document.getElementById("habprimaria").innerHTML = "<strong>Habilidad 1</strong>: " + hab1 + "<br/><strong>Habilidad 2</strong>: " + hab2 + "<br/><strong>Habilidad 3</strong>: " + hab3 + "<br/><strong>Habilidad 4</strong>: " + hab4;
-	}
+	let profesiones = new Profesiones();
+
+	let pj = new HB_PJ();
 	
-	function tirahabsecundaria() {
-		var hab1 = Comun.habilidadsecundaria();
-		var hab2 = Comun.habilidadsecundaria();
-		var hab3 = Comun.habilidadsecundaria();
-		var hab4 = Comun.habilidadsecundaria();
-		var hab5 = Comun.habilidadsecundaria();
-		var hab6 = Comun.habilidadsecundaria();
-		
-		document.getElementById("habsecundaria").innerHTML = "<strong>Habilidad 1</strong>: " + hab1 + "<br/><strong>Habilidad 2</strong>: " + hab2 + "<br/><strong>Habilidad 3</strong>: " + hab3 + "<br/><strong>Habilidad 4</strong>: " + hab4 + "<br/><strong>Habilidad 5</strong>: " + hab5 + "<br/><strong>Habilidad 6</strong>: " + hab6;
-		var objselect = document.getElementById("nsecun");
-		var idx = objselect.selectedIndex;
-		for (indice=0;indice<idx;indice++) {
-			var n=7+indice;
-			var habn = Comun.habilidadsecundaria();
-			document.getElementById("habsecundaria").innerHTML += "<br/><strong>Habilidad " + n + "</strong>: " + habn;
+	let nombreprofesion = 'random';
+	let hayprofesiones = 0;
+	
+	let sprofesiones = Comun.desplegableProfesiones(profesiones, "seleccionaprofesion");
+	
+	
+
+	function seleccionaprofesion(thelist) {
+		var idx = thelist.selectedIndex;
+		var seleccionado = thelist.options[idx].innerHTML;
+		if ( idx < 1 ) {
+			seleccionado = 'random';
 		}
+		nombreprofesion = seleccionado;
 	}
+		
+	
+	function arriba(atributo) {
+		if ( atributo == 'vigor' ) {
+			var vigor = pj.vigor;
+			var carisma = pj.carisma;
+			pj.vigor = pj.carisma;
+			pj.carisma = vigor;
+			if ( vigor != pj.vigor ) {
+				pj.calculapegadapv();
+				pj.rangomovimiento();
+			}
+			if ( carisma != pj.carisma ) {
+				pj.porccarisma();
+			}
+		}
+		else if ( atributo == 'destreza' ) {
+			var vigor = pj.vigor;
+			var destreza = pj.destreza;
+			pj.vigor = pj.destreza;
+			pj.destreza = vigor;
+			if ( vigor != pj.vigor ) {
+				pj.calculapegadapv();
+			}
+		}
+		else if ( atributo == 'perspicacia' ) {
+			var perspicacia = pj.perspicacia;
+			var destreza = pj.destreza;
+			pj.perspicacia = pj.destreza;
+			pj.destreza = perspicacia;
+			if ( destreza != pj.destreza ) {
+				pj.rangomovimiento();
+			}
+			if ( perspicacia != pj.perspicacia ) {
+				pj.porcperspicacia();
+			}
+		}
+		else {
+			var perspicacia = pj.perspicacia;
+			var carisma = pj.carisma;
+			pj.perspicacia = pj.carisma;
+			pj.carisma = perspicacia;
+			if ( perspicacia != pj.perspicacia ) {
+				pj.porcperspicacia();
+			}
+			if ( carisma != pj.carisma ) {
+				pj.porccarisma();
+			}
+		}
+		pintaatributos();
+	}
+
+	function abajo(atributo) {
+		if ( atributo == 'vigor' ) {
+			var vigor = pj.vigor;
+			var destreza = pj.destreza;
+			pj.vigor = pj.destreza;
+			pj.destreza = vigor;
+			if ( vigor != pj.vigor ) {
+				pj.calculapegadapv();
+			}
+		}
+		else if ( atributo == 'destreza' ) {
+			var perspicacia = pj.perspicacia;
+			var destreza = pj.destreza;
+			pj.perspicacia = pj.destreza;
+			pj.destreza = perspicacia;
+			if ( destreza != pj.destreza ) {
+				pj.rangomovimiento();
+			}
+			if ( perspicacia != pj.perspicacia ) {
+				pj.porcperspicacia();
+			}
+		}
+		else if ( atributo == 'perspicacia' ) {
+			var perspicacia = pj.perspicacia;
+			var carisma = pj.carisma;
+			pj.perspicacia = pj.carisma;
+			pj.carisma = perspicacia;
+			if ( perspicacia != pj.perspicacia ) {
+				pj.porcperspicacia();
+			}
+			if ( carisma != pj.carisma ) {
+				pj.porccarisma();
+			}
+		}
+		else {
+			var vigor = pj.vigor;
+			var carisma = pj.carisma;
+			pj.vigor = pj.carisma;
+			pj.carisma = vigor;
+			if ( vigor != pj.vigor ) {
+				pj.calculapegadapv();
+				pj.rangomovimiento();
+			}
+			if ( carisma != pj.carisma ) {
+				pj.porccarisma();
+			}
+		}
+		pintaatributos();
+		
+	}
+
+	function construyeBoton(atributo)
+	{
+	   var strbutton = "<button class=\"w3-button w3-circle w3-green w3-padding-small w3-tiny\" onclick=\"arriba('" + atributo + "')\">&#9650;</button><button class=\"w3-button w3-circle w3-green w3-padding-small w3-tiny\" onclick=\"abajo('" + atributo + "')\">&#9660;</button>";
+	   return strbutton;
+	}
+	function pintaatributos() {
+		document.getElementById("atributos").innerHTML = "<p align='right'><strong>Vigor</strong>: " + pj.vigor + " " + construyeBoton('vigor') + "<br/><strong>Destreza</strong>: " + pj.destreza + " " + construyeBoton('destreza') + "<br/><strong>Perspicacia</strong>: " + pj.perspicacia + " " + construyeBoton('perspicacia') + "<br/><strong>Carisma</strong>: " + pj.carisma + " " + construyeBoton('carisma') + "</p><br/><strong>Suerte</strong>: " + pj.suerte;
+		document.getElementById("atributos").innerHTML += "<br/><br/><strong>PV</strong>: " + pj.pv + "<br/><strong>Pegada</strong>: " + pj.pegada + "<br/><strong>Movimiento</strong>: " + pj.mov;  
+		document.getElementById("atributos").innerHTML += "<br/><br/><hr/><strong>% extra en habilidades</strong>: +" + pj.porchabper + "%<br/><strong>% extra en habilidades sociales</strong>: +" + pj.porchabcar + "%";
+	}
+	
 	function calcula() {
 		/*tiraatributos();
 		tirahabprimaria();
 		tirahabsecundaria();*/
 		
 		var objselect = document.getElementById("nsecun");
-		var idx = objselect.selectedIndex;
-		var nhabsec = idx + 6;
+		//var idx = objselect.selectedIndex;
+		//var nhabsec = idx + 6;
+		var nhabprin = 4;
+		var nhabsec = 6;
+		var habilidadesprin = "";
+		var habilidadessecun = "";
+		var dotesinvestigativas = "";
+		var requisitos = "";
 		
-		let pj = new HB_PJ();
-		pj.genera(4, nhabsec);
+		if ( hayprofesiones == 1) {
+			profesion = profesiones.profesion(nombreprofesion);
+			nhabprin = profesion.nhabprincipales;
+			nhabsec = profesion.nhabsecundarias;
+			habilidadesprin = profesion.habprincipales;
+			habilidadessecun = profesion.habsecundarias;
+			dotesinvestigativas = profesion.dotesinvestigativas;
+			requisitos = profesion.requisito;
+			nombreprofesion = profesion.nombre;
+		}
+		
+		pj = new HB_PJ();
+		pj.genera(nhabprin, nhabsec);
 		
 		
-		document.getElementById("atributos").innerHTML = "<strong>Vigor</strong>: " + pj.vigor + "<br/><strong>Destreza</strong>: " + pj.destreza + "<br/><strong>Perspicacia</strong>: " + pj.perspicacia + "<br/><strong>Carisma</strong>: " + pj.carisma + "<br/><strong>Suerte</strong>: " + pj.suerte;
-		document.getElementById("atributos").innerHTML += "<br/><br/><strong>PV</strong>: " + pj.pv + "<br/><strong>Pegada</strong>: " + pj.pegada + "<br/><strong>Movimiento</strong>: " + pj.mov;  
-		document.getElementById("atributos").innerHTML += "<br/><br/><hr/><strong>% extra en habilidades</strong>: +" + pj.porchabper + "%<br/><strong>% extra en habilidades sociales</strong>: +" + pj.porchabcar + "%";
+		pintaatributos(pj);
 		
 		document.getElementById("habprimaria").innerHTML="";
 		var indpri=0;
@@ -74,45 +192,76 @@
 			var habn = pj.habsecundarias[indsec];
 			document.getElementById("habsecundaria").innerHTML += "<br/><strong>Habilidad " + n + "</strong>: " + habn;
 		}
+		document.getElementById("dotesinvestigativas").innerHTML = "";
+		document.getElementById("profesion").innerHTML="";
+		if ( hayprofesiones == 1 )
+		{
+			document.getElementById("profesion").innerHTML="<p><strong><center>" + nombreprofesion + "</center></strong></p>";
+			document.getElementById("habprimaria").innerHTML += "<br/><br/><strong>" + habilidadesprin + "</strong>";
+			document.getElementById("habsecundaria").innerHTML += "<br/><br/><strong>" + habilidadessecun + "</strong>";
+			document.getElementById("dotesinvestigativas").innerHTML += "<br/><br/><strong>" + dotesinvestigativas + "</strong>";
+		}
 		
+	}
+	
+	function descarga() {
+		var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pj));
+		var jsonElem = document.getElementById('downloadpjsonpj');
+		jsonElem.setAttribute("href",     dataStr     );
+		jsonElem.setAttribute("download", "pj.json");
+		jsonElem.click();
+		
+	}
+	
+	function conprofesiones() {
+		document.getElementById("atributos").innerHTML="";
+		document.getElementById("habprimaria").innerHTML="";
+		document.getElementById("habsecundaria").innerHTML="";
+		document.getElementById("dotesinvestigativas").innerHTML="";
+		document.getElementById("profesion").innerHTML="";
+		
+		hayprofesiones = 1;
+		document.getElementById("profesiones").innerHTML = sprofesiones;
+		//document.getElementById("botonprofesion").innerHTML = "<p></p>";
 	}
 	
 </script>
 </head>
 <body >
-	<div class="w3-container w3-teal">
-	  <h2>Hardboiled - dados para crear personajes</h2>
+	<div class="w3-container w3-teal w3-center">
+	  <h2>Hardboiled - Ayuda para crear personajes</h2>
 	</div>
 	<div class="w3-row">
-		<div class="w3-col s3"><p></p></div>
-		<div class="w3-col s6"><p><button class='w3-button w3-block w3-teal' onclick='calcula()'>Calcula</button></p></div>
-		<div class="w3-col s3"><p></p></div>
+		<div class="w3-col s1"><p></p></div>
+		<div class="w3-col s1" id="profesiones"><p><button class='w3-button w3-block w3-teal' onclick='conprofesiones()'>Profesiones</button></p></div>
+		<div class="w3-col s2"><p></p></div>
+		<div class="w3-col s3"><p><button class='w3-button w3-block w3-teal' onclick='calcula()'>Calcula</button></p></div>
+		<div class="w3-col s2" id="profesion"><p></p></div>
+		<div class="w3-col s2"><p></p></div>
+		<div class="w3-col s1"><p><button  style="display:none" class='w3-button w3-block w3-teal' onclick='descarga()'>Descarga</button></p></div>
 	</div>
 	<div class="w3-row">
-		<div class="w3-col s3 w3-center">
+		<div class="w3-col s3 w3-center w3-green">
 			<p><strong>Atributos</strong></p>
 		</div>
-		<div class="w3-col s3 w3-center">
+		<div class="w3-col s3 w3-center w3-green">
 			<p><strong>Habilidades principales</strong></p>
 		</div>
-		<div class="w3-col s3 w3-center">
+		<div class="w3-col s3 w3-center w3-green">
 			<p><strong>Habilidades secundarias</strong></p>
 		</div>
-		<div class="w3-col s3 w3-center">
-			<p><select class="w3-select"  name="numsecun" id="nsecun" >
-			<option>6</option>
-			<option>7</option>
-			<option>8</option>
-			<option>9</option>
-			<option selected="selected">10</option>
-		</select></p>
+		<div class="w3-col s3 w3-center w3-green">
+			<p><strong>Dotes investigativas</strong></p>
 		</div>
 	</div> 
 	<div class="w3-row">
-		<div class="w3-col s3 w3-center" id="atributos"></div>
+		<div class="w3-col s2 w3-center" id="atributos"></div>
+		<div class="w3-col s1"><p></p></div>
 		<div class="w3-col s3 w3-center" id="habprimaria"></div>
-		<div class="w3-col s6 w3-center" id="habsecundaria"></div>
+		<div class="w3-col s3 w3-center" id="habsecundaria"></div>
+		<div class="w3-col s3 w3-center" id="dotesinvestigativas"></div>
 	</div> 
+	<a id="downloadpjsonpj" style="display:none"></a>
 </body>
 </html>
 
