@@ -33,7 +33,7 @@
 	}
 		
 	
-	function arriba(atributo) {
+	/*function arriba(atributo) {
 		if ( atributo == 'vigor' ) {
 			var vigor = pj.vigor;
 			var carisma = pj.carisma;
@@ -81,7 +81,7 @@
 			}
 		}
 		pintaatributos();
-	}
+	}*/
 
 	function abajo(atributo) {
 		if ( atributo == 'vigor' ) {
@@ -136,8 +136,9 @@
 
 	function construyeBoton(atributo)
 	{
-	   var strbutton = "<button class=\"w3-button w3-circle w3-green w3-padding-small w3-tiny\" onclick=\"arriba('" + atributo + "')\">&#9650;</button><button class=\"w3-button w3-circle w3-green w3-padding-small w3-tiny\" onclick=\"abajo('" + atributo + "')\">&#9660;</button>";
-	   return strbutton;
+		return "<button class=\"w3-button w3-circle w3-green w3-padding-small w3-tiny\" onclick=\"abajo('" + atributo + "')\">&#9660;</button>";
+	   //var strbutton = "<button class=\"w3-button w3-circle w3-green w3-padding-small w3-tiny\" onclick=\"arriba('" + atributo + "')\">&#9650;</button><button class=\"w3-button w3-circle w3-green w3-padding-small w3-tiny\" onclick=\"abajo('" + atributo + "')\">&#9660;</button>";
+	   //return strbutton;
 	}
 	function pintaatributos() {
 		/*
@@ -170,7 +171,7 @@
 		tirahabprimaria();
 		tirahabsecundaria();*/
 		
-		var objselect = document.getElementById("nsecun");
+		//var objselect = document.getElementById("nsecun");
 		//var idx = objselect.selectedIndex;
 		//var nhabsec = idx + 6;
 		var nhabprin = 5;
@@ -195,7 +196,7 @@
 		pj.genera(nhabprin, nhabsec);
 		
 		
-		pintaatributos(pj);
+		pintaatributos();
 		
 		var strtabla = "<table class='w3-table  w3-striped  w3-border'>";
 		var indpri=0;
@@ -268,7 +269,7 @@
 		<div class="w3-col s1"><p></p></div>
 		<div class="w3-col s1" id="profesiones"><p><button class='w3-button w3-block w3-teal' onclick='conprofesiones()'>Profesiones</button></p></div>
 		<div class="w3-col s2"><p></p></div>
-		<div class="w3-col s3 w3-green"><p><button class='w3-button w3-block w3-green' onclick='calcula()'><strong>Calcula</strong></button></p></div>
+		<div class="w3-col s3 "><p><button class='w3-button w3-block w3-green' onclick='calcula()'><strong>Calcula</strong></button></p></div>
 		<div class="w3-col s2" id="profesion"><p></p></div>
 		<div class="w3-col s2"><p></p></div>
 		<div class="w3-col s1"><p><button  style="display:none" class='w3-button w3-block w3-teal' onclick='descarga()'>Descarga</button></p></div>
