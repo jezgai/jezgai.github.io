@@ -20,7 +20,7 @@
 	let hayprofesiones = 0;
 	
 	let sprofesiones = Comun.desplegableProfesiones(profesiones, "seleccionaprofesion");
-	
+	let requisitos = "";
 	
 
 	function seleccionaprofesion(thelist) {
@@ -159,6 +159,9 @@
 													  "<tr><td><strong>Movimiento</strong></td><td>" + pj.mov + "</td></tr></table>";
 		document.getElementById("atributos").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border'><tr><td><strong>% extra en habilidades</strong></td><td>" + pj.porchabper + "%</td></tr>" + 
 													  "<tr><td><strong>% extra en habilidades sociales</strong></td><td>" + pj.porchabcar + "%</td></tr></table>";
+		
+		if ( requisitos != "" )
+				document.getElementById("atributos").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border' <tr><td><strong>Requisitos</strong></td><td>" + requisitos + "</td></tr></table>";
 	}
 	
 	
@@ -175,7 +178,7 @@
 		var habilidadesprin = "";
 		var habilidadessecun = "";
 		var dotesinvestigativas = "";
-		var requisitos = "";
+		requisitos = "";
 		var nbprofesion = nombreprofesion;
 		if ( hayprofesiones == 1) {
 			profesion = profesiones.profesion(nombreprofesion);
@@ -228,8 +231,8 @@
 			document.getElementById("habprimaria").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border' <tr><td><strong>Habilidades principales de " + nbprofesion + "</strong></td></tr><tr><td>" + habilidadesprin + "</td></tr></table>";
 			document.getElementById("habsecundaria").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border' <tr><td><strong>Habilidades secundarias de " + nbprofesion + "</strong></td></tr><tr><td>" + habilidadessecun + "</td></tr></table>";
 			document.getElementById("dotesinvestigativas").innerHTML += "<table class='w3-table  w3-striped  w3-border' <tr><td><strong>Dotes investigativas de " + nbprofesion + "</strong></td></tr><tr><td>" + dotesinvestigativas + "</td></tr></table>";
-			if ( requisitos != "" )
-				document.getElementById("atributos").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border' <tr><td><strong>Requisitos</strong></td><td>" + requisitos + "</td></tr></table>";
+			//if ( requisitos != "" )
+			//	document.getElementById("atributos").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border' <tr><td><strong>Requisitos</strong></td><td>" + requisitos + "</td></tr></table>";
 		}
 		
 	}
@@ -258,14 +261,14 @@
 </script>
 </head>
 <body >
-	<div class="w3-container w3-teal w3-center">
+	<div class="w3-container w3-green w3-center">
 	  <h2>Hardboiled - Ayuda para crear personajes</h2>
 	</div>
 	<div class="w3-row">
 		<div class="w3-col s1"><p></p></div>
 		<div class="w3-col s1" id="profesiones"><p><button class='w3-button w3-block w3-teal' onclick='conprofesiones()'>Profesiones</button></p></div>
 		<div class="w3-col s2"><p></p></div>
-		<div class="w3-col s3"><p><button class='w3-button w3-block w3-teal' onclick='calcula()'>Calcula</button></p></div>
+		<div class="w3-col s3 w3-green"><p><button class='w3-button w3-block w3-green' onclick='calcula()'><strong>Calcula</strong></button></p></div>
 		<div class="w3-col s2" id="profesion"><p></p></div>
 		<div class="w3-col s2"><p></p></div>
 		<div class="w3-col s1"><p><button  style="display:none" class='w3-button w3-block w3-teal' onclick='descarga()'>Descarga</button></p></div>
