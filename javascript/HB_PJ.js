@@ -203,19 +203,19 @@ class HB_PJ {
 	
 	porccarisma() {
 		this._porchabcar = 30;
-		if ( this._perspicacia <= 20 ) {
+		if ( this._carisma <= 20 ) {
 			this._porchabcar = 5;
 		}
-		else if ( this._perspicacia <= 40 ) {
+		else if ( this._carisma <= 40 ) {
 			this._porchabcar = 10;
 		}
-		else if ( this._perspicacia <= 60 ) {
+		else if ( this._carisma <= 60 ) {
 			this._porchabcar = 15;
 		}
-		else if ( this._perspicacia <= 80 ) {
+		else if ( this._carisma <= 80 ) {
 			this._porchabcar = 20;
 		}
-		else if ( this._perspicacia <= 90 ) {
+		else if ( this._carisma <= 90 ) {
 			this._porchabcar = 25;
 		}
 	}
