@@ -120,6 +120,7 @@
 		pintaatributos();
 		pintaderivados();
 		pintahabilidadesbase();
+		pintacourdura();
 	}
 
 	function construyeBoton(atributo)
@@ -129,43 +130,43 @@
 	   //return strbutton;
 	}
 	function pintaatributos() {
-		document.getElementById("atributos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>FUE</strong></td><td>" + pj.FUE +
+		document.getElementById("atributos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>FUE (Fuerza)</strong></td><td>" + pj.FUE +
 													  " </td><td>" + 5*pj.FUE + 
 													  " </td><td>" + construyeBoton('FUE') + "</td></tr>" +
-            		                                  "<tr><td><strong>CON</strong></td><td>" + pj.CON +
+            		                                  "<tr><td><strong>CON (Constitución)</strong></td><td>" + pj.CON +
 													  " </td><td>" + 5*pj.CON + 
 													  " </td><td>" + construyeBoton('CON') + "</td></tr>" +
-													  "<tr><td><strong>DES</strong></td><td>" + pj.DES +
+													  "<tr><td><strong>DES (Destreza)</strong></td><td>" + pj.DES +
 													  " </td><td>" + 5*pj.DES + 
 													  " </td><td>" + construyeBoton('DES') + "</td></tr>" +
-													  "<tr><td><strong>POD</strong></td><td>" + pj.POD +
+													  "<tr><td><strong>POD (Poder)</strong></td><td>" + pj.POD +
 													  " </td><td>" + 5*pj.POD + 
 													  " </td><td>" + construyeBoton('POD') + "</td></tr>" +
-													  "<tr><td><strong>CAR</strong></td><td>" + pj.CAR +
+													  "<tr><td><strong>CAR (Carisma)</strong></td><td>" + pj.CAR +
 													  " </td><td>" + 5*pj.CAR + 
 													  " </td><td>" + construyeBoton('CAR') + "</td></tr>" + 
-													  "<tr><td><strong>EST</strong></td><td>" + pj.EST +
+													  "<tr><td><strong>EST (Estudios)</strong></td><td>" + pj.EST +
 													  " </td><td>" + 5*pj.EST + 
 													  " </td><td>" + construyeBoton('EST') + "</td></tr></table>";
 
-		document.getElementById("atributos").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border'><tr><td><strong>TAM</strong></td><td>" + pj.TAM +
+		document.getElementById("atributos").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border'><tr><td><strong>TAM (Tamaño)</strong></td><td>" + pj.TAM +
 													  " </td><td>" + 5*pj.TAM + 
 													  " </td><td>" + construyeBoton('TAM') + "</td></tr>" +
-													  "<tr><td><strong>INT</strong></td><td>" + pj.INT +
+													  "<tr><td><strong>INT (Inteligencia)</strong></td><td>" + pj.INT +
 													  " </td><td>" + 5*pj.INT + 
 													  " </td><td> </td></tr></table>";													  
 													  
 	}
 	
 	function pintaderivados() {		
-		document.getElementById("derivados").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>PV</strong></td><td>" + pj.PV + "</td></tr>" +
+		document.getElementById("derivados").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>PV (Puntos de vida)</strong></td><td>" + pj.PV + "</td></tr>" +
             		                                  "<tr><td><strong>Umbral de herida grave</strong></td><td>" + pj.UmbralHerida + "</td></tr>" +
 													  "<tr><td><strong>Modificador al daño</strong></td><td>" + pj.MD + "</td></tr>" +
 													  "<tr><td><strong>Daño simplificado</strong></td><td>" + pj.DSimplificado + "</td></tr>" +
 													  "<tr><td><strong>Idea</strong></td><td>" + pj.Idea + "</td></tr>" +
 													  "<tr><td><strong>Cultura general</strong></td><td>" + pj.CulturaGeneral + "</td></tr>" +
 													  "<tr><td><strong>Suerte</strong></td><td>" + pj.Suerte + "</td></tr>" +
-													  "<tr><td><strong>PM</strong></td><td>" + pj.PM + "</td></tr>" +
+													  "<tr><td><strong>PM (Puntos de magia)</strong></td><td>" + pj.PM + "</td></tr>" +
 													  "<tr><td><strong>Fuerza de voluntad</strong></td><td>" + pj.FuerzaVoluntad + "</td></tr>" +
             		                                  "<tr><td><strong>Puntos en habilidades profesión</strong></td><td>" + pj.PtosProfesion + "</td></tr>" +
 													  "<tr><td><strong>Puntos habilidades</strong></td><td>" + pj.PtosResto + "</td></tr></table>";
@@ -182,6 +183,13 @@
 													  "<tr><td><strong>Forma física (FUE+DES)</strong></td><td>" + (pj.FUE + pj.DES) + "</td>" +
 													  "<td><strong>Protocolo (EST*2)</strong></td><td>" + (pj.EST*2) + "</td></tr>" +
 													  "<tr><td><strong>Lucha (DES*2)</strong></td><td>" + (pj.DES*2) + "</td></tr></table>";
+	}
+	
+	function pintacourdura() {
+		var em1 = Math.ceil(pj.POD/2);
+		var em2 = Math.trunc(pj.POD/2);
+		document.getElementById("cordura").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>Cordura (clásica)</strong></td><td>" + (pj.POD*5) + "</td><tr/><table>" +
+            		                                  "<br/><table class='w3-table  w3-striped  w3-border'><tr><td><strong>Estabilidad mental (alternativa)</strong></td><td>" + em1 + "</td><td>" + em2 + "</td><td>" + em1 + "</td></tr></table>";
 	}
 	
 	function calcula() {
@@ -207,6 +215,7 @@
 			document.getElementById("habilidades").innerHTML= "<br/><table class='w3-table  w3-striped  w3-border' <tr><td><strong>Habilidades de " + nbprofesion + "</strong></td></tr><tr><td>" + habilidades + "</td></tr></table>";
 		}
 		pintahabilidadesbase();
+		pintacourdura()
 	}
 	
 	function descarga() {
@@ -261,10 +270,12 @@
 		<div class="w3-col s4 w3-center" id="habilidades"></div>
 	</div> 
 	<div class="w3-row">
-		<div class="w3-col s12 w3-center w3-gray"><strong>Puntuaciones base de habilidades (derivadas)</strong></div>
+		<div class="w3-col s8 w3-center w3-gray"><strong>Puntuaciones base de habilidades (derivadas)</strong></div>
+		<div class="w3-col s4 w3-center w3-gray"><strong>Cordura</strong></div>
 	</div>
 	<div class="w3-row">
-		<div class="w3-col s12 w3-center" id="habilidadesbase"></div>
+		<div class="w3-col s8 w3-center" id="habilidadesbase"></div>
+		<div class="w3-col s4 w3-center" id="cordura"></div>
 	</div>
 	<a id="downloadpjsonpj" style="display:none"></a>
 	<script>conprofesiones();</script>
