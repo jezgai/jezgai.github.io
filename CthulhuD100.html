@@ -184,6 +184,13 @@
 													  "<tr><td><strong>Lucha (DES*2)</strong></td><td>" + (pj.DES*2) + "</td></tr></table>";
 	}
 	
+	function pintacourdura() {
+		var em1 = Math.ceil(pj.POD/2);
+		var em2 = Math.trunc(pj.POD/2);
+		document.getElementById("cordura").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>Cordura (clásica)</strong></td><td>" + (pj.POD*5) + "</td><tr/><table>" +
+            		                                  "<br/><table class='w3-table  w3-striped  w3-border'><tr><td><strong>Estabilidad mental (alternativa)</strong></td><td>" + em1 + "</td><td>" + em2 + "</td><td>" + em1 + "</td></tr></table>";
+	}
+	
 	function calcula() {
 		
 		var habilidades = "";
@@ -261,10 +268,12 @@
 		<div class="w3-col s4 w3-center" id="habilidades"></div>
 	</div> 
 	<div class="w3-row">
-		<div class="w3-col s12 w3-center w3-gray"><strong>Puntuaciones base de habilidades (derivadas)</strong></div>
+		<div class="w3-col s9 w3-center w3-gray"><strong>Puntuaciones base de habilidades (derivadas)</strong></div>
+		<div class="w3-col s3 w3-center w3-gray"><strong>Cordura</strong></div>
 	</div>
 	<div class="w3-row">
-		<div class="w3-col s12 w3-center" id="habilidadesbase"></div>
+		<div class="w3-col s9 w3-center" id="habilidadesbase"></div>
+		<div class="w3-col s3 w3-center" id="cordura"></div>
 	</div>
 	<a id="downloadpjsonpj" style="display:none"></a>
 	<script>conprofesiones();</script>
