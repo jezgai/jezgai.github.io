@@ -163,6 +163,18 @@
 		
 		if ( requisitos != "" )
 				document.getElementById("atributos").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border' <tr><td><strong>Requisitos</strong></td><td>" + requisitos + "</td></tr></table>";
+				
+		var tensionmental = Math.trunc(pj.perspicacia / 5) - 2;
+		var tranquilo = Math.ceil(tensionmental / 2);
+		var intranquilo = Math.trunc(tensionmental / 2);
+		
+		document.getElementById("atributos").innerHTML += "<hr/><table class='w3-table  w3-striped  w3-border'><tr><td><center><strong>Estabilidad Mental</strong></centeer></td></tr>" + 
+            		                                  "<tr><td><strong>Tranquilo</strong></td><td>" + tranquilo + " </td></tr>" +
+            		                                  "<tr><td><strong>Intranquilo</strong></td><td>" + intranquilo + " </td></tr>" +
+            		                                  "<tr><td><strong>Tenso</strong></td><td>" + tranquilo + " </td></tr></table>" +
+            		                                  "<br/>Hack sacado de Cthulhu D100 que usa en lugar de POD la Perspicacia (se divide por 5, redondea hacia abajo y resta 2 (" +
+            		                                  tensionmental + "). Los valores de tranquilo, intranquilo y tenso se calculan igual que en Cthulhu D100 " + 
+            		                                  "(tranquilo y tenso es el valor anterior dividido por 2 y redondeado hacia arriba e intranquilo igual pero redondeado hacia abajo";
 	}
 	
 	
