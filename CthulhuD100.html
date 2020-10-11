@@ -176,6 +176,7 @@
 		var intimidar = pj.INT * 2;
 		if ( pj.TAM > pj.INT )
 			intimidar = pj.TAM * 2;
+		/*
 		document.getElementById("habilidadesbase").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>Idioma Nativo (EST*5)</strong></td><td>" + (pj.EST*5) + "</td>" +
             		                                  "<td><strong>Autoridad (EST+CAR)</strong></td><td>" + (pj.EST + pj.CAR) + "</td></tr>" +
 													  "<tr><td><strong>Esquivar (DES*2)</strong></td><td>" + (pj.DES*2) + "</td>" +
@@ -183,6 +184,16 @@
 													  "<tr><td><strong>Forma física (FUE+DES)</strong></td><td>" + (pj.FUE + pj.DES) + "</td>" +
 													  "<td><strong>Protocolo (EST*2)</strong></td><td>" + (pj.EST*2) + "</td></tr>" +
 													  "<tr><td><strong>Lucha (DES*2)</strong></td><td>" + (pj.DES*2) + "</td></tr></table>";
+													  */
+
+		document.getElementById("habilidadesbase1").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>Idioma Nativo (EST*5)</strong></td><td>" + (pj.EST*5) + "</td></tr>" +
+													  "<tr><td><strong>Esquivar (DES*2)</strong></td><td>" + (pj.DES*2) + "</td></tr>" +
+													  "<tr><td><strong>Forma física (FUE+DES)</strong></td><td>" + (pj.FUE + pj.DES) + "</td></tr>" +
+													  "<tr><td><strong>Lucha (DES*2)</strong></td><td>" + (pj.DES*2) + "</td></tr></table>";
+													  													  
+		document.getElementById("habilidadesbase2").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>Autoridad (EST+CAR)</strong></td><td>" + (pj.EST + pj.CAR) + "</td></tr>" +
+													  "<tr><td><strong>Esquivar (DES*2)</strong></td><td>" + (pj.DES*2) + "</td></tr>" +
+													  "<tr><td><strong>Protocolo (EST*2)</strong></td><td>" + (pj.EST*2) + "</td></tr></table>";
 	}
 	
 	function pintacourdura() {
@@ -239,43 +250,76 @@
 	}
 	
 </script>
+<style>
+	
+* {
+  box-sizing: border-box;
+}
+.left {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.main {
+  float:left;
+  width:34%;
+  padding:0 1px;
+}
+.right {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+
+
+@media only screen and (max-width:820px) {
+  /* For mobile phones: */
+  .left, .main, .right {
+    width:100%;
+  }
+  
+</style>
 </head>
 <body >
 	<div class="w3-container w3-gray w3-center">
 	  <h2>Cthulhu D100 - Ayuda para crear personajes</h2>
 	</div>
-	<div class="w3-row">
-		<div class="w3-col s1"><p></p></div>
-		<div class="w3-col s1" id="profesiones"><p><button class='w3-button w3-block w3-teal' onclick='conprofesiones()'>Profesiones</button></p></div>
-		<div class="w3-col s2"><p></p></div>
-		<div class="w3-col s3"><p><button class='w3-button w3-block w3-gray' onclick='calcula()'>Calcula</button></p></div>
-		<div class="w3-col s2" id="profesion"><p></p></div>
-		<div class="w3-col s2"><p></p></div>
-		<div class="w3-col s1"><p><button  style="display:none" class='w3-button w3-block w3-teal' onclick='descarga()'>Descarga</button></p></div>
+	<div style="overflow:auto">
+	
+		<div class="left" id="profesiones">
+			<p><button class='w3-button w3-block w3-teal' onclick='conprofesiones()'>Profesiones</button></p>
+		</div>
+		<div class="main"><p><button class='w3-button w3-block w3-gray' onclick='calcula()'>Calcula</button></p></div>
+		<div class="right" id="profesion"><p></p></div>
 	</div>
-	<div class="w3-row">
-		<div class="w3-col s4 w3-center w3-gray">
-			<p><strong>Atributos</strong></p>
+	<div style="overflow:auto">
+	
+		<div class="left">
+			<div class="w3-container w3-gray w3-center"><p><strong>Atributos</strong></p></div> 
+			<div id="atributos"></div>
 		</div>
-		<div class="w3-col s4 w3-center w3-gray">
-			<p><strong>Derivados</strong></p>
+		<div class="main">
+			<div class="w3-container w3-gray w3-center"><p><strong>Derivados</strong></p></div> 
+			<div id="derivados"></div>
 		</div>
-		<div class="w3-col s4 w3-center w3-gray">
-			<p><strong>Habilidades de profesión</strong></p>
+		<div class="right">
+			<div class="w3-container w3-gray w3-center"><p><strong>Habilidades de profesión</strong></p></div> 
+			<div id="habilidades"></div>
 		</div>
-	</div> 
-	<div class="w3-row">
-		<div class="w3-col s4 w3-center" id="atributos"></div>
-		<div class="w3-col s4 w3-center" id="derivados"></div>
-		<div class="w3-col s4 w3-center" id="habilidades"></div>
-	</div> 
-	<div class="w3-row">
-		<div class="w3-col s8 w3-center w3-gray"><strong>Puntuaciones base de habilidades (derivadas)</strong></div>
-		<div class="w3-col s4 w3-center w3-gray"><strong>Cordura</strong></div>
 	</div>
-	<div class="w3-row">
-		<div class="w3-col s8 w3-center" id="habilidadesbase"></div>
-		<div class="w3-col s4 w3-center" id="cordura"></div>
+	<div style="overflow:auto">
+		<div class="left">
+			<div class="w3-container w3-gray w3-center"><p><strong>Puntuaciones base de habilidades (derivadas)</strong></p></div> 
+			<div id="habilidadesbase1"></div>
+		</div>
+		<div class="main">
+			<div class="w3-container w3-gray w3-center"><p><strong>Puntuaciones base de habilidades (derivadas)</strong></p></div> 
+			<div id="habilidadesbase2"></div>
+		</div>
+		<div class="right">
+			<div class="w3-container w3-gray w3-center"><p><strong>Cordura</strong></p></div> 
+			<div id="cordura"></div>
+		</div>
 	</div>
 	<a id="downloadpjsonpj" style="display:none"></a>
 	<script>conprofesiones();</script>
