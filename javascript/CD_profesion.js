@@ -29,23 +29,23 @@ class Profesiones {
 		[
 			{
 			  nombre : "Anticuario",
-			  habilidades :  "Ciencias ocultas, Ciencias sociales y humanidades (Historia y hasta otras dos a su elección), Idioma (uno no nativo), Manejo de archivos / Embaucar-",
+			  habilidades :  "Ciencias ocultas, Ciencias sociales y humanidades (Historia y hasta otras dos a su elección), Idioma (uno no nativo), Manejo de archivos y Embaucar.",
 			},
 			{
 			  nombre : "Detective de la policía",
-			  habilidades :  "Burocracia, Ciencias sociales y humanidades (Criminalística) / Discreción, Esconder/se, Escuchar, Percibir / Autoridad, Intimidar / Armas de fuego (Armas cortas y hasta una más a su elección).",
+			  habilidades :  "Burocracia, Ciencias sociales y humanidades (Criminalística), Discreción, Esconder/se, Escuchar, Percibir, Autoridad, Intimidar y Armas de fuego (Armas cortas y hasta una más a su elección).",
 			},
 			{
 			  nombre : "Detective privado",
-			  habilidades :  "Burocracia / Arte (Interpretación) / Discreción, Esconder/se, Escuchar, Percibir / Bajos fondos, Intimidar / Armas de cuerpo a cuerpo (una a su elección), Armas de Fuego (Armas Cortas), Lucha.",
+			  habilidades :  "Burocracia, Arte (Interpretación), Discreción, Esconder/se, Escuchar, Percibir, Bajos fondos, Intimidar, Armas de cuerpo a cuerpo (una a su elección), Armas de Fuego (Armas Cortas) y Lucha.",
 			},
 			{
 			  nombre : "Diletante",
-			  habilidades :  "Ciencias sociales y humanidades (al menos dos a su elección) / Arte (una a su elección) / Autoridad, Protocolo.",
+			  habilidades :  "Ciencias sociales y humanidades (al menos dos a su elección), Arte (una a su elección), Autoridad y Protocolo.",
 			},
 			{
 			  nombre : "Escritor",
-			  habilidades :  "Ciencias sociales y humanidades (entre una y tres a su elección), Idiomas (uno además del nativo), Manejo de archivos / Arte (Escritura) / Percibir / Autoridad.",
+			  habilidades :  "Ciencias sociales y humanidades (entre una y tres a su elección), Idiomas (uno además del nativo), Manejo de archivos, Arte (Escritura), Percibir y Autoridad.",
 			},
 			{
 			  nombre : "Explorador",
@@ -53,19 +53,19 @@ class Profesiones {
 			},
 			{
 			  nombre : "Médico",
-			  habilidades :  "Ciencias naturales (Biología o Farmacología y hasta una más a su elección), Idiomas (latín), Manejo de archivos, Medicina, Primeros auxilios, Psicología / Percibir / Autoridad.",
+			  habilidades :  "Ciencias naturales (Biología o Farmacología y hasta una más a su elección), Idiomas (latín), Manejo de archivos, Medicina, Primeros auxilios, Psicología, Percibir y Autoridad.",
 			},
 			{
 			  nombre : "Periodista",
-			  habilidades :  "Ciencias sociales y humanidades (al menos una a su elección), Manejo de archivos / Arte (Escritura) / Discreción, Esconder/se, Escuchar, Percibir / y una de estas tres: Psicología, Bajos fondos o Embaucar.",
+			  habilidades :  "Ciencias sociales y humanidades (al menos una a su elección), Manejo de archivos, Arte (Escritura), Discreción, Esconder/se, Escuchar, Percibir y una de estas tres: Psicología, Bajos fondos o Embaucar.",
 			},
 			{
 			  nombre : "Profesor universitario",
-			  habilidades :  "Burocracia, Ciencias naturales (al menos dos a su elección) o Ciencias sociales y humanidades (al menos dos a su elección), Idiomas (al menos uno además del nativo), Manejo de archivos / Autoridad, Oratoria.",
+			  habilidades :  "Burocracia, Ciencias naturales (al menos dos a su elección) o Ciencias sociales y humanidades (al menos dos a su elección), Idiomas (al menos uno además del nativo), Manejo de archivos, Autoridad, Oratoria.",
 			},
 			{
 			  nombre : "Religioso",
-			  habilidades :  "Ciencias naturales (una a su elección), Ciencias ocultas, Ciencias sociales y humanidades (al menos una a su elección), Idiomas (al menos uno además del nativo), Psicología / Autoridad, Oratoria.",
+			  habilidades :  "Ciencias naturales (una a su elección), Ciencias ocultas, Ciencias sociales y humanidades (al menos una a su elección), Idiomas (al menos uno además del nativo), Psicología, Autoridad y Oratoria.",
 			},
 		]
 	}
