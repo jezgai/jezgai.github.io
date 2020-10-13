@@ -19,6 +19,7 @@
 	
 	let nombreclase = 'random';
 	let hayclases = 0;
+	let origen = "";
 	
 	let sclases = Comun.desplegableClases(clases, "seleccionaclases");
 	
@@ -251,6 +252,7 @@
 			pj.Ventajas = clase.ventajas;
 			pj.Habilidades = clase.habilidades;
 			pj.Cordura = clase.cordura;
+			origen = clase.origen;
 		}
 		
 		if ( pj.Atributo == "FUE" )
@@ -269,7 +271,7 @@
 		pintaatributos();
 		//pintaderivados();
 		
-		document.getElementById("clase").innerHTML="<p><strong><center>CLASE: " + nbclase + "</center></strong></p>";
+		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + nbclase + "</strong> (" + origen + ")</center></p>";
 		pintaRecursos();
 		pintaCompetencias();
 		pintaVentajas();
@@ -319,11 +321,17 @@
   width:33%;
   padding:0 1px;
 }
+.total {
+  float:left;
+  width:100%;
+  padding:0 1px;
+}
+
 
 
 @media only screen and (max-width:820px) {
   /* For mobile phones: */
-  .left, .main, .right {
+  .left, .main, .right, .total {
     width:100%;
   }
   
@@ -350,20 +358,23 @@
 		<div class="main">
 			<div class="w3-container w3-brown w3-center"><p><strong>Recursos</strong></p></div> 
 			<div id="recursos"></div>
-		</div>
-		<div class="right">
-			<div class="w3-container w3-brown w3-center"><p><strong>Habilidades</strong></p></div> 
-			<div id="habilidades"></div>
-		</div>
-	</div>
-	<div style="overflow:auto">
-		<div class="left">
+			
 			<div class="w3-container w3-brown w3-center"><p><strong>Competencias</strong></p></div> 
 			<div id="competencias"></div>
 		</div>
 		<div class="right">
 			<div class="w3-container w3-brown w3-center"><p><strong>Ventajas</strong></p></div> 
 			<div id="ventajas"></div>
+		</div>
+	</div>
+	<div style="overflow:auto">
+		<!--<div class="left">
+			<div class="w3-container w3-brown w3-center"><p><strong>Competencias</strong></p></div> 
+			<div id="competencias"></div>
+		</div>-->
+		<div class="total">
+			<div class="w3-container w3-brown w3-center"><p><strong>Habilidades</strong></p></div> 
+			<div id="habilidades"></div>
 		</div>
 	</div>
 	<script>conclases();</script>
