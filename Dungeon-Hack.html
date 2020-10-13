@@ -1,0 +1,373 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Dungeon Hack - Ayuda para crear personajes</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+<link rel="stylesheet" href="css/w3.css">
+<script src="javascript/DH_comun.js"></script>
+<script src="javascript/DH_PJ.js"></script>
+<script src="javascript/DH_clase.js"></script>
+
+<script>
+	
+	
+	let clases = new Clases();
+
+	let pj = new DH_PJ();
+	let atributos = [];
+	
+	let nombreclase = 'random';
+	let hayclases = 0;
+	
+	let sclases = Comun.desplegableClases(clases, "seleccionaclases");
+	
+	
+
+	function seleccionaclases(thelist) {
+		var idx = thelist.selectedIndex;
+		var seleccionado = thelist.options[idx].innerHTML;
+		if ( idx < 1 ) {
+			seleccionado = 'random';
+		}
+		nombreclase = seleccionado;
+	}
+	
+
+	function abajo(atributo) {
+		if ( atributo == 'FUE' ) {
+			var fue = pj.FUE;
+			pj.FUE = pj.DES;
+			pj.DES = fue;
+		}
+		else if ( atributo == 'DES' ) {
+			var des = pj.DES;
+			pj.DES = pj.CON;
+			pj.CON = des;
+		}
+		else if ( atributo == 'CON' ) {
+			var con = pj.CON;
+			pj.CON = pj.INT;
+			pj.INT = con;
+		}
+		else if ( atributo == 'INT' ) {
+			var sab = pj.SAB;
+			pj.SAB = pj.INT;
+			pj.INT = sab;
+		}
+		else if ( atributo == 'SAB' ) {
+			var car = pj.CAR;
+			pj.CAR = pj.SAB;
+			pj.SAB = car;
+		}
+		else if ( atributo == 'CAR' ) {
+			var fue = pj.FUE;
+			pj.FUE = pj.CAR;
+			pj.CAR = fue;
+		}
+		
+		pintaatributos();
+		/*pintaderivados();
+		pintahabilidadesbase();
+		pintacourdura();*/
+	}
+
+	function construyeBoton(atributo)
+	{
+		return "</button><button class=\"w3-button w3-circle w3-brown w3-padding-small w3-tiny\" onclick=\"abajo('" + atributo + "')\">&#9660;</button>";
+	   //var strbutton = "<button class=\"w3-button w3-circle w3-green w3-padding-small w3-tiny\" onclick=\"arriba('" + atributo + "')\">&#9650;</button><button class=\"w3-button w3-circle w3-green w3-padding-small w3-tiny\" onclick=\"abajo('" + atributo + "')\">&#9660;</button>";
+	   //return strbutton;
+	}
+	
+	function pintablancosicero(valor) {
+		if ( valor == 0 )
+			return " ";
+		else
+			return valor;
+	}
+	
+	function checkFUE() {
+		pj.mFUE = -1;
+		pj.Atributo = "FUE";
+		pintaatributos();
+		pintaRecursos();
+	}
+	
+	function checkDES() {
+		pj.mDES = -1;
+		pj.Atributo = "DES";
+		pintaatributos();
+		pintaRecursos();
+	}
+	
+	function checkCON() {
+		pj.mCON = -1;
+		pj.Atributo = "CON";
+		pintaatributos();
+		pintaRecursos();
+	}
+	
+	function checkINT() {
+		pj.mINT = -1;
+		pj.Atributo = "INT";
+		pintaatributos();
+		pintaRecursos();
+	}
+	
+	function checkSAB() {
+		pj.mSAB = -1;
+		pj.Atributo = "SAB";
+		pintaatributos();
+		pintaRecursos();
+	}
+	
+	function checkCAR() {
+		pj.mCAR = -1;
+		pj.Atributo = "CAR";
+		pintaatributos();
+		pintaRecursos();
+	}
+	
+	function pintaatributos() {
+		var checkedFUE="";
+		if (pj.mFUE != 0)
+			checkedFUE = "checked='checked'";
+		var checkedDES="";
+		if (pj.mDES != 0)
+			checkedDES = "checked='checked'";
+		var checkedCON="";
+		if (pj.mCON != 0)
+			checkedCON = "checked='checked'";
+		var checkedINT="";
+		if (pj.mINT != 0)
+			checkedINT = "checked='checked'";
+		var checkedSAB="";
+		if (pj.mSAB != 0)
+			checkedSAB = "checked='checked'";
+		var checkedCAR="";
+		if (pj.mCAR != 0)
+			checkedCAR = "checked='checked'";
+			
+		document.getElementById("atributos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>FUE (Fuerza)</strong></td><td>" + pj.FUE +
+													  "</td><td>" + pintablancosicero(pj.mFUE) + "</td><td>" + (pj.FUE+pj.mFUE) +
+													  " </td><td>" + construyeBoton('FUE') + "</td><td><input type='radio' id='cFUE' name='ratrs' " + checkedFUE + " onclick=\"checkFUE();\"></td></tr>" +
+													  "<tr><td><strong>DES (Destreza)</strong></td><td>" + pj.DES +
+													  "</td><td>" + pintablancosicero(pj.mDES) + "</td><td>" + (pj.DES+pj.mDES) +
+													  " </td><td>" + construyeBoton('DES') + "</td><td><input type='radio' id='cDES' name='ratrs' " + checkedDES + " onclick=\"checkDES();\"></td></tr>" +
+            		                                  "<tr><td><strong>CON (Constitución)</strong></td><td>" + pj.CON +
+													  "</td><td>" + pintablancosicero(pj.mCON) + "</td><td>" + (pj.CON+pj.mCON) +
+													  " </td><td>" + construyeBoton('CON') + "</td><td><input type='radio' id='cCON' name='ratrs' " + checkedCON + " onclick=\"checkCON();\"></td></tr>" +
+													  "<tr><td><strong>INT (Inteligencia)</strong></td><td>" + pj.INT +
+													  "</td><td>" + pintablancosicero(pj.mINT) + "</td><td>" + (pj.INT+pj.mINT) +
+													  " </td><td>" + construyeBoton('INT') + "</td><td><input type='radio' id='cINT' name='ratrs' " + checkedINT + " onclick=\"checkINT();\"></td></tr>" +
+													  "<tr><td><strong>SAB (Sabiduria)</strong></td><td>" + pj.SAB +
+													  "</td><td>" + pintablancosicero(pj.mSAB) + "</td><td>" + (pj.SAB+pj.mSAB) +
+													  " </td><td>" + construyeBoton('SAB') + "</td><td><input type='radio' id='cSAB' name='ratrs' " + checkedSAB + " onclick=\"checkSAB();\"></td></tr>" +
+													  "<tr><td><strong>CAR (Carisma)</strong></td><td>" + pj.CAR +
+													  "</td><td>" + pintablancosicero(pj.mCAR) + "</td><td>" + (pj.CAR+pj.mCAR) +
+													  " </td><td>" + construyeBoton('CAR') + "</td><td><input type='radio' id='cCAR' name='ratrs' " + checkedCAR + " onclick=\"checkCAR();\"></td></tr></table>";
+
+		if ( deshabilitar("FUE") )
+			document.getElementById("cFUE").disabled = true;
+		if ( deshabilitar("DES") )
+			document.getElementById("cDES").disabled = true;
+		if ( deshabilitar("CON") )
+			document.getElementById("cCON").disabled = true;
+		if ( deshabilitar("INT") )
+			document.getElementById("cINT").disabled = true;
+		if ( deshabilitar("SAB") )
+			document.getElementById("cSAB").disabled = true;
+		if ( deshabilitar("CAR") )
+			document.getElementById("cCAR").disabled = true;
+
+	}
+	
+	function pintaRecursos() {
+		document.getElementById("recursos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>Salud</strong></td><td>" + pj.Salud + "</td></tr>" +
+            		                                  "<tr><td><strong>Energía</strong></td><td>" + pj.Energia + "</td></tr>" +
+													  "<tr><td><strong>Cordura</strong></td><td>" + pj.Cordura + "</td></tr></table>";
+	}
+	
+	function pintaCompetencias() {
+		var competencias = "";
+		var icompe = 0;
+		for (icompe = 0; icompe < pj.Competencias.length; icompe++) {
+			competencias += "<tr><td>" + pj.Competencias[icompe] + "</td></tr>";
+		}
+		if ( competencias != "" ) 
+			competencias = "<table class='w3-table  w3-striped  w3-border'>" + competencias + "</table>";
+		document.getElementById("competencias").innerHTML = competencias;
+	}
+	
+	function pintaVentajas() {
+		var ventajas = "";
+		var iventaja = 0;
+		for (iventaja = 0; iventaja < pj.Ventajas.length; iventaja++) {
+			ventajas += "<tr><td>" + pj.Ventajas[iventaja] + "</td></tr>";
+		}
+		if ( ventajas != "" ) 
+			ventajas = "<table class='w3-table  w3-striped  w3-border'>" + ventajas + "</table>";
+		document.getElementById("ventajas").innerHTML = ventajas;
+	}
+	
+	function pintaHabilidades() {
+		var habilidades = "";
+		var ihabilidad = 0;
+		for (ihabilidad = 0; ihabilidad < pj.Habilidades.length; ihabilidad++) {
+			habilidades += "<tr><td>" + pj.Habilidades[ihabilidad] + "</td></tr>";
+		}
+		if ( habilidades != "" ) 
+			habilidades = "<table class='w3-table  w3-striped  w3-border'>" + habilidades + "</table>";
+		document.getElementById("habilidades").innerHTML = habilidades;
+	}
+	
+	
+	function deshabilitar(atrb) {
+		var iatrs=0;
+		for (iatrs=0; iatrs<atributos.length; iatrs++) {
+			if ( atrb == atributos[iatrs] )
+				return false;
+		}
+		return true;
+	}
+	
+	function calcula() {
+		
+		pj = new DH_PJ();
+		pj.genera();
+		
+		atributos = [];
+		var nbclase = nombreclase;
+		if ( hayclases == 1) {
+			clase = clases.clase(nombreclase);
+			pj.Energia = clase.energia;
+			pj.Salud = clase.salud;
+			atributos = clase.atributo;
+			if ( clase.atributo.length == 1 )
+				pj.Atributo = clase.atributo[0];
+			nbclase = clase.nombre;
+			
+			pj.Competencias = clase.competencias;
+			pj.Ventajas = clase.ventajas;
+			pj.Habilidades = clase.habilidades;
+			pj.Cordura = clase.cordura;
+		}
+		
+		if ( pj.Atributo == "FUE" )
+			pj.mFUE = -1;
+		else if ( pj.Atributo == "DES" )
+			pj.mDES = -1;
+		else if ( pj.Atributo == "CON" )
+			pj.mCON = -1;
+		else if ( pj.Atributo == "INT" )
+			pj.mINT = -1;
+		else if ( pj.Atributo == "SAB" )
+			pj.mSAB = -1;
+		else if ( pj.Atributo == "CAR" )
+			pj.mCAR = -1;
+		
+		pintaatributos();
+		//pintaderivados();
+		
+		document.getElementById("clase").innerHTML="<p><strong><center>CLASE: " + nbclase + "</center></strong></p>";
+		pintaRecursos();
+		pintaCompetencias();
+		pintaVentajas();
+		pintaHabilidades();
+	}
+	
+	function descarga() {
+		var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pj));
+		var jsonElem = document.getElementById('downloadpjsonpj');
+		jsonElem.setAttribute("href",     dataStr     );
+		jsonElem.setAttribute("download", "pj.json");
+		jsonElem.click();
+		
+	}
+	
+	function conclases() {
+		document.getElementById("atributos").innerHTML="";
+		document.getElementById("recursos").innerHTML="";
+		document.getElementById("competencias").innerHTML="";
+		document.getElementById("ventajas").innerHTML="";
+		document.getElementById("habilidades").innerHTML="";
+		document.getElementById("clase").innerHTML="";
+		
+		hayclases = 1;
+		document.getElementById("clases").innerHTML = sclases;
+		//document.getElementById("botonclase").innerHTML = "<p></p>";
+	}
+	
+</script>
+<style>
+	
+* {
+  box-sizing: border-box;
+}
+.left {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.main {
+  float:left;
+  width:34%;
+  padding:0 1px;
+}
+.right {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+
+
+@media only screen and (max-width:820px) {
+  /* For mobile phones: */
+  .left, .main, .right {
+    width:100%;
+  }
+  
+</style>
+</head>
+<body >
+	<div class="w3-container w3-brown w3-center">
+	  <h2>Dungeon Hack - Ayuda para crear personajes</h2>
+	</div>
+	<div style="overflow:auto">
+	
+		<div class="left" id="clases">
+			<p><button class='w3-button w3-block w3-teal' onclick='conclases()'>Clases</button></p>
+		</div>
+		<div class="main"><p><button class='w3-button w3-block w3-brown' onclick='calcula()'>Calcula</button></p></div>
+		<div class="right" id="clase"><p></p></div>
+	</div>
+	<div style="overflow:auto">
+	
+		<div class="left">
+			<div class="w3-container w3-brown w3-center"><p><strong>Atributos</strong></p></div> 
+			<div id="atributos"></div>
+		</div>
+		<div class="main">
+			<div class="w3-container w3-brown w3-center"><p><strong>Recursos</strong></p></div> 
+			<div id="recursos"></div>
+		</div>
+		<div class="right">
+			<div class="w3-container w3-brown w3-center"><p><strong>Habilidades</strong></p></div> 
+			<div id="habilidades"></div>
+		</div>
+	</div>
+	<div style="overflow:auto">
+		<div class="left">
+			<div class="w3-container w3-brown w3-center"><p><strong>Competencias</strong></p></div> 
+			<div id="competencias"></div>
+		</div>
+		<div class="right">
+			<div class="w3-container w3-brown w3-center"><p><strong>Ventajas</strong></p></div> 
+			<div id="ventajas"></div>
+		</div>
+	</div>
+	<script>conclases();</script>
+</body>
+</html>
+
