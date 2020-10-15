@@ -15,11 +15,11 @@
 	let clases = new Clases();
 
 	let pj = new DH_PJ();
-	let atributos = [];
+	//let atributos = [];
 	
 	let nombreclase = 'random';
 	let hayclases = 0;
-	let origen = "";
+	//let origen = "";
 	
 	let sclases = Comun.desplegableClases(clases, "seleccionaclases");
 	
@@ -68,6 +68,7 @@
 		}
 		
 		pintaatributos();
+		pintaRecursos();
 		/*pintaderivados();
 		pintahabilidadesbase();
 		pintacourdura();*/
@@ -184,16 +185,16 @@
 	}
 	
 	function pintaRecursos() {
-		document.getElementById("recursos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>Salud</strong></td><td>" + pj.Salud + "</td></tr>" +
-            		                                  "<tr><td><strong>Energía</strong></td><td>" + pj.Energia + "</td></tr>" +
+		document.getElementById("recursos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>Salud</strong></td><td>" + pj.Clase.salud + "</td></tr>" +
+            		                                  "<tr><td><strong>Energía</strong></td><td>" + pj.Clase.energia + "</td></tr>" +
 													  "<tr><td><strong>Cordura</strong></td><td>" + pj.Cordura + "</td></tr></table>";
 	}
 	
 	function pintaCompetencias() {
 		var competencias = "";
 		var icompe = 0;
-		for (icompe = 0; icompe < pj.Competencias.length; icompe++) {
-			competencias += "<tr><td>" + pj.Competencias[icompe] + "</td></tr>";
+		for (icompe = 0; icompe < pj.Clase.competencias.length; icompe++) {
+			competencias += "<tr><td>" + pj.Clase.competencias[icompe] + "</td></tr>";
 		}
 		if ( competencias != "" ) 
 			competencias = "<table class='w3-table  w3-striped  w3-border'>" + competencias + "</table>";
@@ -203,8 +204,8 @@
 	function pintaVentajas() {
 		var ventajas = "";
 		var iventaja = 0;
-		for (iventaja = 0; iventaja < pj.Ventajas.length; iventaja++) {
-			ventajas += "<tr><td>" + pj.Ventajas[iventaja] + "</td></tr>";
+		for (iventaja = 0; iventaja < pj.Clase.ventajas.length; iventaja++) {
+			ventajas += "<tr><td>" + pj.Clase.ventajas[iventaja] + "</td></tr>";
 		}
 		if ( ventajas != "" ) 
 			ventajas = "<table class='w3-table  w3-striped  w3-border'>" + ventajas + "</table>";
@@ -214,8 +215,8 @@
 	function pintaHabilidades() {
 		var habilidades = "";
 		var ihabilidad = 0;
-		for (ihabilidad = 0; ihabilidad < pj.Habilidades.length; ihabilidad++) {
-			habilidades += "<tr><td>" + pj.Habilidades[ihabilidad] + "</td></tr>";
+		for (ihabilidad = 0; ihabilidad < pj.Clase.habilidades.length; ihabilidad++) {
+			habilidades += "<tr><td>" + pj.Clase.habilidades[ihabilidad] + "</td></tr>";
 		}
 		if ( habilidades != "" ) 
 			habilidades = "<table class='w3-table  w3-striped  w3-border'>" + habilidades + "</table>";
@@ -225,8 +226,8 @@
 	
 	function deshabilitar(atrb) {
 		var iatrs=0;
-		for (iatrs=0; iatrs<atributos.length; iatrs++) {
-			if ( atrb == atributos[iatrs] )
+		for (iatrs=0; iatrs<pj.Clase.atributo.length; iatrs++) {
+			if ( atrb == pj.Clase.atributo[iatrs] )
 				return false;
 		}
 		return true;
@@ -237,22 +238,12 @@
 		pj = new DH_PJ();
 		pj.genera();
 		
-		atributos = [];
-		var nbclase = nombreclase;
 		if ( hayclases == 1) {
-			clase = clases.clase(nombreclase);
-			pj.Energia = clase.energia;
-			pj.Salud = clase.salud;
-			atributos = clase.atributo;
-			if ( clase.atributo.length == 1 )
-				pj.Atributo = clase.atributo[0];
-			nbclase = clase.nombre;
+			pj.Clase = clases.clase(nombreclase);
 			
-			pj.Competencias = clase.competencias;
-			pj.Ventajas = clase.ventajas;
-			pj.Habilidades = clase.habilidades;
-			pj.Cordura = clase.cordura;
-			origen = clase.origen;
+			if ( pj.Clase.atributo.length == 1 )
+				pj.Atributo = pj.Clase.atributo[0];
+									
 		}
 		
 		if ( pj.Atributo == "FUE" )
@@ -268,10 +259,16 @@
 		else if ( pj.Atributo == "CAR" )
 			pj.mCAR = -1;
 		
+		if ( pj.Clase.descripcion != "" ) {
+			document.getElementById("titulodescripcion").style.visibility="visible";
+			document.getElementById("descripcion").innerHTML=pj.Clase.descripcion;
+		}
+		else {
+			document.getElementById("titulodescripcion").style.visibility="hidden";
+			document.getElementById("descripcion").innerHTML="";
+		}
 		pintaatributos();
-		//pintaderivados();
-		
-		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + nbclase + "</strong> (" + origen + ")</center></p>";
+		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> (" + pj.Clase.origen + ")</center></p>";
 		pintaRecursos();
 		pintaCompetencias();
 		pintaVentajas();
@@ -294,6 +291,8 @@
 		document.getElementById("ventajas").innerHTML="";
 		document.getElementById("habilidades").innerHTML="";
 		document.getElementById("clase").innerHTML="";
+		document.getElementById("titulodescripcion").style.visibility="hidden";
+		document.getElementById("descripcion").innerHTML="";
 		
 		hayclases = 1;
 		document.getElementById("clases").innerHTML = sclases;
@@ -377,6 +376,13 @@
 			<div id="habilidades"></div>
 		</div>
 	</div>
+	<div style="overflow:auto"  id="titulodescripcion">
+		<div class="total"  >
+			<div class="w3-container w3-brown w3-center"><p><strong>Descripción de la clase</strong></p></div> 
+			<div id="descripcion" ></div>
+		</div>
+	</div>
+	
 	<script>conclases();</script>
 </body>
 </html>

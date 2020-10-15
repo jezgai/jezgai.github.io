@@ -23,50 +23,48 @@ class DH_PJ {
 		this._Requisitos = "";
 		this._Rapidez = "";
 		
+		this._Clase = null;
+		this._Especie = null;
 	}
 	
+	
+	get Clase() {
+		return this._Clase;
+	}
+	set Clase(value) {
+		this._Clase = value;
+	}
+	
+	get Especie() {
+		return this._Especie;
+	}
+	set Especie(value) {
+		this._Especie = value;
+	}
 	
 	get HabilidadesEspecie() {
-		return this._HabilidadesEspecie;
-	}
-	set HabilidadesEspecie(value) {
-		this._HabilidadesEspecie = value;
+		return this._Especie.habilidades;
 	}
 	
 	get Requisitos() {
-		return this._Requisitos;
-	}
-	set Requisitos(value) {
-		this._Requisitos = value;
+		return this._Especie.requisitos;
 	}
 	
 	get Rapidez() {
-		return this._Rapidez;
-	}
-	set Rapidez(value) {
-		this._Rapidez = value;
+		return this._Especie.rapidez;
 	}
 	
 	
 	get Competencias() {
-		return this._Competencias;
-	}
-	set Competencias(value) {
-		this._Competencias = value;
+		return this._Clase.competencias;
 	}
 	
 	get Ventajas() {
-		return this._Ventajas;
-	}
-	set Ventajas(value) {
-		this._Ventajas = value;
+		return this._Clase.ventajas;
 	}
 	
 	get Habilidades() {
-		return this._Habilidades;
-	}
-	set Habilidades(value) {
-		this._Habilidades = value;
+		return this._Clase.habilidades;
 	}
 	
 
@@ -168,17 +166,11 @@ class DH_PJ {
 
 	
 	get Salud() {
-		return this._Salud; // En función de la clase
-	}
-	set Salud(value) {
-		this._Salud = value;
+		return this._Clase.salud; // En función de la clase
 	}
 	
 	get Energia() {
-		return this._Energia; // En función de la clase
-	}
-	set Energia(value) {
-		this._Energia = value;
+		return this._Clase.energia; // En función de la clase
 	}
 	
 	calculaCordura(valorAtributo) {
@@ -194,30 +186,24 @@ class DH_PJ {
 	
 	get Cordura() {
 		var valoratr = 20;
-		if ( this._Cordura == "FUE" )
+		if ( this._Clase.cordura == "FUE" )
 			valoratr = this._FUE + this._mFUE;
-		else if ( this._Cordura == "DES" )
+		else if ( this._Clase.cordura == "DES" )
 			valoratr = this._DES + this._mDES;
-		else if ( this._Cordura == "CON" )
+		else if ( this._Clase.cordura == "CON" )
 			valoratr = this._CON + this._mCON;
-		else if ( this._Cordura == "INT" )
+		else if ( this._Clase.cordura == "INT" )
 			valoratr = this._INT + this._mINT;
-		else if ( this._Cordura == "SAB" )
+		else if ( this._Clase.cordura == "SAB" )
 			valoratr = this._SAB + this._mSAB;
-		else if ( this._Cordura == "CAR" )
+		else if ( this._Clase.cordura == "CAR" )
 			valoratr = this._CAR + this._mCAR;
 		return this.calculaCordura(valoratr);
-	}
-	set Cordura(value) {
-		this._Cordura = value;
 	}
 	
 	
 	get Atributo() {
-		return this._Atributo;
-	}
-	set Atributo(value) {
-		this._Atributo = value;
+		return this._Clase.atributo;
 	}
 	
 	inicializamod() {

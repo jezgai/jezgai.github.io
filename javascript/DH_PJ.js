@@ -10,7 +10,7 @@ class DH_PJ {
 		
 		this.inicializamod();
 		
-		this._Salud = 0;
+		/*this._Salud = 0;
 		this._Energia = 0;
 		this._Atributo = "";
 		
@@ -18,13 +18,20 @@ class DH_PJ {
 		
 		this._Competencias = [];
 		this._Ventajas = [];
-		this._Habilidades = [];
+		this._Habilidades = [];*/
 		
+		this._Clase = null;
 	}
 	
 	
+	get Clase() {
+		return this._Clase;
+	}
+	set Clase(value) {
+		this._Clase = value;
+	}
 	
-	get Competencias() {
+	/*get Competencias() {
 		return this._Competencias;
 	}
 	set Competencias(value) {
@@ -43,7 +50,7 @@ class DH_PJ {
 	}
 	set Habilidades(value) {
 		this._Habilidades = value;
-	}
+	}*/
 	
 
 	get FUE() {
@@ -142,7 +149,7 @@ class DH_PJ {
 		this._mCAR = value;
 	}
 
-	
+	/*
 	get Salud() {
 		return this._Salud; // En función de la clase
 	}
@@ -155,7 +162,7 @@ class DH_PJ {
 	}
 	set Energia(value) {
 		this._Energia = value;
-	}
+	}*/
 	
 	calculaCordura(valorAtributo) {
 		if ( valorAtributo  >= 16)
@@ -170,23 +177,23 @@ class DH_PJ {
 	
 	get Cordura() {
 		var valoratr = 20;
-		if ( this._Cordura == "FUE" )
+		if ( this._Clase.cordura == "FUE" )
 			valoratr = this._FUE + this._mFUE;
-		else if ( this._Cordura == "DES" )
+		else if ( this._Clase.cordura == "DES" )
 			valoratr = this._DES + this._mDES;
-		else if ( this._Cordura == "CON" )
+		else if ( this._Clase.cordura == "CON" )
 			valoratr = this._CON + this._mCON;
-		else if ( this._Cordura == "INT" )
+		else if ( this._Clase.cordura == "INT" )
 			valoratr = this._INT + this._mINT;
-		else if ( this._Cordura == "SAB" )
+		else if ( this._Clase.cordura == "SAB" )
 			valoratr = this._SAB + this._mSAB;
-		else if ( this._Cordura == "CAR" )
+		else if ( this._Clase.cordura == "CAR" )
 			valoratr = this._CAR + this._mCAR;
 		return this.calculaCordura(valoratr);
 	}
-	set Cordura(value) {
+	/*set Cordura(value) {
 		this._Cordura = value;
-	}
+	}*/
 	
 	
 	get Atributo() {

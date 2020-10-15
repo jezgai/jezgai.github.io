@@ -17,12 +17,12 @@
 	let especies = new Especies();
 
 	let pj = new DH_PJ();
-	let atributos = [];
+	//let atributos = [];
 	
 	let nombreclase = 'random';
 	let nombreespecie = 'random';
 	let hayclases = 0;
-	let origen = "";
+	//let origen = "";
 	
 	let sclases = Comun.desplegableClases(clases, "seleccionaclases");
 	let sespecies = Comun.desplegableEspecies(especies, "seleccionaespecies");
@@ -80,6 +80,7 @@
 		}
 		
 		pintaatributos();
+		pintaRecursos();
 		/*pintaderivados();
 		pintahabilidadesbase();
 		pintacourdura();*/
@@ -251,8 +252,8 @@
 	
 	function deshabilitar(atrb) {
 		var iatrs=0;
-		for (iatrs=0; iatrs<atributos.length; iatrs++) {
-			if ( atrb == atributos[iatrs] )
+		for (iatrs=0; iatrs<pj.Clase.atributo.length; iatrs++) {
+			if ( atrb == pj.Clase.atributo[iatrs] )
 				return false;
 		}
 		return true;
@@ -266,27 +267,27 @@
 		atributos = [];
 		var nbclase = nombreclase;
 		if ( hayclases == 1) {
-			clase = clases.clase(nombreclase);
-			pj.Energia = clase.energia;
+			pj.Clase = clases.clase(nombreclase);
+			/*pj.Energia = clase.energia;
 			pj.Salud = clase.salud;
-			atributos = clase.atributo;
-			if ( clase.atributo.length == 1 )
-				pj.Atributo = clase.atributo[0];
-			nbclase = clase.nombre;
+			atributos = clase.atributo;*/
+			if ( pj.Clase.atributo.length == 1 )
+				pj.Atributo = pj.Clase.atributo[0];
+			/*nbclase = clase.nombre;
 			
 			pj.Competencias = clase.competencias;
 			pj.Ventajas = clase.ventajas;
 			pj.Habilidades = clase.habilidades;
 			pj.Cordura = clase.cordura;
-			origen = clase.origen;
+			origen = clase.origen;*/
 		}
 		
 		var nbespecie = nombreespecie;
-		especie = especies.especie(nombreespecie);
-		pj.Requisitos = especie.requisitos;
+		pj.Especie = especies.especie(nombreespecie);
+		/*pj.Requisitos = especie.requisitos;
 		pj.Rapidez = especie.rapidez;
 		pj.HabilidadesEspecie = especie.habilidades;
-		nbespecie = especie.nombre;
+		nbespecie = especie.nombre;*/
 		
 		if ( pj.Atributo == "FUE" )
 			pj.mFUE = -1;
@@ -301,10 +302,19 @@
 		else if ( pj.Atributo == "CAR" )
 			pj.mCAR = -1;
 		
+		if ( pj.Clase.descripcion != "" ) {
+			document.getElementById("titulodescripcion").style.visibility="visible";
+			document.getElementById("descripcion").innerHTML=pj.Clase.descripcion;
+		}
+		else {
+			document.getElementById("titulodescripcion").style.visibility="hidden";
+			document.getElementById("descripcion").innerHTML="";
+		}
 		pintaatributos();
 		//pintaderivados();
 		
-		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + nbclase + "</strong> (" + origen + ") <strong>ESPECIE: " + nbespecie + "</strong></center></p>";
+		//document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + nbclase + "</strong> (" + origen + ") <strong>ESPECIE: " + nbespecie + "</strong></center></p>";
+		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> (" + pj.Clase.origen + ") <strong>ESPECIE: " + pj.Especie.nombre + "</strong></center></p>";
 		pintaRecursos();
 		pintaCompetencias();
 		pintaRequisitos();
@@ -329,6 +339,8 @@
 		document.getElementById("ventajas").innerHTML="";
 		document.getElementById("habilidades").innerHTML="";
 		document.getElementById("clase").innerHTML="";
+		document.getElementById("titulodescripcion").style.visibility="hidden";
+		document.getElementById("descripcion").innerHTML="";
 		
 		hayclases = 1;
 		document.getElementById("clases").innerHTML = sclases;
@@ -421,6 +433,12 @@
 		<div class="total">
 			<div class="w3-container w3-blue w3-center"><p><strong>Habilidades</strong></p></div> 
 			<div id="habilidades"></div>
+		</div>
+	</div>
+	<div style="overflow:auto"  id="titulodescripcion">
+		<div class="total"  >
+			<div class="w3-container w3-blue w3-center"><p><strong>Descripción de la clase</strong></p></div> 
+			<div id="descripcion" ></div>
 		</div>
 	</div>
 	<script>conclases();</script>
