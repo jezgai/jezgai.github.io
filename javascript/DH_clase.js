@@ -336,7 +336,7 @@ class Clases {
 			  ventajas: [ "<strong>Tiradas de Constitución</strong> para recuperar energía.", "<strong>Tiradas de Carisma</strong> para intimidar." ],
 			  habilidades: [ "<strong>Furia de Berserkr</strong><br/>Gasta 1 punto de energía para entrar en un estado de furia asesina. Dura tantos asaltos como tu nivel. Una vez hayan pasado estos turnos puedes elegir gastar más puntos para alargar la duración de tu estado de furia otra cantidad de asaltos igual a tu nivel por cada punto gastado.<br/>Mientras estés en este estado de furia tienes ventaja en todas las tiradas de características físicas y la efectividad de tus armas cuerpo a cuerpo aumenta en 1, mientras que todas tus tiradas de características mentales tienendesventaja.<br/>Una vez termine este estado, bien porque decidas terminarlo o bien porque no te queden puntos de energía quedas fatigado durante tantos intervalos como puntos de energía hayas gastado de este modo.<br/>No puedes alcanzar el estado de furia si usas cualquier tipo de equipo con el que no seas competente.", "<strong>Piel de oso</strong><br/>Mientras no lleves ningún tipo de armadura tienes un valor de absorción de daño de d4 en nivel 1. Este valor aumenta a d6 en nivel 5, d8 en nivel 10, d10 en nivel 15 y d12 en nivel 20.<br/>Puedes llevar un escudo pequeño o mediano y seguir beneficiándote de este talento.", "<strong>Matagigantes</strong><br/>A partir del quinto nivel, cuando hagas un ataque sobre un objetivo, puedes causar el mismo daño a un enemigo a tu alcance de un nivel igual o inferior al objetivo inicial. Desde el décimo nivel, puedes causar el mismo daño a dos enemigos a tu alcance y, desde el decimoquinto, hasta a tres enemigos.<br/>Con esta habilidad puedes causar daño al mismo enemigo varias veces." ],
 			  cordura: "SAB",
-			  origen: "Parvus Domus - <a href='https://www.lospergaminosdelfenix.com/2018/12/recurso-einherhack-clases-y-ficha-para.html'>Los pergaminos del Fénix</a>",
+			  origen: "Parvus Domus - <a href='https://www.lospergaminosdelfenix.com/2018/12/recurso-einherhack-clases-y-ficha-para.html' target='_blank'>Los pergaminos del Fénix</a>",
 			  descripcion: "Los guerreros sagrados de Odihn. Estos furibundos guerreros no se detendrán ante nada para destrozar a sus enemigos.",
 			},
 			{
@@ -348,7 +348,7 @@ class Clases {
 			  ventajas: [ "No tienes desventaja cuando estás luchando en una plataforma inestable.", "<strong>Tiradas de orientación</strong> en el mar y manejar barcos." ],
 			  habilidades: [ "<strong>Hermanos de armas</strong><br/>Siempre que luches junto a un aliado adyacente tienes un bonificador de +2 en las tiradas de ataque.<br/>", "<strong>Doble hachazo</strong><br/> Cuando equipes un arma en cada mano aumentas la eficiencia de tu arma principal en 1. Y ganas una absorción de daño de 1.<br/>", "<strong>Determinación</strong><br/>Cuando luchas, eres imparable, y transmites esa sensación a tus enemigos. Todas las criaturas que hayan probado tu acero obtienen un -1 a su puntuación de Moral durante el resto del combate." ],
 			  cordura: "SAB",
-			  origen: "Parvus Domus - <a href='https://www.lospergaminosdelfenix.com/2018/12/recurso-einherhack-clases-y-ficha-para.html'>Los pergaminos del Fénix</a>",
+			  origen: "Parvus Domus - <a href='https://www.lospergaminosdelfenix.com/2018/12/recurso-einherhack-clases-y-ficha-para.html' target='_blank'>Los pergaminos del Fénix</a>",
 			  descripcion: "Marineros y guerreros, estos bravos incursores llegarán hasta el fin del mundo en busca de oro y gloria.",
 			},
 			{
