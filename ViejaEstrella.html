@@ -1,0 +1,397 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Vieja Estrella - Ayuda para crear personajes</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="javascript/VS_comun.js"></script>
+<script src="javascript/VS_pj.js"></script>
+<script src="javascript/VS_clases.js"></script>
+<script src="javascript/VS_bioformas.js"></script>
+
+<script src="javascript/pdfform.minipdf.dist.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+
+<script>
+	
+	
+	let clases = new Clases();
+	let bioformas = new Bioformas();
+
+	let pj = new VS_PJ();
+	//let atributos = [];
+	
+	let nombreclase = 'random';
+	let nombrebioforma = 'random';
+	let hayclases = 0;
+	//let origen = "";
+	
+	let sclases = Comun.desplegableClases(clases, "seleccionaclases");
+	let sbioformas = Comun.desplegableBioformas(bioformas, "seleccionabioformas");
+
+
+	function rellenaPDF() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		var competencias = '';
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = {
+					'Nombre' : [''],
+					'Clase' : [ pj.Clase.nombre ],
+					'Bioforma' : [pj.Bioforma.nombre ],
+					'DAguante' : [ pj.Clase.daguante ],
+					'FUE' : [ pj.FUE ],
+					'DES' : [ pj.DES ],
+					'CON' : [ pj.CON ],
+					'INT' : [ pj.INT ],
+					'SAB' : [ pj.SAB ],
+					'CAR' : [ pj.CAR ],
+					'FUE_mod' : [ pj.mFUE ],
+					'DES_mod' : [ pj.mDES ],
+					'CON_mod' : [ pj.mCON ],
+					'INT_mod' : [ pj.mINT ],
+					'SAB_mod' : [ pj.mSAB ],
+					'CAR_mod' : [ pj.mCAR ],
+					'Nivel' : [ 1 ],
+					'ATQ' : [ pj.ATQ ],
+					'INS' : [ pj.INS ],
+					'MOV' : [ pj.MOV ],
+					'DEF' : [ pj.DEF ],
+					'POD' : [ pj.POD ],
+					'ALERTA' : [ pj.Alerta ],
+					'COMUNICACION' : [ pj.Comunicacion ],
+					'ERUDICION' : [ pj.Erudicion ],
+					'SUBTERFUGIO' : [ pj.Subterfugio ],
+					'SUPERVIVENCIA' : [ pj.Supervivencia ],
+					'TECNOLOGIA' : [ pj.Tecnologia ],
+					'TALENTOS' : [ pj.strTalentos() ],
+				};
+				
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, 'Personaje.pdf');
+			}
+		};
+
+
+		xhr.open('GET', 'pdf/ViejaEstrella.pdf', true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}	
+
+	function seleccionaclases(thelist) {
+		var idx = thelist.selectedIndex;
+		var seleccionado = thelist.options[idx].innerHTML;
+		if ( idx < 1 ) {
+			seleccionado = 'random';
+		}
+		nombreclase = seleccionado;
+	}
+	
+	function seleccionabioformas(thelist) {
+		var idx = thelist.selectedIndex;
+		var seleccionado = thelist.options[idx].innerHTML;
+		if ( idx < 1 ) {
+			seleccionado = 'random';
+		}
+		nombrebioforma = seleccionado;
+	}
+	
+
+	function abajo(atributo) {
+		if ( atributo == 'FUE' ) {
+			var fue = pj.FUE;
+			pj.FUE = pj.DES;
+			pj.DES = fue;
+		}
+		else if ( atributo == 'DES' ) {
+			var des = pj.DES;
+			pj.DES = pj.CON;
+			pj.CON = des;
+		}
+		else if ( atributo == 'CON' ) {
+			var con = pj.CON;
+			pj.CON = pj.INT;
+			pj.INT = con;
+		}
+		else if ( atributo == 'INT' ) {
+			var sab = pj.SAB;
+			pj.SAB = pj.INT;
+			pj.INT = sab;
+		}
+		else if ( atributo == 'SAB' ) {
+			var car = pj.CAR;
+			pj.CAR = pj.SAB;
+			pj.SAB = car;
+		}
+		else if ( atributo == 'CAR' ) {
+			var fue = pj.FUE;
+			pj.FUE = pj.CAR;
+			pj.CAR = fue;
+		}
+		else if ( atributo == 'Alerta' ) {
+			var alerta = pj.Alerta;
+			pj.Alerta = pj.Comunicacion;
+			pj.Comunicacion = alerta;
+		}
+		else if ( atributo == 'Comunicacion' ) {
+			var comunicacion = pj.Comunicacion;
+			pj.Comunicacion = pj.Erudicion;
+			pj.Erudicion = comunicacion;
+		}
+		else if ( atributo == 'Erudicion' ) {
+			var erudicion = pj.Erudicion;
+			pj.Erudicion = pj.Subterfugio;
+			pj.Subterfugio = erudicion;
+		}
+		else if ( atributo == 'Subterfugio' ) {
+			var supervivencia = pj.Supervivencia;
+			pj.Supervivencia = pj.Subterfugio;
+			pj.Subterfugio = supervivencia;
+		}
+		else if ( atributo == 'Supervivencia' ) {
+			var supervivencia = pj.Supervivencia;
+			pj.Supervivencia = pj.Tecnologia;
+			pj.Tecnologia = supervivencia;
+		}
+		else if ( atributo == 'Tecnologia' ) {
+			var alerta = pj.Alerta;
+			pj.Alerta = pj.Tecnologia;
+			pj.Tecnologia = alerta;
+		}
+		
+		
+		pintaAtributos();
+		pj.calculaPV();
+		pj.calculaDef();
+		pintaRasgos();
+		pintaHabilidades();
+	}
+
+	function construyeBoton(atributo)
+	{
+		return "</button><button class=\"w3-button w3-circle w3-blue w3-padding-small w3-tiny\" onclick=\"abajo('" + atributo + "')\">&#9660;</button>";
+	   //var strbutton = "<button class=\"w3-button w3-circle w3-green w3-padding-small w3-tiny\" onclick=\"arriba('" + atributo + "')\">&#9650;</button><button class=\"w3-button w3-circle w3-green w3-padding-small w3-tiny\" onclick=\"abajo('" + atributo + "')\">&#9660;</button>";
+	   //return strbutton;
+	}
+	
+	function pintablancosicero(valor) {
+		if ( valor == 0 )
+			return " ";
+		else
+			return valor;
+	}
+	
+	
+	function pintaAtributos() {
+			
+		document.getElementById("atributos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>FUE (Fuerza)</strong></td><td>" + pj.FUE +
+													  "</td><td>" + pj.mFUE + "</td>" + 
+													  "<td>" + construyeBoton('FUE') + "</td></tr>" +
+													  "<tr><td><strong>DES (Destreza)</strong></td><td>" + pj.DES +
+													  "</td><td>" + pj.mDES + "</td>" + 
+													  " </td><td>" + construyeBoton('DES') + "</td></tr>" +
+            		                                  "<tr><td><strong>CON (Constitución)</strong></td><td>" + pj.CON +
+													  "</td><td>" + pj.mCON + "</td>" + 
+													  " </td><td>" + construyeBoton('CON') + "</td></tr>" +
+													  "<tr><td><strong>INT (Inteligencia)</strong></td><td>" + pj.INT +
+													  "</td><td>" + pj.mINT + "</td>" + 
+													  " </td><td>" + construyeBoton('INT') + "</td></tr>" +
+													  "<tr><td><strong>SAB (Sabiduria)</strong></td><td>" + pj.SAB +
+													  "</td><td>" + pj.mSAB + "</td>" +
+													  " </td><td>" + construyeBoton('SAB') + "</td></tr>" +
+													  "<tr><td><strong>CAR (Carisma)</strong></td><td>" + pj.CAR +
+													  "</td><td>" + pj.mCAR + "</td>" +
+													  " </td><td>" + construyeBoton('CAR') + "</td></tr></table>";
+
+	}
+	
+	function pintaRasgos() {
+		
+		document.getElementById("rasgos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>ATQ</strong></td><td>" + pj.ATQ + "</td></tr>" +
+													  "<tr><td><strong>DEF</strong></td><td>" + pj.DEF + "</td></tr>" +
+            		                                  "<tr><td><strong>PV</strong></td><td>" + pj.PV + "</td></tr>" +
+													  "<tr><td><strong>INS</strong></td><td>" + pj.INS + "</td></tr>" +
+													  "<tr><td><strong>MOV</strong></td><td>" + pj.MOV + "</td></tr>" +
+													  "<tr><td><strong>POD</strong></td><td>" + pj.POD + "</td></tr></table>";
+	}
+	
+	function pintaHabilidades() {
+		
+		document.getElementById("habilidades").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>Alerta</strong></td><td>" + pj.Alerta + "</td>" + 
+													  "<td>" + construyeBoton('Alerta') + "</td></tr>" +
+													  "<tr><td><strong>Comunicación</strong></td><td>" + pj.Comunicacion + "</td>" + 
+													  "<td>" + construyeBoton('Comunicacion') + "</td></tr>" +
+            		                                  "<tr><td><strong>Erudición</strong></td><td>" + pj.Erudicion + "</td>" + 
+													  "<td>" + construyeBoton('Erudicion') + "</td></tr>" +
+													  "<tr><td><strong>Subterfugio</strong></td><td>" + pj.Subterfugio + "</td>" + 
+													  "<td>" + construyeBoton('Subterfugio') + "</td></tr>" +
+													  "<tr><td><strong>Supervivencia</strong></td><td>" + pj.Supervivencia + "</td>" + 
+													  "<td>" + construyeBoton('Supervivencia') + "</td></tr>" +
+													  "<tr><td><strong>Tecnología</strong></td><td>" + pj.Tecnologia + "</td>" + 
+													  "<td>" + construyeBoton('Tecnologia') + "</td></tr></table>";
+	}
+	
+	function pintaTalentos() {
+		
+		var ital=0;
+		var talentos="";
+		var aTalentos = pj.Talentos;
+		for (ital=0; ital < aTalentos.length; ital++) {
+			talentos += "<tr><td>" + aTalentos[ital] + "</td></tr>";
+		}
+		if ( talentos != "" ) {
+			talentos = "<table class='w3-table  w3-striped  w3-border'>" + talentos + "</table>";
+		}
+		
+		document.getElementById("talentos").innerHTML = talentos;
+	}
+	
+	
+	function calcula() {
+		
+		pj = new VS_PJ();
+		
+		
+		var nbclase = nombreclase;
+		pj.Clase = clases.clase(nombreclase);
+		var nbbioforma = nombrebioforma;
+		pj.Bioforma = bioformas.bioforma(nombrebioforma);
+		
+		pj.genera();
+		
+		
+		
+		if ( pj.Bioforma.descripcion != "" ) {
+			document.getElementById("titulodescripcion").style.visibility="visible";
+			document.getElementById("descripcion").innerHTML=pj.Bioforma.descripcion;
+		}
+		else {
+			document.getElementById("titulodescripcion").style.visibility="hidden";
+			document.getElementById("descripcion").innerHTML="";
+		}
+		pintaAtributos();
+		pintaRasgos();
+		pintaHabilidades();
+		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> <strong>Bioforma: " + pj.Bioforma.nombre + "</strong></center></p>";
+		pintaTalentos();
+		document.getElementById("generapdf").style.visibility="visible";
+	}
+	
+	function descarga() {
+		var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pj));
+		var jsonElem = document.getElementById('downloadpjsonpj');
+		jsonElem.setAttribute("href",     dataStr     );
+		jsonElem.setAttribute("download", "pj.json");
+		jsonElem.click();
+		
+	}
+	
+	function conclases() {
+		document.getElementById("generapdf").style.visibility="hidden";
+		document.getElementById("atributos").innerHTML="";
+		document.getElementById("rasgos").innerHTML="";
+		document.getElementById("habilidades").innerHTML="";
+		document.getElementById("clase").innerHTML="";
+		document.getElementById("titulodescripcion").style.visibility="hidden";
+		document.getElementById("descripcion").innerHTML="";
+		
+		hayclases = 1;
+		document.getElementById("clases").innerHTML = sclases;
+		document.getElementById("bioformas").innerHTML = sbioformas;
+	}
+	
+</script>
+<style>
+	
+* {
+  box-sizing: border-box;
+}
+.minileft {
+  float:left;
+  width:16%;
+  padding:0 1px;
+}
+.left {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.main {
+  float:left;
+  width:34%;
+  padding:0 1px;
+}
+.right {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.total {
+  float:left;
+  width:100%;
+  padding:0 1px;
+}
+
+
+
+@media only screen and (max-width:820px) {
+  /* For mobile phones: */
+  .left, .main, .right, .total, .minileft {
+    width:100%;
+  }
+  
+</style>
+</head>
+<body >
+	<div class="w3-container w3-blue w3-center">
+	  <h2>Vieja Estrella - Ayuda para crear personajes</h2>
+	</div>
+	<div style="overflow:auto">
+	
+		<div class="minileft" id="clases">
+			<p><button class='w3-button w3-block w3-teal' onclick='conclases()'>Clases</button></p>
+		</div>
+		<div class="minileft" id="bioformas">
+		</div>
+		<div class="minileft"><p><button class='w3-button w3-block w3-blue' onclick='calcula()'>Calcula</button></p></div>
+		<div class="right" id="clase"><p></p></div>
+		<div class="minileft" id="generapdf"><button class='w3-button w3-block w3-blue' onclick='rellenaPDF()'>Genera PDF</button></div>
+	</div>
+	<div style="overflow:auto">
+	
+		<div class="left">
+			<div class="w3-container w3-blue w3-center"><p><strong>Atributos</strong></p></div> 
+			<div id="atributos"></div>
+		</div>
+		<div class="minileft">
+			<div class="w3-container w3-blue w3-center"><p><strong>Rasgos</strong></p></div> 
+			<div id="rasgos"></div>
+		</div>
+		<div class="main">
+			<div class="w3-container w3-blue w3-center"><p><strong>Habilidades</strong></p></div> 
+			<div id="habilidades"></div>
+		</div>
+		<div class="minileft">
+			<div class="w3-container w3-blue w3-center"><p><strong>Talentos</strong></p></div> 
+			<div id="talentos"></div>
+		</div>
+	</div>
+	<div style="overflow:auto">
+	</div>
+	<div style="overflow:auto"  id="titulodescripcion">
+		<div class="total"  >
+			<div class="w3-container w3-blue w3-center"><p><strong>Descripción de la bioforma</strong></p></div> 
+			<div id="descripcion" ></div>
+		</div>
+	</div>
+	<script>conclases();</script>
+</body>
+</html>
+
