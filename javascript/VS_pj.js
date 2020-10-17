@@ -200,7 +200,7 @@ class VS_PJ {
 		var ital=0;
 		if ( this._Bioforma != null ) {
 			if ( this._Bioforma.talentos.length > 2 ) {
-				var talentosbioforma = Comun.shuffle(this._Bioforma.talentos.tlnrandom);
+				var talentosbioforma = Comun.shuffle(this._Bioforma.talentos);
 				for (ital = 0; ital< talentosbioforma.length; ital++) {
 					talentos.push(talentosbioforma[ital]);
 				}
