@@ -201,7 +201,7 @@ class VS_PJ {
 		if ( this._Bioforma != null ) {
 			if ( this._Bioforma.talentos.length > 2 ) {
 				var talentosbioforma = Comun.shuffle(this._Bioforma.talentos);
-				for (ital = 0; ital< talentosbioforma.length; ital++) {
+				for (ital = 0; ital< 2; ital++) {
 					talentos.push(talentosbioforma[ital]);
 				}
 			}
