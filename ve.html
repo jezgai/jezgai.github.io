@@ -93,6 +93,78 @@
 		
 	}	
 
+	function rellenaPDFExp() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		var competencias = '';
+		
+		var nombre = pj.nombre.replace(/ /g, "");
+		var talentos = "";
+		if ( pj.talentos.length > 0 ) {
+			talentos = pj.talentos[0];
+			var itals = 0;
+			for (itals = 1; itals < pj.talentos.length; itals++) {
+				talentos += ", " + pj.talentos[itals];
+			}
+		}
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = {
+					'Nombre' : [ pj.nombre ],
+					'Tipo' : [ pj.clase ],
+					'Nivel' : [ numeronivel ],
+					'VFUE' : [ pj.atributos[0] ],
+					'VDES' : [ pj.atributos[1] ],
+					'VCON' : [ pj.atributos[2] ],
+					'VINT' : [ pj.atributos[3] ],
+					'VSAB' : [ pj.atributos[4] ],
+					'VCAR' : [ pj.atributos[5] ],
+					'BFUE' : [ Atributos.modif(pj.atributos[0]) ],
+					'BDES' : [ Atributos.modif(pj.atributos[1]) ],
+					'BCON' : [ Atributos.modif(pj.atributos[2]) ],
+					'BINT' : [ Atributos.modif(pj.atributos[3]) ],
+					'BSAB' : [ Atributos.modif(pj.atributos[4]) ],
+					'BCAR' : [ Atributos.modif(pj.atributos[5]) ],
+					'IFUE' : [ (pj.ins + Atributos.modif(pj.atributos[0])) ],
+					'IDES' : [ (pj.ins + Atributos.modif(pj.atributos[1])) ],
+					'ICON' : [ (pj.ins + Atributos.modif(pj.atributos[2])) ],
+					'IINT' : [ (pj.ins + Atributos.modif(pj.atributos[3])) ],
+					'ISAB' : [ (pj.ins + Atributos.modif(pj.atributos[4])) ],
+					'ICAR' : [ (pj.ins + Atributos.modif(pj.atributos[5])) ],
+					'PVMax' : [ pj.pv ],
+					'PVAct' : [ pj.pv ],
+					'PODMax' : [ pj.pod ],
+					'PODAct' : [ pj.pod ],
+					'ATQ1' : [ pj.atq ],
+					'DEF' : [ pj.defn ],
+					'INS' : [ pj.ins ],
+					'MOV' : [ pj.mov ],
+					'Alerta' : [ pj.habilidades[0] ],
+					'Comunicacion' : [ pj.habilidades[1] ],
+					'Erudicion' : [ pj.habilidades[2] ],
+					'Manipulacion' : [ pj.habilidades[3] ],
+					'Subterfugio' : [ pj.habilidades[4] ],
+					'Supervivencia' : [ pj.habilidades[5] ],
+					'Talentos' : [ talentos ],
+					'Trasfondos' : [ pj.trasfondo ],
+					'Notas' : [ "Dinero: " + dinero ],
+				};
+				
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, nombre + ".pdf");
+			}
+		};
+
+
+		xhr.open('GET', 'pdf/VEExpandido.pdf', true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}	
 	function seleccionaraza(thelist) {
 		var idx = thelist.selectedIndex;
 		var seleccionado = thelist.options[idx].innerHTML;
@@ -590,7 +662,7 @@
 		pj.genera();
 		//clase = clases.clase('random');
 		//clase.atq = clase.atq(1);
-		let dinero = Comun.random(6,1) * 100;
+		dinero = Comun.random(6,1) * 100;
 		parametrosimg = "?nombre="+pj.nombre+"&clase="+pj.clase+"&nivel="+numeronivel+"&dinero="+dinero;
 		if ( pj.trasfondo != "" ) {
 			parametrosimg += "&trasfondo1=" + pj.trasfondo;
@@ -633,9 +705,12 @@
 		document.getElementById("habilidades").innerHTML = shabs;
 		document.getElementById("dinero").innerHTML = "<br/><strong>Trasfondo y Dinero: </strong> <br/>" + pj.trasfondo + "<br/>" + dinero + " mo";
 
-		document.getElementById("ficha").innerHTML = "Dirección de imagen del personaje: <input type='text' id='FotoPJ' name='FotoPJ'><br/><button class='w3-button w3-block w3-teal' onclick='generaFicha()'>Genera Ficha</button>";
+		/*document.getElementById("ficha").innerHTML = "Dirección de imagen del personaje: <input type='text' id='FotoPJ' name='FotoPJ'><br/><button class='w3-button w3-block w3-teal' onclick='generaFicha()'>Genera Ficha</button>";
 		
-	    paginaimg = "ve-e-imagen.html";
+	    paginaimg = "ve-e-imagen.html";*/
+	    
+		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDFExp()'>Genera PDF</button>";
+		document.getElementById("bgenerapdf").style.visibility="visible";
 	}
 	
 	function seleccionajdr(thelist) {
