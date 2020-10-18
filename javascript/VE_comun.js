@@ -48,8 +48,12 @@ class Comun {
 		for (inivel=2; inivel<= nivelMax; inivel++) {
 			snivel += "<option>" + inivel + "</option>";
 		}
-		snivel += "</select> <button class='w3-button w3-block w3-teal' onclick='" + nbFuncGenera + "()'>Genera</button>";
+		snivel += "</select>"; // <button class='w3-button w3-block w3-teal' onclick='" + nbFuncGenera + "()'>Genera</button>";
 		return snivel;
+	}
+	
+	static botonGenera(nbFuncGenera) {
+		return "<button class='w3-button w3-block w3-teal' onclick='" + nbFuncGenera + "()'>Genera</button>";
 	}
 		
 	/*static clone(ar) {
