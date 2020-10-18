@@ -100,18 +100,12 @@
 		var competencias = '';
 		
 		var nombre = pj.nombre.replace(/ /g, "");
-		var talentos1 = "";
-		var talentos2 = "";
+		var talentos = "";
 		if ( pj.talentos.length > 0 ) {
-			talentos1 = pj.talentos[0];
-			if ( pj.talentos.length > 1) {
-				talentos1 += ", " + pj.talentos[1];
-				if ( pj.talentos.length > 2 ) {
-					talentos2 = pj.talentos[2];
-					if ( pj.talentos.length > 3) {
-						talentos2 += ", " + pj.talentos[3];
-					}
-		}
+			talentos = pj.talentos[0];
+			var itals = 0;
+			for (itals = 1; itals < pj.talentos.length; itals++) {
+				talentos += ", " + pj.talentos[itals];
 			}
 		}
 		
@@ -119,36 +113,35 @@
 			if (this.readyState == 4 && this.status == 200) {
 			  contenido = this.response;
 			  var fields = {
-					'NOMBRE' : [ pj.nombre ],
-					'CLASE' : [ pj.clase + "(d" + pj.daguante + ")" ],
+					'Nombre' : [ pj.nombre ],
+					'Clase' : [ pj.clase + "(d" + pj.daguante + ")" ],
 					'Nivel' : [ numeronivel ],
-					'FUE' : [ pj.atributos[0] ],
-					'DES' : [ pj.atributos[1] ],
-					'CON' : [ pj.atributos[2] ],
-					'INT' : [ pj.atributos[3] ],
-					'SAB' : [ pj.atributos[4] ],
-					'CAR' : [ pj.atributos[5] ],
-					'Bono_FUE' : [ Atributos.modif(pj.atributos[0]) ],
-					'Bono_DES' : [ Atributos.modif(pj.atributos[1]) ],
-					'Bono_CON' : [ Atributos.modif(pj.atributos[2]) ],
-					'Bono_INT' : [ Atributos.modif(pj.atributos[3]) ],
-					'Bono_SAB' : [ Atributos.modif(pj.atributos[4]) ],
-					'Bono_CAR' : [ Atributos.modif(pj.atributos[5]) ],
-					'PVtot' : [ pj.pv ],
-					'PVact' : [ pj.pv ],
-					'Ataque' : [ pj.atq ],
-					'Defensa' : [ pj.defn ],
-					'Instinto' : [ pj.ins ],
-					'Movimiento' : [ 10 ],
-					'Nivel_Adquisitivo' : [ pj.niveladq ],
+					'Fuerza' : [ pj.atributos[0] ],
+					'Destreza' : [ pj.atributos[1] ],
+					'Constitucion' : [ pj.atributos[2] ],
+					'Inteligencia' : [ pj.atributos[3] ],
+					'Sabiduria' : [ pj.atributos[4] ],
+					'Carisma' : [ pj.atributos[5] ],
+					'FUE' : [ Atributos.modif(pj.atributos[0]) ],
+					'DES' : [ Atributos.modif(pj.atributos[1]) ],
+					'CON' : [ Atributos.modif(pj.atributos[2]) ],
+					'INT' : [ Atributos.modif(pj.atributos[3]) ],
+					'SAB' : [ Atributos.modif(pj.atributos[4]) ],
+					'CAR' : [ Atributos.modif(pj.atributos[5]) ],
+					'PVTot' : [ pj.pv ],
+					'PVAct' : [ pj.pv ],
+					'ATQ' : [ pj.atq ],
+					'DEF' : [ pj.defn ],
+					'INS' : [ pj.ins ],
+					'MOV' : [ 10 ],
+					'NivelAdquisitivo' : [ pj.niveladq ],
 					'Alerta' : [ pj.habilidades[0] ],
 					'Comunicacion' : [ pj.habilidades[1] ],
 					'Erudicion' : [ pj.habilidades[2] ],
 					'Manipulacion' : [ pj.habilidades[3] ],
 					'Subterfugio' : [ pj.habilidades[4] ],
 					'Supervivencia' : [ pj.habilidades[5] ],
-					'Talento_01' : [ talentos1 ],
-					'Talento_02' : [ talentos2 ],
+					'Talentos' : [ talentos ],
 				};
 				
 			  var out_buf = pdfform().transform(contenido, fields);
@@ -603,7 +596,7 @@
 	    
 		
 		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDFSO()'>Genera PDF</button>";
-		//document.getElementById("bgenerapdf").style.visibility="visible";
+		document.getElementById("bgenerapdf").style.visibility="visible";
 
 	}	
 	
