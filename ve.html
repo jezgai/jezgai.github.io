@@ -27,6 +27,7 @@
 <script>
 
 	let pj = new Object();
+	let dinero = "";
 
 	function rellenaPDFPulp() {
 		var xhr = new XMLHttpRequest();
@@ -34,12 +35,22 @@
 		var competencias = '';
 		
 		var nombre = pj.nombre.replace(/ /g, "");
+		var talentos = "";
+		if ( pj.talentos.length > 0 ) {
+			talentos = pj.talentos[0];
+			var itals = 0;
+			for (itals = 0; itals < pj.talentos.length; itals++) {
+				talentos += ", " + pj.talentos[itals];
+			}
+		}
 		
 		xhr.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 			  contenido = this.response;
 			  var fields = {
 					'Nombre' : [ pj.nombre ],
+					'Clase' : [ pj.clase ],
+					'Nivel' : [ numeronivel ],
 					'FUE' : [ pj.atributos[0] ],
 					'DES' : [ pj.atributos[1] ],
 					'CON' : [ pj.atributos[2] ],
@@ -52,6 +63,19 @@
 					'mINT' : [ Atributos.modif(pj.atributos[3]) ],
 					'mSAB' : [ Atributos.modif(pj.atributos[4]) ],
 					'mCAR' : [ Atributos.modif(pj.atributos[5]) ],
+					'PV' : [ pj.pv ],
+					'ATQ' : [ pj.atq ],
+					'DEF' : [ pj.defn ],
+					'INS' : [ pj.ins ],
+					'PPulp' : [ pj.pP ],
+					'Alerta' : [ pj.habilidades[0] ],
+					'Comunicacion' : [ pj.habilidades[1] ],
+					'Erudicion' : [ pj.habilidades[2] ],
+					'Manipulacion' : [ pj.habilidades[3] ],
+					'Subterfugio' : [ pj.habilidades[4] ],
+					'Supervivencia' : [ pj.habilidades[5] ],
+					'Talentos' : [ talentos ],
+					'Notas' : [ "Dinero: " + dinero + "$" ],
 				};
 				
 			  var out_buf = pdfform().transform(contenido, fields);
@@ -547,7 +571,8 @@
 		document.getElementById("atributos").innerHTML = satrs;
 		document.getElementById("talentos").innerHTML = stals;
 		document.getElementById("habilidades").innerHTML = shabs;
-		document.getElementById("dinero").innerHTML = "<br/><strong>Dinero: </strong> " + Comun.random(8,1) * 100 + "$";
+		dinero = Comun.random(8,1) * 100;
+		document.getElementById("dinero").innerHTML = "<br/><strong>Dinero: </strong> " + dinero + "$";
 		
 		
 		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDFPulp()'>Genera PDF</button>";
