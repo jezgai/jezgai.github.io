@@ -327,10 +327,11 @@ class VS_PJ {
 	calculaHabilidades() {
 		var ivalhab = 0;
 		var valhab = [];
-		for (ivalhab=0; ivalhab<4; ivalhab++ ) {
+		var numhabilidades = 4 + this.mINT;
+		for (ivalhab=0; ivalhab<numhabilidades; ivalhab++ ) {
 			valhab.push(1);
 		}
-		for (ivalhab=4; ivalhab<6; ivalhab++ ) {
+		for (ivalhab=numhabilidades; ivalhab<6; ivalhab++ ) {
 			valhab.push(0);
 		}
 		valhab = Comun.shuffle(valhab);

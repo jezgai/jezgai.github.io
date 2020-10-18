@@ -62,8 +62,8 @@
 					'MOV' : [ pj.MOV ],
 					'DEF' : [ pj.DEF ],
 					'POD' : [ pj.POD ],
-				        'PV' : [ pj.PV ],
-				        'PV_total' : [ pj.PV ],
+				    'PV' : [ pj.PV ],
+				    'PV_total' : [ pj.PV ],
 					'ALERTA' : [ pj.Alerta ],
 					'COMUNICACION' : [ pj.Comunicacion ],
 					'ERUDICION' : [ pj.Erudicion ],
@@ -107,6 +107,7 @@
 	
 
 	function abajo(atributo) {
+		var cambiaINT = false;
 		if ( atributo == 'FUE' ) {
 			var fue = pj.FUE;
 			pj.FUE = pj.DES;
@@ -118,11 +119,15 @@
 			pj.CON = des;
 		}
 		else if ( atributo == 'CON' ) {
+			if ( pj.CON != pj.INT )
+				cambiaINT = true;
 			var con = pj.CON;
 			pj.CON = pj.INT;
 			pj.INT = con;
 		}
 		else if ( atributo == 'INT' ) {
+			if ( pj.SAB != pj.INT )
+				C = true;
 			var sab = pj.SAB;
 			pj.SAB = pj.INT;
 			pj.INT = sab;
@@ -173,6 +178,8 @@
 		pj.calculaPV();
 		pj.calculaDef();
 		pintaRasgos();
+		if ( cambiaINT == true )
+			pj.calculaHabilidades();
 		pintaHabilidades();
 	}
 
