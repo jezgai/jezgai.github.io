@@ -28,6 +28,15 @@
 
 	let pj = new Object();
 	let dinero = "";
+	
+
+	function abajo(atributo) {
+		
+		var atributosiguiente = pj.atributos[(atributo+1)%6];
+		pj.atributos[(atributo+1)%6] = pj.atributos[atributo];
+		pj.atributos[atributo] = atributosiguiente;
+
+	}	
 
 	function rellenaPDFPulp() {
 		var xhr = new XMLHttpRequest();
@@ -962,7 +971,21 @@
 	<div id="desplegables"></div>-->
 	<hr/>
 	<div id="ficha"></div>
-	<div class="w3-row">
+	
+	<div style="overflow:auto">
+		<div class="total" id="datos"></div>
+	</div>
+	<div style="overflow:auto">
+		<div class="tercio" id="atributos"></div>
+		<div class="tercio" id="habilidades"></div>
+		<div class="tercio" id="rasgos"></div>
+	</div>
+	<div style="overflow:auto">
+		<div  class="dostercios" id="talentos"></div>
+		<div class="tercio" id="dinero"></div>
+	</div>
+		
+	<!--<div class="w3-row">
 		<div class="w3-col s9 w3-center" id="datos"></div>
 	</div>
 	<div class="w3-row">
@@ -975,7 +998,7 @@
 	<div class="w3-row">
 		<div  class="w3-col s6 w3-center" id="talentos"></div>
 		<div class="w3-col s3 w3-center" id="dinero"></div>
-	</div>
+	</div>-->
 	</div>
 </body>
 </html>
