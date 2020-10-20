@@ -104,8 +104,13 @@ class PJCP {
 	}
 	
 	equipo() {
+		var eq = "<strong>Equipo: </strong>" + this.strEquipo();
+		return eq;
+	}
+	
+	strEquipo() {
 		var ieq = 0;
-		var eq = "<strong>Equipo: </strong>";
+		var eq = "";
 		for (ieq = 0; ieq < this._equipo.equipo.length; ieq++) {
 				if ( ieq > 0 ) {
 					eq += ", ";

@@ -38,6 +38,76 @@
 
 	}	
 
+	function rellenaPDFCyber() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		var competencias = '';
+		
+		var nombre = pj.nombre.replace(/ /g, "");
+		var talentos = "";
+		if ( pj.talentos.length > 0 ) {
+			talentos = pj.talentos[0];
+			var itals = 0;
+			for (itals = 1; itals < pj.talentos.length; itals++) {
+				talentos += ", " + pj.talentos[itals];
+			}
+		}
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				
+			  contenido = this.response;
+			  var fields = {
+					'Nombre' : [ pj.nombre ],
+					'Clase' : [ pj.clase ],
+					'Nivel' : [ numeronivel ],
+					'FUE' : [ pj.atributos[0] ],
+					'DES' : [ pj.atributos[1] ],
+					'CON' : [ pj.atributos[2] ],
+					'INT' : [ pj.atributos[3] ],
+					'SAB' : [ pj.atributos[4] ],
+					'CAR' : [ pj.atributos[5] ],
+					'mFUE' : [ Atributos.modif(pj.atributos[0]) ],
+					'mDES' : [ Atributos.modif(pj.atributos[1]) ],
+					'mCON' : [ Atributos.modif(pj.atributos[2]) ],
+					'mINT' : [ Atributos.modif(pj.atributos[3]) ],
+					'mSAB' : [ Atributos.modif(pj.atributos[4]) ],
+					'mCAR' : [ Atributos.modif(pj.atributos[5]) ],
+					'PV' : [ pj.pv ],
+					'PVAct' : [ pj.pv ],
+					'ATQ' : [ pj.atq ],
+					'DEF' : [ pj.defn ],
+					'INS' : [ pj.ins ],
+					'MOV' : [ 10 ],
+					'POW' : [ pj.Pow ],
+					'POWAct' : [ pj.Pow ],
+					'Alma' : [ 4 ],
+					'Corporate' : [ pj.habilidades[0] ],
+					'Cyber' : [ pj.habilidades[1] ],
+					'Hardware' : [ pj.habilidades[2] ],
+					'Punk' : [ pj.habilidades[3] ],
+					'Savage' : [ pj.habilidades[4] ],
+					'Urban' : [ pj.habilidades[5] ],
+					'Talentos' : [ talentos ],
+					'DA' : [ pj.daguante ],
+					'Equipo1' : [ pj.din ],
+					'Equipo2' : [ pj.strEquipo() ],
+				};
+				
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, pj.nombre + ".pdf");
+			}
+		};
+
+
+		xhr.open('GET', 'pdf/VECyber.pdf', true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}	
+	
 	function rellenaPDFPulp() {
 		var xhr = new XMLHttpRequest();
 		var contenido;
@@ -90,7 +160,7 @@
 				
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  saveAs(blob, nombre + ".pdf");
+			  saveAs(blob, pj.nombre + ".pdf");
 			}
 		};
 
@@ -155,7 +225,7 @@
 				
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  saveAs(blob, nombre + ".pdf");
+			  saveAs(blob, pj.nombre + ".pdf");
 			}
 		};
 
@@ -228,7 +298,7 @@
 				
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  saveAs(blob, nombre + ".pdf");
+			  saveAs(blob, pj.nombre + ".pdf");
 			}
 		};
 
@@ -303,7 +373,7 @@
 				
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  saveAs(blob, nombre + ".pdf");
+			  saveAs(blob, pj.nombre + ".pdf");
 			}
 		};
 
@@ -314,7 +384,19 @@
 		xhr.send();		
 		
 	}	
+	
+	function limpia() {
+		
+		document.getElementById("sclases").innerHTML = "";
+		document.getElementById("snivel").innerHTML = "";
+		document.getElementById("srazas").innerHTML = "";
+		document.getElementById("bgenerapdf").innerHTML = "";
+		document.getElementById("srazas").style.visibility="hidden";
+		document.getElementById("bgenerapdf").style.visibility="hidden";
+	}
+	
 	function seleccionaraza(thelist) {
+		limpia();
 		var idx = thelist.selectedIndex;
 		var seleccionado = thelist.options[idx].innerHTML;
 		if ( idx < 1 ) {
@@ -323,6 +405,7 @@
 		nombreraza = seleccionado;
 	}
 	function seleccionaclase(thelist) {
+		limpia();
 		var idx = thelist.selectedIndex;
 		var seleccionado = thelist.options[idx].innerHTML;
 		if ( idx < 1 ) {
@@ -332,6 +415,7 @@
 	}
 	
 	function seleccionanivel(thelist) {
+		limpia();
 		var idx = thelist.selectedIndex;
 		numeronivel = thelist.options[idx].innerHTML;
 	}
@@ -576,6 +660,8 @@
 		document.getElementById("habilidades").innerHTML = shabs;
 		document.getElementById("dinero").innerHTML = "<br/><strong>Dinero: </strong>" + pj.din + "<br/>" + pj.equipo();
 		
+		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDFCyber()'>Genera PDF</button>";
+		document.getElementById("bgenerapdf").style.visibility="visible";
 	}	
 	
 	
