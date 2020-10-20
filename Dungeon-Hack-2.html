@@ -10,6 +10,9 @@
 <script src="javascript/DH_clase2.js"></script>
 <script src="javascript/DH_especie2.js"></script>
 
+<script src="javascript/pdfform.minipdf.dist.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+
 <script>
 	
 	
@@ -26,9 +29,70 @@
 	
 	let sclases = Comun.desplegableClases(clases, "seleccionaclases");
 	let sespecies = Comun.desplegableEspecies(especies, "seleccionaespecies");
+
+
+	function rellenaPDF() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		var competencias = '';
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = {
+					'Nombre' : [''],
+					'Jugador' : [''],
+					'Clase' : [ pj.Clase.nombre ],
+					'Especie' : [pj.Especie.nombre ],
+					'CheckFUE' : [ pj.mFUE == -1 ? true : false],
+					'CheckDES' : [ pj.mDES == -1 ? true : false],
+					'CheckCON_2' : [ pj.mCON == -1 ? true : false],
+					'CheckCON' : [ pj.mINT == -1 ? true : false],
+					'CheckSAB' : [ pj.mSAB == -1 ? true : false],
+					'CheckCAR' : [ pj.mCAR == -1 ? true : false],
+					'FUE' : [ pj.FUE + pj.mFUE ],
+					'DES' : [ pj.DES + pj.mDES ],
+					'CON' : [ pj.CON + pj.mCON ],
+					'INT' : [ pj.INT + pj.mINT ],
+					'SAB' : [ pj.SAB + pj.mSAB ],
+					'CAR' : [ pj.CAR + pj.mCAR ],
+					'NSALUD' : [ pj.Clase.salud ],
+					'NENERGIA' : [ pj.Clase.energia ],
+					'NCORDURA' : [ pj.Cordura ],
+					'Competencias' : [ document.getElementById("competencias").innerText ],
+					'Ventajas' : [ document.getElementById("ventajas").innerText ],
+					'Habilidades' : [ pj.Especie.lhabilidades + pj.Clase.lhabilidades ],
+					'Biografia' : [ document.getElementById("habilidades").innerText ],
+				};
+				
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, 'PersonajeDH.pdf');
+			}
+		};
+
+
+		xhr.open('GET', 'pdf/DungeonHackFichaYlat.pdf', true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}	
 	
+	function vaciaDiv() {
+		document.getElementById("atributos").innerHTML="";
+		document.getElementById("recursos").innerHTML="";
+		document.getElementById("competencias").innerHTML="";
+		document.getElementById("ventajas").innerHTML="";
+		document.getElementById("habilidades").innerHTML="";
+		document.getElementById("clase").innerHTML="";
+		document.getElementById("titulodescripcion").style.visibility="hidden";
+		document.getElementById("descripcion").innerHTML="";
+		document.getElementById("botonpdf").style.visibility="hidden";
+	}
 
 	function seleccionaclases(thelist) {
+		vaciaDiv();
 		var idx = thelist.selectedIndex;
 		var seleccionado = thelist.options[idx].innerHTML;
 		if ( idx < 1 ) {
@@ -38,6 +102,7 @@
 	}
 	
 	function seleccionaespecies(thelist) {
+		vaciaDiv();
 		var idx = thelist.selectedIndex;
 		var seleccionado = thelist.options[idx].innerHTML;
 		if ( idx < 1 ) {
@@ -321,6 +386,7 @@
 		pintaVentajas();
 		pintaRapidez();
 		pintaHabilidades();
+		document.getElementById("botonpdf").style.visibility="visible";
 	}
 	
 	function descarga() {
@@ -333,14 +399,7 @@
 	}
 	
 	function conclases() {
-		document.getElementById("atributos").innerHTML="";
-		document.getElementById("recursos").innerHTML="";
-		document.getElementById("competencias").innerHTML="";
-		document.getElementById("ventajas").innerHTML="";
-		document.getElementById("habilidades").innerHTML="";
-		document.getElementById("clase").innerHTML="";
-		document.getElementById("titulodescripcion").style.visibility="hidden";
-		document.getElementById("descripcion").innerHTML="";
+		vaciaDiv();
 		
 		hayclases = 1;
 		document.getElementById("clases").innerHTML = sclases;
@@ -364,6 +423,11 @@
   width:33%;
   padding:0 1px;
 }
+.minileft {
+  float:left;
+  width:17%;
+  padding:0 1px;
+}
 .main {
   float:left;
   width:34%;
@@ -384,7 +448,7 @@
 
 @media only screen and (max-width:820px) {
   /* For mobile phones: */
-  .left, .main, .right, .total, .minileft {
+  .left, .main, .minileft, .right, .total, .minileft {
     width:100%;
   }
   
@@ -401,7 +465,8 @@
 		</div>
 		<div class="minileft" id="especies">
 		</div>
-		<div class="main"><p><button class='w3-button w3-block w3-blue' onclick='calcula()'>Calcula</button></p></div>
+		<div class="minileft"><p><button class='w3-button w3-block w3-blue' onclick='calcula()'>Calcula</button></p></div>
+		<div class="minileft" id="botonpdf"><p><button class='w3-button w3-block w3-blue' onclick='rellenaPDF()'>Genera PDF</button></p></div>
 		<div class="right" id="clase"><p></p></div>
 	</div>
 	<div style="overflow:auto">

@@ -39,16 +39,16 @@
 					'Clase' : [ pj.Clase.nombre ],
 					'CheckFUE' : [ pj.mFUE == -1 ? true : false],
 					'CheckDES' : [ pj.mDES == -1 ? true : false],
-					'CheckCON' : [ pj.mCON == -1 ? true : false],
-					'CheckINT' : [ pj.mINT == -1 ? true : false],
+					'CheckCON_2' : [ pj.mCON == -1 ? true : false],
+					'CheckCON' : [ pj.mINT == -1 ? true : false],
 					'CheckSAB' : [ pj.mSAB == -1 ? true : false],
 					'CheckCAR' : [ pj.mCAR == -1 ? true : false],
-					'FUE' : [ pj.FUE ],
-					'DES' : [ pj.DES ],
-					'CON' : [ pj.CON ],
-					'INT' : [ pj.INT ],
-					'SAB' : [ pj.SAB ],
-					'CAR' : [ pj.CAR ],
+					'FUE' : [ pj.FUE + pj.mFUE ],
+					'DES' : [ pj.DES + pj.mDES ],
+					'CON' : [ pj.CON + pj.mCON ],
+					'INT' : [ pj.INT + pj.mINT ],
+					'SAB' : [ pj.SAB + pj.mSAB ],
+					'CAR' : [ pj.CAR + pj.mCAR ],
 					'NSALUD' : [ pj.Clase.salud ],
 					'NENERGIA' : [ pj.Clase.energia ],
 					'SaludSiguientes' : [ "Cordura: " + pj.Cordura ],
@@ -425,7 +425,7 @@
 
 @media only screen and (max-width:820px) {
   /* For mobile phones: */
-  .left, .main, .right, .total {
+  .left, .minileft, .main, .right, .total {
     width:100%;
   }
   
