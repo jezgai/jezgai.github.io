@@ -9,6 +9,9 @@
 <script src="javascript/DH_PJ.js"></script>
 <script src="javascript/DH_clase.js"></script>
 
+<script src="javascript/pdfform.minipdf.dist.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+
 <script>
 	
 	
@@ -24,8 +27,64 @@
 	let sclases = Comun.desplegableClases(clases, "seleccionaclases");
 	
 	
+	function rellenaPDF() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		var competencias = '';
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = {
+					'Clase' : [ pj.Clase.nombre ],
+					'CheckFUE' : [ pj.mFUE == -1 ? true : false],
+					'CheckDES' : [ pj.mDES == -1 ? true : false],
+					'CheckCON' : [ pj.mCON == -1 ? true : false],
+					'CheckINT' : [ pj.mINT == -1 ? true : false],
+					'CheckSAB' : [ pj.mSAB == -1 ? true : false],
+					'CheckCAR' : [ pj.mCAR == -1 ? true : false],
+					'FUE' : [ pj.FUE ],
+					'DES' : [ pj.DES ],
+					'CON' : [ pj.CON ],
+					'INT' : [ pj.INT ],
+					'SAB' : [ pj.SAB ],
+					'CAR' : [ pj.CAR ],
+					'NSALUD' : [ pj.Clase.salud ],
+					'NENERGIA' : [ pj.Clase.energia ],
+					'SaludSiguientes' : [ "Cordura: " + pj.Cordura ],
+					'Competencias' : [ document.getElementById("competencias").innerText ],
+					'Ventajas' : [ document.getElementById("ventajas").innerText ],
+					'Capacidades' : [ pj.Clase.lhabilidades ],
+					'NotasVarias' : [ document.getElementById("habilidades").innerText ],
+				};
+				
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, 'PersonajeDH.pdf');
+			}
+		};
+
+
+		xhr.open('GET', 'pdf/DungeonHackFicha.pdf', true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}
+	
 
 	function seleccionaclases(thelist) {
+		
+		document.getElementById("atributos").innerHTML="";
+		document.getElementById("recursos").innerHTML="";
+		document.getElementById("competencias").innerHTML="";
+		document.getElementById("ventajas").innerHTML="";
+		document.getElementById("habilidades").innerHTML="";
+		document.getElementById("clase").innerHTML="";
+		document.getElementById("titulodescripcion").style.visibility="hidden";
+		document.getElementById("descripcion").innerHTML="";
+		document.getElementById("botonpdf").style.visibility="hidden";
+		
 		var idx = thelist.selectedIndex;
 		var seleccionado = thelist.options[idx].innerHTML;
 		if ( idx < 1 ) {
@@ -190,6 +249,15 @@
 													  "<tr><td><strong>Cordura</strong></td><td>" + pj.Cordura + "</td></tr></table>";
 	}
 	
+	function competenciasAstring() {
+		var competencias = "";
+		var icompe = 0;
+		for (icompe = 0; icompe < pj.Clase.competencias.length; icompe++) {
+			competencias += pj.Clase.competencias[icompe] + "\n";
+		}
+		return competencias;
+	}
+	
 	function pintaCompetencias() {
 		var competencias = "";
 		var icompe = 0;
@@ -201,6 +269,16 @@
 		document.getElementById("competencias").innerHTML = competencias;
 	}
 	
+	
+	function ventajasAstring() {
+		var ventajas = "";
+		var iventaja = 0;
+		for (iventaja = 0; iventaja < pj.Clase.ventajas.length; iventaja++) {
+			ventajas += pj.Clase.ventajas[iventaja] + "\n";
+		}
+		return ventajas;
+	}
+	
 	function pintaVentajas() {
 		var ventajas = "";
 		var iventaja = 0;
@@ -210,6 +288,15 @@
 		if ( ventajas != "" ) 
 			ventajas = "<table class='w3-table  w3-striped  w3-border'>" + ventajas + "</table>";
 		document.getElementById("ventajas").innerHTML = ventajas;
+	}
+	
+	function habilidadesAstring() {
+		var habilidades = "";
+		var ihabilidad = 0;
+		for (ihabilidad = 0; ihabilidad < pj.Clase.habilidades.length; ihabilidad++) {
+			habilidades += pj.Clase.habilidades[ihabilidad] + "\n";
+		}
+		return habilidades;
 	}
 	
 	function pintaHabilidades() {
@@ -273,6 +360,8 @@
 		pintaCompetencias();
 		pintaVentajas();
 		pintaHabilidades();
+		
+		document.getElementById("botonpdf").style.visibility="visible";
 	}
 	
 	function descarga() {
@@ -293,6 +382,7 @@
 		document.getElementById("clase").innerHTML="";
 		document.getElementById("titulodescripcion").style.visibility="hidden";
 		document.getElementById("descripcion").innerHTML="";
+		document.getElementById("botonpdf").style.visibility="hidden";
 		
 		hayclases = 1;
 		document.getElementById("clases").innerHTML = sclases;
@@ -308,6 +398,11 @@
 .left {
   float:left;
   width:33%;
+  padding:0 1px;
+}
+.minileft {
+  float:left;
+  width:17%;
   padding:0 1px;
 }
 .main {
@@ -345,7 +440,8 @@
 		<div class="left" id="clases">
 			<p><button class='w3-button w3-block w3-teal' onclick='conclases()'>Clases</button></p>
 		</div>
-		<div class="main"><p><button class='w3-button w3-block w3-brown' onclick='calcula()'>Calcula</button></p></div>
+		<div class="minileft"><p><button class='w3-button w3-block w3-brown' onclick='calcula()'>Calcula</button></p></div>
+		<div class="minileft" id="botonpdf"><p><button class='w3-button w3-block w3-brown' onclick='rellenaPDF()'>Genera PDF</button></p></div>
 		<div class="right" id="clase"><p></p></div>
 	</div>
 	<div style="overflow:auto">
