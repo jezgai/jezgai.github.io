@@ -30,66 +30,43 @@
 	let dinero = "";
 	
 
-	function abajo(atributo) {
+	function abajoatr(atributo) {
 		
-		var atributosiguiente = pj.atributos[(atributo+1)%6];
-		pj.atributos[(atributo+1)%6] = pj.atributos[atributo];
+		var atributosiguiente = pj.atributos[(parseInt(atributo)+1)%6];
+		pj.atributos[(parseInt(atributo)+1)%6] = pj.atributos[atributo];
 		pj.atributos[atributo] = atributosiguiente;
-
+		var satrs = Comun.tablaAtributos();
+		document.getElementById("atributos").innerHTML = satrs;
+		if ( atributo <= 1 ) {
+			pj.calculaDefensa();
+		}
+		if ( atributo == 1 || atributo == 2 ) {
+			pj.calculaPV();
+		}
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
+	}
+	
+	function abajohab(habilidad) {
+		
+		var habilidadsiguiente = pj.habilidades[(parseInt(habilidad)+1)%6];
+		pj.habilidades[(parseInt(habilidad)+1)%6] = pj.habilidades[habilidad];
+		pj.habilidades[habilidad] = habilidadsiguiente;
+		var shabs = Comun.tablaHabilidades();
+		document.getElementById("habilidades").innerHTML = shabs;
 	}	
 	
 	
-	function rellenaPDFJF() {
+	function rellenaPDF() {
 		var xhr = new XMLHttpRequest();
 		var contenido;
-		var competencias = '';
-		
-		var talentos = "";
-		if ( pj.talentos.length > 0 ) {
-			talentos = pj.talentos[0];
-			var itals = 0;
-			for (itals = 1; itals < pj.talentos.length; itals++) {
-				talentos += ", " + pj.talentos[itals];
-			}
-		}
 		
 		xhr.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				
 			  contenido = this.response;
-			  var fields = {
-					'Nombre' : [ pj.nombre ],
-					'Clase' : [ pj.clase ],
-					'Nivel' : [ numeronivel ],
-					'FUE' : [ pj.atributos[0] ],
-					'DES' : [ pj.atributos[1] ],
-					'CON' : [ pj.atributos[2] ],
-					'INT' : [ pj.atributos[3] ],
-					'SAB' : [ pj.atributos[4] ],
-					'CAR' : [ pj.atributos[5] ],
-					'mFUE' : [ Atributos.modifmas(pj.atributos[0]) ],
-					'mDES' : [ Atributos.modifmas(pj.atributos[1]) ],
-					'mCON' : [ Atributos.modifmas(pj.atributos[2]) ],
-					'mINT' : [ Atributos.modifmas(pj.atributos[3]) ],
-					'mSAB' : [ Atributos.modifmas(pj.atributos[4]) ],
-					'mCAR' : [ Atributos.modifmas(pj.atributos[5]) ],
-					'PV' : [ pj.pv ],
-					'ATQ' : [ pj.atq ],
-					'DEF' : [ pj.defn ],
-					'INS' : [ pj.ins ],
-					'MOV' : [ 10 ],
-					'Honor' : [ pj.hon ],
-					'Alerta' : [ pj.habilidades[0] ],
-					'Callejeo' : [ pj.habilidades[1] ],
-					'Corte' : [ pj.habilidades[2] ],
-					'Guerra' : [ pj.habilidades[3] ],
-					'Manipulacion' : [ pj.habilidades[4] ],
-					'Supervivencia' : [ pj.habilidades[5] ],
-					'Talentos' : [ talentos ],
-					'DA' : [ pj.daguante ],
-					'Equipo' : [ pj.din ],
-				};
-				
+			  
+			  var fields = pj.rellenaCamposPDF();
+			  
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
 			  saveAs(blob, pj.nombre + ".pdf");
@@ -97,360 +74,12 @@
 		};
 
 
-		xhr.open('GET', 'pdf/VEJF.pdf', true);
+		xhr.open('GET', pj.plantillaPDF, true);
 		xhr.responseType = 'arraybuffer';
 		xhr.setRequestHeader("Content-Type", "application/json");
 		xhr.send();		
 		
-	}	
-	
-
-	function rellenaPDFCyber() {
-		var xhr = new XMLHttpRequest();
-		var contenido;
-		var competencias = '';
-		
-		var nombre = pj.nombre.replace(/ /g, "");
-		var talentos = "";
-		if ( pj.talentos.length > 0 ) {
-			talentos = pj.talentos[0];
-			var itals = 0;
-			for (itals = 1; itals < pj.talentos.length; itals++) {
-				talentos += ", " + pj.talentos[itals];
-			}
-		}
-		
-		xhr.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				
-			  contenido = this.response;
-			  var fields = {
-					'Nombre' : [ pj.nombre ],
-					'Clase' : [ pj.clase ],
-					'Nivel' : [ numeronivel ],
-					'FUE' : [ pj.atributos[0] ],
-					'DES' : [ pj.atributos[1] ],
-					'CON' : [ pj.atributos[2] ],
-					'INT' : [ pj.atributos[3] ],
-					'SAB' : [ pj.atributos[4] ],
-					'CAR' : [ pj.atributos[5] ],
-					'mFUE' : [ Atributos.modifmas(pj.atributos[0]) ],
-					'mDES' : [ Atributos.modifmas(pj.atributos[1]) ],
-					'mCON' : [ Atributos.modifmas(pj.atributos[2]) ],
-					'mINT' : [ Atributos.modifmas(pj.atributos[3]) ],
-					'mSAB' : [ Atributos.modifmas(pj.atributos[4]) ],
-					'mCAR' : [ Atributos.modifmas(pj.atributos[5]) ],
-					'PV' : [ pj.pv ],
-					'PVAct' : [ pj.pv ],
-					'ATQ' : [ pj.atq ],
-					'DEF' : [ pj.defn ],
-					'INS' : [ pj.ins ],
-					'MOV' : [ 10 ],
-					'POW' : [ pj.Pow ],
-					'POWAct' : [ pj.Pow ],
-					'Alma' : [ 4 ],
-					'Corporate' : [ pj.habilidades[0] ],
-					'Cyber' : [ pj.habilidades[1] ],
-					'Hardware' : [ pj.habilidades[2] ],
-					'Punk' : [ pj.habilidades[3] ],
-					'Savage' : [ pj.habilidades[4] ],
-					'Urban' : [ pj.habilidades[5] ],
-					'Talentos' : [ talentos ],
-					'DA' : [ pj.daguante ],
-					'Equipo1' : [ pj.din ],
-					'Equipo2' : [ pj.strEquipo() ],
-				};
-				
-			  var out_buf = pdfform().transform(contenido, fields);
-			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  saveAs(blob, pj.nombre + ".pdf");
-			}
-		};
-
-
-		xhr.open('GET', 'pdf/VECyber.pdf', true);
-		xhr.responseType = 'arraybuffer';
-		xhr.setRequestHeader("Content-Type", "application/json");
-		xhr.send();		
-		
-	}	
-	
-	function rellenaPDFPulp() {
-		var xhr = new XMLHttpRequest();
-		var contenido;
-		var competencias = '';
-		
-		var nombre = pj.nombre.replace(/ /g, "");
-		var talentos = "";
-		if ( pj.talentos.length > 0 ) {
-			talentos = pj.talentos[0];
-			var itals = 0;
-			for (itals = 1; itals < pj.talentos.length; itals++) {
-				talentos += ", " + pj.talentos[itals];
-			}
-		}
-		
-		xhr.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-			  contenido = this.response;
-			  var fields = {
-					'Nombre' : [ pj.nombre ],
-					'Clase' : [ pj.clase ],
-					'Nivel' : [ numeronivel ],
-					'FUE' : [ pj.atributos[0] ],
-					'DES' : [ pj.atributos[1] ],
-					'CON' : [ pj.atributos[2] ],
-					'INT' : [ pj.atributos[3] ],
-					'SAB' : [ pj.atributos[4] ],
-					'CAR' : [ pj.atributos[5] ],
-					'mFUE' : [ Atributos.modif(pj.atributos[0]) ],
-					'mDES' : [ Atributos.modif(pj.atributos[1]) ],
-					'mCON' : [ Atributos.modif(pj.atributos[2]) ],
-					'mINT' : [ Atributos.modif(pj.atributos[3]) ],
-					'mSAB' : [ Atributos.modif(pj.atributos[4]) ],
-					'mCAR' : [ Atributos.modif(pj.atributos[5]) ],
-					'PV' : [ pj.pv ],
-					'ATQ' : [ pj.atq ],
-					'DEF' : [ pj.defn ],
-					'INS' : [ pj.ins ],
-					'MOV' : [ 10 ],
-					'PPulp' : [ pj.pP ],
-					'Alerta' : [ pj.habilidades[0] ],
-					'Comunicacion' : [ pj.habilidades[1] ],
-					'Erudicion' : [ pj.habilidades[2] ],
-					'Manipulacion' : [ pj.habilidades[3] ],
-					'Subterfugio' : [ pj.habilidades[4] ],
-					'Supervivencia' : [ pj.habilidades[5] ],
-					'Talentos' : [ talentos ],
-					'Notas' : [ "Dinero: " + dinero + "$" ],
-				};
-				
-			  var out_buf = pdfform().transform(contenido, fields);
-			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  saveAs(blob, pj.nombre + ".pdf");
-			}
-		};
-
-
-		xhr.open('GET', 'pdf/VEPulp.pdf', true);
-		xhr.responseType = 'arraybuffer';
-		xhr.setRequestHeader("Content-Type", "application/json");
-		xhr.send();		
-		
-	}	
-	
-
-	function rellenaPDFSO() {
-		var xhr = new XMLHttpRequest();
-		var contenido;
-		var competencias = '';
-		
-		var nombre = pj.nombre.replace(/ /g, "");
-		var talentos = "";
-		if ( pj.talentos.length > 0 ) {
-			talentos = pj.talentos[0];
-			var itals = 0;
-			for (itals = 1; itals < pj.talentos.length; itals++) {
-				talentos += ", " + pj.talentos[itals];
-			}
-		}
-		
-		xhr.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-			  contenido = this.response;
-			  var fields = {
-					'Nombre' : [ pj.nombre ],
-					'Clase' : [ pj.clase + " (d" + pj.daguante + ")" ],
-					'Nivel' : [ numeronivel ],
-					'Fuerza' : [ pj.atributos[0] ],
-					'Destreza' : [ pj.atributos[1] ],
-					'Constitucion' : [ pj.atributos[2] ],
-					'Inteligencia' : [ pj.atributos[3] ],
-					'Sabiduria' : [ pj.atributos[4] ],
-					'Carisma' : [ pj.atributos[5] ],
-					'FUE' : [ Atributos.modif(pj.atributos[0]) ],
-					'DES' : [ Atributos.modif(pj.atributos[1]) ],
-					'CON' : [ Atributos.modif(pj.atributos[2]) ],
-					'INT' : [ Atributos.modif(pj.atributos[3]) ],
-					'SAB' : [ Atributos.modif(pj.atributos[4]) ],
-					'CAR' : [ Atributos.modif(pj.atributos[5]) ],
-					'PVTot' : [ pj.pv ],
-					'PVAct' : [ pj.pv ],
-					'ATQ' : [ pj.atq ],
-					'DEF' : [ pj.defn ],
-					'INS' : [ pj.ins ],
-					'MOV' : [ 10 ],
-					'NivelAdquisitivo' : [ pj.niveladq ],
-					'Alerta' : [ pj.habilidades[0] ],
-					'Comunicacion' : [ pj.habilidades[1] ],
-					'Erudicion' : [ pj.habilidades[2] ],
-					'Manipulacion' : [ pj.habilidades[3] ],
-					'Subterfugio' : [ pj.habilidades[4] ],
-					'Supervivencia' : [ pj.habilidades[5] ],
-					'Talentos' : [ talentos ],
-				};
-				
-			  var out_buf = pdfform().transform(contenido, fields);
-			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  saveAs(blob, pj.nombre + ".pdf");
-			}
-		};
-
-
-		xhr.open('GET', 'pdf/VESO.pdf', true);
-		xhr.responseType = 'arraybuffer';
-		xhr.setRequestHeader("Content-Type", "application/json");
-		xhr.send();		
-		
-	}	
-	
-	function rellenaPDFZ() {
-		var xhr = new XMLHttpRequest();
-		var contenido;
-		var competencias = '';
-		
-		var nombre = pj.nombre.replace(/ /g, "");
-		var talentos1 = "";
-		var talentos2 = "";
-		if ( pj.talentos.length > 0 ) {
-			talentos1 = pj.talentos[0];
-			if ( pj.talentos.length > 1 ) {
-				talentos1 += ", " + pj.talentos[1];
-				if ( pj.talentos.length > 2 ) {
-					talentos2 = pj.talentos[2];
-					
-					if ( pj.talentos.length > 3 ) {
-						talentos2 += ", " + pj.talentos[3];
-					}
-				}
-			}
-		}
-		
-		xhr.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-			  contenido = this.response;
-			  var fields = {
-					'Nombre' : [ pj.nombre ],
-					'Clase' : [ pj.clase + " (d" + pj.daguante + ")" ],
-					'Nivel' : [ numeronivel ],
-					'FUE' : [ pj.atributos[0] ],
-					'DES' : [ pj.atributos[1] ],
-					'CON' : [ pj.atributos[2] ],
-					'INT' : [ pj.atributos[3] ],
-					'SAB' : [ pj.atributos[4] ],
-					'CAR' : [ pj.atributos[5] ],
-					'mFUE' : [ Atributos.modifmas(pj.atributos[0]) ],
-					'mDES' : [ Atributos.modifmas(pj.atributos[1]) ],
-					'mCON' : [ Atributos.modifmas(pj.atributos[2]) ],
-					'mINT' : [ Atributos.modifmas(pj.atributos[3]) ],
-					'mSAB' : [ Atributos.modifmas(pj.atributos[4]) ],
-					'mCAR' : [ Atributos.modifmas(pj.atributos[5]) ],
-					'PVTot' : [ pj.pv ],
-					'PVAct' : [ pj.pv ],
-					'ATQ' : [ pj.atq ],
-					'DEF' : [ pj.defn ],
-					'INS' : [ pj.ins ],
-					'MOV' : [ 10 ],
-					'PSAct' : [ pj.pS ],
-					'PSTot' : [ pj.pS ],
-					'Alerta' : [ pj.habilidades[0] ],
-					'Comunicacion' : [ pj.habilidades[1] ],
-					'Erudicion' : [ pj.habilidades[2] ],
-					'Manipulacion' : [ pj.habilidades[3] ],
-					'Subterfugio' : [ pj.habilidades[4] ],
-					'Supervivencia' : [ pj.habilidades[5] ],
-					'Talento1' : [ talentos1 ],
-					'Talento2' : [ talentos2 ],
-				};
-				
-			  var out_buf = pdfform().transform(contenido, fields);
-			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  saveAs(blob, pj.nombre + ".pdf");
-			}
-		};
-
-
-		xhr.open('GET', 'pdf/VEZombies.pdf', true);
-		xhr.responseType = 'arraybuffer';
-		xhr.setRequestHeader("Content-Type", "application/json");
-		xhr.send();		
-		
-	}	
-	
-
-	function rellenaPDFExp() {
-		var xhr = new XMLHttpRequest();
-		var contenido;
-		var competencias = '';
-		
-		var nombre = pj.nombre.replace(/ /g, "");
-		var talentos = "";
-		if ( pj.talentos.length > 0 ) {
-			talentos = pj.talentos[0];
-			var itals = 0;
-			for (itals = 1; itals < pj.talentos.length; itals++) {
-				talentos += ", " + pj.talentos[itals];
-			}
-		}
-		
-		xhr.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-			  contenido = this.response;
-			  var fields = {
-					'Aventurero' : [ pj.nombre ],
-					'Tipo' : [ pj.clase ],
-					'Nivel' : [ numeronivel ],
-					'VFUE' : [ pj.atributos[0] ],
-					'VDES' : [ pj.atributos[1] ],
-					'VCON' : [ pj.atributos[2] ],
-					'VINT' : [ pj.atributos[3] ],
-					'VSAB' : [ pj.atributos[4] ],
-					'VCAR' : [ pj.atributos[5] ],
-					'BFUE' : [ Atributos.modif(pj.atributos[0]) ],
-					'BDES' : [ Atributos.modif(pj.atributos[1]) ],
-					'BCON' : [ Atributos.modif(pj.atributos[2]) ],
-					'BINT' : [ Atributos.modif(pj.atributos[3]) ],
-					'BSAB' : [ Atributos.modif(pj.atributos[4]) ],
-					'BCAR' : [ Atributos.modif(pj.atributos[5]) ],
-					'IFUE' : [ (pj.ins + Atributos.modif(pj.atributos[0])) ],
-					'IDES' : [ (pj.ins + Atributos.modif(pj.atributos[1])) ],
-					'ICON' : [ (pj.ins + Atributos.modif(pj.atributos[2])) ],
-					'IINT' : [ (pj.ins + Atributos.modif(pj.atributos[3])) ],
-					'ISAB' : [ (pj.ins + Atributos.modif(pj.atributos[4])) ],
-					'ICAR' : [ (pj.ins + Atributos.modif(pj.atributos[5])) ],
-					'PVMax' : [ pj.pv ],
-					'PVAct' : [ pj.pv ],
-					'PODMax' : [ pj.pod ],
-					'PODAct' : [ pj.pod ],
-					'Arma1' : [ "-A elegir-" ],
-					'Atq1' : [ pj.atq ],
-					'DEF' : [ pj.defn ],
-					'INS' : [ pj.ins ],
-					'MOV' : [ pj.mov ],
-					'Alerta' : [ pj.habilidades[0] ],
-					'Comunicacion' : [ pj.habilidades[1] ],
-					'Erudicion' : [ pj.habilidades[2] ],
-					'Manipulacion' : [ pj.habilidades[3] ],
-					'Subterfugio' : [ pj.habilidades[4] ],
-					'Supervivencia' : [ pj.habilidades[5] ],
-					'Talentos' : [ talentos ],
-					'Trasfondos' : [ pj.trasfondo ],
-					'Historial' : [ "Dinero: " + dinero + " mo" ],
-				};
-				
-			  var out_buf = pdfform().transform(contenido, fields);
-			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  saveAs(blob, pj.nombre + ".pdf");
-			}
-		};
-
-
-		xhr.open('GET', 'pdf/VEExpandido.pdf', true);
-		xhr.responseType = 'arraybuffer';
-		xhr.setRequestHeader("Content-Type", "application/json");
-		xhr.send();		
-		
-	}	
+	}
 	
 	function limpia() {
 		
@@ -691,43 +320,20 @@
 		
 		pj.genera();
 		
-		pjPDF = new Object();
-		pjPDF.clase = nombreclase;
-		pjPDF.nivel = numeronivel;
-		pjPDF.atributos = pj.atributos;
-		pjPDF.habilidades = pj.habilidades;
+		var satrs = Comun.tablaAtributos();
+
+		var shabs = Comun.tablaHabilidades();
 		
-		var satrs = "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</strong></th><th>Valor (mod)</th></tr>";
-		for (iatrb = 0; iatrb < pj.atributos.length; iatrb++) {
-			satrs += "<tr><td>" + atributos.atributos[iatrb].nbatr + " (" + atributos.atributos[iatrb].nbmod + ")</td><td align='center'>" + pj.atributos[iatrb] + " (" + Atributos.modifmas(pj.atributos[iatrb]) + ")</td></tr>";
-		}
-		satrs += "</table>";
-		
-		var shabs = "<table class='w3-table  w3-striped w3-border'><tr><th>Habilidad</th><th>Valor</th></tr>";
-		for (ihabs = 0; ihabs < pj.habilidades.length; ihabs++) {
-			shabs += "<tr><td>" + habilidades.habilidades[ihabs] + " </td><td align='center'>" + pj.habilidades[ihabs] + " </td></tr>";
-		}
-		shabs += "</table>";
-		
-		var stals = "<table class='w3-table  w3-striped w3-border'><tr><th>Talentos</th></tr>";
-		for (itals = 0; itals < pj.talentos.length; itals++) {
-			stals += "<tr><td>" + pj.talentos[itals] + " </td></tr>";
-		}
-		stals += "</table>";
+		var stals = Comun.tablaTalentos();
 		
 		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
-		document.getElementById("rasgos").innerHTML = "<table  class='w3-table  w3-striped w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
-													  " </td></tr><tr><td><strong>Atq:</strong> " + pj.atq +
-													  " </td></tr><tr><td><strong>Ins:</strong> " + pj.ins + 
-													  " </td></tr><tr><td><strong>Def:</strong> " + pj.defn + 
-													  " </td></tr><tr><td><strong>Pow:</strong> " + pj.Pow + 
-													  " </td></tr><tr><td><strong>PV:</strong> " + pj.pv + "</td></tr></table";
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos(); 
 		document.getElementById("atributos").innerHTML = satrs;
 		document.getElementById("talentos").innerHTML = stals;
 		document.getElementById("habilidades").innerHTML = shabs;
 		document.getElementById("dinero").innerHTML = "<br/><strong>Dinero: </strong>" + pj.din + "<br/>" + pj.equipo();
 		
-		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDFCyber()'>Genera PDF</button>";
+		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
 		document.getElementById("bgenerapdf").style.visibility="visible";
 	}	
 	
@@ -738,7 +344,14 @@
 		pj = new PJZ(numeronivel);
 		pj.clase = nombreclase;
 		
-		pj.genera();
+		pj.genera();	
+		
+		var satrs = Comun.tablaAtributos();
+
+		var shabs = Comun.tablaHabilidades();
+		
+		var stals = Comun.tablaTalentos();
+		/*
 		var satrs = "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</strong></th><th>Valor (mod)</th></tr>";
 		for (iatrb = 0; iatrb < pj.atributos.length; iatrb++) {
 			satrs += "<tr><td>" + atributos.atributos[iatrb].nbatr + " (" + atributos.atributos[iatrb].nbmod + ")</td><td align='center'>" + pj.atributos[iatrb] + " (" + Atributos.modifmas(pj.atributos[iatrb]) + ")</td></tr>";
@@ -756,6 +369,7 @@
 			stals += "<tr><td>" + pj.talentos[itals] + " </td></tr>";
 		}
 		stals += "</table>";
+		*/
 		
 		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
 		document.getElementById("rasgos").innerHTML = "<table  class='w3-table  w3-striped w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
@@ -770,7 +384,7 @@
 		document.getElementById("dinero").innerHTML = "";
 		
 		
-		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDFZ()'>Genera PDF</button>";
+		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
 		document.getElementById("bgenerapdf").style.visibility="visible";
 
 	}	
@@ -780,62 +394,27 @@
 		vacia();
 				
 		pj = new PJSO(numeronivel);
-		//pj.raza = nombreraza;
 		pj.clase = nombreclase;
 		
-		pj.genera();
-		//clase = clases.clase('random');
-		//clase.atq = clase.atq(1);
+		pj.genera();		
 		
-		parametrosimg = "?nombre="+pj.nombre+"&clase="+pj.clase+"&nivel="+numeronivel+"&niveladquisitivo="+pj.niveladq;
+		var satrs = Comun.tablaAtributos();
+
+		var shabs = Comun.tablaHabilidades();
 		
-		var satrs = "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</strong></th><th>Valor (mod)</th></tr>";
-		for (iatrb = 0; iatrb < pj.atributos.length; iatrb++) {
-			satrs += "<tr><td>" + atributos.atributos[iatrb].nbatr + " (" + atributos.atributos[iatrb].nbmod + ")</td><td align='center'>" + pj.atributos[iatrb] + " (" + Atributos.modif(pj.atributos[iatrb]) + ")</td></tr>";
-			parametrosimg += "&" + atributos.atributos[iatrb].nbmod.toLowerCase() + "=" + pj.atributos[iatrb];
-			parametrosimg += "&m" + atributos.atributos[iatrb].nbmod.toLowerCase() + "=" + Atributos.modif(pj.atributos[iatrb]);
-		}
-		satrs += "</table>";
-		//pj.habilidades
-		var shabs = "<table class='w3-table  w3-striped w3-border'><tr><th>Habilidad</th><th>Valor</th></tr>";
-		for (ihabs = 0; ihabs < pj.habilidades.length; ihabs++) {
-			shabs += "<tr><td>" + habilidades.habilidades[ihabs] + " </td><td align='center'>" + pj.habilidades[ihabs] + " </td></tr>";
-			parametrosimg += "&" + habilidades.habilidades[ihabs].toLowerCase().substring(0,4) + "=" + pj.habilidades[ihabs];
-		}
-		shabs += "</table>";
+		var stals = Comun.tablaTalentos();
 		
-		var stals = "<table class='w3-table  w3-striped w3-border'><tr><th>Talentos</th></tr>";
-		for (itals = 0; itals < pj.talentos.length; itals++) {
-			stals += "<tr><td>" + pj.talentos[itals] + " </td></tr>";
-			if ( itals%2 == 0 ) {
-				var numero=(itals/2)+1;
-				parametrosimg += "&talento" + numero + "=" + pj.talentos[itals];
-			}
-			else {
-				parametrosimg += ", " + pj.talentos[itals];
-			}
-		}
-		stals += "</table>";
 		
-		parametrosimg += "&pvt=" + pj.pv + "&atq=" + pj.atq + "&ins=" + pj.ins + "&def=" + pj.defn + "&mov=10";
 		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
-		document.getElementById("rasgos").innerHTML = "<table  class='w3-table  w3-striped w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
-													  " </td></tr><tr><td><strong>Atq:</strong> " + pj.atq +
-													  " </td></tr><tr><td><strong>Ins:</strong> " + pj.ins + 
-													  " </td></tr><tr><td><strong>Def:</strong> " + pj.defn +
-													  " </td></tr><tr><td><strong>PV:</strong> " + pj.pv + "</td></tr></table";
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
+		
 		document.getElementById("atributos").innerHTML = satrs;
 		document.getElementById("talentos").innerHTML = stals;
 		document.getElementById("habilidades").innerHTML = shabs;
 		document.getElementById("dinero").innerHTML = "<br/><strong>Nivel adquisitivo: </strong> " + pj.niveladq;
 		
-		
-		/*document.getElementById("ficha").innerHTML = "Dirección de imagen del personaje: <input type='text' id='FotoPJ' name='FotoPJ'><br/><button class='w3-button w3-block w3-teal' onclick='generaFicha()'>Genera Ficha</button>";
-		
-	    paginaimg = "ve-so-imagen.html";*/
-	    
-		
-		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDFSO()'>Genera PDF</button>";
+				
+		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
 		document.getElementById("bgenerapdf").style.visibility="visible";
 
 	}	
@@ -853,43 +432,24 @@
 		vacia();
 				
 		pj = new PJJ(numeronivel);
-		//pj.raza = nombreraza;
 		pj.clase = nombreclase;
 		
 		pj.genera();
-		//clase = clases.clase('random');
-		//clase.atq = clase.atq(1);
-		var satrs = "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</strong></th><th>Valor (mod)</th></tr>";
-		for (iatrb = 0; iatrb < pj.atributos.length; iatrb++) {
-			satrs += "<tr><td>" + atributos.atributos[iatrb].nbatr + " (" + atributos.atributos[iatrb].nbmod + ")</td><td align='center'>" + pj.atributos[iatrb] + " (" + Atributos.modifmas(pj.atributos[iatrb]) + ")</td></tr>";
-		}
-		satrs += "</table>";
-		//pj.habilidades
-		var shabs = "<table class='w3-table  w3-striped w3-border'><tr><th>Habilidad</th><th>Valor</th></tr>";
-		for (ihabs = 0; ihabs < pj.habilidades.length; ihabs++) {
-			shabs += "<tr><td>" + habilidades.habilidades[ihabs] + " </td><td align='center'>" + pj.habilidades[ihabs] + " </td></tr>";
-		}
-		shabs += "</table>";
 		
-		var stals = "<table class='w3-table  w3-striped w3-border'><tr><th>Talentos</th></tr>";
-		for (itals = 0; itals < pj.talentos.length; itals++) {
-			stals += "<tr><td>" + pj.talentos[itals] + " </td></tr>";
-		}
-		stals += "</table>";
+		var satrs = Comun.tablaAtributos();
+
+		var shabs = Comun.tablaHabilidades();
+		
+		var stals = Comun.tablaTalentos();
 		
 		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
-		document.getElementById("rasgos").innerHTML = "<table  class='w3-table  w3-striped w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
-													  " </td></tr><tr><td><strong>Atq:</strong> " + pj.atq +
-													  " </td></tr><tr><td><strong>Ins:</strong> " + pj.ins + 
-													  " </td></tr><tr><td><strong>Def:</strong> " + pj.defn + 
-													  " </td></tr><tr><td><strong>Honor:</strong> " + pj.hon + 
-													  " </td></tr><tr><td><strong>PV:</strong> " + pj.pv + "</td></tr></table";
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos(); 
 		document.getElementById("atributos").innerHTML = satrs;
 		document.getElementById("talentos").innerHTML = stals;
 		document.getElementById("habilidades").innerHTML = shabs;
 		document.getElementById("dinero").innerHTML = "<br/><strong>Poder adquisitivo: </strong> " + pj.din;
 		
-		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDFJF()'>Genera PDF</button>";
+		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
 		document.getElementById("bgenerapdf").style.visibility="visible";
 
 	}	
@@ -897,49 +457,30 @@
 	
 	function generaP() {
 		vacia();
-		
-
-		
+				
 		pj = new PJP(numeronivel);
-		//pj.raza = nombreraza;
 		pj.clase = nombreclase;
 		
 		pj.genera();
-		//clase = clases.clase('random');
-		//clase.atq = clase.atq(1);
-		var satrs = "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</strong></th><th>Valor (mod)</th></tr>";
-		for (iatrb = 0; iatrb < pj.atributos.length; iatrb++) {
-			satrs += "<tr><td>" + atributos.atributos[iatrb].nbatr + " (" + atributos.atributos[iatrb].nbmod + ")</td><td align='center'>" + pj.atributos[iatrb] + " (" + Atributos.modif(pj.atributos[iatrb]) + ")</td></tr>";
-		}
-		satrs += "</table>";
-		//pj.habilidades
-		var shabs = "<table class='w3-table  w3-striped  w3-border'><tr><th>Habilidad</th><th>Valor</th></tr>";
-		for (ihabs = 0; ihabs < pj.habilidades.length; ihabs++) {
-			shabs += "<tr><td>" + habilidades.habilidades[ihabs] + " </td><td align='center'>" + pj.habilidades[ihabs] + " </td></tr>";
-		}
-		shabs += "</table>";
 		
-		var stals = "<table class='w3-table  w3-striped w3-border'><tr><th>Talentos</th></tr>";
-		for (itals = 0; itals < pj.talentos.length; itals++) {
-			stals += "<tr><td>" + pj.talentos[itals] + " </td></tr>";
-		}
-		stals += "</table>";
 		
+		var satrs = Comun.tablaAtributos();
+
+		var shabs = Comun.tablaHabilidades();
+		
+		var stals = Comun.tablaTalentos();
+				
 		document.getElementById("datos").innerHTML = "<table class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
-		document.getElementById("rasgos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
-													  " </td></tr><tr><td><strong>Atq:</strong> " + pj.atq +
-            		                                  " </td></tr><tr><td><strong>pP!:</strong> " + pj.pP + 
-													  " </td></tr><tr><td><strong>Ins:</strong> " + pj.ins + 
-													  " </td></tr><tr><td><strong>Def:</strong> " + pj.defn + 
-													  " </td></tr><tr><td><strong>PV:</strong> " + pj.pv + "</td></tr></table";
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
 		document.getElementById("atributos").innerHTML = satrs;
 		document.getElementById("talentos").innerHTML = stals;
 		document.getElementById("habilidades").innerHTML = shabs;
-		dinero = Comun.random(8,1) * 100;
+		//dinero = Comun.random(8,1) * 100;
+		dinero = pj.din;
 		document.getElementById("dinero").innerHTML = "<br/><strong>Dinero: </strong> " + dinero + "$";
 		
 		
-		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDFPulp()'>Genera PDF</button>";
+		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
 		document.getElementById("bgenerapdf").style.visibility="visible";
 	}	
 	
@@ -951,56 +492,26 @@
 		pj.clase = nombreclase;
 		
 		pj.genera();
-		//clase = clases.clase('random');
-		//clase.atq = clase.atq(1);
-		dinero = Comun.random(6,1) * 100;
-		parametrosimg = "?nombre="+pj.nombre+"&clase="+pj.clase+"&nivel="+numeronivel+"&dinero="+dinero;
-		if ( pj.trasfondo != "" ) {
-			parametrosimg += "&trasfondo1=" + pj.trasfondo;
-		}
-		var satrs = "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</strong></th><th>Valor (mod)</th></tr>";
-		for (iatrb = 0; iatrb < pj.atributos.length; iatrb++) {
-			satrs += "<tr><td>" + atributos.atributos[iatrb].nbatr + " (" + atributos.atributos[iatrb].nbmod + ")</td><td align='center'>" + pj.atributos[iatrb] + " (" + Atributos.modif(pj.atributos[iatrb]) + ")</td></tr>";
-			parametrosimg += "&" + atributos.atributos[iatrb].nbmod.toLowerCase() + "=" + pj.atributos[iatrb];
-			parametrosimg += "&m" + atributos.atributos[iatrb].nbmod.toLowerCase() + "=" + Atributos.modif(pj.atributos[iatrb]);
-		}
-		satrs += "</table>";
-		//pj.habilidades
-		var shabs = "<table  class='w3-table  w3-striped  w3-border'><tr><th>Habilidad</th><th>Valor</th></tr>";
-		for (ihabs = 0; ihabs < pj.habilidades.length; ihabs++) {
-			shabs += "<tr><td>" + habilidades.habilidades[ihabs] + " </td><td align='center'>" + pj.habilidades[ihabs] + " </td></tr>";
-			parametrosimg += "&" + habilidades.habilidades[ihabs].toLowerCase().substring(0,4) + "=" + pj.habilidades[ihabs];
-		}
-		shabs += "</table>";
 		
-		var stals = "<table  class='w3-table w3-border'><tr><th>Talentos</th></tr>";
-		for (itals = 0; itals < pj.talentos.length; itals++) {
-			stals += "<tr><td>" + pj.talentos[itals] + " </td></tr>";
-			var numero=itals+1;
-			parametrosimg += "&talento" + numero + "=" + pj.talentos[itals];
+		dinero = pj.din; // Comun.random(6,1) * 100;
+		
+		
+		var satrs = Comun.tablaAtributos();
+		
+		var shabs = Comun.tablaHabilidades();
+		
+		var stals = Comun.tablaTalentos();
 
-		}
-		stals += "</table>";
 		
-		parametrosimg += "&pvt=" + pj.pv + "&atq=" + pj.atq + "&ins=" + pj.ins + "&def=" + pj.defn + "&pod=" + pj.pod + "&mov=" + pj.mov;
 		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Raza:</strong> " + pj.raza + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
-		document.getElementById("rasgos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
-													  " </td></tr><tr><td><strong>Atq:</strong> " + pj.atq +
-            		                                  " </td></tr><tr><td><strong>Pod:</strong> " + pj.pod + 
-													  " </td></tr><tr><td><strong>Ins:</strong> " + pj.ins + 
-													  " </td></tr><tr><td><strong>Def:</strong> " + pj.defn + 
-													  " </td></tr><tr><td><strong>PV:</strong> " + pj.pv + 
-													  " </td></tr><tr><td><strong>Mov:</strong> " + pj.mov + "</td></tr></table";
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos(); 
+													  
 		document.getElementById("atributos").innerHTML = satrs;
 		document.getElementById("talentos").innerHTML = stals;
 		document.getElementById("habilidades").innerHTML = shabs;
 		document.getElementById("dinero").innerHTML = "<br/><strong>Trasfondo y Dinero: </strong> <br/>" + pj.trasfondo + "<br/>" + dinero + " mo";
-
-		/*document.getElementById("ficha").innerHTML = "Dirección de imagen del personaje: <input type='text' id='FotoPJ' name='FotoPJ'><br/><button class='w3-button w3-block w3-teal' onclick='generaFicha()'>Genera Ficha</button>";
-		
-	    paginaimg = "ve-e-imagen.html";*/
-	    
-		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDFExp()'>Genera PDF</button>";
+    
+		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
 		document.getElementById("bgenerapdf").style.visibility="visible";
 	}
 	
