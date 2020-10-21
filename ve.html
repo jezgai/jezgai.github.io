@@ -37,6 +37,73 @@
 		pj.atributos[atributo] = atributosiguiente;
 
 	}	
+	
+	
+	function rellenaPDFJF() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		var competencias = '';
+		
+		var talentos = "";
+		if ( pj.talentos.length > 0 ) {
+			talentos = pj.talentos[0];
+			var itals = 0;
+			for (itals = 1; itals < pj.talentos.length; itals++) {
+				talentos += ", " + pj.talentos[itals];
+			}
+		}
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				
+			  contenido = this.response;
+			  var fields = {
+					'Nombre' : [ pj.nombre ],
+					'Clase' : [ pj.clase ],
+					'Nivel' : [ numeronivel ],
+					'FUE' : [ pj.atributos[0] ],
+					'DES' : [ pj.atributos[1] ],
+					'CON' : [ pj.atributos[2] ],
+					'INT' : [ pj.atributos[3] ],
+					'SAB' : [ pj.atributos[4] ],
+					'CAR' : [ pj.atributos[5] ],
+					'mFUE' : [ Atributos.modifmas(pj.atributos[0]) ],
+					'mDES' : [ Atributos.modifmas(pj.atributos[1]) ],
+					'mCON' : [ Atributos.modifmas(pj.atributos[2]) ],
+					'mINT' : [ Atributos.modifmas(pj.atributos[3]) ],
+					'mSAB' : [ Atributos.modifmas(pj.atributos[4]) ],
+					'mCAR' : [ Atributos.modifmas(pj.atributos[5]) ],
+					'PV' : [ pj.pv ],
+					'ATQ' : [ pj.atq ],
+					'DEF' : [ pj.defn ],
+					'INS' : [ pj.ins ],
+					'MOV' : [ 10 ],
+					'Honor' : [ pj.hon ],
+					'Alerta' : [ pj.habilidades[0] ],
+					'Callejeo' : [ pj.habilidades[1] ],
+					'Corte' : [ pj.habilidades[2] ],
+					'Guerra' : [ pj.habilidades[3] ],
+					'Manipulacion' : [ pj.habilidades[4] ],
+					'Supervivencia' : [ pj.habilidades[5] ],
+					'Talentos' : [ talentos ],
+					'DA' : [ pj.daguante ],
+					'Equipo' : [ pj.din ],
+				};
+				
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, pj.nombre + ".pdf");
+			}
+		};
+
+
+		xhr.open('GET', 'pdf/VEJF.pdf', true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}	
+	
 
 	function rellenaPDFCyber() {
 		var xhr = new XMLHttpRequest();
@@ -67,12 +134,12 @@
 					'INT' : [ pj.atributos[3] ],
 					'SAB' : [ pj.atributos[4] ],
 					'CAR' : [ pj.atributos[5] ],
-					'mFUE' : [ Atributos.modif(pj.atributos[0]) ],
-					'mDES' : [ Atributos.modif(pj.atributos[1]) ],
-					'mCON' : [ Atributos.modif(pj.atributos[2]) ],
-					'mINT' : [ Atributos.modif(pj.atributos[3]) ],
-					'mSAB' : [ Atributos.modif(pj.atributos[4]) ],
-					'mCAR' : [ Atributos.modif(pj.atributos[5]) ],
+					'mFUE' : [ Atributos.modifmas(pj.atributos[0]) ],
+					'mDES' : [ Atributos.modifmas(pj.atributos[1]) ],
+					'mCON' : [ Atributos.modifmas(pj.atributos[2]) ],
+					'mINT' : [ Atributos.modifmas(pj.atributos[3]) ],
+					'mSAB' : [ Atributos.modifmas(pj.atributos[4]) ],
+					'mCAR' : [ Atributos.modifmas(pj.atributos[5]) ],
 					'PV' : [ pj.pv ],
 					'PVAct' : [ pj.pv ],
 					'ATQ' : [ pj.atq ],
@@ -821,6 +888,10 @@
 		document.getElementById("talentos").innerHTML = stals;
 		document.getElementById("habilidades").innerHTML = shabs;
 		document.getElementById("dinero").innerHTML = "<br/><strong>Poder adquisitivo: </strong> " + pj.din;
+		
+		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDFJF()'>Genera PDF</button>";
+		document.getElementById("bgenerapdf").style.visibility="visible";
+
 	}	
 	
 	
