@@ -135,7 +135,7 @@ class PJ {
 	}
 	
 	calculaPV() {
-		this._pv = this._objClase.pv(this._nivel) + this.modifAtributo(this._atributos[atributos.atributoMod("CON")]);
+		this._pv = this._objClase.pv(this._nivel, this.modifAtributo(this._atributos[atributos.atributoMod("CON")]));
 	}
 	
 	tablaRasgos() {

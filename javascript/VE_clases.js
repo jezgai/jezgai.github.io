@@ -67,11 +67,14 @@ class Clase {
 		return tal;
 	}
 
-	pv(nivel) {
-		var ptos = this._daguante;
+	pv(nivel, modif=0) {
+		var ptos = this._daguante + modif;
 		var ipv=0;
 		for (ipv=1; ipv<nivel; ipv++) {
-			ptos += Comun.random(this._daguante, 1);
+			var incremento = Comun.random(this._daguante, 1) + modif;
+			if ( incremento < 1 || ipv > 9 )
+				incremento = 1;
+			ptos += incremento;
 		}
 		return ptos;
 	}
