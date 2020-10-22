@@ -20,6 +20,8 @@
 <script src="javascript/VEZ_pj.js"></script>
 <script src="javascript/VECP_clases.js"></script>
 <script src="javascript/VECP_pj.js"></script>
+<script src="javascript/NUV_clases.js"></script>
+<script src="javascript/NUV_pj.js"></script>
 
 <script src="javascript/pdfform.minipdf.dist.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
@@ -83,11 +85,11 @@
 	
 	function limpia() {
 		
-		document.getElementById("sclases").innerHTML = "";
-		document.getElementById("snivel").innerHTML = "";
-		document.getElementById("srazas").innerHTML = "";
+		//document.getElementById("sclases").innerHTML = "";
+		//document.getElementById("snivel").innerHTML = "";
+		//document.getElementById("srazas").innerHTML = "";
 		document.getElementById("bgenerapdf").innerHTML = "";
-		document.getElementById("srazas").style.visibility="hidden";
+		//document.getElementById("srazas").style.visibility="hidden";
 		document.getElementById("bgenerapdf").style.visibility="hidden";
 	}
 	
@@ -202,6 +204,7 @@
 		document.getElementById("srazas").style.visibility="hidden";
 		document.getElementById("bgenerapdf").innerHTML = "";
 		document.getElementById("bgenerapdf").style.visibility="hidden";
+		document.getElementById("snivel").style.visibility="visible";
 
 		/*
 		var sclases="<strong>Clase:</strong> <select class='w3-select' name='clase' onchange='seleccionaclase(this)'><option>--Aleatorio--</option>";
@@ -240,6 +243,7 @@
 		document.getElementById("srazas").style.visibility="hidden";
 		document.getElementById("bgenerapdf").innerHTML = "";
 		document.getElementById("bgenerapdf").style.visibility="hidden";
+		document.getElementById("snivel").style.visibility="visible";
 
 		var sclases = Comun.desplegableClases(clasesJ, "seleccionaclase");
 		var snivel = Comun.desplegableNivel(10, "seleccionanivel", "generaJ");
@@ -261,6 +265,7 @@
 		document.getElementById("srazas").style.visibility="hidden";
 		document.getElementById("bgenerapdf").innerHTML = "";
 		document.getElementById("bgenerapdf").style.visibility="hidden";
+		document.getElementById("snivel").style.visibility="visible";
 
 		var sclases = Comun.desplegableClases(clasesZ, "seleccionaclase");
 		var snivel = Comun.desplegableNivel(5, "seleccionanivel", "generaZ");
@@ -282,6 +287,7 @@
 		document.getElementById("srazas").style.visibility="hidden";
 		document.getElementById("bgenerapdf").innerHTML = "";
 		document.getElementById("bgenerapdf").style.visibility="hidden";
+		document.getElementById("snivel").style.visibility="visible";
 
 		var sclases = Comun.desplegableClases(clasesCP, "seleccionaclase");
 		var snivel = Comun.desplegableNivel(10, "seleccionanivel", "generaCP");
@@ -291,6 +297,26 @@
 		//document.getElementById("desplegables").innerHTML = sclases + snivel;	
 		document.getElementById("sclases").innerHTML = sclases;
 		document.getElementById("snivel").innerHTML = snivel;
+		document.getElementById("bgenera").innerHTML = sboton;
+	}	
+	
+	function cargadesplegableNUV() {
+		//document.getElementById("desplegables").innerHTML = "";
+		document.getElementById("sclases").innerHTML = "";
+		document.getElementById("snivel").innerHTML = "";
+		document.getElementById("srazas").innerHTML = "";
+		document.getElementById("bgenera").innerHTML = "";
+		document.getElementById("srazas").style.visibility="hidden";
+		document.getElementById("snivel").style.visibility="hidden";
+		document.getElementById("bgenerapdf").innerHTML = "";
+		document.getElementById("bgenerapdf").style.visibility="hidden";
+
+		var sclases = Comun.desplegableClases(clasesNUV, "seleccionaclase");
+		var sboton = Comun.botonGenera("generaNUV");
+		
+		
+		//document.getElementById("desplegables").innerHTML = sclases + snivel;	
+		document.getElementById("sclases").innerHTML = sclases;
 		document.getElementById("bgenera").innerHTML = sboton;
 	}	
 	
@@ -515,6 +541,35 @@
 		document.getElementById("bgenerapdf").style.visibility="visible";
 	}
 	
+	
+	function generaNUV() {
+		vacia();
+				
+		pj = new PJNUV();
+		pj.clase = nombreclase;
+		
+		pj.genera();
+		
+		
+		var satrs = Comun.tablaAtributos();
+
+		var shabs = Comun.tablaHabilidades();
+		
+		var stals = pj.tablaTalentos();
+				
+		document.getElementById("datos").innerHTML = "<table class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td></tr></table>";
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
+		document.getElementById("atributos").innerHTML = satrs;
+		document.getElementById("talentos").innerHTML = stals;
+		document.getElementById("habilidades").innerHTML = shabs;
+
+		document.getElementById("dinero").innerHTML = pj._objClase.equipo;
+		
+		
+		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
+		document.getElementById("bgenerapdf").style.visibility="visible";
+	}	
+	
 	function seleccionajdr(thelist) {
 		vacia();
 		var idx = thelist.selectedIndex;
@@ -541,10 +596,13 @@
 			cargadesplegableSO();
 		}
 		else if ( idx == 5 ) {
-			cargadesplegableJ();
+			cargadesplegableNUV();
 		}
 		else if ( idx == 6 ) {
 			cargadesplegableZ();
+		}
+		else if ( idx == 7 ) {
+			cargadesplegableJ();
 		}
 	}
 	
@@ -611,8 +669,9 @@
 				<option>Vieja Escuela: Pulp</option>
 				<option>Vieja Escuela: Cyberpunk</option>
 				<option>Vieja Escuela: Salvaje Oeste</option>
-				<option>Vieja Escuela: Japon</option>
+				<option>Nuestro Ultimo Verano</option>
 				<option>Vieja Escuela: Zombies</option>
+				<option>Vieja Escuela: Japon</option>
 			</select>
 		</div>
 		<!--<div class="dostercios" id="desplegables"></div>-->

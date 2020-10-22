@@ -5,6 +5,7 @@ class Habilidades {
 		this._habilidadesGen = [ "Alerta", "Comunicación", "Manipulación", "Erudición", "Subterfugio", "Supervivencia" ];
 		this._habilidadesJap = [ "Alerta", "Callejeo", "Corte", "Guerra", "Manipulación", "Supervivencia" ];
 		this._habilidadesCyb = [ "Corporate", "Cyber", "Hardware", "Punk", "Savage", "Urban" ];
+		this._habilidadesNUV = [ "Al loro", "Empollon", "Manitas", "Ninja", "Palique", "Rambo" ];
 		this._habilidades = this._habilidadesGen.slice(0);
 	}
 	
@@ -42,6 +43,10 @@ class Habilidades {
 		this._habilidades = this._habilidadesCyb.slice(0);
 	}
 	
+	habilidadesNUV() {
+		this._habilidades = this._habilidadesNUV.slice(0);
+	}
+	
 	puntuaciones(nivel) {
 		var phab = [];
 		var ptos = []
@@ -53,7 +58,6 @@ class Habilidades {
 			else {
 				phab.push(0);
 			}
-			ptos.push(0);
 		}
 		var iniv=0;
 		for (iniv = 1; iniv < nivel; iniv++) {
@@ -96,7 +100,6 @@ class Habilidades {
 			else {
 				phab.push(0);
 			}
-			ptos.push(0);
 		}
 		
 		var iniv=0;
@@ -118,6 +121,52 @@ class Habilidades {
 			ptos[this.habilidad(hab[ihab])] = phab[ihab];
 		}
 		return ptos;
+	}
+	
+	maximoNumHabilidades(puntos, puntuacion) {
+		if ( puntos < puntuacion )
+			return 0;
+		return Math.trunc(puntos / puntuacion) + 1;
+		
+	}
+	
+	
+	puntuacionesNUV() {
+		var phab = [];
+		var ihab=0;
+		// Numero de habilidades con puntuación 4 => 1, ó 0
+		var puntos = 6;
+		var numero = this.maximoNumHabilidades(puntos, 4);
+		var numHabPtos4 = Comun.random(numero, 0);
+		puntos -= (4 * numHabPtos4);
+		numero = this.maximoNumHabilidades(puntos, 3);
+		var numHabPtos3 = Comun.random(numero,0);
+		puntos -= (3 * numHabPtos3);
+		numero = this.maximoNumHabilidades(puntos, 2);
+		var numHabPtos2 = Comun.random(numero, 0);
+		var numHabPtos1 = puntos - (2 * numHabPtos2);
+		
+		for (ihab = 0; ihab < this._habilidades.length;  ihab++) {
+			if ( ihab < numHabPtos4 ) {
+				phab.push(4);
+			}
+			else if ( ihab < (numHabPtos4 + numHabPtos3) ) {
+				phab.push(3);
+			}
+			else if ( ihab < (numHabPtos4 + numHabPtos3 + numHabPtos2) ) {
+				phab.push(2);
+			}
+			else if ( ihab < (numHabPtos4 + numHabPtos3 + numHabPtos2 + numHabPtos1) ) {
+				phab.push(1);
+			}
+			else {
+				phab.push(0);
+			}
+		}
+		
+		phab = Comun.shuffle(phab);
+		
+		return phab;
 	}	
 	
 }

@@ -109,7 +109,7 @@ class Atributos {
 		return atrs;
 		
 	}
-	
+		
 	valores(atrsclase) {
 		var ival=0;
 		var atrs = this.mezclaatrs(atrsclase);
