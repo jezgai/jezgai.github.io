@@ -129,6 +129,10 @@ class PJNUV {
 		this._talentos = [ true, true, true, false, false, false];
 		this._talentos = Comun.shuffle(this._talentos);
 		
+		var idadospaga=0;
+		for ( idadospaga=0; idadospaga < this._objClase.paga; idadospaga++)
+			this._din += Comun.random(6,1);
+		this._din *= 10;
 	}
 	
 	rellenaCamposPDF() {
@@ -172,6 +176,7 @@ class PJNUV {
 					'Talento5' : [ this.talentos[4] ],
 					'Talento6' : [ this.talentos[5] ],
 					'Notas1' : [ this._objClase.equipo ],
+					'Notas2' : [ this._din + " duros." ],
 		};
 		return fields;
 	}
