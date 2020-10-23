@@ -21,8 +21,24 @@ class DH_PJ {
 		this._Habilidades = [];*/
 		
 		this._Clase = null;
+		this._nombrepj = "";
+		this._genero = "";
 	}
 	
+	
+	get nombrepj() {
+		return this._nombrepj;
+	}
+	set nombrepj(value) {
+		this._nombrepj = value;
+	}
+	
+	get genero() {
+		return this._genero;
+	}
+	set genero(value) {
+		this._genero = value;
+	}
 	
 	get Clase() {
 		return this._Clase;

@@ -36,7 +36,9 @@
 			if (this.readyState == 4 && this.status == 200) {
 			  contenido = this.response;
 			  var fields = {
+					'Nombre' : [ pj.nombrepj + pj.genero ],
 					'Clase' : [ pj.Clase.nombre ],
+					'Nivel' : [ 1 ],
 					'CheckFUE' : [ pj.mFUE == -1 ? true : false],
 					'CheckDES' : [ pj.mDES == -1 ? true : false],
 					'CheckCON_2' : [ pj.mCON == -1 ? true : false],
@@ -60,7 +62,7 @@
 				
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  saveAs(blob, 'PersonajeDH.pdf');
+			  saveAs(blob, pj.nombrepj + '.pdf'); //'PersonajeDH.pdf');
 			}
 		};
 
@@ -360,6 +362,30 @@
 		pintaCompetencias();
 		pintaVentajas();
 		pintaHabilidades();
+		
+		if ( pj.Clase.nombresF.length > 0 && pj.Clase.nombresM.length > 0 ) {
+			var genero = Comun.random(2,1);
+			if ( genero == 1 ) {
+				pj.nombrepj = pj.Clase.nombresF[ Comun.random(pj.Clase.nombresF.length, 0) ];
+				pj.genero = " (F)";
+			}
+			else {
+				pj.nombrepj = pj.Clase.nombresM[ Comun.random(pj.Clase.nombresM.length, 0) ];
+				pj.genero = " (M)";
+			}
+		}
+		else if ( pj.Clase.nombresF.length > 0 ) {
+				pj.nombrepj = pj.Clase.nombresF[ Comun.random(pj.Clase.nombresF.length, 0) ];
+				pj.genero = " (F)";
+		}
+		else if ( pj.Clase.nombresM.length > 0 ) {
+				pj.nombrepj = pj.Clase.nombresM[ Comun.random(pj.Clase.nombresM.length, 0) ];
+				pj.genero = " (M)";
+		}
+		else {
+			pj.nombrepj = pj.Clase.nombre;
+			pj.genero = "";
+		}
 		
 		document.getElementById("botonpdf").style.visibility="visible";
 	}
