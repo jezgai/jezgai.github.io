@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="javascript/DH_comun2.js"></script>
 <script src="javascript/DH_PJ2.js"></script>
+<script src="javascript/DH_clasebase.js"></script>
 <script src="javascript/DH_clase2.js"></script>
 <script src="javascript/DH_especie2.js"></script>
 
@@ -67,7 +68,7 @@
 				
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  saveAs(blob, saveAs(blob, pj.nombrepj + '.pdf'); // 'PersonajeDH.pdf');
+			  saveAs(blob, pj.nombrepj + '.pdf'); // 'PersonajeDH.pdf');
 			}
 		};
 
