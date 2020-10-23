@@ -23,8 +23,12 @@ class DH_PJ {
 		this._Clase = null;
 		this._nombrepj = "";
 		this._genero = "";
+		this._monO = 0;
 	}
 	
+	get monO() {
+		return this._monO;
+	}
 	
 	get nombrepj() {
 		return this._nombrepj;
@@ -236,6 +240,8 @@ class DH_PJ {
 		this._INT = Comun.atributo();
 		this._SAB = Comun.atributo();
 		this._CAR = Comun.atributo();
+		
+		this._monO = 10 * (Comun.random(12,1) + Comun.random(12,1));
 		
 	}
 	

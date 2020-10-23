@@ -59,6 +59,7 @@
 					'Ventajas' : [ document.getElementById("ventajas").innerText ],
 					'Capacidades' : [ pj.Clase.lhabilidades ],
 					'NotasVarias' : [ document.getElementById("habilidades").innerText ],
+					'MonO' : [ pj.monO ],
 				};
 				
 			  var out_buf = pdfform().transform(contenido, fields);
@@ -358,7 +359,7 @@
 			document.getElementById("descripcion").innerHTML="";
 		}
 		pintaatributos();
-		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> (" + pj.Clase.origen + ")</center></p>";
+		//document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> (" + pj.Clase.origen + ")</center></p>";
 		pintaRecursos();
 		pintaCompetencias();
 		pintaVentajas();
@@ -387,7 +388,7 @@
 			pj.nombrepj = pj.Clase.nombre;
 			pj.genero = "";
 		}
-		
+		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> (" + pj.Clase.origen + ") - " + pj.nombrepj + pj.genero + "</center></p>";
 		document.getElementById("botonpdf").style.visibility="visible";
 	}
 	

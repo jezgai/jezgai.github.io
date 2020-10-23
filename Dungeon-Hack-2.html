@@ -64,6 +64,7 @@
 					'Ventajas' : [ document.getElementById("ventajas").innerText ],
 					'Habilidades' : [ pj.Especie.lhabilidades + pj.Clase.lhabilidades ],
 					'Biografia' : [ document.getElementById("habilidades").innerText ],
+					'MonO' : [ pj.monO ],
 				};
 				
 			  var out_buf = pdfform().transform(contenido, fields);
@@ -377,10 +378,8 @@
 			document.getElementById("descripcion").innerHTML="";
 		}
 		pintaatributos();
-		//pintaderivados();
-		
-		//document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + nbclase + "</strong> (" + origen + ") <strong>ESPECIE: " + nbespecie + "</strong></center></p>";
-		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> (" + pj.Clase.origen + ") <strong>ESPECIE: " + pj.Especie.nombre + "</strong></center></p>";
+
+		//document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> (" + pj.Clase.origen + ") <strong>ESPECIE: " + pj.Especie.nombre + "</strong></center></p>";
 		pintaRecursos();
 		pintaCompetencias();
 		pintaRequisitos();
@@ -412,6 +411,8 @@
 			pj.nombrepj = pj.Clase.nombre;
 			pj.genero = "";
 		}
+		
+		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> (" + pj.Clase.origen + ") <strong>ESPECIE: " + pj.Especie.nombre + "</strong> - " + pj.nombrepj + pj.genero + "</center></p>";
 				
 		document.getElementById("botonpdf").style.visibility="visible";
 	}
@@ -450,9 +451,9 @@
   width:33%;
   padding:0 1px;
 }
-.minileft {
+.microleft {
   float:left;
-  width:17%;
+  width:8%;
   padding:0 1px;
 }
 .main {
@@ -465,6 +466,11 @@
   width:33%;
   padding:0 1px;
 }
+.macroright {
+  float:left;
+  width:52%;
+  padding:0 1px;
+}
 .total {
   float:left;
   width:100%;
@@ -475,7 +481,7 @@
 
 @media only screen and (max-width:820px) {
   /* For mobile phones: */
-  .left, .main, .minileft, .right, .total, .minileft {
+  .left, .main, .minileft, .microleft, .macroright, .right, .total, .minileft {
     width:100%;
   }
   
@@ -492,9 +498,9 @@
 		</div>
 		<div class="minileft" id="especies">
 		</div>
-		<div class="minileft"><p><button class='w3-button w3-block w3-blue' onclick='calcula()'>Calcula</button></p></div>
-		<div class="minileft" id="botonpdf"><p><button class='w3-button w3-block w3-blue' onclick='rellenaPDF()'>Genera PDF</button></p></div>
-		<div class="right" id="clase"><p></p></div>
+		<div class="microleft"><p><button class='w3-button w3-block w3-blue' onclick='calcula()'>Calcula</button></p></div>
+		<div class="microleft" id="botonpdf"><p><button class='w3-button w3-block w3-blue' onclick='rellenaPDF()'>Genera PDF</button></p></div>
+		<div class="macroright" id="clase"><p></p></div>
 	</div>
 	<div style="overflow:auto">
 	

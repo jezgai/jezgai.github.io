@@ -27,6 +27,11 @@ class DH_PJ {
 		this._Especie = null;
 		this._nombrepj = "";
 		this._genero = "";
+		this._monO = 0;
+	}
+	
+	get monO() {
+		return this._monO;
 	}
 	
 	get nombrepj() {
@@ -239,6 +244,7 @@ class DH_PJ {
 		this._SAB = Comun.atributo();
 		this._CAR = Comun.atributo();
 		
+		this._monO = 10 * (Comun.random(12,1) + Comun.random(12,1));
 	}
 	
 }

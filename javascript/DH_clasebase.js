@@ -137,8 +137,8 @@ class ClasesBases {
 			  cordura: "INT",
 			  origen: "<a href='https://naufragio.net/dungeon-hack/' target='_blank'>Ylat - Naufragio</a>",
 			  descripcion: "Desde que tienes uso de razón has tenido que tomar decisiones que otros ni siquiera se atrevieron a tomar. Eres un maestro del campo de batalla, no el mejor combatiente pero sí el que tiene la sangre fría para saber cuando tirar la toalla y cuando atacar con todas sus fuerzas.<br/>Probablemente tengas entrenamiento militar: quizás has sido miembro de la milicia de tu aldea o has nacido en una familia dedicada al cuerpo. Sin importar qué, tú sabes que la guerra es tu elemento natural.<br/>Sabes lo que tienes que hacer cuando agarras con fuerza tu escudo y tu estandarte: guiar a tu compañía hasta la victoria, dirigiendo con sabiduría y temple cuando las horas aciagas llegan. Tus bramidos resuenan por todo el campo de batalla. Eres el señor de la guerra, un belisario.",
-			  nombresF: [ "Belisaria" ],
-			  nombresM: [ "Belisario" ],
+			  nombresF: [ "Brienne", "Ceres", "Terra", "Martina", "Nêrra", "Xenobia" ],
+			  nombresM: [ "Arcturus", "Cócito", "Ebenezer", "Locke", "Ichabod", "Tormund" ],
 			},
 			{
 			  nombre : "Brujo",
@@ -152,8 +152,8 @@ class ClasesBases {
 			  cordura: "INT",
 			  origen: "<a href='https://naufragio.net/dungeon-hack/' target='_blank'>Ylat - Naufragio</a>",
 			  descripcion: "Has vendido tu alma a una entidad preternatural para obtener dominio sobre las artes oscuras. Mientras que otros estudiantes de lo arcano deben estudiar enormes tomos y practicar durante décadas, tú has tomado un atajo, condenando tu espíritu a un más que probable tormento eterno.<br/>Firmaste un pacto de sangre con tu patrón y debes cumplir con lo que has prometido; a cambio de sus dones se te exigirán sacrificios y actos abominables.<br/>Pero conoces tu lugar: eres un brujo, un intruso de la magia.",
-			  nombresF: [ "Bruja" ],
-			  nombresM: [ "Brujo" ],
+			  nombresF: [ "Angélica", "Circe", "Jalis", "Locasta", "Morgana", "Rita" ],
+			  nombresM: [ "Alastor", "Belegur", "Fabián", "Gwyon", "Raymond", "Teseo" ],
 			},
 			{
 			  nombre : "Cazador",
@@ -167,8 +167,8 @@ class ClasesBases {
 			  cordura: "SAB",
 			  origen: "<a href='https://naufragio.net/dungeon-hack/' target='_blank'>Ylat - Naufragio</a>",
 			  descripcion: "Durante toda tu vida has sido uno con la naturaleza, preocupándote en proteger los territorios salvajes y especializándote en mantener el equilibrio entre depredadores y presas. Quizás has nacido entre habitantes del bosque o perteneces a una tribu de cazadores.<br/>Eres muy hábil con el arco y has formado un vínculo especial con una bestia salvaje, que ha acabado siendo una extensión más de ti y los dos habéis formado una singular pareja bastante letal.",
-			  nombresF: [ "Cazadora" ],
-			  nombresM: [ "Cazador" ],
+			  nombresF: [ "Avana", "Dora", "Isarrel", "Saria", "Valindrys", "Yralisia" ],
+			  nombresM: [ "Anfalen", "Corym", "Haldir", "Ruan", "Torlus", "Wilfred" ],
 			},
 			{
 			  nombre : "Celador",
@@ -182,8 +182,8 @@ class ClasesBases {
 			  cordura: "SAB",
 			  origen: "<a href='https://naufragio.net/dungeon-hack/' target='_blank'>Ylat - Naufragio</a>",
 			  descripcion: "Perteneces a una estirpe de guerreros excepcionales que han perfeccionado la manipulación de la urdimbre y el combate a distancia, creando una técnica inimitable. Puedes haberte unido a los celadores por vocación, tradición u obligación, pero cargas con su responsabilidad a tu espalda: eres un defensor de los espíritus ancestrales.<br/>Allá dónde la corrupción inmoral impregne la urdimbre es dónde bogas, viajando de un territorio a otro cazando a los que alteran la capa espiritual del mundo.<br/>Tus ancestros —que te entregan su fuerza— pueden ser espectros del mundo antiguo, ánimas de los bosques o fantasmas aullantes de un páramo desolado.<br/>Tus habilidades distancia son apreciadas en cualquier grupo de aventureros, más bien tus obligaciones pueden chocar con sus intereses: tienes una misión que cumplir y harás todo lo posible porque tus antepasados continúen protegiendo la urdimbre.",
-			  nombresF: [ "Celadora" ],
-			  nombresM: [ "Celador" ],
+			  nombresF: [ "Ayla", "Dihnunah", "Fern", "Nimara", "Sevsda", "Yun" ],
+			  nombresM: [ "Elerion", "Findorian", "Stavos", "Theon", "Vaelar", "Zack" ],
 			},
 			{
 			  nombre : "Chamán",
@@ -197,8 +197,8 @@ class ClasesBases {
 			  cordura: "SAB",
 			  origen: "<a href='https://naufragio.net/dungeon-hack/' target='_blank'>Ylat - Naufragio</a>",
 			  descripcion: "Tienes un vínculo místico con el mundo de los espíritus, convirtiéndote en un intermediario entre el reino de la carne y lo que hay más allá de la Urdimbre. Quizás seas el curandero ermitaño de una tribu de bárbaros o un aprendiz de magia primigenia; sin importar qué, el vínculo que compartes con la energía natural es fuerte y palpable en ti.<br/>Albergas una sabiduría inusual, primitiva e instintiva. Has forjado una alianza con un espíritu bestial, que actúa como pilar de tus hechizos. Eres un guía, un sanador, un líder y un defensor del mundo natural. Consideras a la civilización una lenta plaga que va consumiendo las tierras salvajes y crees que quizás seas el único que aún escucha los aullidos del planeta.",
-			  nombresF: [  ],
-			  nombresM: [  ],
+			  nombresF: [ "Awilix", "Chac", "Itzmaná", "Kantunil", "Jo", "Zulia" ],
+			  nombresM: [ "Babajide", "Chimalmat", "Jotok", "Mactzil", "Nicteel", "Yaxcol" ],
 			},
 			{
 			  nombre : "Clérigo",
@@ -211,9 +211,11 @@ class ClasesBases {
 			  lhabilidades: [ "Expulsar a los muertos vivientes, Lanzamiento de conjuros" ],
 			  cordura: "SAB",
 			  origen: "Dungeon Hack", 
-			  descripcion: "",
-			  nombresF: [ "Clériga" ],
-			  nombresM: [ "Clérigo" ],
+			  descripcion: "Te has entregado con devoción al servicio religioso, participando en la batalla eterna que enfrenta a las fuerzas primordiales del mundo.<br/>" +
+					"Tal vez hagas la voluntad de un único dios o tal vez la de un panteón completo. Es posible incluso que adores conceptos abstractos —como el «fuego» o el «bien»— o que reverencies a tus ancestros, a los espíritus del mundo o que sigas una filosofía aún más abstracta.<br/>" + 
+					"Independientemente de tus creencias, tu devoción y fuerza de voluntad te proporcionan la capacidad de obrar verdaderos milagros",
+			  nombresF: [ "Arlia", "Beulah", "Elise", "Erlyna", "Iktar", "Iudith", "Leah" ],
+			  nombresM: [ "Aran", "Baltaros", "Brinas", "Derridan", "Goran", "Teoddal", "Wesner" ],
 			},
 			{
 			  nombre : "Druida",
@@ -227,8 +229,8 @@ class ClasesBases {
 			  cordura: "SAB",
 			  origen: "<a href='https://www.lospergaminosdelfenix.com/2019/03/recurso-generador-de-poblaciones-para.html' target='_blank'>Los pergaminos del Fénix</a>",
 			  descripcion: "Eres uno con la naturaleza. Un filósofo y teólogo que ha asumido el ministerio de la cultura animista de tus antepasados. Pero también eres considerado, entre los tuyos, un juez, un maestro, curandero y adivino. Un sacerdote de lo mundano que acompaña a su devotos por el camino de la vida.<br/>Construyes tus altares en el interior de grutas y bosques y tus poderes te permiten conocer el estado del clima, aparecer con forma animal o predecir el futuro entre otros prodigios.",
-			  nombresF: [  ],
-			  nombresM: [  ],
+			  nombresF: [ "Alanna", "Eileen", "Bryana", "Gwenhwyar", "Caeli", "Cinnia", "Erin", "Treva", "Maeve" ],
+			  nombresM: [ "Galvan", "Quinn", "Perth", "Niall", "Artai", "Aldair", "Kilian", "Aod", "Fergal" ],
 			},
 			{
 			  nombre : "Guerrero",
@@ -241,9 +243,10 @@ class ClasesBases {
 			  lhabilidades: [ "Sacrificar escudo, Recuperación, Rajar" ],
 			  cordura: "SAB",
 			  origen: "Dungeon Hack", 
-			  descripcion: "",
-			  nombresF: [ "Guerrera" ],
-			  nombresM: [ "Guerrero" ],
+			  descripcion: "Bien seas un ágil duelista o una ruda soldado, un caballero de brillante armadura o una exploradora de gran puntería, has recibido un buen entrenamiento en el arte de la lucha y manejas con soltura una gran cantidad de armas.<br/>" +
+				"Puedes aguantar en combate mucho más tiempo que el resto de tus aliados, por lo que no es extraño verte en primera línea de batalla.",
+			  nombresF: [ "Alice", "Berenice", "Briyra", "Everaine", "Kara", "Pelagia", "Yala" ],
+			  nombresM: [ "Adamar", "Darien", "Galthin", "Haldir", "Lysander", "Zale" ],
 			},
 			{
 			  nombre : "Hechicero",
@@ -257,8 +260,8 @@ class ClasesBases {
 			  cordura: "CAR",
 			  origen: "<a href='https://naufragio.net/dungeon-hack/' target='_blank'>Ylat - Naufragio</a>",
 			  descripcion: "En los albores de la creación la urdimbre mágica no existió hasta que un ser de inconmensurable poder tejió una red intangible que abarcaba toda la realidad.<br/>Desde ese momento comenzaron a existir aquellos que nacían con hebras de energía arcana entre sus fibras: los hechiceros.<br/>Tú eres uno de ellos, un hijo de la magia que es capaz de manipular el tejido mágico de la existencia para evocar sortilegios a voluntad. No necesitas comprender los misterios de la hechicería como otros arcanistas, tú eres la magia misma.",
-			  nombresF: [ "Hechicera" ],
-			  nombresM: [ "Hechicero" ],
+			  nombresF: [ "Batseba", "Discordia", "Lorif", "Margott", "Nura", "Talis" ],
+			  nombresM: [ "Ethro", "Forlang", "Maverae", "Orión", "Sakon", "Zunari" ],
 			},
 			{
 			  nombre : "Ladrón",
@@ -271,9 +274,11 @@ class ClasesBases {
 			  lhabilidades: [ "Combate con dos armas, Ataque sorpresa" ],
 			  cordura: "CAR",
 			  origen: "Dungeon Hack", 
-			  descripcion: "",
-			  nombresF: [ "Ladrona" ],
-			  nombresM: [ "Ladrón" ],
+			  descripcion: "Independientemente de tu clase social de procedencia, has aprendido mucho acerca de cómo funcionan las calles —y las personas—.<br/>" +
+				"Puede que cometas actos deshonrosos como robar o engañar, o tal vez utilices tus habilidades tan solo para poner un poco las cosas a tu favor.<br/>" +
+				"No hay mucha gente que asegure querer tratar contigo, pero cuando se trata de sobrevivir y alcanzar lugares peligrosos no existe nadie mejor que tú. Odiarán admitirlo, pero siempre te miran a ti cuando las cosas se ponen realmente feas.",
+			  nombresF: [ "Cora", "Imra", "Keyara", "Liana", "Marila", "Rinya", "Tressa" ],
+			  nombresM: [ "Bal", "Daarenno", "Delbin", "Dymas", "Egrad", "Haladavar", "Merreth" ],
 			},
 			{
 			  nombre : "Mago",
@@ -287,8 +292,8 @@ class ClasesBases {
 			  cordura: "INT",
 			  origen: "Dungeon Hack", 
 			  descripcion: "El estudio y la investigación de las artes arcanas te han proporcionado la capacidad de utilizar y lanzar conjuros. Cada mañana, al despertarte, repasas tu pesado libro de conjuros, almacenando en tu memoria aquellos que vas a utilizar durante ese día.<br/>A pesar de tu aspecto frágil, eres quien guía a los demás cuando os enfrentáis a misterios desconocidos.<br/>Si logras acumular el suficiente conocimiento mágico, llegará un momento en el que poseas un conjuro para cada situación peligrosa.",
-			  nombresF: [ "Maga" ],
-			  nombresM: [ "Mago" ],
+			  nombresF: [ "Ahrorlah", "Dhai", "Edea", "Megara", "Moyra", "Taeryna", "Thera" ],
+			  nombresM: [ "Cleophas", "Dyn", "Herafos", "Jehoash", "Karpos", "Silas", "Zaltaros" ],
 			},
 			{
 			  nombre : "Monje",
@@ -302,8 +307,24 @@ class ClasesBases {
 			  cordura: "SAB",
 			  origen: "<a href='https://www.lospergaminosdelfenix.com/2019/03/recurso-generador-de-poblaciones-para.html' target='_blank'>Los pergaminos del Fénix</a>",
 			  descripcion: "Como miembro de una antigua orden monástica sigues una estricta disciplina, buscando la máxima expresión en la perfección del cuerpo y la mente.<br/>Enclaustrado en un monasterio alejado de la civilización, has sentido la llamada de la aventura, buscando la iluminación en tus viajes por el mundo. En el exterior te esperan las lecciones vitales y el enriquecimiento espiritual necesarios para conseguirlo.",
-			  nombresF: [  ],
-			  nombresM: [  ],
+			  nombresF: [ "Lian", "Huan", "Kumiko", "Wei", "Akame", "Mei", "Xia", "Yin" ],
+			  nombresM: [ "Tian", "Xing", "Yuan", "Shen", "Bao", "Shaoran", "Zhao", "Fai" ],
+			},
+			{
+			  nombre : "Nigromante",
+			  energia : 2,
+			  salud : 4,
+			  atributo: [ "INT", "SAB" ],
+			  competencias: [ "Puedes llevar bastones, clavas, dagas, hoces y guadañas." ],
+			  ventajas: [ "<strong>Tiradas de Inteligencia</strong> para identificar conjuros, monstruos o rituales relacionados con la no muerte.", "<strong>Tiradas de Constitución</strong> para resistir enfermedades o venenos." ],
+			  habilidades: [ "<strong>Lanzamiento de conjuros</strong><br/>Puedes lanzar conjuros. En la tabla de la página siguiente (ver clase nigromante en El Naufragio) puedes encontrar el número de conjuros que eres capaz de memorizar cada día. Tu característica para lanzar conjuros es Inteligencia, comienzas conociendo tres conjuros de Nivel 1 y aprendes uno nuevo cada nivel.<br/>Las reglas que deben seguirse para aprender y lanzar conjuros están descritas en la página 57 del manual de Dungeon Hack..", "<strong>Susurro de la tumba</strong><br/>Puedes gastar un punto de energía y emplear una acción para controlar a los muertos vivientes en un radio de 60 pies (18 metros) alrededor de ti, cuyo nivel sea igual o inferior al tuyo. Para lograrlo, necesitas superar una tirada de Sabiduría; si el ser tiene un mínimo de conciencia, la tirada sufre Desventaja.<br/>Un muerto viviente controlado tiene una probabilidad de 12+ de desmoronarse al entrar bajo tu dominio. De no suceder esto, lo podrás controlar durante un Intervalo durante tu asalto; estos seres emplean el reglamento de Compañero animal que podrás encontrar en la página 73 de la Guía del jugador de Ylat.<br/>Puedes controlar un muerto viviente de esta forma; a partir de nivel 6 podrás controlar dos muertos vivientes, mientras que a partir de nivel 11 podrás controlar a tres muertos vivientes y, a partir de nivel 21, podrás controlar a cuatro muertos vivientes." ],
+			  lhabilidades: [ "Lanzamiento de conjuros, Susurro de la tumba" ],
+			  cordura: "CAR",
+			  origen: "<a href='https://naufragio.net/clases-nigromante/' target='_blank'>Ylat - Naufragio</a>",
+			  descripcion: "Comenzaste a estudiar las artes arcanas pero pronto te zambulliste en el conocimiento prohibido y en los rituales profanos. Abrazando la muerte como forma de tejer tus hechizos, te has convertido en un arcanista abominable que manipula la vida y la muerte para conseguir lo que quiere.<br/>" +
+"Tus prácticas te hacen un blasfemo y profanador, pero has perdido el interés por la moralidad y los asuntos mundanos. Los mortales son una pieza más para completar tus planes. Eres un heraldo de la muerte, un nigromante.",
+			  nombresF: [ "Altea", "Caelia", "Eri", "Galatea", "Nirvoxia", "Xalandra" ],
+			  nombresM: [ "Andrei", "Daern", "Heth", "Malus", "Viktor", "Zarathra" ],
 			},
 			{
 			  nombre : "Oráculo",
@@ -317,8 +338,8 @@ class ClasesBases {
 			  cordura: "SAB",
 			  origen: "<a href='https://naufragio.net/dungeon-hack/' target='_blank'>Ylat - Naufragio</a>",
 			  descripcion: "Desde tu más tierna infancia has sentido que estabas siendo preparado para algo más. Los sacerdotes de tu pueblo se reunían a tu alrededor para estudiarte, para entrar en sintonía con las fuerzas divinas que moraban en tu interior.<br/>No fue hasta la madurez cuando entendiste lo que eras: una deidad (o varias) te eligió como vasija para interactuar con el mundo. Quizás eres su mensajero o estás destinado a traerlo de vuelta. No importa cómo, has dejado atrás tu comunidad para averiguar qué función tienes el mundo y debes averiguarlo trabajando con tus inusuales dones.",
-			  nombresF: [  ],
-			  nombresM: [  ],
+			  nombresF: [ "Diana", "Eritea", "Lorain", "Melpos", "Nébula", "Parice", "Teresse" ],
+			  nombresM: [ "Az’or", "Crixo", "Fintarion", "Galater", "Mun’ozz", "Perseo" ],
 			},
 			{
 			  nombre : "Paladín",
@@ -331,9 +352,10 @@ class ClasesBases {
 			  lhabilidades: [ "Desafío divino, Imposición de manos, Lanzamiento de conjuros" ],
 			  cordura: "CAR",
 			  origen: "<a href='https://naufragio.net/dungeon-hack/' target='_blank'>Ylat - Naufragio</a>",
-			  descripcion: "",
-			  nombresF: [ "Paladina" ],
-			  nombresM: [ "Paladín" ],
+			  descripcion: "Perteneces a una orden de caballeros que ha jurado lealtad a una deidad o a un concepto abstracto, como el honor, la guerra o la muerte, y eres uno de sus campeones. Así, debes mostrar ejemplo como el adalid de tu fe, respetando las creencias y preceptos de tu credo.<br/>" +
+				"Los motivos para que te hayas embarcado en busca de aventuras pueden ser muy variados, pero siempre dependerán de los intereses de tu orden. Quizás estás buscando una reliquia o debas recuperar unas tierras consideradas santas.",
+			  nombresF: [ "Adelle", "Berenice", "Cassandra", "Katherin", "Mildred", "Zelda" ],
+			  nombresM: [ "Antoine", "Edward", "Fëanâro", "Phillip", "Theodor", "Xenos" ],
 			},
 			{
 			  nombre : "Sacerdote",
@@ -352,8 +374,8 @@ class ClasesBases {
 			  origen: "<a href='https://naufragio.net/clases-sacerdote/' target='_blank'>El Naufragio</a>",
 			  descripcion: "Eres un miembro de una orden eclesiástica que sirve a un Espíritu deífico concreto y a sus fieles. Aunque encuentras la comodidad en tu templo, obrando como diácono para tu hermandad, no es extraño que dejes atrás tu hogar para apoyar a tus aliados y a tu orden en tierras destrozadas por la guerra o la vileza.<br/>" +
 						   "Tu maestría con las artes sanatorias rivaliza con tu capacidad para canalizar las artes oscuras y doblegarlas a tu voluntad. Sabes que la oscuridad no puede existir sin la luz y viceversa. El Espíritu deífico al que adoras te otorga libertad para que obres como consideres, pero sabes que vigila de cerca tus actos.",
-			  nombresF: [ "Sacerdotisa" ],
-			  nombresM: [ "Sacerdote" ],
+			  nombresF: [ "Acacia", "Celinne", "Eulalia", "Hildegarda", "Lorain", "Salomé." ],
+			  nombresM: [ "Cayo", "Democritus", "Lazare", "Orestes", "Probo", "Timoteus" ],
 			},
 			{
 			  nombre : "Berserkr",
@@ -367,8 +389,8 @@ class ClasesBases {
 			  cordura: "SAB",
 			  origen: "Parvus Domus - <a href='https://www.lospergaminosdelfenix.com/2018/12/recurso-einherhack-clases-y-ficha-para.html' target='_blank'>Los pergaminos del Fénix</a>",
 			  descripcion: "Los guerreros sagrados de Odihn. Estos furibundos guerreros no se detendrán ante nada para destrozar a sus enemigos.",
-			  nombresF: [  ],
-			  nombresM: [  ],
+			  nombresF: [ "Astrid", "Brenda", "Brynja", "Engla", "Elin", "Erika", "Gerda", "Gudrun", "Gunilda", "Helga", "Helmi", "Hilda", "Inga", "Ingrid", "Kaira", "Karen", "Kaysa", "Lena", "Nilsa", "Sigrid", "Siriana", "Torhild", "Tyra", "Yvette" ],
+			  nombresM: [ "Axe", "Bjorn", "Egil", "Erik", "Harald", "Ivar", "Jorgen", "Lars", "Olav", "Sigurd", "Sven" ],
 			},
 			{
 			  nombre : "Vikingr",
@@ -382,8 +404,8 @@ class ClasesBases {
 			  cordura: "SAB",
 			  origen: "Parvus Domus - <a href='https://www.lospergaminosdelfenix.com/2018/12/recurso-einherhack-clases-y-ficha-para.html' target='_blank'>Los pergaminos del Fénix</a>",
 			  descripcion: "Marineros y guerreros, estos bravos incursores llegarán hasta el fin del mundo en busca de oro y gloria.",
-			  nombresF: [  ],
-			  nombresM: [  ],
+			  nombresF: [ "Astrid", "Brenda", "Brynja", "Engla", "Elin", "Erika", "Gerda", "Gudrun", "Gunilda", "Helga", "Helmi", "Hilda", "Inga", "Ingrid", "Kaira", "Karen", "Kaysa", "Lena", "Nilsa", "Sigrid", "Siriana", "Torhild", "Tyra", "Yvette" ],
+			  nombresM: [ "Axe", "Bjorn", "Egil", "Erik", "Harald", "Ivar", "Jorgen", "Lars", "Olav", "Sigurd", "Sven" ],
 			},
 			{
 			  nombre : "Hirdman",
@@ -397,8 +419,8 @@ class ClasesBases {
 			  cordura: "SAB",
 			  origen: "Parvus Domus - <a href='https://www.lospergaminosdelfenix.com/2018/12/recurso-einherhack-clases-y-ficha-para.html' target='_blank'>Los pergaminos del Fénix</a>",
 			  descripcion: "Los hirdman son guardaespaldas de élite. Ningún enemigo burlará su defensa.",
-			  nombresF: [  ],
-			  nombresM: [  ],
+			  nombresF: [ "Astrid", "Brenda", "Brynja", "Engla", "Elin", "Erika", "Gerda", "Gudrun", "Gunilda", "Helga", "Helmi", "Hilda", "Inga", "Ingrid", "Kaira", "Karen", "Kaysa", "Lena", "Nilsa", "Sigrid", "Siriana", "Torhild", "Tyra", "Yvette" ],
+			  nombresM: [ "Axe", "Bjorn", "Egil", "Erik", "Harald", "Ivar", "Jorgen", "Lars", "Olav", "Sigurd", "Sven" ],
 			},
 			{
 			  nombre : "Veidimadr",
@@ -412,8 +434,8 @@ class ClasesBases {
 			  cordura: "SAB",
 			  origen: "Parvus Domus - <a href='https://www.lospergaminosdelfenix.com/2018/12/recurso-einherhack-clases-y-ficha-para.html' target='_blank'>Los pergaminos del Fénix</a>",
 			  descripcion: "Los bosques helados de Escandia son tan bellos como peligrosos. Cualquier viajero inexperto está destinado a perderse y morir en ellos sin la ayuda de un Veidimadr.",
-			  nombresF: [  ],
-			  nombresM: [  ],
+			  nombresF: [ "Astrid", "Brenda", "Brynja", "Engla", "Elin", "Erika", "Gerda", "Gudrun", "Gunilda", "Helga", "Helmi", "Hilda", "Inga", "Ingrid", "Kaira", "Karen", "Kaysa", "Lena", "Nilsa", "Sigrid", "Siriana", "Torhild", "Tyra", "Yvette" ],
+			  nombresM: [ "Axe", "Bjorn", "Egil", "Erik", "Harald", "Ivar", "Jorgen", "Lars", "Olav", "Sigurd", "Sven" ],
 			},
 			{
 			  nombre : "Volva",
@@ -427,7 +449,7 @@ class ClasesBases {
 			  cordura: "SAB",
 			  origen: "Parvus Domus - <a href='https://www.lospergaminosdelfenix.com/2018/12/recurso-einherhack-clases-y-ficha-para.html' target='_blank'>Los pergaminos del Fénix</a>",
 			  descripcion: "El poder de las Volvas se transmite de madre a hija. Son la voz de los dioses, leen las runas e interpretan prodigios.<br/>Expulsan el mal de alma y cuerpo.",
-			  nombresF: [ "Volva" ],
+			  nombresF: [ "Astrid", "Brenda", "Brynja", "Engla", "Elin", "Erika", "Gerda", "Gudrun", "Gunilda", "Helga", "Helmi", "Hilda", "Inga", "Ingrid", "Kaira", "Karen", "Kaysa", "Lena", "Nilsa", "Sigrid", "Siriana", "Torhild", "Tyra", "Yvette" ],
 			  nombresM: [ ],
 			},
 			{
@@ -443,7 +465,7 @@ class ClasesBases {
 			  origen: "Parvus Domus - <a href='https://www.lospergaminosdelfenix.com/2018/12/recurso-einherhack-clases-y-ficha-para.html' target='_blank'>Los pergaminos del Fénix</a>",
 			  descripcion: "Estos ermitaños poseen conocimientos sobre la naturaleza y los ritos antiguos. Preparan remedios naturales y ofician los ritos funerarios y los sacrificios.",
 			  nombresF: [  ],
-			  nombresM: [  ],
+			  nombresM: [ "Axe", "Bjorn", "Egil", "Erik", "Harald", "Ivar", "Jorgen", "Lars", "Olav", "Sigurd", "Sven" ],
 			},
 			{
 			  nombre : "Skald",
@@ -457,8 +479,8 @@ class ClasesBases {
 			  cordura: "CAR",
 			  origen: "Parvus Domus - <a href='https://www.lospergaminosdelfenix.com/2018/12/recurso-einherhack-clases-y-ficha-para.html' target='_blank'>Los pergaminos del Fénix</a>",
 			  descripcion: "Los skalds son artistas viajeros que extienden los relatos de los aventureros por el mundo. Ninguna hazaña se convierte en leyenda si no la cuenta un skald.",
-			  nombresF: [  ],
-			  nombresM: [  ],
+			  nombresF: [ "Astrid", "Brenda", "Brynja", "Engla", "Elin", "Erika", "Gerda", "Gudrun", "Gunilda", "Helga", "Helmi", "Hilda", "Inga", "Ingrid", "Kaira", "Karen", "Kaysa", "Lena", "Nilsa", "Sigrid", "Siriana", "Torhild", "Tyra", "Yvette" ],
+			  nombresM: [ "Axe", "Bjorn", "Egil", "Erik", "Harald", "Ivar", "Jorgen", "Lars", "Olav", "Sigurd", "Sven" ],
 			},
 		]
 	}

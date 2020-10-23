@@ -23,9 +23,11 @@ class Clases extends ClasesBases {
 			  lhabilidades: [ "Linaje feérico, Lanzamiento de conjuros, Magia apresurada" ],
 			  cordura: "INT",
 			  origen: "Dungeon Hack", 
-			  descripcion: "",
-			  nombresF: [ "Elfa" ],
-			  nombresM: [ "Elfo" ],
+			  descripcion: "Has nacido de la magia, la herencia del mundo de las fatas. Tienes una especial conexión con la naturaleza y con los sentimientos —el amor, la empatía,los celos, etc.— y la creatividad.<br/>" +
+			"El pueblo élfico suele vivir en bosques y lugares tan lejanos como salvajes, apartados del bullicio de las ciudades humanas y los complejos enanos.<br/>" +
+			"Tampoco es extraño encontrar algunos de los tuyos en los caminos, viajando y disfrutando de la vida y de las historias de las diferentes regiones.",
+			  nombresF: [ "Ariawyn", "Dymphna", "Lierin", "Neasa", "Salanna", "Shearah", "Viessa" ],
+			  nombresM: [ "Aidan", "Elduin", "Felaern", "Iefyr", "Gaeleath", "Mhaenil", "Virion" ],
 			},
 			{
 			  nombre : "Enano",
@@ -38,9 +40,11 @@ class Clases extends ClasesBases {
 			  lhabilidades: [ "Visión en la oscuridad, Nacidos de la piedra, Determinación" ],
 			  cordura: "SAB",
 			  origen: "Dungeon Hack", 
-			  descripcion: "",
-			  nombresF: [ "Enana" ],
-			  nombresM: [ "Enano" ],
+			  descripcion: "Perteneces a la orgullosa especie de los enanos.<br/>" +
+					"Procedes de una abrupta región donde los tuyos construyen enormes y gloriosas ciudades subterráneas y las llenan de riquezas y tesoros inimaginables.<br/>" + 
+					"A tu gente se le da especialmente bien crear herramientas, forjar armas y diseñar grandes estructuras. Por desgracia, ninguno de los tuyos es capaz de utilizar siquiera un ápice de magia.",
+			  nombresF: [ "Anniken", "Burmaline", "Erna", "Gina", "Sif", "Tanja", "Udwada" ],
+			  nombresM: [ "Dumli", "Godrig", "Helgig", "Joldurn", "Karnun", "Orrin", "Thedel" ],
 			},
 			{
 			  nombre : "Gnomo",
@@ -52,10 +56,12 @@ class Clases extends ClasesBases {
 			  habilidades: [ "<strong>Visión en la oscuridad</strong><br/>Tu especie proviene de túneles bajo tierra, por lo que ha desarrollado la capacidad de ver en la oscuridad no mágica.", "<strong>Lanzamiento de conjuros</strong><br/>También puedes lanzar conjuros. En la tabla de la página siguiente puedes encontrar el número de conjuros que eres capaz de memorizar cada día.<br/>Las reglas que deben seguirse para aprender y lanzar conjuros están descritas en la página 69 del manual de Dungeon Hack (57 de la básica).", "<strong>Fuente de maná</strong><br/>Posees una pequeña reserva mágica en tu sangre, que te permite extraer energías arcanas en momentos de extrema necesidad. En cualquier momento durante el día, puedes gastar 1 punto de Energía para concentrarte durante un Intervalo y cambiar uno de tus conjuros memorizados por otro del mismo nivel que no hayas memorizado." ],
 			  lhabilidades: [ "Visión en la oscuridad, Lanzamiento de conjuros, Fuente de maná" ],
 			  cordura: "INT",
-			  origen: "<a href='https://naufragio.net/dungeon-hack/' target='_blank'>El Naufragio</a>",
-			  descripcion: "",
-			  nombresF: [ "Gnoma" ],
-			  nombresM: [ "Gnomo" ],
+			  origen: "<a href='https://naufragio.net/gnomo-para-dungeon-hack/' target='_blank'>El Naufragio</a>",
+			  descripcion: "Eres un pequeño ser que comparte origen común con los enanos, pero tu excéntrica forma de ser dista mucho de su hosca actitud. No superas el metro quince de altura, y aunque esto pueda ser un impedimento en la sociedad humana, tu pueblo vive en hogares adaptados a vuestro tamaño.<br/>" +
+					"Has sido dotado con el don de la excesiva creatividad y pasas la vida en busca del invento perfecto. Y, cuando logras crear tan insólito artefacto, no te conformas y sigues buscando.<br/>" +
+					"Tu sociedad valora el intelecto y el talento por encima de todo, y los que no se hacen valer son exiliados. Quizás debes demostrar tu habilidad a tu pueblo, o no respetas la meritocracia que rige tu hogar. De un modo u otro, te has aventurado lejos de tu tierra natal en busca de algo que estimule tu imaginación.",
+			  nombresF: [ "Clothos", "Deina", "Lakhesis", "Nortalis", "Trix", "Wilga" ],
+			  nombresM: [ "Aldorian", "Blanbanter", "Coridhrius", "Excelsus", "Morix", "Zander" ],
 			},
 			{
 			  nombre : "Mediano",
@@ -68,9 +74,11 @@ class Clases extends ClasesBases {
 			  lhabilidades: [ "Buena fortuna, En el último momento" ],
 			  cordura: "CAR",
 			  origen: "Dungeon Hack", 
-			  descripcion: "",
-			  nombresF: [ "Mediana" ],
-			  nombresM: [ "Mediano" ],
+			  descripcion: "Eres un pequeño humanoide de aspecto similar al de un niño humano con orejas ligeramente puntiagudas.<br/>" +
+					"Buscas tesoros para conseguir un hogar donde vivir tranquila y confortablemente el resto de tu vida.<br/>" +
+					"Cuando no vas de aventuras, sueles reunirte con tus familiares en poblaciones rurales para disfrutar de sabrosa comida, buena bebida y charlas interesantes.",
+			  nombresF: [ "Celesta", "Cercis", "Lavenda", "Lubelia", "Pimpernel", "Rosa", "Zinnia" ],
+			  nombresM: [ "Abbo", "Buengo", "Drogo", "Poppo", "Remi", "Sago", "Turbin" ],
 			},
 			{
 			  nombre : "Orco",
@@ -82,10 +90,12 @@ class Clases extends ClasesBases {
 			  habilidades: [ "<strong>Grito de guerra</strong><br/>Al comenzar un combate —si no has sido sorprendido— puedes gastar un punto de energía para bramar un colérico aullido de guerra que otorga +1 a la Iniciativa de tu equipo. Debes indicar al Árbitro que vas a utilizar esta habilidad antes de que se realice la tirada, ya que tu aullido resonará por todo el lugar.<br/>La bonificación a la Iniciativa aumenta en +1 al alcanzar los niveles undécimo, vigésimo primero y trigésimo primero, hasta un total de +4.", "<strong>Sed de sangre</strong><br/>Cuando entras en combate, te pones muy furioso hasta tal punto que, si causas daño a un enemigo que ya te ha herido en ese encuentro, le haces 2 puntos de daño adicionales.<br/>El daño adicional aumenta en 2 puntos al alcanzar los niveles undécimo, vigésimo primero y trigésimo primero, hasta un total de +8.", "<strong>Ira interna</strong><br/>Una vez al día, si tus puntos de salud son reducidos a 0 o menos mientras estás en combate, puedes hacer una tirada de Constitución; si la superas, tus puntos de salud se ajustan a 0 (en caso de que hubiesen quedado en negativo) y recuperas de forma inmediata 1d4 puntos de salud para seguir combatiendo. Si gastas un punto de energía, puedes hacer la tirada con Ventaja.<br/>Debes descansar adecuadamente antes de poder volver a usar esta habilidad." ],
 			  lhabilidades: [ "Grito de guerra, Sed de sangre, Ira interna" ],
 			  cordura: "SAB",
-			  origen: "<a href='https://naufragio.net/dungeon-hack/' target='_blank'>El Naufragio</a>",
-			  descripcion: "",
-			  nombresF: [ "Orca" ],
-			  nombresM: [ "Orco" ],
+			  origen: "<a href='https://naufragio.net/orco-para-dungeon-hack/' target='_blank'>El Naufragio</a>",
+			  descripcion: "Formas parte de una tribu de humanoides de piel verde, de costumbres tribales y barbáricas, que despierta el desagrado de otras especies civilizadas.<br/>" +
+				"Tu pueblo se rige por la ley del más fuerte, y quizás por eso abandonaste tu región natal. No congeniabas con otros miembros de tu clan, o tus actos fueron lo suficientemente vergonzosos como para ser exiliado.<br/>" +
+				"De una forma u otra, ahora debes encontrar tu lugar en el mundo, a pesar de la creencia de que los tuyos sois malignos por naturaleza.",
+			  nombresF: [ "Aggra", "Bathsheba", "Ekra", "Gorganda", "Stuka", "Uloth" ],
+			  nombresM: [ "Durog", "Fauth", "Kurst", "Murnof", "Ostam", "Worver" ],
 			},
 		]
 		
