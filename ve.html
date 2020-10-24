@@ -352,6 +352,9 @@
 		
 		var stals = Comun.tablaTalentos();
 		
+		document.getElementById("dtalentos").innerHTML = "";
+		document.getElementById("dtalentos").style.visibility="hidden";
+		
 		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos(); 
 		document.getElementById("atributos").innerHTML = satrs;
@@ -377,25 +380,10 @@
 		var shabs = Comun.tablaHabilidades();
 		
 		var stals = Comun.tablaTalentos();
-		/*
-		var satrs = "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</strong></th><th>Valor (mod)</th></tr>";
-		for (iatrb = 0; iatrb < pj.atributos.length; iatrb++) {
-			satrs += "<tr><td>" + atributos.atributos[iatrb].nbatr + " (" + atributos.atributos[iatrb].nbmod + ")</td><td align='center'>" + pj.atributos[iatrb] + " (" + Atributos.modifmas(pj.atributos[iatrb]) + ")</td></tr>";
-		}
-		satrs += "</table>";
 		
-		var shabs = "<table class='w3-table  w3-striped w3-border'><tr><th>Habilidad</th><th>Valor</th></tr>";
-		for (ihabs = 0; ihabs < pj.habilidades.length; ihabs++) {
-			shabs += "<tr><td>" + habilidades.habilidades[ihabs] + " </td><td align='center'>" + pj.habilidades[ihabs] + " </td></tr>";
-		}
-		shabs += "</table>";
 		
-		var stals = "<table class='w3-table  w3-striped w3-border'><tr><th>Talentos</th></tr>";
-		for (itals = 0; itals < pj.talentos.length; itals++) {
-			stals += "<tr><td>" + pj.talentos[itals] + " </td></tr>";
-		}
-		stals += "</table>";
-		*/
+		document.getElementById("dtalentos").innerHTML = "";
+		document.getElementById("dtalentos").style.visibility="hidden";
 		
 		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
 		document.getElementById("rasgos").innerHTML = "<table  class='w3-table  w3-striped w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
@@ -430,6 +418,9 @@
 		
 		var stals = Comun.tablaTalentos();
 		
+		
+		document.getElementById("dtalentos").innerHTML = "";
+		document.getElementById("dtalentos").style.visibility="hidden";
 		
 		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
@@ -468,6 +459,9 @@
 		
 		var stals = Comun.tablaTalentos();
 		
+		document.getElementById("dtalentos").innerHTML = "";
+		document.getElementById("dtalentos").style.visibility="hidden";
+		
 		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos(); 
 		document.getElementById("atributos").innerHTML = satrs;
@@ -495,6 +489,7 @@
 		var shabs = Comun.tablaHabilidades();
 		
 		var stals = Comun.tablaTalentos();
+		//var stals = pj.tablaTalentos();
 				
 		document.getElementById("datos").innerHTML = "<table class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
@@ -505,6 +500,8 @@
 		dinero = pj.din;
 		document.getElementById("dinero").innerHTML = "<br/><strong>Dinero: </strong> " + dinero + "$";
 		
+		document.getElementById("dtalentos").innerHTML = pj.tablaTalentos();
+		document.getElementById("dtalentos").style.visibility="visible";
 		
 		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
 		document.getElementById("bgenerapdf").style.visibility="visible";
@@ -528,6 +525,8 @@
 		
 		var stals = Comun.tablaTalentos();
 
+		document.getElementById("dtalentos").innerHTML = "";
+		document.getElementById("dtalentos").style.visibility="hidden";
 		
 		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Raza:</strong> " + pj.raza + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos(); 
@@ -582,6 +581,8 @@
 		document.getElementById("bgenerapdf").innerHTML = "";
 		document.getElementById("srazas").style.visibility="hidden";
 		document.getElementById("bgenerapdf").style.visibility="hidden";
+		document.getElementById("dtalentos").innerHTML = "";
+		document.getElementById("dtalentos").style.visibility="hidden";
 		if ( idx == 1 ) {
 			cargadesplegable();
 		}
@@ -711,6 +712,7 @@
 		<div  class="dostercios" id="talentos"></div>
 		<div class="tercio" id="dinero"></div>
 	</div>
+	<div class="total" id="dtalentos"></div>
 		
 	<!--<div class="w3-row">
 		<div class="w3-col s9 w3-center" id="datos"></div>

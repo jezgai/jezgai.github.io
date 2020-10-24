@@ -13,10 +13,15 @@ class PJP {
 		this._pv = 0;
 		this._def = 0;
 		this._daguante = 4;
-		this._nombres = [ "Mary Jane", "Tadeus", "Duncan", "Sally", "Steve", "Marcus", "John", "Arnold", "Bethesda", "Abigail" ];
-		this._apellidos = [ "Taylor", "O'Sullivan", "Slick", "Jackson", "Moore", "McMardiggan", "Whitman", "Flushing", "Zhao" ];
+		this._nombres = [ "Mary Jane", "Tadeus", "Duncan", "Sally", "Steve", "Marcus", "John", "Arnold", "Bethesda", "Abigail", "Elinor", "Jules", "Mia", "Winston", "Kathy", "Jerry" ];
+		this._apellidos = [ "Taylor", "O'Sullivan", "Slick", "Jackson", "Crawley", "Moore", "McMardiggan", "Parker", "Whitman", "Flushing", "Zhao", "Wallace" ];
 		this._objClase = null;
 		this._din = 0;
+		this._trasfondo = "";
+	}
+	
+	get trasfondo() {
+		return this._trasfondo;
 	}
 
 	get nombre() {
@@ -126,6 +131,16 @@ class PJP {
 	}
 	
 	
+	tablaTalentos() {
+		var itals = 0;
+		var stals = "";
+		for (itals = 0; itals < this._objClase.dtalentos.length; itals++) {
+			stals += "<br/><br/>" + this._objClase.dtalentos[itals];
+		}
+		
+		return stals;
+	}
+	
 	
 	genera() {
 		habilidades.habilidadesGen();
@@ -154,6 +169,10 @@ class PJP {
 		for (ital = 0; ital < talentosclase.length; ital++) {
 			this._talentos.push(talentosclase[ital]);
 		}
+		if ( this._objClase.trasfondos.length > 0 )
+		{
+			this._trasfondo = this._objClase.trasfondos[Comun.random(this._objClase.trasfondos.length, 0)];
+		}
 	}
 	
 	rellenaCamposPDF() {
@@ -165,7 +184,6 @@ class PJP {
 				stalentos += ", " + this.talentos[itals];
 			}
 		}
-
 		var fields = {
 					'Nombre' : [ this.nombre ],
 					'Clase' : [ this.clase ],
@@ -195,7 +213,8 @@ class PJP {
 					'Subterfugio' : [ this.habilidades[4] ],
 					'Supervivencia' : [ this.habilidades[5] ],
 					'Talentos' : [ stalentos ],
-					'Notas' : [ "Dinero: " + this.din + "$" ],
+					'Trasfondos' : [ this._trasfondo ],
+					'Notas' : [ "Dinero: " + this.din + "$" + document.getElementById("dtalentos").innerText ],
 		};
 		return fields;
 	}
