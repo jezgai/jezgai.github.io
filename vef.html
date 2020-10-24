@@ -1,0 +1,291 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="javascript/VE_comun.js"></script>
+<script src="javascript/VE_atributos.js"></script>
+<script src="javascript/VE_habilidades.js"></script>
+<script src="javascript/VEF_pj.js"></script>
+<script src="javascript/VEF_clases.js"></script>
+<script src="javascript/VEF_pj.js"></script>
+
+<script src="javascript/pdfform.minipdf.dist.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+
+<script>
+
+	let pj = new Object();
+	let dinero = "";
+	
+
+	function abajoatr(atributo) {
+		
+		var atributosiguiente = pj.atributos[(parseInt(atributo)+1)%6];
+		pj.atributos[(parseInt(atributo)+1)%6] = pj.atributos[atributo];
+		pj.atributos[atributo] = atributosiguiente;
+		var satrs = Comun.tablaAtributos();
+		document.getElementById("atributos").innerHTML = satrs;
+		if ( atributo <= 1 ) {
+			pj.calculaDefensa();
+		}
+		if ( atributo == 1 || atributo == 2 ) {
+			pj.calculaPV();
+		}
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
+	}
+	
+	function abajohab(habilidad) {
+		
+		var habilidadsiguiente = pj.habilidades[(parseInt(habilidad)+1)%6];
+		pj.habilidades[(parseInt(habilidad)+1)%6] = pj.habilidades[habilidad];
+		pj.habilidades[habilidad] = habilidadsiguiente;
+		var shabs = Comun.tablaHabilidades();
+		document.getElementById("habilidades").innerHTML = shabs;
+	}	
+	
+	
+	function rellenaPDF() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				
+			  contenido = this.response;
+			  
+			  var fields = pj.rellenaCamposPDF();
+			  
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, pj.nombre + ".pdf");
+			}
+		};
+
+
+		xhr.open('GET', pj.plantillaPDF, true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}
+	
+	function limpia() {
+		
+		//document.getElementById("sclases").innerHTML = "";
+		//document.getElementById("snivel").innerHTML = "";
+		//document.getElementById("srazas").innerHTML = "";
+		document.getElementById("bgenerapdf").innerHTML = "";
+		//document.getElementById("srazas").style.visibility="hidden";
+		document.getElementById("bgenerapdf").style.visibility="hidden";
+	}
+	
+	
+	function seleccionaclase(thelist) {
+		limpia();
+		var idx = thelist.selectedIndex;
+		var seleccionado = thelist.options[idx].innerHTML;
+		if ( idx < 1 ) {
+			seleccionado = 'random';
+		}
+		nombreclase = seleccionado;
+	}
+	
+	function seleccionanivel(thelist) {
+		limpia();
+		var idx = thelist.selectedIndex;
+		numeronivel = thelist.options[idx].innerHTML;
+	}
+	
+	let nombreraza = "random";
+	let nombreclase = "random";
+	let numeronivel = 1;
+	let parametrosimg = "";
+	let paginaimg = "";
+	
+	
+	function cargadesplegableF() {
+		//document.getElementById("desplegables").innerHTML = "";
+		document.getElementById("sclases").innerHTML = "";
+		document.getElementById("snivel").innerHTML = "";
+		document.getElementById("srazas").innerHTML = "";
+		document.getElementById("bgenera").innerHTML = "";
+		document.getElementById("srazas").style.visibility="hidden";
+		document.getElementById("bgenerapdf").innerHTML = "";
+		document.getElementById("bgenerapdf").style.visibility="hidden";
+
+		
+		var sclases = Comun.desplegableClases(clasesF, "seleccionaclase");
+		var snivel = Comun.desplegableNivel(10, "seleccionanivel", "generaF");
+		var sboton = Comun.botonGenera("generaF");
+		
+		
+		document.getElementById("sclases").innerHTML = sclases;
+		document.getElementById("snivel").innerHTML = snivel;
+		document.getElementById("bgenera").innerHTML = sboton;
+	}	
+	
+	
+	function vacia() {
+		parametrosimg = "";
+		paginaimg = "";
+		document.getElementById("datos").innerHTML = "";
+		document.getElementById("rasgos").innerHTML = "";
+		document.getElementById("atributos").innerHTML = "";
+		document.getElementById("talentos").innerHTML = "";
+		document.getElementById("habilidades").innerHTML = "";
+		document.getElementById("dinero").innerHTML = "";
+		document.getElementById("ficha").innerHTML = "";
+		
+		/*document.getElementById("sclases").innerHTML = "";
+		document.getElementById("snivel").innerHTML = "";
+		document.getElementById("srazas").innerHTML = "";
+		document.getElementById("bgenera").innerHTML = "";
+		document.getElementById("srazas").style.visibility="hidden";*/
+	}
+		
+	
+	
+	function generaF() {
+		vacia();
+				
+		pj = new PJF(numeronivel);
+		pj.clase = nombreclase;
+		
+		pj.genera();
+		
+		
+		var satrs = Comun.tablaAtributos();
+
+		var shabs = Comun.tablaHabilidades();
+		
+		var stals = Comun.tablaTalentos();
+		//var stals = pj.tablaTalentos();
+				
+		document.getElementById("datos").innerHTML = "<table class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
+		document.getElementById("atributos").innerHTML = satrs;
+		document.getElementById("talentos").innerHTML = stals;
+		document.getElementById("habilidades").innerHTML = shabs;
+		//dinero = Comun.random(8,1) * 100;
+		dinero = pj.din;
+		document.getElementById("dinero").innerHTML = "<br/><strong>Dinero: </strong> " + dinero + "$<br/><br/>" + pj.equipo();
+		
+		//document.getElementById("dtalentos").innerHTML = pj.tablaTalentos();
+		//document.getElementById("dtalentos").style.visibility="visible";
+		
+		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
+		document.getElementById("bgenerapdf").style.visibility="visible";
+	}	
+	
+	
+	function seleccionajdr(thelist) {
+		vacia();
+		var idx = thelist.selectedIndex;
+		document.getElementById("sclases").innerHTML = "";
+		document.getElementById("snivel").innerHTML = "";
+		document.getElementById("srazas").innerHTML = "";
+		document.getElementById("bgenera").innerHTML = "";
+		document.getElementById("bgenerapdf").innerHTML = "";
+		document.getElementById("srazas").style.visibility="hidden";
+		document.getElementById("bgenerapdf").style.visibility="hidden";
+		document.getElementById("dtalentos").innerHTML = "";
+		document.getElementById("dtalentos").style.visibility="hidden";
+		if ( idx == 1 ) {
+			cargadesplegableF();
+		}
+	}
+	
+</script>
+  <style>
+			
+	* {
+	  box-sizing: border-box;
+	}
+	.micro {
+		float:left;
+		width:1%;
+	}
+	.minileft {
+	  float:left;
+	  width:16%;
+	  padding:0 1px;
+	}
+	.mitad {
+	  float:left;
+	  width:50%;
+	  padding:0 1px;
+	}
+	.tercio {
+	  float:left;
+	  width:33%;
+	  padding:0 1px;
+	}
+	.dostercios {
+	  float:left;
+	  width:67%;
+	  padding:0 1px;
+	}
+	.right {
+	  float:left;
+	  width:33%;
+	  padding:0 1px;
+	}
+	.total {
+	  float:left;
+	  width:100%;
+	  padding:0 1px;
+	}
+
+
+
+	@media only screen and (max-width:820px) {
+	  /* For mobile phones: */
+	  .mitad, .micro, .tercio, .dostercios, .right, .total, .minileft {
+		width:100%;
+	  }
+  </style>
+</head>
+<body >
+	<div class="w3-container w3-teal">
+	  <h2>Generador de personajes para Vieja Escuela (sabores alternativos)</h2>
+	</div>
+	
+	<div style="overflow:auto">
+		<div class="total">
+			<select class="w3-select"  name="jdr" onChange="seleccionajdr(this)">
+				<option>--Selecciona--</option>
+				<option>Vieja Escuela: Investigacion</option>
+			</select>
+		</div>
+		
+	</div>
+	
+	<div style="overflow:auto">
+		<div class="minileft" id="srazas"></div>
+		<div class="tercio" id="sclases"></div>
+		<div class="minileft" id="snivel"></div>
+		<div class="minileft" id="bgenera"></div>
+		<div class="minileft" id="bgenerapdf"></div>
+	</div>
+	<div class="w3-container w3-large">	
+	<hr/>
+	<div id="ficha"></div>
+	
+	<div style="overflow:auto">
+		<div class="total" id="datos"></div>
+	</div>
+	<div style="overflow:auto">
+		<div class="tercio" id="atributos"></div>
+		<div class="tercio" id="habilidades"></div>
+		<div class="tercio" id="rasgos"></div>
+	</div>
+	<div style="overflow:auto">
+		<div  class="dostercios" id="talentos"></div>
+		<div class="tercio" id="dinero"></div>
+	</div>
+	<div class="total" id="dtalentos"></div>
+		
+	</div>
+</body>
+</html>

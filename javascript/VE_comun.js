@@ -20,6 +20,15 @@ class Comun {
 		return Math.floor(Math.random() * numero) + desde;
 	}
 	
+	static dadosMultiples(numero, caras, inicial) {
+		var idados=0;
+		var resultado = 0;
+		for (idados=0; idados<numero; idados++) {
+			resultado += Comun.random(caras, inicial);
+		}
+		return resultado;
+	}
+	
 	static desplegableRazas(aRazas, nbFuncSel) {
 		
 		var srazas="<strong>Raza:</strong> <select class='w3-select'  name='raza' onChange='" + nbFuncSel + "(this)'><option>--Aleatorio--</option>";

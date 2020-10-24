@@ -171,7 +171,8 @@ class PJCP {
 			this._talentos.push(talentosclase[ital]);
 		}
 		this._equipo = this._objClase.equipo();
-		this._din = this._equipo.dinero.inicial + (100 * Comun.random(6,1) * this._equipo.dinero.aleatorio );
+		this._din = (Comun.dadosMultiples(this._equipo.dinero.aleatorio, 6, 1) * 100) + this._equipo.dinero.inicial;
+		//this._din = this._equipo.dinero.inicial + (100 * Comun.random(6,1) * this._equipo.dinero.aleatorio );
 	}
 	
 	rellenaCamposPDF() {
