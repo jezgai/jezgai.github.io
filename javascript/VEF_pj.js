@@ -158,6 +158,17 @@ class PJF {
 		return eq;
 	}
 	
+	
+	tablaTalentos() {
+		var itals = 0;
+		var stals = "";
+		for (itals = 0; itals < this._objClase.dtalentos.length; itals++) {
+			stals += "<br/><br/>" + this._objClase.dtalentos[itals];
+		}
+		
+		return stals;
+	}
+	
 	genera() {
 		habilidades.habilidadesGen();
 		habilidades.ptos_niv = 2;

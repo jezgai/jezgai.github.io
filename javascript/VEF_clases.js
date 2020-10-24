@@ -12,11 +12,11 @@ class ClaseF {
 		this._equipoinicial = clase.equipoinicial;
 		this._competencia = clase.competencia;
 		this._dtalentos = clase.dtalentos;
-		this._trasfondos = clase.trasfondos;
+		this._descripcion = clase.descripcion;
 	}
 		
-	get trasfondos() {
-		return this._trasfondos;
+	get descripcion() {
+		return this._descripcion;
 	}
 	
 	get dtalentos() {
@@ -85,7 +85,7 @@ class ClaseF {
 				tls = Comun.shuffle(tls);
 			}
 			for (ital=0; ital < num; ital++) {
-				tal.push(this._talentos[intal].tln[ital]);
+				tal.push(tls[ital]);
 			}
 		}
 		return tal;
@@ -144,8 +144,11 @@ class ClasesF {
 			  pS : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 9 ],
 			  ins : [ 2, 2, 3, 3, 4, 4, 5, 5, 6, 7 ],
 			  equipoinicial : [ { dinero : { inicial : 100, aleatorio: 3, dado: 10 }, equipo : [ ]} ],
-			  dtalentos: [ "<strong>Superviviente</strong><br/>Tienes ventaja en las pruebas de Supervivencia cuando te encuentras en un entorno familiar, relacionado con uno de tus trasfondos.", 
-							"<strong>Viajero/a</strong><br/>Has visitado casi todos los países del mundo. Gastando 1 P! obtendrás éxito automático en Erudición (conocimiento geográfico o social del país) o en Comunicación (conocimiento del mercado negro, conseguir contactos o informantes)" ],
+			  dtalentos : [ "<strong>Certero</strong><br/>Tienes un bono adicional de +2 en todos los ataques de proyectiles.", 
+							"<strong>Dedos Ágiles</strong><br/>Tienes ventaja en las pruebas de Manipulación que requieran precisión (por ejemplo abrir cerraduras o sustraer las posesiones de otra persona).", 
+							"<strong>Emboscar</strong><br/>Tienes ventaja en las pruebas de Subterfugio basadas en moverse en silencio y en ocultarse en las sombras. Añade 1d6 al daño cuando ataques a un blanco desprevenido.", 
+							"<strong>Escurridizo</strong><br/>Tienes ventaja en las pruebas de Subterfugio relacionadas con moverse en silencio.", 
+							"<strong>Invisible</strong><br/>Nadie repara en alguien como tú. Ganas un +2 a las tiradas de Subterfugio cuando tratas de pasar desapercibido." ],
 			},
 			{
 			  nombre : "Líder",
@@ -157,8 +160,11 @@ class ClasesF {
 			  pS : [ 2, 3, 3, 3, 4, 4, 4, 5, 5, 5 ],
 			  ins : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ],
 			  equipoinicial : [ { dinero : { inicial : 500, aleatorio: 3, dado: 10 }, equipo : [ ]} ],
-			  dtalentos: [ "<strong>Contactos</strong><br/>Otorgas un +1 a cualquier prueba de Manipulación o Erudición que realice el PJ con el que mantengas un lazo emocional, siempre que estés cerca suyo en el momento de realizar la acción. También permite hacer extensible esta bonificación a otros PJs canjeando 1 P!.", 
-							"<strong>Herencia</strong><br/>Tienes mucho, mucho dinero. Cuando desees adquirir cualquier objeto o equipo debes superar una prueba de Comunicación y dependiendo de la petición el DJ determinará la dificultad. Si se supera la prueba tienes el objeto a tu disposición." ],
+			  dtalentos: [ "<strong>Adinerado</strong><br/>Tienes mucho dinero. Cuando quieras conseguir cualquier objeto o equipo debes superar una prueba de Comunicación cuya dificultad determina el DJ según la petición.",
+							"<strong>Camaleón social</strong><br/>Tienes ventaja en cualquier prueba de Comunicación para realizar primeros contactos con desconocidos.", 
+							"<strong>Discurso inspirador</strong><br/>Das un +2 a cualquier prueba que realice el PJ al que pretendas inspirar, siempre que estés cerca y le hayas arengado adecuadamente. Por cada pS que entregues puedes extender esa bonificación a otro PJ adicional.", 
+							"<strong>Elegante</strong><br/>El estilo es tu marca. Tu vestuario y tu distinción te ayudan en las interacciones sociales. Todas las pruebas de comunicación en reuniones, eventos y fiestas son realizadas con ventaja.",
+							"<strong>Influencia</strong><br/>Perteneces a una familia o grupo muy poderoso, +2 en las tiradas de Comunicación cuando intentas influir sobre alguien." ],
 			},
 			{
 			  nombre : "Luchador/a",
@@ -170,8 +176,11 @@ class ClasesF {
 			  pS : [ 0, 0, 1, 1, 2, 2, 3, 3, 4, 5 ],
 			  ins : [ 1, 2, 2, 3, 3, 4, 4, 5, 5, 6 ],
 			  equipoinicial : [ { dinero : { inicial : 0, aleatorio: 4, dado: 6 }, equipo : [ "1 arma de fuego" ]} ],
-			  dtalentos: [ "<strong>Con un par</strong><br/>En situaciones de máximo riesgo en que debas realizar una prueba de Instinto, obtienes ventaja para superar la prueba.", 
-							"<strong>Resistente</strong><br/>Demasiados golpes, demasiadas heridas, han curtido tu cuerpo hasta hacerlo duro como la piedra. Ganas un +1 a la característica de Defensa en combate cuerpo a cuerpo y cualquier daño sufrido por una caída se reduce a la mitad." ],
+			  dtalentos: [ "<strong>Ataque certero<strong><br/>Tus ataques se convierten en crítico con un resultado de 19-20.", 
+							"<strong>Ataques Múltiples<strong><br/>Al abatir a un rival puedes realizar inmediatamente otro ataque. De esta forma puedes encadenar tantos ataques EXTRA como nivel tengas.", 
+							"<strong>Con un par<strong><br/>En situaciones de máximo riesgo en que debas realizar una prueba de Instinto, obtienes ventaja para superar la prueba.", 
+							"<strong>Lucha con X<strong><br/>Sustituye X por: arma de mano y escudo o dos armas de mano o armas a dos manos o de proyectiles o de fuego. Peleando de esa forma ganas +1 al ataque y al daño.", 
+							"<strong>Músculos de acero<strong><br/>El personaje tiene una musculatura envidiable. Aumenta en +1 el daño en combate C/C" ],
 			},
 			{
 			  nombre : "Observador",
@@ -183,8 +192,11 @@ class ClasesF {
 			  pS : [ 0, 0, 1, 2, 2, 3, 4, 4, 5, 6 ],
 			  ins : [ 2, 3, 3, 4, 5, 6, 6, 7, 8, 9 ],
 			  equipoinicial : [ { dinero : { inicial : 100, aleatorio: 3, dado: 8 }, equipo : [ "1 cámara fotográfica" ]} ],
-			  dtalentos: [ "<strong>Ideas frescas</strong><br/>Tienes ventaja en cualquier prueba de Manipulación para realizar chapuzas o pequeños inventos que puedan resolver una situación compleja o peligrosa.", 
-							"<strong>Sonrisa angelical</strong><br/>Tienes ventaja en cualquier prueba de Comunicación cuando la intención sea embaucar o confundir al sujeto." ],
+			  dtalentos : [ "<strong>Buena reputación</strong><br/>Una personalidad arrolladora junto a buena suerte hacen que tus acciones siempre se vean de la mejor forma. Una vez por sesión puedes tener una ventaja en una prueba de Comunicación y gastando 1 pS puedes evitar un conflicto armado o social de forma directa, porque reconocen tu reputación.", 
+							"<strong>Buenos sentidos</strong><br/>Tienes ventaja en las pruebas basadas en la percepción sensorial.", 
+							"<strong>Contactos</strong><br/>Conoces a mucha gente, la mayoría gente poderosa. Gastando 1 pS puedes pedirles un favor.", 
+							"<strong>Esponja</strong><br/>Estás acostumbrado a asimilar todo lo que encuentras a tu alrededor. Ganas un +2 en las tiradas de Alerta cuando puedes percartarte de algún detalle extraño", 
+							"<strong>Mañoso</strong><br/>Estás acostumbrado a manipular las cosas por tí mismo, ya sea para arreglarlas o entender como funcionan. Ganas un +2 a las tiradas de Manipulación cuando intentas arreglar o estropear algún mecanismo." ],
 			},
 			{
 			  nombre : "Pensador/a",
@@ -196,8 +208,11 @@ class ClasesF {
 			  pS : [ 2, 3, 3, 4, 5, 6, 7, 8, 8, 9 ],
 			  ins : [ 1, 2, 3, 4, 5, 5, 6, 7, 8, 9 ],
 			  equipoinicial : [ { dinero : { inicial : 200, aleatorio: 3, dado: 8 }, equipo : [ "Botiquín" ]} ],
-			  dtalentos: [ "<strong>Camaleón social</strong><br/>Tienes ventaja en cualquier prueba de Comunicación para realizar primeros contactos con nuevos pueblos y sociedades.", 
-							"<strong>Lo leí en un libro</strong><br/>Canjea 1 P! para obtener un éxito automático en una prueba de Erudición sobre cualquier materia." ],
+			  dtalentos : [ "<strong>Afortunado</strong><br/>La diosa fortuna te sonríe. Una vez por sesión puedes repetir cualquier prueba y realizarla de nuevo con Ventaja o bien en cada inicio de sesión de juego puedes gastar 1 pS y realizar tres tiradas con el d20, anota los dos resultados mayores y durante el juego podrás cambiar el resultado de una tirada por uno de los anotados. Dicho valor no es reutilizable.", 
+							"<strong>Ideas frescas</strong><br/>Tienes ventaja en cualquier prueba de Manipulación para realizar chapuzas o pequeños inventos que puedan resolver una situación compleja o peligrosa.", 
+							"<strong>Ingenioso</strong><br/> Tiras con ventaja una prueba de Instintos siempre que ofrezcas una posible solución ingeniosa al problema.",
+							"<strong>Lo leí en un libro</strong><br/>Canjea 1 pS para obtener un éxito automático en una prueba de Erudición sobre cualquier materia.",
+							"<strong>Memoria prodigiosa</strong><br/>Tienes ventaja en las pruebas de Erudición en las que la memoria sea fundamental." ],
 			},
 			{
 			  nombre : "Tenaz",
@@ -209,8 +224,11 @@ class ClasesF {
 			  pS : [ 1, 1, 2, 3, 3, 4, 4, 5, 5, 6 ],
 			  ins : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 9 ],
 			  equipoinicial : [ { dinero : { inicial : 0, aleatorio: 3, dado: 8 }, equipo : [ "1 chupa de cuero" ]} ],
-			  dtalentos: [ "<strong>Compañero/a fiel</strong><br/>Otorgas un +1 a cualquier prueba de Manipulación o Erudición que realice el PJ con el que mantengas un lazo emocional, siempre que estés cerca suyo en el momento de realizar la acción. También permite hacer extensible esta bonificación a otros PJs canjeando 1 P!.", 
-							"<strong>Suerte</strong><br/>La diosa fortuna te sonríe. Una vez por sesión puedes repetir cualquier prueba y realizarla de nuevo con ventaja." ],
+			  dtalentos: [ "<strong>Coraje</strong><br/>Tienes una considerable fuerza de voluntad que te hace afrontar con estoicismo el peligro y ciertas situaciones que podrían dañar tu salud mental. Obtienes un +2 a la tirada de SAB para resistir situaciones que afectan a la salud mental.", 
+							"<strong>Mente Férrea</strong><br/>Tienes la mente preparada para resistir cualquier ataque. Los intentos de interrogarte, intimidarte, convencerte o confundirte siempre se realizan con desventaja.", 
+							"<strong>Resistente</strong><br/>Demasiados golpes, demasiadas heridas han curtido tu cuerpo hasta hacerlo duro como la piedra. Ganas un +1 a la característica de Defensa en combate cuerpo a cuerpo y cualquier daño sufrido por una caída se reduce a la mitad.", 
+							"<strong>Superviviente nato</strong><br/>Estás acostumbrado a sortear dificultades, a encontrar soluciones más allá de tus posibilidades. Ganas un +2 a tiradas de INT cuando te encuentras en un aprieto y buscas salidas o soluciones.", 
+							"<strong>Voluntad de hierro</strong><br/>Una vez por sesión, puedes repetir una tirada de tu elección." ],
 			},
 		]
 	}
