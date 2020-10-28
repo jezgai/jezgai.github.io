@@ -33,7 +33,18 @@
 	function rellenaPDF() {
 		var xhr = new XMLHttpRequest();
 		var contenido;
-		var competencias = '';
+		var habilidadesaelegir = '';
+		if ( profesion.nombre == "Diletante" ) {
+			var indpri=0;
+			habilidadesaelegir = "Reparte las siguientes puntuaciones entre 10 habilidades distintas de las principales: " + pj.habsecundarias[0];
+					
+			for (indpri=1;indpri<pj.profesion.nhabsecundarias;indpri++) {
+				habilidadesaelegir += ", " + pj.habsecundarias[indpri];
+			}
+		}
+		else if ( profesion.nombre == "Atleta" ) {
+			habilidadesaelegir = "Asigna " + pj.habsecundarias[9] + " puntos a Ciencia Natural o Humanidades.";
+		}
 		
 		xhr.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
@@ -56,7 +67,7 @@
 					'SueldoMensual' : [ pj.sueldo + "$" ],
 					'Ahorros' : [ pj.ahorros + "$" ],
 					'Vivienda1' : [ pj.posesiones + "$ en posesiones" ],
-					'Biografia' : [ document.getElementById("ptosextra").innerText + document.getElementById("dotesinvestigativas").innerText ],
+					'Biografia' : [ document.getElementById("ptosextra").innerText + document.getElementById("dotesinvestigativas").innerText + habilidadesaelegir ],
 				};
 				
 				
@@ -315,39 +326,7 @@
 		
 		
 		pintahabprimarias();
-		
-		/*var strtabla = "<table class='w3-table  w3-striped  w3-border'>";
-		var indpri=0;
-		
-		var habpj = Comun.habilidadesPJ(habilidadesprin);
-		
-		for (indpri=0;indpri<nhabprin;indpri++) {
-			var n=1+indpri;
-			var habn = pj.habprimarias[indpri];
-			strtabla += "<tr><td><strong>" + habpj.habilidades[indpri] + "</strong></td><td>" + habn + "</td></tr>";
-		}
-		strtabla += "</table>";
-		document.getElementById("habprimaria").innerHTML = strtabla;
-		//document.getElementById("habsecundaria").innerHTML="";
-		
-		strtabla = "<table class='w3-table  w3-striped  w3-border'>";
-		*/
-		
-		/*
-		var strtabla = "<table class='w3-table  w3-striped  w3-border'>";
-		
-		var indsec=0;
-		for (indsec=0;indsec<nhabsec;indsec++) {
-			var n=1+indsec;
-			var habn = pj.habsecundarias[indsec];
-			//document.getElementById("habsecundaria").innerHTML += "<br/><strong>Puntuación " + n + "</strong>: " + habn;
-			strtabla += "<tr><td><strong>Puntuación " + n + "</strong></td><td>" + habn + "</td></tr>";
-		}
-		
-		strtabla += "</table>";
-		document.getElementById("habsecundaria").innerHTML = strtabla;
-		*/
-		
+				
 		pintahabsecundarias();
 		
 		document.getElementById("dotesinvestigativas").innerHTML = "";
@@ -359,7 +338,7 @@
 			//document.getElementById("habprimaria").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border' <tr><td><strong>Habilidades principales de " + nbprofesion + "</strong></td></tr><tr><td>" + habilidadesprin + "</td></tr></table>";
 			//document.getElementById("habsecundaria").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border' <tr><td><strong>Habilidades secundarias de " + nbprofesion + "</strong></td></tr><tr><td>" + habilidadessecun + "</td></tr></table>";
 			//document.getElementById("dotesinvestigativas").innerHTML += "<table class='w3-table  w3-striped  w3-border' <tr><td><strong>Dotes investigativas de " + nbprofesion + "</strong></td></tr><tr><td>" + dotesinvestigativas + "</td></tr></table>";
-			document.getElementById("dotesinvestigativas").innerHTML += "<h2>Dotes investigativas</h2>" + dotesinvestigativas;
+			document.getElementById("dotesinvestigativas").innerHTML += "<h2>Dotes investigativas</h2>" + dotesinvestigativas + "<br/><br/>";
 			document.getElementById("sueldoyposesiones").innerHTML = "<h2>Dinero y posesiones</h2>Sueldo mensual: " + pj.sueldo + "$<br/>Ahorros: " + pj.ahorros + "$<br/>Posesiones iniciales: " + pj.posesiones + "$";
 			//if ( requisitos != "" )
 			//	document.getElementById("atributos").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border' <tr><td><strong>Requisitos</strong></td><td>" + requisitos + "</td></tr></table>";
