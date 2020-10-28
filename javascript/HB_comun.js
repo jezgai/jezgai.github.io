@@ -84,6 +84,24 @@ class Comun {
 		sprofesiones += "</select>";
 		return sprofesiones;
 	}
+	
+	
+	static habilidadesPJ(lhabilidades, numerohab) {
+		var sHabilidades = lhabilidades.replaceAll(" y ", ", ").replaceAll(", ", ",");
+		var aHabilidades = sHabilidades.split(",");
+		var habilidadespj = new Habilidades();
+		habilidadespj._habilidades = sHabilidades.split(",");
+		habilidadespj._pdfhabilidades = [];
+		var ihab=0;
+		var nhab = numerohab;
+		if ( habilidadespj._habilidades.length < numerohab )
+			nhab = habilidadespj._habilidades.length;
+		
+		for ( ihab = 0; ihab<nhab; ihab++) {
+			habilidadespj._pdfhabilidades.push(listaHabilidades.campopdf(habilidadespj._habilidades[ihab]));
+		}
+		return habilidadespj;
+	}
 		
 	/*static clone(ar) {
 		return ar.slice(0);

@@ -13,8 +13,48 @@ class HB_PJ {
 		this._pegada = 0;
 		this._porchabper = 0;
 		this._porchabcar = 0;
+		this._cordura = 0;
+		this._concentracion = 0;
+		this._ahorros = 0;
+		this._posesiones = 0;
+		this._sueldo = 0;
 	}
 
+	get ahorros() {
+		return this._ahorros;
+	}
+	set ahorros(value) {
+		this._ahorros = value;
+	}
+	
+	get posesiones() {
+		return this._posesiones;
+	}
+	set posesiones(value) {
+		this._posesiones = value;
+	}
+	
+	get sueldo() {
+		return this._sueldo;
+	}
+	set sueldo(value) {
+		this._sueldo = value;
+	}
+	
+	get concentracion() {
+		return this._concentracion;
+	}
+	set concentracion(value) {
+		this._concentracion = value;
+	}
+	
+	get cordura() {
+		return this._cordura;
+	}
+	set cordura(value) {
+		this._cordura = value;
+	}
+	
 	get vigor() {
 		return this._vigor;
 	}
@@ -220,6 +260,37 @@ class HB_PJ {
 		}
 	}
 	
+	calculaconcentracion() {
+		this._concentracion = 10;
+		if ( this._perspicacia <= 10 ) {
+			this._concentracion = 1;
+		}
+		else if ( this._perspicacia <= 20 ) {
+			this._concentracion = 2;
+		}
+		else if ( this._perspicacia <= 30 ) {
+			this._concentracion = 3;
+		}
+		else if ( this._perspicacia <= 40 ) {
+			this._concentracion = 4;
+		}
+		else if ( this._perspicacia <= 50 ) {
+			this._concentracion = 5;
+		}
+		else if ( this._perspicacia <= 60 ) {
+			this._concentracion = 6;
+		}
+		else if ( this._perspicacia <= 70 ) {
+			this._concentracion = 7;
+		}
+		else if ( this._perspicacia <= 80 ) {
+			this._concentracion = 8;
+		}
+		else if ( this._perspicacia <= 90 ) {
+			this._concentracion = 9;
+		}
+	}
+	
 	genera(nhabprim, nhabsec) {
 		
 		this._vigor = Comun.atributo();
@@ -227,6 +298,7 @@ class HB_PJ {
 		this._perspicacia = Comun.atributo();
 		this._carisma = Comun.atributo();
 		this._suerte = Comun.suerte();
+		this._cordura = Comun.atributo();
 		var ihabp=0;
 		for (ihabp=0;ihabp<nhabprim;ihabp++) {
 			this._habprimarias.push(Comun.habilidadprimaria());
@@ -247,6 +319,8 @@ class HB_PJ {
 		
 		// Porcentaje adicional a habilidades sociales por carisma
 		this.porccarisma();
+		
+		this.calculaconcentracion();
 	}
 	
 }
