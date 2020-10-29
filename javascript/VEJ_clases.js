@@ -35,7 +35,11 @@ class ClaseJ {
 		return this._hon;
 	}
 	get din() {
-		return (Comun.random(6,1) * this._din * 10);
+        var idin = 0;
+        var dinero = 0;
+        for (idin = 0; idin < this._din; idin ++);
+            dinero += Comun.random(6,1);
+		return (dinero * 10);
 	}
 	
 	set nombre(value) {
