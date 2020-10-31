@@ -24,6 +24,9 @@
 <script src="javascript/VECP_pj.js"></script>
 <script src="javascript/NUV_clases.js"></script>
 <script src="javascript/NUV_pj.js"></script>
+<script src="javascript/VC_esencias.js"></script>
+<script src="javascript/VC_mascaras.js"></script>
+<script src="javascript/VC_pj.js"></script>
 
 <script src="javascript/pdfform.minipdf.dist.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
@@ -125,6 +128,31 @@
 	let numeronivel = 1;
 	let parametrosimg = "";
 	let paginaimg = "";
+	
+	
+	function cargadesplegableVC() {
+		//document.getElementById("desplegables").innerHTML = "";
+		document.getElementById("sclases").innerHTML = "";
+		document.getElementById("snivel").innerHTML = "";
+		document.getElementById("srazas").innerHTML = "";
+		document.getElementById("bgenera").innerHTML = "";
+		document.getElementById("srazas").style.visibility="hidden";
+		document.getElementById("bgenerapdf").innerHTML = "";
+		document.getElementById("bgenerapdf").style.visibility="hidden";
+		
+		var srazas = esencias.desplegableEsencias("seleccionaraza");
+		var sclases = mascaras.desplegableMascaras("seleccionaclase");
+		var snivel = Comun.desplegableNivel(10, "seleccionanivel", "genera");
+		var sboton = Comun.botonGenera("generaVC");
+		//document.getElementById("desplegables").innerHTML = srazas + sclases + snivel;	
+		
+		document.getElementById("srazas").innerHTML = srazas;
+		document.getElementById("sclases").innerHTML = sclases;
+		document.getElementById("snivel").innerHTML = snivel;
+		document.getElementById("bgenera").innerHTML = sboton;
+		document.getElementById("srazas").style.visibility="visible";
+		
+	}	
 	
 	function cargadesplegable() {
 		//document.getElementById("desplegables").innerHTML = "";
@@ -569,7 +597,43 @@
 		
 		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
 		document.getElementById("bgenerapdf").style.visibility="visible";
-	}	
+	}
+	
+	
+	function generaVC() {
+		vacia();
+		
+		pj = new PJC(numeronivel);
+		pj.esencia = nombreraza;
+		pj.mascara = nombreclase;
+		
+		pj.genera();
+		
+		dinero = pj.din; // Comun.random(6,1) * 100;
+		
+		
+		var satrs = Comun.tablaAtributos();
+		
+		var shabs = Comun.tablaHabilidades();
+		
+		var stals = pj.tablaTalentos();
+
+		document.getElementById("dtalentos").innerHTML = "";
+		document.getElementById("dtalentos").style.visibility="hidden";
+		
+		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Esencia:</strong> " + pj.esencia + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Máscara:</strong> " + pj.mascara + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos(); 
+													  
+		document.getElementById("atributos").innerHTML = satrs;
+		document.getElementById("talentos").innerHTML = stals;
+		document.getElementById("habilidades").innerHTML = shabs;
+		document.getElementById("dinero").innerHTML = "<br/><strong>Dinero: </strong> <br/>" + dinero + "$";
+    
+		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
+		document.getElementById("bgenerapdf").style.visibility="visible";
+	}
+	
+	
 	
 	function seleccionajdr(thelist) {
 		vacia();
@@ -605,6 +669,9 @@
 			cargadesplegableZ();
 		}
 		else if ( idx == 7 ) {
+			cargadesplegableVC();
+		}
+		else if ( idx == 8 ) {
 			cargadesplegableJ();
 		}
 	}
@@ -674,10 +741,10 @@
 				<option>Vieja Escuela: Salvaje Oeste</option>
 				<option>Nuestro Ultimo Verano</option>
 				<option>Vieja Escuela: Zombies</option>
+				<option>Vieja Ciudad</option>
 				<option>Vieja Escuela: Japon</option>
 			</select>
 		</div>
-		<!--<div class="dostercios" id="desplegables"></div>-->
 		
 	</div>
 	
@@ -689,16 +756,6 @@
 		<div class="minileft" id="bgenerapdf"></div>
 	</div>
 	<div class="w3-container w3-large">	
-		<!--<select class="w3-select"  name="jdr" onChange="seleccionajdr(this)">
-			<option>--Selecciona--</option>
-			<option>Vieja Escuela: Jdr</option>
-			<option>Vieja Escuela: Pulp</option>
-			<option>Vieja Escuela: Cyberpunk</option>
-			<option>Vieja Escuela: Salvaje Oeste</option>
-			<option>Vieja Escuela: Japon</option>
-			<option>Vieja Escuela: Zombies</option>
-		</select>
-	<div id="desplegables"></div>-->
 	<hr/>
 	<div id="ficha"></div>
 	

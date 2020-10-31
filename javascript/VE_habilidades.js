@@ -6,6 +6,7 @@ class Habilidades {
 		this._habilidadesJap = [ "Alerta", "Callejeo", "Corte", "Guerra", "Manipulación", "Supervivencia" ];
 		this._habilidadesCyb = [ "Corporate", "Cyber", "Hardware", "Punk", "Savage", "Urban" ];
 		this._habilidadesNUV = [ "Al loro", "Empollon", "Manitas", "Ninja", "Palique", "Rambo" ];
+		this._habilidadesVC = [ "Ciudadano", "Ocultista", "Político", "Ratero", "Manitas", "Veterano" ];
 		this._habilidades = this._habilidadesGen.slice(0);
 	}
 	
@@ -45,6 +46,10 @@ class Habilidades {
 	
 	habilidadesNUV() {
 		this._habilidades = this._habilidadesNUV.slice(0);
+	}
+	
+	habilidadesVC() {
+		this._habilidades = this._habilidadesVC.slice(0);
 	}
 	
 	puntuaciones(nivel) {

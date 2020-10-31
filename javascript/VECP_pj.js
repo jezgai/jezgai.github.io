@@ -46,12 +46,12 @@ class PJCP extends PJBase {
 	}
 	
 	tablaRasgos() {
-		return "<table  class='w3-table  w3-striped w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
-													  " </td></tr><tr><td><strong>Atq:</strong> " + pj.atq +
-													  " </td></tr><tr><td><strong>Ins:</strong> " + pj.ins + 
-													  " </td></tr><tr><td><strong>Def:</strong> " + pj.defn + 
-													  " </td></tr><tr><td><strong>Pow:</strong> " + pj.Pow + 
-													  " </td></tr><tr><td><strong>PV:</strong> " + pj.pv + "</td></tr></table";
+		return "<table  class='w3-table  w3-striped w3-border'><tr><td><strong>DA:</strong> d" + this.daguante +
+													  " </td></tr><tr><td><strong>Atq:</strong> " + this.atq +
+													  " </td></tr><tr><td><strong>Ins:</strong> " + this.ins + 
+													  " </td></tr><tr><td><strong>Def:</strong> " + this.defn + 
+													  " </td></tr><tr><td><strong>Pow:</strong> " + this.Pow + 
+													  " </td></tr><tr><td><strong>PV:</strong> " + this.pv + "</td></tr></table";
 
 	}
 	
