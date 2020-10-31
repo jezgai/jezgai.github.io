@@ -1,99 +1,12 @@
-class PJCP {
+class PJCP extends PJBase {
 
 	constructor(nivel) {
-		this._nombre = '';
-		this._nivel = nivel;
-		this._clase = 'random';
-		this._atributos = [];
-		this._talentos = [];
-		this._habilidades = [];
-		this._atq = 0;
-		this._pU = 0;
-		this._ins = 0;
-		this._pv = 0;
-		this._def = 0;
+		super(nivel);
+		this._pU = 0;;
 		this._din = 0;
-		this._daguante = 4;
 		this._nombres = [ "Mary", "Arina", "Jarek", "Andrey", "Natacha", "Dimitri", "Kumiko", "Konrad", "Duncan", "Lyudmila", "Sally", "Gerek", "Alka", "Steve", "Yuri", "Marcus", "John", "Xia", "Arnold", "Tom" ];
 		this._apellidos = [ "Fedorov", "Vasiliev", "Volkov", "Gomolka", "Slick", "Izumi", "Jackson", "Petrov", "Bukowski", "Moore", "McMardiggan", "Li", "Whitman", "Flushing", "Zhao", "Kovaks" ];
 		this._objClase = null;
-	}
-
-	get nombre() {
-		return this._nombre;
-	}
-	set nombre(value) {
-		this._nombre = value;
-	}
-	
-	get clase() {
-		return this._clase;
-	}
-	set clase(value) {
-		this._clase = value;
-	}
-	
-	get atributos() {
-		return this._atributos;
-	}
-	set atributos(value) {
-		this._atributos = value;
-	}
-	
-	get talentos() {
-		return this._talentos;
-	}
-	set talentos(value) {
-		this._talentos = value;
-	}
-	
-	get habilidades() {
-		return this._habilidades;
-	}
-	set habilidades(value) {
-		this._habilidades = value;
-	}
-	
-	get atq() {
-		return this._atq;
-	}
-	set atq(value) {
-		this._atq = value;
-	}
-	
-	get pS() {
-		return this._pS;
-	}	
-	set pS(value) {
-		this._pS = value;
-	}
-	
-	get ins() {
-		return this._ins;
-	}
-	set ins(value) {
-		this._ins = value;
-	}
-		
-	get defn() {
-		return this._def;
-	}
-	set defn(value) {
-		this._def = value;
-	}
-		
-	get pv() {
-		return this._pv;
-	}
-	set pv(value) {
-		this._pv = value;
-	}
-	
-	get daguante() {
-		return this._daguante;
-	}
-	set daguante(value) {
-		this._daguante = value;
 	}
 	
 	get din() {

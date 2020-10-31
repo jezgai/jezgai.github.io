@@ -1,64 +1,12 @@
-class PJJ {
+class PJJ extends PJBase {
 
 	constructor(nivel) {
-		this._nombre = '';
-		this._nivel = nivel;
-		this._clase = 'random';
-		this._atributos = [];
-		this._talentos = [];
-		this._habilidades = [];
-		this._atq = 0;
+		super(nivel);
 		this._hon = 0;
 		this._din = 0;
-		this._ins = 0;
-		this._pv = 0;
-		this._def = 0;
-		this._daguante = 4;
 		this._nombres = [ "Akio", "Natsuki", "Daiki", "Sachiko", "Hiroto", "Teiko", "Kaito", "Yoko", "Kazuki", "Fumiko", "Kenzo", "Aimi" ];
 		this._apellidos = [ "Akiyama","Fujimoto","Fujioka","Fukui","Hamasaki","Hashimoto","Hayashi","Himura","Hisakawa","Inoue","Ito","Kagome","Kawaguchi","Kimura","Kobayashi","Koizumi","Matsumoto","Matsuoka","Matsushita","Minami","Miyamoto" ];
 		this._objClase = null;
-	}
-
-	get nombre() {
-		return this._nombre;
-	}
-	set nombre(value) {
-		this._nombre = value;
-	}
-	
-	get clase() {
-		return this._clase;
-	}
-	set clase(value) {
-		this._clase = value;
-	}
-	
-	get atributos() {
-		return this._atributos;
-	}
-	set atributos(value) {
-		this._atributos = value;
-	}
-	
-	get talentos() {
-		return this._talentos;
-	}
-	set talentos(value) {
-		this._talentos = value;
-	}
-	
-	get habilidades() {
-		return this._habilidades;
-	}
-	set habilidades(value) {
-		this._habilidades = value;
-	}
-	
-	get atq() {
-		return this._atq;
-	}
-	set atq(value) {
-		this._atq = value;
 	}
 	
 	get hon() {
@@ -66,34 +14,6 @@ class PJJ {
 	}	
 	set hon(value) {
 		this._hon = value;
-	}
-	
-	get ins() {
-		return this._ins;
-	}
-	set ins(value) {
-		this._ins = value;
-	}
-		
-	get defn() {
-		return this._def;
-	}
-	set defn(value) {
-		this._def = value;
-	}
-		
-	get pv() {
-		return this._pv;
-	}
-	set pv(value) {
-		this._pv = value;
-	}
-	
-	get daguante() {
-		return this._daguante;
-	}
-	set daguante(value) {
-		this._daguante = value;
 	}
 	
 	get din() {

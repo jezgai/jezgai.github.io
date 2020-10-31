@@ -1,14 +1,8 @@
-
-class ClaseP {
+class ClaseP extends ClaseBase {
 
 	constructor(clase) {
-		this._nombre = clase.nombre;
-		this._talentos = clase.talentos;
-		this._daguante = clase.daguante;
-		this._atrs = clase.atrs;
-		this._atq = clase.atq;
+		super(clase);
 		this._pP = clase.pP;
-		this._ins = clase.ins;
 		this._competencia = clase.competencia;
 		this._dtalentos = clase.dtalentos;
 		this._trasfondos = clase.trasfondos;
@@ -26,48 +20,11 @@ class ClaseP {
 		return this._competencia;
 	}
 	
-	get nombre() {
-		return this._nombre;
-	}
-	get talentos() {
-		return this._talentos;
-	}
-	get daguante() {
-		return this._daguante;
-	}
-	get atrs() {
-		return this._atrs;
-	}
-	get atq() {
-		return this._atq;
-	}
 	get pP() {
 		return this._pP;
 	}
-	get ins() {
-		return this._ins;
-	}
-	
-	set nombre(value) {
-		this._nombre = value;
-	}
-	set talentos(value) {
-		this._talentos = value;
-	}
-	set daguante(value) {
-		this._daguante = value;
-	}
-	set atrs(value) {
-		this._atrs = value;
-	}
-	set atq(value) {
-		this._atq = value;
-	}
 	set pP(value) {
 		this._pP = value;
-	}
-	set ins(value) {
-		this._ins = value;
 	}
 
 	talentos(nivel) {
@@ -84,28 +41,13 @@ class ClaseP {
 				tls = Comun.shuffle(tls);
 			}
 			for (ital=0; ital < num; ital++) {
-				tal.push(this._talentos[intal].tln[ital]);
+				//tal.push(this._talentos[intal].tln[ital]);
+				tal.push(tls[ital]);
 			}
 		}
 		return tal;
 	}
 
-	pv(nivel) {
-		var ptos = this._daguante;
-		var ipv=0;
-		for (ipv=1; ipv<nivel; ipv++) {
-			ptos += Comun.random(this._daguante, 1);
-		}
-		return ptos;
-	}
-
-	atq(nivel) {
-		var iatq = nivel - 1;
-		if ( nivel > this._atq.length ) {
-			iatq = this._atq.length - 1;
-		}
-		return this._atq[iatq];
-	}
 
 	pP(nivel) {
 		var ipP = nivel - 1;
@@ -115,15 +57,10 @@ class ClaseP {
 		return this._pP[ipP];
 	}
 
-	ins(nivel) {
-		var iins = nivel - 1;
-		if ( nivel > this._ins.length ) {
-			iins = this._ins.length - 1;
-		}
-		return this._ins[iins];
-	}
 
 }
+
+
 
 class ClasesP {
 	
@@ -132,7 +69,7 @@ class ClasesP {
 		[
 			{
 			  nombre : "Ayudante",
-			  talentos : [ { niv : 1,num : 0,tln : [ "Compañero/a fiel", "Suerte" ]} ],
+			  talentos : [ { niv : 1,num : 0,tln : [ "Compañero/a fiel", "Suerte" ]}, { niv: 3, num: 1, tln: [ "Ideas frescas", "Sonrisa angelical", "Camaleón social", "Lo leí en un libro", "Contactos", "Herencia", "Con un par", "Resistente", "Superviviente", "Viajero/a"]} ],
 			  daguante : 4,
 			  atrs : [ "SAB" , "CON" ],
 			  atq : [ 0, 0, 1, 2, 3],
@@ -145,7 +82,7 @@ class ClasesP {
 			},
 			{
 			  nombre : "Buscavidas",
-			  talentos : [ { niv : 1,num : 0,tln : [ "Ideas frescas", "Sonrisa angelical" ]} ],
+			  talentos : [ { niv : 1,num : 0,tln : [ "Ideas frescas", "Sonrisa angelical" ]}, { niv: 3, num: 1, tln: [ "Compañero/a fiel", "Suerte", "Camaleón social", "Lo leí en un libro", "Contactos", "Herencia", "Con un par", "Resistente", "Superviviente", "Viajero/a"]} ],
 			  daguante : 6,
 			  atrs : [ "DES" , "FUE" ],
 			  atq : [ 1, 2, 3, 4, 5],
@@ -158,7 +95,7 @@ class ClasesP {
 			},
 			{
 			  nombre : "Investigador/a",
-			  talentos : [ { niv : 1,num : 0,tln : [ "Camaleón social", "Lo leí en un libro" ]} ],
+			  talentos : [ { niv : 1,num : 0,tln : [ "Camaleón social", "Lo leí en un libro" ]}, { niv: 3, num: 1, tln: [ "Compañero/a fiel", "Suerte", "Ideas frescas", "Sonrisa angelical", "Contactos", "Herencia", "Con un par", "Resistente", "Superviviente", "Viajero/a"]} ],
 			  daguante : 6,
 			  atrs : [ "INT" , "SAB" ],
 			  atq : [ 0, 0, 1, 2, 2],
@@ -171,7 +108,7 @@ class ClasesP {
 			},
 			{
 			  nombre : "Mecenas",
-			  talentos : [ { niv : 1,num : 0,tln : [ "Contactos", "Herencia" ]} ],
+			  talentos : [ { niv : 1,num : 0,tln : [ "Contactos", "Herencia" ]}, { niv: 3, num: 1, tln: [ "Compañero/a fiel", "Suerte", "Ideas frescas", "Sonrisa angelical", "Camaleón social", "Lo leí en un libro", "Con un par", "Resistente", "Superviviente", "Viajero/a"]} ],
 			  daguante : 4,
 			  atrs : [ "CAR" , "INT" ],
 			  atq : [ 1, 2, 3, 4, 5],
@@ -184,7 +121,7 @@ class ClasesP {
 			},
 			{
 			  nombre : "Tipo/a duro/a",
-			  talentos : [ { niv : 1,num : 0,tln : ["Con un par", "Resistente"]} ],
+			  talentos : [ { niv : 1,num : 0,tln : [ "Con un par", "Resistente" ] }, { niv: 3, num: 1, tln: [ "Compañero/a fiel", "Suerte", "Ideas frescas", "Sonrisa angelical", "Camaleón social", "Lo leí en un libro", "Contactos", "Herencia", "Superviviente", "Viajero/a"]} ],
 			  daguante : 8,
 			  atrs : [ "FUE" , "CON" ],
 			  atq : [ 2, 3, 4, 5, 6],
@@ -197,7 +134,7 @@ class ClasesP {
 			},
 			{
 			  nombre : "Trotamundos",
-			  talentos : [ { niv : 1,num : 0,tln : ["Superviviente", "Viajero/a" ]} ],
+			  talentos : [ { niv : 1,num : 0,tln : [ "Superviviente", "Viajero/a" ]}, { niv: 3, num: 1, tln: [ "Compañero/a fiel", "Suerte", "Ideas frescas", "Sonrisa angelical", "Camaleón social", "Lo leí en un libro", "Contactos", "Herencia", "Con un par", "Resistente"]} ],
 			  daguante : 6,
 			  atrs : [ "CON" , "CAR" ],
 			  atq : [ 1, 2, 3, 4, 5 ],
@@ -209,6 +146,19 @@ class ClasesP {
 							"<strong>Viajero/a</strong><br/>Has visitado casi todos los países del mundo. Gastando 1 P! obtendrás éxito automático en Erudición (conocimiento geográfico o social del país) o en Comunicación (conocimiento del mercado negro, conseguir contactos o informantes)" ],
 			},
 		]
+		
+		this._dtalentos = [ { nombre: "Compañero/a fiel", descripcion: "Otorgas un +1 a cualquier prueba de Manipulación o Erudición que realice el PJ con el que mantengas un lazo emocional, siempre que estés cerca suyo en el momento de realizar la acción. También permite hacer extensible esta bonificación a otros PJs canjeando 1 P!." },
+                        { nombre: "Suerte", descripcion: "La diosa fortuna te sonríe. Una vez por sesión puedes repetir cualquier prueba y realizarla de nuevo con ventaja."},
+                        { nombre: "Ideas frescas", descripcion: "Tienes ventaja en cualquier prueba de Manipulación para realizar chapuzas o pequeños inventos que puedan resolver una situación compleja o peligrosa." }, 
+                        { nombre: "Sonrisa angelical", descripcion: "Tienes ventaja en cualquier prueba de Comunicación cuando la intención sea embaucar o confundir al sujeto." },
+                        { nombre: "Camaleón social", descripcion: "Tienes ventaja en cualquier prueba de Comunicación para realizar primeros contactos con nuevos pueblos y sociedades."} , 
+                        { nombre: "Lo leí en un libro", descripcion: "Canjea 1 P! para obtener un éxito automático en una prueba de Erudición sobre cualquier materia." },
+                        { nombre: "Contactos", descripcion: "Otorgas un +1 a cualquier prueba de Manipulación o Erudición que realice el PJ con el que mantengas un lazo emocional, siempre que estés cerca suyo en el momento de realizar la acción. También permite hacer extensible esta bonificación a otros PJs canjeando 1 P!." }, 
+                        { nombre: "Herencia", descripcion: "Tienes mucho, mucho dinero. Cuando desees adquirir cualquier objeto o equipo debes superar una prueba de Comunicación y dependiendo de la petición el DJ determinará la dificultad. Si se supera la prueba tienes el objeto a tu disposición." },
+                        { nombre: "Con un par", descripcion: "En situaciones de máximo riesgo en que debas realizar una prueba de Instinto, obtienes ventaja para superar la prueba."}, 
+                        { nombre: "Resistente", descripcion: "Demasiados golpes, demasiadas heridas, han curtido tu cuerpo hasta hacerlo duro como la piedra. Ganas un +1 a la característica de Defensa en combate cuerpo a cuerpo y cualquier daño sufrido por una caída se reduce a la mitad." },
+                        { nombre: "Superviviente", descripcion: "Tienes ventaja en las pruebas de Supervivencia cuando te encuentras en un entorno familiar, relacionado con uno de tus trasfondos." }, 
+                        { nombre: "Viajero/a", descripcion: "Has visitado casi todos los países del mundo. Gastando 1 P! obtendrás éxito automático en Erudición (conocimiento geográfico o social del país) o en Comunicación (conocimiento del mercado negro, conseguir contactos o informantes)" } ]
 	}
 	
 	get clases() {
@@ -228,9 +178,20 @@ class ClasesP {
 		}
 		return new ClaseP(this._clases[Comun.random(this._clases.length, 0)]);
 	}
+	
+    dTalentos(talento) 
+    {
+        var italento = 0;
+        for (italento = 0; italento< this._dtalentos.length; italento++) {
+            if ( this._dtalentos[italento].nombre == talento )
+                return "<strong>" + this._dtalentos[italento].nombre + "</strong><br/>" + this._dtalentos[italento].descripcion;
+        }
+        
+        return "<strong>" + talento + "</strong><br/>";
+    }
+
+	
+	
 }
 
 let clasesP = new ClasesP();
-
-
-

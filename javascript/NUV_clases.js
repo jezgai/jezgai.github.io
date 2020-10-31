@@ -1,30 +1,13 @@
-class ClaseNUV {
+class ClaseNUV extends ClaseBase {
 
 	constructor(clase) {
-		this._nombre = clase.nombre;
-		this._talentos = clase.talentos;
-		this._atrs = clase.atrs;
-		this._daguante = clase.daguante;
+		super(clase);
 		this._mov = clase.mov;
 		this._paga = clase.paga;
 		this._equipo = clase.equipo;
-		this._ins = clase.ins;
 		this._plantillaPDF = clase.plantillaPDF;
-		
 	}
 		
-	get nombre() {
-		return this._nombre;
-	}
-	get talentos() {
-		return this._talentos;
-	}
-	get daguante() {
-		return this._daguante;
-	}
-	get atrs() {
-		return this._atrs;
-	}
 	get mov() {
 		return this._mov;
 	}
@@ -34,24 +17,8 @@ class ClaseNUV {
 	get equipo() {
 		return this._equipo;
 	}
-	get ins() {
-		return this._ins;
-	}
 	get plantillaPDF() {
 		return this._plantillaPDF;
-	}
-	
-	set nombre(value) {
-		this._nombre = value;
-	}
-	set talentos(value) {
-		this._talentos = value;
-	}
-	set daguante(value) {
-		this._daguante = value;
-	}
-	set atrs(value) {
-		this._atrs = value;
 	}
 	set mov(value) {
 		this._mov = value;
@@ -61,9 +28,6 @@ class ClaseNUV {
 	}
 	set equipo(value) {
 		this._equipo = value;
-	}
-	set ins(value) {
-		this._ins = value;
 	}
 
 }
@@ -162,5 +126,4 @@ class ClasesNUV {
 }
 
 let clasesNUV = new ClasesNUV();
-
 

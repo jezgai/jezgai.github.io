@@ -1,79 +1,12 @@
-class PJNUV {
+class PJNUV extends PJBase {
 
 	constructor() {
-		this._nombre = '';
-		this._clase = 'random';
-		this._atributos = [];
-		this._talentos = [];
-		this._habilidades = [];
-		this._ins = 0;
-		this._pv = 0;
-		this._def = 0;
-		this._daguante = 4;
+		super(1);
 		this._nombres = [ "Jacobo", "Borja", "Ana", "Clara", "Maria", "Hector", "Pablo", "Susana", "Alex", "Africa", "Carlos", "Garai" ];
 		this._apellidos = [ "Arrieta", "Tejedero", "Gil", "Vega", "Ortiz", "Torres", "Blanco", "Valle", "Soto", "Granda", "Montes" ];
 		this._objClase = null;
 		this._din = 0;
 	}
-
-	get nombre() {
-		return this._nombre;
-	}
-	set nombre(value) {
-		this._nombre = value;
-	}
-	
-	get clase() {
-		return this._clase;
-	}
-	set clase(value) {
-		this._clase = value;
-	}
-	
-	get atributos() {
-		return this._atributos;
-	}
-	set atributos(value) {
-		this._atributos = value;
-	}
-	
-	get talentos() {
-		return this._talentos;
-	}
-	set talentos(value) {
-		this._talentos = value;
-	}
-	
-	get habilidades() {
-		return this._habilidades;
-	}
-	set habilidades(value) {
-		this._habilidades = value;
-	}
-	
-		
-	get ins() {
-		return this._ins;
-	}
-	set ins(value) {
-		this._ins = value;
-	}
-		
-		
-	get pv() {
-		return this._pv;
-	}
-	set pv(value) {
-		this._pv = value;
-	}
-	
-	get daguante() {
-		return this._daguante;
-	}
-	set daguante(value) {
-		this._daguante = value;
-	}
-	
 	
 	get plantillaPDF() {
 		return "pdf/" + this._objClase.plantillaPDF;
@@ -91,7 +24,7 @@ class PJNUV {
 	tablaRasgos() {
 		return "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>PV:</strong> " + this.calculaPV() + 
 													  "</td></tr><tr><td><strong>Mov:</strong> " + this._objClase.mov + 
-													  " </td></tr><tr><td><strong>Ins:</strong> " + this._objClase.ins + 
+													  " </td></tr><tr><td><strong>Ins:</strong> " + this._objClase._ins + 
 													  " </td></tr></table";
 	}
 	
@@ -153,15 +86,15 @@ class PJNUV {
 					'INT' : [ this.atributos[3] ],
 					'SAB' : [ this.atributos[4] ],
 					'CAR' : [ this.atributos[5] ],
-					'mFUE' : [ Atributos.modif(this.atributos[0]) ],
-					'mDES' : [ Atributos.modif(this.atributos[1]) ],
-					'mCON' : [ Atributos.modif(this.atributos[2]) ],
-					'mINT' : [ Atributos.modif(this.atributos[3]) ],
-					'mSAB' : [ Atributos.modif(this.atributos[4]) ],
-					'mCAR' : [ Atributos.modif(this.atributos[5]) ],
+					'mFUE' : [ this.modifAtributo(this._atributos[0]) ],
+					'mDES' : [ this.modifAtributo(this._atributos[1]) ],
+					'mCON' : [ this.modifAtributo(this._atributos[2]) ],
+					'mINT' : [ this.modifAtributo(this._atributos[3]) ],
+					'mSAB' : [ this.modifAtributo(this._atributos[4]) ],
+					'mCAR' : [ this.modifAtributo(this._atributos[5]) ],
 					'PV' : [ this.calculaPV() ],
 					'PVAct' : [ this.calculaPV() ],
-					'Ins' : [ this._objClase.ins ],
+					'Ins' : [ this._objClase._ins ],
 					'Mov' : [ this._objClase.mov ],
 					'AlLoro' : [ this.habilidades[0] ],
 					'Empollon' : [ this.habilidades[1] ],

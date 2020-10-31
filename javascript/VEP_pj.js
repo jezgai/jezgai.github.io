@@ -1,18 +1,8 @@
-class PJP {
+class PJP extends PJBase {
 
 	constructor(nivel) {
-		this._nombre = '';
-		this._nivel = nivel;
-		this._clase = 'random';
-		this._atributos = [];
-		this._talentos = [];
-		this._habilidades = [];
-		this._atq = 0;
+		super(nivel);
 		this._pP = 0;
-		this._ins = 0;
-		this._pv = 0;
-		this._def = 0;
-		this._daguante = 4;
 		this._nombres = [ "Mary Jane", "Tadeus", "Duncan", "Sally", "Steve", "Marcus", "John", "Arnold", "Bethesda", "Abigail", "Elinor", "Jules", "Mia", "Winston", "Kathy", "Jerry" ];
 		this._apellidos = [ "Taylor", "O'Sullivan", "Slick", "Jackson", "Crawley", "Moore", "McMardiggan", "Parker", "Whitman", "Flushing", "Zhao", "Wallace" ];
 		this._objClase = null;
@@ -23,48 +13,6 @@ class PJP {
 	get trasfondo() {
 		return this._trasfondo;
 	}
-
-	get nombre() {
-		return this._nombre;
-	}
-	set nombre(value) {
-		this._nombre = value;
-	}
-	
-	get clase() {
-		return this._clase;
-	}
-	set clase(value) {
-		this._clase = value;
-	}
-	
-	get atributos() {
-		return this._atributos;
-	}
-	set atributos(value) {
-		this._atributos = value;
-	}
-	
-	get talentos() {
-		return this._talentos;
-	}
-	set talentos(value) {
-		this._talentos = value;
-	}
-	
-	get habilidades() {
-		return this._habilidades;
-	}
-	set habilidades(value) {
-		this._habilidades = value;
-	}
-	
-	get atq() {
-		return this._atq;
-	}
-	set atq(value) {
-		this._atq = value;
-	}
 	
 	get pP() {
 		return this._pP;
@@ -72,35 +20,7 @@ class PJP {
 	set pP(value) {
 		this._pP = value;
 	}
-	
-	get ins() {
-		return this._ins;
-	}
-	set ins(value) {
-		this._ins = value;
-	}
 		
-	get defn() {
-		return this._def;
-	}
-	set defn(value) {
-		this._def = value;
-	}
-		
-	get pv() {
-		return this._pv;
-	}
-	set pv(value) {
-		this._pv = value;
-	}
-	
-	get daguante() {
-		return this._daguante;
-	}
-	set daguante(value) {
-		this._daguante = value;
-	}
-	
 	get din() {
 		return this._din;
 	}
@@ -134,8 +54,12 @@ class PJP {
 	tablaTalentos() {
 		var itals = 0;
 		var stals = "";
-		for (itals = 0; itals < this._objClase.dtalentos.length; itals++) {
+		/*for (itals = 0; itals < this._objClase.dtalentos.length; itals++) {
 			stals += "<br/><br/>" + this._objClase.dtalentos[itals];
+		}*/
+		
+		for (itals = 0; itals < this._talentos.length; itals++) {
+			stals += "<br/><br/>" + clasesP.dTalentos(this._talentos[itals]);
 		}
 		
 		return stals;
