@@ -19,6 +19,8 @@ class Esencia {
 	
 	poderes(nivel) {
 		var tpoderes = [];
+		if ( this._poderes.length == 0 )
+			return tpoderes;
 		var lpoderes = Comun.shuffle(this._poderes.clone());
 		tpoderes.push(lpoderes[0]);
 		if ( nivel >= 4)
@@ -133,6 +135,51 @@ class Esencias {
 			  fmagica : [ "d4", "d4", "d4+1", "d6", "d6", "d6+1", "d8", "d8", "d8+1", "d10" ],
 			  poderes: [ "Adivinación", "Aeromancia", "Celeridad", "Entropomancia", "Invocación", "Magia ignota", "Magia rúnica", 
 						"Necromancia", "Potencia", "Psicomancia", "Taumaturgia" ],
+			},
+			{
+			  nombre : "Fantasma",
+			  talentos : [ "Sombra", "Pasiones", "Cadenas" ],
+			  daguante : 6,
+			  debilidad : "Insustancialidad",
+			  pod : [ 2, 3, 5, 7, 9, 11, 13, 15, 18, 21],
+			  fmagica : [ "d6", "d6", "d6+1", "d8", "d8", "d8+1", "d10", "d10", "d10+1", "d12" ],
+			  poderes: [ "Adivinación", "Aeromancia", "Ectomancia", "Entropomancia", "Hidromancia", "Ilusionismo", "Litomancia", "Necromancia", "Piromancia", "Psicomancia", "Viajes Espirituales" ],
+			},
+			{
+			  nombre : "Hombre de negro",
+			  talentos : [ "En línea", "Aura de banalidad", "Uno del montón" ],
+			  daguante : 6,
+			  debilidad : "Discreto con su poder",
+			  pod : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+			  fmagica : [ "d4", "d4", "d4", "d4+1", "d4+1", "d6", "d6", "d6+1", "d6+1", "d8" ],
+			  poderes: [ "Celeridad", "Potencia", "Psicomancia", "Translocación" ],
+			},
+			{
+			  nombre : "Mundano",
+			  talentos : [ "Esto no es real", "Nadie especial", "La vida mundana la vida mejor" ],
+			  daguante : 6,
+			  debilidad : "Vulnerable al daño sobrenatural",
+			  pod : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			  fmagica : [ "d4", "d4", "d4", "d6", "d6", "d6", "d8", "d8", "d8", "d8" ],
+			  poderes: [  ],
+			},
+			{
+			  nombre : "El Ungido",
+			  talentos : [ "Entre dos tierras", "Mejor que cualquier hombre", "La vida mundana la vida mejor" ],
+			  daguante : 6,
+			  debilidad : "Detectable por seres sobrenaturales",
+			  pod : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+			  fmagica : [ "d4", "d4+1", "d4+1", "d6", "d6+1", "d6+1", "d8", "d8+1", "d8+1", "d10" ],
+			  poderes: [  ],
+			},
+			{
+			  nombre : "Sempiterno",
+			  talentos : [ "Mil vidas", "Más allá del velo", "Filacteria" ],
+			  daguante : 6,
+			  debilidad : "El Universo conspira en tu contra",
+			  pod : [ 1, 2, 3, 5, 6, 8, 10, 12, 14, 16 ],
+			  fmagica : [ "d4", "d4+1", "d6", "d6+1", "d6+1", "d8", "d8", "d8+1", "d8+1", "d10" ],
+			  poderes: [ "Ilusionismo", "Adivinación", "Psicomancia", "Taumaturgia", "Invocación", "Magia Rúnica" ],
 			},
 		]
 	}

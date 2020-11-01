@@ -56,13 +56,14 @@ class PJC extends PJBase {
 	tablaTalentos() {
 		var itals = 0;
 		var stals = "<table class='w3-table  w3-striped w3-border'><tr><th>Talentos</th></tr>";
+		stals += "<tr><td>" + this._objEsencia._debilidad + " (debilidad)</td></tr>";
 		for (itals = 0; itals < this._talentos.length; itals++) {
-			stals += "<tr><td>" + pj._talentos[itals] + " </td></tr>";
+			stals += "<tr><td>" + this._talentos[itals] + "</td></tr>";
 		}
 		stals += "</table>";
 		stals += "<table class='w3-table  w3-striped w3-border'><tr><th>Poderes</th></tr>";
 		for (itals = 0; itals < this._poderes.length; itals++) {
-			stals += "<tr><td>" + pj._poderes[itals] + " </td></tr>";
+			stals += "<tr><td>" + this._poderes[itals] + " </td></tr>";
 		}
 		stals += "</table>";
 		
@@ -112,11 +113,11 @@ class PJC extends PJBase {
 	}
 	
 	rellenaCamposPDF() {
-		var stalentos = "";
+		var stalentos = this._objEsencia._debilidad + " (debilidad)";
 		if ( this._talentos.length > 0 ) {
-			stalentos = this._talentos[0];
+			//stalentos = this._talentos[0];
 			var itals = 0;
-			for (itals = 1; itals < this._talentos.length; itals++) {
+			for (itals = 0; itals < this._talentos.length; itals++) {
 				stalentos += ", " + this._talentos[itals];
 			}
 		}
