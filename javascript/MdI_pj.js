@@ -92,7 +92,7 @@ class ATZ_PJ {
 		for (indice = 0; indice<habilidades._habilidades.length; indice++)
 			this._habilidades[indice] = false;
 		var _hab = Comun.shuffle(habilidades._habilidades.clone());
-		for (indice = 0; indice<6; indice++) {
+		for (indice = 0; indice<4; indice++) {
 			this._habilidades[ habilidades.habilidad(_hab[indice]) ] = true;
 		}
 		this.calculaTalentos();
