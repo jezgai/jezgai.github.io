@@ -36,10 +36,7 @@ class Talentos {
 			},
 			{
 				nombre: "Autodestrucción", 
-				descripcion: "los artilugios fabricados por el personaje tienen incorporado un mecanismo de autodestrucción. Puedes gastar 1 Punto de Fortuna para utilizar el artilugio como si de una bomba de mano se tratara, arrojándolo mediante Brío (Atletismo) contra Defensa. El artilugio tiene una puntuación de daño de 7 y queda reducido a cenizas tras ser lanzado.",
-			},
-			{
-				nombre: "Es necesario poseer el talento Inventor para poder escoger este.",
+				descripcion: "los artilugios fabricados por el personaje tienen incorporado un mecanismo de autodestrucción. Puedes gastar 1 Punto de Fortuna para utilizar el artilugio como si de una bomba de mano se tratara, arrojándolo mediante Brío (Atletismo) contra Defensa. El artilugio tiene una puntuación de daño de 7 y queda reducido a cenizas tras ser lanzado. Es necesario poseer el talento Inventor para poder escoger este.",
 			},
 			{
 				nombre: "Belleza sobrenatural", 
