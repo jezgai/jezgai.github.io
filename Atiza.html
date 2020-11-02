@@ -1,0 +1,204 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Atiza - Ayuda para crear personajes</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="javascript/ATZ_comun.js"></script>
+<script src="javascript/ATZ_pj.js"></script>
+<script src="javascript/ATZ_talentos.js"></script>
+<script src="javascript/ATZ_atributos.js"></script>
+<script src="javascript/ATZ_habilidades.js"></script>
+
+<script src="javascript/pdfform.minipdf.dist.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+
+<script>
+	
+	
+	let atributos = new Atributos();
+	let habilidades = new Habilidades();
+	let talentos = new Talentos();
+
+	let pj = new ATZ_PJ();
+		
+
+	function rellenaPDF() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = {
+					'Vigor' : [ pj._atributos[0] ],
+					'Picaresca' : [ pj._atributos[1] ],
+					'Personalidad' : [ pj._atributos[2] ],
+					'Intelecto' : [ pj._atributos[3] ],
+					'PV' : [ pj._pv ],
+					'Fortuna' : [ pj._suerte ],
+					'Defensa' : [ pj._defensa ],
+					'Iniciativa' : [ pj._iniciativa ],
+					'Talentos' : [ talentos._talentos[pj._talento].nombre + ": " + talentos._talentos[pj._talento].descripcion ],
+				};
+				
+				var indice=0;
+				for (indice=0;indice<habilidades._habilidades.length; indice++) {
+					fields [ habilidades._habilidades[indice].nombrepdf ] = [ pj._habilidades[indice] ];
+				}
+		
+				
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, 'Personaje.pdf'); //'PersonajeDH.pdf');
+			}
+		};
+
+
+		xhr.open('GET', 'pdf/AtizaNoir.pdf', true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}
+		
+	
+	function transfiereAtributos(idesde, ihasta) {
+		if ( pj._atributos[idesde] > 1 ) {
+			pj._atributos[idesde]--;
+			pj._atributos[ihasta]++;
+		}
+		pintaAtributos();
+		
+	}
+	
+	function abajohabilidades(iactual, isiguiente) {
+		var actual = pj._habilidades[iactual];
+		pj._habilidades[iactual] = pj._habilidades[isiguiente];
+		pj._habilidades[isiguiente] = actual;
+		pintaHabilidades();
+		
+	}
+	
+	function pintaAtributos() {
+		
+		document.getElementById("atributos").innerHTML = pj.pintaAtributos();
+		document.getElementById("atributos").innerHTML += pj.pintaRasgos();
+		
+	}
+	
+	
+	function pintaHabilidades() {
+		document.getElementById("habilidades").innerHTML = pj.pintaHabilidades();
+	}
+	
+	
+	function calcula() {
+		
+		pj = new ATZ_PJ();
+		pj.genera();
+		
+		pintaAtributos();
+		pintaHabilidades();
+		
+		document.getElementById("botonpdf").style.visibility="visible";
+		
+	}
+	
+	function calculaTalentos() {
+		pj.calculaTalento();
+		pintaAtributos();
+	}
+	
+	
+	/*function descarga() {
+		var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pj));
+		var jsonElem = document.getElementById('downloadpjsonpj');
+		jsonElem.setAttribute("href",     dataStr     );
+		jsonElem.setAttribute("download", "pj.json");
+		jsonElem.click();
+		
+	}
+	
+	function conprofesiones() {
+		document.getElementById("botonpdf").style.visibility="hidden";
+		document.getElementById("atributos").innerHTML="";
+		document.getElementById("habprimaria").innerHTML="";
+		document.getElementById("habsecundaria").innerHTML="";
+		document.getElementById("dotesinvestigativas").innerHTML="";
+		document.getElementById("profesion").innerHTML="";
+		
+		hayprofesiones = 1;
+		document.getElementById("profesiones").innerHTML = sprofesiones;
+		//document.getElementById("botonprofesion").innerHTML = "<p></p>";
+	}*/
+	
+</script>
+
+<style>
+	
+* {
+  box-sizing: border-box;
+}
+.tercio {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.terciocentral {
+  float:left;
+  width:34%;
+  padding:0 1px;
+}
+.minicentral {
+  float:left;
+  width:16%;
+  padding:0 1px;
+}
+.central {
+  float:left;
+  width:50%;
+  padding:0 1px;
+}
+.cuarto {
+  float:left;
+  width:25%;
+  padding:0 1px;
+}
+
+
+@media only screen and (max-width:820px) {
+  /* For mobile phones: */
+  .tercio, .central, .terciocentral, .minicentral, .cuarto {
+    width:100%;
+  }
+  
+</style>
+</head>
+<body >
+	<div class="w3-container w3-green w3-center">
+	  <h2>Atiza - Ayuda para crear personajes</h2>
+	</div>
+
+	<div style="overflow:auto">
+		<div class="minicentral"><p><button class='w3-button w3-block w3-green' onclick='calcula()'>Calcula</button></p></div>
+		<div class="minicentral" id="botonpdf"><p><button class='w3-button w3-block w3-green' onclick='rellenaPDF()'>Genera PDF</button></p></div>
+	</div>
+	
+	<div style="overflow:auto">
+		<div class="central">
+			<div class="w3-container w3-green w3-center"><p><strong>Atributos</strong></p></div> 
+			<div id="atributos"></div>
+			<div class="minicentral"><p><button class='w3-button w3-block w3-green' onclick='calculaTalentos()'>Recalcula</button></p></div>
+		</div>
+		<div class="central">
+			<div class="w3-container w3-green w3-center"><p><strong>Habilidades</strong></p></div> 
+			<div id="habilidades"></div>
+		</div>
+	</div>
+	
+	<script>calcula();</script>
+</body>
+</html>
+
