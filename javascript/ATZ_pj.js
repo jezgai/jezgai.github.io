@@ -66,7 +66,11 @@ class ATZ_PJ {
 		this._atributos = [ 1, 1, 1, 1 ];
 		var indice=0;
 		for (indice=4; indice <12; indice++) {
-			this._atributos[Comun.random(4,0)]++;
+			var imod = Comun.random(4,0);
+			if ( this._atributos[imod] < 6 )
+				this._atributos[imod]++;
+			else
+				indice--;
 		}
 		
 		this._habilidades = [];
