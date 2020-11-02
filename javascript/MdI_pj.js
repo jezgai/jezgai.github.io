@@ -83,7 +83,7 @@ class ATZ_PJ {
 		for (indice=4; indice <12; indice++) {
 			var imod = Comun.random(4,0);
 			if ( this._atributos[imod] < 6 )
-				this._atributos[Comun.random(4,0)]++;
+				this._atributos[imod]++;
 			else
 				indice--;
 		}
