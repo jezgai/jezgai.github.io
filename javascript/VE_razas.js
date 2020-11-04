@@ -1,12 +1,15 @@
-class Raza {
+class Raza extends Especie {
+	
+	
 	constructor(nombre, talentos, mov, nombres) {
-		this._nombre = nombre;
+		super(nombre, talentos, mov);
+		/*this._nombre = nombre;
 		this._talentos = talentos;
-		this._mov = mov;
+		this._mov = mov;*/
 		this._nombres = nombres;
 	}
 	
-	get nombre() {
+	/*get nombre() {
 		return this._nombre;
 	}
 	get talentos() {
@@ -14,7 +17,7 @@ class Raza {
 	}
 	get mov() {
 		return this._mov;
-	}
+	}*/
 	get nombres() {
 		return this._nombres;
 	}

@@ -7,6 +7,7 @@ class Habilidades {
 		this._habilidadesCyb = [ "Corporate", "Cyber", "Hardware", "Punk", "Savage", "Urban" ];
 		this._habilidadesNUV = [ "Al loro", "Empollon", "Manitas", "Ninja", "Palique", "Rambo" ];
 		this._habilidadesVC = [ "Ciudadano", "Ocultista", "Político", "Ratero", "Manitas", "Veterano" ];
+		this._habilidadesVES = [ "Alerta", "Comunicación", "Erudición", "Subterfugio", "Supervivencia", "Tecnología" ];
 		this._habilidades = this._habilidadesGen.slice(0);
 	}
 	
@@ -52,12 +53,17 @@ class Habilidades {
 		this._habilidades = this._habilidadesVC.slice(0);
 	}
 	
-	puntuaciones(nivel) {
+	habilidadesVES() {
+		this._habilidades = this._habilidadesVES.slice(0);
+	}
+	
+	puntuaciones1(nivel, mod_ptos_ini ) {
 		var phab = [];
 		var ptos = []
 		var ihab=0;
+		var ptos_ini = this._ptos_ini + mod_ptos_ini;
 		for (ihab = 0; ihab < this._habilidades.length; ihab++) {
-			if ( ihab < this._ptos_ini ) {
+			if ( ihab < ptos_ini ) {
 				phab.push(1);
 			}
 			else {
@@ -83,6 +89,10 @@ class Habilidades {
 			ptos[this.habilidad(hab[ihab])] = phab[ihab];
 		}
 		return ptos;
+	}
+	
+	puntuaciones(nivel) {
+		return this.puntuaciones1(nivel, 0);
 	}
 
 

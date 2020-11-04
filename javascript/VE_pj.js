@@ -30,7 +30,7 @@ class PJ extends PJBase {
 		return this._trasfondo;
 	}
 	set trasfondo(value) {
-		this._mov = _trasfondo;
+		this._trasfondo = value;
 	}
 	
 	get din() {
@@ -69,6 +69,7 @@ class PJ extends PJBase {
 	
 	genera() {
 		habilidades.habilidadesGen();
+		habilidades._ptos_ini = 4;
 		habilidades.ptos_niv = 2;
 		atributos.ntiradasextras = 0;
 		atributos.excesoatributos = 1;

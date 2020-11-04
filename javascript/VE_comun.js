@@ -29,9 +29,9 @@ class Comun {
 		return resultado;
 	}
 	
-	static desplegableRazas(aRazas, nbFuncSel) {
+	static desplegableRazas(aRazas, nbFuncSel, titRaza="Raza") {
 		
-		var srazas="<strong>Raza:</strong> <select class='w3-select'  name='raza' onChange='" + nbFuncSel + "(this)'><option>--Aleatorio--</option>";
+		var srazas="<strong>" + titRaza + ":</strong> <select class='w3-select'  name='raza' onChange='" + nbFuncSel + "(this)'><option>--Aleatorio--</option>";
 		var iraza=0;
 		for (iraza=0; iraza< aRazas.razas.length; iraza++) {
 			srazas += "<option>" + aRazas.razas[iraza].nombre + "</option>";
