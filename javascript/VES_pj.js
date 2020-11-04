@@ -102,8 +102,14 @@ class PJVES extends PJBase {
 		
 		var ital = 0;
 		this._talentos = [];
-		for (ital = 0; ital < this._objBioforma.talentos.length; ital++) {
-			this._talentos.push(this._objBioforma.talentos[ital]);
+		
+		var talentosBioforma = this._objBioforma.talentos.clone();
+		if ( talentosBioforma.length > 2 ) {
+			talentosBioforma = Comun.shuffle(talentosBioforma);
+		}
+		
+		for (ital = 0; ital < 2 && ital < talentosBioforma.length; ital++) {
+			this._talentos.push(talentosBioforma[ital]);
 		}
 		
 		var talentosclase = this._objClase.talentos(this._nivel);
