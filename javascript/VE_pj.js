@@ -38,6 +38,10 @@ class PJ extends PJBase {
 	}
 	
 	get plantillaPDF() {
+		return "pdf/VEFicha.pdf";
+	}
+	
+	get plantillaPDFExpandido() {
 		return "pdf/VEExpandido.pdf";
 	}
 	
@@ -117,7 +121,7 @@ class PJ extends PJBase {
 		}
 	}
 	
-	rellenaCamposPDF() {
+	rellenaCamposPDFExpandido() {
 		var stalentos = "";
 		if ( this.talentos.length > 0 ) {
 			stalentos = this.talentos[0];
@@ -129,7 +133,7 @@ class PJ extends PJBase {
 
 		var fields = {
 					'Aventurero' : [ this.nombre ],
-					'Tipo' : [ this.clase ],
+					'Tipo' : [ this.clase + " " + this._raza ],
 					'Nivel' : [ this._nivel ],
 					'VFUE' : [ this.atributos[0] ],
 					'VDES' : [ this.atributos[1] ],
@@ -137,18 +141,18 @@ class PJ extends PJBase {
 					'VINT' : [ this.atributos[3] ],
 					'VSAB' : [ this.atributos[4] ],
 					'VCAR' : [ this.atributos[5] ],
-					'BFUE' : [ Atributos.modif(this.atributos[0]) ],
-					'BDES' : [ Atributos.modif(this.atributos[1]) ],
-					'BCON' : [ Atributos.modif(this.atributos[2]) ],
-					'BINT' : [ Atributos.modif(this.atributos[3]) ],
-					'BSAB' : [ Atributos.modif(this.atributos[4]) ],
-					'BCAR' : [ Atributos.modif(this.atributos[5]) ],
-					'IFUE' : [ (this.ins + Atributos.modif(this.atributos[0])) ],
-					'IDES' : [ (this.ins + Atributos.modif(this.atributos[1])) ],
-					'ICON' : [ (this.ins + Atributos.modif(this.atributos[2])) ],
-					'IINT' : [ (this.ins + Atributos.modif(this.atributos[3])) ],
-					'ISAB' : [ (this.ins + Atributos.modif(this.atributos[4])) ],
-					'ICAR' : [ (this.ins + Atributos.modif(this.atributos[5])) ],
+					'BFUE' : [ this.modifAtributo(this.atributos[0]) ],
+					'BDES' : [ this.modifAtributo(this.atributos[1]) ],
+					'BCON' : [ this.modifAtributo(this.atributos[2]) ],
+					'BINT' : [ this.modifAtributo(this.atributos[3]) ],
+					'BSAB' : [ this.modifAtributo(this.atributos[4]) ],
+					'BCAR' : [ this.modifAtributo(this.atributos[5]) ],
+					'IFUE' : [ (this.ins + this.modifAtributo(this.atributos[0])) ],
+					'IDES' : [ (this.ins + this.modifAtributo(this.atributos[1])) ],
+					'ICON' : [ (this.ins + this.modifAtributo(this.atributos[2])) ],
+					'IINT' : [ (this.ins + this.modifAtributo(this.atributos[3])) ],
+					'ISAB' : [ (this.ins + this.modifAtributo(this.atributos[4])) ],
+					'ICAR' : [ (this.ins + this.modifAtributo(this.atributos[5])) ],
 					'PVMax' : [ this.pv ],
 					'PVAct' : [ this.pv ],
 					'PODMax' : [ this.pod ],
@@ -170,4 +174,64 @@ class PJ extends PJBase {
 		};
 		return fields;
 	}
+	
+	
+	rellenaCamposPDF() {
+		var stalentos1 = "";
+		var stalentos2 = "";
+		var stalentos3 = "";
+		if ( this.talentos.length > 0 ) {
+			stalentos1 = this.talentos[0];
+			if ( this.talentos.length > 1 ) {
+				stalentos1 += ", " + this.talentos[1];
+			}
+			if ( this.talentos.length > 2 ) {
+				stalentos2 = this.talentos[2];
+			}
+			if ( this.talentos.length > 3 ) {
+				stalentos2 += ", " + this.talentos[3];
+			}
+			if ( this.talentos.length > 4 ) {
+				stalentos3 = this.talentos[4];
+			}
+		}
+
+		var fields = {
+					'Nombre' : [ this.nombre ],
+					'Clase' : [ this.clase ],
+					'Raza' : [ this._raza ],
+					'Nivel' : [ this._nivel ],
+					'FUE' : [ this.atributos[0] ],
+					'DES' : [ this.atributos[1] ],
+					'CON' : [ this.atributos[2] ],
+					'INT' : [ this.atributos[3] ],
+					'SAB' : [ this.atributos[4] ],
+					'CAR' : [ this.atributos[5] ],
+					'Mod_FUE' : [ this.modifAtributo(this.atributos[0]) ],
+					'Mod_DES' : [ this.modifAtributo(this.atributos[1]) ],
+					'Mod_CON' : [ this.modifAtributo(this.atributos[2]) ],
+					'Mod_INT' : [ this.modifAtributo(this.atributos[3]) ],
+					'Mod_SAB' : [ this.modifAtributo(this.atributos[4]) ],
+					'Mod_CAR' : [ this.modifAtributo(this.atributos[5]) ],
+					'PV' : [ this.pv ],
+					'POD' : [ this.pod ],
+					'ATQ' : [ this.atq ],
+					'DEF' : [ this.defn ],
+					'INS' : [ this.ins ],
+					'MOV' : [ this.mov ],
+					'Alerta' : [ this.habilidades[0] ],
+					'Comunicacion' : [ this.habilidades[1] ],
+					'Erudicion' : [ this.habilidades[2] ],
+					'Manipulacion' : [ this.habilidades[3] ],
+					'Subterfugio' : [ this.habilidades[4] ],
+					'Supervivencia' : [ this.habilidades[5] ],
+					'Talentos1' : [ stalentos1 ],
+					'Talentos2' : [ stalentos2 ],
+					'Talentos3' : [ stalentos3 ],
+					'Trasfondo1' : [ this.trasfondo ],
+					'equipo1' : [ "Dinero: " + this.din + " mo" ],
+		};
+		return fields;
+	}
+	
 }
