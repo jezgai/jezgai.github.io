@@ -44,6 +44,11 @@ class PJZ extends PJBase {
 		return Atributos.modifmas(valorAtributo);
 	}
 	
+
+	calculaRasgosDerivados(atributo) {
+		this.calculaRasgosDerivadosBase(atributo);
+	}
+	
 	genera() {
 		habilidades.habilidadesGen();
 		habilidades.ptos_niv = 1;

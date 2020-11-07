@@ -67,6 +67,14 @@ class PJ extends PJBase {
 		return Atributos.modif(valorAtributo);
 	}
 	
+	
+	calculaRasgosDerivados(atributo) {
+		this.calculaRasgosDerivadosBase(atributo);
+		if ( (atributo == 2 || atributo == 3) && this.modifAtributo(this.atributos[atributo]) != this.modifAtributo(atributo+1) ) {
+			this.calculaPOD();
+		}
+	}
+	
 	genera() {
 		habilidades.habilidadesGen();
 		habilidades._ptos_ini = 4;

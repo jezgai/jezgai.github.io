@@ -169,6 +169,11 @@ class PJF {
 		return stals;
 	}
 	
+
+	calculaRasgosDerivados(atributo) {
+		this.calculaRasgosDerivadosBase(atributo);
+	}
+	
 	genera() {
 		habilidades.habilidadesGen();
 		habilidades.ptos_niv = 2;

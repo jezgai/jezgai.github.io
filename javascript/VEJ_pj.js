@@ -46,6 +46,11 @@ class PJJ extends PJBase {
 		return Atributos.modifmas(valorAtributo);
 	}
 	
+
+	calculaRasgosDerivados(atributo) {
+		this.calculaRasgosDerivadosBase(atributo);
+	}
+	
 	genera() {
 		habilidades.habilidadesJap();
 		habilidades.ptos_niv = 1;

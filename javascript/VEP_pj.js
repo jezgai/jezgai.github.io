@@ -65,6 +65,9 @@ class PJP extends PJBase {
 		return stals;
 	}
 	
+	calculaRasgosDerivados(atributo) {
+		this.calculaRasgosDerivadosBase(atributo);
+	}
 	
 	genera() {
 		habilidades.habilidadesGen();

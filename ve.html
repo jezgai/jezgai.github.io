@@ -31,6 +31,10 @@
 <script src="javascript/VES_bioformas.js"></script>
 <script src="javascript/VES_clases.js"></script>
 <script src="javascript/VES_pj.js"></script>
+<script src="javascript/VPP_trasfondos.js"></script>
+<script src="javascript/VPP_rama.js"></script>
+<script src="javascript/VPP_clase.js"></script>
+<script src="javascript/VPP_pj.js"></script>
 
 <script src="javascript/pdfform.minipdf.dist.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
@@ -50,16 +54,19 @@
 		pj.atributos[atributo] = atributosiguiente;
 		var satrs = Comun.tablaAtributos();
 		document.getElementById("atributos").innerHTML = satrs;
-		if ( atributo <= 1 ) {
+		
+		pj.calculaRasgosDerivados(atributo);
+		
+		/*if ( atributo <= 1 ) {
 			pj.calculaDefensa();
 		}
 		if ( atributo == 1 || atributo == 2 ) {
 			pj.calculaPV();
 		}
 		if ( recalculahabilidades && (atributo == 2 || atributo == 3) && pj.modifAtributo(pj.atributos[atributo]) != pj.modifAtributo(pj.atributos[(parseInt(atributo)+1)%6]) ) {
-			pj.calculaHabilidades();
+			pj.calculaHabilidades();*/
 			document.getElementById("habilidades").innerHTML = Comun.tablaHabilidades();
-		}
+		//}
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
 	}
 	
@@ -262,6 +269,28 @@
 		document.getElementById("bgenera").innerHTML = sboton;
 	}	
 	
+	function cargadesplegableVPP() {
+		recalculahabilidades = false;
+		//document.getElementById("desplegables").innerHTML = "";
+		document.getElementById("sclases").innerHTML = "";
+		document.getElementById("snivel").innerHTML = "";
+		document.getElementById("srazas").innerHTML = "";
+		document.getElementById("bgenera").innerHTML = "";
+		document.getElementById("srazas").style.visibility="hidden";
+		document.getElementById("bgenerapdf").innerHTML = "";
+		document.getElementById("bgenerapdf").style.visibility="hidden";
+
+		
+		var sclases = Comun.desplegableClases(clasesVPP, "seleccionaclase");
+		var snivel = Comun.desplegableNivel(5, "seleccionanivel", "generaVPP");
+		var sboton = Comun.botonGenera("generaVPP");
+		
+		//document.getElementById("desplegables").innerHTML = sclases + snivel;	
+		
+		document.getElementById("sclases").innerHTML = sclases;
+		document.getElementById("snivel").innerHTML = snivel;
+		document.getElementById("bgenera").innerHTML = sboton;
+	}	
 	function cargadesplegableSO() {
 		recalculahabilidades = false;
 		//document.getElementById("desplegables").innerHTML = "";
@@ -709,6 +738,37 @@
 		document.getElementById("bgenerapdf").style.visibility="visible";
 	}
 	
+	function generaVPP() {
+		vacia();
+				
+		pj = new PJPP(numeronivel);
+		pj.clase = nombreclase;
+		
+		pj.genera();
+		
+		
+		var satrs = Comun.tablaAtributos();
+
+		var shabs = Comun.tablaHabilidades();
+		
+		var stals = pj.tablaTalentos();
+		//var stals = pj.tablaTalentos();
+				
+		document.getElementById("datos").innerHTML = "<table class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
+		document.getElementById("atributos").innerHTML = satrs;
+		document.getElementById("talentos").innerHTML = stals;
+		document.getElementById("habilidades").innerHTML = shabs;
+		//dinero = Comun.random(8,1) * 100;
+		dinero = pj.din;
+		//document.getElementById("dinero").innerHTML = "<br/><strong>Dinero: </strong> " + dinero + "$";
+		
+		//document.getElementById("dtalentos").innerHTML = pj.tablaTalentos();
+		//document.getElementById("dtalentos").style.visibility="visible";
+		
+		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
+		document.getElementById("bgenerapdf").style.visibility="visible";
+	}	
 	
 	function seleccionajdr(thelist) {
 		vacia();
@@ -744,12 +804,15 @@
 			cargadesplegableVES();
 		}
 		else if ( idx == 7 ) {
-			cargadesplegableZ();
+			cargadesplegableVPP();
 		}
 		else if ( idx == 8 ) {
-			cargadesplegableVC();
+			cargadesplegableZ();
 		}
 		else if ( idx == 9 ) {
+			cargadesplegableVC();
+		}
+		else if ( idx == 10 ) {
 			cargadesplegableJ();
 		}
 	}
@@ -819,6 +882,7 @@
 				<option>Vieja Escuela: Salvaje Oeste</option>
 				<option>Nuestro Ultimo Verano</option>
 				<option>Vieja Estrella</option>
+				<option>Vieja Escuela: Peplum</option>
 				<option>Vieja Escuela: Zombies</option>
 				<option>Vieja Ciudad</option>
 				<option>Vieja Escuela: Japon</option>

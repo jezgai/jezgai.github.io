@@ -16,14 +16,6 @@ class PJSO extends PJBase {
 		this._niveladq = value;
 	}
 	
-	/*
-	get pP() {
-		return this._pP;
-	}	
-	set pP(value) {
-		this._pP = value;
-	}*/
-	
 	
 	get plantillaPDF() {
 		return "pdf/VESO.pdf";
@@ -47,6 +39,11 @@ class PJSO extends PJBase {
 	
 	modifAtributo(valorAtributo) {
 		return Atributos.modif(valorAtributo);
+	}
+	
+
+	calculaRasgosDerivados(atributo) {
+		this.calculaRasgosDerivadosBase(atributo);
 	}
 	
 	genera() {

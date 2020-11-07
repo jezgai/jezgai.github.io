@@ -71,6 +71,21 @@ class PJVES extends PJBase {
 		this._habilidades = habilidades.puntuaciones1(this._nivel, this.modifAtributo(this._atributos[atributos.atributoMod("INT")]));
 	}
 	
+	
+	calculaRasgosDerivados() {
+		this.calculaPV();
+		this.calculaDefensa();
+		this.calculaHabilidades();
+	}
+	
+	
+	calculaRasgosDerivados(atributo) {
+		this.calculaRasgosDerivadosBase(atributo);
+		if ( (atributo == 2 || atributo == 3) && this.modifAtributo(this.atributos[atributo]) != this.modifAtributo(this.atributos[atributo+1]) ) {
+			this.calculaHabilidades();
+		}
+	}
+	
 	genera() {
 		habilidades.habilidadesVES();
 		habilidades.ptos_niv = 2;

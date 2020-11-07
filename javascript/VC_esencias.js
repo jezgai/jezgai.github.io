@@ -181,6 +181,15 @@ class Esencias {
 			  fmagica : [ "d4", "d4+1", "d6", "d6+1", "d6+1", "d8", "d8", "d8+1", "d8+1", "d10" ],
 			  poderes: [ "Ilusionismo", "Adivinación", "Psicomancia", "Taumaturgia", "Invocación", "Magia Rúnica" ],
 			},
+			{
+			  nombre : "El Fámulo",
+			  talentos : [ "Servidor", "Muñeco inmortal" ],
+			  daguante : 6,
+			  debilidad : "Debilidades ocultas",
+			  pod : [ 2, 3, 4, 6, 7, 8, 10, 11, 12, 14 ],
+			  fmagica : [ "d6", "d6", "d6", "d6+1", "d6+1", "d6+1", "d8", "d8", "d8", "d8+1" ],
+			  poderes: [ "Celeridad", "Entropomancia", "Potencia", "Psicomancia", "Taumaturgia" ],
+			},
 		]
 	}
 	

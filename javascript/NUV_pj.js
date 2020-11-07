@@ -32,6 +32,9 @@ class PJNUV extends PJBase {
 		return Atributos.modifmas(valorAtributo);
 	}
 	
+	calculaRasgosDerivados(atributo) {
+		this.calculaRasgosDerivadosBase(atributo);
+	}
 	
 	tablaTalentos() {
 		var itals = 0;

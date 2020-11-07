@@ -102,4 +102,14 @@ class PJBase {
 	atributoMod(nbatributo) {
 		return Atributos.modif(this._atributos[atributos.atributoMod(nbatributo)]);
 	}
+	
+	
+	calculaRasgosDerivadosBase(atributo) {
+		if ( atributo <= 1 && this.modifAtributo(this.atributos[atributo]) != this.modifAtributo(this.atributos[atributo+1])) {
+			this.calculaDefensa();
+		}
+		if ( (atributo == 1 || atributo == 2) && this.modifAtributo(this.atributos[atributo]) != this.modifAtributo(this.atributos[atributo+1]) ) {
+			this.calculaPV();
+		}
+	}
 }

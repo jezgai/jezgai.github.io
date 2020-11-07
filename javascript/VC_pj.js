@@ -36,7 +36,7 @@ class PJC extends PJBase {
 	}
 	
 	calculaDefensa() {
-		this._defn = 10 + this._objMascara.def(this._nivel);
+		this._defn = 10 + this._objMascara.def(this._nivel) + this._atributos[atributos.atributoMod("DES")]);
 	}
 	
 	calculaPV() {
@@ -49,6 +49,7 @@ class PJC extends PJBase {
 													  " </td></tr><tr><td><strong>Ins:</strong> " + this._ins + 
 													  " </td></tr><tr><td><strong>Def:</strong> " + this._defn + 
 													  " </td></tr><tr><td><strong>PV:</strong> " + this._pv + 
+													  " </td></tr><tr><td><strong>Pod:</strong> " + this._pod + 
 													  " </td></tr><tr><td><strong>F. Mágica:</strong> " + this._fmagica + "</td></tr></table";
 	}
 	
@@ -74,6 +75,9 @@ class PJC extends PJBase {
 		return Atributos.modifmas(valorAtributo);
 	}
 	
+	calculaRasgosDerivados(atributo) {
+		this.calculaRasgosDerivadosBase(atributo);
+	}
 	
 	genera() {
 		habilidades.habilidadesVC();
@@ -95,6 +99,7 @@ class PJC extends PJBase {
 		
 		this.calculaDefensa();
 		this.calculaPV();
+		this._pod = this._objEsencia.pod(this._nivel);
 		
 		this._din = (Comun.random(8,1) + Comun.random(8,1)) * 100;
 		
@@ -140,12 +145,12 @@ class PJC extends PJBase {
 					'INT' : [ this.atributos[3] ],
 					'SAB' : [ this.atributos[4] ],
 					'CAR' : [ this.atributos[5] ],
-					'mFUE' : [ Atributos.modif(this.atributos[0]) ],
-					'mDES' : [ Atributos.modif(this.atributos[1]) ],
-					'mCON' : [ Atributos.modif(this.atributos[2]) ],
-					'mINT' : [ Atributos.modif(this.atributos[3]) ],
-					'mSAB' : [ Atributos.modif(this.atributos[4]) ],
-					'mCAR' : [ Atributos.modif(this.atributos[5]) ],
+					'mFUE' : [ this.modifAtributo(this.atributos[0]) ],
+					'mDES' : [ this.modifAtributo(this.atributos[1]) ],
+					'mCON' : [ this.modifAtributo(this.atributos[2]) ],
+					'mINT' : [ this.modifAtributo(this.atributos[3]) ],
+					'mSAB' : [ this.modifAtributo(this.atributos[4]) ],
+					'mCAR' : [ this.modifAtributo(this.atributos[5]) ],
 					'PVAct' : [ this._pv ],
 					'PVMax' : [ this._pv ],
 					'ATQ' : [ this._atq ],

@@ -59,6 +59,11 @@ class PJCP extends PJBase {
 		return Atributos.modifmas(valorAtributo);
 	}
 	
+
+	calculaRasgosDerivados(atributo) {
+		this.calculaRasgosDerivadosBase(atributo);
+	}
+	
 	genera() {
 		habilidades.habilidadesCyb();
 		habilidades.ptos_niv = 2;
