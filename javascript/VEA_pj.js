@@ -46,7 +46,7 @@ class PJAr extends PJBase {
 	}
 	
 	modifAtributo(valorAtributo) {
-		return Atributos.modif(valorAtributo);
+		return Atributos.modifArr(valorAtributo);
 	}
 	
 	

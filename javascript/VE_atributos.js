@@ -148,6 +148,21 @@ class Atributos {
 		return 2;
 	}
 	
+	static modifArr(valor) {
+		if (valor <= 5 ) {
+			return -2;
+		}
+		else if (valor <= 8) {
+			return -1;
+		}
+		else if (valor <= 12) {
+			return 0;
+		}
+		else if (valor <= 15) {
+			return 1;
+		}
+		return 2;
+	}
 	
 	static modifmas(valor) {
 		if (valor <= 3 ) {
