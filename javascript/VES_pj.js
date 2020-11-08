@@ -97,7 +97,7 @@ class PJVES extends PJBase {
 		this._raza = this._objBioforma.nombre;
 		this._clase = this._objClase.nombre;
 		this._atributos = atributos.valores(this._objClase.atrs);
-		this._habilidades = habilidades.puntuaciones1(this._nivel, this.modifAtributo(this._atributos[atributos.atributoMod("INT")]));
+		this.calculaHabilidades();
 		this._atq = this._objClase.atq(this._nivel);
 		this._ins = this._objClase.ins(this._nivel);
 		this._din = (Comun.random(6,1) + Comun.random(6,1) + Comun.random(6,1)) * 10;

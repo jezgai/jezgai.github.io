@@ -36,7 +36,7 @@ class PJC extends PJBase {
 	}
 	
 	calculaDefensa() {
-		this._defn = 10 + this._objMascara.def(this._nivel) + this._atributos[atributos.atributoMod("DES")]);
+		this._defn = 10 + this._objMascara.def(this._nivel) + this.modifAtributo(this._atributos[atributos.atributoMod("DES")]);
 	}
 	
 	calculaPV() {
