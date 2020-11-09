@@ -37,7 +37,7 @@ class ATZ_PJ {
 		this.calculaRasgos();
 		var rasgos = "<table class='w3-table  w3-striped  w3-border'>";
 		rasgos+= "<tr><td>Puntos de vida</td><td>" + this._pv + "</td></tr>";
-		rasgos+= "<tr><td>Suerte</td><td>" + this._suerte + "</td></tr>";
+		rasgos+= "<tr><td>Fortuna</td><td>" + this._suerte + "</td></tr>";
 		rasgos+= "<tr><td>Iniciativa</td><td>" + this._iniciativa + "</td></tr>";
 		rasgos+= "<tr><td>Defensa</td><td>" + this._defensa + "</td></tr>";
 		rasgos += "</table>";
