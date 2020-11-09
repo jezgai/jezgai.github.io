@@ -53,6 +53,14 @@ class ATZ_PJ {
 		tals += "</table>";
 		return tals;
 	}
+	
+	pintaArmas() {
+		var arms = "<table class='w3-table  w3-striped  w3-border'>";
+		arms+= "<tr><td><strong>" + this._armaCaC.nombre + "</strong>: (daño " + this._armaCaC.dano + ")</td></tr>";
+		arms+= "<tr><td><strong>" + this._armaAD.nombre + "</strong>: (daño " + this._armaAD.dano + ")</td></tr>";
+		arms += "</table>";
+		return arms;
+	}
 		
 	pintaHabilidades() {
 		var habs = "<table class='w3-table  w3-striped  w3-border'>";
@@ -63,6 +71,12 @@ class ATZ_PJ {
 		}
 		habs += "</table>";
 		return habs;
+	}
+	
+	calculaArmas() {
+		this._armaCaC = armas.armaCaC();
+		this._armaAD = armas.armaAD();
+		this._dinero = 150 - this._armaCaC.precio - this._armaAD.precio;
 	}
 	
 	calculaTalentos() {
@@ -96,6 +110,9 @@ class ATZ_PJ {
 			this._habilidades[ habilidades.habilidad(_hab[indice]) ] = true;
 		}
 		this.calculaTalentos();
+		
+		this.calculaArmas();
+		
 	}
 	
 	

@@ -10,6 +10,7 @@
 <script src="javascript/MdI_talentos.js"></script>
 <script src="javascript/MdI_atributos.js"></script>
 <script src="javascript/MdI_habilidades.js"></script>
+<script src="javascript/MdI_armas.js"></script>
 
 <script src="javascript/pdfform.minipdf.dist.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
@@ -20,6 +21,7 @@
 	let atributos = new Atributos();
 	let habilidades = new Habilidades();
 	let talentos = new Talentos();
+	let armas = new Armas();
 
 	let pj = new ATZ_PJ();
 		
@@ -41,6 +43,8 @@
 					'Defensa' : [ pj._defensa ],
 					'Iniciativa' : [ pj._iniciativa ],
 					'Talentos' : [ document.getElementById("talentos").innerText ],
+					'Armas' : [ document.getElementById("armas").innerText ],
+					'Anotaciones' : [ pj._dinero + " escudos" ],
 				};
 				
 				var indice=0;
@@ -96,6 +100,9 @@
 	function pintaTalentos() {
 		document.getElementById("talentos").innerHTML = pj.pintaTalentos();
 	}
+	function pintaArmas() {
+		document.getElementById("armas").innerHTML = pj.pintaArmas();
+	}
 	
 	function calcula() {
 		
@@ -105,7 +112,7 @@
 		pintaAtributos();
 		pintaHabilidades();
 		pintaTalentos();
-		
+		pintaArmas();
 		document.getElementById("botonpdf").style.visibility="visible";
 		
 	}
@@ -113,6 +120,11 @@
 	function calculaTalentos() {
 		pj.calculaTalentos();
 		pintaTalentos();
+	}
+	
+	function calculaArmas() {
+		pj.calculaArmas();
+		pintaArmas();
 	}
 	
 	/*function descarga() {
@@ -196,6 +208,9 @@
 			<div class="w3-container w3-green w3-center"><p><strong>Talentos</strong></p></div>
 			<div id="talentos"></div>
 			<div class="minicentral"><p><button class='w3-button w3-block w3-green' onclick='calculaTalentos()'>Recalcula</button></p></div>
+			<div class="w3-container w3-green w3-center"><p><strong>Armas</strong></p></div>
+			<div id="armas"></div>
+			<div class="minicentral"><p><button class='w3-button w3-block w3-green' onclick='calculaArmas()'>Recalcula</button></p></div>
 		</div>
 		<div class="central">
 			<div class="w3-container w3-green w3-center"><p><strong>Pericias</strong></p></div> 
