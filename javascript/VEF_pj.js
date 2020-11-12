@@ -204,6 +204,9 @@ class PJF {
 		for (ital = 0; ital < talentosclase.length; ital++) {
 			this._talentos.push(talentosclase[ital]);
 		}
+		
+		this._pI = 3;
+		
 		/*if ( this._objClase.trasfondos.length > 0 )
 		{
 			this._trasfondo = this._objClase.trasfondos[Comun.random(this._objClase.trasfondos.length, 0)];
@@ -235,12 +238,15 @@ class PJF {
 					'mINT' : [ Atributos.modif(this.atributos[3]) ],
 					'mSAB' : [ Atributos.modif(this.atributos[4]) ],
 					'mCAR' : [ Atributos.modif(this.atributos[5]) ],
-					'Pv' : [ this.pv ],
+					'PVTotal' : [ this.pv ],
+					'PVActual' : [ this.pv ],
 					'Atq' : [ this.atq ],
 					'Def' : [ this.defn ],
 					'Ins' : [ this.ins ],
-					'Mov' : [ 10 ],
-					'pS' : [ this.pS ],
+					'PITotal' : [ this._pI ],
+					'PIActual' : [ this._pI ],
+					'PSTotal' : [ this.pS ],
+					'PSActual' : [ this.pS ],
 					'Alerta' : [ this.habilidades[0] ],
 					'Comunicacion' : [ this.habilidades[1] ],
 					'Erudicion' : [ this.habilidades[2] ],
@@ -248,7 +254,7 @@ class PJF {
 					'Subterfugio' : [ this.habilidades[4] ],
 					'Supervivencia' : [ this.habilidades[5] ],
 					'Talentos' : [ stalentos ],
-					'Trasfondo' : [ "" ],
+					'Trasfondos' : [ "" ],
 					'Notas' : [ document.getElementById("dinero").innerText ],
 		};
 		return fields;
