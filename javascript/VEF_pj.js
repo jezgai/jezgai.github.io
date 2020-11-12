@@ -142,6 +142,16 @@ class PJF {
 		return stals;
 	}
 	
+	tablaHabInvestigacion() {
+		var ihabinv = 0;
+		var shabInv = "<table class='w3-table  w3-striped w3-border'><tr><th>Habilidades de investigación</th></tr>";
+		for (ihabinv = 0; ihabinv < pj._habilidadesInvestigacion.length; ihabinv++) {
+			shabInv += "<tr><td>" + pj._habilidadesInvestigacion[ihabinv] + " </td></tr>";
+		}
+		shabInv += "</table>";
+		return shabInv;
+	}
+	
 	equipo() {
 		var eq = "<strong>Equipo: </strong>" + this.strEquipo();
 		return eq;
@@ -186,6 +196,13 @@ class PJF {
 			this._pI = 1;
 	}
 	
+	calculaHabilidadesInvestigacion() {
+		var hinvest = Comun.shuffle(habilidadesInvestigacion.clone());
+		this._habilidadesInvestigacion = [];
+		this._habilidadesInvestigacion.push(hinvest[0]);
+		this._habilidadesInvestigacion.push(hinvest[1]);
+	}
+	
 	genera() {
 		habilidades.habilidadesGen();
 		habilidades.ptos_niv = 2;
@@ -218,7 +235,7 @@ class PJF {
 		}
 		
 		this.calculaPtosInvestigacion();
-		
+		this.calculaHabilidadesInvestigacion();
 		/*if ( this._objClase.trasfondos.length > 0 )
 		{
 			this._trasfondo = this._objClase.trasfondos[Comun.random(this._objClase.trasfondos.length, 0)];
@@ -232,6 +249,13 @@ class PJF {
 			var itals = 0;
 			for (itals = 1; itals < this.talentos.length; itals++) {
 				stalentos += ", " + this.talentos[itals];
+			}
+		}
+		var shabInvest = "";
+		if ( this._habilidadesInvestigacion.length > 0 ) {
+			shabInvest = this._habilidadesInvestigacion[0];
+			if ( this._habilidadesInvestigacion.length > 1 ) {
+				shabInvest += ", " + this._habilidadesInvestigacion[1];
 			}
 		}
 		var fields = {
@@ -266,8 +290,10 @@ class PJF {
 					'Subterfugio' : [ this.habilidades[4] ],
 					'Supervivencia' : [ this.habilidades[5] ],
 					'Talentos' : [ stalentos ],
+					'HabInvestigacion' : [ shabInvest ],
 					'Trasfondos' : [ "" ],
-					'Notas' : [ document.getElementById("dinero").innerText ],
+					'Equipo' : [ this.strEquipo() ],
+					'Notas' : [ "Dinero: " + this._din + "$" ],
 		};
 		return fields;
 	}
