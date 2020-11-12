@@ -121,6 +121,7 @@ class PJF {
 		return "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
 													  " </td></tr><tr><td><strong>Atq:</strong> " + pj.atq +
             		                                  " </td></tr><tr><td><strong>pS:</strong> " + pj.pS + 
+            		                                  " </td></tr><tr><td><strong>Ptos Investigación:</strong> " + pj._pI + 
 													  " </td></tr><tr><td><strong>Ins:</strong> " + pj.ins + 
 													  " </td></tr><tr><td><strong>Def:</strong> " + pj.defn + 
 													  " </td></tr><tr><td><strong>PV:</strong> " + pj.pv + "</td></tr></table";
@@ -169,9 +170,20 @@ class PJF {
 		return stals;
 	}
 	
-
-	calculaRasgosDerivados(atributo) {
-		this.calculaRasgosDerivadosBase(atributo);
+	
+	calculaSuerte() {
+		this._pS = this._objClase.pS(this._nivel); 
+		var mCAR = this.modifAtributo( this._atributos[5] );
+		if ( mCAR + this._pS < 0 )
+			this._pS = 0;
+		else
+			this._pS += mCAR;
+	}
+	
+	calculaPtosInvestigacion() {
+		this._pI = 3 + this.modifAtributo( this._atributos[4] );
+		if ( this._pI < 1 )
+			this._pI = 1;
 	}
 	
 	genera() {
@@ -186,7 +198,7 @@ class PJF {
 		this._atributos = atributos.valores(this._objClase.atrs);
 		this._atq = this._objClase.atq(this._nivel);
 		this._ins = this._objClase.ins(this._nivel);
-		this._pS = this._objClase.pS(this._nivel); // + AtributosP.modif(this._atributos[atributosP.atributoMod("INT")]);
+		this.calculaSuerte();
 		
 		this._equipo = this._objClase.equipo();
 		this._din = (Comun.dadosMultiples(this._equipo.dinero.aleatorio, this._equipo.dinero.dado, 1) * 100) + this._equipo.dinero.inicial;
@@ -205,7 +217,7 @@ class PJF {
 			this._talentos.push(talentosclase[ital]);
 		}
 		
-		this._pI = 3;
+		this.calculaPtosInvestigacion();
 		
 		/*if ( this._objClase.trasfondos.length > 0 )
 		{

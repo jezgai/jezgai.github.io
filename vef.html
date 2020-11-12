@@ -6,7 +6,6 @@
 <script src="javascript/VE_comun.js"></script>
 <script src="javascript/VE_atributos.js"></script>
 <script src="javascript/VE_habilidades.js"></script>
-<script src="javascript/VEF_pj.js"></script>
 <script src="javascript/VEF_clases.js"></script>
 <script src="javascript/VEF_pj.js"></script>
 
@@ -26,11 +25,18 @@
 		pj.atributos[atributo] = atributosiguiente;
 		var satrs = Comun.tablaAtributos();
 		document.getElementById("atributos").innerHTML = satrs;
+		
 		if ( atributo <= 1 ) {
 			pj.calculaDefensa();
 		}
 		if ( atributo == 1 || atributo == 2 ) {
 			pj.calculaPV();
+		}
+		if ( atributo == 3 || atributo == 4 ) {
+			pj.calculaPtosInvestigacion();
+		}
+		if ( atributo == 4 || atributo == 5 ) {
+			pj.calculaSuerte();
 		}
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
 	}
