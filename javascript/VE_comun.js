@@ -101,7 +101,16 @@ class Comun {
 		stals += "</table>";
 		return stals;
 	}
-		
+	
+	static tablaTrasfondos() {
+		var itals = 0;
+		var stals = "<table class='w3-table  w3-striped w3-border'><tr><th>Trasfondos</th></tr>";
+		for (itals = 0; itals < pj._trasfondos.length; itals++) {
+			stals += "<tr><td>" + pj._trasfondos[itals] + " </td></tr>";
+		}
+		stals += "</table>";
+		return stals;
+	}	
 	/*static clone(ar) {
 		return ar.slice(0);
 	}*/

@@ -17,11 +17,11 @@ class PJF {
 		this._apellidos = [ "Taylor", "O'Sullivan", "Slick", "Jackson", "Crawley", "Moore", "McMardiggan", "Parker", "Whitman", "Flushing", "Zhao", "Wallace" ];
 		this._objClase = null;
 		this._din = 0;
-		this._trasfondo = "";
+		this._trasfondos = [];
 	}
 	
 	get trasfondo() {
-		return this._trasfondo;
+		return this._trasfondos;
 	}
 
 	get nombre() {
@@ -106,7 +106,7 @@ class PJF {
 	}
 	
 	get plantillaPDF() {
-		return "pdf/VEInv.pdf";
+		return "pdf/VAgencia.pdf";
 	}
 		
 	calculaDefensa() {
@@ -128,7 +128,7 @@ class PJF {
 	}
 	
 	modifAtributo(valorAtributo) {
-		return Atributos.modifmas(valorAtributo);
+		return Atributos.modif(valorAtributo);
 	}
 	
 	
@@ -141,17 +141,7 @@ class PJF {
 		
 		return stals;
 	}
-	
-	tablaHabInvestigacion() {
-		var ihabinv = 0;
-		var shabInv = "<table class='w3-table  w3-striped w3-border'><tr><th>Habilidades de investigación</th></tr>";
-		for (ihabinv = 0; ihabinv < pj._habilidadesInvestigacion.length; ihabinv++) {
-			shabInv += "<tr><td>" + pj._habilidadesInvestigacion[ihabinv] + " </td></tr>";
-		}
-		shabInv += "</table>";
-		return shabInv;
-	}
-	
+		
 	equipo() {
 		var eq = "<strong>Equipo: </strong>" + this.strEquipo();
 		return eq;
@@ -170,16 +160,6 @@ class PJF {
 	}
 	
 	
-	tablaTalentos() {
-		var itals = 0;
-		var stals = "";
-		for (itals = 0; itals < this._objClase.dtalentos.length; itals++) {
-			stals += "<br/><br/>" + this._objClase.dtalentos[itals];
-		}
-		
-		return stals;
-	}
-	
 	
 	calculaSuerte() {
 		this._pS = this._objClase.pS(this._nivel); 
@@ -191,16 +171,14 @@ class PJF {
 	}
 	
 	calculaPtosInvestigacion() {
-		this._pI = 3 + this.modifAtributo( this._atributos[4] );
+		this._pI = 2 + this.modifAtributo( this._atributos[4] );
 		if ( this._pI < 1 )
 			this._pI = 1;
 	}
 	
-	calculaHabilidadesInvestigacion() {
-		var hinvest = Comun.shuffle(habilidadesInvestigacion.clone());
-		this._habilidadesInvestigacion = [];
-		this._habilidadesInvestigacion.push(hinvest[0]);
-		this._habilidadesInvestigacion.push(hinvest[1]);
+	calculaTrasfondo() {
+		this._trasfondos = [];
+		this._trasfondos.push(Comun.shuffle(trasfondos.clone())[0]);
 	}
 	
 	genera() {
@@ -235,7 +213,8 @@ class PJF {
 		}
 		
 		this.calculaPtosInvestigacion();
-		this.calculaHabilidadesInvestigacion();
+		
+		this.calculaTrasfondo();
 		/*if ( this._objClase.trasfondos.length > 0 )
 		{
 			this._trasfondo = this._objClase.trasfondos[Comun.random(this._objClase.trasfondos.length, 0)];
@@ -251,11 +230,12 @@ class PJF {
 				stalentos += ", " + this.talentos[itals];
 			}
 		}
-		var shabInvest = "";
-		if ( this._habilidadesInvestigacion.length > 0 ) {
-			shabInvest = this._habilidadesInvestigacion[0];
-			if ( this._habilidadesInvestigacion.length > 1 ) {
-				shabInvest += ", " + this._habilidadesInvestigacion[1];
+		var strasfondos = "";
+		if ( this._trasfondos.length > 0 ) {
+			strasfondos = this._trasfondos[0];
+			var itrasf = 0;
+			for (itrasf = 1; itrasf < this._trasfondos.length; itrasf++) {
+				strasfondos += ", " + this._trasfondos[itrasf];
 			}
 		}
 		var fields = {
@@ -290,8 +270,7 @@ class PJF {
 					'Subterfugio' : [ this.habilidades[4] ],
 					'Supervivencia' : [ this.habilidades[5] ],
 					'Talentos' : [ stalentos ],
-					'HabInvestigacion' : [ shabInvest ],
-					'Trasfondos' : [ "" ],
+					'Trasfondos' : [ strasfondos ],
 					'Equipo' : [ this.strEquipo() ],
 					'Notas' : [ "Dinero: " + this._din + "$" ],
 		};

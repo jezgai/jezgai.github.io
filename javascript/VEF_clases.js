@@ -13,6 +13,7 @@ class ClaseF {
 		this._competencia = clase.competencia;
 		this._dtalentos = clase.dtalentos;
 		this._descripcion = clase.descripcion;
+		this._ntalentos = clase.ntalentos;
 	}
 		
 	get descripcion() {
@@ -74,19 +75,15 @@ class ClaseF {
 	talentos(nivel) {
 		var tal = [];
 		var intal=0;
-		for (intal=0; intal<this._talentos.length && nivel>=this._talentos[intal].niv; intal++) {
-			var ital=0;
-			var tls = this._talentos[intal].tln.clone();
-			var num = this._talentos[intal].num ;
-			if ( num == 0 || num > this._talentos[intal].tln.length) {
-				num = this._talentos[intal].tln.length;
-			}
-			else {
-				tls = Comun.shuffle(tls);
-			}
-			for (ital=0; ital < num; ital++) {
-				tal.push(tls[ital]);
-			}
+		if ( nivel > this._talentos.length )
+		{
+			nivel = this._talentos.length;
+		}
+		var tals = Comun.shuffle(this._talentos.clone());
+		var numtal = this._ntalentos[nivel-1];
+		
+		for (intal=0; intal<numtal; intal++) {
+			tal.push(tals[intal]);
 		}
 		return tal;
 	}
@@ -137,12 +134,13 @@ class ClasesF {
 			{
 			  nombre : "Astuto",
 			  descripcion : "Personajes que gustan de moverse en la sombra para resolver problemas",
-			  talentos : [ { niv : 1,num : 2,tln : ["Certero", "Dedos Ágiles", "Escurridizo", "Invisible", "Emboscar" ]} ],
+			  talentos : [ "Certero", "Dedos Ágiles", "Escurridizo", "Invisible", "Emboscar"  ],
+			  ntalentos : [ 2, 2, 3, 3, 3 ],
 			  daguante : 6,
 			  atrs : [ "DES" , "CAR" ],
-			  atq : [ 0, 1, 1, 2, 2, 3, 3, 4, 4, 5 ],
-			  pS : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 9 ],
-			  ins : [ 2, 2, 3, 3, 4, 4, 5, 5, 6, 7 ],
+			  atq : [ 1, 2, 3, 4, 5],
+			  pS : [ 0, 1, 2, 3, 4],
+			  ins : [ 1, 2, 3, 4, 5],
 			  equipoinicial : [ { dinero : { inicial : 100, aleatorio: 3, dado: 10 }, equipo : [ ]} ],
 			  dtalentos : [ "<strong>Certero</strong><br/>Tienes un bono adicional de +2 en todos los ataques de proyectiles.", 
 							"<strong>Dedos Ágiles</strong><br/>Tienes ventaja en las pruebas de Manipulación que requieran precisión (por ejemplo abrir cerraduras o sustraer las posesiones de otra persona).", 
@@ -153,12 +151,13 @@ class ClasesF {
 			{
 			  nombre : "Líder",
 			  descripcion : "Personajes muy carismáticos, bien sea por su dinero o por su profesión (tahur, charlatanes, políticos)", 
-			  talentos : [ { niv : 1,num : 2,tln : [ "Adinerado", "Camaleón social", "Discurso inspirador", "Elegante", "Influencia" ]} ],
+			  talentos : [ "Adinerado", "Camaleón social", "Discurso inspirador", "Elegante", "Influencia"  ],
+			  ntalentos : [ 2, 2, 3, 3, 3 ],
 			  daguante : 4,
 			  atrs : [ "CAR" , "INT" ],
-			  atq : [ 1, 1, 2, 3, 4, 5, 6, 6, 7, 8 ],
-			  pS : [ 2, 3, 3, 3, 4, 4, 4, 5, 5, 5 ],
-			  ins : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ],
+			  atq : [ 1, 2, 3, 4, 5],
+			  pS : [ 1, 2, 3, 4, 5],
+			  ins : [ 0, 1, 2, 3, 4],
 			  equipoinicial : [ { dinero : { inicial : 500, aleatorio: 3, dado: 10 }, equipo : [ ]} ],
 			  dtalentos: [ "<strong>Adinerado</strong><br/>Tienes mucho dinero. Cuando quieras conseguir cualquier objeto o equipo debes superar una prueba de Comunicación cuya dificultad determina el DJ según la petición.",
 							"<strong>Camaleón social</strong><br/>Tienes ventaja en cualquier prueba de Comunicación para realizar primeros contactos con desconocidos.", 
@@ -169,28 +168,30 @@ class ClasesF {
 			{
 			  nombre : "Luchador/a",
 			  descripcion : "Personajes de acción, dispuestos a usar la fuerza para resolver conflictos", 
-			  talentos : [ { niv : 1,num : 2,tln : ["Ataque certero", "Ataques Múltiples", "Con un par", "Lucha con X", "Músculos de acero"]} ],
+			  talentos : [ "Ataque certero", "Ataques Múltiples", "Con un par", "Lucha con X", "Músculos de acero" ],
+			  ntalentos : [ 2, 2, 3, 3, 3 ],
 			  daguante : 8,
 			  atrs : [ "FUE" , "CON" ],
-			  atq : [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 10 ],
-			  pS : [ 0, 0, 1, 1, 2, 2, 3, 3, 4, 5 ],
-			  ins : [ 1, 2, 2, 3, 3, 4, 4, 5, 5, 6 ],
+			  atq : [ 2, 3, 4, 5, 6],
+			  pS : [ 0, 0, 1, 2, 3],
+			  ins : [ 0, 1, 2, 3, 4],
 			  equipoinicial : [ { dinero : { inicial : 0, aleatorio: 4, dado: 6 }, equipo : [ "1 arma de fuego" ]} ],
-			  dtalentos: [ "<strong>Ataque certero<strong><br/>Tus ataques se convierten en crítico con un resultado de 19-20.", 
-							"<strong>Ataques Múltiples<strong><br/>Al abatir a un rival puedes realizar inmediatamente otro ataque. De esta forma puedes encadenar tantos ataques EXTRA como nivel tengas.", 
-							"<strong>Con un par<strong><br/>En situaciones de máximo riesgo en que debas realizar una prueba de Instinto, obtienes ventaja para superar la prueba.", 
-							"<strong>Lucha con X<strong><br/>Sustituye X por: arma de mano y escudo o dos armas de mano o armas a dos manos o de proyectiles o de fuego. Peleando de esa forma ganas +1 al ataque y al daño.", 
-							"<strong>Músculos de acero<strong><br/>El personaje tiene una musculatura envidiable. Aumenta en +1 el daño en combate C/C" ],
+			  dtalentos: [ "<strong>Ataque certero</strong><br/>Tus ataques se convierten en crítico con un resultado de 19-20.", 
+							"<strong>Ataques Múltiples</strong><br/>Al abatir a un rival puedes realizar inmediatamente otro ataque. De esta forma puedes encadenar tantos ataques EXTRA como nivel tengas.", 
+							"<strong>Con un par</strong><br/>En situaciones de máximo riesgo en que debas realizar una prueba de Instinto, obtienes ventaja para superar la prueba.", 
+							"<strong>Lucha con X</strong><br/>Sustituye X por: arma de mano y escudo o dos armas de mano o armas a dos manos o de proyectiles o de fuego. Peleando de esa forma ganas +1 al ataque y al daño.", 
+							"<strong>Músculos de acero</strong><br/>El personaje tiene una musculatura envidiable. Aumenta en +1 el daño en combate C/C" ],
 			},
 			{
 			  nombre : "Observador",
 			  descripcion : "Personajes cuyo fuerte es descubrir pistas (periodistas, investigadores, ...)", 
-			  talentos : [ { niv : 1,num : 2,tln : [ "Buenos sentidos", "Buena reputación", "Contactos", "Esponja", "Mañoso" ]} ],
+			  talentos : [ "Buenos sentidos", "Buena reputación", "Contactos", "Esponja", "Mañoso" ],
+			  ntalentos : [ 2, 2, 3, 3, 3 ],
 			  daguante : 6,
 			  atrs : [ "SAB" , "INT" ],
-			  atq : [ 1, 2, 3, 3, 4, 4, 5, 6, 6, 6 ],
-			  pS : [ 0, 0, 1, 2, 2, 3, 4, 4, 5, 6 ],
-			  ins : [ 2, 3, 3, 4, 5, 6, 6, 7, 8, 9 ],
+			  atq : [ 0, 0, 1, 2, 3],
+			  pS : [ 0, 0, 1, 2, 3],
+			  ins : [ 2, 3, 4, 5, 6],
 			  equipoinicial : [ { dinero : { inicial : 100, aleatorio: 3, dado: 8 }, equipo : [ "1 cámara fotográfica" ]} ],
 			  dtalentos : [ "<strong>Buena reputación</strong><br/>Una personalidad arrolladora junto a buena suerte hacen que tus acciones siempre se vean de la mejor forma. Una vez por sesión puedes tener una ventaja en una prueba de Comunicación y gastando 1 pS puedes evitar un conflicto armado o social de forma directa, porque reconocen tu reputación.", 
 							"<strong>Buenos sentidos</strong><br/>Tienes ventaja en las pruebas basadas en la percepción sensorial.", 
@@ -201,12 +202,13 @@ class ClasesF {
 			{
 			  nombre : "Pensador/a",
 			  descripcion : "Personajes de grandes conocimientos que usan fundamentalmente la razón", 
-			  talentos : [ { niv : 1,num : 2,tln : [ "Afortunado", "Ideas frescas", "Ingenioso", "Lo leí en un libro", "Memoria prodigiosa" ]} ],
+			  talentos : [ "Afortunado", "Ideas frescas", "Ingenioso", "Lo leí en un libro", "Memoria prodigiosa" ],
+			  ntalentos : [ 2, 2, 3, 3, 3 ],
 			  daguante : 4,
 			  atrs : [ "INT" , "SAB" ],
-			  atq : [ 0, 0, 1, 1, 1, 2, 2, 3, 3, 3 ],
-			  pS : [ 2, 3, 3, 4, 5, 6, 7, 8, 8, 9 ],
-			  ins : [ 1, 2, 3, 4, 5, 5, 6, 7, 8, 9 ],
+			  atq : [ 0, 0, 1, 2, 2],
+			  pS : [ 1, 3, 5, 7, 9],
+			  ins : [ 0, 0, 1, 2, 3],
 			  equipoinicial : [ { dinero : { inicial : 200, aleatorio: 3, dado: 8 }, equipo : [ "Botiquín" ]} ],
 			  dtalentos : [ "<strong>Afortunado</strong><br/>La diosa fortuna te sonríe. Una vez por sesión puedes repetir cualquier prueba y realizarla de nuevo con Ventaja o bien en cada inicio de sesión de juego puedes gastar 1 pS y realizar tres tiradas con el d20, anota los dos resultados mayores y durante el juego podrás cambiar el resultado de una tirada por uno de los anotados. Dicho valor no es reutilizable.", 
 							"<strong>Ideas frescas</strong><br/>Tienes ventaja en cualquier prueba de Manipulación para realizar chapuzas o pequeños inventos que puedan resolver una situación compleja o peligrosa.", 
@@ -217,12 +219,13 @@ class ClasesF {
 			{
 			  nombre : "Tenaz",
 			  descripcion : "Personajes con gran fuerza de voluntad y capacidad de soportar sufrimiento ya sea físico o mental", 
-			  talentos : [ { niv : 1,num : 2,tln : [ "Coraje", "Mente Férrea", "Resistente", "Superviviente nato", "Voluntad de hierro" ]} ],
+			  talentos : [ "Coraje", "Mente Férrea", "Resistente", "Superviviente nato", "Voluntad de hierro" ],
+			  ntalentos : [ 2, 2, 3, 3, 3 ],
 			  daguante : 4,
 			  atrs : [ "CON" , "SAB" ],
-			  atq : [ 1, 2, 2, 2, 3, 3, 4, 4, 5, 6 ],
-			  pS : [ 1, 1, 2, 3, 3, 4, 4, 5, 5, 6 ],
-			  ins : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 9 ],
+			  atq : [ 1, 2, 3, 4, 5 ],
+			  pS : [ 1, 2, 3, 4, 5 ],
+			  ins : [ 0, 1, 2, 3, 4 ],
 			  equipoinicial : [ { dinero : { inicial : 0, aleatorio: 3, dado: 8 }, equipo : [ "1 chupa de cuero" ]} ],
 			  dtalentos: [ "<strong>Coraje</strong><br/>Tienes una considerable fuerza de voluntad que te hace afrontar con estoicismo el peligro y ciertas situaciones que podrían dañar tu salud mental. Obtienes un +2 a la tirada de SAB para resistir situaciones que afectan a la salud mental.", 
 							"<strong>Mente Férrea</strong><br/>Tienes la mente preparada para resistir cualquier ataque. Los intentos de interrogarte, intimidarte, convencerte o confundirte siempre se realizan con desventaja.", 
