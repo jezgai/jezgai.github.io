@@ -7,7 +7,7 @@ class ClaseF {
 		this._daguante = clase.daguante;
 		this._atrs = clase.atrs;
 		this._atq = clase.atq;
-		this._pS = clase.pS;
+		//this._pS = clase.pS;
 		this._ins = clase.ins;
 		this._equipoinicial = clase.equipoinicial;
 		this._competencia = clase.competencia;
@@ -43,9 +43,9 @@ class ClaseF {
 	get atq() {
 		return this._atq;
 	}
-	get pS() {
+	/*get pS() {
 		return this._pS;
-	}
+	}*/
 	get ins() {
 		return this._ins;
 	}
@@ -65,9 +65,9 @@ class ClaseF {
 	set atq(value) {
 		this._atq = value;
 	}
-	set pS(value) {
+	/*set pS(value) {
 		this._pS = value;
-	}
+	}*/
 	set ins(value) {
 		this._ins = value;
 	}
@@ -105,13 +105,13 @@ class ClaseF {
 		return this._atq[iatq];
 	}
 
-	pS(nivel) {
+	/*pS(nivel) {
 		var ipS = nivel - 1;
 		if ( nivel > this._pS.length ) {
 			ipS = this._pS.length - 1;
 		}
 		return this._pS[ipS];
-	}
+	}*/
 
 	ins(nivel) {
 		var iins = nivel - 1;
@@ -139,7 +139,7 @@ class ClasesF {
 			  daguante : 6,
 			  atrs : [ "DES" , "CAR" ],
 			  atq : [ 1, 2, 3, 4, 5],
-			  pS : [ 0, 1, 2, 3, 4],
+			  //pS : [ 0, 1, 2, 3, 4],
 			  ins : [ 1, 2, 3, 4, 5],
 			  equipoinicial : [ { dinero : { inicial : 100, aleatorio: 3, dado: 10 }, equipo : [ ]} ],
 			  dtalentos : [ "<strong>Certero</strong><br/>Tienes un bono adicional de +2 en todos los ataques de proyectiles.", 
@@ -156,7 +156,7 @@ class ClasesF {
 			  daguante : 4,
 			  atrs : [ "CAR" , "INT" ],
 			  atq : [ 1, 2, 3, 4, 5],
-			  pS : [ 1, 2, 3, 4, 5],
+			  //pS : [ 1, 2, 3, 4, 5],
 			  ins : [ 0, 1, 2, 3, 4],
 			  equipoinicial : [ { dinero : { inicial : 500, aleatorio: 3, dado: 10 }, equipo : [ ]} ],
 			  dtalentos: [ "<strong>Adinerado</strong><br/>Tienes mucho dinero. Cuando quieras conseguir cualquier objeto o equipo debes superar una prueba de Comunicación cuya dificultad determina el DJ según la petición.",
@@ -173,7 +173,7 @@ class ClasesF {
 			  daguante : 8,
 			  atrs : [ "FUE" , "CON" ],
 			  atq : [ 2, 3, 4, 5, 6],
-			  pS : [ 0, 0, 1, 2, 3],
+			  //pS : [ 0, 0, 1, 2, 3],
 			  ins : [ 0, 1, 2, 3, 4],
 			  equipoinicial : [ { dinero : { inicial : 0, aleatorio: 4, dado: 6 }, equipo : [ "1 arma de fuego" ]} ],
 			  dtalentos: [ "<strong>Ataque certero</strong><br/>Tus ataques se convierten en crítico con un resultado de 19-20.", 
@@ -190,7 +190,7 @@ class ClasesF {
 			  daguante : 6,
 			  atrs : [ "SAB" , "INT" ],
 			  atq : [ 0, 0, 1, 2, 3],
-			  pS : [ 0, 0, 1, 2, 3],
+			  //pS : [ 0, 0, 1, 2, 3],
 			  ins : [ 2, 3, 4, 5, 6],
 			  equipoinicial : [ { dinero : { inicial : 100, aleatorio: 3, dado: 8 }, equipo : [ "1 cámara fotográfica" ]} ],
 			  dtalentos : [ "<strong>Buena reputación</strong><br/>Una personalidad arrolladora junto a buena suerte hacen que tus acciones siempre se vean de la mejor forma. Una vez por sesión puedes tener una ventaja en una prueba de Comunicación y gastando 1 pS puedes evitar un conflicto armado o social de forma directa, porque reconocen tu reputación.", 
@@ -207,7 +207,7 @@ class ClasesF {
 			  daguante : 4,
 			  atrs : [ "INT" , "SAB" ],
 			  atq : [ 0, 0, 1, 2, 2],
-			  pS : [ 1, 3, 5, 7, 9],
+			  //pS : [ 1, 3, 5, 7, 9],
 			  ins : [ 0, 0, 1, 2, 3],
 			  equipoinicial : [ { dinero : { inicial : 200, aleatorio: 3, dado: 8 }, equipo : [ "Botiquín" ]} ],
 			  dtalentos : [ "<strong>Afortunado</strong><br/>La diosa fortuna te sonríe. Una vez por sesión puedes repetir cualquier prueba y realizarla de nuevo con Ventaja o bien en cada inicio de sesión de juego puedes gastar 1 pS y realizar tres tiradas con el d20, anota los dos resultados mayores y durante el juego podrás cambiar el resultado de una tirada por uno de los anotados. Dicho valor no es reutilizable.", 
@@ -224,7 +224,7 @@ class ClasesF {
 			  daguante : 4,
 			  atrs : [ "CON" , "SAB" ],
 			  atq : [ 1, 2, 3, 4, 5 ],
-			  pS : [ 1, 2, 3, 4, 5 ],
+			  //pS : [ 1, 2, 3, 4, 5 ],
 			  ins : [ 0, 1, 2, 3, 4 ],
 			  equipoinicial : [ { dinero : { inicial : 0, aleatorio: 3, dado: 8 }, equipo : [ "1 chupa de cuero" ]} ],
 			  dtalentos: [ "<strong>Coraje</strong><br/>Tienes una considerable fuerza de voluntad que te hace afrontar con estoicismo el peligro y ciertas situaciones que podrían dañar tu salud mental. Obtienes un +2 a la tirada de SAB para resistir situaciones que afectan a la salud mental.", 

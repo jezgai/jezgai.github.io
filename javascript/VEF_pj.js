@@ -13,8 +13,8 @@ class PJF {
 		this._pv = 0;
 		this._def = 0;
 		this._daguante = 4;
-		this._nombres = [ "Mary Jane", "Tadeus", "Duncan", "Sally", "Steve", "Marcus", "John", "Arnold", "Bethesda", "Abigail", "Elinor", "Jules", "Mia", "Winston", "Kathy", "Jerry" ];
-		this._apellidos = [ "Taylor", "O'Sullivan", "Slick", "Jackson", "Crawley", "Moore", "McMardiggan", "Parker", "Whitman", "Flushing", "Zhao", "Wallace" ];
+		this._nombres = [ "Alisa", "Anthony", "Hans", "Sally", "Steve", "Marcus", "Klaus", "Arnold", "Kim", "Kirsten", "Beth", "Jules", "Jane", "Dylan", "Kathy", "Jerry", "Harry", "Regis", "Kimiko", "Amanda", "Bianca", "Solomon", "Samuel", "Sarah", "Rebecca" ];
+		this._apellidos = [ "Taylor", "O'Sullivan", "Slick", "Jackson", "Butcher", "Devon", "Carpenter", "Kane", "Crawley", "Moore", "McMardiggan", "Murphy", "Parker", "Whitman", "Landon", "Morgan", "Butters", "Herzog", "Shurukhin", "Werthein", "Green", "Allen" ];
 		this._objClase = null;
 		this._din = 0;
 		this._trasfondos = [];
@@ -119,12 +119,12 @@ class PJF {
 	
 	tablaRasgos() {
 		return "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>DA:</strong> d" + pj.daguante +
-													  " </td></tr><tr><td><strong>Atq:</strong> " + pj.atq +
-            		                                  " </td></tr><tr><td><strong>pS:</strong> " + pj.pS + 
-            		                                  " </td></tr><tr><td><strong>Ptos Investigación:</strong> " + pj._pI + 
+													  " </td></tr><tr><td><strong>Atq:</strong> " + pj.atq + 
 													  " </td></tr><tr><td><strong>Ins:</strong> " + pj.ins + 
 													  " </td></tr><tr><td><strong>Def:</strong> " + pj.defn + 
-													  " </td></tr><tr><td><strong>PV:</strong> " + pj.pv + "</td></tr></table";
+													  " </td></tr><tr><td><strong>PV:</strong> " + pj.pv +
+            		                                  " </td></tr><tr><td><strong>Ptos Investigación:</strong> " + pj._pI + 
+            		                                  " </td></tr><tr><td><strong>Ptos Agencia:</strong> " + pj._pAg + "</td></tr></table";
 	}
 	
 	modifAtributo(valorAtributo) {
@@ -136,7 +136,7 @@ class PJF {
 		var itals = 0;
 		var stals = "";
 		for (itals = 0; itals < this._objClase.dtalentos.length; itals++) {
-			stals += "<br/><br/>" + this._objClase.dtalentos[itals];
+			stals += this._objClase.dtalentos[itals] + "<br/>";
 		}
 		
 		return stals;
@@ -161,14 +161,14 @@ class PJF {
 	
 	
 	
-	calculaSuerte() {
+	/*calculaSuerte() {
 		this._pS = this._objClase.pS(this._nivel); 
 		var mCAR = this.modifAtributo( this._atributos[5] );
 		if ( mCAR + this._pS < 0 )
 			this._pS = 0;
 		else
 			this._pS += mCAR;
-	}
+	}*/
 	
 	calculaPtosInvestigacion() {
 		this._pI = 2 + this.modifAtributo( this._atributos[4] );
@@ -180,6 +180,9 @@ class PJF {
 		this._trasfondos = [];
 		this._trasfondos.push(Comun.shuffle(trasfondos.clone())[0]);
 	}
+	calculaHabilidades() {
+		this._habilidades = habilidades.puntuaciones1(this._nivel, this.modifAtributo(this._atributos[3]));
+	}
 	
 	genera() {
 		habilidades.habilidadesGen();
@@ -189,11 +192,14 @@ class PJF {
 		this._objClase = clasesF.clase(this._clase);
 		this._daguante = this._objClase.daguante;
 		this._clase = this._objClase.nombre;
-		this._habilidades = habilidades.puntuaciones(this._nivel);
 		this._atributos = atributos.valores(this._objClase.atrs);
+		
+		this.calculaHabilidades();
 		this._atq = this._objClase.atq(this._nivel);
 		this._ins = this._objClase.ins(this._nivel);
-		this.calculaSuerte();
+		//this.calculaSuerte();
+		
+		this._pAg = 1;
 		
 		this._equipo = this._objClase.equipo();
 		this._din = (Comun.dadosMultiples(this._equipo.dinero.aleatorio, this._equipo.dinero.dado, 1) * 100) + this._equipo.dinero.inicial;
@@ -261,8 +267,8 @@ class PJF {
 					'Ins' : [ this.ins ],
 					'PITotal' : [ this._pI ],
 					'PIActual' : [ this._pI ],
-					'PSTotal' : [ this.pS ],
-					'PSActual' : [ this.pS ],
+					'PAgTotal' : [ this._pAg ],
+					'PAgActual' : [ this._pAg ],
 					'Alerta' : [ this.habilidades[0] ],
 					'Comunicacion' : [ this.habilidades[1] ],
 					'Erudicion' : [ this.habilidades[2] ],
@@ -272,7 +278,7 @@ class PJF {
 					'Talentos' : [ stalentos ],
 					'Trasfondos' : [ strasfondos ],
 					'Equipo' : [ this.strEquipo() ],
-					'Notas' : [ "Dinero: " + this._din + "$" ],
+					'Notas' : [ document.getElementById("notas").innerText + "Dinero: " + this._din + "$" ],
 		};
 		return fields;
 	}

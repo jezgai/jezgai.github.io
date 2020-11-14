@@ -28,19 +28,24 @@
 		var satrs = Comun.tablaAtributos();
 		document.getElementById("atributos").innerHTML = satrs;
 		
-		if ( atributo <= 1 ) {
-			pj.calculaDefensa();
+		if ( pj.modifAtributo(pj.atributos[atributo]) != pj.modifAtributo(pj.atributos[(parseInt(atributo)+1)%6])) {
+			if ( atributo <= 1 ) {
+				pj.calculaDefensa();
+			}
+			if ( atributo == 1 || atributo == 2 ) {
+				pj.calculaPV();
+			}
+			if ( atributo == 2 || atributo == 3 ) {
+				pj.calculaHabilidades();
+				document.getElementById("habilidades").innerHTML = Comun.tablaHabilidades();
+			}
+			if ( atributo == 3 || atributo == 4 ) {
+				pj.calculaPtosInvestigacion();
+			}
+			document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
 		}
-		if ( atributo == 1 || atributo == 2 ) {
-			pj.calculaPV();
-		}
-		if ( atributo == 3 || atributo == 4 ) {
-			pj.calculaPtosInvestigacion();
-		}
-		if ( atributo == 4 || atributo == 5 ) {
-			pj.calculaSuerte();
-		}
-		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
+		
+		
 	}
 	
 	function abajohab(habilidad) {
@@ -181,7 +186,11 @@
 		dinero = pj.din;
 		document.getElementById("dinero").innerHTML = "<br/><strong>Dinero: </strong> " + dinero + "$<br/><br/>" + pj.equipo();
 		
-		document.getElementById("dtalentos").innerHTML = pj.tablaTalentos();
+		document.getElementById("notas").innerHTML = "<strong>Ptos Investigación (PI)</strong>: sirven para obtener una pista sin necesidad de hacer una tirada (debe justificarse su uso mediante el trasfondo. Se recupera 1 cada descanso efectivo (8 horas) o todos al inicio de la sesión.<br/>" + 
+													"<strong>Ptos de Agencia (PAg)</strong>: son puntos compartidos entre todos los personajes (1 cada PJ), se trata de ayudas proporcionadas por la Agencia de los personajes que se traducen en tiradas con ventaja. Se recuperan cada sesión<br/><br/>";
+		document.getElementById("notas").style.visibility="visible";
+		
+		document.getElementById("dtalentos").innerHTML = "<h2>Talentos</h2>" + pj.tablaTalentos();
 		document.getElementById("dtalentos").style.visibility="visible";
 		
 		
@@ -297,6 +306,7 @@
 		<div  class="tercio" id="trasfondos"></div>
 		<div class="tercio" id="dinero"></div>
 	</div>
+	<div class="total" id="notas"></div>
 	<div class="total" id="dtalentos"></div>
 	<div class="total" id="dclase"></div>
 		
