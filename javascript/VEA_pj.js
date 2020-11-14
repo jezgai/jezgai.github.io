@@ -24,6 +24,19 @@ class PJAr extends PJBase {
 		}
 	}
 	
+	debilidades(numero) {
+		var tdeb = Comun.shuffle( [ "Maldecido", "Código de Honor" , "Fe Ciega", "Endeudado", "Bocazas", "Esclavo marcado", "Perseguido", "Enemigo Jurado", "Pasado Oculto" ] );
+		this._debilidades = [];
+		if (numero > 0) {
+			if ( numero > tdeb.length )
+				numero = tdeb.length;
+			var ideb = 0;
+			for (ideb = 0; ideb < numero; ideb++) {
+				this._debilidades.push(tdeb[ideb]);
+			}
+		}
+	}
+	
 	get pod() {
 		return this._pod;
 	}	
@@ -62,7 +75,6 @@ class PJAr extends PJBase {
 		return Atributos.modifArr(valorAtributo);
 	}
 	
-	
 	tablaTalentos() {
 		
 		var itals = 0;
@@ -85,7 +97,7 @@ class PJAr extends PJBase {
 	}
 	
 	calculaDoblones() {
-		this._doblones = 3 + this.modifAtributo(this._atributos[atributos.atributoMod("CAR")]);
+		this._doblones = 3 + this._debilidades.length + this.modifAtributo(this._atributos[atributos.atributoMod("CAR")]);
 	}
 	
 	calculaRasgosDerivados(atributo) {
@@ -130,6 +142,24 @@ class PJAr extends PJBase {
 		return sequipo;
 	}
 	
+	tablaDebilidades() {
+		var sdebs = "";
+		if ( this._debilidades.length > 0 ) {
+			sdebs = "<br/><strong>Debilidades</strong>: " + this._debilidades[0];
+			var ideb = 0;
+			for (ideb = 1; ideb < this._debilidades.length; ideb++) {
+				sdebs += ", " + this._debilidades[ideb];
+			}
+			sdebs += "<br/>";
+		}
+		return sdebs;
+	}
+	
+	
+	calculaDebilidades() {
+		this.debilidades(Comun.random(2,0));
+	}
+	
 	genera() {
 		habilidades.habilidadesGen();
 		habilidades.ptos_niv = 2;
@@ -152,6 +182,7 @@ class PJAr extends PJBase {
 		
 		this._niveladq = this._niveleseconomicos[Comun.random(6,0)];
 		
+		this.calculaDebilidades();
 		this.calculaDoblones();
 		
 		this.calculaEquipo();
@@ -168,6 +199,14 @@ class PJAr extends PJBase {
 			}
 		}
 		
+		var sdebilidades = "";
+		if ( this._debilidades.length > 0 ) {
+			sdebilidades = this._debilidades[0];
+			var idebs = 0;
+			for (idebs = 1; idebs < this._debilidades.length; idebs++) {
+				sdebilidades += ", " + this._debilidades[idebs];
+			}
+		}
 		
 		var fields = {
 					'Nombre' : [ this.nombre ],
@@ -198,6 +237,7 @@ class PJAr extends PJBase {
 					'Subterfugio' : [ this.habilidades[4] ],
 					'Supervivencia' : [ this.habilidades[5] ],
 					'Talentos' : [ stalentos ],
+					'Debilidades' : [ sdebilidades ],
 					'Equipo' : [ stalentos ],
 					'Armas' : [ stalentos ],
 					'NivelAdquisitivo' : [ this._niveladq ],

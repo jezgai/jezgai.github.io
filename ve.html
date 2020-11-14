@@ -684,8 +684,7 @@
 		dinero = pj.din;
 		
 		//document.getElementById("dtalentos").innerHTML = pj.tablaTalentos();
-		document.getElementById("dinero").innerHTML = "<strong>Poder adquisitivo: </strong> " + pj._niveladq;
-		document.getElementById("dinero").innerHTML += pj.tablaEquipo();
+		document.getElementById("dinero").innerHTML = pj.tablaDebilidades() + pj.tablaEquipo();
 		document.getElementById("dtalentos").style.visibility="hidden";
 		
 		
