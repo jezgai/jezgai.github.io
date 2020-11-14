@@ -24,6 +24,23 @@ class PJAr extends PJBase {
 		}
 	}
 	
+	supersticiones() {
+		var tsuper = Comun.shuffle( [ "Quien silba levanta tempestadas", "Llevar flores a bordo da mala suerte", 
+						"No llevar ataudes a bordo", "Nunca embarcar en martes", 
+						"No se debe embarcar en viernes", "Algo terrible ocurre si un pelirrojo te habla antes que tú le  dirijas la palabra", 
+						"No hay que hablar con quien haya sobrevivido a una caída al mar", "Da mala suerte rescatar a quien caiga al mar", 
+						"Los pelirrojos traen mal fario", "Una mujer a bordo atrae las desgracias", 
+						"Si tiras piedras al mar te devolverá una galerna", "Los gatos pueden invocar tormentas", 
+						"Un sacerdote a bordo presagia muertes", "Nunca hagas daño a una gaviota o albatros, esas aves llevan almas de marinos muertos", 
+						"Hay que dormir siempre con los pies hacia popa" ]);
+		this._supersticiones = [];
+		if ( this._atributos[4] <= 8 ) {
+			this._supersticiones.push(tsuper[0]);
+			if ( this._atributos[4] <= 5 )
+				this._supersticiones.push(tsuper[1]);
+		}
+	}
+	
 	debilidades(numero) {
 		var tdeb = Comun.shuffle( [ "Maldecido", "Código de Honor" , "Fe Ciega", "Endeudado", "Bocazas", "Esclavo marcado", "Perseguido", "Enemigo Jurado", "Pasado Oculto" ] );
 		this._debilidades = [];
@@ -78,14 +95,27 @@ class PJAr extends PJBase {
 	tablaTalentos() {
 		
 		var itals = 0;
-		var stals = "";
 		var stals = "<table class='w3-table  w3-striped w3-border'><tr><th>Talentos</th></tr>";
 		for (itals = 0; itals < this._talentos.length; itals++) {
-			stals += "<tr><td>" + pj.talentos[itals] + " </td><td>" + clasesArr.dTalentos(this._talentos[itals]) + "</td></tr>";
+			stals += "<tr><td>" + this._talentos[itals] + " </td><td>" + clasesArr.dTalentos(this._talentos[itals]) + "</td></tr>";
 		}
 		stals += "</table>";
 		
 		return stals;
+	}
+	
+	
+	tablaSupersticiones() {
+		if ( this._supersticiones.length == 0 )
+			return "";
+		var isuper = 0;
+		var ssuper = "<table class='w3-table  w3-striped w3-border'><tr><th>Supersticiones</th></tr>";
+		for (isuper = 0; isuper < this._supersticiones.length; isuper++) {
+			ssuper += "<tr><td>" + this._supersticiones[isuper] + "</td></tr>";
+		}
+		ssuper += "</table>";
+		
+		return ssuper;
 	}
 	
 	calculaHabilidades() {
@@ -106,7 +136,11 @@ class PJAr extends PJBase {
 			this.calculaPOD();
 			this.calculaHabilidades();
 		}
-		if ( (atributo == 4 || atributo == 4) && this.modifAtributo(this.atributos[atributo]) != this.modifAtributo( (atributo+1)%6 ) ) {
+		if ( atributo == 3 || atributo == 4 ) {
+			this.supersticiones();
+			this.muestraSupersticiones();
+		}
+		if ( (atributo == 4 || atributo == 5) && this.modifAtributo(this.atributos[atributo]) != this.modifAtributo( (atributo+1)%6 ) ) {
 			this.calculaDoblones();
 		}
 	}
@@ -125,6 +159,16 @@ class PJAr extends PJBase {
 		
 		var numequipo = 5 - num;
 		this.equipo(numequipo);
+		
+	}
+	
+	muestraSupersticiones() {
+		
+		document.getElementById("dtalentos").innerHTML = this.tablaSupersticiones();
+		if ( this._supersticiones.length > 0 )
+			document.getElementById("dtalentos").style.visibility="visible";
+		else
+			document.getElementById("dtalentos").style.visibility="hidden";
 		
 	}
 	
@@ -184,7 +228,7 @@ class PJAr extends PJBase {
 		
 		this.calculaDebilidades();
 		this.calculaDoblones();
-		
+		this.supersticiones();
 		this.calculaEquipo();
 
 	}
@@ -205,6 +249,15 @@ class PJAr extends PJBase {
 			var idebs = 0;
 			for (idebs = 1; idebs < this._debilidades.length; idebs++) {
 				sdebilidades += ", " + this._debilidades[idebs];
+			}
+		}
+		
+		var ssupersticiones = "";
+		if ( this._supersticiones.length > 0 ) {
+			ssupersticiones = this._supersticiones[0];
+			var isuper = 0;
+			for (isuper = 1; isuper < this._supersticiones.length; isuper++) {
+				ssupersticiones += ", " + this._supersticiones[isuper];
 			}
 		}
 		
@@ -238,6 +291,7 @@ class PJAr extends PJBase {
 					'Supervivencia' : [ this.habilidades[5] ],
 					'Talentos' : [ stalentos ],
 					'Debilidades' : [ sdebilidades ],
+					'Supersticiones' : [ ssupersticiones ],
 					'Equipo' : [ stalentos ],
 					'Armas' : [ stalentos ],
 					'NivelAdquisitivo' : [ this._niveladq ],
