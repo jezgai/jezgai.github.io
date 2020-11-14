@@ -3,6 +3,7 @@ class ClaseArr extends ClaseBase {
 	constructor(clase) {
 		super(clase);
 		this._pod = clase.pod;
+		this._armas = clase.armas;
 	}
 		
 	
@@ -56,6 +57,7 @@ class ClasesArr {
 			  atq : [ 0, 0, 0, 1, 1, 2, 2, 3, 3, 3 ],
 			  pod : [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ],
 			  ins : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+			  armas : { num: 1, arms: [ "Cuchillo (1d4)", "Bastón (1d6)", "Machete (1d6+1)", "Hacha (1d6+1)", "Cerbatana" ] },
 			},
 			{
 			  nombre : "Bribón/a",
@@ -65,6 +67,7 @@ class ClasesArr {
 			  atq : [ 0, 0, 1, 1, 2, 2, 3, 3, 4, 5 ],
 			  pod : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
 			  ins : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
+			  armas : { num: 1, arms: [ "Daga (1d4)", "Garfio (1d4)", "Arpón (1d6)", "Machete (1d6+1)", "Alfanje (1d6+1)", "Estoque (1d6)", "Sable (1d8)" ] },
 			},
 			{
 			  nombre : "Erudito/a",
@@ -74,6 +77,7 @@ class ClasesArr {
 			  atq : [ 0, 0, 0, 1, 1, 2, 2, 3, 3, 3 ],
 			  pod : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
 			  ins : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ],
+			  armas : { num: 1, arms: [ "Puñal (1d4)", "Bastón (1d6)", "Espada corta (1d6+1)", "Pistola (1d8)" ] },
 			},
 			{
 			  nombre : "Luchador/a",
@@ -83,6 +87,7 @@ class ClasesArr {
 			  atq : [ 0, 1, 1, 2, 2, 3, 4, 5, 6, 7 ],
 			  pod : [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
 			  ins : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ],
+			  armas : { num: 2, arms: [ "Daga (1d4)", "Lanza (1d6)", "Alfanje (1d6+1)", "Estoque (1d6)", "Sable (1d8)", "Espada larga (1d8)", "Pistola (1d8)", "Arcabuz (1d10)" ] },
 			},
 		]
 		

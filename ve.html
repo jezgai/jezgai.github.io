@@ -672,19 +672,22 @@
 
 		var shabs = Comun.tablaHabilidades();
 		
-		var stals = Comun.tablaTalentos();
+		//var stals = Comun.tablaTalentos();
 		//var stals = pj.tablaTalentos();
 				
 		document.getElementById("datos").innerHTML = "<table class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
 		document.getElementById("atributos").innerHTML = satrs;
-		document.getElementById("talentos").innerHTML = stals;
+		document.getElementById("talentos").innerHTML = pj.tablaTalentos();
 		document.getElementById("habilidades").innerHTML = shabs;
 		//dinero = Comun.random(8,1) * 100;
 		dinero = pj.din;
 		
-		document.getElementById("dtalentos").innerHTML = pj.tablaTalentos();
-		document.getElementById("dtalentos").style.visibility="visible";
+		//document.getElementById("dtalentos").innerHTML = pj.tablaTalentos();
+		document.getElementById("dinero").innerHTML = "<strong>Poder adquisitivo: </strong> " + pj._niveladq;
+		document.getElementById("dinero").innerHTML += pj.tablaEquipo();
+		document.getElementById("dtalentos").style.visibility="hidden";
+		
 		
 		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
 		document.getElementById("bgenerapdf").style.visibility="visible";

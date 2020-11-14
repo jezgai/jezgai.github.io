@@ -10,6 +10,19 @@ class PJAr extends PJBase {
 		this._doblones = 0;
 	}
 	
+	equipo(numero) {
+		var equipo = Comun.shuffle([ "Catalejo", "Pipa y tabaco", "Maletín de médico", "Instrumento musical", "Biblia",
+									 "Botella de ron", "Cuerno de pólvora y balas", "Pellejo de agua", "Cuerda", 
+									 "Farol de aceite", "Perfume", "Petate con manta", "Bastón con puño de plata", "Sombrero emplumado", "Espejo" ]);
+		if ( numero > equipo.length ) {
+			numero = equipo.length;
+		}
+		var ieq = 0;
+		this._equipo = [];
+		for (ieq = 0; ieq < numero; ieq++) {
+			this._equipo.push(equipo[ieq]);
+		}
+	}
 	
 	get pod() {
 		return this._pod;
@@ -51,12 +64,14 @@ class PJAr extends PJBase {
 	
 	
 	tablaTalentos() {
+		
 		var itals = 0;
 		var stals = "";
-		
+		var stals = "<table class='w3-table  w3-striped w3-border'><tr><th>Talentos</th></tr>";
 		for (itals = 0; itals < this._talentos.length; itals++) {
-			stals += "<br/><br/>" + clasesArr.dTalentos(this._talentos[itals]);
+			stals += "<tr><td>" + pj.talentos[itals] + " </td><td>" + clasesArr.dTalentos(this._talentos[itals]) + "</td></tr>";
 		}
+		stals += "</table>";
 		
 		return stals;
 	}
@@ -84,6 +99,37 @@ class PJAr extends PJBase {
 		}
 	}
 	
+	calculaEquipo() {
+		var num = this._objClase._armas.num;
+		if ( num > 1) {
+			num = Comun.random(this._objClase._armas.num, 1);
+		}
+		var iarms = 0;
+		this._armas = [];
+		var arms = Comun.shuffle(this._objClase._armas.arms.clone());
+		for (iarms = 0; iarms < num; iarms++) {
+			this._armas.push(arms[iarms]);
+		}
+		
+		var numequipo = 5 - num;
+		this.equipo(numequipo);
+		
+	}
+	
+	tablaEquipo() {
+		var indice = 0;
+		var sequipo = "<br/><strong>Armas</strong><br/>";
+		for (indice = 0; indice < this._armas.length; indice++) {
+			sequipo += this._armas[indice] + "<br/>";
+		}
+		sequipo += "<br/><strong>Equipo</strong><br/>";
+		for (indice = 0; indice < this._equipo.length; indice++) {
+			sequipo += this._equipo[indice] + "<br/>";
+		}
+		
+		return sequipo;
+	}
+	
 	genera() {
 		habilidades.habilidadesGen();
 		habilidades.ptos_niv = 2;
@@ -107,6 +153,9 @@ class PJAr extends PJBase {
 		this._niveladq = this._niveleseconomicos[Comun.random(6,0)];
 		
 		this.calculaDoblones();
+		
+		this.calculaEquipo();
+
 	}
 	
 	rellenaCamposPDF() {
@@ -118,6 +167,8 @@ class PJAr extends PJBase {
 				stalentos += ", " + this.talentos[itals];
 			}
 		}
+		
+		
 		var fields = {
 					'Nombre' : [ this.nombre ],
 					'Clase' : [ this.clase ],
@@ -147,9 +198,27 @@ class PJAr extends PJBase {
 					'Subterfugio' : [ this.habilidades[4] ],
 					'Supervivencia' : [ this.habilidades[5] ],
 					'Talentos' : [ stalentos ],
+					'Equipo' : [ stalentos ],
+					'Armas' : [ stalentos ],
 					'NivelAdquisitivo' : [ this._niveladq ],
 					'Doblones' : [ this._doblones ],
 		};
+		
+		if ( this._armas.length > 0 ) {
+			var iarms = 0;
+			for (iarms = 0; iarms < this._armas.length; iarms++) {
+				fields["Armas" + (iarms+1)] = [ this._armas[iarms] ];
+			}
+		}
+		
+		if ( this._equipo.length > 0 ) {
+			var ieqp = 0;
+			for (ieqp = 0; ieqp < this._equipo.length; ieqp++) {
+				fields["Equipo" + (ieqp+1)] = [ this._equipo[ieqp] ];
+			}
+		}
+		
+		
 		return fields;
 	}
 }
