@@ -35,6 +35,7 @@
 <script src="javascript/VPP_rama.js"></script>
 <script src="javascript/VPP_clase.js"></script>
 <script src="javascript/VPP_pj.js"></script>
+<script src="javascript/VEA_origenes.js"></script>
 <script src="javascript/VEA_clases.js"></script>
 <script src="javascript/VEA_pj.js"></script>
 
@@ -333,12 +334,15 @@
 
 		
 		var sclases = Comun.desplegableClases(clasesArr, "seleccionaclase");
+		var srazas = origenes.desplegableOrigenes("seleccionaraza");
 		var snivel = Comun.desplegableNivel(10, "seleccionanivel", "generaVEA");
 		var sboton = Comun.botonGenera("generaVEA");
 		
 		document.getElementById("sclases").innerHTML = sclases;
+		document.getElementById("srazas").innerHTML = srazas;
 		document.getElementById("snivel").innerHTML = snivel;
 		document.getElementById("bgenera").innerHTML = sboton;
+		document.getElementById("srazas").style.visibility="visible";
 	}	
 	
 	
@@ -663,10 +667,10 @@
 		vacia();
 				
 		pj = new PJAr(numeronivel);
+		pj._origen = nombreraza;
 		pj.clase = nombreclase;
 		
 		pj.genera();
-		
 		
 		var satrs = Comun.tablaAtributos();
 

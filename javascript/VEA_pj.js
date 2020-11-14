@@ -8,77 +8,24 @@ class PJAr extends PJBase {
 		this._objClase = null;
 		this._niveleseconomicos = [ "Vagabundo", "Pobre", "Propietario", "Acomodado", "Pudiente", "Rico" ];
 		this._doblones = 0;
+		this._origen = "";
 	}
 	
 	
 	origen() {
-		var num = Comun.random(100,1);
-		var origenes = [
-					{ 
-						origen: "Español/a", 
-						nombres: [ "Iñigo", "María", "Francisco", "Leonor", "Sancho", "Urraca", "Rodrigo", "Sol", "Lope", "Teresa", "Tello", "Jimena", "Alonso", "Blanca", "Fernando", "Elvira" ], 
-						apellidos: [ "Montoya", "Balboa", "Hoz", "Martínez", "Pizarro", "Cortés", "Trujillo", "Lara", "Haro", "Rivas", "Salcedo", "Zamudio", "Zurbano", "Castro", "Mondragón" ],
-						numero: { inferior: 1, superior: 20 },
-					},
-					{ 
-						origen: "Inglés/a", 
-						nombres: [ "Mary", "Jack", "Francis", "Sally", "Bartholomew", "Roger", "John", "Arnold", "Charlotte", "Elizabeth", "Grace", "Jules", "Anne", "Edward", "Kathy", "Jerry", "Henry" ], 
-						apellidos: [ "Kidd", "Tew", "Silver", "Jackson", "Vane", "Roberts", "Sparrow", "Parker", "Bonnet", "Bonny", "England", "Turner", "Rackham", "Morgan", "LeChuck", "Read", "Lancaster", "Teach", "Silver" ],
-						numero: { inferior: 21, superior: 48 },
-					},
-					{ 
-						origen: "Francés/a", 
-						nombres: [ "Jean", "Babette", "François", "Colette", "Henry", "Camile", "Robert", "Giselle", "Hippolyte", "Isabelle", "Olivier", "Ivette", "Marcel", "Jeanette", "Bernard", "Juliette", "Antoine", "Paulette", "Jerome", "Yvonne" ], 
-						apellidos: [ "Belleville", "Bouchard", "Blanchet", "Beluche", "Bart", "Fleury", "Surcouf", "Olonnais", "Lecleck", "Lafitte" ],
-						numero: { inferior: 49, superior: 65 },
-					},
-					{ 
-						origen: "Holandes/a", 
-						nombres: [ "Piet", "Ria", "Manfred", "Anki", "Ruud", "Drika", "Gerrit", "Antje", "Laurens", "Jetta", "Jenkin", "Lieke", "Ludger", "Annelien" ], 
-						apellidos: [ "Heyn", "De la Marck", "De Graff", "Holz", "Van Noort", "Verney" ], 
-						numero: { inferior: 66, superior: 70 },
-					},
-					{ 
-						origen: "Portugués/a", 
-						nombres: [ "Bartolomeu", "Manuela", "António", "Renata", "Nuno", "Lianor", "Rui", "Andiara", "Joao", "Xuxa", "Guilherme", "Aldonça", "Agostinho", "Zeita", "Americo", "Margaida", "André", "Costança", "Leão", "Graçea", "Vasco", "Jenevra", "Maureo", "Meçia" ], 
-						apellidos: [ "Galvao", "Salazar", "Oliveira", "Rodriguês", "Ferreira", "Pereira", "Sántos", "Carvalho", "Nogueira", "Baptista", "Pinheiro", "Afonso", "Mendes", "Almeida" ], 
-						numero: { inferior: 71, superior: 80 },
-					},
-					{ 
-						origen: "Africana/o", 
-						nombres: [ "Anua", "Delu", "Moroni", "Kande", "Tafari", "Nasha", "Daren", "Ashanti", "Mamadou", "Begum", "Keita", "Musoke", "Shaka", "Chayna", "Ayo", "Akanke", "Akin", "Lewa", "Kibo", "Ayana" ], 
-						apellidos: [ "Abara", "Abebe", "Abioye", "Abiodun", "Adisa", "Bankole", "Banmeke", "Chuke", "Dogo", "Falade", "Gowon", "Ladipo", "Ndiaye", "Okoro", "Uduike" ], 
-						numero: { inferior: 81, superior: 85 },
-					},
-					{ 
-						origen: "Indígena", 
-						nombres: [ "Sayri", "Illari", "Samin", "Sami", "Sayani", "Killari", "Kusi", "Yanai", "Antay", "Killa", "Wari", "Asiri", "Tupac", "Sulay", "Yaku", "Yuriana", "Katari", "Nuna", "Rumi", "Maywa" ], 
-						apellidos: [], 
-						numero: { inferior: 86, superior: 90 },
-					},
-					{ 
-						origen: "China/o", 
-						nombres: [ "Zhōu", "Wú", "Zhào", "Huáng", "Yáng", "Chén", "Liú", "Zhāng", "Yáng", "Wáng", "Cāo", "Gān", "Shì", "Biàn", "Chǒu", "Guō" ], 
-						apellidos: [ "Chao", "Bo", "Cong", "Chang", "Dewei", "Fang yin", "Fo", "Fei", "Hao", "Huang", "Huo", "Jia", "Jian", "Jin", "Joon", "Ju", "Kang", "Jun", "Kuo", "Lan", "Loq", "Lei", "Qiang", "Li", "Shaiming", "Liang", "Shun", "Lin", "Ya", "Ling", "Yen", "Lixue", "Yong", "Mingue" ],
-						numero: { inferior: 91, superior: 100 },
-					},
-			];
-			var iorigen = 0;
-			for (iorigen = 0; iorigen<origenes.length; iorigen++) {
-				if ( num >= origenes[iorigen].numero.inferior && num<= origenes[iorigen].numero.superior ) {
-					this._origen = origenes[iorigen].origen;
-					var tabla = [];
-					if ( origenes[iorigen].nombres.length > 0 ) {
-						tabla = Comun.shuffle(origenes[iorigen].nombres.clone());
-						this._nombre = tabla[0];
-					}
-					if ( origenes[iorigen].apellidos.length > 0 ) {
-						tabla = Comun.shuffle(origenes[iorigen].apellidos.clone());
-						this._nombre += " " + tabla[0];
-					}
-					break;
-				}
-			}
+		var objorigen = origenes.origen(this._origen);
+		
+		this._origen = objorigen.origen;
+		var tabla = [];
+		if ( objorigen.nombres.length > 0 ) {
+			tabla = Comun.shuffle(objorigen.nombres.clone());
+			this._nombre = tabla[0];
+		}
+		if ( objorigen.apellidos.length > 0 ) {
+			tabla = Comun.shuffle(objorigen.apellidos.clone());
+			this._nombre += " " + tabla[0];
+		}
+		
 	}
 	
 	
@@ -278,7 +225,6 @@ class PJAr extends PJBase {
 	}
 	
 	genera() {
-		this._origen = "";
 		habilidades.habilidadesGen();
 		habilidades.ptos_niv = 2;
 		atributos.ntiradasextras = 1;
