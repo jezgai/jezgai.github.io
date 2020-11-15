@@ -139,7 +139,7 @@ class PJAr extends PJBase {
 	}
 	
 	calculaHabilidades() {
-		this._habilidades = habilidades.puntuaciones1(this._nivel, this.modifAtributo(this._atributos[atributos.atributoMod("INT")]));
+		this._habilidades = habilidades.puntuaciones2(this._nivel, this.modifAtributo(this._atributos[atributos.atributoMod("INT")]));
 	}
 	
 	calculaPOD() {
@@ -152,7 +152,7 @@ class PJAr extends PJBase {
 	
 	calculaRasgosDerivados(atributo) {
 		this.calculaRasgosDerivadosBase(atributo);
-		if ( (atributo == 2 || atributo == 3) && this.modifAtributo(this.atributos[atributo]) != this.modifAtributo(atributo+1) ) {
+		if ( (atributo == 2 || atributo == 3) && this.modifAtributo(this.atributos[atributo]) != this.modifAtributo( (atributo+1)%6 ) ) {
 			this.calculaPOD();
 			this.calculaHabilidades();
 		}
