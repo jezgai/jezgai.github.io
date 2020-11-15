@@ -1,0 +1,649 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Dungeon Hack - Armas de fuego - Ayuda para crear personajes</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="javascript/DH_comun.js"></script>
+<script src="javascript/DHP_armas.js"></script>
+<script src="javascript/DHP_pj.js"></script>
+<script src="javascript/DHP_clase.js"></script>
+
+<script src="javascript/pdfform.minipdf.dist.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+
+<script>
+	
+	let armas = new Armas();
+	let armaduras = new Armaduras();
+	let clases = new Clases();
+
+	let pj = new DHP_PJ();
+	//let atributos = [];
+	
+	let nombreclase = 'random';
+	let hayclases = 0;
+	//let origen = "";
+	
+	let sclases = Comun.desplegableClases(clases, "seleccionaclases");
+	
+	
+	function rellenaPDF() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		var competencias = '';
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = {
+					'Nombre' : [ pj.nombrepj + pj.genero ],
+					'Clase' : [ pj.Clase.nombre ],
+					'Nivel' : [ 1 ],
+					'CheckFUE' : [ pj.mFUE == -1 ? true : false],
+					'CheckDES' : [ pj.mDES == -1 ? true : false],
+					'CheckCON_2' : [ pj.mCON == -1 ? true : false],
+					'CheckCON' : [ pj.mINT == -1 ? true : false],
+					'CheckSAB' : [ pj.mSAB == -1 ? true : false],
+					'CheckCAR' : [ pj.mCAR == -1 ? true : false],
+					'FUE' : [ pj.FUE + pj.mFUE ],
+					'DES' : [ pj.DES + pj.mDES ],
+					'CON' : [ pj.CON + pj.mCON ],
+					'INT' : [ pj.INT + pj.mINT ],
+					'SAB' : [ pj.SAB + pj.mSAB ],
+					'CAR' : [ pj.CAR + pj.mCAR ],
+					'NSALUD' : [ pj.Clase.salud ],
+					'NENERGIA' : [ pj.Clase.energia ],
+					'SaludSiguientes' : [ "Cordura: " + pj.Cordura ],
+					'Competencias' : [ document.getElementById("competencias").innerText ],
+					'Ventajas' : [ document.getElementById("ventajas").innerText ],
+					'Capacidades' : [ pj.Clase.lhabilidades ],
+					'NotasVarias' : [ document.getElementById("habilidades").innerText ],
+					'MonO' : [ pj.monO ],
+					'MonP' : [ pj._monP ],
+				};
+				
+				if ( pj._armas.length > 0 ) {
+					var indice = 0;
+					for (indice = 0; indice<pj._armas.length; indice++) {
+						fields["Arma" + (indice+1)] = [ pj._armas[indice].nombre ];
+						fields["Da#C3#B1o" + (indice+1) ] = [ pj._armas[indice].dano ];
+						if ( pj._armas[indice].du != "" ) {
+							fields["DU" + (indice+1) ] = [ pj._armas[indice].du ];
+						}
+					}
+				}
+				if ( pj._armadura != null ) {
+					fields["Proteccion1"] = [ pj._armadura.nombre ];
+					fields["Absorcion1"] = [ pj._armadura.absorcion ];
+					fields["PDU1"] = [ pj._armadura.du ];
+				}
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, pj.nombrepj + '.pdf'); //'PersonajeDH.pdf');
+			}
+		};
+
+
+		xhr.open('GET', 'pdf/DungeonHackFicha.pdf', true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}
+	
+
+	function seleccionaclases(thelist) {
+		
+		document.getElementById("atributos").innerHTML="";
+		document.getElementById("recursos").innerHTML="";
+		document.getElementById("competencias").innerHTML="";
+		document.getElementById("ventajas").innerHTML="";
+		document.getElementById("habilidades").innerHTML="";
+		document.getElementById("clase").innerHTML="";
+		document.getElementById("titulodescripcion").style.visibility="hidden";
+		document.getElementById("descripcion").innerHTML="";
+		document.getElementById("botonpdf").style.visibility="hidden";
+		
+		var idx = thelist.selectedIndex;
+		var seleccionado = thelist.options[idx].innerHTML;
+		if ( idx < 1 ) {
+			seleccionado = 'random';
+		}
+		nombreclase = seleccionado;
+	}
+	
+
+	function abajo(atributo) {
+		if ( atributo == 'FUE' ) {
+			var fue = pj.FUE;
+			pj.FUE = pj.DES;
+			pj.DES = fue;
+		}
+		else if ( atributo == 'DES' ) {
+			var des = pj.DES;
+			pj.DES = pj.CON;
+			pj.CON = des;
+		}
+		else if ( atributo == 'CON' ) {
+			var con = pj.CON;
+			pj.CON = pj.INT;
+			pj.INT = con;
+		}
+		else if ( atributo == 'INT' ) {
+			var sab = pj.SAB;
+			pj.SAB = pj.INT;
+			pj.INT = sab;
+		}
+		else if ( atributo == 'SAB' ) {
+			var car = pj.CAR;
+			pj.CAR = pj.SAB;
+			pj.SAB = car;
+		}
+		else if ( atributo == 'CAR' ) {
+			var fue = pj.FUE;
+			pj.FUE = pj.CAR;
+			pj.CAR = fue;
+		}
+		
+		pintaatributos();
+		pintaRecursos();
+		/*pintaderivados();
+		pintahabilidadesbase();
+		pintacourdura();*/
+	}
+
+	function construyeBoton(atributo)
+	{
+		return "</button><button class=\"w3-button w3-circle w3-brown w3-padding-small w3-tiny\" onclick=\"abajo('" + atributo + "')\">&#9660;</button>";
+	   //var strbutton = "<button class=\"w3-button w3-circle w3-green w3-padding-small w3-tiny\" onclick=\"arriba('" + atributo + "')\">&#9650;</button><button class=\"w3-button w3-circle w3-green w3-padding-small w3-tiny\" onclick=\"abajo('" + atributo + "')\">&#9660;</button>";
+	   //return strbutton;
+	}
+	
+	function pintablancosicero(valor) {
+		if ( valor == 0 )
+			return " ";
+		else
+			return valor;
+	}
+	
+	function checkFUE() {
+		pj.mFUE = -1;
+		pj.Atributo = "FUE";
+		pintaatributos();
+		pintaRecursos();
+	}
+	
+	function checkDES() {
+		pj.mDES = -1;
+		pj.Atributo = "DES";
+		pintaatributos();
+		pintaRecursos();
+	}
+	
+	function checkCON() {
+		pj.mCON = -1;
+		pj.Atributo = "CON";
+		pintaatributos();
+		pintaRecursos();
+	}
+	
+	function checkINT() {
+		pj.mINT = -1;
+		pj.Atributo = "INT";
+		pintaatributos();
+		pintaRecursos();
+	}
+	
+	function checkSAB() {
+		pj.mSAB = -1;
+		pj.Atributo = "SAB";
+		pintaatributos();
+		pintaRecursos();
+	}
+	
+	function checkCAR() {
+		pj.mCAR = -1;
+		pj.Atributo = "CAR";
+		pintaatributos();
+		pintaRecursos();
+	}
+	
+	function pintaatributos() {
+		var checkedFUE="";
+		if (pj.mFUE != 0)
+			checkedFUE = "checked='checked'";
+		var checkedDES="";
+		if (pj.mDES != 0)
+			checkedDES = "checked='checked'";
+		var checkedCON="";
+		if (pj.mCON != 0)
+			checkedCON = "checked='checked'";
+		var checkedINT="";
+		if (pj.mINT != 0)
+			checkedINT = "checked='checked'";
+		var checkedSAB="";
+		if (pj.mSAB != 0)
+			checkedSAB = "checked='checked'";
+		var checkedCAR="";
+		if (pj.mCAR != 0)
+			checkedCAR = "checked='checked'";
+			
+		document.getElementById("atributos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>FUE (Fuerza)</strong></td><td>" + pj.FUE +
+													  "</td><td>" + pintablancosicero(pj.mFUE) + "</td><td>" + (pj.FUE+pj.mFUE) +
+													  " </td><td>" + construyeBoton('FUE') + "</td><td><input type='radio' id='cFUE' name='ratrs' " + checkedFUE + " onclick=\"checkFUE();\"></td></tr>" +
+													  "<tr><td><strong>DES (Destreza)</strong></td><td>" + pj.DES +
+													  "</td><td>" + pintablancosicero(pj.mDES) + "</td><td>" + (pj.DES+pj.mDES) +
+													  " </td><td>" + construyeBoton('DES') + "</td><td><input type='radio' id='cDES' name='ratrs' " + checkedDES + " onclick=\"checkDES();\"></td></tr>" +
+            		                                  "<tr><td><strong>CON (Constitución)</strong></td><td>" + pj.CON +
+													  "</td><td>" + pintablancosicero(pj.mCON) + "</td><td>" + (pj.CON+pj.mCON) +
+													  " </td><td>" + construyeBoton('CON') + "</td><td><input type='radio' id='cCON' name='ratrs' " + checkedCON + " onclick=\"checkCON();\"></td></tr>" +
+													  "<tr><td><strong>INT (Inteligencia)</strong></td><td>" + pj.INT +
+													  "</td><td>" + pintablancosicero(pj.mINT) + "</td><td>" + (pj.INT+pj.mINT) +
+													  " </td><td>" + construyeBoton('INT') + "</td><td><input type='radio' id='cINT' name='ratrs' " + checkedINT + " onclick=\"checkINT();\"></td></tr>" +
+													  "<tr><td><strong>SAB (Sabiduria)</strong></td><td>" + pj.SAB +
+													  "</td><td>" + pintablancosicero(pj.mSAB) + "</td><td>" + (pj.SAB+pj.mSAB) +
+													  " </td><td>" + construyeBoton('SAB') + "</td><td><input type='radio' id='cSAB' name='ratrs' " + checkedSAB + " onclick=\"checkSAB();\"></td></tr>" +
+													  "<tr><td><strong>CAR (Carisma)</strong></td><td>" + pj.CAR +
+													  "</td><td>" + pintablancosicero(pj.mCAR) + "</td><td>" + (pj.CAR+pj.mCAR) +
+													  " </td><td>" + construyeBoton('CAR') + "</td><td><input type='radio' id='cCAR' name='ratrs' " + checkedCAR + " onclick=\"checkCAR();\"></td></tr></table>";
+
+		if ( deshabilitar("FUE") )
+			document.getElementById("cFUE").disabled = true;
+		if ( deshabilitar("DES") )
+			document.getElementById("cDES").disabled = true;
+		if ( deshabilitar("CON") )
+			document.getElementById("cCON").disabled = true;
+		if ( deshabilitar("INT") )
+			document.getElementById("cINT").disabled = true;
+		if ( deshabilitar("SAB") )
+			document.getElementById("cSAB").disabled = true;
+		if ( deshabilitar("CAR") )
+			document.getElementById("cCAR").disabled = true;
+
+	}
+	
+	function pintaRecursos() {
+		document.getElementById("recursos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>Salud</strong></td><td>" + pj.Clase.salud + "</td></tr>" +
+            		                                  "<tr><td><strong>Energía</strong></td><td>" + pj.Clase.energia + "</td></tr>" +
+													  "<tr><td><strong>Cordura</strong></td><td>" + pj.Cordura + "</td></tr></table>";
+	}
+	
+	function competenciasAstring() {
+		var competencias = "";
+		var icompe = 0;
+		for (icompe = 0; icompe < pj.Clase.competencias.length; icompe++) {
+			competencias += pj.Clase.competencias[icompe] + "\n";
+		}
+		return competencias;
+	}
+	
+	function pintaCompetencias() {
+		var competencias = "";
+		var icompe = 0;
+		for (icompe = 0; icompe < pj.Clase.competencias.length; icompe++) {
+			competencias += "<tr><td>" + pj.Clase.competencias[icompe] + "</td></tr>";
+		}
+		if ( competencias != "" ) 
+			competencias = "<table class='w3-table  w3-striped  w3-border'>" + competencias + "</table>";
+		document.getElementById("competencias").innerHTML = competencias;
+	}
+	
+	
+	function ventajasAstring() {
+		var ventajas = "";
+		var iventaja = 0;
+		for (iventaja = 0; iventaja < pj.Clase.ventajas.length; iventaja++) {
+			ventajas += pj.Clase.ventajas[iventaja] + "\n";
+		}
+		return ventajas;
+	}
+	
+	function pintaVentajas() {
+		var ventajas = "";
+		var iventaja = 0;
+		for (iventaja = 0; iventaja < pj.Clase.ventajas.length; iventaja++) {
+			ventajas += "<tr><td>" + pj.Clase.ventajas[iventaja] + "</td></tr>";
+		}
+		if ( ventajas != "" ) 
+			ventajas = "<table class='w3-table  w3-striped  w3-border'>" + ventajas + "</table>";
+		document.getElementById("ventajas").innerHTML = ventajas;
+	}
+	
+	function habilidadesAstring() {
+		var habilidades = "";
+		var ihabilidad = 0;
+		for (ihabilidad = 0; ihabilidad < pj.Clase.habilidades.length; ihabilidad++) {
+			habilidades += pj.Clase.habilidades[ihabilidad] + "\n";
+		}
+		return habilidades;
+	}
+	
+	function pintaHabilidades() {
+		var habilidades = "";
+		var ihabilidad = 0;
+		for (ihabilidad = 0; ihabilidad < pj.Clase.habilidades.length; ihabilidad++) {
+			habilidades += "<tr><td>" + pj.Clase.habilidades[ihabilidad] + "</td></tr>";
+		}
+		if ( habilidades != "" ) 
+			habilidades = "<table class='w3-table  w3-striped  w3-border'>" + habilidades + "</table>";
+		document.getElementById("habilidades").innerHTML = habilidades;
+	}
+	
+	
+	function deshabilitar(atrb) {
+		var iatrs=0;
+		for (iatrs=0; iatrs<pj.Clase.atributo.length; iatrs++) {
+			if ( atrb == pj.Clase.atributo[iatrs] )
+				return false;
+		}
+		return true;
+	}
+	
+	function calcula() {
+		
+		pj = new DHP_PJ();
+		pj.genera();
+		
+		if ( hayclases == 1) {
+			pj.Clase = clases.clase(nombreclase);
+			
+			if ( pj.Clase.atributo.length == 1 )
+				pj.Atributo = pj.Clase.atributo[0];
+									
+		}
+		
+		if ( pj.Atributo == "FUE" )
+			pj.mFUE = -1;
+		else if ( pj.Atributo == "DES" )
+			pj.mDES = -1;
+		else if ( pj.Atributo == "CON" )
+			pj.mCON = -1;
+		else if ( pj.Atributo == "INT" )
+			pj.mINT = -1;
+		else if ( pj.Atributo == "SAB" )
+			pj.mSAB = -1;
+		else if ( pj.Atributo == "CAR" )
+			pj.mCAR = -1;
+		
+		if ( pj.Clase.descripcion != "" ) {
+			document.getElementById("titulodescripcion").style.visibility="visible";
+			document.getElementById("descripcion").innerHTML=pj.Clase.descripcion;
+		}
+		else {
+			document.getElementById("titulodescripcion").style.visibility="hidden";
+			document.getElementById("descripcion").innerHTML="";
+		}
+		pintaatributos();
+		//document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> (" + pj.Clase.origen + ")</center></p>";
+		pintaRecursos();
+		pintaCompetencias();
+		pintaVentajas();
+		pintaHabilidades();
+		
+		if ( pj.Clase.nombresF.length > 0 && pj.Clase.nombresM.length > 0 ) {
+			var genero = Comun.random(2,1);
+			if ( genero == 1 ) {
+				pj.nombrepj = pj.Clase.nombresF[ Comun.random(pj.Clase.nombresF.length, 0) ];
+				if ( pj.Clase.motesF.length > 0 )
+					pj.nombrepj += " " + pj.Clase.motesF[ Comun.random(pj.Clase.motesF.length, 0) ];
+				pj.genero = " (F)";
+			}
+			else {
+				pj.nombrepj = pj.Clase.nombresM[ Comun.random(pj.Clase.nombresM.length, 0) ];
+				if ( pj.Clase.motesM.length > 0 )
+					pj.nombrepj += " " + pj.Clase.motesM[ Comun.random(pj.Clase.motesM.length, 0) ];
+				pj.genero = " (M)";
+			}
+		}
+		else if ( pj.Clase.nombresF.length > 0 ) {
+				pj.nombrepj = pj.Clase.nombresF[ Comun.random(pj.Clase.nombresF.length, 0) ];
+				if ( pj.Clase.motesF.length > 0 )
+					pj.nombrepj += " " + pj.Clase.motesF[ Comun.random(pj.Clase.motesF.length, 0) ];
+				pj.genero = " (F)";
+		}
+		else if ( pj.Clase.nombresM.length > 0 ) {
+				pj.nombrepj = pj.Clase.nombresM[ Comun.random(pj.Clase.nombresM.length, 0) ];
+				if ( pj.Clase.motesM.length > 0 )
+					pj.nombrepj += " " + pj.Clase.motesM[ Comun.random(pj.Clase.motesM.length, 0) ];
+				pj.genero = " (M)";
+		}
+		else {
+			pj.nombrepj = pj.Clase.nombre;
+			pj.genero = "";
+		}
+		
+		pj._armas = [];
+		if ( pj.Clase.equipo.narmasCaC > 0 ) {
+			var armasclase = Comun.shuffle(pj.Clase.equipo.armasCaC.clone());
+			var indice=0;
+			var armaelegida = null;
+			for (indice=0;indice<armasclase.length;indice++) {
+				armaelegida = armas.arma(armasclase[indice]);
+				if ( armaelegida != null ) {
+					var precioarma = armaelegida.precio * 10;
+					var dineropj = (pj._monO * 10) + pj._monP;
+					if ( precioarma < dineropj ) {
+						pj._armas.push(armaelegida);
+						var mp = dineropj - precioarma;
+						if ( mp % 10 == 0 ) {
+							pj._monO = Math.trunc(mp / 10);
+							pj._monP = 0;
+						}
+						else {
+							pj._monO = Math.trunc(mp / 10);
+							pj._monP = mp % 10;
+						}
+						break;
+					}
+				}
+			}
+		}
+		
+		if ( pj.Clase.equipo.narmasAD > 0 ) {
+			var armasclase = Comun.shuffle(pj.Clase.equipo.armasAD.clone());
+			var indice=0;
+			var armaelegida = null;
+			for (indice=0;indice<armasclase.length;indice++) {
+				armaelegida = armas.arma(armasclase[indice]);
+				if ( armaelegida != null ) {
+					var precioarma = armaelegida.precio * 10;
+					var dineropj = (pj._monO * 10) + pj._monP;
+					if ( precioarma < dineropj ) {
+						pj._armas.push(armaelegida);
+						var mp = dineropj - precioarma;
+						if ( mp % 10 == 0 ) {
+							pj._monO = Math.trunc(mp / 10);
+							pj._monP = 0;
+						}
+						else {
+							pj._monO = Math.trunc(mp / 10);
+							pj._monP = mp % 10;
+						}
+						break;
+					}
+				}
+			}
+		}
+		
+		if ( pj.Clase.equipo.armadura.length > 0 ) {
+			var armadurasclase = Comun.shuffle(pj.Clase.equipo.armadura.clone());
+			var indice=0;
+			var armaduraelegida = null;
+			for (indice=0;indice<armadurasclase.length;indice++) {
+				var armaduraelegida = armaduras.armadura(armadurasclase[indice]);
+				if ( armaduraelegida != null ) {
+					var precioarmadura = armaduraelegida.precio * 10;
+					var dineropj = (pj._monO * 10) + pj._monP;
+					if ( precioarmadura < dineropj ) {
+						pj._armadura = armaduraelegida;
+						var mp = dineropj - precioarmadura;
+						if ( mp % 10 == 0 ) {
+							pj._monO = Math.trunc(mp / 10);
+							pj._monP = 0;
+						}
+						else {
+							pj._monO = Math.trunc(mp / 10);
+							pj._monP = mp % 10;
+						}
+						break;
+					}
+				}
+			}
+		}
+		
+		var sequipo = "";
+		if ( pj._armas.length > 0 ) {
+			var indice = 0;
+			sequipo = "<table class='w3-table  w3-striped  w3-border'>";
+			sequipo += "<tr><th>Arma</th><th>Daño</th><th>DU</th></tr>";
+			for (indice = 0; indice<pj._armas.length; indice++) {
+				sequipo += "<tr><td>" + pj._armas[indice].nombre + "</td><td>" + pj._armas[indice].dano + "</td><td>" + pj._armas[indice].du + "</td></tr>";
+			}
+			sequipo +=  "</table>";
+		}
+		document.getElementById("armas").innerHTML=sequipo;
+		sequipo = "";
+		if ( pj._armadura != null ) {
+			sequipo = "<table class='w3-table  w3-striped  w3-border'>";
+			sequipo += "<tr><th>Armadura</th><th>Absorción</th><th>DU</th></tr>";
+			sequipo += "<tr><td>" + pj._armadura.nombre + "</td><td>" + pj._armadura.absorcion + "</td><td>" + pj._armadura.du + "</td></tr>";
+			sequipo +=  "</table>";
+		}
+		document.getElementById("armadura").innerHTML=sequipo;
+		
+		document.getElementById("dinero").innerHTML= pj._monO + " MO  " + pj._monP + " MP";
+		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> (" + pj.Clase.origen + ") - " + pj.nombrepj + pj.genero + "</center></p>";
+		document.getElementById("botonpdf").style.visibility="visible";
+	}
+	
+	function descarga() {
+		var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pj));
+		var jsonElem = document.getElementById('downloadpjsonpj');
+		jsonElem.setAttribute("href",     dataStr     );
+		jsonElem.setAttribute("download", "pj.json");
+		jsonElem.click();
+		
+	}
+	
+	function conclases() {
+		document.getElementById("atributos").innerHTML="";
+		document.getElementById("recursos").innerHTML="";
+		document.getElementById("competencias").innerHTML="";
+		document.getElementById("ventajas").innerHTML="";
+		document.getElementById("habilidades").innerHTML="";
+		document.getElementById("clase").innerHTML="";
+		document.getElementById("titulodescripcion").style.visibility="hidden";
+		document.getElementById("descripcion").innerHTML="";
+		document.getElementById("botonpdf").style.visibility="hidden";
+		
+		hayclases = 1;
+		document.getElementById("clases").innerHTML = sclases;
+		//document.getElementById("botonclase").innerHTML = "<p></p>";
+	}
+	
+</script>
+<style>
+	
+* {
+  box-sizing: border-box;
+}
+.left {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.minileft {
+  float:left;
+  width:17%;
+  padding:0 1px;
+}
+.main {
+  float:left;
+  width:34%;
+  padding:0 1px;
+}
+.right {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.total {
+  float:left;
+  width:100%;
+  padding:0 1px;
+}
+
+
+
+@media only screen and (max-width:820px) {
+  /* For mobile phones: */
+  .left, .minileft, .main, .right, .total {
+    width:100%;
+  }
+  
+</style>
+</head>
+<body >
+	<div class="w3-container w3-brown w3-center">
+	  <h2>Dungeon Hack - Armas de fuego - Ayuda para crear personajes</h2>
+	</div>
+	<div style="overflow:auto">
+	
+		<div class="left" id="clases">
+			<p><button class='w3-button w3-block w3-teal' onclick='conclases()'>Clases</button></p>
+		</div>
+		<div class="minileft"><p><button class='w3-button w3-block w3-brown' onclick='calcula()'>Calcula</button></p></div>
+		<div class="minileft" id="botonpdf"><p><button class='w3-button w3-block w3-brown' onclick='rellenaPDF()'>Genera PDF</button></p></div>
+		<div class="right" id="clase"><p></p></div>
+	</div>
+	<div style="overflow:auto">
+	
+		<div class="left">
+			<div class="w3-container w3-brown w3-center"><p><strong>Atributos</strong></p></div> 
+			<div id="atributos"></div>
+		</div>
+		<div class="main">
+			<div class="w3-container w3-brown w3-center"><p><strong>Recursos</strong></p></div> 
+			<div id="recursos"></div>
+			
+			<div class="w3-container w3-brown w3-center"><p><strong>Competencias</strong></p></div> 
+			<div id="competencias"></div>
+		</div>
+		<div class="right">
+			<div class="w3-container w3-brown w3-center"><p><strong>Ventajas</strong></p></div> 
+			<div id="ventajas"></div>
+			<div class="w3-container w3-brown w3-center"><p><strong>Dinero</strong></p></div> 
+			<div id="dinero"></div>
+		</div>
+	</div>
+	<div style="overflow:auto">
+		<!--<div class="left">
+			<div class="w3-container w3-brown w3-center"><p><strong>Competencias</strong></p></div> 
+			<div id="competencias"></div>
+		</div>-->
+		<div class="total">
+			<div class="w3-container w3-brown w3-center"><p><strong>Habilidades</strong></p></div> 
+			<div id="habilidades"></div>
+		</div>
+	</div>
+	<div style="overflow:auto"  id="titulodescripcion">
+		<div class="total"  >
+			<div class="w3-container w3-brown w3-center"><p><strong>Descripción de la clase</strong></p></div> 
+			<div id="descripcion" ></div>
+		</div>
+		<div class="left"  >
+			<div class="w3-container w3-brown w3-center"><p><strong>Armas</strong></p></div> 
+			<div id="armas" ></div>
+		</div>
+		<div class="main"  >
+			<div class="w3-container w3-brown w3-center"><p><strong>Protecciones</strong></p></div> 
+			<div id="armadura" ></div>
+		</div>
+	</div>
+	
+	<script>conclases();</script>
+</body>
+</html>
+
