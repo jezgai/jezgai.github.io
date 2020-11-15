@@ -92,17 +92,6 @@ class Armas {
 				precio: 70,
 			},
 			{
-				nombre: "Bastón",
-				tipo: "CaC", 
-				alcance: "",
-				dano: "1d3",
-				du: "",
-				recarga: "",
-				descarga: "",
-				municion: "",
-				precio: 0.2,
-			},
-			{
 				nombre: "Cuchillo",
 				tipo: "CaC", 
 				alcance: "",
