@@ -60,6 +60,77 @@
 					'Pegada' : [ pj.pegada ],
 					'Movimiento' : [ pj.mov ],
 					'Concentracion' : [ pj.concentracion ],
+					'PV' : [ pj.pv ],
+					'PVActual' : [ pj.pv ],
+					'SueldoMensual' : [ pj.sueldo + "$" ],
+					'Ahorros' : [ pj.ahorros + "$" ],
+					'Vivienda1' : [ pj.posesiones + "$ en posesiones" ],
+					'Biografia' : [ document.getElementById("ptosextra").innerText + document.getElementById("dotesinvestigativas").innerText + habilidadesaelegir ],
+					'GravementeHerido' : [ pj._gravementeherido ],
+				};
+				
+				
+				var indpri=0;
+		
+				var habpj = Comun.habilidadesPJ(pj.profesion.habprincipales, pj.profesion.nhabprincipales);
+		
+				for (indpri=0;indpri<pj.profesion.nhabprincipales;indpri++) {
+					fields[ listaHabilidades.campopdf(habpj.habilidades[indpri]) ] = [ pj.habprimarias[indpri] ];
+				}
+			  
+				habpj = Comun.habilidadesPJ(pj.profesion.habsecundarias, pj.profesion.nhabsecundarias);
+				
+				for (indpri=0;indpri<pj.profesion.nhabsecundarias;indpri++) {
+					if ( indpri < habpj.habilidades.length && listaHabilidades.existehabilidad(habpj.habilidades[indpri]) )
+						fields[ listaHabilidades.campopdf(habpj.habilidades[indpri]) ] = [ pj.habsecundarias[indpri] ];
+				}
+			  
+				
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, pj.profesion.nombre + '.pdf'); //'PersonajeDH.pdf');
+			}
+		};
+
+
+		xhr.open('GET', 'pdf/Hardboiled.pdf', true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}
+		
+
+	function rellenaPDFCordura() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		var habilidadesaelegir = '';
+		if ( profesion.nombre == "Diletante" ) {
+			var indpri=0;
+			habilidadesaelegir = "Reparte las siguientes puntuaciones entre 10 habilidades distintas de las principales: " + pj.habsecundarias[0];
+					
+			for (indpri=1;indpri<pj.profesion.nhabsecundarias;indpri++) {
+				habilidadesaelegir += ", " + pj.habsecundarias[indpri];
+			}
+		}
+		else if ( profesion.nombre == "Atleta" ) {
+			habilidadesaelegir = "Asigna " + pj.habsecundarias[9] + " puntos a Ciencia Natural o Humanidades.";
+		}
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = {
+					'Profesion' : [ pj.profesion.nombre ],
+					'Nivel' : [ 1 ],
+					'Vigor' : [ pj.vigor ],
+					'Destreza' : [ pj.destreza ],
+					'Perspicacia' : [ pj.perspicacia ],
+					'Carisma' : [ pj.carisma ],
+					'Suerte' : [ pj.suerte ],
+					'Pegada' : [ pj.pegada ],
+					'Movimiento' : [ pj.mov ],
+					'Concentracion' : [ pj.concentracion ],
 					'Cordura' : [ pj.cordura ],
 					'CorduraActual' : [ pj.cordura ],
 					'PV' : [ pj.pv ],
@@ -68,6 +139,7 @@
 					'Ahorros' : [ pj.ahorros + "$" ],
 					'Vivienda1' : [ pj.posesiones + "$ en posesiones" ],
 					'Biografia' : [ document.getElementById("ptosextra").innerText + document.getElementById("dotesinvestigativas").innerText + habilidadesaelegir ],
+					'GravementeHerido' : [ pj._gravementeherido ],
 				};
 				
 				
@@ -344,6 +416,7 @@
 			//	document.getElementById("atributos").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border' <tr><td><strong>Requisitos</strong></td><td>" + requisitos + "</td></tr></table>";
 		}
 		document.getElementById("botonpdf").style.visibility="visible";
+		document.getElementById("botonpdfCOR").style.visibility="visible";
 		
 	}
 	
@@ -358,6 +431,7 @@
 	
 	function conprofesiones() {
 		document.getElementById("botonpdf").style.visibility="hidden";
+		document.getElementById("botonpdfCOR").style.visibility="hidden";
 		document.getElementById("atributos").innerHTML="";
 		document.getElementById("habprimaria").innerHTML="";
 		document.getElementById("habsecundaria").innerHTML="";
@@ -421,8 +495,9 @@
 		<div class="cuarto" id="profesiones">
 			<p><button class='w3-button w3-block w3-teal' onclick='conprofesiones()'>Profesiones</button></p>
 		</div>
-		<div class="terciocentral"><p><button class='w3-button w3-block w3-green' onclick='calcula()'>Calcula</button></p></div>
+		<div class="minicentral"><p><button class='w3-button w3-block w3-green' onclick='calcula()'>Calcula</button></p></div>
 		<div class="minicentral" id="botonpdf"><p><button class='w3-button w3-block w3-green' onclick='rellenaPDF()'>Genera PDF</button></p></div>
+		<div class="minicentral" id="botonpdfCOR"><p><button class='w3-button w3-block w3-green' onclick='rellenaPDFCordura()'>Genera PDF con Cordura</button></p></div>
 		<div class="cuarto" id="profesion"><p></p></div>
 	</div>
 	

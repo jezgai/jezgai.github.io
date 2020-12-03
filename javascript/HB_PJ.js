@@ -18,6 +18,7 @@ class HB_PJ {
 		this._ahorros = 0;
 		this._posesiones = 0;
 		this._sueldo = 0;
+		this._gravementeherido = 0;
 	}
 
 	get ahorros() {
@@ -195,6 +196,8 @@ class HB_PJ {
 			this._pv += Comun.random(10,1);
 		}
 		this._pv += modpv;
+		
+		this._gravementeherido = Math.round(this._pv / 2);
 	}
 	
 	rangomovimiento() {
