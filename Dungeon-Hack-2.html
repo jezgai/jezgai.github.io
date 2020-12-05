@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="javascript/DH_comun2.js"></script>
+<script src="javascript/DH_equipo.js"></script>
 <script src="javascript/DH_PJ2.js"></script>
 <script src="javascript/DH_clasebase.js"></script>
 <script src="javascript/DH_clase2.js"></script>
@@ -27,6 +28,11 @@
 	let nombreespecie = 'random';
 	let hayclases = 0;
 	//let origen = "";
+	
+	let armas = new Armas();
+	let armaduras = new Armaduras();
+	let escudos = new Escudos();
+	let paquetes = new Paquetes();
 	
 	let sclases = Comun.desplegableClases(clases, "seleccionaclases");
 	let sespecies = Comun.desplegableEspecies(especies, "seleccionaespecies");
@@ -67,6 +73,51 @@
 					'MonO' : [ pj.monO ],
 				};
 				
+				if ( pj._monO > 0 ) {
+					fields['MonO'] = [ pj._monO ];
+				}
+				if ( pj._monP > 0 ) {
+					fields['MonP'] = [ pj._monP ];
+				}
+				
+				
+				if ( pj._armas.length > 0 ) {
+					var indice = 0;
+					for (indice = 0; indice<pj._armas.length; indice++) {
+						fields["Arma" + (indice+1)] = [ pj._armas[indice].nombre ];
+						fields["Da#C3#B1o" + (indice+1) ] = [ pj._armas[indice].dano ];
+						if ( pj._armas[indice].du != "" ) {
+							fields["DU" + (indice+1) ] = [ pj._armas[indice].du ];
+						}
+					}
+				}
+				var nProteccion=1;
+				if ( pj._armadura != null ) {
+					fields["Proteccion" + nProteccion] = [ pj._armadura.nombre ];
+					fields["Absorcion" + nProteccion] = [ pj._armadura.absorcion ];
+					fields["PDU" + nProteccion] = [ pj._armadura.du ];
+					nProteccion++;
+				}
+				
+				if ( pj._escudo != null ) {
+					fields["Proteccion" + nProteccion] = [ pj._escudo.nombre ];
+					fields["Absorcion" + nProteccion] = [ pj._escudo.absorcion ];
+					fields["PDU" + nProteccion] = [ pj._escudo.du ];
+				}
+				
+				if ( pj._equipo != null) {
+					var indice = 0;
+					for (indice = 0; indice<pj._equipo.componentes.length; indice++) {
+						fields["Objeto" + (indice+1)] = [ pj._equipo.componentes[indice] ];
+					}
+				}
+				
+				if ( pj._conjuros.length > 0 ) {
+					var indice = 0;
+					for ( indice = 0; indice < pj._conjuros.length; indice++ ) {
+						fields[ 'Poder' + (indice+1) ] = [ pj._conjuros[indice] ];
+					}
+				}
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
 			  saveAs(blob, pj.nombrepj + '.pdf'); // 'PersonajeDH.pdf');
@@ -88,9 +139,15 @@
 		document.getElementById("ventajas").innerHTML="";
 		document.getElementById("habilidades").innerHTML="";
 		document.getElementById("clase").innerHTML="";
+		document.getElementById("requisitos").innerHTML="";
+		document.getElementById("rapidez").innerHTML="";
+		document.getElementById("lconjuros").innerHTML="";
 		document.getElementById("titulodescripcion").style.visibility="hidden";
 		document.getElementById("descripcion").innerHTML="";
+		document.getElementById("seccionequipo").style.visibility="hidden";
+		document.getElementById("descripcion").innerHTML="";
 		document.getElementById("botonpdf").style.visibility="hidden";
+		document.getElementById("conjuros").style.visibility="hidden";
 	}
 
 	function seleccionaclases(thelist) {
@@ -326,6 +383,27 @@
 		return true;
 	}
 	
+	function calculaConjuros() {
+		
+		var conjuros = pj.Conjuros;
+		if ( conjuros.length > 0 )
+		{
+			var indice = 0;
+			var sconjuros = conjuros[0];
+			for (indice=1; indice<conjuros.length; indice++) 
+			{
+				sconjuros += ", " + conjuros[indice];
+			}
+			document.getElementById("lconjuros").innerHTML = sconjuros;
+			document.getElementById("conjuros").style.visibility="visible";
+		}
+		else 
+		{
+			document.getElementById("conjuros").style.visibility="hidden";
+		}
+		
+	}
+	
 	function calcula() {
 		
 		pj = new DH_PJ();
@@ -333,28 +411,17 @@
 		
 		atributos = [];
 		var nbclase = nombreclase;
-		if ( hayclases == 1) {
+		/*if ( hayclases == 1) {
 			pj.Clase = clases.clase(nombreclase);
-			/*pj.Energia = clase.energia;
-			pj.Salud = clase.salud;
-			atributos = clase.atributo;*/
+			
 			if ( pj.Clase.atributo.length == 1 )
 				pj.Atributo = pj.Clase.atributo[0];
-			/*nbclase = clase.nombre;
 			
-			pj.Competencias = clase.competencias;
-			pj.Ventajas = clase.ventajas;
-			pj.Habilidades = clase.habilidades;
-			pj.Cordura = clase.cordura;
-			origen = clase.origen;*/
-		}
+		}*/
 		
 		var nbespecie = nombreespecie;
-		pj.Especie = especies.especie(nombreespecie);
-		/*pj.Requisitos = especie.requisitos;
-		pj.Rapidez = especie.rapidez;
-		pj.HabilidadesEspecie = especie.habilidades;
-		nbespecie = especie.nombre;*/
+		//pj.Especie = especies.especie(nombreespecie);
+		
 		
 		if ( pj.Atributo == "FUE" )
 			pj.mFUE = -1;
@@ -412,8 +479,53 @@
 			pj.genero = "";
 		}
 		
+		calculaConjuros();
+		
+		
+		if ( pj._equipo != null || pj._monO > 0  || pj._monP > 0 || pj._armas.length > 0 || pj._armadura != null || pj._equipo != null ) {
+			var equipo = "<table class='w3-table  w3-striped  w3-border'>";
+			if ( pj._equipo != null ) {
+				equipo += "<tr><td><strong>Dinero</strong></td></tr>";
+				equipo += "<tr><td>" + pj._equipo.nombre + "</td></tr>";				
+			}			
+			if ( pj._monO > 0  || pj._monP > 0) {
+				equipo += "<tr><td><strong>Dinero</strong></td></tr>";
+				var dinero="";
+				if ( pj._monO > 0 )
+					dinero += pj._monO + " mo";
+				if ( pj._monP > 0 ) {
+					if ( dinero != "" ) 
+						dinero += " ";
+					dinero += pj._monP + " mp";
+				}
+				equipo += "<tr><td>" + dinero + "</td></tr>";
+			}
+			if ( pj._armas.length > 0 ) {
+				equipo += "<tr><td><strong>Armas</strong></td></tr>";
+				var _indice = 0;
+				for (_indice = 0; _indice <pj._armas.length; _indice++) {
+					equipo += "<tr><td>" + pj._armas[_indice].nombre + "</td></tr>";
+				}
+			}
+			if ( pj._armadura != null ) {
+				equipo += "<tr><td><strong>Armadura</strong></td></tr>";
+				equipo += "<tr><td>" + pj._armadura.nombre + "</td></tr>";
+			}
+			if ( pj._escudo != null ) {
+				equipo += "<tr><td><strong>Escudo</strong></td></tr>";
+				equipo += "<tr><td>" + pj._escudo.nombre + "</td></tr>";
+			}
+			equipo += "</table>";
+			document.getElementById("equipo").innerHTML=equipo;
+			document.getElementById("seccionequipo").style.visibility="visible";
+		}
+		else {
+			document.getElementById("seccionequipo").style.visibility="hidden";
+			document.getElementById("equipo").innerHTML="";
+		}
+		
 		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> (" + pj.Clase.origen + ") <strong>ESPECIE: " + pj.Especie.nombre + "</strong> - " + pj.nombrepj + pj.genero + "</center></p>";
-				
+			
 		document.getElementById("botonpdf").style.visibility="visible";
 	}
 	
@@ -432,6 +544,8 @@
 		hayclases = 1;
 		document.getElementById("clases").innerHTML = sclases;
 		document.getElementById("especies").innerHTML = sespecies;
+		
+		document.getElementById("conjuros").style.visibility="hidden";
 		//document.getElementById("botonclase").innerHTML = "<p></p>";
 	}
 	
@@ -471,9 +585,19 @@
   width:52%;
   padding:0 1px;
 }
+.casitotal {
+  float:left;
+  width:82%;
+  padding:0 1px;
+}
 .total {
   float:left;
   width:100%;
+  padding:0 1px;
+}
+.dostercios {
+  float:left;
+  width:67%;
   padding:0 1px;
 }
 
@@ -481,7 +605,7 @@
 
 @media only screen and (max-width:820px) {
   /* For mobile phones: */
-  .left, .main, .minileft, .microleft, .macroright, .right, .total, .minileft {
+  .left, .main, .minileft, .microleft, .macroright, .right, .casitotal, .total, .minileft, .dostercios {
     width:100%;
   }
   
@@ -528,13 +652,22 @@
 			<div class="w3-container w3-blue w3-center"><p><strong>Competencias</strong></p></div> 
 			<div id="competencias"></div>
 		</div>-->
+		<div class="total" id="conjuros">
+			<div class="w3-container w3-blue w3-center"><p><strong>Conjuros</strong></p></div> 
+			<div class="casitotal" id="lconjuros"></div>
+			<div class="microleft" ><button class='w3-button w3-block w3-blue' onclick='calculaConjuros()'>Recalcula</button></div>
+		</div>
 		<div class="total">
 			<div class="w3-container w3-blue w3-center"><p><strong>Habilidades</strong></p></div> 
 			<div id="habilidades"></div>
 		</div>
 	</div>
-	<div style="overflow:auto"  id="titulodescripcion">
-		<div class="total"  >
+	<div style="overflow:auto" >
+		<div class="left" id="seccionequipo" >
+			<div class="w3-container w3-blue w3-center"><p><strong>Equipo</strong></p></div> 
+			<div id="equipo" ></div>
+		</div>
+		<div class="dostercios" id="titulodescripcion" >
 			<div class="w3-container w3-blue w3-center"><p><strong>Descripción de la clase</strong></p></div> 
 			<div id="descripcion" ></div>
 		</div>

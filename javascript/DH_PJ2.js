@@ -28,6 +28,11 @@ class DH_PJ {
 		this._nombrepj = "";
 		this._genero = "";
 		this._monO = 0;
+		this._monP = 0;
+		this._conjuros = [];
+		this._armas = [];
+		this._armadura = null;
+		this._equipo = null;
 	}
 	
 	get monO() {
@@ -235,6 +240,163 @@ class DH_PJ {
 		this._mCAR = 0;
 	}
 	
+	get Conjuros() {
+		this._conjuros = this._Clase.conjuros;
+		return this._conjuros;
+	}
+	
+	
+	calculaEquipo() {
+		this._equipo = null;
+		if ( this._Clase.equipo.paquete != "" ) {
+			this._equipo = paquetes.paquete(this._Clase.equipo.paquete);
+			var preciopaquete = this._equipo.precio * 10;
+			var dineropj = (this._monO * 10) + this._monP;
+			if ( preciopaquete < dineropj ) {
+				var mp = dineropj - preciopaquete;
+				if ( mp % 10 == 0 ) {
+					this._monO = Math.trunc(mp / 10);
+					this._monP = 0;
+				}
+				else {
+					this._monO = Math.trunc(mp / 10);
+					this._monP = mp % 10;
+				}
+			}
+			else {
+				this._equipo = null;
+			}
+		}
+	}
+	
+	calculaArmasCaC() {
+		this._armas = [];
+		if ( this._Clase.equipo.narmasCaC > 0 ) {
+			var armasclase = Comun.shuffle(this._Clase.equipo.armasCaC.clone());
+			var indice=0;
+			var armaelegida = null;
+			var numarmas = 0;
+			for (indice=0;indice<armasclase.length;indice++) {
+				armaelegida = armas.arma(armasclase[indice]);
+				if ( armaelegida != null ) {
+					var precioarma = armaelegida.precio * 10;
+					var dineropj = (this._monO * 10) + this._monP;
+					if ( precioarma < dineropj ) {
+						this._armas.push(armaelegida);
+						var mp = dineropj - precioarma;
+						if ( mp % 10 == 0 ) {
+							this._monO = Math.trunc(mp / 10);
+							this._monP = 0;
+						}
+						else {
+							this._monO = Math.trunc(mp / 10);
+							this._monP = mp % 10;
+						}
+						numarmas++;
+						if ( numarmas >= this._Clase.equipo.narmasCaC )
+							break;
+					}
+				}
+			}
+		}
+	}
+	
+	calculaArmasAD() {
+		if ( this._Clase.equipo.narmasAD > 0 ) {
+			var armasclase = Comun.shuffle(this._Clase.equipo.armasAD.clone());
+			var indice=0;
+			var armaelegida = null;
+			var numarmas = 0;
+			for (indice=0;indice<armasclase.length;indice++) {
+				armaelegida = armas.arma(armasclase[indice]);
+				if ( armaelegida != null ) {
+					var precioarma = armaelegida.precio * 10;
+					var dineropj = (this._monO * 10) + this._monP;
+					if ( precioarma < dineropj ) {
+						this._armas.push(armaelegida);
+						var mp = dineropj - precioarma;
+						if ( mp % 10 == 0 ) {
+							this._monO = Math.trunc(mp / 10);
+							this._monP = 0;
+						}
+						else {
+							this._monO = Math.trunc(mp / 10);
+							this._monP = mp % 10;
+						}
+						numarmas++;
+						if ( numarmas >= this._Clase.equipo.narmasAD )
+							break;
+						break;
+					}
+				}
+			}
+		}
+	}
+		
+	calculaArmadura() {
+		this._armadura = null;
+		if ( this._Clase.equipo.armadura.length > 0 ) {
+			var armadurasclase = Comun.shuffle(this._Clase.equipo.armadura.clone());
+			var indice=0;
+			var armaduraelegida = null;
+			for (indice=0;indice<armadurasclase.length;indice++) {
+				var armaduraelegida = armaduras.armadura(armadurasclase[indice]);
+				if ( armaduraelegida != null ) {
+					var precioarmadura = armaduraelegida.precio * 10;
+					var dineropj = (this._monO * 10) + this._monP;
+					if ( precioarmadura < dineropj ) {
+						this._armadura = armaduraelegida;
+						var mp = dineropj - precioarmadura;
+						if ( mp % 10 == 0 ) {
+							this._monO = Math.trunc(mp / 10);
+							this._monP = 0;
+						}
+						else {
+							this._monO = Math.trunc(mp / 10);
+							this._monP = mp % 10;
+						}
+						break;
+					}
+				}
+			}
+		}
+	}
+	
+	calculaEscudo() {
+		this._escudo = null;
+		if ( this._Clase.equipo.escudo.length > 0 ) {
+			var escudosclase = Comun.shuffle(this._Clase.equipo.escudo.clone());
+			var indice=0;
+			var escudoelegido = null;
+			for (indice=0;indice<escudosclase.length;indice++) {
+				var escudoelegido = escudos.escudo(escudosclase[indice]);
+				if ( escudoelegido != null ) {
+					var precioescudo = escudoelegido.precio * 10;
+					var dineropj = (this._monO * 10) + this._monP;
+					if ( precioescudo < dineropj ) {
+						this._escudo = escudoelegido;
+						var mp = dineropj - precioescudo;
+						if ( mp % 10 == 0 ) {
+							this._monO = Math.trunc(mp / 10);
+							this._monP = 0;
+						}
+						else {
+							this._monO = Math.trunc(mp / 10);
+							this._monP = mp % 10;
+						}
+						break;
+					}
+				}
+			}
+		}
+	}
+	
+	calculaDinero() {
+		
+		this._monO = 10 * (Comun.random(12,1) + Comun.random(12,1));
+	}
+	
+	
 	genera() {
 		
 		this._FUE = Comun.atributo();
@@ -244,7 +406,19 @@ class DH_PJ {
 		this._SAB = Comun.atributo();
 		this._CAR = Comun.atributo();
 		
-		this._monO = 10 * (Comun.random(12,1) + Comun.random(12,1));
+		this._Clase = clases.clase(nombreclase);
+		
+		if ( this._Clase.atributo.length == 1 )
+			this.Atributo = this._Clase.atributo[0];
+		
+		this.Especie = especies.especie(nombreespecie);
+				
+		this.calculaDinero();
+		this.calculaEquipo();
+		this.calculaArmasCaC();
+		this.calculaArmadura();
+		this.calculaArmasAD();
+		this.calculaEscudo();
 	}
 	
 }

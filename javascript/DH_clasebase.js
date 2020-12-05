@@ -13,6 +13,12 @@ class ClaseBase {
 		this._descripcion = clase.descripcion;
 		this._nombresF = clase.nombresF;
 		this._nombresM = clase.nombresM;
+		this._magia = clase.magia;
+		this._equipo = clase.equipo;
+	}
+	
+	get equipo() {
+		return this._equipo;
 	}
 	
 	get nombresF() {
@@ -80,7 +86,31 @@ class ClaseBase {
 
 	get lhabilidades() {
 		return this._lhabilidades;
-	}	
+	}
+	
+	get conjuros() {
+		var lconjuros = [];
+		if ( this._magia.numero == -1 )
+			return lconjuros;
+		var conjurosreordenados = null;
+		var numero = this._magia.numero;
+		if ( numero == 0 )
+		{
+			conjurosreordenados = this._magia.conjuros.clone();
+			numero = this._magia.conjuros.length;
+		}
+		else
+		{
+			conjurosreordenados = Comun.shuffle(this._magia.conjuros.clone());
+		}
+		
+		var indice=0;
+		for (indice=0; indice<numero; indice++) 
+		{
+			lconjuros.push(conjurosreordenados[indice]);
+		}
+		return lconjuros;
+	}
 }
 
 
@@ -105,7 +135,12 @@ class ClasesBases {
 							" estepas heladas o páramos desérticos de los que provienes. Prefieres celebrar los logros inmediatos, regodearte en la gloria de un buen combate y acabar con aquellos que amenazan lo tuyo. A pesar de tu rudeza, tus aliados te aprecian, y tú a ellos, siempre y cuando respeten tu particular código de honor.",
 			  nombresF: [ "Anya", "Bertha", "Helga", "Sashka", "Valeria", "Zuri" ],
 			  nombresM: [ "Aethe", "Frothak", "Morgulf", "Vavfir", "Skörn", "Thaddeus" ],
-							
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 1, armasAD: [ "Arco corto", "Honda" ], 
+						narmasCaC: 1, armasCaC: [ "Espada larga", "Hacha de batalla", "Gran hacha", "Espadón" ], 
+						escudo: [ ],
+						armadura: [ "Acolchada", "Cuero", "Piel", "Cuero tachonado" ],
+						paquete: "Paquete de exploración", },
 			},
 			{
 			  nombre : "Bardo",
@@ -124,6 +159,12 @@ class ClasesBases {
 "Al ser un viajero, reúnes un montón de conocimientos interesantes que te ayudan a sobrevivir durante las largas caminatas. Tus habilidades de combate son famosas, demostrando que eres un combatiente ducho sin miedo a los duelos.",
 			  nombresF: [ "Ariana", "Bimba", "Fiorella", "Germanotta", "Modestia", "Soshana" ],
 			  nombresM: [ "Alhigas", "Dreyfus", "Jaafan", "Marius", "Nerón", "Uriel" ],
+			  magia: { numero:2, conjuros: [ "Burla cruel", "Mano de mago", "Leer magia", "Luz", "Remendar" ] },
+			  equipo: { narmasAD: 1, armasAD: [ "Arco corto", "Arco largo" ], 
+						narmasCaC: 1, armasCaC: [ "Espada larga", "Espada ropera", "Espada corta" ], 
+						escudo: [ ],
+						armadura: [ "Acolchada", "Cuero", "Cota de anillas", "Cuero tachonado" ],
+						paquete: "Paquete del artista" },
 			},
 			{
 			  nombre : "Belisario",
@@ -139,6 +180,12 @@ class ClasesBases {
 			  descripcion: "Desde que tienes uso de razón has tenido que tomar decisiones que otros ni siquiera se atrevieron a tomar. Eres un maestro del campo de batalla, no el mejor combatiente pero sí el que tiene la sangre fría para saber cuando tirar la toalla y cuando atacar con todas sus fuerzas.<br/>Probablemente tengas entrenamiento militar: quizás has sido miembro de la milicia de tu aldea o has nacido en una familia dedicada al cuerpo. Sin importar qué, tú sabes que la guerra es tu elemento natural.<br/>Sabes lo que tienes que hacer cuando agarras con fuerza tu escudo y tu estandarte: guiar a tu compañía hasta la victoria, dirigiendo con sabiduría y temple cuando las horas aciagas llegan. Tus bramidos resuenan por todo el campo de batalla. Eres el señor de la guerra, un belisario.",
 			  nombresF: [ "Brienne", "Ceres", "Terra", "Martina", "Nêrra", "Xenobia" ],
 			  nombresM: [ "Arcturus", "Cócito", "Ebenezer", "Locke", "Ichabod", "Tormund" ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 1, armasAD: [ "Arco corto", "Arco largo" ], 
+						narmasCaC: 1, armasCaC: [ "Espada larga", "Espada ropera", "Espada corta", "Hacha de batalla" ], 
+						escudo: [ "Escudo pequeño", "Escudo mediano" ],
+						armadura: [ "Acolchada", "Cuero", "Cota de anillas", "Cuero tachonado", "Cota de mallas" ],
+						paquete: "Paquete de exploración", },
 			},
 			{
 			  nombre : "Brujo",
@@ -154,6 +201,12 @@ class ClasesBases {
 			  descripcion: "Has vendido tu alma a una entidad preternatural para obtener dominio sobre las artes oscuras. Mientras que otros estudiantes de lo arcano deben estudiar enormes tomos y practicar durante décadas, tú has tomado un atajo, condenando tu espíritu a un más que probable tormento eterno.<br/>Firmaste un pacto de sangre con tu patrón y debes cumplir con lo que has prometido; a cambio de sus dones se te exigirán sacrificios y actos abominables.<br/>Pero conoces tu lugar: eres un brujo, un intruso de la magia.",
 			  nombresF: [ "Angélica", "Circe", "Jalis", "Locasta", "Morgana", "Rita" ],
 			  nombresM: [ "Alastor", "Belegur", "Fabián", "Gwyon", "Raymond", "Teseo" ],
+			  magia: { numero: 2, conjuros: [ "Alterar tamaño", "Atraer muertos vivientes", "Explosión sobrenatural", "Dormir", "Encantar persona", "Comprender idioma", "Detectar magia", "Detectar el mal", "Invocación", "Identificar", "Mano de mago" ] },
+			  equipo: { narmasAD: 1, armasAD: [ "Cerbatana", "Honda" ], 
+						narmasCaC: 1, armasCaC: [ "Espada larga", "Espada ropera", "Bastón", "Guadaña" ], 
+						escudo: [ "Escudo pequeño", "Escudo mediano" ],
+						armadura: [ "Acolchada", "Cuero" ],
+						paquete: "", },
 			},
 			{
 			  nombre : "Cazador",
@@ -169,6 +222,12 @@ class ClasesBases {
 			  descripcion: "Durante toda tu vida has sido uno con la naturaleza, preocupándote en proteger los territorios salvajes y especializándote en mantener el equilibrio entre depredadores y presas. Quizás has nacido entre habitantes del bosque o perteneces a una tribu de cazadores.<br/>Eres muy hábil con el arco y has formado un vínculo especial con una bestia salvaje, que ha acabado siendo una extensión más de ti y los dos habéis formado una singular pareja bastante letal.",
 			  nombresF: [ "Avana", "Dora", "Isarrel", "Saria", "Valindrys", "Yralisia" ],
 			  nombresM: [ "Anfalen", "Corym", "Haldir", "Ruan", "Torlus", "Wilfred" ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 1, armasAD: [ "Arco corto", "Arco largo", "Cerbatana" ], 
+						narmasCaC: 2, armasCaC: [ "Daga", "Espada corta", "Hacha de mano", "Cimitarra", "Guadaña", "Espada larga", "Tridente" ], 
+						escudo: [ "Escudo pequeño" ],
+						armadura: [ "Acolchada", "Cuero", "Piel", "Cuero tachonado" ],
+						paquete: "Paquete de exploración", },			  
 			},
 			{
 			  nombre : "Celador",
@@ -184,6 +243,12 @@ class ClasesBases {
 			  descripcion: "Perteneces a una estirpe de guerreros excepcionales que han perfeccionado la manipulación de la urdimbre y el combate a distancia, creando una técnica inimitable. Puedes haberte unido a los celadores por vocación, tradición u obligación, pero cargas con su responsabilidad a tu espalda: eres un defensor de los espíritus ancestrales.<br/>Allá dónde la corrupción inmoral impregne la urdimbre es dónde bogas, viajando de un territorio a otro cazando a los que alteran la capa espiritual del mundo.<br/>Tus ancestros —que te entregan su fuerza— pueden ser espectros del mundo antiguo, ánimas de los bosques o fantasmas aullantes de un páramo desolado.<br/>Tus habilidades distancia son apreciadas en cualquier grupo de aventureros, más bien tus obligaciones pueden chocar con sus intereses: tienes una misión que cumplir y harás todo lo posible porque tus antepasados continúen protegiendo la urdimbre.",
 			  nombresF: [ "Ayla", "Dihnunah", "Fern", "Nimara", "Sevsda", "Yun" ],
 			  nombresM: [ "Elerion", "Findorian", "Stavos", "Theon", "Vaelar", "Zack" ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 1, armasAD: [ "Arco corto", "Arco largo", "Cerbatana" ], 
+						narmasCaC: 2, armasCaC: [ "Daga", "Espada corta", "Hacha de mano", "Cimitarra", "Espada ropera", "Hacha de batalla", "Espada larga", "Jabalina"  ], 
+						escudo: [ ],
+						armadura: [ "Acolchada", "Cuero" ],
+						paquete: "Paquete de exploración", },
 			},
 			{
 			  nombre : "Chamán",
@@ -199,6 +264,12 @@ class ClasesBases {
 			  descripcion: "Tienes un vínculo místico con el mundo de los espíritus, convirtiéndote en un intermediario entre el reino de la carne y lo que hay más allá de la Urdimbre. Quizás seas el curandero ermitaño de una tribu de bárbaros o un aprendiz de magia primigenia; sin importar qué, el vínculo que compartes con la energía natural es fuerte y palpable en ti.<br/>Albergas una sabiduría inusual, primitiva e instintiva. Has forjado una alianza con un espíritu bestial, que actúa como pilar de tus hechizos. Eres un guía, un sanador, un líder y un defensor del mundo natural. Consideras a la civilización una lenta plaga que va consumiendo las tierras salvajes y crees que quizás seas el único que aún escucha los aullidos del planeta.",
 			  nombresF: [ "Awilix", "Chac", "Itzmaná", "Kantunil", "Jo", "Zulia" ],
 			  nombresM: [ "Babajide", "Chimalmat", "Jotok", "Mactzil", "Nicteel", "Yaxcol" ],
+			  magia: { numero: 1, conjuros: [ "Alterar tamaño", "Bendición", "Comprender idioma", "Curar heridas", "Detectar el Mal", "Detectar magia", "Dormir", "Encantar persona", "Escudo", "Invocación", "Leer magia", "Luz", "Protección contra el Mal", "Purificar sustento", "Rayo hielo", "Santuario" ] },
+			  equipo: { narmasAD: 1, armasAD: [ "Arco corto", "Arco largo", "Cerbatana" ], 
+						narmasCaC: 1, armasCaC: [  "Bastón", "Jabalina", "Lanza" ], 
+						escudo: [ "Escudo pequeño", "Escudo mediano" ],
+						armadura: [ "Acolchada", "Cuero", "Piel" ],
+						paquete: "Paquete del pío", },
 			},
 			{
 			  nombre : "Clérigo",
@@ -216,6 +287,12 @@ class ClasesBases {
 					"Independientemente de tus creencias, tu devoción y fuerza de voluntad te proporcionan la capacidad de obrar verdaderos milagros",
 			  nombresF: [ "Arlia", "Beulah", "Elise", "Erlyna", "Iktar", "Iudith", "Leah" ],
 			  nombresM: [ "Aran", "Baltaros", "Brinas", "Derridan", "Goran", "Teoddal", "Wesner" ],
+			  magia: { numero: 0, conjuros: [ "Atraer muertos vivientes", "Bendición", "Curar heridas", "Detectar el Mal", "Orden", "Protección contra el Mal", "Purificar sustento", "Santuario", "Valentía" ] },
+			  equipo: { narmasAD: 0, armasAD: [ ], 
+						narmasCaC: 0, armasCaC: [ "Martillo de guerra", "Martillo ligero", "Mayal", "Maza"  ], 
+						escudo: [ "Escudo pequeño", "Escudo mediano", "Escudo grande" ],
+						armadura: [ "Acolchada", "Cuero", "Cuero tachonado", "Piel", "Camisote de mallas", "Cota de escamas", "Coraza" ],
+						paquete: "Paquete del pío", },
 			},
 			{
 			  nombre : "Druida",
@@ -231,6 +308,12 @@ class ClasesBases {
 			  descripcion: "Eres uno con la naturaleza. Un filósofo y teólogo que ha asumido el ministerio de la cultura animista de tus antepasados. Pero también eres considerado, entre los tuyos, un juez, un maestro, curandero y adivino. Un sacerdote de lo mundano que acompaña a su devotos por el camino de la vida.<br/>Construyes tus altares en el interior de grutas y bosques y tus poderes te permiten conocer el estado del clima, aparecer con forma animal o predecir el futuro entre otros prodigios.",
 			  nombresF: [ "Alanna", "Eileen", "Bryana", "Gwenhwyar", "Caeli", "Cinnia", "Erin", "Treva", "Maeve" ],
 			  nombresM: [ "Galvan", "Quinn", "Perth", "Niall", "Artai", "Aldair", "Kilian", "Aod", "Fergal" ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 0, armasAD: [ "Arco corto", "Arco largo", "Cerbatana" ], 
+						narmasCaC: 1, armasCaC: [ "Bastón", "Maza" ], 
+						escudo: [ "Escudo pequeño", "Escudo mediano", "Escudo grande" ],
+						armadura: [ "Acolchada", "Cuero", "Piel" ],
+						paquete: "Paquete del pío", },
 			},
 			{
 			  nombre : "Guerrero",
@@ -247,6 +330,12 @@ class ClasesBases {
 				"Puedes aguantar en combate mucho más tiempo que el resto de tus aliados, por lo que no es extraño verte en primera línea de batalla.",
 			  nombresF: [ "Alice", "Berenice", "Briyra", "Everaine", "Kara", "Pelagia", "Yala" ],
 			  nombresM: [ "Adamar", "Darien", "Galthin", "Haldir", "Lysander", "Zale" ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 1, armasAD: [ "Arco corto", "Arco largo", "Ballesta ligera", "Ballesta pesada" ], 
+						narmasCaC: 2, armasCaC: [ "Espada corta", "Daga", "Hacha de mano", "Cimitarra", "Espada larga", "Espada ropera", "Espadón", "Hacha de batalla", "Gran hacha" ], 
+						escudo: [ "Escudo pequeño", "Escudo mediano", "Escudo grande" ],
+						armadura: [ "Acolchada", "Cuero", "Cuero tachonado", "Cota de anillas", "Camisote de mallas", "Cota de escamas", "Coraza" ],
+						paquete: "Paquete de mazmorras", },
 			},
 			{
 			  nombre : "Hechicero",
@@ -262,6 +351,12 @@ class ClasesBases {
 			  descripcion: "En los albores de la creación la urdimbre mágica no existió hasta que un ser de inconmensurable poder tejió una red intangible que abarcaba toda la realidad.<br/>Desde ese momento comenzaron a existir aquellos que nacían con hebras de energía arcana entre sus fibras: los hechiceros.<br/>Tú eres uno de ellos, un hijo de la magia que es capaz de manipular el tejido mágico de la existencia para evocar sortilegios a voluntad. No necesitas comprender los misterios de la hechicería como otros arcanistas, tú eres la magia misma.",
 			  nombresF: [ "Batseba", "Discordia", "Lorif", "Margott", "Nura", "Talis" ],
 			  nombresM: [ "Ethro", "Forlang", "Maverae", "Orión", "Sakon", "Zunari" ],
+			  magia: { numero: 2, conjuros: [ "Alterar tamaño", "Armadura arcana", "Caída de pluma", "Detectar magia", "Disco flotante", "Fuego feérico", "Leer magia", "Luz", "Rociada ardiente", "Onda atronadora", "Proyectil mágico", "Rayo hielo" ] },
+			  equipo: { narmasAD: 1, armasAD: [ "Ballesta de mano", "Ballesta ligera", "Honda" ], 
+						narmasCaC: 2, armasCaC: [ "Daga", "Espada corta", "Látigo", "Clava", "Bastón" ], 
+						escudo: [ ],
+						armadura: [ ],
+						paquete: "Paquete de exploración", },
 			},
 			{
 			  nombre : "Ladrón",
@@ -279,6 +374,12 @@ class ClasesBases {
 				"No hay mucha gente que asegure querer tratar contigo, pero cuando se trata de sobrevivir y alcanzar lugares peligrosos no existe nadie mejor que tú. Odiarán admitirlo, pero siempre te miran a ti cuando las cosas se ponen realmente feas.",
 			  nombresF: [ "Cora", "Imra", "Keyara", "Liana", "Marila", "Rinya", "Tressa" ],
 			  nombresM: [ "Bal", "Daarenno", "Delbin", "Dymas", "Egrad", "Haladavar", "Merreth" ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 1, armasAD: [ "Arco corto", "Arco largo", "Ballesta de mano", "Ballesta ligera", "Dardo" ], 
+						narmasCaC: 2, armasCaC: [ "Daga", "Espada corta", "Cimitarra", "Hacha de mano", "Espada larga", "Espada ropera", "Hacha de batalla" ], 
+						escudo: [ ],
+						armadura: [ "Acolchada", "Cuero", "Cuero tachonado" ],
+						paquete: "Paquete del ladrón", },
 			},
 			{
 			  nombre : "Mago",
@@ -294,6 +395,12 @@ class ClasesBases {
 			  descripcion: "El estudio y la investigación de las artes arcanas te han proporcionado la capacidad de utilizar y lanzar conjuros. Cada mañana, al despertarte, repasas tu pesado libro de conjuros, almacenando en tu memoria aquellos que vas a utilizar durante ese día.<br/>A pesar de tu aspecto frágil, eres quien guía a los demás cuando os enfrentáis a misterios desconocidos.<br/>Si logras acumular el suficiente conocimiento mágico, llegará un momento en el que poseas un conjuro para cada situación peligrosa.",
 			  nombresF: [ "Ahrorlah", "Dhai", "Edea", "Megara", "Moyra", "Taeryna", "Thera" ],
 			  nombresM: [ "Cleophas", "Dyn", "Herafos", "Jehoash", "Karpos", "Silas", "Zaltaros" ],
+			  magia: { numero: 4, conjuros: [ "Alterar tamaño", "Bloquear puerta", "Caída de pluma", "Comprender idioma", "Detectar magia", "Disco flotante", "Dormir", "Encantamiento", "Escudo", "Fuego feérico", "Identificar", "Invocación", "Leer magia", "Libro parlante", "Luz", "Mensaje", "Proyectil mágico", "Remendar", "Runa mágica" ] },
+			  equipo: { narmasAD: 1, armasAD: [ "Honda" ], 
+						narmasCaC: 1, armasCaC: [ "Bastón", "Daga" ], 
+						escudo: [ ],
+						armadura: [  ],
+						paquete: "Paquete de hechicería", },
 			},
 			{
 			  nombre : "Monje",
@@ -309,6 +416,12 @@ class ClasesBases {
 			  descripcion: "Como miembro de una antigua orden monástica sigues una estricta disciplina, buscando la máxima expresión en la perfección del cuerpo y la mente.<br/>Enclaustrado en un monasterio alejado de la civilización, has sentido la llamada de la aventura, buscando la iluminación en tus viajes por el mundo. En el exterior te esperan las lecciones vitales y el enriquecimiento espiritual necesarios para conseguirlo.",
 			  nombresF: [ "Lian", "Huan", "Kumiko", "Wei", "Akame", "Mei", "Xia", "Yin" ],
 			  nombresM: [ "Tian", "Xing", "Yuan", "Shen", "Bao", "Shaoran", "Zhao", "Fai" ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 1, armasAD: [ "Honda", "Cerbatana", "Arco corto", "Arco largo" ], 
+						narmasCaC: 2, armasCaC: [ "Daga", "Cimitarra", "Hacha de mano", "Espada corta", "Espada larga", "Hacha de batalla", "Bastón", "Lanza" ], 
+						escudo: [ ],
+						armadura: [  ],
+						paquete: "Paquete de exploración", },
 			},
 			{
 			  nombre : "Nigromante",
@@ -325,6 +438,12 @@ class ClasesBases {
 "Tus prácticas te hacen un blasfemo y profanador, pero has perdido el interés por la moralidad y los asuntos mundanos. Los mortales son una pieza más para completar tus planes. Eres un heraldo de la muerte, un nigromante.",
 			  nombresF: [ "Altea", "Caelia", "Eri", "Galatea", "Nirvoxia", "Xalandra" ],
 			  nombresM: [ "Andrei", "Daern", "Heth", "Malus", "Viktor", "Zarathra" ],
+			  magia: { numero: 3, conjuros: [ "Aguijón impío", "Atraer muertos vivientes", "Detectar el Mal", "Detectar magia", "Disco flotante", "Leer magia", "Luz", "Proyectil mágico", "Rayo hielo", "Rociada ardiente" ] },
+			  equipo: { narmasAD: 0, armasAD: [  ], 
+						narmasCaC: 0, armasCaC: [ "Bastón", "Daga", "Clava", "Guadaña", "Hoz" ], 
+						escudo: [ ],
+						armadura: [  ],
+						paquete: "Paquete de hechicería", },
 			},
 			{
 			  nombre : "Oráculo",
@@ -340,6 +459,12 @@ class ClasesBases {
 			  descripcion: "Desde tu más tierna infancia has sentido que estabas siendo preparado para algo más. Los sacerdotes de tu pueblo se reunían a tu alrededor para estudiarte, para entrar en sintonía con las fuerzas divinas que moraban en tu interior.<br/>No fue hasta la madurez cuando entendiste lo que eras: una deidad (o varias) te eligió como vasija para interactuar con el mundo. Quizás eres su mensajero o estás destinado a traerlo de vuelta. No importa cómo, has dejado atrás tu comunidad para averiguar qué función tienes el mundo y debes averiguarlo trabajando con tus inusuales dones.",
 			  nombresF: [ "Diana", "Eritea", "Lorain", "Melpos", "Nébula", "Parice", "Teresse" ],
 			  nombresM: [ "Az’or", "Crixo", "Fintarion", "Galater", "Mun’ozz", "Perseo" ],
+			  magia: { numero: 3, conjuros: [ "Bendición", "Caída de pluma", "Comprender idioma", "Curar heridas", "Detectar el mal", "Dormir", "Escudo", "Libro parlante", "Luz", "Protección contra el mal", "Remendar", "Valentía" ] },
+			  equipo: { narmasAD: 1, armasAD: [ "Honda" ], 
+						narmasCaC: 1, armasCaC: [ "Bastón", "Daga", "Clava", "Látigo", "Mayal", "Maza"  ], 
+						escudo: [ ],
+						armadura: [  "Acolchada" ],
+						paquete: "Paquete del pío", },
 			},
 			{
 			  nombre : "Paladín",
@@ -356,6 +481,12 @@ class ClasesBases {
 				"Los motivos para que te hayas embarcado en busca de aventuras pueden ser muy variados, pero siempre dependerán de los intereses de tu orden. Quizás estás buscando una reliquia o debas recuperar unas tierras consideradas santas.",
 			  nombresF: [ "Adelle", "Berenice", "Cassandra", "Katherin", "Mildred", "Zelda" ],
 			  nombresM: [ "Antoine", "Edward", "Fëanâro", "Phillip", "Theodor", "Xenos" ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 1, armasAD: [ "Arco corto", "Arco largo" ], 
+						narmasCaC: 2, armasCaC: [ "Espada larga", "Espada ropera", "Espada corta", "Hacha de batalla", "Espadón", "Daga", "Gran hacha" ], 
+						escudo: [ "Escudo pequeño", "Escudo mediano", "Escudo grande" ],
+						armadura: [ "Acolchada", "Cuero", "Cota de anillas", "Cuero tachonado", "Cota de mallas", "Cota de escamas" ],
+						paquete: "Paquete de exploración", },
 			},
 			{
 			  nombre : "Sacerdote",
@@ -376,6 +507,12 @@ class ClasesBases {
 						   "Tu maestría con las artes sanatorias rivaliza con tu capacidad para canalizar las artes oscuras y doblegarlas a tu voluntad. Sabes que la oscuridad no puede existir sin la luz y viceversa. El Espíritu deífico al que adoras te otorga libertad para que obres como consideres, pero sabes que vigila de cerca tus actos.",
 			  nombresF: [ "Acacia", "Celinne", "Eulalia", "Hildegarda", "Lorain", "Salomé." ],
 			  nombresM: [ "Cayo", "Democritus", "Lazare", "Orestes", "Probo", "Timoteus" ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 1, armasAD: [ "Honda" ], 
+						narmasCaC: 1, armasCaC: [ "Martillo ligero", "Maza", "Martillo de guerra" ], 
+						escudo: [ "Escudo pequeño" ],
+						armadura: [  ],
+						paquete: "Paquete del pío", },
 			},
 			{
 			  nombre : "Berserkr",
@@ -391,6 +528,12 @@ class ClasesBases {
 			  descripcion: "Los guerreros sagrados de Odihn. Estos furibundos guerreros no se detendrán ante nada para destrozar a sus enemigos.",
 			  nombresF: [ "Astrid", "Brenda", "Brynja", "Engla", "Elin", "Erika", "Gerda", "Gudrun", "Gunilda", "Helga", "Helmi", "Hilda", "Inga", "Ingrid", "Kaira", "Karen", "Kaysa", "Lena", "Nilsa", "Sigrid", "Siriana", "Torhild", "Tyra", "Yvette" ],
 			  nombresM: [ "Axe", "Bjorn", "Egil", "Erik", "Harald", "Ivar", "Jorgen", "Lars", "Olav", "Sigurd", "Sven" ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 1, armasAD: [ "Arco corto", "Arco largo" ], 
+						narmasCaC: 2, armasCaC: [ "Hacha de mano", "Espada larga", "Espada corta", "Hacha de batalla", "Espadón", "Gran hacha" ], 
+						escudo: [ "Escudo pequeño", "Escudo mediano" ],
+						armadura: [  ],
+						paquete: "Paquete de mazmorras", },
 			},
 			{
 			  nombre : "Vikingr",
@@ -406,6 +549,12 @@ class ClasesBases {
 			  descripcion: "Marineros y guerreros, estos bravos incursores llegarán hasta el fin del mundo en busca de oro y gloria.",
 			  nombresF: [ "Astrid", "Brenda", "Brynja", "Engla", "Elin", "Erika", "Gerda", "Gudrun", "Gunilda", "Helga", "Helmi", "Hilda", "Inga", "Ingrid", "Kaira", "Karen", "Kaysa", "Lena", "Nilsa", "Sigrid", "Siriana", "Torhild", "Tyra", "Yvette" ],
 			  nombresM: [ "Axe", "Bjorn", "Egil", "Erik", "Harald", "Ivar", "Jorgen", "Lars", "Olav", "Sigurd", "Sven" ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 1, armasAD: [ "Arco corto", "Arco largo" ], 
+						narmasCaC: 2, armasCaC: [ "Hacha de mano", "Espada larga", "Espada corta", "Hacha de batalla", "Espadón", "Gran hacha" ], 
+						escudo: [ "Escudo pequeño", "Escudo mediano" ],
+						armadura: [ "Acolchada", "Cuero", "Cota de anillas", "Cuero tachonado", "Cota de mallas" ],
+						paquete: "Paquete de exploración", },
 			},
 			{
 			  nombre : "Hirdman",
@@ -421,6 +570,12 @@ class ClasesBases {
 			  descripcion: "Los hirdman son guardaespaldas de élite. Ningún enemigo burlará su defensa.",
 			  nombresF: [ "Astrid", "Brenda", "Brynja", "Engla", "Elin", "Erika", "Gerda", "Gudrun", "Gunilda", "Helga", "Helmi", "Hilda", "Inga", "Ingrid", "Kaira", "Karen", "Kaysa", "Lena", "Nilsa", "Sigrid", "Siriana", "Torhild", "Tyra", "Yvette" ],
 			  nombresM: [ "Axe", "Bjorn", "Egil", "Erik", "Harald", "Ivar", "Jorgen", "Lars", "Olav", "Sigurd", "Sven" ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 1, armasAD: [ "Arco corto", "Arco largo" ], 
+						narmasCaC: 2, armasCaC: [ "Hacha de mano", "Espada larga", "Espada corta", "Hacha de batalla", "Espadón", "Gran hacha" ], 
+						escudo: [ "Escudo pequeño", "Escudo mediano", "Escudo grande" ],
+						armadura: [ "Acolchada", "Cuero", "Cota de anillas", "Cuero tachonado", "Cota de mallas" ],
+						paquete: "Paquete de mazmorras", },
 			},
 			{
 			  nombre : "Veidimadr",
@@ -436,6 +591,12 @@ class ClasesBases {
 			  descripcion: "Los bosques helados de Escandia son tan bellos como peligrosos. Cualquier viajero inexperto está destinado a perderse y morir en ellos sin la ayuda de un Veidimadr.",
 			  nombresF: [ "Astrid", "Brenda", "Brynja", "Engla", "Elin", "Erika", "Gerda", "Gudrun", "Gunilda", "Helga", "Helmi", "Hilda", "Inga", "Ingrid", "Kaira", "Karen", "Kaysa", "Lena", "Nilsa", "Sigrid", "Siriana", "Torhild", "Tyra", "Yvette" ],
 			  nombresM: [ "Axe", "Bjorn", "Egil", "Erik", "Harald", "Ivar", "Jorgen", "Lars", "Olav", "Sigurd", "Sven" ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 1, armasAD: [ "Arco corto", "Arco largo" ], 
+						narmasCaC: 2, armasCaC: [ "Lanza", "Hacha de mano", "Espada corta", "Daga", "Hacha de combate", "Gran hacha" ], 
+						escudo: [ ],
+						armadura: [ "Acolchada", "Cuero", "Cuero tachonado" ],
+						paquete: "Paquete de exploración", },
 			},
 			{
 			  nombre : "Volva",
@@ -451,6 +612,12 @@ class ClasesBases {
 			  descripcion: "El poder de las Volvas se transmite de madre a hija. Son la voz de los dioses, leen las runas e interpretan prodigios.<br/>Expulsan el mal de alma y cuerpo.",
 			  nombresF: [ "Astrid", "Brenda", "Brynja", "Engla", "Elin", "Erika", "Gerda", "Gudrun", "Gunilda", "Helga", "Helmi", "Hilda", "Inga", "Ingrid", "Kaira", "Karen", "Kaysa", "Lena", "Nilsa", "Sigrid", "Siriana", "Torhild", "Tyra", "Yvette" ],
 			  nombresM: [ ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 1, armasAD: [ "Honda" ], 
+						narmasCaC: 1, armasCaC: [ "Bastón", "Daga" ], 
+						escudo: [ ],
+						armadura: [  ],
+						paquete: "Paquete del pío", },
 			},
 			{
 			  nombre : "Thurl",
@@ -466,6 +633,12 @@ class ClasesBases {
 			  descripcion: "Estos ermitaños poseen conocimientos sobre la naturaleza y los ritos antiguos. Preparan remedios naturales y ofician los ritos funerarios y los sacrificios.",
 			  nombresF: [  ],
 			  nombresM: [ "Axe", "Bjorn", "Egil", "Erik", "Harald", "Ivar", "Jorgen", "Lars", "Olav", "Sigurd", "Sven" ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 0, armasAD: [  ], 
+						narmasCaC: 1, armasCaC: [ "Bastón", "Daga", "Hacha de mano", "Espada corta", "Hoz" ], 
+						escudo: [ ],
+						armadura: [ "Piel", "Cuero" ],
+						paquete: "Paquete del pío", },
 			},
 			{
 			  nombre : "Skald",
@@ -481,6 +654,12 @@ class ClasesBases {
 			  descripcion: "Los skalds son artistas viajeros que extienden los relatos de los aventureros por el mundo. Ninguna hazaña se convierte en leyenda si no la cuenta un skald.",
 			  nombresF: [ "Astrid", "Brenda", "Brynja", "Engla", "Elin", "Erika", "Gerda", "Gudrun", "Gunilda", "Helga", "Helmi", "Hilda", "Inga", "Ingrid", "Kaira", "Karen", "Kaysa", "Lena", "Nilsa", "Sigrid", "Siriana", "Torhild", "Tyra", "Yvette" ],
 			  nombresM: [ "Axe", "Bjorn", "Egil", "Erik", "Harald", "Ivar", "Jorgen", "Lars", "Olav", "Sigurd", "Sven" ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 1, armasAD: [ "Arco corto", "Arco largo" ], 
+						narmasCaC: 1, armasCaC: [ "Hacha de mano", "Espada corta", "Daga" ], 
+						escudo: [ "Escudo pequeño" ],
+						armadura: [ "Acolchada", "Piel", "Cuero", "Cuero tachonado" ],
+						paquete: "Paquete del artista", },
 			},
 		]
 	}

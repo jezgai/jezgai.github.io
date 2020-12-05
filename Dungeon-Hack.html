@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="javascript/DH_comun.js"></script>
+<script src="javascript/DH_equipo.js"></script>
 <script src="javascript/DH_PJ.js"></script>
 <script src="javascript/DH_clasebase.js"></script>
 <script src="javascript/DH_clase.js"></script>
@@ -24,6 +25,11 @@
 	let nombreclase = 'random';
 	let hayclases = 0;
 	//let origen = "";
+	
+	let armas = new Armas();
+	let armaduras = new Armaduras();
+	let escudos = new Escudos();
+	let paquetes = new Paquetes();
 	
 	let sclases = Comun.desplegableClases(clases, "seleccionaclases");
 	
@@ -59,8 +65,46 @@
 					'Ventajas' : [ document.getElementById("ventajas").innerText ],
 					'Capacidades' : [ pj.Clase.lhabilidades ],
 					'NotasVarias' : [ document.getElementById("habilidades").innerText ],
-					'MonO' : [ pj.monO ],
 				};
+				
+				if ( pj._monO > 0 ) {
+					fields['MonO'] = [ pj._monO ];
+				}
+				if ( pj._monP > 0 ) {
+					fields['MonP'] = [ pj._monP ];
+				}
+				
+				
+				if ( pj._armas.length > 0 ) {
+					var indice = 0;
+					for (indice = 0; indice<pj._armas.length; indice++) {
+						fields["Arma" + (indice+1)] = [ pj._armas[indice].nombre ];
+						fields["Da#C3#B1o" + (indice+1) ] = [ pj._armas[indice].dano ];
+						if ( pj._armas[indice].du != "" ) {
+							fields["DU" + (indice+1) ] = [ pj._armas[indice].du ];
+						}
+					}
+				}
+				var nProteccion=1;
+				if ( pj._armadura != null ) {
+					fields["Proteccion" + nProteccion] = [ pj._armadura.nombre ];
+					fields["Absorcion" + nProteccion] = [ pj._armadura.absorcion ];
+					fields["PDU" + nProteccion] = [ pj._armadura.du ];
+					nProteccion++;
+				}
+				
+				if ( pj._escudo != null ) {
+					fields["Proteccion" + nProteccion] = [ pj._escudo.nombre ];
+					fields["Absorcion" + nProteccion] = [ pj._escudo.absorcion ];
+					fields["PDU" + nProteccion] = [ pj._escudo.du ];
+				}
+				
+				if ( pj._equipo != null) {
+					var indice = 0;
+					for (indice = 0; indice<pj._equipo.componentes.length; indice++) {
+						fields["Objeto" + (indice+1)] = [ pj._equipo.componentes[indice] ];
+					}
+				}
 				
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
@@ -86,6 +130,8 @@
 		document.getElementById("habilidades").innerHTML="";
 		document.getElementById("clase").innerHTML="";
 		document.getElementById("titulodescripcion").style.visibility="hidden";
+		document.getElementById("descripcion").innerHTML="";
+		document.getElementById("seccionequipo").style.visibility="hidden";
 		document.getElementById("descripcion").innerHTML="";
 		document.getElementById("botonpdf").style.visibility="hidden";
 		
@@ -329,13 +375,14 @@
 		pj = new DH_PJ();
 		pj.genera();
 		
-		if ( hayclases == 1) {
+		/*if ( hayclases == 1) {
 			pj.Clase = clases.clase(nombreclase);
 			
 			if ( pj.Clase.atributo.length == 1 )
 				pj.Atributo = pj.Clase.atributo[0];
 									
 		}
+		*/
 		
 		if ( pj.Atributo == "FUE" )
 			pj.mFUE = -1;
@@ -388,6 +435,49 @@
 			pj.nombrepj = pj.Clase.nombre;
 			pj.genero = "";
 		}
+		
+		if ( pj._equipo != null || pj._monO > 0  || pj._monP > 0 || pj._armas.length > 0 || pj._armadura != null || pj._equipo != null ) {
+			var equipo = "<table class='w3-table  w3-striped  w3-border'>";
+			if ( pj._equipo != null ) {
+				equipo += "<tr><td><strong>Dinero</strong></td></tr>";
+				equipo += "<tr><td>" + pj._equipo.nombre + "</td></tr>";				
+			}			
+			if ( pj._monO > 0  || pj._monP > 0) {
+				equipo += "<tr><td><strong>Dinero</strong></td></tr>";
+				var dinero="";
+				if ( pj._monO > 0 )
+					dinero += pj._monO + " mo";
+				if ( pj._monP > 0 ) {
+					if ( dinero != "" ) 
+						dinero += " ";
+					dinero += pj._monP + " mp";
+				}
+				equipo += "<tr><td>" + dinero + "</td></tr>";
+			}
+			if ( pj._armas.length > 0 ) {
+				equipo += "<tr><td><strong>Armas</strong></td></tr>";
+				var _indice = 0;
+				for (_indice = 0; _indice <pj._armas.length; _indice++) {
+					equipo += "<tr><td>" + pj._armas[_indice].nombre + "</td></tr>";
+				}
+			}
+			if ( pj._armadura != null ) {
+				equipo += "<tr><td><strong>Armadura</strong></td></tr>";
+				equipo += "<tr><td>" + pj._armadura.nombre + "</td></tr>";
+			}
+			if ( pj._escudo != null ) {
+				equipo += "<tr><td><strong>Escudo</strong></td></tr>";
+				equipo += "<tr><td>" + pj._escudo.nombre + "</td></tr>";
+			}
+			equipo += "</table>";
+			document.getElementById("equipo").innerHTML=equipo;
+			document.getElementById("seccionequipo").style.visibility="visible";
+		}
+		else {
+			document.getElementById("seccionequipo").style.visibility="hidden";
+			document.getElementById("equipo").innerHTML="";
+		}
+		
 		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> (" + pj.Clase.origen + ") - " + pj.nombrepj + pj.genero + "</center></p>";
 		document.getElementById("botonpdf").style.visibility="visible";
 	}
@@ -409,6 +499,7 @@
 		document.getElementById("habilidades").innerHTML="";
 		document.getElementById("clase").innerHTML="";
 		document.getElementById("titulodescripcion").style.visibility="hidden";
+		document.getElementById("seccionequipo").style.visibility="hidden";
 		document.getElementById("descripcion").innerHTML="";
 		document.getElementById("botonpdf").style.visibility="hidden";
 		
@@ -448,12 +539,17 @@
   width:100%;
   padding:0 1px;
 }
+.dostercios {
+  float:left;
+  width:67%;
+  padding:0 1px;
+}
 
 
 
 @media only screen and (max-width:820px) {
   /* For mobile phones: */
-  .left, .minileft, .main, .right, .total {
+  .left, .minileft, .main, .right, .dostercios, .total {
     width:100%;
   }
   
@@ -500,8 +596,12 @@
 			<div id="habilidades"></div>
 		</div>
 	</div>
-	<div style="overflow:auto"  id="titulodescripcion">
-		<div class="total"  >
+	<div style="overflow:auto"  >
+		<div class="left" id="seccionequipo" >
+			<div class="w3-container w3-brown w3-center"><p><strong>Equipo</strong></p></div> 
+			<div id="equipo" ></div>
+		</div>
+		<div class="dostercios" id="titulodescripcion" >
 			<div class="w3-container w3-brown w3-center"><p><strong>Descripción de la clase</strong></p></div> 
 			<div id="descripcion" ></div>
 		</div>
