@@ -459,19 +459,27 @@
 			var genero = Comun.random(2,1);
 			if ( genero == 1 ) {
 				pj.nombrepj = pj.Clase.nombresF[ Comun.random(pj.Clase.nombresF.length, 0) ];
+				if ( pj.Clase.motesF.length > 0 )
+					pj.nombrepj += " " + pj.Clase.motesF[ Comun.random(pj.Clase.motesF.length, 0) ];
 				pj.genero = " (F)";
 			}
 			else {
 				pj.nombrepj = pj.Clase.nombresM[ Comun.random(pj.Clase.nombresM.length, 0) ];
+				if ( pj.Clase.motesM.length > 0 )
+					pj.nombrepj += " " + pj.Clase.motesM[ Comun.random(pj.Clase.motesM.length, 0) ];
 				pj.genero = " (M)";
 			}
 		}
 		else if ( pj.Clase.nombresF.length > 0 ) {
 				pj.nombrepj = pj.Clase.nombresF[ Comun.random(pj.Clase.nombresF.length, 0) ];
+				if ( pj.Clase.motesF.length > 0 )
+					pj.nombrepj += " " + pj.Clase.motesF[ Comun.random(pj.Clase.motesF.length, 0) ];
 				pj.genero = " (F)";
 		}
 		else if ( pj.Clase.nombresM.length > 0 ) {
 				pj.nombrepj = pj.Clase.nombresM[ Comun.random(pj.Clase.nombresM.length, 0) ];
+				if ( pj.Clase.motesM.length > 0 )
+					pj.nombrepj += " " + pj.Clase.motesM[ Comun.random(pj.Clase.motesM.length, 0) ];
 				pj.genero = " (M)";
 		}
 		else {
