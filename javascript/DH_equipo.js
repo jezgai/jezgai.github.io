@@ -579,7 +579,7 @@ class Paquetes {
             {
                 nombre: "Paquete del cazador",
                 precio: 8,
-                componentes: ["Mochila", "Pellejo de agua", "Antorcha", "Cuerda", "7 raciones de comida", "Ropa de pieles", "Petate", "Manta", "Botella de ron", "Yesquero" ],
+                componentes: ["Mochila", "Pellejo de agua", "Antorcha", "Cuerda", "7 raciones de comida", "Ropa de pieles", "Petate", "Manta", "Pipa y tabaco", "Yesquero" ],
             },
 		];
 	}
