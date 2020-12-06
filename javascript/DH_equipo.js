@@ -124,6 +124,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 25,
+				penetracion: 1,
 			},
 			{
 				nombre: "Clava",
@@ -133,6 +134,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 0.1,
+				penetracion: 0,
 			},
 			{
 				nombre: "Daga",
@@ -142,6 +144,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 2,
+				penetracion: 1,
 			},
 			{
 				nombre: "Espada corta",
@@ -151,6 +154,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 10,
+				penetracion: 1,
 			},
 			{
 				nombre: "Hoz",
@@ -160,6 +164,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 1,
+				penetracion: 1,
 			},
 			{
 				nombre: "Hacha de mano",
@@ -169,6 +174,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 5,
+				penetracion: 1,
 			},
 			{
 				nombre: "Martillo ligero",
@@ -178,6 +184,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 2,
+				penetracion: 2,
 			},
 			{
 				nombre: "Bastón",
@@ -187,6 +194,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 0.2,
+				penetracion: 0,
 			},
 			{
 				nombre: "Espada larga",
@@ -196,6 +204,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 15,
+				penetracion: 1,
 			},
 			{
 				nombre: "Espada ropera",
@@ -205,6 +214,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 25,
+				penetracion: 2,
 			},
 			{
 				nombre: "Hacha de batalla",
@@ -214,6 +224,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 10,
+				penetracion: 1,
 			},
 			{
 				nombre: "Jabalina",
@@ -223,6 +234,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 0.5,
+				penetracion: 2,
 			},
 			{
 				nombre: "Lanza",
@@ -232,6 +244,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 1,
+				penetracion: 2,
 			},
 			{
 				nombre: "Látigo",
@@ -241,6 +254,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 2,
+				penetracion: 1,
 			},
 			{
 				nombre: "Lucero del alba",
@@ -250,6 +264,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 15,
+				penetracion: 2,
 			},
 			{
 				nombre: "Martillo de guerra",
@@ -259,6 +274,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 15,
+				penetracion: 2,
 			},
 			{
 				nombre: "Mayal",
@@ -268,6 +284,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 10,
+				penetracion: 3,
 			},
 			{
 				nombre: "Maza",
@@ -277,6 +294,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 5,
+				penetracion: 2,
 			},
 			{
 				nombre: "Alabarda",
@@ -286,6 +304,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 20,
+				penetracion: 1,
 			},
 			{
 				nombre: "Espadón",
@@ -295,6 +314,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 50,
+				penetracion: 1,
 			},
 			{
 				nombre: "Gran clava",
@@ -304,6 +324,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 0.2,
+				penetracion: 1,
 			},
 			{
 				nombre: "Gran hacha",
@@ -313,6 +334,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 30,
+				penetracion: 1,
 			},
 			{
 				nombre: "Guadaña",
@@ -322,6 +344,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 10,
+				penetracion: 1,
 			},
 			{
 				nombre: "Guja",
@@ -331,6 +354,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 20,
+				penetracion: 2,
 			},
 			{
 				nombre: "Tridente",
@@ -340,6 +364,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 5,
+				penetracion: 2,
 			},
 			{
 				nombre: "Arco corto",
@@ -349,6 +374,7 @@ class Armas {
 				du: "d8",
 				municion: "Flechas",
 				precio: 27,
+				penetracion: 1,
 			},
 			{
 				nombre: "Arco largo",
@@ -358,6 +384,7 @@ class Armas {
 				du: "d8",
 				municion: "Flechas",
 				precio: 52,
+				penetracion: 1,
 			},
 			{
 				nombre: "Ballesta de mano",
@@ -367,6 +394,7 @@ class Armas {
 				du: "d8",
 				municion: "Virotes",
 				precio: 77,
+				penetracion: 0,
 			},
 			{
 				nombre: "Ballesta ligera",
@@ -376,6 +404,7 @@ class Armas {
 				du: "d8",
 				municion: "Virotes",
 				precio: 42,
+				penetracion: 1,
 			},
 			{
 				nombre: "Ballesta pesada",
@@ -385,6 +414,7 @@ class Armas {
 				du: "d8",
 				municion: "Virotes",
 				precio: 102,
+				penetracion: 2,
 			},
 			{
 				nombre: "Cerbatana",
@@ -394,6 +424,7 @@ class Armas {
 				du: "d4",
 				municion: "Dardos",
 				precio: 1.2,
+				penetracion: 0,
 			},
 			{
 				nombre: "Dardo",
@@ -403,6 +434,7 @@ class Armas {
 				du: "d4",
 				municion: "Dardos",
 				precio: 0.2,
+				penetracion: 0,
 			},
 			{
 				nombre: "Honda",
@@ -412,6 +444,7 @@ class Armas {
 				du: "d10",
 				municion: "Balines",
 				precio: 0.2,
+				penetracion: 1,
 			},
 			{
 				nombre: "Arcabuz",
@@ -421,6 +454,7 @@ class Armas {
 				du: "d8",
 				municion: "Bolas de plomo",
 				precio: 80,
+				penetracion: 2,
 			},
 			{
 				nombre: "Mosquete",
@@ -430,6 +464,7 @@ class Armas {
 				du: "d8",
 				municion: "Cartuchos",
 				precio: 125,
+				penetracion: 3,
 			},
 			{
 				nombre: "Pistola",
@@ -439,6 +474,7 @@ class Armas {
 				du: "d6",
 				municion: "Balas",
 				precio: 50,
+				penetracion: 2,
 			},
 			{
 				nombre: "Trabuco",
@@ -448,6 +484,7 @@ class Armas {
 				du: "d6",
 				municion: "Balas",
 				precio: 70,
+				penetracion: 2,
 			},
 			{
 				nombre: "Cuchillo",
@@ -457,6 +494,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 0.5,
+				penetracion: 0,
 			},
 			{
 				nombre: "Navaja",
@@ -466,6 +504,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 0.5,
+				penetracion: 0,
 			},
 			{
 				nombre: "Arpón",
@@ -475,6 +514,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 1,
+				penetracion: 1,
 			},
 			{
 				nombre: "Estoque",
@@ -484,6 +524,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 20,
+				penetracion: 1,
 			},
 			{
 				nombre: "Alfanje",
@@ -493,6 +534,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 25,
+				penetracion: 1,
 			},
 			{
 				nombre: "Sable",
@@ -502,6 +544,7 @@ class Armas {
 				du: "",
 				municion: "",
 				precio: 25,
+				penetracion: 2,
 			},
 		];
 	}
