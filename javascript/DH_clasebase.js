@@ -480,7 +480,7 @@ class ClasesBases {
 			  motesM: [ ],
 			  magia: { numero: 3, conjuros: [ "Aguijón impío", "Atraer muertos vivientes", "Detectar el Mal", "Detectar magia", "Disco flotante", "Leer magia", "Luz", "Proyectil mágico", "Rayo hielo", "Rociada ardiente" ] },
 			  equipo: { narmasAD: 0, armasAD: [  ], 
-						narmasCaC: 0, armasCaC: [ "Bastón", "Daga", "Clava", "Guadaña", "Hoz" ], 
+						narmasCaC: 2, armasCaC: [ "Bastón", "Daga", "Clava", "Guadaña", "Hoz" ], 
 						escudo: [ ],
 						armadura: [  ],
 						paquete: "Paquete de hechicería", },
@@ -768,7 +768,7 @@ class ClasesBases {
 						narmasCaC: 1, armasCaC: [ "Navaja", "Alfanje", "Sable" ], 
 						escudo: [  ],
 						armadura: [ "Acolchada", "Cuero", "Cuero tachonado" ],
-						paquete: "Paquete de exploración",  },
+						paquete: "Paquete del filibustero",  },
 							
 			},
 			{
@@ -794,7 +794,7 @@ class ClasesBases {
 						narmasCaC: 1, armasCaC: [ "Daga", "Arpón", "Lanza" ], 
 						escudo: [  ],
 						armadura: [ "Acolchada", "Cuero", "Piel", "Cuero tachonado" ],
-						paquete: "Paquete de exploración", },
+						paquete: "Paquete del cazador", },
 							
 			},
 			{
@@ -817,10 +817,10 @@ class ClasesBases {
 			  motesM: [ ],
 			  magia: { numero:-1, conjuros: [] },
 			  equipo: { narmasAD: 1, armasAD: [ "Mosquete", "Pistola" ], 
-						narmasCaC: 1, armasCaC: [ "Espada ropera", "Alabarda" ], 
+						narmasCaC: 2, armasCaC: [ "Espada ropera", "Daga" ], 
 						escudo: [  ],
 						armadura: [ "Acolchada", "Cuero", "Cuero tachonado" ],
-						paquete: "Paquete de exploración", },
+						paquete: "Paquete del militar", },
 							
 			},
 			{
@@ -846,7 +846,7 @@ class ClasesBases {
 						narmasCaC: 1, armasCaC: [ "Alfanje", "Sable", "Hacha de mano" ], 
 						escudo: [  ],
 						armadura: [ "Acolchada", "Cuero", "Cuero tachonado" ],
-						paquete: "Paquete de exploración", },
+						paquete: "Paquete del filibustero", },
 							
 			},
 			{
@@ -871,7 +871,7 @@ class ClasesBases {
 						narmasCaC: 1, armasCaC: [ "Espada ropera", "Sable" ], 
 						escudo: [  ],
 						armadura: [ "Acolchada", "Cuero", "Piel", "Cuero tachonado" ],
-						paquete: "Paquete de exploración", },
+						paquete: "Paquete del inquisidor", },
 			},
 			{
 			  nombre : "Veterana/o",
@@ -893,10 +893,10 @@ class ClasesBases {
 			  motesM: [ ],
 			  magia: { numero:-1, conjuros: [] },
 			  equipo: { narmasAD: 1, armasAD: [ "Arcabuz", "Pistola", "Mosquete" ], 
-						narmasCaC: 1, armasCaC: [ "Espada ropera", "Estoque", "Sable" ], 
+						narmasCaC: 2, armasCaC: [ "Espada ropera", "Espada larga", "Daga" ], 
 						escudo: [  ],
 						armadura: [ "Acolchada", "Cuero", "Piel", "Cuero tachonado" ],
-						paquete: "Paquete de exploración", },
+						paquete: "Paquete del militar", },
 							
 			},
 			{
@@ -922,7 +922,7 @@ class ClasesBases {
 						narmasCaC: 1, armasCaC: [ "Espada ropera", "Estoque", "Daga" ], 
 						escudo: [  ],
 						armadura: [ "Acolchada", "Cuero" ],
-						paquete: "Paquete de exploración", },
+						paquete: "Paquete del cortabolsas", },
 			},
 			{
 			  nombre : "Matasanos",
@@ -952,7 +952,7 @@ class ClasesBases {
 						narmasCaC: 1, armasCaC: [ "Bastón", "Cuchillo", "Daga", "Estoque" ], 
 						escudo: [  ],
 						armadura: [ "Acolchada", "Cuero" ],
-						paquete: "Paquete de exploración", },
+						paquete: "Paquete del matasanos", },
 			},
 		]
 	}

@@ -33,6 +33,99 @@
 	
 	let sclases = Comun.desplegableClases(clases, "seleccionaclases");
 	
+	function rellenaPDFAzul() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		var competencias = '';
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = {
+					'Nombre' : [ pj.nombrepj + pj.genero ],
+					'Nivel' : [ 1 ],
+					'Clase' : [ pj.Clase.nombre ],
+					'CheckFUE' : [ pj.mFUE == -1 ? true : false],
+					'CheckDES' : [ pj.mDES == -1 ? true : false],
+					'CheckCON_2' : [ pj.mCON == -1 ? true : false],
+					'CheckCON' : [ pj.mINT == -1 ? true : false],
+					'CheckSAB' : [ pj.mSAB == -1 ? true : false],
+					'CheckCAR' : [ pj.mCAR == -1 ? true : false],
+					'FUE' : [ pj.FUE + pj.mFUE ],
+					'DES' : [ pj.DES + pj.mDES ],
+					'CON' : [ pj.CON + pj.mCON ],
+					'INT' : [ pj.INT + pj.mINT ],
+					'SAB' : [ pj.SAB + pj.mSAB ],
+					'CAR' : [ pj.CAR + pj.mCAR ],
+					'NSALUD' : [ pj.Clase.salud ],
+					'NENERGIA' : [ pj.Clase.energia ],
+					'NCORDURA' : [ pj.Cordura ],
+					'Competencias' : [ document.getElementById("competencias").innerText ],
+					'Ventajas' : [ document.getElementById("ventajas").innerText ],
+					'Habilidades' : [ pj.Clase.lhabilidades ],
+					'Biografia' : [ document.getElementById("habilidades").innerText ],
+					'MonO' : [ pj.monO ],
+				};
+				
+				if ( pj._monO > 0 ) {
+					fields['MonO'] = [ pj._monO ];
+				}
+				if ( pj._monP > 0 ) {
+					fields['MonP'] = [ pj._monP ];
+				}
+				
+				
+				if ( pj._armas.length > 0 ) {
+					var indice = 0;
+					for (indice = 0; indice<pj._armas.length; indice++) {
+						fields["Arma" + (indice+1)] = [ pj._armas[indice].nombre ];
+						fields["Da#C3#B1o" + (indice+1) ] = [ pj._armas[indice].dano ];
+						if ( pj._armas[indice].du != "" ) {
+							fields["DU" + (indice+1) ] = [ pj._armas[indice].du ];
+						}
+					}
+				}
+				var nProteccion=1;
+				if ( pj._armadura != null ) {
+					fields["Proteccion" + nProteccion] = [ pj._armadura.nombre ];
+					fields["Absorcion" + nProteccion] = [ pj._armadura.absorcion ];
+					fields["PDU" + nProteccion] = [ pj._armadura.du ];
+					nProteccion++;
+				}
+				
+				if ( pj._escudo != null ) {
+					fields["Proteccion" + nProteccion] = [ pj._escudo.nombre ];
+					fields["Absorcion" + nProteccion] = [ pj._escudo.absorcion ];
+					fields["PDU" + nProteccion] = [ pj._escudo.du ];
+				}
+				
+				if ( pj._equipo != null) {
+					var indice = 0;
+					for (indice = 0; indice<pj._equipo.componentes.length; indice++) {
+						fields["Objeto" + (indice+1)] = [ pj._equipo.componentes[indice] ];
+					}
+				}
+				
+				if ( pj._conjuros.length > 0 ) {
+					var indice = 0;
+					for ( indice = 0; indice < pj._conjuros.length; indice++ ) {
+						fields[ 'Poder' + (indice+1) ] = [ pj._conjuros[indice] ];
+					}
+				}
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, pj.nombrepj + '.pdf'); // 'PersonajeDH.pdf');
+			}
+		};
+
+
+		xhr.open('GET', 'pdf/DungeonHackFichaAzul.pdf', true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}	
+	
 	
 	function rellenaPDF() {
 		var xhr = new XMLHttpRequest();
@@ -106,6 +199,15 @@
 					}
 				}
 				
+				if ( pj._conjuros.length > 0 ) {
+					var sconjuros = "Conjuros: " + pj._conjuros[0];
+					var indice = 0;
+					for ( indice = 1; indice < pj._conjuros.length; indice++ ) {
+						sconjuros += ", " + pj._conjuros[indice];
+					}
+					fields[ 'Notas' ] = [ sconjuros ];
+				}
+				
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
 			  saveAs(blob, pj.nombrepj + '.pdf'); //'PersonajeDH.pdf');
@@ -134,6 +236,8 @@
 		document.getElementById("seccionequipo").style.visibility="hidden";
 		document.getElementById("descripcion").innerHTML="";
 		document.getElementById("botonpdf").style.visibility="hidden";
+		document.getElementById("botonpdfazul").style.visibility="hidden";
+		document.getElementById("conjuros").style.visibility="hidden";
 		
 		var idx = thelist.selectedIndex;
 		var seleccionado = thelist.options[idx].innerHTML;
@@ -355,9 +459,10 @@
 		for (ihabilidad = 0; ihabilidad < pj.Clase.habilidades.length; ihabilidad++) {
 			habilidades += "<tr><td>" + pj.Clase.habilidades[ihabilidad] + "</td></tr>";
 		}
+		
 		if ( habilidades != "" ) 
 			habilidades = "<table class='w3-table  w3-striped  w3-border'>" + habilidades + "</table>";
-		document.getElementById("habilidades").innerHTML = habilidades;
+		document.getElementById("habilidades").innerHTML = habilidades ;
 	}
 	
 	
@@ -368,6 +473,28 @@
 				return false;
 		}
 		return true;
+	}
+	
+	
+	function calculaConjuros() {
+		
+		var conjuros = pj.Conjuros;
+		if ( conjuros.length > 0 )
+		{
+			var indice = 0;
+			var sconjuros = conjuros[0];
+			for (indice=1; indice<conjuros.length; indice++) 
+			{
+				sconjuros += ", " + conjuros[indice];
+			}
+			document.getElementById("lconjuros").innerHTML = sconjuros;
+			document.getElementById("conjuros").style.visibility="visible";
+		}
+		else 
+		{
+			document.getElementById("conjuros").style.visibility="hidden";
+		}
+		
 	}
 	
 	function calcula() {
@@ -444,6 +571,9 @@
 			pj.genero = "";
 		}
 		
+		calculaConjuros();
+		
+		
 		if ( pj._equipo != null || pj._monO > 0  || pj._monP > 0 || pj._armas.length > 0 || pj._armadura != null || pj._equipo != null ) {
 			var equipo = "<table class='w3-table  w3-striped  w3-border'>";
 			if ( pj._equipo != null ) {
@@ -488,6 +618,7 @@
 		
 		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> (" + pj.Clase.origen + ") - " + pj.nombrepj + pj.genero + "</center></p>";
 		document.getElementById("botonpdf").style.visibility="visible";
+		document.getElementById("botonpdfazul").style.visibility="visible";
 	}
 	
 	function descarga() {
@@ -510,6 +641,8 @@
 		document.getElementById("seccionequipo").style.visibility="hidden";
 		document.getElementById("descripcion").innerHTML="";
 		document.getElementById("botonpdf").style.visibility="hidden";
+		document.getElementById("botonpdfazul").style.visibility="hidden";
+		document.getElementById("conjuros").style.visibility="hidden";
 		
 		hayclases = 1;
 		document.getElementById("clases").innerHTML = sclases;
@@ -529,7 +662,7 @@
 }
 .minileft {
   float:left;
-  width:17%;
+  width:11%;
   padding:0 1px;
 }
 .main {
@@ -574,6 +707,7 @@
 		</div>
 		<div class="minileft"><p><button class='w3-button w3-block w3-brown' onclick='calcula()'>Calcula</button></p></div>
 		<div class="minileft" id="botonpdf"><p><button class='w3-button w3-block w3-brown' onclick='rellenaPDF()'>Genera PDF</button></p></div>
+		<div class="minileft" id="botonpdfazul"><p><button class='w3-button w3-block w3-brown' onclick='rellenaPDFAzul()'>Genera PDF Alternativo</button></p></div>
 		<div class="right" id="clase"><p></p></div>
 	</div>
 	<div style="overflow:auto">
@@ -599,6 +733,11 @@
 			<div class="w3-container w3-brown w3-center"><p><strong>Competencias</strong></p></div> 
 			<div id="competencias"></div>
 		</div>-->
+		<div class="total" id="conjuros">
+			<div class="w3-container w3-brown w3-center"><p><strong>Conjuros/Poderes</strong></p></div> 
+			<div class="casitotal" id="lconjuros"></div>
+			<div class="microleft" ><button class='w3-button w3-block w3-brown' onclick='calculaConjuros()'>Recalcula</button></div>
+		</div>
 		<div class="total">
 			<div class="w3-container w3-brown w3-center"><p><strong>Habilidades</strong></p></div> 
 			<div id="habilidades"></div>

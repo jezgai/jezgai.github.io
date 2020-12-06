@@ -551,6 +551,36 @@ class Paquetes {
                 precio: 8,
                 componentes: ["Mochila", "Odre", "Antorcha", "Pértiga", "5 raciones de comida", "Flauta", "Ropa de viaje", "Saco de dormir", "Yesquero"],
             },
+            {
+                nombre: "Paquete del filibustero",
+                precio: 8,
+                componentes: ["Mochila", "Pellejo de agua", "Farol de aceite", "Cuerda", "7 raciones de comida", "Botella de ron", "Bandana", "Petate", "Manta", "Yesquero"],
+            },
+            {
+                nombre: "Paquete del matasanos",
+                precio: 10,
+                componentes: ["Mochila", "Pellejo de agua", "Farol de aceite", "Maletín de médico", "3 raciones de comida", "Botella de ron", "Sombrero emplumado", "Petate", "Manta", "Yesquero"],
+            },
+            {
+                nombre: "Paquete del militar",
+                precio: 8,
+                componentes: ["Mochila", "Pellejo de agua", "Farol de aceite", "Cuerda", "7 raciones de comida", "Botella de vino", "Sombrero emplumado", "Petate", "Manta", "Yesquero"],
+            },
+            {
+                nombre: "Paquete del inquisidor",
+                precio: 8,
+                componentes: ["Mochila", "Pellejo de agua", "Farol de aceite", "Cuerda", "7 raciones de comida", "Ropa negra", "Petate", "Manta", "Yesquero", "Biblia"],
+            },
+            {
+                nombre: "Paquete del cortabolsas",
+                precio: 20,
+                componentes: ["Mochila", "Pellejo de agua", "Farol de aceite", "Cuerda", "7 raciones de comida", "Bandana", "Petate", "Manta", "Yesquero", "Herramientas de ladrón" ],
+            },
+            {
+                nombre: "Paquete del cazador",
+                precio: 8,
+                componentes: ["Mochila", "Pellejo de agua", "Antorcha", "Cuerda", "7 raciones de comida", "Ropa de pieles", "Petate", "Manta", "Botella de ron", "Yesquero" ],
+            },
 		];
 	}
 
