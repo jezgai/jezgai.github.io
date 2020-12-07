@@ -28,6 +28,7 @@
 <script src="javascript/VC_esencias.js"></script>
 <script src="javascript/VC_mascaras.js"></script>
 <script src="javascript/VC_pj.js"></script>
+<script src="javascript/VES_equipo.js"></script>
 <script src="javascript/VES_bioformas.js"></script>
 <script src="javascript/VES_clases.js"></script>
 <script src="javascript/VES_pj.js"></script>
@@ -820,7 +821,23 @@
 		document.getElementById("atributos").innerHTML = satrs;
 		document.getElementById("talentos").innerHTML = stals;
 		document.getElementById("habilidades").innerHTML = shabs;
-		document.getElementById("dinero").innerHTML = "<br/><strong>Dinero: </strong> <br/>" + dinero + " créditos";
+		var sdinero = "<strong>Dinero: </strong> <br/>" + dinero + " créditos";
+		if ( pj._paquete != null ) {
+			sdinero+="<br/>" + pj._paquete.componentes[0];
+			var indiceequipo=1;
+			for (indiceequipo = 1; indiceequipo < pj._paquete.componentes.length; indiceequipo++) {
+				sdinero += ", " + pj._paquete.componentes[indiceequipo];
+			}
+		}
+		if ( pj._armas != null ) {
+			sdinero += "<br/><strong>Armas</strong><br/>";
+			var indice=0;
+			for (indice = 0; indice<pj._armas.length; indice++) {
+				sdinero += pj._armas[indice].nombre + " (" + pj._armas[indice].dano + ")<br/>";
+			}
+		}
+		document.getElementById("dinero").innerHTML = sdinero; // "<br/><strong>Dinero: </strong> <br/>" + dinero + " créditos";
+		
     
 		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
 		document.getElementById("bgenerapdf").style.visibility="visible";
@@ -1003,7 +1020,7 @@
 		<div class="tercio" id="rasgos"></div>
 	</div>
 	<div style="overflow:auto">
-		<div  class="dostercios" id="talentos"></div>
+		<div class="dostercios" id="talentos"></div>
 		<div class="tercio" id="dinero"></div>
 	</div>
 	<div class="total" id="dtalentos"></div>

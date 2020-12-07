@@ -5,6 +5,7 @@ class ClaseVES extends ClaseBase {
 		super(clase);
 		this._pod = clase.pod;
 		this._competencias = clase.competencias;
+		this._equipo = clase.equipo;
 	}
 		
 	get pod() {
@@ -93,6 +94,11 @@ class ClasesVES {
 			  ins : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
 			  poderes : 0,
 			  competencias : "Pueden usar todas las armas y armaduras.",
+			  equipo : { narmasAD: 1, armasAD: [ "Pistola laser", "Carabina láser", "Rifle láser" ],
+						narmasCaC: 1, armasCaC: [ "Monodaga", "Hacha de plasma", "Vibrohacha", "Vibroespada" ],
+						armadura: [ "Ligera", "Mediana" ],
+						escudo: [ ],
+						paquete: "Paquete del combatiente" },
 			},
 			{
 			  nombre : "Mediador/a",
@@ -104,6 +110,11 @@ class ClasesVES {
 			  ins : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ],
 			  poderes : 0,
 			  competencias : "Pueden usar armas primitivas, armas sencillas y armaduras ligeras.",
+			  equipo : { narmasAD: 1, armasAD: [ "Pistola láser" ],
+						narmasCaC: 1, armasCaC: [ "Monodaga", "Bastón eléctrico" ],
+						armadura: [ "Ligera" ],
+						escudo: [ ],
+						paquete: "Paquete del mediador" },
 			},
 			{
 			  nombre : "Caballero/a Místico/a",
@@ -115,6 +126,11 @@ class ClasesVES {
 			  ins : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ],
 			  poderes : 1,
 			  competencias : "Puede usar armas primitivas, espadas fotónicas y armaduras ligeras",
+			  equipo : { narmasAD: 1, armasAD: [ "Pistola laser", "Blaster de bolsillo", "Blaster pesado" ],
+						narmasCaC: 0, armasCaC: [ ],
+						armadura: [ "Ligera" ],
+						escudo: [ ],
+						paquete: "Paquete del caballero" },
 			},
 			{
 			  nombre : "Maestro/a Místico/a",
@@ -126,6 +142,11 @@ class ClasesVES {
 			  ins : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ],
 			  poderes : 2,
 			  competencias : "Usa armas primitivas y no puede usar ninguna armadura",
+			  equipo : { narmasAD: 1, armasAD: [ "Honda" ],
+						narmasCaC: 2, armasCaC: [ "Espada", "Daga" ],
+						armadura: [ ],
+						escudo: [ ],
+						paquete: "Paquete del místico" },
 			},
 			{
 			  nombre : "Técnico",
@@ -137,6 +158,11 @@ class ClasesVES {
 			  ins : [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ],
 			  poderes : 0,
 			  competencias : "Pueden usar armas primitivas, armas sencillas y armaduras ligeras.",
+			  equipo : { narmasAD: 0, armasAD: [  ],
+						narmasCaC: 1, armasCaC: [ "Monodaga", "Hacha de plasma" ],
+						armadura: [ "Ligera" ],
+						escudo: [ ],
+						paquete: "Paquete del técnico" },
 			},
 		]
 	}

@@ -8,6 +8,8 @@ class PJVES extends PJBase {
 		this._trasfondo = "";
 		this._objClase = null;
 		this._objBioforma = null;
+		this._paquete = null;
+		this._armas = null;
 	}
 
 	
@@ -86,6 +88,72 @@ class PJVES extends PJBase {
 		}
 	}
 	
+	
+	calculaArmasCaC() {
+		if ( this._objClase._equipo.narmasCaC > 0 ) {
+			var armasclase = Comun.shuffle(this._objClase._equipo.armasCaC.clone());
+			var indice=0;
+			var armaelegida = null;
+			var numarmas = 0;
+			for (indice=0;indice<armasclase.length;indice++) {
+				armaelegida = armasVES.arma(armasclase[indice]);
+				if ( armaelegida != null ) {
+					if ( armaelegida.precio < this._din ) {
+						this._armas.push(armaelegida);
+						this._din -= armaelegida.precio;
+						numarmas++;
+						if ( numarmas >= this._objClase._equipo.narmasCaC )
+							break;
+						break;
+					}
+				}
+			}
+		}
+	}
+	
+	
+	
+	calculaArmasAD() {
+		if ( this._objClase._equipo.narmasAD > 0 ) {
+			var armasclase = Comun.shuffle(this._objClase._equipo.armasAD.clone());
+			var indice=0;
+			var armaelegida = null;
+			var numarmas = 0;
+			for (indice=0;indice<armasclase.length;indice++) {
+				armaelegida = armasVES.arma(armasclase[indice]);
+				if ( armaelegida != null ) {
+					if ( armaelegida.precio < this._din ) {
+						this._armas.push(armaelegida);
+						this._din -= armaelegida.precio;
+						numarmas++;
+						if ( numarmas >= this._objClase._equipo.narmasAD )
+							break;
+						break;
+					}
+				}
+			}
+		}
+	}
+	
+	
+	calculaEquipo() {
+		this._paquete = null;
+		this._armas = [ ];
+		if ( this._objClase._equipo.paquete != "" ) {
+			this._paquete = paquetesVES.paquete(this._objClase._equipo.paquete);
+			if ( this._paquete.precio < this._din ) {
+				this._din -= this._paquete.precio;
+				var armapaquete = armasVES.arma(this._paquete.arma);
+				this._armas.push(armapaquete);
+			}
+			else {
+				this._equipo = null;
+			}
+		}
+	}
+	
+	
+	
 	genera() {
 		habilidades.habilidadesVES();
 		habilidades.ptos_niv = 2;
@@ -100,7 +168,7 @@ class PJVES extends PJBase {
 		this.calculaHabilidades();
 		this._atq = this._objClase.atq(this._nivel);
 		this._ins = this._objClase.ins(this._nivel);
-		this._din = (Comun.random(6,1) + Comun.random(6,1) + Comun.random(6,1)) * 10;
+		this._din = (3 + Comun.random(6,1) + Comun.random(6,1) + Comun.random(6,1)) * 10;
 		
 		this.calculaPOD();
 		//this._pod = clase.pod(this._nivel) + Atributos.modif(this._atributos[atributos.atributoMod("INT")]);
@@ -131,6 +199,24 @@ class PJVES extends PJBase {
 		for (ital = 0; ital < talentosclase.length; ital++) {
 			this._talentos.push(talentosclase[ital]);
 		}
+		
+		this.calculaEquipo();
+		this.calculaArmasAD();
+		this.calculaArmasCaC();
+		
+	}
+	
+	componentesPaquete() {
+		var componentes ="";
+		if ( this._paquete != null ) {
+			componentes = ". " + this._paquete.componentes[0];
+			var indiceequipo=1;
+			for (indiceequipo = 1; indiceequipo < pj._paquete.componentes.length; indiceequipo++) {
+				componentes += ", " + pj._paquete.componentes[indiceequipo];
+			}
+			
+		}
+		return componentes;
 	}
 	
 	rellenaCamposPDF() {
@@ -140,6 +226,14 @@ class PJVES extends PJBase {
 			var itals = 0;
 			for (itals = 1; itals < this.talentos.length; itals++) {
 				stalentos += ", " + this.talentos[itals];
+			}
+		}
+		var componentes ="";
+		if ( this._paquete != null ) {
+			componentes = ". " + this._paquete.componentes[0];
+			var indiceequipo=1;
+			for (indiceequipo = 1; indiceequipo < pj._paquete.componentes.length; indiceequipo++) {
+				componentes += ", " + pj._paquete.componentes[indiceequipo];
 			}
 		}
 
@@ -175,8 +269,17 @@ class PJVES extends PJBase {
 					'SUPERVIVENCIA' : [ this.habilidades[4]],
 					'TECNOLOGIA' : [ this.habilidades[5] ],
 					'TALENTOS' : [ stalentos ],
-					'EQUIPO' : [ this._din + " créditos" ],
+					'EQUIPO' : [ this._din + " créditos" + componentes ],
 		};
+		
+		if ( this._armas != null ) {
+			var indice=0;
+			for (indice = 0; indice<this._armas.length; indice++) {
+				fields["ARMAS" + (indice+1) ] = [ this._armas[indice].nombre ];
+				fields["DANO" + (indice+1) ] = [ this._armas[indice].dano ];
+			}
+		}
+		
 		return fields;
 	}
 }
