@@ -126,7 +126,7 @@ class ClasesVES {
 			  ins : [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ],
 			  poderes : 1,
 			  competencias : "Puede usar armas primitivas, espadas fotónicas y armaduras ligeras",
-			  equipo : { narmasAD: 1, armasAD: [ "Pistola laser", "Blaster de bolsillo", "Blaster pesado" ],
+			  equipo : { narmasAD: 0, armasAD: [  ],
 						narmasCaC: 0, armasCaC: [ ],
 						armadura: [ "Ligera" ],
 						escudo: [ ],
