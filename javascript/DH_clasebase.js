@@ -456,7 +456,7 @@ class ClasesBases {
 			  motesM: [ ],
 			  magia: { numero:-1, conjuros: [] },
 			  equipo: { narmasAD: 1, armasAD: [ "Honda", "Cerbatana", "Arco corto", "Arco largo" ], 
-						narmasCaC: 2, armasCaC: [ "Daga", "Cimitarra", "Hacha de mano", "Espada corta", "Espada larga", "Hacha de batalla", "Bastón", "Lanza" ], 
+						narmasCaC: 2, armasCaC: [ "Sai (2)", "Dao (sable)", "Dadao (sable)", "Jian (espada)", "Jō (bastón)", "Pudao (lanza)" ], 
 						escudo: [ ],
 						armadura: [  ],
 						paquete: "Paquete de exploración", },
@@ -540,7 +540,7 @@ class ClasesBases {
 			  competencias: [ "Puedes llevar cualquier arma ligera, arcos cortos, ballestas ligeras, hondas y cualquier arma arrojadiza. No puedes portar armadura o escudo alguno." ],
 			  ventajas: [ "<strong>Tiradas de Inteligencia</strong> para reconocer alteraciones psiónicas.", "<strong>Tiradas de Carisma</strong> para evitar el control o la influencia mental." ],
 			  habilidades: [ "<strong>Poder psiónico</strong><br/>Eres capaz de moldear la realidad simplemente con las ondas energéticas que genera tu mente. Tienes una cantidad limitada de Ímpetu, una puntuación limitada que te permite lanzar poderes psiónicos, proezas místicas similares a conjuros.<br/>Comienzas conociendo dos Poderes psiónicos y con una reserva de 2 puntos de Ímpetu. Aprendes un nuevo poder psiónico cada tres niveles a partir del segundo nivel y cada nivel impar tu Ímpetu aumenta en un (1) punto máximo.", "<strong>Someter el cuerpo</strong><br/>Tu cuerpo físico no es más que una vasija terrenal para albergar tu esencia psiónica. Puedes sacrificar tu propia vitalidad para transformarla en puntos de Ímpetu. Si gastas un punto de energía y empleas una acción, puedes convertir tu Salud en Ímpetu, a ritmo de 1d6 de Salud por cada punto de Ímpetu recuperado.<br/>Además, si gastas un punto de energía puedes ignorar las necesidades de comer o dormir durante 24 horas. Recuerda que si no descansas, no podrás recuperar tu Ímpetu." ],
-			  lhabilidades: [ "Poder psiónico, Someter el cuerp" ],
+			  lhabilidades: [ "Poder psiónico, Someter el cuerpo" ],
 			  cordura: "SAB",
 			  origen: "<a href='https://naufragio.net/clase-psion-psionica/' target='_blank'>El Naufragio</a>",
 			  descripcion: "El universo está formado por diversas capas de realidad, separadas entre sí por partículas invisibles de energía mental. Los psiones son mortales que han formado un vínculo psíquico entre su ego y estas fuerzas universales, siendo capaces de lograr proezas sobrenaturales únicamente con el poder de su fuerza de voluntad.<br/>" +
