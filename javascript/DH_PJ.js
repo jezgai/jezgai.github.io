@@ -406,7 +406,7 @@ class DH_PJ {
 		this._Clase = clases.clase(nombreclase);
 		
 		if ( this._Clase.atributo.length == 1 )
-			this.Atributo = this._Clase.atributo[0];
+			this._Atributo = this._Clase.atributo[0];
 				
 		this.calculaDinero();
 		this.calculaEquipo();
