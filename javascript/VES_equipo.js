@@ -140,6 +140,13 @@ class ArmasVES {
 				precio: 60,
 			},
 			{
+				nombre: "Pistola",
+				tipo: "AD", 
+				dano: "1d6",
+				alcance: "15",
+				precio: 45,
+			},
+			{
 				nombre: "Pistola láser",
 				tipo: "AD", 
 				dano: "1d6",
@@ -195,13 +202,13 @@ class PaquetesVES {
             {
                 nombre: "Paquete del combatiente",
                 precio: 30,
-                arma: "Blaster pesado",
+                arma: "Pistola láser",
                 componentes: [ "Mochila", "4 barras de proteínas", "Binoculares", "Garfio mecánico", "Cartucho de energía", "Granadas de humo" ],
             },
             {
                 nombre: "Paquete del técnico",
                 precio: 25,
-                arma: "Pistola laser",
+                arma: "Pistola láser",
                 componentes: [ "Mochila", "4 barras de proteínas", "Herramientas", "Linterna" ],
             },
             {
@@ -219,7 +226,7 @@ class PaquetesVES {
             {
                 nombre: "Paquete del mediador",
                 precio: 30,
-                arma: "Blaster de bolsillo",
+                arma: "Monodaga",
                 componentes: ["Mochila", "2 barras de proteínas", "Comunicadores audio", "Linterna", "Binoculares", "Traje térmico"],
             },
 		];
