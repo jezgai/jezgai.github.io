@@ -66,7 +66,7 @@ class Bioformas {
 			},
 			{
 			  nombre : "Androide técnico",
-			  talentos : [ "Afinididad mecánica",  "Sensores" ] ,
+			  talentos : [ "Afinidad mecánica",  "Sensores" ] ,
 			  movimiento : 12,
 			  descripcion : "", 
 			},
