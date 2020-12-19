@@ -488,6 +488,12 @@
 		document.getElementById("dinero").innerHTML = "";
 		document.getElementById("ficha").innerHTML = "";
 		
+		document.getElementById("poderes").innerHTML = "";
+		document.getElementById("dpoderes").innerHTML = "";		
+		document.getElementById("poderes").style.visibility="hidden";
+		document.getElementById("dpoderes").style.visibility="hidden";
+		
+		
 		/*document.getElementById("sclases").innerHTML = "";
 		document.getElementById("snivel").innerHTML = "";
 		document.getElementById("srazas").innerHTML = "";
@@ -837,6 +843,14 @@
 			}
 		}
 		document.getElementById("dinero").innerHTML = sdinero; // "<br/><strong>Dinero: </strong> <br/>" + dinero + " créditos";
+	
+		document.getElementById("dtalentos").style.visibility="visible";
+		document.getElementById("dtalentos").innerHTML = pj.descripcionTalentos();
+	
+		document.getElementById("poderes").style.visibility="visible";
+		document.getElementById("poderes").innerHTML = pj.tablaPoderes();
+		document.getElementById("dpoderes").style.visibility="visible";
+		document.getElementById("dpoderes").innerHTML = pj.descripcionPoderes();
 		
     
 		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
@@ -889,6 +903,9 @@
 		document.getElementById("bgenerapdf").style.visibility="hidden";
 		document.getElementById("dtalentos").innerHTML = "";
 		document.getElementById("dtalentos").style.visibility="hidden";
+		document.getElementById("poderes").style.visibility="hidden";
+		document.getElementById("dpoderes").style.visibility="hidden";
+		document.getElementById("relleno").style.visibility="hidden";
 		if ( idx == 1 ) {
 			cargadesplegable();
 		}
@@ -1023,7 +1040,14 @@
 		<div class="dostercios" id="talentos"></div>
 		<div class="tercio" id="dinero"></div>
 	</div>
-	<div class="total" id="dtalentos"></div>
+	<div style="overflow:auto">
+		<div class="dostercios" id="poderes"></div>
+		<div class="tercio" id="relleno"></div>
+	</div>
+	<div style="overflow:auto">
+		<div class="mitad" id="dtalentos"></div>
+		<div class="mitad" id="dpoderes"></div>
+	</div>
 		
 	<!--<div class="w3-row">
 		<div class="w3-col s9 w3-center" id="datos"></div>

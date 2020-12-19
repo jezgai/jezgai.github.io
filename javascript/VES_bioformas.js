@@ -48,7 +48,7 @@ class Bioformas {
 		[
 			{
 			  nombre : "Humano",
-			  talentos : [ "Ímpetu Emprendedor",  "Adaptable" ] ,
+			  talentos : [ "Ímpetu emprendedor",  "Adaptable" ] ,
 			  movimiento : 12,
 			  descripcion : "", 
 			},

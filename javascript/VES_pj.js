@@ -40,7 +40,7 @@ class PJVES extends PJBase {
 	}
 	
 	get plantillaPDF() {
-		return "pdf/ViejaEstrella.pdf";
+		return "pdf/ViejaEstrellaExt.pdf";
 	}
 	
 	calculaPOD() {
@@ -63,6 +63,41 @@ class PJVES extends PJBase {
 													  " </td></tr><tr><td><strong>Def:</strong> " + pj.defn + 
 													  " </td></tr><tr><td><strong>PV:</strong> " + pj.pv + 
 													  " </td></tr><tr><td><strong>Mov:</strong> " + pj.mov + "</td></tr></table";
+	}
+	
+	
+	descripcionTalentos() {
+		var itals = 0;
+		var stals = "";
+		for (itals = 0; itals < this.talentos.length; itals++) {
+			stals += "<strong>" + this.talentos[itals] + "</strong><br>";
+			stals += talentosVES.descripcion(this.talentos[itals]) + "<br/><br/>";
+		}
+		return stals;
+	}
+	
+	descripcionPoderes() {
+		var ipoderes = 0;
+		var spoderes = "";
+		for (ipoderes = 0; ipoderes < this._poderes.length; ipoderes++) {
+			spoderes += "<strong>" + this._poderes[ipoderes].nombre + "</strong><br>";
+			spoderes += this._poderes[ipoderes].descripcion + "<br/><br/>";
+		}
+		return spoderes;
+	}
+	
+	
+	tablaPoderes() {
+		var ipoderes = 0;
+		if ( this._poderes.length == "" ) {
+			return "";
+		}
+		var spoderes = "<table class='w3-table  w3-striped w3-border'><tr><th>Poderes</th></tr>";
+		for (ipoderes = 0; ipoderes < this._poderes.length; ipoderes++) {
+			spoderes += "<tr><td>" + this._poderes[ipoderes].nombre + " </td></tr>";
+		}
+		spoderes += "</table>";
+		return spoderes;
 	}
 	
 	modifAtributo(valorAtributo) {
@@ -200,6 +235,11 @@ class PJVES extends PJBase {
 			this._talentos.push(talentosclase[ital]);
 		}
 		
+		this._poderes = [];
+		if (this._objClase._poderes > 0) {
+			this._poderes = poderesVES.poderes(this._objClase._poderes);
+		}
+		
 		this.calculaEquipo();
 		this.calculaArmasAD();
 		this.calculaArmasCaC();
@@ -236,6 +276,15 @@ class PJVES extends PJBase {
 				componentes += ", " + pj._paquete.componentes[indiceequipo];
 			}
 		}
+		
+		var spoderes = "";
+		if ( this._poderes.length > 0 ) {
+			spoderes = this._poderes[0].nombre;
+			var ipoderes = 0;
+			for (ipoderes = 1; ipoderes < this._poderes.length; ipoderes++) {
+				spoderes += ", " + this._poderes[ipoderes].nombre;
+			}
+		}
 
 		var fields = {
 					'Nombre' : [ this._nombre ],
@@ -268,7 +317,10 @@ class PJVES extends PJBase {
 					'SUBTERFUGIO' : [ this.habilidades[3] ],
 					'SUPERVIVENCIA' : [ this.habilidades[4]],
 					'TECNOLOGIA' : [ this.habilidades[5] ],
+					'PODERES' : [ spoderes ],
 					'TALENTOS' : [ stalentos ],
+					'DTalentos' : [ document.getElementById("dtalentos").innerText ],
+					'DPoderes' : [ document.getElementById("dpoderes").innerText ],
 					'EQUIPO' : [ this._din + " créditos" + componentes ],
 		};
 		
