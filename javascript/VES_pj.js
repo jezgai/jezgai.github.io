@@ -240,6 +240,8 @@ class PJVES extends PJBase {
 			this._poderes = poderesVES.poderes(this._objClase._poderes);
 		}
 		
+		this._trasfondo = this._objClase.trasfondo();
+		
 		this.calculaEquipo();
 		this.calculaArmasAD();
 		this.calculaArmasCaC();
@@ -317,6 +319,7 @@ class PJVES extends PJBase {
 					'SUBTERFUGIO' : [ this.habilidades[3] ],
 					'SUPERVIVENCIA' : [ this.habilidades[4]],
 					'TECNOLOGIA' : [ this.habilidades[5] ],
+					'TRASFONDOS' : [ this._trasfondo ],
 					'PODERES' : [ spoderes ],
 					'TALENTOS' : [ stalentos ],
 					'DTalentos' : [ document.getElementById("dtalentos").innerText ],

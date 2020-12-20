@@ -105,6 +105,7 @@ class ClaseVES extends ClaseBase {
 		this._competencias = clase.competencias;
 		this._equipo = clase.equipo;
 		this._poderes = clase.poderes;
+		this._trasfondos = clase.trasfondos;
 	}
 		
 	get pod() {
@@ -175,6 +176,17 @@ class ClaseVES extends ClaseBase {
 		}
 		return this._ins[iins];
 	}
+	
+	trasfondo() {
+		var numero = Comun.random(20,1);
+		var itrasfondo = 0;
+		for (itrasfondo = 0; itrasfondo<this._trasfondos.length; itrasfondo) {
+			if ( numero <= this._trasfondos[itrasfondo].hasta ) {
+				return this._trasfondos[itrasfondo].nombre;
+			}
+		}
+		return nombre;
+	}
 
 }
 
@@ -186,6 +198,7 @@ class ClasesVES {
 			{
 			  nombre : "Combatiente",
 			  talentos : { tlnfijo: "", tlnrandom: [ "Artillero/a", "Ataque certero", "Ataque múltiple", "Indómito/a", "Francotirador/a", "Inspiración", "Pelea con X" ] },
+			  trasfondos : [ { nombre: "Mercenaria/o", hasta: 5 }, { nombre: "Pirata", hasta: 12 }, { nombre: "Cazarrecompensas", hasta: 16 }, { nombre: "Soldado", hasta: 20 } ],
 			  daguante : 8,
 			  atrs : [ "FUE", "CON", "DES", "SAB", "CAR", "INT" ],
 			  atq : [ 1, 1, 2, 2, 3, 3, 4, 4, 5, 5 ],
@@ -202,6 +215,7 @@ class ClasesVES {
 			{
 			  nombre : "Mediador/a",
 			  talentos : { tlnfijo: "", tlnrandom: [ "Contactos", "Criminal", "Inspiración", "Lingüista natural", "Maestro/a del disfraz", "Pico de oro", "Suerte" ] },
+			  trasfondos : [ { nombre: "Embajador/a", hasta: 4 }, { nombre: "Contrabandista", hasta: 10 }, { nombre: "Tahur", hasta: 14 }, { nombre: "Comerciante", hasta: 20 } ],
 			  daguante : 6,
 			  atrs : [ "CAR", "DES", "SAB", "INT", "CON", "FUE" ],
 			  atq : [ 0, 0, 1, 1, 2, 2, 3, 3, 4, 4 ],
@@ -218,6 +232,7 @@ class ClasesVES {
 			{
 			  nombre : "Caballero/a Místico/a",
 			  talentos : { tlnfijo: "Caballero místico", tlnrandom: [ "Manipulación de la Realidad", "Conexión mística", "Sanador/a", "Místico/a bélico/a", "Sabiduría mística", "Especialista", "Crear artefactos místicos" ] },
+			  trasfondos : [ { nombre: "Caballera/o de la justicia", hasta: 10 }, { nombre: "Buscador/a de objetos místicos", hasta: 20 } ],
 			  daguante : 6,
 			  atrs : [ "DES", "INT", "FUE", "SAB", "CON", "CAR" ],
 			  atq : [ 0, 0, 0, 1, 1, 2, 2, 3, 3, 3 ],
@@ -234,6 +249,7 @@ class ClasesVES {
 			{
 			  nombre : "Maestro/a Místico/a",
 			  talentos : { tlnfijo: "Maestro/a místico/a", tlnrandom: [ "Manipulación de la Realidad", "Conexión mística", "Sanador/a", "Místico/a bélico/a", "Sabiduría mística", "Especialista", "Crear artefactos místicos" ] },
+			  trasfondos : [ { nombre: "Erudita/o", hasta: 7 }, { nombre: "Ermitaña/o", hasta: 13 }, { nombre: "Estudiosa/o de linajes místicos", hasta: 20 } ],
 			  daguante : 4,
 			  atrs : [ "SAB", "INT", "DES", "CAR", "FUE", "CON" ],
 			  atq : [ 0, 0, 0, 1, 1, 2, 2, 3, 3, 3 ],
@@ -250,6 +266,7 @@ class ClasesVES {
 			{
 			  nombre : "Técnico",
 			  talentos : { tlnfijo: "", tlnrandom: [ "Afinidad mecánica", "Artillero/a", "Científico/a", "Médico", "Piloto experto", "Resolutivo/a", "Superviviente" ] },
+			  trasfondos : [ { nombre: "Piloto", hasta: 7 }, { nombre: "Mecánica/o", hasta: 13 }, { nombre: "Científica/o", hasta: 20 } ],
 			  daguante : 6,
 			  atrs : [ "INT", "DES", "SAB", "CON", "FUE", "CAR" ],
 			  atq : [ 0, 0, 1, 1, 2, 2, 3, 3, 4, 4 ],
@@ -283,6 +300,7 @@ class ClasesVES {
 		}
 		return new ClaseVES(this._clases[Comun.random(this._clases.length, 0)]);
 	}
+	
 }
 
 
