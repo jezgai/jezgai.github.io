@@ -236,7 +236,7 @@ class ClasesVES {
 			{
 			  nombre : "Mediador/a",
 			  talentos : { tlnfijo: "", tlnrandom: [ "Contactos", "Criminal", "Inspiración", "Lingüista natural", "Maestro/a del disfraz", "Pico de oro", "Suerte" ] },
-			  trasfondos : [ { nombre: "Embajador/a", hasta: 4 }, { nombre: "Contrabandista", hasta: 10 }, { nombre: "Tahur", hasta: 14 }, { nombre: "Comerciante", hasta: 20 } ],
+			  trasfondos : [ { nombre: "Diplomática/o", hasta: 4 }, { nombre: "Contrabandista", hasta: 10 }, { nombre: "Tahur", hasta: 14 }, { nombre: "Comerciante", hasta: 20 } ],
 			  daguante : 6,
 			  atrs : [ "CAR", "DES", "SAB", "INT", "CON", "FUE" ],
 			  atq : [ 0, 0, 1, 1, 2, 2, 3, 3, 4, 4 ],
