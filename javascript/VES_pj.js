@@ -237,7 +237,7 @@ class PJVES extends PJBase {
 		
 		this._poderes = [];
 		if (this._objClase._poderes > 0) {
-			this._poderes = poderesVES.poderes(this._objClase._poderes);
+			this._poderes = poderesVES.poderes(this._nivel * this._objClase._poderes);
 		}
 		
 		this._trasfondo = this._objClase.trasfondo();

@@ -9,15 +9,36 @@ class PoderesVES {
 		{ nombre: "Sanar", descripcion: "Eres capaz de curar 1D6 de puntos de vida propios o de un compañero. La dificultad depende de la gravedad de las heridas." },
 		{ nombre: "Escudo", descripcion: "Creas un campo energético ligado a tí que funciona a modo de escudo incrementando durante 1D6 asaltos la Defensa en 2. La dificultad depende de a cuantos personajes debe proteger, 11 si es a tí solo, 14 si incluye a otro personaje, 17 si incluye en el escudo a 2 más y 20 si protege a 3 más aparte de tí. Los personajes deben mantenerse juntos para que el escudo les proteja." },
 		{ nombre: "Noquear", descripcion: "Dejas inconsciente a un número indeterminado de criaturas que se encuentren a menos de 24 metros. Los adversarios que tengas a tu alcance y tengan una Constitución inferior al resultado de tu tirada caen inconscientes." },
-		{ nombre: "Parar disparos", descripcion: "Si tienes una espada fotónica puedes usarlo para parar ataques a distancia. La dificultad es la tirada de ataque del adversario." },
+		{ nombre: "Ataque mental", descripcion: "Realizas una ataque sobre la mente de tu objetivo, si superas su defensa provocas 1d6 de daño." },
+		{ nombre: "Atormentar", descripcion: "Generas miedo en tu objetivo si superas su Inteligencia con tu tirada de Poder. Si lo logras todas sus tiradas serán con desventaja durante 1d6 asaltos." },
+		{ nombre: "Bloqueo", descripcion: "Paraliza a un objetivo impidiendo que se mueva. Si se encuentra a 10 metros o menos la dificultad es 11, si está a 30 metros o menos la dificultad es 14." },
+		{ nombre: "Bloqueo masivo", descripcion: "Paraliza 1d6 objetivos. Si se encuentran a 10 metros o menos la dificultad es 11, si se están a 30 metros o menos la dificultad es 17." },
+		{ nombre: "Invisibilidad", descripcion: "Puedes volverte invisible durante 1d4 turnos o hasta que ataques a alguien." },
+		{ nombre: "Intangibilidad", descripcion: "Puedes volverte intangible durante 1d4 turnos. Durante este tiempo no puedes recibir daño físico y puedes traspasar barreras sin problemas." },
+		{ nombre: "Silencio", descripcion: "Una esfera invisible de silencio, de 3 metros de radio, cubre a un objetivo durante 1d6 turnos. Instantáneo." },
+		{ nombre: "Telepatía", descripcion: "Durante un turno puedes comunicarte telepáticamente con un objetivo. La dificultad depende de si lo puedes ver o la distancia a la que se encuentre." },
+		{ nombre: "Enfriar", descripcion: "Puedes sacar calor de un objeto, haciendo que su temperatura descienda hasta congelarse." },
+		{ nombre: "Eliminar enfermedades", descripcion: "Eliminas una enfermedad de un objetivo que esté al alcance de tu mano." },
+		{ nombre: "Calentar", descripcion: "Puedes proporcionar calor a un objeto, haciendo que su temperatura ascienda hasta que entre en ebullición, se funda o evapore. La dificultad depende de la temperatura que tiene que propocionar." },
+		{ nombre: "Presentir", descripcion: "Si lo activas, durante los próximos 2d6 turnos puedes sentir que algo va mal cuando hay un engaño o peligro cercano para ti o para tus aliados. Instantáneo." },
+		]
+		this._poderescaballero = [
+			{ nombre: "Parar disparos", descripcion: "Si tienes una espada fotónica puedes usarlo para parar ataques a distancia. La dificultad es la tirada de ataque del adversario." },
 		]
 	}
 	
 	
-	poderes(numero) {
+	
+	poderes(numero, caballero=false) {
 		var ipoderes = 0;
 		var poderespj = [];
-		var poderesrandom = Comun.shuffle(this._poderes.clone());
+		var poderesrandom = this._poderes.clone();
+		if ( caballero == true ) {
+			for (ipoderes=0; ipoderes<this._poderescaballero; ipoderes++) {
+				poderesrandom.push(this._poderescaballero[ipoderes]);
+			}
+		}
+		poderesrandom = Comun.shuffle(poderesrandom);
 		for (ipoderes=0; ipoderes<numero; ipoderes++) {
 			poderespj.push(poderesrandom[ipoderes]);
 		}
