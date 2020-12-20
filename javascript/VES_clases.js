@@ -180,7 +180,7 @@ class ClaseVES extends ClaseBase {
 	trasfondo() {
 		var numero = Comun.random(20,1);
 		var itrasfondo = 0;
-		for (itrasfondo = 0; itrasfondo<this._trasfondos.length; itrasfondo) {
+		for (itrasfondo = 0; itrasfondo<this._trasfondos.length; itrasfondo++) {
 			if ( numero <= this._trasfondos[itrasfondo].hasta ) {
 				return this._trasfondos[itrasfondo].nombre;
 			}
