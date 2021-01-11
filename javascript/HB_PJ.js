@@ -19,8 +19,36 @@ class HB_PJ {
 		this._posesiones = 0;
 		this._sueldo = 0;
 		this._gravementeherido = 0;
+		this._tensionmental=0;
+		this._tranquilo=0;
+		this._intranquilo=0;
+		this._tenso=0;
+	}
+	
+	calculaEM() {
+		this._tensionmental = Math.trunc(this.perspicacia / 5) - 2;
+		this._tranquilo = Math.ceil(this.tensionmental / 2);
+		this._intranquilo = Math.trunc(this.tensionmental / 2);
+	}
+	
+	get tensionmental() {
+		return this._tensionmental;
+	}
+	
+	get tranquilo() {
+		return this._tranquilo;
 	}
 
+	get intranquilo() {
+		return this._intranquilo;
+	}
+
+	calculaEM() {
+		this._tensionmental = Math.trunc(this.perspicacia / 5) - 2;
+		this._tranquilo = Math.ceil(this.tensionmental / 2);
+		this._intranquilo = Math.trunc(this.tensionmental / 2);
+	}
+	
 	get ahorros() {
 		return this._ahorros;
 	}
@@ -324,6 +352,8 @@ class HB_PJ {
 		this.porccarisma();
 		
 		this.calculaconcentracion();
+		
+		this.calculaEM();
 	}
 	
 }

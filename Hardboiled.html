@@ -172,6 +172,79 @@
 		xhr.send();		
 		
 	}
+
+	function rellenaPDFEMental() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		var habilidadesaelegir = '';
+		if ( profesion.nombre == "Diletante" ) {
+			var indpri=0;
+			habilidadesaelegir = "Reparte las siguientes puntuaciones entre 10 habilidades distintas de las principales: " + pj.habsecundarias[0];
+					
+			for (indpri=1;indpri<pj.profesion.nhabsecundarias;indpri++) {
+				habilidadesaelegir += ", " + pj.habsecundarias[indpri];
+			}
+		}
+		else if ( profesion.nombre == "Atleta" ) {
+			habilidadesaelegir = "Asigna " + pj.habsecundarias[9] + " puntos a Ciencia Natural o Humanidades.";
+		}
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = {
+					'Profesion' : [ pj.profesion.nombre ],
+					'Nivel' : [ 1 ],
+					'Vigor' : [ pj.vigor ],
+					'Destreza' : [ pj.destreza ],
+					'Perspicacia' : [ pj.perspicacia ],
+					'Carisma' : [ pj.carisma ],
+					'Suerte' : [ pj.suerte ],
+					'Pegada' : [ pj.pegada ],
+					'Movimiento' : [ pj.mov ],
+					'Concentracion' : [ pj.concentracion ],
+					'TranquiloMax' : [ pj.tranquilo ],
+					'IntranquiloMax' : [ pj.intranquilo ],
+					'TensoMax' : [ pj.tranquilo ],
+					'PV' : [ pj.pv ],
+					'PVActual' : [ pj.pv ],
+					'SueldoMensual' : [ pj.sueldo + "$" ],
+					'Ahorros' : [ pj.ahorros + "$" ],
+					'Vivienda1' : [ pj.posesiones + "$ en posesiones" ],
+					'Biografia' : [ document.getElementById("ptosextra").innerText + document.getElementById("dotesinvestigativas").innerText + habilidadesaelegir ],
+					'GravementeHerido' : [ pj._gravementeherido ],
+				};
+				
+				
+				var indpri=0;
+		
+				var habpj = Comun.habilidadesPJ(pj.profesion.habprincipales, pj.profesion.nhabprincipales);
+		
+				for (indpri=0;indpri<pj.profesion.nhabprincipales;indpri++) {
+					fields[ listaHabilidades.campopdf(habpj.habilidades[indpri]) ] = [ pj.habprimarias[indpri] ];
+				}
+			  
+				habpj = Comun.habilidadesPJ(pj.profesion.habsecundarias, pj.profesion.nhabsecundarias);
+				
+				for (indpri=0;indpri<pj.profesion.nhabsecundarias;indpri++) {
+					if ( indpri < habpj.habilidades.length && listaHabilidades.existehabilidad(habpj.habilidades[indpri]) )
+						fields[ listaHabilidades.campopdf(habpj.habilidades[indpri]) ] = [ pj.habsecundarias[indpri] ];
+				}
+			  
+				
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, pj.profesion.nombre + '.pdf'); //'PersonajeDH.pdf');
+			}
+		};
+
+
+		xhr.open('GET', 'pdf/HardboiledEM.pdf', true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}
 		
 
 	function seleccionaprofesion(thelist) {
@@ -295,22 +368,19 @@
 		
 		if ( requisitos != "" )
 				document.getElementById("atributos").innerHTML += "<br/><table class='w3-table  w3-striped  w3-border' <tr><td><strong>Requisitos</strong></td><td>" + requisitos + "</td></tr></table>";
-				
-		var tensionmental = Math.trunc(pj.perspicacia / 5) - 2;
-		var tranquilo = Math.ceil(tensionmental / 2);
-		var intranquilo = Math.trunc(tensionmental / 2);
 		
+		pj.calculaEM();
 
 		document.getElementById("estabmental").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td></td><td><center><strong>Estabilidad Mental</strong></center></td><td></td></tr>" + 
-            		                                  "<tr><td><strong>Tranquilo</strong>: " + tranquilo + " </td>" +
-            		                                  "<td><strong>Intranquilo</strong>: " + intranquilo + " </td>" +
-            		                                  "<td><strong>Tenso</strong>: " + tranquilo + " </td></tr></table>";
+            		                                  "<tr><td><strong>Tranquilo</strong>: " + pj.tranquilo + " </td>" +
+            		                                  "<td><strong>Intranquilo</strong>: " + pj.intranquilo + " </td>" +
+            		                                  "<td><strong>Tenso</strong>: " + pj.tranquilo + " </td></tr></table>";
             		                                              		                                  
-		document.getElementById("hckestabmental").innerHTML = "La estabilidad mental es un pequeño hack copiado de Cthulhu D100, que utiliza en lugar de POD (que no existe en Hardboiled, la Perspicacia. " + 
-														"Para ello se divide la perspicacia por 5, se redondea hacia abajo y se le resta 2 (<strong>" + tensionmental + "</strong>). " + 
+		document.getElementById("hckestabmental").innerHTML = "La estabilidad mental es un pequeño hack copiado de Cthulhu D100, que utiliza en lugar de POD (que no existe en Hardboiled), la Perspicacia. " + 
+														"Para ello dividimos la perspicacia por 5, redondeamos hacia abajo y le restamos 2 (<strong>" + pj.tensionmental + "</strong>). " + 
 														"Los valores de tranquilo, intranquilo y tenso se calculan de la misma forma que en Cthulhu D100 " + 
-														"(tranquilo y tenso es el valor anterior dividido por 2 y redondeado hacia arriba e intranquilo igual pero redondeado hacia abajo<br/><br/>" +
-														"En cualquier caso se genera otro atributo (Cordura) por si se prefiere usar el método tradicional de La Llamada (este valor, a diferencia de los anteriores, sí se lleva al pdf).";
+														"(tranquilo y tenso es el valor calculado dividido por 2 y redondeado hacia arriba e intranquilo igual pero redondeado hacia abajo<br/><br/>" +
+														"En cualquier caso se genera otro atributo (Cordura) por si se prefiere usar el método tradicional de La Llamada.";
 	}
 	
 	function construyeBotonHabilidad(nbfuncion, iactual, isiguiente)
@@ -417,6 +487,7 @@
 		}
 		document.getElementById("botonpdf").style.visibility="visible";
 		document.getElementById("botonpdfCOR").style.visibility="visible";
+		document.getElementById("botonpdfEM").style.visibility="visible";
 		
 	}
 	
@@ -432,6 +503,7 @@
 	function conprofesiones() {
 		document.getElementById("botonpdf").style.visibility="hidden";
 		document.getElementById("botonpdfCOR").style.visibility="hidden";
+		document.getElementById("botonpdfEM").style.visibility="hidden";
 		document.getElementById("atributos").innerHTML="";
 		document.getElementById("habprimaria").innerHTML="";
 		document.getElementById("habsecundaria").innerHTML="";
@@ -462,7 +534,7 @@
 }
 .minicentral {
   float:left;
-  width:16%;
+  width:12%;
   padding:0 1px;
 }
 .central {
@@ -497,6 +569,7 @@
 		</div>
 		<div class="minicentral"><p><button class='w3-button w3-block w3-green' onclick='calcula()'>Calcula</button></p></div>
 		<div class="minicentral" id="botonpdf"><p><button class='w3-button w3-block w3-green' onclick='rellenaPDF()'>Genera PDF</button></p></div>
+		<div class="minicentral" id="botonpdfEM"><p><button class='w3-button w3-block w3-green' onclick='rellenaPDFEMental()'>Genera PDF Estabilidad M.</button></p></div>
 		<div class="minicentral" id="botonpdfCOR"><p><button class='w3-button w3-block w3-green' onclick='rellenaPDFCordura()'>Genera PDF con Cordura</button></p></div>
 		<div class="cuarto" id="profesion"><p></p></div>
 	</div>
