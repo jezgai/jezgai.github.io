@@ -7,7 +7,12 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="javascript/CD_comun.js"></script>
 <script src="javascript/CD_PJ.js"></script>
+<script src="javascript/CD_habilidades.js"></script>
+<script src="javascript/CD_puntos.js"></script>
 <script src="javascript/CD_profesion.js"></script>
+
+<script src="javascript/pdfform.minipdf.dist.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
 
 <script>
 	
@@ -21,7 +26,143 @@
 	
 	let sprofesiones = Comun.desplegableProfesiones(profesiones, "seleccionaprofesion");
 	
+	let habilidades = new Habilidades();
 	
+	let puntuaciones = new Puntuaciones();
+	
+	
+	function calculahabilidad(habilidad, puntos) {
+		var ptostotal = puntos;
+		ptostotal += habilidad.base.fijo;
+		if (habilidad.base.atributos.length > 0 ) {
+			var numero=0;
+			var indice1 = 0;
+			for (indice1 = 0; indice1<habilidad.base.atributos.length; indice1++) {
+				var indice2=0;
+				var n=0;
+				for (indice2 = 0; indice2<habilidad.base.atributos[indice1].length; indice2++) {
+					n+=pj.valor(habilidad.base.atributos[indice1][indice2]);
+				}
+				if ( n>numero)
+					numero=n;
+			}
+			ptostotal+=numero;
+		}
+		return ptostotal;
+		
+	}
+	
+	function rellenaPDF() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = {
+					'Profesion' : [ pj._profesion ],
+					'FUE' : [ pj.FUE ],
+					'FUEx5' : [ 5*pj.FUE ],
+					'DES' : [ pj.DES ],
+					'DESx5' : [ 5*pj.DES ],
+					'CON' : [ pj.CON ],
+					'CONx5' : [ 5*pj.CON ],
+					'POD' : [ pj.POD ],
+					'PODx5' : [ 5*pj.POD ],
+					'CAR' : [ pj.CAR ],
+					'CARx5' : [ 5*pj.CAR ],
+					'INT' : [ pj.INT ],
+					'INTx5' : [ 5*pj.INT ],
+					'EST' : [ pj.EST ],
+					'ESTx5' : [ 5*pj.EST ],
+					'TAM' : [ pj.TAM ],
+					'TAMx5' : [ 5*pj.TAM ],
+					'PV' : [ pj.PV ],
+					'MD' : [ pj.MD ],
+					'FdV' : [ pj.FuerzaVoluntad ],
+					'UHG' : [ pj.UmbralHerida ],
+					'VIdioma1' : [ 5*pj.EST ],
+				};
+				
+			  var indice=0;
+			  for (indice=pj._em1+1;indice<=9; indice++) {
+				  fields[ 'Tranquilo' + indice  ] = [ true ];
+				  fields[ 'Tenso' + indice ] = [ true ];
+			  }
+			  for (indice=pj._em2+1;indice<=9; indice++) {
+				  fields[ 'Intranquilo' + indice ] = [ true ];
+			  }
+			  
+			  var habgen = [];
+			  
+			  for (indice=0; indice<pj._lhabprofesion.length; indice++) {
+				  var habilidad = habilidades.habilidad(pj._lhabprofesion[indice]);
+				  if ( habilidad != null ) {
+					  var puntos = calculahabilidad(habilidad, pj._puntosProfesion[indice]);
+					  if ( habilidad.vpdf != "" ) {
+						  fields [ habilidad.vpdf ] = [ puntos ];
+					  }
+					  else if ( habilidad.dpdf != "" ) {
+						  var num = 2;
+						  var indice2;
+						  for (indice2=0;indice2<habgen.length; indice2++) {
+							  if ( habgen[indice2].nombre == habilidad.dpdf ) {
+								  habgen[indice2].numero++;
+								  num = habgen[indice2].numero;
+								  break;
+							  }
+						  }
+						  if ( indice2==habgen.length ) {
+							  habgen[indice2] = { numero : num, nombre : habilidad.dpdf };
+						  }
+						  fields [ "V" + habilidad.dpdf + num ] = [ puntos ];
+						  fields [ habilidad.dpdf + num ] = [ pj._lhabprofesion[indice] ];
+					  }
+				  }
+			  }
+			  
+			  
+			  for (indice=0; indice<pj._lhabresto.length && indice < 4; indice++) {
+				  var habilidad = habilidades.habilidad(pj._lhabresto[indice]);
+				  if ( habilidad != null ) {
+					  var puntos = calculahabilidad(habilidad, pj._puntosResto[indice]);
+					  if ( habilidad.vpdf != "" ) {
+						  fields [ habilidad.vpdf ] = [ puntos ];
+					  }
+					  else if ( habilidad.dpdf != "" ) {
+						  var num = 2;
+						  var indice2;
+						  for (indice2=0;indice2<habgen.length; indice2++) {
+							  if ( habgen[indice2].nombre == habilidad.dpdf ) {
+								  habgen[indice2].numero++;
+								  num = habgen[indice2].numero;
+								  break;
+							  }
+						  }
+						  if ( indice2==habgen.length ) {
+							  habgen[indice2] = { numero : num, nombre : habilidad.dpdf };
+						  }
+						  fields [ "V" + habilidad.dpdf + num ] = [ puntos ];
+						  fields [ habilidad.dpdf + num ] = [ pj._lhabresto[indice] ];
+					  }
+				  }
+			  }
+				
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, 'PersonajeCD100.pdf');
+			  //saveAs(blob, pj.profesion.nombre + '.pdf'); //'PersonajeDH.pdf');
+			}
+		};
+
+
+		xhr.open('GET', 'pdf/CthulhuD100.pdf', true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}
+		
 
 	function seleccionaprofesion(thelist) {
 		var idx = thelist.selectedIndex;
@@ -199,6 +340,8 @@
 	function pintacourdura() {
 		var em1 = Math.ceil(pj.POD/2);
 		var em2 = Math.trunc(pj.POD/2);
+		pj._em1 = em1;
+		pj._em2 = em2;
 		document.getElementById("cordura").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>Cordura (clásica)</strong></td><td>" + (pj.POD*5) + "</td><tr/><table>" +
             		                                  "<br/><table class='w3-table  w3-striped  w3-border'><tr><td><strong>Estabilidad mental (alternativa)</strong></td><td>" + em1 + "</td><td>" + em2 + "</td><td>" + em1 + "</td></tr></table>";
 	}
@@ -215,6 +358,11 @@
 		
 		pj = new CD_PJ();
 		pj.genera();
+		pj.setprofesion(profesion);
+		//pj._profesion = nbprofesion;
+		
+		pj._puntosProfesion = puntuaciones.puntuaciones(pj._lhabprofesion.length, pj.PtosProfesion)
+		pj._puntosResto = puntuaciones.puntuaciones(4, pj.PtosResto);
 		
 		
 		pintaatributos();
@@ -270,11 +418,16 @@
   width:33%;
   padding:0 1px;
 }
+.minimain {
+  float:left;
+  width:17%;
+  padding:0 1px;
+}
 
 
 @media only screen and (max-width:820px) {
   /* For mobile phones: */
-  .left, .main, .right {
+  .left, .main, .right, .minimain {
     width:100%;
   }
   
@@ -289,7 +442,8 @@
 		<div class="left" id="profesiones">
 			<p><button class='w3-button w3-block w3-teal' onclick='conprofesiones()'>Profesiones</button></p>
 		</div>
-		<div class="main"><p><button class='w3-button w3-block w3-gray' onclick='calcula()'>Calcula</button></p></div>
+		<div class="minimain"><p><button class='w3-button w3-block w3-gray' onclick='calcula()'>Calcula</button></p></div>
+		<div class="minimain"><p><button class='w3-button w3-block w3-gray' onclick='rellenaPDF()'>GeneraPDF</button></p></div>
 		<div class="right" id="profesion"><p></p></div>
 	</div>
 	<div style="overflow:auto">

@@ -9,6 +9,22 @@ class CD_PJ {
 		this._EST = 0;
 		this._TAM = 0;
 		this._INT = 0;
+		this._profesion = "";
+		this._em1 = 9;
+		this._em2 = 9;
+		
+		this._lhabprofesion = [];
+		this._lhabresto = [];
+		this._puntosProfesion = [];
+		this._puntosResto = [];
+	}
+	
+	setprofesion(objprofesion) {
+		this._profesion = objprofesion.nombre;
+		
+		this._lhabprofesion = objprofesion._lhabilidades;
+		this._lhabresto = objprofesion._lresto;
+		
 	}
 
 	get FUE() {
@@ -134,6 +150,32 @@ class CD_PJ {
 	get PtosResto() {
 		return this._INT * 10;
 	}
+	
+	valor(atributo) {
+		var retorno = 0;
+		switch (atributo) {
+			case "FUE" : retorno = this._FUE;
+						 break;
+			case "CON" : retorno = this._CON;
+						 break;
+			case "DES" : retorno = this._DES;
+						 break;
+			case "POD" : retorno = this._POD;
+						 break;
+			case "CAR" : retorno = this._CAR;
+						 break;
+			case "EST" : retorno = this._EST;
+						 break;
+			case "TAM" : retorno = this._TAM;
+						 break;
+			case "INT" : retorno = this._INT;
+						 break;
+		}
+		return retorno;
+		
+	}
+	
+	
 	
 	genera() {
 		
