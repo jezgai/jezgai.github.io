@@ -44,7 +44,7 @@ let nombresBritanos = new Nombres( [ "Adair", "Ahern", "Ahearn", "Ailbe", "Ailil
 									 "Murdoch", "Murtagh", "Mynogan", "Naois", "Neal", "Neil", "Nealon", "Nell", "Neale", "Niall", "Neill", "Niallan", "Nyle", "Nels", "Nelson", "Nemausus", 
 									 "Newlin", "Newlyn", "Niece", "Neese", "Nisien", "Nolan", "Noland", "Orin", "Oran", "Oscar", "Oskar", "Osker", "Osckar", "Ossian", "Oisin", "Owen", "Owin", 
 									 "Owyn", "Pendaran", "Perth", "Pert", "Phelan", "Powell", "Pryderi", "Pwyll", "Quin", "Quinn", "Regan", "Reghan", "Reagan", "Reaghan", "Rivalin", "Ronan", 
-									 "Roy", "Sativola", "Sawyer", "Scilti", "Setanta", "", "Sheridan", "Sidwell", "Sloan", "Sloane", "Sugn", "Tadhg", "Taliesin", "Tanguy", "Taran", "Teague", 
+									 "Roy", "Sativola", "Sawyer", "Scilti", "Setanta", "Sheridan", "Sidwell", "Sloan", "Sloane", "Sugn", "Tadhg", "Taliesin", "Tanguy", "Taran", "Teague", 
 									 "Teaghue", "Teirtu", "Teithi", "Tegid", "Teyrnon", "Tiernan", "Tiernay", "Torrey", "Tory", "Trahern", "Tremayne", "Tremaine", "Trevor", "Tuireann", "Turi", 
 									 "Twrch", "Trwyth", "Uchdryd", "Uisnech", "Usenech", "Varden", "Vardon", "Varney", "Vaughn", "Vortigern", "Weylin", "Weylyn", "Wynne", "Yspaddaden" ], 
                                     [ "Aberfa", "Abertha", "Adain", "Adara", "Addfwyn", "Addiena", "Adyna", "Aelwyd", "Aeron", "Amser", "Angharad", "Anna", "Annwyl", "Argel", "Arglwyddes", 
