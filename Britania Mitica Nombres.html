@@ -1,6 +1,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
+<title>Generador de nombres para Britania Mítica</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="javascript/mth_comun.js"></script>
@@ -10,26 +11,31 @@
 	var numeronombres=0;
 	
 	function generanombres() {
-		var nombresf = "<h1>Nombres femeninos</h1>";
-		var nombresm = "<h1>Nombres masculinos</h1>";	
-		
-		var nombresf = "<h1>Nombres femeninos</h1>";
-		var nombresm = "<h1>Nombres masculinos</h1>";	
+		var nombresf = "<h1>Nombres britanos femeninos</h1>";
+		var nombresm = "<h1>Nombres britanos masculinos</h1>";
+		var nombresSf = "<h1>Nombres sajones femeninos</h1>";
+		var nombresSm = "<h1>Nombres sajones masculinos</h1>";	
 		var indice=0;
 		for (indice=0; indice<numeronombres; indice++)
 		{
-			var person = new Personaje("Femenino");
+			var person = new Personaje("Femenino", "Britano");
 			nombresf += "<b>" + person.Nombre + "</b> hija de " + person.Madre + " y de " + person.Padre + "<br/>";
+			person = new Personaje("Femenino", "Sajon");
+			nombresSf += "<b>" + person.Nombre + "</b> hija de " + person.Madre + " y de " + person.Padre + "<br/>";
 		}
 		
 		for (indice=0; indice<numeronombres; indice++)
 		{
-			var person = new Personaje("Masculino");
+			var person = new Personaje("Masculino", "Britano");
 			nombresm += "<b>" + person.Nombre + "</b> hijo de " + person.Padre + " y de " + person.Madre + "<br/>";
+			person = new Personaje("Masculino", "Sajon");
+			nombresSm += "<b>" + person.Nombre + "</b> hijo de " + person.Padre + " y de " + person.Madre + "<br/>";
 		}
 		
 		document.getElementById("femeninos").innerHTML = nombresf;
 		document.getElementById("masculinos").innerHTML = nombresm;
+		document.getElementById("femeninosS").innerHTML = nombresSf;
+		document.getElementById("masculinosS").innerHTML = nombresSm;
 	}
 	
 	function seleccionaNombres(thelist) {
@@ -80,7 +86,7 @@
 </head>
 <body >
 	<div class="w3-container w3-teal">
-	  <h2>Generador de nombres para Grecia el Juego de Rol</h2>
+	  <h2>Generador de nombres para Britania Mítica</h2>
 	</div>
 	
 	<div style="overflow:auto">
@@ -118,6 +124,10 @@
 	<div style="overflow:auto">
 		<div class="mitad" id="femeninos"></div>
 		<div class="mitad" id="masculinos"></div>
+	</div>
+	<div style="overflow:auto">
+		<div class="mitad" id="femeninosS"></div>
+		<div class="mitad" id="masculinosS"></div>
 	</div>
 	<!--<div class="w3-container w3-large">	
 		<div class="w3-row">
