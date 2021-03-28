@@ -1,0 +1,151 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="javascript/mth_comun.js"></script>
+<script src="javascript/mth_nombres.js"></script>
+<script src="javascript/mth_personaje.js"></script>
+<script>
+	var numeronombres=0;
+	
+	function generanombres() {
+		var nombresf = "<h1>Nombres femeninos</h1>";
+		var nombresm = "<h1>Nombres masculinos</h1>";	
+		
+		var nombresf = "<h1>Nombres femeninos</h1>";
+		var nombresm = "<h1>Nombres masculinos</h1>";	
+		var indice=0;
+		for (indice=0; indice<numeronombres; indice++)
+		{
+			var person = new Personaje("Femenino");
+			nombresf += "<b>" + person.Nombre + "</b> hija de " + person.Madre + " y de " + person.Padre + "<br/>";
+		}
+		
+		for (indice=0; indice<numeronombres; indice++)
+		{
+			var person = new Personaje("Masculino");
+			nombresm += "<b>" + person.Nombre + "</b> hijo de " + person.Padre + " y de " + person.Madre + "<br/>";
+		}
+		
+		document.getElementById("femeninos").innerHTML = nombresf;
+		document.getElementById("masculinos").innerHTML = nombresm;
+	}
+	
+	function seleccionaNombres(thelist) {
+		numeronombres = thelist.selectedIndex;
+		generanombres();
+	}
+	
+</script>
+<style>
+		
+* {
+  box-sizing: border-box;
+}
+.minileft {
+  float:left;
+  width:16%;
+  padding:0 1px;
+}
+.mitad {
+  float:left;
+  width:50%;
+  padding:0 1px;
+}
+.tercio {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.right {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.total {
+  float:left;
+  width:100%;
+  padding:0 1px;
+}
+
+
+
+@media only screen and (max-width:820px) {
+  /* For mobile phones: */
+  .mitad, .tercio, .right, .total, .minileft {
+    width:100%;
+  }
+</style>
+</head>
+<body >
+	<div class="w3-container w3-teal">
+	  <h2>Generador de nombres para Grecia el Juego de Rol</h2>
+	</div>
+	
+	<div style="overflow:auto">
+		<div class="mitad" >
+			<div class="w3-col s9 w3-center" id="numeronombres">				
+				<select class="w3-select"  name="numero" onChange="seleccionaNombres(this)">
+					<option>---Selecciona número de nombres---</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+					<option>13</option>
+					<option>14</option>
+					<option>15</option>
+					<option>16</option>
+					<option>17</option>
+					<option>18</option>
+					<option>19</option>
+					<option>20</option>
+				</select>
+			</div>
+		</div>
+		<div class="mitad" id="refresca">
+			<button class='w3-button w3-block w3-teal' onclick='generanombres()'>Refresca</button>
+		</div>
+	</div>
+	<div style="overflow:auto">
+		<div class="mitad" id="femeninos"></div>
+		<div class="mitad" id="masculinos"></div>
+	</div>
+	<!--<div class="w3-container w3-large">	
+		<div class="w3-row">
+			<div class="w3-col s9 w3-center" id="numeronombres">				
+				<select class="w3-select"  name="numero" onChange="seleccionaNombres(this)">
+					<option>---Selecciona número de nombres---</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+					<option>10</option>
+				</select>
+			</div>
+			<div class="w3-col s3 w3-center" id="refresca">
+				<button class='w3-button w3-block w3-teal' onclick='generanombres()'>Refresca</button>
+			</div>
+		</div>
+		<div class="w3-row">
+			<div class="w3-col s3 w3-center" id="femeninos"></div>
+			<div class="w3-col s3 w3-center" id="masculinos"></div>
+			<div class="w3-col s6 w3-center" id="personajes"></div>
+		</div>-->
+		
+	</div>
+</body>
+</html>
