@@ -8,6 +8,7 @@ class Personaje {
 			this.nombreBritano();
 		else
 			this.nombreSajon();
+		this._trasfondos = trasfondos.trasfondo();
 	}
 	
 	get Nombre() {
@@ -24,6 +25,10 @@ class Personaje {
 	
 	get Madre() {
 		return this._madre;
+	}
+	
+	get Trasfondos() {
+		return this._trasfondos;
 	}
 	
 	nombreBritano() {
