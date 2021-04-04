@@ -84,6 +84,9 @@
 					'VIdioma1' : [ 5*pj.EST ],
 				};
 				
+  			  fields['CheckPV' + pj.PV] = [ true ];
+			  fields['CheckEM' + (5*pj.POD)] = [ true ];
+			  fields['CheckPMV' + pj.POD] = [ true ];
 			  var indice=0;
 			  for (indice=pj._em1+1;indice<=9; indice++) {
 				  fields[ 'Tranquilo' + indice  ] = [ true ];
