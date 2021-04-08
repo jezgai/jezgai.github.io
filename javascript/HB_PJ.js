@@ -225,7 +225,7 @@ class HB_PJ {
 		}
 		this._pv += modpv;
 		
-		this._gravementeherido = Math.round(this._pv / 2);
+		this._gravementeherido = Math.trunc(this._pv / 2);
 	}
 	
 	rangomovimiento() {
