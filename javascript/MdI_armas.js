@@ -53,7 +53,7 @@ class Armas {
     }
 
     armaAD() {
-        return this._armasAD[Comun.random(this._armasCaC.length, 0)];
+        return this._armasAD[Comun.random(this._armasAD.length, 0)];
     }
 }
 
