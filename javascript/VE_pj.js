@@ -147,6 +147,7 @@ class PJ extends PJBase {
 					'BINT' : [ this.modifAtributo(this.atributos[3]) ],
 					'BSAB' : [ this.modifAtributo(this.atributos[4]) ],
 					'BCAR' : [ this.modifAtributo(this.atributos[5]) ],
+					'Instintos' : [ this.ins ],
 					'IFUE' : [ (this.ins + this.modifAtributo(this.atributos[0])) ],
 					'IDES' : [ (this.ins + this.modifAtributo(this.atributos[1])) ],
 					'ICON' : [ (this.ins + this.modifAtributo(this.atributos[2])) ],
