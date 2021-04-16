@@ -1,0 +1,251 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Morirse en Bilbao - Ayuda para crear personajes</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="javascript/MdI_comun.js"></script>
+<script src="javascript/MeB_proezas.js"></script>
+<script src="javascript/MeB_atributos.js"></script>
+<script src="javascript/MeB_habilidades.js"></script>
+<script src="javascript/MeB_pj.js"></script>
+<!--<script src="javascript/MeB_armas.js"></script>-->
+
+<script src="javascript/pdfform.minipdf.dist.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+
+<script>
+	
+	
+	let atributos = new Atributos();
+	let habilidades = new Habilidades();
+	let proezas = new Proezas();
+	//let armas = new Armas();
+
+	let pj = new EDyT_PJ();
+		
+
+	function rellenaPDF() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = {
+					'Tocho' : [ pj._atributos[0] ],
+					'Habil' : [ pj._atributos[1] ],
+					'Espabilao' : [ pj._atributos[2] ],
+					'PV100' : [ pj._pv ],
+					'PV60' : [ Math.trunc(pj._pv * 0.6) ],
+					'PV40' : [ Math.trunc(pj._pv * 0.4) ],
+					'PV20' : [ Math.trunc(pj._pv * 0.2) ],
+					'PC' : [ pj._pc ],
+					'Karma' : [ pj._karma ],
+				};
+				if ( pj._pvadicional != 0 ) {
+					fields [ 'cPVAdicional' ] = [ true ];
+				}
+				var indice=0;
+				var indicetocho=1;
+				var indicehabil=1;
+				var indiceespabilao=1;
+				for (indice=0;indice<habilidades._habilidades.length; indice++) {
+					if ( pj._habilidades[indice] >= 1 ) {
+						var pdfhabilidad = habilidades._habilidades[indice].atributo;
+						if ( pdfhabilidad == "Tocho" ) {
+							pdfhabilidad += indicetocho;
+							indicetocho++;
+						} else if ( pdfhabilidad == "Habil" ) {
+							pdfhabilidad += indicehabil;
+							indicehabil++;
+						} else {
+							pdfhabilidad += indiceespabilao;
+							indiceespabilao++;
+						}
+						var nombrehabilidad = habilidades._habilidades[indice].nombre;
+						if ( pj._habilidades[indice] == 2 ) {
+							nombrehabilidad += "+";
+						}
+						fields [ pdfhabilidad ] = [ nombrehabilidad ];
+					}
+				}
+				for (indice=0; indice < pj._proezas.length; indice++) {
+					fields [ 'Proezas' + (indice+1) ] = [ proezas._proezas[pj._proezas[indice]].nombre ];
+				}
+				var rasgos="";
+				for (indice=0; indice < pj._rasgos.length; indice++) {
+					if ( indice>0) {
+						rasgos += ", ";
+					}
+					rasgos += pj._rasgos[indice];
+				}
+				fields [ 'Rasgos' ] = [ rasgos ];
+		
+				
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, 'Canalla.pdf'); //'PersonajeDH.pdf');
+			}
+		};
+
+
+		xhr.open('GET', 'pdf/MeB.pdf', true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}
+		
+	
+	function transfiereAtributos(idesde, ihasta) {
+		if ( pj._atributos[idesde] > 1 ) {
+			pj._atributos[idesde]--;
+			pj._atributos[ihasta]++;
+		}
+		pj.calculaPV();
+		pintaAtributos();
+		
+	}
+	
+	function abajohabilidades(iactual, isiguiente) {
+		var actual = pj._habilidades[iactual];
+		var siguiente = pj._habilidades[isiguiente];
+		if ( actual == siguiente ) {
+			if ( actual == 1) {
+				pj._habilidades[iactual]--;
+				pj._habilidades[isiguiente]++;
+			}
+		} else if ( actual >= 1 && siguiente < 2 ) {
+			pj._habilidades[iactual]--;
+			pj._habilidades[isiguiente]++;
+		} else if ( actual == 0 && siguiente >= 1 ) {
+			pj._habilidades[iactual]++;
+			pj._habilidades[isiguiente]--;
+		}
+		/*pj._habilidades[iactual] = pj._habilidades[isiguiente];
+		pj._habilidades[isiguiente] = actual;*/
+		pintaHabilidades();
+		
+	}
+	
+	function pintaAtributos() {
+		
+		document.getElementById("atributos").innerHTML = pj.pintaAtributos();
+		document.getElementById("atributos").innerHTML += pj.pintaPV();
+		
+	}
+	
+	
+	function pintaHabilidades() {
+		document.getElementById("habilidades").innerHTML = pj.pintaHabilidades();
+	}
+	
+	function pintaProezas() {
+		document.getElementById("proezas").innerHTML = pj.pintaProezas();
+	}
+	function pintaRasgos() {
+		document.getElementById("rasgos").innerHTML = pj.pintaRasgos();
+	}
+	
+	function calcula() {
+		
+		pj = new EDyT_PJ();
+		pj.genera();
+		
+		pj.calculaPV();
+		pj.calculaRasgos();
+		
+		pintaAtributos();
+		pintaHabilidades();
+		pintaProezas();
+		pintaRasgos();
+		document.getElementById("botonpdf").style.visibility="visible";
+		
+	}
+	
+	function calculaProezas() {
+		pj.calculaProezas();
+		pintaProezas();
+	}
+	
+	function calculaRasgos() {
+		pj.calculaRasgos();
+		pintaRasgos();
+	}
+	
+	
+</script>
+
+<style>
+	
+* {
+  box-sizing: border-box;
+}
+.tercio {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.terciocentral {
+  float:left;
+  width:34%;
+  padding:0 1px;
+}
+.minicentral {
+  float:left;
+  width:16%;
+  padding:0 1px;
+}
+.central {
+  float:left;
+  width:50%;
+  padding:0 1px;
+}
+.cuarto {
+  float:left;
+  width:25%;
+  padding:0 1px;
+}
+
+
+@media only screen and (max-width:820px) {
+  /* For mobile phones: */
+  .tercio, .central, .terciocentral, .minicentral, .cuarto {
+    width:100%;
+  }
+  
+</style>
+</head>
+<body >
+	<div class="w3-container w3-orange w3-center">
+	  <h2>Morirse en Bilbao - Ayuda para crear personajes</h2>
+	</div>
+
+	<div style="overflow:auto">
+		<div class="minicentral"><p><button class='w3-button w3-block w3-orange' onclick='calcula()'>Calcula</button></p></div>
+		<div class="minicentral" id="botonpdf"><p><button class='w3-button w3-block w3-orange' onclick='rellenaPDF()'>Genera PDF</button></p></div>
+	</div>
+	
+	<div style="overflow:auto">
+		<div class="central">
+			<div class="w3-container w3-orange w3-center"><p><strong>Atributos</strong></p></div> 
+			<div id="atributos"></div>
+			<div class="w3-container w3-orange w3-center"><p><strong>Proezas</strong></p></div>
+			<div id="proezas"></div>
+			<div class="minicentral"><p><button class='w3-button w3-block w3-orange' onclick='calculaProezas()'>Recalcula</button></p></div>
+			<div class="w3-container w3-orange w3-center"><p><strong>Rasgos</strong></p></div>
+			<div id="rasgos"></div>
+			<div class="minicentral"><p><button class='w3-button w3-block w3-orange' onclick='calculaRasgos()'>Recalcula</button></p></div>
+		</div>
+		<div class="central">
+			<div class="w3-container w3-orange w3-center"><p><strong>Habilidades</strong></p></div> 
+			<div id="habilidades"></div>
+		</div>
+	</div>
+	
+	<script>calcula();</script>
+</body>
+</html>
+
