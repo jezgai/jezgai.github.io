@@ -43,7 +43,7 @@ class EDyT_PJ {
 	pintaPV() {
 		var tPV = "<table class='w3-table  w3-striped  w3-border'>";
 		tPV+= "<tr><td>Puntos de vida</td><td>" + this._pv + "</td></tr>";
-		tPV+= "<tr><td>Puntos de caracter</td><td>" + this._PC + "</td></tr>";
+		tPV+= "<tr><td>Puntos de caracter</td><td>" + this._pc + "</td></tr>";
 		tPV+= "<tr><td>Karma</td><td>" + this._karma + "</td></tr></table>";
 		return tPV;
 	}
