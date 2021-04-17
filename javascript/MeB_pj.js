@@ -42,7 +42,9 @@ class EDyT_PJ {
 	
 	pintaPV() {
 		var tPV = "<table class='w3-table  w3-striped  w3-border'>";
-		tPV+= "<tr><td>Puntos de vida</td><td>" + this._pv + "</td></tr></table>";
+		tPV+= "<tr><td>Puntos de vida</td><td>" + this._pv + "</td></tr>";
+		tPV+= "<tr><td>Puntos de caracter</td><td>" + this._PC + "</td></tr>";
+		tPV+= "<tr><td>Karma</td><td>" + this._karma + "</td></tr></table>";
 		return tPV;
 	}
 	
@@ -120,7 +122,7 @@ class EDyT_PJ {
 		this._puntosatributos = 9;
 		this._numeroproezas = 1;
 		this._pvadicional = 0;
-		this._numerohabilidades = 4;
+		this._numerohabilidades = 5;
 		this._karma = 1;
 		var personalizacion = Comun.random(3,0);
 		if ( personalizacion == 1 ) { // Suma 1 a un atributo
@@ -140,7 +142,7 @@ class EDyT_PJ {
 		var indice=0;
 		for (indice=3; indice <this._puntosatributos; indice++) {
 			var imod = Comun.random(3,0);
-			if ( this._atributos[imod] < 6 )
+			if ( this._atributos[imod] < 5 )
 				this._atributos[imod]++;
 			else
 				indice--;
