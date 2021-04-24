@@ -138,8 +138,8 @@ class PJPP extends PJBase {
 		var fields = {
 					'Nombre' : [ this._nombre ],
 					'Clase' : [ this._clase ],
-					'Rana' : [ this._objClase._rama ],
-					'Nivel' : [ this._nivel ],
+					'Rama' : [ this._objClase._rama ],
+					'NIVEL' : [ this._nivel ],
 					'FUE' : [ this._atributos[0] ],
 					'DES' : [ this._atributos[1] ],
 					'CON' : [ this._atributos[2] ],
