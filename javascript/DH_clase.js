@@ -30,7 +30,7 @@ class Clases extends ClasesBases {
 			  nombresM: [ "Aidan", "Elduin", "Felaern", "Iefyr", "Gaeleath", "Mhaenil", "Virion" ],
 			  motesF: [ ],
 			  motesM: [ ],
-			  magia: { numero: 0, conjuros: [ "Atraer muertos vivientes", "Bendición", "Curar heridas", "Detectar el Mal", "Orden", "Protección contra el Mal", "Purificar sustento", "Santuario", "Valentía" ] },
+			  magia: { numero: 4, conjuros: [ "Alterar tamaño", "Bloquear puerta", "Caída de pluma", "Comprender idioma", "Detectar magia", "Disco flotante", "Dormir", "Encantamiento", "Escudo", "Fuego feérico", "Identificar", "Invocación", "Leer magia", "Libro parlante", "Luz", "Mensaje", "Proyectil mágico", "Remendar", "Runa mágica" ] },
 			  equipo: { narmasAD: 1, armasAD: [ "Arco largo", "Arco corto" ], 
 						narmasCaC: 2, armasCaC: [ "Espada larga", "Espada corta", "Espada ropera", "Jabalina" ], 
 						escudo: [ "Escudo pequeño", "Escudo mediano", "Escudo grande" ],
@@ -97,7 +97,7 @@ class Clases extends ClasesBases {
 			  habilidades: [ "<strong>Experto imitador</strong><br/>El gran don para imitación de los kenku te permite reproducir cualquier sonido que hayas escuchado con anterioridad, ya sea un ruido o el timbre de voz de cualquier criatura. Gastando un punto de energía puedes replicar una frase completa engañando por completo a cualquiera que la escuche, aunque no entiendas el idioma.",
 "<strong>Entre hermanos</strong><br/>Tu dominio del lenguaje córvido hace que seas capaz de transmitir mensajes a cuervos u aves de la misma familia. Si está domesticado podrás darles órdenes y las cumplirán fielmente.",
 "<strong>Compañero emplumado</strong><br/>Tienes un cuervo domesticado que cumple cualquier orden sencilla que le des. Participará en un combate gastando 1 punto de energía al comienzo. Si lo pierdes necesitas 1 mes para domesticar otro.<br/>A nivel 1 tiene los siguientes valores: Nivel 1 (N). Moral 11. Ataques: pico (4) y garras (6). Absorción 2. Salud 6. Mov: 45 pies (volar), 25 (andar)<br>FUE 14, DES 9, CON 13, INT 12, SAB 10, CAR 11" ],
-			  lhabilidades: [ "Experto imitador", "Entre hermanos", "Compañero emplumado"  ],
+			  lhabilidades: [ "Experto imitador, Entre hermanos, Compañero emplumado"  ],
 			  cordura: "SAB",
 			  origen: "<a href='https://www.lospergaminosdelfenix.com/2021/08/recurso-kenku-para-dungeon-hack.html' target='_blank'>Pergaminos del Fénix</a>",
 			  descripcion: "Eres un pequeño humanoide emparentado con los córvidos, algo más alto que un mediano pero no tanto como un humano. Destacas claramente entre los hermanos de tu casa nido.<br/>" + 
