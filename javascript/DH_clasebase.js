@@ -964,7 +964,7 @@ class ClasesBases {
 			  cordura: "SAB",
 			  origen: "<a href='https://carbonoscuro.wordpress.com/2020/01/20/sanador-herborista-nueva-clase-para-dungeon-hack/' target='_blank'>Carbonoscuro</a>", 
 			  descripcion: "Eres un abnegado curandero que utiliza cataplasmas, ungüentos, decocciones y otros remedios naturales para aliviar el dolor, tratar enfermedades y curar heridas.<br/>" +
-						   "No dudas en adentrarte en viejas ruinas plagadas de peligros junto a tus compañeros, pues sabes que más temprano que tarde necesitarán de tus habilidades.<br/" + 
+						   "No dudas en adentrarte en viejas ruinas plagadas de peligros junto a tus compañeros, pues sabes que más temprano que tarde necesitarán de tus habilidades.<br/>" + 
 						   "Tan solo recurres a las armas como defensa, pero no dudas en acabar con seres malvados si con ello salvas la vida a inocentes.",
 			  nombresF: [ "Acacia", "Celinne", "Eulalia", "Hildegarda", "Lorain", "Salomé." ],
 			  nombresM: [ "Cayo", "Democritus", "Lazare", "Orestes", "Probo", "Timoteus" ],
@@ -976,6 +976,34 @@ class ClasesBases {
 						escudo: [  ],
 						armadura: [ "Acolchada", "Cuero" ],
 						paquete: "Paquete del matasanos", },
+			},
+			{
+			  nombre : "Espadachín/a",
+			  energia : 4,
+			  salud : 6,
+			  atributo: [ "DES" ],
+			  competencias: [ "Puedes llevar todas las armas de proyectiles, armas cuerpo a cuerpo de una mano y armaduras acolchadas, armaduras de cuero y armaduras de cuero tachonado." ],
+			  ventajas: [ "<strong>Tiradas de Iniciativa</strong> del grupo en combates en los que participe activamente.", 
+						"<strong>Tiradas de Destreza</strong> en reacción en combates singulares." ],
+			  habilidades: [ "<strong>Temible vizcaína</strong><br/>Cuando combates con espada ropera en una mano y daga en la otra aumentas tu efectividad en +1", 
+							"<strong>Contraataque fulgurante</strong><br/>Cuando en tu reacción a un ataque CaC consigues un éxito, puedes gastar un punto de energía para hacer un contraataque (forma parte de tu reacción).",
+							"<strong>Capa escudo</strong><br/>Tu entrenamiento te permite usar una capa enrollada en el otro brazo como si fuera un escudo con absorción +1." ],
+			  lhabilidades: [ "Temible vizcaína, Contraataque fulgurante, Capa escudo" ],
+			  cordura: "SAB",
+			  origen: "<a href='https://jezgai.wordpress.com/2020/05/04/clase-espadachina-para-dungeon-hack/' target='_blank'>El destino de Jezgai</a>", 
+			  descripcion: "Has aprendido el noble arte de la esgrima, tienes un don especial para el manejo de la espada ropera.<br/>" +
+						   "Sigues un código de honor estricto en las peleas, siempre de cara, nunca traicionero, aunque lo obvias si el enfrentamiento no es un duelo singular, lo que no te impide tener remordimientos por ello.<br/>" + 
+						   "Tan solo recurres a las armas como defensa, pero no dudas en acabar con seres malvados si con ello salvas la vida a inocentes.",
+			  nombresF: [ "Alanna", "Eileen", "Bryana", "Gwenhwyar", "Caeli", "Cinnia", "Erin", "Treva", "Maeve" ],
+			  nombresM: [ "Galvan", "Quinn", "Perth", "Niall", "Artai", "Aldair", "Kilian", "Aod", "Fergal" ],
+			  motesF: [ ],
+			  motesM: [ ],
+			  magia: { numero:-1, conjuros: [] },
+			  equipo: { narmasAD: 0, armasAD: [  ], 
+						narmasCaC: 1, armasCaC: [ "Estoque", "Espada ropera" ], 
+						escudo: [  ],
+						armadura: [ "Acolchada", "Cuero" ],
+						paquete: "Paquete de exploración", },
 			},
 		]
 	}
