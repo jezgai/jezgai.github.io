@@ -1,0 +1,163 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="javascript/PB_comun.js"></script>
+<script src="javascript/PB_tablas.js"></script>
+<script src="../javascript/pdfform.minipdf.dist.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+
+<script>
+		
+	function conpoblaciones() {
+		document.getElementById("poblaciones").innerHTML="";
+		document.getElementById("botonpdf").style.visibility="hidden";
+		
+		haypoblaciones = 1;
+		document.getElementById("poblaciones").innerHTML = spoblaciones;
+	}
+	
+	let poblaciones = new Poblaciones();
+	let tiposGobierno = new TiposGobierno();
+	let alineamientos = new Alineamientos();
+	
+	let habitantespj = new Habitantes(ARhabitantespj, true);
+	let habitantespnj = new Habitantes(ARhabitantespnj, false);
+	
+	let spoblaciones = poblaciones.desplegablePoblaciones("seleccionapoblaciones");
+	let nombrepoblacion = "random";
+	
+	function seleccionapoblaciones(thelist) {
+		
+		document.getElementById("botonpdf").style.visibility="hidden";
+		
+		var idx = thelist.selectedIndex;
+		var seleccionado = thelist.options[idx].innerHTML;
+		if ( idx < 1 ) {
+			seleccionado = 'random';
+		}
+		nombrepoblacion = seleccionado;
+	}
+	
+	
+	function calcula() {
+		poblacion = poblaciones.poblacion(nombrepoblacion);
+		poblacion.calcula();
+		
+		var gobierno = poblacion._gobernador;
+		if ( poblacion._sobrenatural != "" ) {
+			gobierno += " (el poder real es de un " + poblacion._sobrenatural + ")";
+		}
+		
+		datos = "<table class='w3-table  w3-striped  w3-border'>";
+		datos += "<tr><td><strong>Tipo de población</strong></strong:></td><td>" + poblacion._tipo + "</td></tr>"
+		datos += "<tr><td><strong>Habitantes</strong></strong:></td><td>" + poblacion._habitantes + "</td></tr>"
+		datos += "<tr><td><strong>Valor artículo más caro</strong></strong:></td><td>" + poblacion._limitemo + " mo</td></tr>"
+		datos += "<tr><td><strong>Gobierno</strong></strong:></td><td>" + gobierno + "</td></tr>"
+		datos += "<tr><td><strong>Guardias contratados</strong></strong:></td><td>" + poblacion._guardias + "</td></tr>"
+		datos += "<tr><td><strong>Milicia</strong></strong:></td><td>" + poblacion._milicianos + "</td></tr>"
+		datos += "</table>";
+		
+		document.getElementById("datospob").innerHTML = datos;
+		
+		var habitantes = "<table class='w3-table  w3-striped  w3-border'>";
+		habitantes += "<tr><td><strong>Clase</strong></td><td><strong>Número</strong></td><td><strong>Nivel</strong></td></tr>";
+		var iaux = 0;
+		for(iaux = 0; iaux<poblacion._habitantesP.length; iaux++) {
+			habitantes += "<tr><td>" + poblacion._habitantesP[iaux].nombre + "</td><td>" + poblacion._habitantesP[iaux].numero + "</td><td>" + poblacion._habitantesP[iaux].nivel + "</td></tr>";
+		}
+		habitantes += "</table>";
+		document.getElementById("habitantesp").innerHTML = habitantes;
+		
+		habitantes = "<table class='w3-table  w3-striped  w3-border'>";
+		habitantes += "<tr><td><strong>Clase</strong></td><td><strong>Número</strong></td><td><strong>Nivel</strong></td></tr>";
+		var iaux = 0;
+		for(iaux = 0; iaux<poblacion._habitantesR.length; iaux++) {
+			habitantes += "<tr><td>" + poblacion._habitantesR[iaux].nombre + "</td><td>" + poblacion._habitantesR[iaux].numero + "</td><td>" + poblacion._habitantesR[iaux].nivel + "</td></tr>";
+		}
+		habitantes += "</table>";
+		document.getElementById("habitantesr").innerHTML = habitantes;
+	}
+	
+	
+</script>
+
+<style>
+	
+* {
+  box-sizing: border-box;
+}
+.left {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.minileft {
+  float:left;
+  width:11%;
+  padding:0 1px;
+}
+.main {
+  float:left;
+  width:34%;
+  padding:0 1px;
+}
+.right {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.total {
+  float:left;
+  width:100%;
+  padding:0 1px;
+}
+.dostercios {
+  float:left;
+  width:67%;
+  padding:0 1px;
+}
+
+
+
+@media only screen and (max-width:820px) {
+  /* For mobile phones: */
+  .left, .minileft, .main, .right, .dostercios, .total {
+    width:100%;
+  }
+  
+</style>
+
+</head>
+<body >
+	<div class="w3-container w3-brown w3-center">
+	  <h2>Generador aleatorio de poblaciones para Dungeon Hack y otros OSR</h2>
+	</div>
+	
+	<div style="overflow:auto">
+	
+		<div class="main" id="poblaciones">
+			<p><button class='w3-button w3-block w3-teal' onclick='conpoblaciones()'>Poblaciones</button></p>
+		</div>
+		<div class="left"><p><button class='w3-button w3-block w3-brown' onclick='calcula()'>Calcula</button></p></div>
+		<div class="left" id="botonpdf"><p><button class='w3-button w3-block w3-brown' onclick='rellenaPDF()'>Genera PDF</button></p></div>
+	</div>
+	
+	<div style="overflow:auto">
+		<div class="left">
+			<div class="w3-container w3-brown w3-center"><p><strong>Datos</strong></p></div> 
+			<div id="datospob"></div>
+		</div>
+		<div class="main">
+			<div class="w3-container w3-brown w3-center"><p><strong>Habitantes principales</strong></p></div> 
+			<div id="habitantesp"></div>
+		</div>
+		<div class="left">
+			<div class="w3-container w3-brown w3-center"><p><strong>Resto de habitantes</strong></p></div> 
+			<div id="habitantesr"></div>
+		</div>
+	</div>
+	<script>conpoblaciones();</script>
+</body>
+</html>
