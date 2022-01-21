@@ -1,0 +1,168 @@
+{
+    "origenes"  : [
+        {
+            "nombre" : "Origen 1",
+            "cultura" : "Urbana",
+            "habilidades" : {
+                "basicas" : [ "Conducir (cualquiera)", "Conocimiento Local", "Engañar", "Influencia", "Ocultar", "Perspicacia", "Voluntad", "Estilo de Combate" ],
+                "profesionales" : [ "Arte (cualquiera)", "Artesanía (cualquiera)", "Callejeo", "Comerciar", "Cortesía", "Idioma (cualquiera)", "Música", "Saber (cualquiera)" ]
+            },
+            "eventos" : [
+                {
+                    "peso" : 1,
+                    "evento" : "Texto del evento vital (1)"
+                },
+                {
+                    "peso" : 2,
+                    "evento" : "Texto del evento vital (2-3)"
+                },
+                {
+                    "peso" : 3,
+                    "evento" : "Texto del evento vital (4-6)"
+                },
+                {
+                    "peso" : 4,
+                    "evento" : "Texto del evento vital (7-10)"
+                },
+                {
+                    "peso" : 5,
+                    "evento" : "Texto del evento vital (11-15)"
+                },
+                {
+                    "peso" : 10,
+                    "evento" : "Texto del evento vital (16-25)"
+                },
+                {
+                    "peso" : 10,
+                    "evento" : "Texto del evento vital (26-35)"
+                },
+                {
+                    "peso" : 15,
+                    "evento" : "Texto del evento vital (36-50)"
+                }
+            ]
+        },
+        {
+            "nombre" : "Origen 2",
+            "cultura" : "Urbana",
+            "habilidades" : {
+                "basicas" : [ "Conocimiento Local", "Influencia", "Manejo de Botes", "Nadar", "Perspicacia", "Conducir (sumergibles)", "Voluntad", "Estilo de Combate" ],
+                "profesionales" : [ "Artesanía (cualquiera)", "Callejeo", "Comerciar", "Cortesía", "Idioma (cualquiera)", "Música", "Navegación", "Saber (cualquiera)" ]
+            },
+            "eventos" : [
+                {
+                    "peso" : 3,
+                    "evento" : "Texto del evento vital (1-3)"
+                },
+                {
+                    "peso" : 3,
+                    "evento" : "Texto del evento vital (4-6)"
+                },
+                {
+                    "peso" : 4,
+                    "evento" : "Texto del evento vital (7-10)"
+                },
+                {
+                    "peso" : 5,
+                    "evento" : "Texto del evento vital (11-15)"
+                },
+                {
+                    "peso" : 10,
+                    "evento" : "Texto del evento vital (16-25)"
+                },
+                {
+                    "peso" : 10,
+                    "evento" : "Texto del evento vital (26-35)"
+                },
+                {
+                    "peso" : 15,
+                    "evento" : "Texto del evento vital (36-50)"
+                }
+            ]
+        }
+    ],
+    "profesiones" : [
+        {
+            "nombre" : "Profesión 1",
+            "eventos" : [
+                {
+                    "peso" : 15,
+                    "evento" : "Texto del evento vital (51-65)"
+                },
+                {
+                    "peso" : 10,
+                    "evento" : "Texto del evento vital (66-75)"
+                },
+                {
+                    "peso" : 10,
+                    "evento" : "Texto del evento vital (76-85)"
+                },
+                {
+                    "peso" : 5,
+                    "evento" : "Texto del evento vital (86-90)"
+                },
+                {
+                    "peso" : 4,
+                    "evento" : "Texto del evento vital (91-94)"
+                },
+                {
+                    "peso" : 3,
+                    "evento" : "Texto del evento vital (95-97)"
+                },
+                {
+                    "peso" : 2,
+                    "evento" : "Texto del evento vital (98-99)"
+                },
+                {
+                    "peso" : 1,
+                    "evento" : "Texto del evento vital (00)"
+                }
+            ]
+        },
+        {
+            "nombre" : "Profesión 2",
+            "eventos" : [
+                {
+                    "peso" : 10,
+                    "evento" : "Texto del evento vital (51-60)"
+                },
+                {
+                    "peso" : 10,
+                    "evento" : "Texto del evento vital (61-70)"
+                },
+                {
+                    "peso" : 5,
+                    "evento" : "Texto del evento vital (71-75)"
+                },
+                {
+                    "peso" : 6,
+                    "evento" : "Texto del evento vital (76-81)"
+                },
+                {
+                    "peso" : 4,
+                    "evento" : "Texto del evento vital (91-94)"
+                },
+                {
+                    "peso" : 5,
+                    "evento" : "Texto del evento vital (86-90)"
+                },
+                {
+                    "peso" : 4,
+                    "evento" : "Texto del evento vital (91-94)"
+                },
+                {
+                    "peso" : 3,
+                    "evento" : "Texto del evento vital (95-97)"
+                },
+                {
+                    "peso" : 2,
+                    "evento" : "Texto del evento vital (98-99)"
+                },
+                {
+                    "peso" : 1,
+                    "evento" : "Texto del evento vital (00)"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,364 @@
+<!--
+   M-Space-Origenes.html
+   
+   Copyright 2022 Josu Ezgai <josu.ezgais@gmail.com>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   https://closure-compiler.appspot.com/home
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	
+<head>
+<meta charset="utf-8" />
+<title>M-Space - Origenes vitales</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<script>
+
+  var origenes = [];
+  var nombreorigen = "random";
+  var nombreprofesion = "random";
+  var incrementohabilidades = "10%";
+  
+  var ciennumeros = [];
+  var i;
+  for (i=0; i<100; i++) {
+	  ciennumeros[i] = i+1;
+  }
+  
+  function loadFile() {
+    var input, file, fr;
+
+    if (typeof window.FileReader !== 'function') {
+      alert("The file API isn't supported on this browser yet.");
+      return;
+    }
+
+    input = document.getElementById('fileinput');
+    if (!input) {
+      alert("Um, couldn't find the fileinput element.");
+    }
+    else if (!input.files) {
+      alert("This browser doesn't seem to support the `files` property of file inputs.");
+    }
+    else if (!input.files[0]) {
+      alert("Por favor seleccione un fichero antes de cargarlo");
+    }
+    else {
+      file = input.files[0];
+      fr = new FileReader();
+      fr.onload = receivedText;
+      fr.readAsText(file);
+    }
+
+    function receivedText(e) {
+      let lines = e.target.result;
+      origenes = JSON.parse(lines); 
+      cargaorigenes();
+      cargaprofesiones();
+      cargado();
+    }
+  }
+  
+  
+  function cargaorigenes() {
+		var sOrigenes="<strong>Origen:</strong> <select class='w3-select'  name='origen' onchange='seleccionaOrigen(this)'><option>--Aleatorio--</option>";
+		var iorigen=0;
+		for (iorigen=0; iorigen< origenes.origenes.length; iorigen++) {
+			sOrigenes += "<option>" + origenes.origenes[iorigen].nombre + "</option>";
+		}
+		sOrigenes += "</select>";		
+		document.getElementById("listaorigenes").innerHTML = sOrigenes;
+  }
+  
+  function cargaprofesiones() {
+	  var sProfesiones="<strong>Profesión:</strong> <select class='w3-select'  name='origen' onchange='seleccionaProfesion(this)'><option>--Aleatorio--</option>";
+		var iprofesion=0;
+		for (iprofesion=0; iprofesion< origenes.profesiones.length; iprofesion++) {
+			sProfesiones += "<option>" + origenes.profesiones[iprofesion].nombre + "</option>";
+		}
+		sProfesiones += "</select>";
+		document.getElementById("listaprofesiones").innerHTML = sProfesiones;
+  }
+  
+  function seleccionaOrigen(thelist) {
+		var idx = thelist.selectedIndex;
+		var seleccionado = thelist.options[idx].innerHTML;
+		if ( idx < 1 ) {
+			seleccionado = 'random';
+		}
+		nombreorigen = seleccionado;
+  }
+  
+  function seleccionaProfesion(thelist) {
+		var idx = thelist.selectedIndex;
+		var seleccionado = thelist.options[idx].innerHTML;
+		if ( idx < 1 ) {
+			seleccionado = 'random';
+		}
+		nombreprofesion = seleccionado;
+  }
+  
+  function seleccionaIncremento(thelist) {
+		var idx = thelist.selectedIndex;
+		var seleccionado = thelist.options[idx].innerHTML;
+		if ( idx < 1 ) {
+			seleccionado = '10%';
+		}
+		incrementohabilidades = seleccionado;
+  }
+  function inicial() {
+	  
+	  	document.getElementById("cargajson").innerHTML="<form id=\"jsonFile\" name=\"jsonFile\" enctype=\"multipart/form-data\" method=\"post\">" +
+			  "<fieldset>" +
+				"<h2>Tablas de orígenes (json)</h2>" +
+				 "<input type='file' id='fileinput'>" +
+				 "<input type='button' id='btnLoad' value='Cargar' onclick='loadFile();'>" +
+			  "</fieldset>" +
+			"</form> <a href=\"json/M-Space-Origenes-ejemplo.json\">Ejemplo de json</a>";
+	  
+		document.getElementById("habilidades").innerHTML = "";
+		document.getElementById("habilidadesprofesionales").innerHTML = "";
+		document.getElementById("eventos").innerHTML = "";
+	  
+		document.getElementById("cargajson").style.visibility="visible";
+		document.getElementById("listaorigenes").style.visibility="hidden";
+		document.getElementById("listaprofesiones").style.visibility="hidden";
+		document.getElementById("incrementohabilidades").style.visibility="hidden";
+		document.getElementById("btncalcular").style.visibility="hidden";
+		document.getElementById("btnrecargar").style.visibility="hidden";
+		document.getElementById("origen").style.visibility="hidden";
+		document.getElementById("profesion").style.visibility="hidden";
+		document.getElementById("habilidades").style.visibility="hidden";
+		document.getElementById("habilidadesprofesionales").style.visibility="hidden";
+		document.getElementById("eventos").style.visibility="hidden";
+  }
+  function cargado() {
+	    document.getElementById("cargajson").innerHTML=="";
+		document.getElementById("cargajson").style.visibility="hidden";
+		document.getElementById("listaorigenes").style.visibility="visible";
+		document.getElementById("listaprofesiones").style.visibility="visible";
+		document.getElementById("incrementohabilidades").style.visibility="visible";
+		document.getElementById("btncalcular").style.visibility="visible";
+		document.getElementById("btnrecargar").style.visibility="visible";
+  }
+  
+  function shuffle(array) {
+	  var currentIndex = array.length, temporaryValue, randomIndex;
+
+	  while (0 !== currentIndex) {
+
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
+
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	  }
+
+	  return array;
+  }
+  
+  function calcular() {
+
+	  var nborig = nombreorigen;
+	  if ( nborig == "random" ) {
+			nborig = origenes.origenes[Math.floor(Math.random() * origenes.origenes.length)].nombre;
+	  }
+	  var nbprof = nombreprofesion;
+	  if ( nbprof == "random" ) {
+			nbprof = origenes.profesiones[Math.floor(Math.random() * origenes.profesiones.length)].nombre;
+	  }
+	  
+	  document.getElementById("origen").innerHTML = "<center><strong>Origen</strong><br/>" + nborig + "</center>";
+	  document.getElementById("origen").style.visibility="visible";
+	  
+	  document.getElementById("profesion").innerHTML = "<center><strong>Profesión</strong></br>" + nbprof + "</center>";
+	  document.getElementById("profesion").style.visibility="visible";
+	  
+	  var norig;
+	  for (norig = 0; norig<origenes.origenes.length; norig++) {
+		  if ( origenes.origenes[norig].nombre == nborig ) {
+			  break;
+		  }
+	  }
+	  
+	  var nprof;
+	  for (nprof = 0; nprof<origenes.profesiones.length; nprof++) {
+		  if ( origenes.profesiones[nprof].nombre == nbprof ) {
+			  break;
+		  }
+	  }
+	  
+	  
+	  var i;
+	  var shabilidades="<strong>Habilidades</strong><table class='w3-table  w3-striped  w3-border'>";
+	  for (i=0;i<origenes.origenes[norig].habilidades.basicas.length; i++) {
+		  shabilidades += "<tr><td>" + origenes.origenes[norig].habilidades.basicas[i] + "</td></tr>";
+	  }
+	  shabilidades+="</table>";
+	  
+	  document.getElementById("habilidades").innerHTML = shabilidades;
+	  document.getElementById("habilidades").style.visibility="visible";
+	  
+	  var shabilidades="<strong>Habilidades profesionales (3)</strong><table class='w3-table  w3-striped  w3-border'>";
+	  for (i=0;i<origenes.origenes[norig].habilidades.profesionales.length; i++) {
+		  shabilidades += "<tr><td>" + origenes.origenes[norig].habilidades.profesionales[i] + "</td></tr>";
+	  }
+	  shabilidades+="</table>";
+	  
+	  document.getElementById("habilidadesprofesionales").innerHTML = shabilidades;
+	  document.getElementById("habilidadesprofesionales").style.visibility="visible";
+	  
+	  
+	  var numero = 6;
+	  if ( incrementohabilidades == "10%" ) {
+		  numero = 9;
+	  }
+	  
+	  ciennumeros = shuffle(ciennumeros);
+	  
+	  var eventos = "<strong>Eventos vitales</strong><table class='w3-table  w3-striped  w3-border'>";
+	  for (i=0; i< numero; i++ ){
+		  if ( ciennumeros[i]<=50 ) {
+			  var j;
+			  var n=0;
+			  for (j=0; j<origenes.origenes[norig].eventos.length; j++) {
+				  n+=origenes.origenes[norig].eventos[j].peso;
+				  if ( n >= ciennumeros[i] ) {
+					  eventos+="<tr><td>" + origenes.origenes[norig].eventos[j].evento + "</td></tr>";
+					  break;
+				  }
+			  }
+		  }
+		  else {
+			  var j;
+			  var n=0;
+			  for (j=0; j<origenes.profesiones[nprof].eventos.length; j++) {
+				  n+=origenes.profesiones[nprof].eventos[j].peso;
+				  if ( n >= ciennumeros[i]-50 ) {
+					  eventos+="<tr><td>" + origenes.profesiones[nprof].eventos[j].evento + "</td></tr>";
+					  break;
+				  }
+			  }
+		  }
+	  }
+	  eventos+="</table>";
+	  
+	  document.getElementById("eventos").innerHTML = eventos;
+	  document.getElementById("eventos").style.visibility="visible";
+	  
+	  
+	  
+  }
+  
+  
+</script>
+<style>
+	
+* {
+  box-sizing: border-box;
+}
+.cuarto {
+  float:left;
+  width:25%;
+  padding:0 1px;
+}
+.tercio {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.sexto {
+  float:left;
+  width:17%;
+  padding:0 1px;
+}
+.octavo {
+  float:left;
+  width:12%;
+  padding:0 1px;
+}
+.terciocentral {
+  float:left;
+  width:34%;
+  padding:0 1px;
+}
+.mitad {
+  float:left;
+  width:50%;
+  padding:0 1px;
+}
+.total {
+  float:left;
+  width:100%;
+  padding:0 1px;
+}
+.dostercios {
+  float:left;
+  width:66%;
+  padding:0 1px;
+}
+
+
+
+@media only screen and (max-width:820px) {
+  /* For mobile phones: */
+  .cuarto, .tercio, .sexto, .octavo, .terciocentral, .mitad, .dostercios, .total {
+    width:100%;
+  }
+  
+</style>
+</head>
+
+
+<body>
+	<div class="w3-container w3-blue w3-center">
+	  <h2>M-Space - Origenes vitales</h2>
+	</div>
+
+	<div style="overflow:auto">
+		<div class="octavo" id="listaorigenes"></div>
+		<div class="octavo" id="origen"></div>
+		<div class="octavo" id="listaprofesiones"></div>
+		<div class="octavo" id="profesion"></div>
+		<div class="cuarto" id="incrementohabilidades"><strong>Incremento habilidades:</strong> 
+		<select class='w3-select'  name='origen' onchange='seleccionaIncremento(this)'>
+			<option>10%</option>
+			<option>15%</option>
+		</select></div>
+		<div class="octavo" id="btncalcular"><p><button class='w3-button w3-block w3-blue' onclick='calcular()'>Calcular</button></p></div>
+		<div class="octavo" id="btnrecargar"><p><button class='w3-button w3-block w3-blue' onclick='inicial()'>Recargar</button></p></div>
+		<div class="sexto" id="habilidades"></div>
+		<div class="sexto" id="habilidadesprofesionales"></div>
+		<div class="dostercios" id="eventos"></div>
+		<div class="total" id="cargajson"></div>	
+	</div>
+
+
+<script type="text/javascript">
+	
+  inicial();
+</script>
+
+</body>
+</html>
