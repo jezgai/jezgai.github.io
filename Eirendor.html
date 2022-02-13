@@ -1,0 +1,311 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Eirendor - Ayuda para crear personajes</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="javascript/EIR_comun.js"></script>
+<script src="javascript/EIR_atributos.js"></script>
+<script src="javascript/EIR_equipo.js"></script>
+<script src="javascript/EIR_pj.js"></script>
+<script src="javascript/EIR_clase.js"></script>
+<script src="javascript/EIR_especie.js"></script>
+
+<script src="javascript/pdfform.minipdf.dist.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+
+<script>
+	
+	
+	let clases = new Clases();
+	let especies = new Especies();
+
+	let pj = new PJ();
+	//let atributos = [];
+	
+	let nombreclase = 'random';
+	let nombreespecie = 'random';
+	let hayclases = 0;
+	//let origen = "";
+	
+	let armas = new Armas();
+	let armaduras = new Armaduras();
+	let escudos = new Escudos();
+	let paquetes = new Paquetes();
+	
+	let sclases = Comun.desplegableClases(clases, "seleccionaclases");
+	let sespecies = Comun.desplegableEspecies(especies, "seleccionaespecies");
+
+
+	function rellenaPDF() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		var competencias = '';
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = pj.rellenaPDF();
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, 'PJ_' + pj._clase + '.pdf'); // 'PersonajeDH.pdf');
+			}
+		};
+
+
+		xhr.open('GET', pj.plantillaPDF, true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}	
+	
+	function vaciaDiv() {
+		document.getElementById("atributos").innerHTML="";
+		document.getElementById("rasgos").innerHTML="";
+		document.getElementById("talentos").innerHTML="";
+		document.getElementById("equipo").innerHTML="";
+		document.getElementById("clase").innerHTML="";
+		document.getElementById("salvaciones").innerHTML="";
+		document.getElementById("claves").innerHTML="";
+		document.getElementById("lconjuros").innerHTML="";
+		document.getElementById("titulodescripcion").style.visibility="hidden";
+		document.getElementById("titulocita").style.visibility="hidden";
+		document.getElementById("descripcion").innerHTML="";
+		document.getElementById("cita").innerHTML="";
+		document.getElementById("botonpdf").style.visibility="hidden";
+		document.getElementById("conjuros").style.visibility="hidden";
+	}
+
+	function seleccionaclases(thelist) {
+		vaciaDiv();
+		var idx = thelist.selectedIndex;
+		var seleccionado = thelist.options[idx].innerHTML;
+		if ( idx < 1 ) {
+			seleccionado = 'random';
+		}
+		nombreclase = seleccionado;
+	}
+	
+	function seleccionaespecies(thelist) {
+		vaciaDiv();
+		var idx = thelist.selectedIndex;
+		var seleccionado = thelist.options[idx].innerHTML;
+		if ( idx < 1 ) {
+			seleccionado = 'random';
+		}
+		else {
+			var objEspecie = especies.especie(seleccionado);
+			document.getElementById("clases").innerHTML = Comun.desplegableClasesArray(objEspecie._clases, "seleccionaclases");
+		}
+		nombreespecie = seleccionado;
+	}
+	
+
+	function abajoatr(atributo) {
+		var atributosig = (Math.round(atributo) + 1)%6;
+		var old = pj._atributos[atributo];
+		pj._atributos[atributo] = pj._atributos[atributosig];
+		pj._atributos[atributosig] = old;
+		
+		pj.calculaRasgosDerivadosBase(atributo);
+		
+		var satrs = Comun.tablaAtributos();
+		document.getElementById("atributos").innerHTML = satrs;
+		
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
+		document.getElementById("salvaciones").innerHTML = pj.tablaSalvaciones();
+	}
+	
+	function calculaConjuros() {
+		
+		pj.calculaConjuros();
+		muestraConjuros();
+		
+	}
+	
+	function muestraConjuros() {
+		if ( pj._trucos.length > 0 || pj._conjuros.length > 0 ) 
+		{			
+			document.getElementById("lconjuros").innerHTML = pj.tablaMagia();
+			document.getElementById("conjuros").style.visibility="visible";
+		}
+	}
+	
+	function calcula() {
+		
+		pj = new PJ();
+		pj.genera();
+		
+		var satrs = Comun.tablaAtributos();
+		document.getElementById("atributos").innerHTML = satrs;
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
+		document.getElementById("salvaciones").innerHTML = pj.tablaSalvaciones();
+		
+		
+		document.getElementById("clase").innerHTML = "<strong>Clase: </strong>" + pj._clase + " <strong>Especie: </strong>" +pj._especie;
+		document.getElementById("claves").innerHTML = pj.tablaClaves();
+		document.getElementById("talentos").innerHTML = pj.talentos();
+		
+		muestraConjuros();
+		
+		if ( pj._objClase._descripcion != "" ) {
+			document.getElementById("titulodescripcion").style.visibility="visible";
+			document.getElementById("descripcion").innerHTML = pj._objClase._descripcion;
+		}		
+		if ( pj._objClase._cita != "" ) {
+			document.getElementById("titulocita").style.visibility="visible";
+			document.getElementById("cita").innerHTML = pj._objClase._cita;
+		}
+		
+		document.getElementById("equipo").innerHTML = pj.tablaEquipo();
+		
+		document.getElementById("botonpdf").style.visibility="visible";
+	}
+	
+	function descarga() {
+		var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pj));
+		var jsonElem = document.getElementById('downloadpjsonpj');
+		jsonElem.setAttribute("href",     dataStr     );
+		jsonElem.setAttribute("download", "pj.json");
+		jsonElem.click();
+		
+	}
+	
+	function conclases() {
+		vaciaDiv();
+		
+		hayclases = 1;
+		document.getElementById("clases").innerHTML = sclases;
+		document.getElementById("especies").innerHTML = sespecies;
+		
+		document.getElementById("conjuros").style.visibility="hidden";
+		//document.getElementById("botonclase").innerHTML = "<p></p>";
+	}
+	
+</script>
+<style>
+	
+* {
+  box-sizing: border-box;
+}
+.minileft {
+  float:left;
+  width:16%;
+  padding:0 1px;
+}
+.left {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.microleft {
+  float:left;
+  width:8%;
+  padding:0 1px;
+}
+.main {
+  float:left;
+  width:34%;
+  padding:0 1px;
+}
+.right {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.macroright {
+  float:left;
+  width:52%;
+  padding:0 1px;
+}
+.casitotal {
+  float:left;
+  width:82%;
+  padding:0 1px;
+}
+.total {
+  float:left;
+  width:100%;
+  padding:0 1px;
+}
+.dostercios {
+  float:left;
+  width:67%;
+  padding:0 1px;
+}
+
+
+
+@media only screen and (max-width:820px) {
+  /* For mobile phones: */
+  .left, .main, .minileft, .microleft, .macroright, .right, .casitotal, .total, .minileft, .dostercios {
+    width:100%;
+  }
+  
+</style>
+</head>
+<body >
+	<div class="w3-container w3-blue w3-center">
+	  <h2>Eirendor - Ayuda para crear personajes</h2>
+	</div>
+	<div style="overflow:auto">
+	
+		<div class="minileft" id="especies">
+		</div>
+		<div class="minileft" id="clases">
+			<p><button class='w3-button w3-block w3-teal' onclick='conclases()'>Clases</button></p>
+		</div>
+		<div class="microleft"><p><button class='w3-button w3-block w3-blue' onclick='calcula()'>Calcula</button></p></div>
+		<div class="microleft" id="botonpdf"><p><button class='w3-button w3-block w3-blue' onclick='rellenaPDF()'>Genera PDF</button></p></div>
+		<div class="macroright" id="clase"><p></p></div>
+	</div>
+	<div style="overflow:auto">
+	
+		<div class="left">
+			<div class="w3-container w3-blue w3-center"><p><strong>Atributos</strong></p></div> 
+			<div id="atributos"></div>
+		</div>
+		<div class="main">
+			<div class="w3-container w3-blue w3-center"><p><strong>Rasgos</strong></p></div> 
+			<div id="rasgos"></div>
+			<div class="w3-container w3-blue w3-center"><p><strong>Salvaciones</strong></p></div> 
+			<div id="salvaciones"></div>
+			<div class="w3-container w3-blue w3-center"><p><strong>Claves</strong></p></div> 
+			<div id="claves"></div>
+		</div>
+		<div class="right">
+			<div class="w3-container w3-blue w3-center"><p><strong>Talentos</strong></p></div> 
+			<div id="talentos"></div>
+			<div class="w3-container w3-blue w3-center"><p><strong>Equipo</strong></p></div> 
+			<div id="equipo"></div>
+		</div>
+	</div>
+	<div style="overflow:auto">
+		<!--<div class="left">
+			<div class="w3-container w3-blue w3-center"><p><strong>Competencias</strong></p></div> 
+			<div id="competencias"></div>
+		</div>-->
+		<div class="total" id="conjuros">
+			<div class="w3-container w3-blue w3-center"><p><strong>Trucos/Conjuros</strong></p></div> 
+			<div class="casitotal" id="lconjuros"></div>
+			<div class="microleft" ><button class='w3-button w3-block w3-blue' onclick='calculaConjuros()'>Recalcula</button></div>
+		</div>
+	</div>
+	<div style="overflow:auto" >
+		<div class="total" id="titulodescripcion" >
+			<div class="w3-container w3-blue w3-center"><p><strong>Descripción</strong></p></div> 
+			<div id="descripcion" ></div>
+		</div>
+	</div>
+	<div style="overflow:auto" >
+		<div class="total" id="titulocita" >
+			<div class="w3-container w3-blue w3-center"><p><strong>Cita</strong></p></div> 
+			<div id="cita" ></div>
+		</div>
+	</div>
+	<script>conclases();</script>
+</body>
+</html>
+
