@@ -88,9 +88,12 @@
 
 	function abajoatr(atributo) {
 		var atributosig = (Math.round(atributo) + 1)%6;
-		var old = pj._atributos._atributos[atributo];
-		pj._atributos._atributos[atributo] = pj._atributos._atributos[atributosig];
-		pj._atributos._atributos[atributosig] = old;
+		var oldv = pj._atributos._atributos[atributo].valor;
+		var oldm = pj._atributos._atributos[atributo].modif;
+		pj._atributos._atributos[atributo].valor = pj._atributos._atributos[atributosig].valor;
+		pj._atributos._atributos[atributosig].valor = oldv;
+		pj._atributos._atributos[atributo].modif = pj._atributos._atributos[atributosig].modif;
+		pj._atributos._atributos[atributosig].modif = oldm;
 		
 		pj.calculaRasgosDerivadosBase(atributo);
 		

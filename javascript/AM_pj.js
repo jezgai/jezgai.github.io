@@ -90,8 +90,8 @@ class PJ {
 	calculaRasgosDerivadosBase(atributo) {
 		atributo = Math.trunc(atributo);
 		if ( atributo <= 1 && this._atributos._atributos[atributo].modif != this._atributos._atributos[atributo+1].modif) {
-			this._cacc = 10 + this._objClase.ataque + this._atributos._atributos[1].modif;
-			this._caad = 10 + this._objClase.ataque + this._atributos._atributos[1].modif;
+			this._cacc = 10 + this._atributos._atributos[1].modif;
+			this._caad = 10 + this._atributos._atributos[1].modif;
 		}
 		if ( (atributo == 1 || atributo == 2) && this._atributos._atributos[atributo].modif != this._atributos._atributos[atributo+1].modif ) {
 			this._pv = this._pvclase + this._atributos._atributos[2].modif;
