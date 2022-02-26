@@ -7,6 +7,7 @@ class Clase {
 		this.caracteristicas = clase.caracteristicas;
 		this.ataque = clase.ataque;
 		this.dano = clase.dano;
+		this.tipobonifdano = clase.tipobonifdano;
 		this.barridos = clase.barridos;
 		this.tsalvacion = clase.tsalvacion;
 		this.pericias = clase.pericias;
@@ -14,6 +15,12 @@ class Clase {
 		this.ptospericia = [];
 		this.movimiento = clase.movimiento;
 		this.experiencia = clase.experiencia;
+		this.idiomas = clase.idiomas;
+		this.boniftipoarmas = clase.boniftipoarmas;
+		this.periciasespeciales = clase.periciasespeciales;
+		this.ataquead = clase.ataquead;
+		this.ca = clase.ca;
+		this.modifadicional = clase.modifadicional;
 	}
 	
 	pv() {
@@ -63,8 +70,10 @@ class Clase {
 		var pericia = new Object();
 		pericia.tipo = "Básica";
 		pericia.pericia = "Alerta";
-		pericia.puntosbase = atributospj[4].modif < -1 ? 1 : 2 + atributospj[4].modif;
+		pericia.puntosbase = (atributospj[4].modif + this.modifadicional[4]) < -1 ? 1 : 2 + atributospj[4].modif + this.modifadicional[4];
 		pericia.puntos = 0;
+		pericia.especial = false;
+		pericia.puntosespecial = 0;
 		this.ptospericia.push(pericia);
 		
 		pericia = new Object();
@@ -72,13 +81,17 @@ class Clase {
 		pericia.pericia = "Arquitectura";
 		pericia.puntosbase = 1;
 		pericia.puntos = 0;
+		pericia.especial = false;
+		pericia.puntosespecial = 0;
 		this.ptospericia.push(pericia);
 		
 		pericia = new Object();
 		pericia.tipo = "Básica";
 		pericia.pericia = "Escalada";
-		pericia.puntosbase = atributospj[2].modif < 0 ? 1 : 1 + atributospj[2].modif;
+		pericia.puntosbase = (atributospj[2].modif + this.modifadicional[2]) < 0 ? 1 : 1 + atributospj[2].modif + this.modifadicional[2];
 		pericia.puntos = 0;
+		pericia.especial = false;
+		pericia.puntosespecial = 0;
 		this.ptospericia.push(pericia);
 		
 		pericia = new Object();
@@ -86,27 +99,35 @@ class Clase {
 		pericia.pericia = "Detectar";
 		pericia.puntosbase = 1;
 		pericia.puntos = 0;
+		pericia.especial = false;
+		pericia.puntosespecial = 0;
 		this.ptospericia.push(pericia);
 		
 		pericia = new Object();
 		pericia.tipo = "Básica";
 		pericia.pericia = "Forzar Puertas";
-		pericia.puntosbase = atributospj[0].modif < 0 ? 1 : 1 + atributospj[0].modif;
+		pericia.puntosbase = (atributospj[0].modif + this.modifadicional[0]) < 0 ? 1 : 1 + atributospj[0].modif + this.modifadicional[0];
 		pericia.puntos = 0;
+		pericia.especial = false;
+		pericia.puntosespecial = 0;
 		this.ptospericia.push(pericia);
 		
 		pericia = new Object();
 		pericia.tipo = "Básica";
 		pericia.pericia = "Idiomas";
-		pericia.puntosbase = atributospj[3].modif < 0 ? 0 : atributospj[3].modif;
+		pericia.puntosbase = (atributospj[3].modif + this.modifadicional[3]) < 0 ? 0 : atributospj[3].modif + this.modifadicional[3];
 		pericia.puntos = 0;
+		pericia.especial = false;
+		pericia.puntosespecial = 0;
 		this.ptospericia.push(pericia);
 		
 		pericia = new Object();
 		pericia.tipo = "Básica";
 		pericia.pericia = "Sigilo";
-		pericia.puntosbase = atributospj[1].modif < -1 ? 1 : 2 + atributospj[1].modif;
+		pericia.puntosbase = (atributospj[1].modif + this.modifadicional[1]) < -1 ? 1 : 2 + atributospj[1].modif + this.modifadicional[1];
 		pericia.puntos = 0;
+		pericia.especial = false;
+		pericia.puntosespecial = 0;
 		this.ptospericia.push(pericia);
 		
 		for (indice=0; indice < this.pericias.pericias.length; indice++ ) {
@@ -115,6 +136,8 @@ class Clase {
 			pericia.pericia = this.pericias.pericias[indice].nombre;
 			pericia.puntosbase = this.pericias.pericias[indice].puntos;
 			pericia.puntos = 0;
+			pericia.especial = false;
+			pericia.puntosespecial = 0;
 			this.ptospericia.push(pericia);
 		}
 		
@@ -134,6 +157,45 @@ class Clase {
 				this.ptospericia[indice].puntos = puntos[indice];
 			}
 		}
+		
+		if ( this.periciasespeciales.puntos > 0 ) {
+			var indice2=0;
+			for (indice=0; indice < this.periciasespeciales.pericias.length; indice++ ) {
+				for (indice2=0; indice2 < this.ptospericia.length; indice2++) {
+					if ( this.ptospericia[indice2].pericia == this.periciasespeciales.pericias[indice].nombre ) {
+						this.ptospericia[indice2].especial = true;
+						break;
+					}
+				}
+				if ( indice2 == this.ptospericia.length ) {
+					var pericia = new Object();
+					pericia.tipo = "Avanzada";
+					pericia.pericia = this.periciasespeciales.pericias[indice].nombre;
+					pericia.puntosbase = this.periciasespeciales.pericias[indice].puntos;
+					pericia.puntos = 0;
+					pericia.especial = true;
+					pericia.puntosespecial = 0;
+					this.ptospericia.push(pericia);
+				}
+			}
+			
+			var puntos = [];
+			for (indice=0; indice< this.periciasespeciales.puntos; indice++) {
+				puntos.push(1);
+			}
+			for (;indice<this.periciasespeciales.pericias.length; indice++) {
+				puntos.push(0);
+			}
+			
+			puntos = Comun.shuffle(puntos);
+			indice2=0;
+			for (indice = 0; indice < this.ptospericia.length; indice++) {
+				if ( this.ptospericia[indice].especial == true ) {
+					this.ptospericia[indice].puntosespecial = puntos[indice2];
+					indice2++;
+				}
+			}
+		}
 	}
 	
 }
@@ -148,11 +210,14 @@ class Clases {
 			  nombre : "Guerrero",
 			  requisitos: [ { atributo: "FUE", valor: 9} ],
 			  reqprimario: "FUE",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
 			  dg : 8,
-			  caracteristicas: [ "Pueden usar cualquier tipo de armadura", 
-								 "Pueden usar armas como si su FUE fuera un punto mayor" ],
+			  caracteristicas: [ "Pueden usar cualquier tipo de armadura" ],
+              ca: 0,
               ataque: 1,
+              ataquead: 0,
               dano: 1,
+              tipobonifdano: "CC y AD",
               barridos: 1,
               movimiento: 40,
               experiencia: 2000,
@@ -163,6 +228,9 @@ class Clases {
 				{ nombre: "Artefactos magicos", valor: 16 },
 				{ nombre: "Conjuros", valor: 17 },
               ],
+              idiomas: [ ],
+              boniftipoarmas: 1,
+              periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			},
@@ -170,10 +238,14 @@ class Clases {
 			  nombre : "Mago",
 			  requisitos: [ { atributo: "INT", valor: 9} ],
 			  reqprimario: "INT",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
 			  dg : 4,
 			  caracteristicas: [ "No pueden usar ningún tipo de armadura" ],
+              ca: 0,
               ataque: 1,
+              ataquead: 0,
               dano: 0,
+              tipobonifdano: "CC y AD",
               barridos: 0,
               movimiento: 40,
               experiencia: 2500,
@@ -184,6 +256,9 @@ class Clases {
 				{ nombre: "Artefactos magicos", valor: 11 },
 				{ nombre: "Conjuros", valor: 12 },
               ],
+              idiomas: [ ],
+              boniftipoarmas: 0,
+              periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ "Leer Magia" ], 
 						  numeroN1: 2, conjurosN1: [ "Detectar magia", "Detectar mentiras (ocultar mentiras)", "Disco flotante", "Escudo", 
@@ -196,12 +271,16 @@ class Clases {
 			  nombre : "Especialista",
 			  requisitos: [ { atributo: "DES", valor: 9} ],
 			  reqprimario: "DES",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
 			  dg : 6,
 			  caracteristicas: [ "Solo pueden usar armaduras de cuero. Escudos no.", 
                               "Dobla ataque y daño al Apuñalar por la espalda",
                               "Ventaja al escalar" ],
+              ca: 0,
               ataque: 1,
+              ataquead: 0,
               dano: 0,
+              tipobonifdano: "CC y AD",
               barridos: 1,
               movimiento: 40,
               experiencia: 1400,
@@ -212,6 +291,9 @@ class Clases {
 				{ nombre: "Artefactos magicos", valor: 14 },
 				{ nombre: "Conjuros", valor: 15 },
               ],
+              idiomas: [ ],
+              boniftipoarmas: 0,
+              periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 4, pericias: [ { nombre: "Apuñalar", puntos: 0}, { nombre: "Detectar Trampas", puntos: 1}, { nombre: "Juego de Manos", puntos: 0}, { nombre: "Mecanismos", puntos: 0} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			},
@@ -219,11 +301,15 @@ class Clases {
 			  nombre : "Sacerdote",
 			  requisitos: [ { atributo: "SAB", valor: 9} ],
 			  reqprimario: "SAB",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
 			  dg : 4,
 			  caracteristicas: [ "No pueden usar ningún tipo de armadura", 
 								 "Poder Expulsar no muertos" ],
+              ca: 0,
               ataque: 1,
+              ataquead: 0,
               dano: 0,
+              tipobonifdano: "CC y AD",
               barridos: 0,
               movimiento: 40,
               experiencia: 1500,
@@ -234,6 +320,9 @@ class Clases {
 				{ nombre: "Artefactos magicos", valor: 11 },
 				{ nombre: "Conjuros", valor: 12 },
               ],
+              idiomas: [ ],
+              boniftipoarmas: 0,
+              periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], 
 						  numeroN1: -1, conjurosN1: [ "Curar/Causar heridas leves", "Detectar magia", "Detectar mal/bien", "Luz/Oscuridad", "Palabra de mando", 
@@ -244,12 +333,16 @@ class Clases {
 			  nombre : "Clérigo",
 			  requisitos: [ { atributo: "SAB", valor: 9} ],
 			  reqprimario: "SAB",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
 			  dg : 6,
 			  caracteristicas: [ "Puede usar cualquier armadura", 
 								 "Solo puede usar armas romas y cuerpo a cuerpo", 
 								 "Poder Expulsar no muertos" ],
+              ca: 0,
               ataque: 1,
+              ataquead: 0,
               dano: 0,
+              tipobonifdano: "CC y AD",
               barridos: 1,
               movimiento: 40,
               experiencia: 1650,
@@ -260,6 +353,9 @@ class Clases {
 				{ nombre: "Artefactos magicos", valor: 11 },
 				{ nombre: "Conjuros", valor: 12 },
               ],
+              idiomas: [ ],
+              boniftipoarmas: 0,
+              periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], 
 						  numeroN1: -1, conjurosN1: [ "Curar/Causar heridas leves", "Detectar magia", "Detectar mal/bien", "Luz/Oscuridad", "Palabra de mando", 
@@ -270,13 +366,16 @@ class Clases {
 			  nombre : "Paladín",
 			  requisitos: [ { atributo: "FUE", valor: 9} ],
 			  reqprimario: "FUE",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
 			  dg : 6,
 			  caracteristicas: [ "Pueden usar cualquier tipo de armadura", 
-								 "Pueden usar armas como si su FUE fuera un punto mayor", 
 								 "Inmunidad: Purificación",
 								 "Poder mágico: Imponer manos" ],
+              ca: 0,
               ataque: 1,
+              ataquead: 0,
               dano: 1,
+              tipobonifdano: "CC y AD",
               barridos: 1,
               movimiento: 40,
               experiencia: 1700,
@@ -287,6 +386,9 @@ class Clases {
 				{ nombre: "Artefactos magicos", valor: 16 },
 				{ nombre: "Conjuros", valor: 17 },
               ],
+              idiomas: [ ],
+              boniftipoarmas: 1,
+              periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			},
@@ -294,13 +396,16 @@ class Clases {
 			  nombre : "Montaraz",
 			  requisitos: [ { atributo: "CON", valor: 9} ],
 			  reqprimario: "CON",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
 			  dg : 6,
 			  caracteristicas: [ "No pueden usar armaduras mejores que malla", 
-								 "Pueden usar armas como si su FUE fuera un punto mayor", 
 								 "Bono: Puntería",
 								 "Camuflaje natural (+2 a Sigilo en entornos naturales)" ],
+              ca: 0,
               ataque: 1,
+              ataquead: 0,
               dano: 1,
+              tipobonifdano: "CC y AD",
               barridos: 1,
               movimiento: 40,
               experiencia: 1850,
@@ -311,6 +416,9 @@ class Clases {
 				{ nombre: "Artefactos magicos", valor: 16 },
 				{ nombre: "Conjuros", valor: 17 },
               ],
+              idiomas: [ ],
+              boniftipoarmas: 1,
+              periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 2, pericias: [ { nombre: "Supervivencia", puntos: 0} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			},
@@ -318,11 +426,15 @@ class Clases {
 			  nombre : "Bardo",
 			  requisitos: [ { atributo: "SAB", valor: 9} ],
 			  reqprimario: "SAB",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
 			  dg : 6,
 			  caracteristicas: [ "Solo puede usar armaduras de malla o peor", 
 								 "Poderes mágicos: Música tranquilizadora" ],
+              ca: 0,
               ataque: 1,
+              ataquead: 0,
               dano: 0,
+              tipobonifdano: "CC y AD",
               barridos: 1,
               movimiento: 40,
               experiencia: 1825,
@@ -333,6 +445,9 @@ class Clases {
 				{ nombre: "Artefactos magicos", valor: 11 },
 				{ nombre: "Conjuros", valor: 12 },
               ],
+              idiomas: [ ],
+              boniftipoarmas: 0,
+              periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 2, pericias: [ { nombre: "Historia antigua", puntos: 1} ] },
 			  conjuros: { fijos: [ ], 
 						  numeroN1: 0, conjurosN1: [ ], 
@@ -342,13 +457,16 @@ class Clases {
 			  nombre : "Bárbaro",
 			  requisitos: [ { atributo: "CON", valor: 9} ],
 			  reqprimario: "CON",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
 			  dg : 8,
 			  caracteristicas: [ "Solo puede usar armaduras de malla o peor", 
-								 "Pueden usar armas como si su FUE fuera un punto mayor",
 								 "Ventaja al escalar",
 								 "Fornido. Difícil de matar" ],
+              ca: 0,
               ataque: 1,
+              ataquead: 0,
               dano: 1,
+              tipobonifdano: "CC y AD",
               barridos: 1,
               movimiento: 40,
               experiencia: 2450,
@@ -359,6 +477,9 @@ class Clases {
 				{ nombre: "Artefactos magicos", valor: 16 },
 				{ nombre: "Conjuros", valor: 17 },
               ],
+              idiomas: [ ],
+              boniftipoarmas: 1,
+              periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			},
@@ -366,13 +487,16 @@ class Clases {
 			  nombre : "Asesino",
 			  requisitos: [ { atributo: "FUE", valor: 9} ],
 			  reqprimario: "FUE",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
 			  dg : 6,
 			  caracteristicas: [ "Solo pueden usar armaduras de cuero. Escudos no.", 
-								 "Pueden usar armas como si su FUE fuera un punto mayor",
 								 "Dobla ataque y daño al Apuñalar por la espalda",
 								 "Ventaja al escalar. Pasar desapercibido. Reflejos finos" ],
+              ca: 0,
               ataque: 1,
+              ataquead: 0,
               dano: 1,
+              tipobonifdano: "CC y AD",
               barridos: 1,
               movimiento: 40,
               experiencia: 1850,
@@ -383,6 +507,9 @@ class Clases {
 				{ nombre: "Artefactos magicos", valor: 16 },
 				{ nombre: "Conjuros", valor: 17 },
               ],
+              idiomas: [ ],
+              boniftipoarmas: 1,
+              periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 2, pericias: [ { nombre: "Apuñalar", puntos: 0} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			},
@@ -390,12 +517,15 @@ class Clases {
 			  nombre : "Monje",
 			  requisitos: [ { atributo: "CON", valor: 9} ],
 			  reqprimario: "CON",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
 			  dg : 6,
 			  caracteristicas: [ "No pueden usar ningún tipo de armadura ni escudo.", 
-								 "Pueden usar armas como si su FUE fuera un punto mayor",
 								 "Armas naturales. Escurridizo" ],
+              ca: 0,
               ataque: 1,
+              ataquead: 0,
               dano: 1,
+              tipobonifdano: "CC y AD",
               barridos: 1,
               movimiento: 40,
               experiencia: 1850,
@@ -406,7 +536,224 @@ class Clases {
 				{ nombre: "Artefactos magicos", valor: 16 },
 				{ nombre: "Conjuros", valor: 17 },
               ],
+              idiomas: [ ],
+              boniftipoarmas: 1,
+              periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 2, pericias: [ ] },
+			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			},
+			{
+			  nombre : "Guerrero arcano elfo",
+			  requisitos: [ { atributo: "INT", valor: 11} ],
+			  reqprimario: "INT",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
+			  dg : 6,
+			  caracteristicas: [ "Solo puede usar armaduras de malla o peor",
+								 "Camuflaje natural. Nada se le escapa. Bono. Alma liberada" ],
+              ca: 0,
+              ataque: 1,
+              ataquead: 0,
+              dano: 0,
+              tipobonifdano: "CC y AD",
+              barridos: 1,
+              movimiento: 40,
+              experiencia: 3625,
+              tsalvacion: [
+				{ nombre: "Captura", valor: 13 },
+				{ nombre: "Aflicciones", valor: 13 },
+				{ nombre: "Ataque de area", valor: 15 },
+				{ nombre: "Artefactos magicos", valor: 11 },
+				{ nombre: "Conjuros", valor: 12 },
+              ],
+              idiomas: [ "Elfo", "Gnoll", "Grantrasgo", "Orco" ],
+              boniftipoarmas: 0,
+              periciasespeciales: { puntos: 0, pericias: [ ] },
+              pericias: { puntos: 0, pericias: [ { nombre: "Señor de las bestias", puntos: 0} ] },
+			  conjuros: { fijos: [ "Leer Magia" ], 
+						  numeroN1: 2, conjurosN1: [ "Detectar magia", "Detectar mentiras (ocultar mentiras)", "Disco flotante", "Escudo", 
+													 "Hechizar persona", "Leer lenguas", "Luz/Oscuridad", "Misil mágico", "Retener portal", "Sueño", "Ventriloquía" ], 
+						  numeroN2: 1, conjurosN2: [ "Apertura", "Cerradura arcana", "Detectar lo invisible", "Fuerza fantasmal", "Imágenes múltiples", "Invisibilidad",
+													  "Levitar", "Localizar objeto", "Luz/Oscuridad continua", "Percepción extrasensorial", 
+													  "Protección contra el mal", "Telaraña" ] },
+			},
+			{
+			  nombre : "Capellán elfo",
+			  requisitos: [ { atributo: "INT", valor: 9}, { atributo: "SAB", valor: 9} ],
+			  reqprimario: "SAB",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
+			  dg : 4,
+			  caracteristicas: [ "No puede usar ningún tipo de armadura", "Expulsar no muertos", 
+								 "Camuflaje natural. Nada se le escapa. Bono. Alma liberada" ],
+              ca: 0,
+              ataque: 1,
+              ataquead: 0,
+              dano: 0,
+              tipobonifdano: "CC y AD",
+              barridos: 0,
+              movimiento: 40,
+              experiencia: 1750,
+              tsalvacion: [
+				{ nombre: "Captura", valor: 13 },
+				{ nombre: "Aflicciones", valor: 13 },
+				{ nombre: "Ataque de area", valor: 15 },
+				{ nombre: "Artefactos magicos", valor: 11 },
+				{ nombre: "Conjuros", valor: 12 },
+              ],
+              idiomas: [ "Elfo", "Gnoll", "Grantrasgo", "Orco" ],
+              boniftipoarmas: 0,
+              periciasespeciales: { puntos: 0, pericias: [ ] },
+              pericias: { puntos: 0, pericias: [ { nombre: "Señor de las bestias", puntos: 0} ] },
+			  conjuros: { fijos: [ "Leer Magia" ], 
+						  numeroN1: -1, conjurosN1: [ "Curar/Causar heridas leves", "Detectar magia", "Detectar mal/bien", "Luz/Oscuridad", "Palabra de mando", 
+													  "Protección contra el mal", "Purificar/Pudrir comida y agua", "Resistir frío", "Retirar/Causar miedo", "Santuario" ], 
+						  numeroN2: 0, conjurosN2: [ ] },
+			},
+			{
+			  nombre : "Defensor enano",
+			  requisitos: [ { atributo: "FUE", valor: 9}, { atributo: "CON", valor: 9} ],
+			  reqprimario: "FUE",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
+			  dg : 8,
+			  caracteristicas: [ "Pueden usar cualquier tipo de armadura",
+								 "Sensitivo con la piedra. Piel de piedra" ],
+              ca: 0,
+              ataque: 1,
+              ataquead: 0,
+              dano: 1,
+              tipobonifdano: "CC",
+              barridos: 1,
+              movimiento: 30,
+              experiencia: 2650,
+              tsalvacion: [
+				{ nombre: "Captura", valor: 15 },
+				{ nombre: "Aflicciones", valor: 14 },
+				{ nombre: "Ataque de area", valor: 16 },
+				{ nombre: "Artefactos magicos", valor: 16 },
+				{ nombre: "Conjuros", valor: 17 },
+              ],
+              idiomas: [ "Enano", "Gnomo", "Trasgo", "Kobold" ],
+              boniftipoarmas: 0,
+              periciasespeciales: { puntos: 4, pericias: [ { nombre: "Arquitectura", puntos: 1}, { nombre: "Mecanismos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
+              pericias: { puntos: 0, pericias: [ ] },
+			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			},
+			{
+			  nombre : "Luchador enano",
+			  requisitos: [ { atributo: "FUE", valor: 9}, { atributo: "CON", valor: 9} ],
+			  reqprimario: "FUE",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
+			  dg : 8,
+			  caracteristicas: [ "Pueden usar cualquier tipo de armadura",
+								 "Armadura natural. Sensitivo con la piedra" ],
+              ca: 1,
+              ataque: 1,
+              ataquead: 0,
+              dano: 1,
+              tipobonifdano: "CC y AD",
+              barridos: 1,
+              movimiento: 30,
+              experiencia: 2400,
+              tsalvacion: [
+				{ nombre: "Captura", valor: 15 },
+				{ nombre: "Aflicciones", valor: 14 },
+				{ nombre: "Ataque de area", valor: 16 },
+				{ nombre: "Artefactos magicos", valor: 16 },
+				{ nombre: "Conjuros", valor: 17 },
+              ],
+              idiomas: [ "Enano", "Gnomo", "Trasgo", "Kobold" ],
+              boniftipoarmas: 0,
+              periciasespeciales: { puntos: 2, pericias: [ { nombre: "Arquitectura", puntos: 1}, { nombre: "Mecanismos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
+              pericias: { puntos: 0, pericias: [ ] },
+			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			},
+			{
+			  nombre : "Alguacil mediano",
+			  requisitos: [ { atributo: "FUE", valor: 9}, { atributo: "DES", valor: 9} ],
+			  reqprimario: "DES",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
+			  dg : 6,
+			  caracteristicas: [ "Pueden usar cualquier tipo de armadura",
+								 "Buen trato. Correr por su vida. Mal de ojo",
+								 "Pasar desapercibido" ],
+              ca: 0,
+              ataque: 1,
+              ataquead: 1,
+              dano: 1,
+              tipobonifdano: "CC y AD",
+              barridos: 1,
+              movimiento: 30,
+              experiencia: 2275,
+              tsalvacion: [
+				{ nombre: "Captura", valor: 15 },
+				{ nombre: "Aflicciones", valor: 14 },
+				{ nombre: "Ataque de area", valor: 16 },
+				{ nombre: "Artefactos magicos", valor: 16 },
+				{ nombre: "Conjuros", valor: 17 },
+              ],
+              idiomas: [ "Mediano" ],
+              boniftipoarmas: 0,
+              periciasespeciales: { puntos: 2, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Sigilo", puntos: 0},  { nombre: "Detectar", puntos: 1} ] },
+              pericias: { puntos: 2, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1} ] },
+			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			},
+			{
+			  nombre : "Saqueador mediano",
+			  requisitos: [ { atributo: "DES", valor: 11} ],
+			  reqprimario: "DES",
+			  modifadicional: [ 0, 0, 0, 0, 0, 0 ],
+			  dg : 6,
+			  caracteristicas: [ "Pueden usar cualquier tipo de armadura",
+								 "Buen trato. Correr por su vida. Mal de ojo",
+								 "Pasar desapercibido. Puntería. Camuflaje natural" ],
+              ca: 1,
+              ataque: 1,
+              ataquead: 1,
+              dano: 1,
+              tipobonifdano: "CC y AD",
+              barridos: 1,
+              movimiento: 30,
+              experiencia: 2225,
+              tsalvacion: [
+				{ nombre: "Captura", valor: 13 },
+				{ nombre: "Aflicciones", valor: 13 },
+				{ nombre: "Ataque de area", valor: 16 },
+				{ nombre: "Artefactos magicos", valor: 14 },
+				{ nombre: "Conjuros", valor: 15 },
+              ],
+              idiomas: [ "Mediano" ],
+              boniftipoarmas: -1,
+              periciasespeciales: { puntos: 6, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Sigilo", puntos: 0},  { nombre: "Detectar", puntos: 1} ] },
+              pericias: { puntos: 4, pericias: [ { nombre: "Apuñalar", puntos: 0}, { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1}, { nombre: "Mecanismos", puntos: 0} ] },
+			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			},
+			{
+			  nombre : "Mercenario semiogro",
+			  requisitos: [ { atributo: "FUE", valor: 11} ],
+			  reqprimario: "FUE",
+			  modifadicional: [ 2, 0, 0, 0, 0, 0 ],
+			  dg : 10,
+			  caracteristicas: [ "Pueden usar cualquier armadura hasta malla",
+								 "Armas naturales, Infravisión, Personalidad feroz",
+								 "Armadura natural" ],
+              ca: 2,
+              ataque: 1,
+              ataquead: 0,
+              dano: 1,
+              tipobonifdano: "CC y AD",
+              barridos: 1,
+              movimiento: 50,
+              experiencia: 2000,
+              tsalvacion: [
+				{ nombre: "Captura", valor: 15 },
+				{ nombre: "Aflicciones", valor: 14 },
+				{ nombre: "Ataque de area", valor: 16 },
+				{ nombre: "Artefactos magicos", valor: 16 },
+				{ nombre: "Conjuros", valor: 17 },
+              ],
+              idiomas: [ ],
+              boniftipoarmas: 1,
+              periciasespeciales: { puntos: 0, pericias: [ ] },
+              pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			},
 		]

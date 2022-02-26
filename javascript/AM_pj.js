@@ -13,6 +13,7 @@ class PJ {
 		this._atqcc = 0;
 		this._atqad = 0;
 		this._dinero = 0;
+		this._tipoarmas = "d4";
 	}
 	
 	tablaRequisitos() {
@@ -52,12 +53,28 @@ class PJ {
 	}
 	
 	recalculaPericiasBasicas() {
-		this._pericias[0].puntosbase = this._atributos._atributos[4].modif < -1 ? 1 : 2 + this._atributos._atributos[4].modif;
-		this._pericias[2].puntosbase = this._atributos._atributos[2].modif < 0 ? 1 : 1 + this._atributos._atributos[2].modif;
-		this._pericias[4].puntosbase = this._atributos._atributos[0].modif < 0 ? 1 : 1 + this._atributos._atributos[0].modif;
-		this._pericias[5].puntosbase = this._atributos._atributos[3].modif < 0 ? 0 : this._atributos._atributos[3].modif;
-		this._pericias[6].puntosbase = this._atributos._atributos[1].modif < -1 ? 1 : 2 + this._atributos._atributos[1].modif;
+		this._pericias[0].puntosbase = (this._atributos._atributos[4].modif + this._objClase.modifadicional[4]) < -1 ? 1 : 2 + this._atributos._atributos[4].modif + this._objClase.modifadicional[4];
+		this._pericias[2].puntosbase = (this._atributos._atributos[2].modif + this._objClase.modifadicional[2]) < 0 ? 1 : 1 + this._atributos._atributos[2].modif + this._objClase.modifadicional[2];
+		this._pericias[4].puntosbase = (this._atributos._atributos[0].modif + this._objClase.modifadicional[0]) < 0 ? 1 : 1 + this._atributos._atributos[0].modif + this._objClase.modifadicional[0];
+		this._pericias[5].puntosbase = (this._atributos._atributos[3].modif + this._objClase.modifadicional[3]) < 0 ? 0 : this._atributos._atributos[3].modif + this._objClase.modifadicional[3];
+		this._pericias[6].puntosbase = (this._atributos._atributos[1].modif + this._objClase.modifadicional[1]) < -1 ? 1 : 2 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1];
 
+	}
+	
+	
+	tablaAtributos() {
+		var iatrb = 0;
+		var satrs = "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</strong></th><th>Valor (mod)</th></tr>";
+		for (iatrb = 0; iatrb < this._atributos._atributos.length; iatrb++) {
+			satrs += "<tr><td>" + this._atributos._atributos[iatrb].nbatr + " (" + this._atributos._atributos[iatrb].nbmod + ")</td><td align='center'>" + this._atributos._atributos[iatrb].valor + " (" + this._atributos._atributos[iatrb].modif + ") " + Comun.construyeBotonAbajo(iatrb, "abajoatr");
+			if ( this._objClase.modifadicional[iatrb] > 0 ) {
+				satrs += " (+" + this._objClase.modifadicional[iatrb] + ")";
+			}
+			satrs += "</td></tr>";
+		}
+		
+		satrs += "</table>";
+		return satrs;
 	}
 	
 
@@ -65,20 +82,60 @@ class PJ {
 		
 		var indice = 0;
 		
-		var stabla = "<table class='w3-table  w3-striped w3-border'><tr><th><strong>Habilidad</strong></th><th><strong>Tipo</strong></th><th><strong>Base</strong></th><th><strong>Adicional</strong></th></tr>";
+		var stabla = "<table class='w3-table  w3-striped w3-border'><tr><th><strong>Habilidad</strong></th><th><strong>Tipo</strong></th><th><strong>Base</strong></th>";
+		if ( this._objClase.pericias.puntos > 0 ) {
+			stabla+="<th><strong>Adicional</strong></th>";
+		}
+		
+		if ( this._objClase.periciasespeciales.puntos > 0 ) {
+			stabla+="<th><strong>Especial</strong></th>";
+		}
+		stabla += "</tr>";
+		
 		for (indice=0; indice<7; indice++) {
-			stabla += "<tr><td>" + this._pericias[indice].pericia + "</td><td>" + this._pericias[indice].tipo + "</td><td>" + this._pericias[indice].puntosbase + "</td><td>" + this._pericias[indice].puntos + "</td>";
+			stabla += "<tr><td>" + this._pericias[indice].pericia + "</td><td>" + this._pericias[indice].tipo + "</td><td>" + this._pericias[indice].puntosbase + "</td>";
+			
 			if ( this._objClase.pericias.puntos > 0 ) {
-				stabla += "<td>" + Comun.construyeBotonAbajo(indice, "abajopericia") + "</td>";
+				stabla += "<td>" + this._pericias[indice].puntos;
+				if ( this._objClase.pericias.puntos > 0 ) {
+					stabla += " " + Comun.construyeBotonAbajo(indice, "abajopericia");
+				}
+				stabla += "</td>";
+			}
+			if ( this._objClase.periciasespeciales.puntos > 0 ) {
+				stabla += "<td>";
+				if ( this._pericias[indice].especial == true ) {
+					stabla += this._pericias[indice].puntosespecial;
+					if ( this._objClase.periciasespeciales.puntos < this._objClase.periciasespeciales.pericias.length ) {
+						stabla += " " + Comun.construyeBotonAbajo(indice, "abajopericiaespecial");
+					}
+				}
+				stabla += "</td>";
 			}
 			stabla += "</tr>";
 		}
 		
 		if ( this._pericias.length > 7 ) {
 			for (indice = 7; indice < this._pericias.length; indice++) {
-				stabla += "<tr><td>" + this._pericias[indice].pericia + "</td><td>" + this._pericias[indice].tipo + "</td><td>" + this._pericias[indice].puntosbase + "</td><td>" + this._pericias[indice].puntos + "</td>";
+				stabla += "<tr><td>" + this._pericias[indice].pericia + "</td><td>" + this._pericias[indice].tipo + "</td><td>" + this._pericias[indice].puntosbase + "</td>";
+				
 				if ( this._objClase.pericias.puntos > 0 ) {
-					stabla += "<td>" + Comun.construyeBotonAbajo(indice, "abajopericia") + "</td>";
+					stabla += "<td>" + this._pericias[indice].puntos;
+					if ( this._objClase.pericias.puntos > 0 ) {
+						stabla += " " + Comun.construyeBotonAbajo(indice, "abajopericia");
+					}
+					stabla += "</td>";
+				}
+				
+				if ( this._objClase.periciasespeciales.puntos > 0 ) {
+					stabla += "<td>";
+					if ( this._pericias[indice].especial == true ) {
+						stabla += this._pericias[indice].puntosespecial;
+						if ( this._objClase.periciasespeciales.puntos < this._objClase.periciasespeciales.pericias.length ) {
+							stabla += " " + Comun.construyeBotonAbajo(indice, "abajopericiaespecial");
+						}
+					}
+					stabla += "</td>";
 				}
 				stabla += "</tr>";
 			}
@@ -87,17 +144,32 @@ class PJ {
 		return stabla;
 	}
 	
+	calculaTipoArmas() {
+		var bonif = this._objClase.boniftipoarmas + this._atributos._atributos[1].modif;
+		this._tipoarmas = "d4";
+		if ( bonif == 1 ) {
+			this._tipoarmas = "d6";
+		}
+		else if ( bonif == 2 ) {
+			this._tipoarmas = "d8";
+		}
+		else if ( bonif >= 3 ) {
+			this._tipoarmas = "d10";
+		}
+	}
+	
 	calculaRasgosDerivadosBase(atributo) {
 		atributo = Math.trunc(atributo);
 		if ( atributo <= 1 && this._atributos._atributos[atributo].modif != this._atributos._atributos[atributo+1].modif) {
-			this._cacc = 10 + this._atributos._atributos[1].modif;
-			this._caad = 10 + this._atributos._atributos[1].modif;
+			this._cacc = 10 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1] + this._objClase.ca;
+			this._caad = 10 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1] + this._objClase.ca;
+			this.calculaTipoArmas();
 		}
 		if ( (atributo == 1 || atributo == 2) && this._atributos._atributos[atributo].modif != this._atributos._atributos[atributo+1].modif ) {
-			this._pv = this._pvclase + this._atributos._atributos[2].modif;
+			this._pv = this._pvclase + this._atributos._atributos[2].modif + this._objClase.modifadicional[2];
 		}
-		this._atqcc = this._objClase.ataque + this._atributos._atributos[0].modif;
-		this._atqad = this._objClase.ataque + this._atributos._atributos[1].modif;
+		this._atqcc = this._objClase.ataque + this._atributos._atributos[0].modif + this._objClase.modifadicional[0];
+		this._atqad = this._objClase.ataque + this._objClase.ataquead + this._atributos._atributos[1].modif + this._objClase.modifadicional[1];
 		this.recalculaPericiasBasicas();
 	}
 	
@@ -112,11 +184,11 @@ class PJ {
 		this.calculaConjuros();
 		this._objClase.calculapericias(this._atributos._atributos);
 		this._pericias = this._objClase.ptospericia;
-		this._atqcc = this._objClase.ataque + this._atributos._atributos[0].modif;
-		this._atqad = this._objClase.ataque + this._atributos._atributos[1].modif;
-		this._cacc = 10 + this._atributos._atributos[1].modif;
-		this._caad = 10 + this._atributos._atributos[1].modif;
-		
+		this._atqcc = this._objClase.ataque + this._atributos._atributos[0].modif + this._objClase.modifadicional[0];
+		this._atqad = this._objClase.ataque + this._objClase.ataquead + this._atributos._atributos[1].modif + this._objClase.modifadicional[1];
+		this._cacc = 10 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1];
+		this._caad = 10 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1];
+		this.calculaTipoArmas();
 		this._dinero = 6 * (Comun.random(8,1) + Comun.random(8,1) + Comun.random(8,1));
 	}
 	
@@ -156,12 +228,12 @@ class PJ {
 					'INT' : [ this._atributos._atributos[3].valor ],
 					'SAB' : [ this._atributos._atributos[4].valor ],
 					'CAR' : [ this._atributos._atributos[5].valor ],
-					'mFUE' : [ this._atributos._atributos[0].modif ],
-					'mDES' : [ this._atributos._atributos[1].modif ],
-					'mCON' : [ this._atributos._atributos[2].modif ],
-					'mINT' : [ this._atributos._atributos[3].modif ],
-					'mSAB' : [ this._atributos._atributos[4].modif ],
-					'mCAR' : [ this._atributos._atributos[5].modif ],
+					'mFUE' : [ this._atributos._atributos[0].modif + this._objClase.modifadicional[0] ],
+					'mDES' : [ this._atributos._atributos[1].modif + this._objClase.modifadicional[1] ],
+					'mCON' : [ this._atributos._atributos[2].modif + this._objClase.modifadicional[2] ],
+					'mINT' : [ this._atributos._atributos[3].modif + this._objClase.modifadicional[3] ],
+					'mSAB' : [ this._atributos._atributos[4].modif + this._objClase.modifadicional[4] ],
+					'mCAR' : [ this._atributos._atributos[5].modif + this._objClase.modifadicional[5] ],
 					'TSCaptura' : [ this._objClase.tsalvacion[0].valor ],
 					'TSAflicciones' : [ this._objClase.tsalvacion[1].valor ],
 					'TSAtqArea' : [ this._objClase.tsalvacion[2].valor ],
@@ -194,21 +266,32 @@ class PJ {
 					'EncuentroCorL' : [ Math.trunc(this._objClase.movimiento*12/20) ],
 					'EncuentroCorM' : [ Math.trunc(this._objClase.movimiento*9/20) ],
 					'EncuentroCorP' : [ Math.trunc(this._objClase.movimiento*6/20) ],
-					'Alerta' : [ (this._pericias[0].puntosbase + this._pericias[0].puntos) ],
-					'Arquitectura' : [ (this._pericias[1].puntosbase + this._pericias[1].puntos) ],
-					'Escalada' : [ (this._pericias[2].puntosbase + this._pericias[2].puntos) ],
-					'Detectar' : [ (this._pericias[3].puntosbase + this._pericias[3].puntos) ],
-					'FPuertas' : [ (this._pericias[4].puntosbase + this._pericias[4].puntos) ],
-					'Idiomas' : [ (this._pericias[5].puntosbase + this._pericias[5].puntos) ],
-					'Sigilo' : [ (this._pericias[6].puntosbase + this._pericias[6].puntos) ],
+					'Alerta' : [ (this._pericias[0].puntosbase + this._pericias[0].puntos + this._pericias[0].puntosespecial) ],
+					'Arquitectura' : [ (this._pericias[1].puntosbase + this._pericias[1].puntos + this._pericias[1].puntosespecial) ],
+					'Escalada' : [ (this._pericias[2].puntosbase + this._pericias[2].puntos + this._pericias[2].puntosespecial) ],
+					'Detectar' : [ (this._pericias[3].puntosbase + this._pericias[3].puntos + this._pericias[3].puntosespecial) ],
+					'FPuertas' : [ (this._pericias[4].puntosbase + this._pericias[4].puntos + this._pericias[4].puntosespecial) ],
+					'Idiomas' : [ (this._pericias[5].puntosbase + this._pericias[5].puntos + this._pericias[5].puntosespecial) ],
+					'Sigilo' : [ (this._pericias[6].puntosbase + this._pericias[6].puntos + this._pericias[6].puntosespecial) ],
 					'PX' : [ "0 / " + this._objClase.experiencia ],
+					'Lengua1' : [ 'Comun' ],
+					'TArmas' : [ this._tipoarmas ],
 				};
 				
 				if ( this._pericias.length > 7 ) {
 					var indice;
 					for (indice = 7; indice < this._pericias.length; indice++) {
 						fields[ "NPAvanzada" + (indice-6) ] = [ (this._pericias[indice].pericia) ];
-						fields[ "PAvanzada" + (indice-6) ] = [ (this._pericias[indice].puntosbase + this._pericias[indice].puntos) ];
+						fields[ "PAvanzada" + (indice-6) ] = [ (this._pericias[indice].puntosbase + this._pericias[indice].puntos + this._pericias[indice].puntosespecial) ];
+					}
+				}
+				
+				if ( this._objClase.idiomas.length > 0 ) {
+					var indiceIdiomas = 2;
+					var indice=0;
+					for (indice=0; indice<this._objClase.idiomas.length;indice++) {
+						fields[ "Lengua" + (indiceIdiomas) ] = [ this._objClase.idiomas[indice] ];
+						indiceIdiomas++;
 					}
 				}
 				
@@ -246,8 +329,16 @@ class PJ {
 						indiceCE++;
 					}
 				}
-				if ( this._objClase.dano > 0 ) {
+				if ( this._objClase.dano > 0 && this._objClase.tipobonifdano == "CC y AC" ) {
 					fields[ "CarEspeciales" + (indiceCE) ] = [ "Bono al daño " + this._objClase.dano ];
+					indiceCE++;
+				}
+				else if ( this._objClase.dano > 0 && this._objClase.tipobonifdano == "CC" ) {
+					fields[ "CarEspeciales" + (indiceCE) ] = [ "Bono al daño CC " + this._objClase.dano ];
+					indiceCE++;
+				}
+				else if ( this._objClase.dano > 0 && this._objClase.tipobonifdano == "AD" ) {
+					fields[ "CarEspeciales" + (indiceCE) ] = [ "Bono al daño AD " + this._objClase.dano ];
 					indiceCE++;
 				}
 				

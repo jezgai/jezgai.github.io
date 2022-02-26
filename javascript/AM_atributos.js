@@ -128,16 +128,6 @@ class Atributos {
 	}
 	
 	
-	tablaAtributos() {
-		var iatrb = 0;
-		var satrs = "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</strong></th><th>Valor (mod)</th></tr>";
-		for (iatrb = 0; iatrb < this._atributos.length; iatrb++) {
-			satrs += "<tr><td>" + this._atributos[iatrb].nbatr + " (" + this._atributos[iatrb].nbmod + ")</td><td align='center'>" + this._atributos[iatrb].valor + " (" + this._atributos[iatrb].modif + ")</td><td>" + Comun.construyeBotonAbajo(iatrb, "abajoatr") + "</td></tr>";
-		}
-		
-		satrs += "</table>";
-		return satrs;
-	}
 	
 	
 }

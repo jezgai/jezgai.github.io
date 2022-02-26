@@ -86,6 +86,32 @@
 		document.getElementById("pericias").innerHTML = pj.tablaPericias();
 	}
 
+
+	function abajopericiaespecial(pericia) {
+		var indice=0;
+		var periciapulsada = Math.round(pericia);
+		for (indice=periciapulsada+1;indice<pj._pericias.length; indice++) {
+			if ( pj._pericias[indice].especial == true ) {
+				break;
+			}
+		}
+		if ( indice >= pj._pericias.length ) {
+			for (indice=0;indice<periciapulsada; indice++) {
+				if ( pj._pericias[indice].especial == true ) {
+					break;
+				}
+			}
+		}
+		
+		var periciasiguiente = indice;
+		var old = pj._pericias[periciapulsada].puntosespecial;
+		
+		pj._pericias[periciapulsada].puntosespecial = pj._pericias[periciasiguiente].puntosespecial;
+		pj._pericias[periciasiguiente].puntosespecial = old;
+		
+		document.getElementById("pericias").innerHTML = pj.tablaPericias();
+	}
+
 	function abajoatr(atributo) {
 		var atributosig = (Math.round(atributo) + 1)%6;
 		var oldv = pj._atributos._atributos[atributo].valor;
@@ -97,7 +123,7 @@
 		
 		pj.calculaRasgosDerivadosBase(atributo);
 		
-		var satrs = pj._atributos.tablaAtributos();
+		var satrs = pj.tablaAtributos();
 		document.getElementById("atributos").innerHTML = satrs;
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
 		document.getElementById("pericias").innerHTML = pj.tablaPericias();
@@ -129,7 +155,7 @@
 		pj = new PJ();
 		pj.genera();
 		
-		var satrs = pj._atributos.tablaAtributos();
+		var satrs = pj.tablaAtributos();
 		document.getElementById("atributos").innerHTML = satrs;
 		document.getElementById("salvaciones").innerHTML = pj.tablaSalvaciones();
 		document.getElementById("requisitos").innerHTML = pj.tablaRequisitos();
