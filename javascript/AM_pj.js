@@ -163,11 +163,11 @@ class PJ {
 		if ( atributo <= 1 && this._atributos._atributos[atributo].modif != this._atributos._atributos[atributo+1].modif) {
 			this._cacc = 10 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1] + this._objClase.ca;
 			this._caad = 10 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1] + this._objClase.ca;
-			this.calculaTipoArmas();
 		}
 		if ( (atributo == 1 || atributo == 2) && this._atributos._atributos[atributo].modif != this._atributos._atributos[atributo+1].modif ) {
 			this._pv = this._pvclase + this._atributos._atributos[2].modif + this._objClase.modifadicional[2];
 		}
+		this.calculaTipoArmas();
 		this._atqcc = this._objClase.ataque + this._atributos._atributos[0].modif + this._objClase.modifadicional[0];
 		this._atqad = this._objClase.ataque + this._objClase.ataquead + this._atributos._atributos[1].modif + this._objClase.modifadicional[1];
 		this.recalculaPericiasBasicas();
