@@ -178,13 +178,18 @@ class Clase {
 					this.ptospericia.push(pericia);
 				}
 			}
-			
+			var ptos = this.periciasespeciales.puntos;
+			var ptoinicial = 1;
+			if ( this.periciasespeciales.puntos > this.periciasespeciales.pericias.length ) {
+				ptos -= this.periciasespeciales.pericias.length;
+				ptoinicial = 2;
+			}
 			var puntos = [];
-			for (indice=0; indice< this.periciasespeciales.puntos; indice++) {
-				puntos.push(1);
+			for (indice=0; indice< ptos; indice++) {
+				puntos.push(ptoinicial);
 			}
 			for (;indice<this.periciasespeciales.pericias.length; indice++) {
-				puntos.push(0);
+				puntos.push(ptoinicial-1);
 			}
 			
 			puntos = Comun.shuffle(puntos);

@@ -106,7 +106,7 @@ class PJ {
 				stabla += "<td>";
 				if ( this._pericias[indice].especial == true ) {
 					stabla += this._pericias[indice].puntosespecial;
-					if ( this._objClase.periciasespeciales.puntos < this._objClase.periciasespeciales.pericias.length ) {
+					if ( this._objClase.periciasespeciales.puntos != this._objClase.periciasespeciales.pericias.length ) {
 						stabla += " " + Comun.construyeBotonAbajo(indice, "abajopericiaespecial");
 					}
 				}
@@ -131,7 +131,7 @@ class PJ {
 					stabla += "<td>";
 					if ( this._pericias[indice].especial == true ) {
 						stabla += this._pericias[indice].puntosespecial;
-						if ( this._objClase.periciasespeciales.puntos < this._objClase.periciasespeciales.pericias.length ) {
+						if ( this._objClase.periciasespeciales.puntos != this._objClase.periciasespeciales.pericias.length ) {
 							stabla += " " + Comun.construyeBotonAbajo(indice, "abajopericiaespecial");
 						}
 					}
