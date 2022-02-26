@@ -145,7 +145,7 @@ class PJ {
 	}
 	
 	calculaTipoArmas() {
-		var bonif = this._objClase.boniftipoarmas + this._atributos._atributos[1].modif;
+		var bonif = this._objClase.boniftipoarmas + this._atributos._atributos[0].modif + this._objClase.modifadicional[0];
 		this._tipoarmas = "d4";
 		if ( bonif == 1 ) {
 			this._tipoarmas = "d6";
