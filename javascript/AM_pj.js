@@ -209,7 +209,12 @@ class PJ {
 	}
 	
 	get plantillaPDF() {
-		return "pdf/AxisMundi.pdf";
+		if ( this._conjuros.length > 0 ) {
+			return "pdf/AxisMundiC.pdf";
+		}
+		else {
+			return "pdf/AxisMundi.pdf";
+		}
 	}
 		
 	rellenaPDF() {
@@ -280,6 +285,7 @@ class PJ {
 				
 				if ( this._pericias.length > 7 ) {
 					var indice;
+					
 					for (indice = 7; indice < this._pericias.length; indice++) {
 						fields[ "NPAvanzada" + (indice-6) ] = [ (this._pericias[indice].pericia) ];
 						fields[ "PAvanzada" + (indice-6) ] = [ (this._pericias[indice].puntosbase + this._pericias[indice].puntos + this._pericias[indice].puntosespecial) ];
@@ -306,6 +312,21 @@ class PJ {
 				}
 				
 				if ( this._conjuros.length > 0 ) {
+					var indice;
+					var nnivel1 = this._objClase.conjuros.fijos.length + this._objClase.conjuros.numeroN1;
+					if ( this._objClase.conjuros.numeroN1 == -1 ) {
+						nnivel1 = this._conjuros.length;
+					}
+					var nivel = 1;
+					for (indice = 0; indice<this._conjuros.length; indice++) {
+						fields[ "NConjuro_" + (indice) ] = [ this._conjuros[indice] ];
+						if ( indice >= nnivel1 )
+							nivel = 2;
+						fields[ "NvConjuro_"+ (indice) ] = [ nivel ];
+					}
+				}
+				
+				/*if ( this._conjuros.length > 0 ) {
 					var sMagia = "Conjuros: " + this._conjuros[0];
 					var indice;
 					if ( this._conjuros.length<=5 ) {
@@ -329,6 +350,7 @@ class PJ {
 						indiceCE++;
 					}
 				}
+				*/
 				if ( this._objClase.dano > 0 && this._objClase.tipobonifdano == "CC y AC" ) {
 					fields[ "CarEspeciales" + (indiceCE) ] = [ "Bono al daño " + this._objClase.dano ];
 					indiceCE++;
