@@ -152,7 +152,7 @@ cita: "¿Qué miras? ¡Lárgate antes de que te machaque la cabeza! ¿Lo ves? Ah
               salvacion: "Reflejos",
               pg: 9,
 			  descripcion: "",
-			  cita: "Tú mataste a mi padre. Prepárate a morir",
+			  cita: "Hasta la última gota de la sangre por mi pueblo",
 			  trucos: { numero: 0, trucos: [ "" ] },
 			  conjuros: { numero: 0, conjuros: [ "" ] },
 			},
