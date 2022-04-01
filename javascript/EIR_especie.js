@@ -62,7 +62,7 @@ class Especies {
 			  movimiento : "12",
 			  talentos: [ "<strong>Afinidad Arcana</strong><br/>Suma tu nivel a tu poder máximo", "<strong>Sentidos Agudizados</strong><br/>Ventaja en pruebas de Sabiduría que impliquen oído o vista" ],
 			  ltalentos: [ "Afinidad Arcana", "Sentidos Agudizados" ],
-			  clases: [ "Bardo", "Clérigo", "Guardián Arcano", "Hechicero", "Duelista", "Doncella de Laenia" ],
+			  clases: [ "Bardo", "Clérigo", "Guardián Arcano", "Hechicero", "Duelista", "Doncella de Laenia", "Sacerdote" ],
 			},
 			{
 			  nombre : "Elfo de los Bosques",
@@ -104,7 +104,7 @@ class Especies {
 			  movimiento : "12",
 			  talentos: [ "<strong>Ambición y Progreso</strong><br/>Cada vez que subas a un nivel par añades un punto a la puntuación del atributo que escojas (máximo 20)" ],
 			  ltalentos: [ "Ambición y Progreso" ],
-			  clases: [ "Adalid", "Bárbaro", "Bardo", "Caído", "Cazador de demonios", "Clérigo", "Druida", "Explorador", "Guerrero", "Hechicero", "Pícaro", "Señor de las Bestias", "Vagarr", "Duelista", "Doncella de Laenia", "Defensor" ],
+			  clases: [ "Adalid", "Bárbaro", "Bardo", "Caído", "Cazador de demonios", "Clérigo", "Druida", "Explorador", "Guerrero", "Hechicero", "Pícaro", "Señor de las Bestias", "Vagarr", "Duelista", "Doncella de Laenia", "Defensor", "Sacerdote" ],
 			},
 			{
 			  nombre : "Roano",
@@ -126,7 +126,7 @@ class Especies {
 			  talentos: [ "<strong>Linaje Feérico</strong><br/>Ventaja en salvaciones para resistir conjuros y efectos que te intenten imponer la clave [Encantado]", 
 						"<strong>Sentidos Agudizados</strong><br/>Ventaja en pruebas de Sabiduría que impliquen oído o vista" ],
 			  ltalentos: [ "Linaje Feérico", "Sentidos Agudizados" ],
-			  clases: [ "Adalid", "Bardo", "Caído", "Cazador de demonios", "Clérigo", "Druida", "Explorador", "Guerrero", "Hechicero", "Pícaro", "Señor de las Bestias", "Duelista" ],
+			  clases: [ "Adalid", "Bardo", "Caído", "Cazador de demonios", "Clérigo", "Druida", "Explorador", "Guerrero", "Hechicero", "Pícaro", "Señor de las Bestias", "Duelista", "Sacerdote" ],
 			},
 			{
 			  nombre : "Gnomo",
