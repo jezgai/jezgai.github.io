@@ -146,7 +146,7 @@ cita: "¿Qué miras? ¡Lárgate antes de que te machaque la cabeza! ¿Lo ves? Ah
 			  armas : [ [ "Bastón" ] ],
 			  equipo: [ "Manta", "Mochila", "Odre" ],
 			  competencias: [ "Armaduras ligeras", "Armas simples, cerbatana, ballesta de mano y armas improvisadas" ],
-			  talentos: [ "<strong>Arma viviente</strong><br/>Eres capaz de usar tus manos, pies y prácticamente cualquier cosa que esté a tu alcance como arma mortal. El arma improvisada tiene que ser algo que tenga peso suficiente, pueda cortar o se pueda lanzar [Arrojadiza 8/24], como una jarra de cristal, un candelabro o similares.".
+			  talentos: [ "<strong>Arma viviente</strong><br/>Eres capaz de usar tus manos, pies y prácticamente cualquier cosa que esté a tu alcance como arma mortal. El arma improvisada tiene que ser algo que tenga peso suficiente, pueda cortar o se pueda lanzar [Arrojadiza 8/24], como una jarra de cristal, un candelabro o similares.",
 						  "<strong>Defensa sin armadura</strong><br/>Siempre que no lleves armadura tu armadura será de 10 + bonificador de DES + bonificador de FUE" ],
 			  ltalentos: [ "Arma viviente", "Defensa sin armadura" ],
               salvacion: "Reflejos",
