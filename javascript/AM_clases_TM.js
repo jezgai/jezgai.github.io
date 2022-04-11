@@ -565,7 +565,7 @@ class Clases {
               idiomas: [ "Sindarin", "Quenya", "Adunaico", "Orco" ],
               boniftipoarmas: 1,
               periciasespeciales: { puntos: 0, pericias: [ ] },
-              pericias: { puntos: 2, pericias: [ { nombre: "Historia antigua", puntos: 1} ] },
+              pericias: { puntos: 0, pericias: [ { nombre: "Historia antigua", puntos: 1} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			},
 		]
