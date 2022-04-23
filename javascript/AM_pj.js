@@ -4,7 +4,7 @@ class PJ {
 		this._nombre = '';
 		this._nivel = nivel;
 		this._clase = 'random';
-		this._atributos = [];
+		this._atributos = { _atributos: [] };
 		this._talentos = [];
 		this._pv = 0;
 		this._pvclase = 0;
@@ -173,13 +173,8 @@ class PJ {
 		this.recalculaPericiasBasicas();
 	}
 	
-	
-	genera() {
-		this._atributos = new Atributos();
-		
-		this._objClase = clases.clase(nombreclase);
+	calculaDatosPJ() {
 		this._clase = this._objClase.nombre;
-		this._pvclase = this._objClase.pv();
 		this._pv = this._pvclase + this._atributos._atributos[2].modif;
 		this.calculaConjuros();
 		this._objClase.calculapericias(this._atributos._atributos);
@@ -190,6 +185,27 @@ class PJ {
 		this._caad = 10 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1] + this._objClase.ca;
 		this.calculaTipoArmas();
 		this._dinero = 6 * (Comun.random(8,1) + Comun.random(8,1) + Comun.random(8,1));
+	}
+	
+	
+	cambiaclase() {
+		if ( this._atributos._atributos.length > 0 && nombreclase != this._clase) {
+			var nuevaclase = clases.clase(nombreclase);
+			if ( nuevaclase.dg != this._objClase.dg ) {
+				this._pvclase = nuevaclase.pv();				
+			}
+			this._objClase = nuevaclase;
+			this.calculaDatosPJ();
+			
+		}
+	}
+	
+	genera() {
+		this._atributos = new Atributos();
+		
+		this._objClase = clases.clase(nombreclase);
+		this._pvclase = this._objClase.pv();
+		this.calculaDatosPJ();
 	}
 	
 	calculaConjuros() {

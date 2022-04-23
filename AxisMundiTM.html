@@ -67,13 +67,17 @@
 	}
 
 	function seleccionaclases(thelist) {
-		vaciaDiv();
+		//vaciaDiv();
 		var idx = thelist.selectedIndex;
 		var seleccionado = thelist.options[idx].innerHTML;
 		if ( idx < 1 ) {
 			seleccionado = 'random';
 		}
 		nombreclase = seleccionado;
+		if (pj._atributos._atributos.length > 0 && pj._clase != nombreclase) {
+			pj.cambiaclase();
+			muestraDatosPJ();
+		}
 	}
 	
 	function abajopericia(pericia) {
@@ -150,13 +154,9 @@
 		}
 	}
 	
-	function calcula() {
-		
-		pj = new PJ();
-		pj.genera();
-		
-		var satrs = pj.tablaAtributos();
-		document.getElementById("atributos").innerHTML = satrs;
+	function muestraDatosPJ() {
+		document.getElementById("conjuros").style.visibility="hidden";
+		document.getElementById("bconjuros").style.visibility="hidden";
 		document.getElementById("salvaciones").innerHTML = pj.tablaSalvaciones();
 		document.getElementById("requisitos").innerHTML = pj.tablaRequisitos();
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
@@ -165,6 +165,17 @@
 		document.getElementById("pericias").innerHTML = pj.tablaPericias();
 		document.getElementById("botonpdf").style.visibility="visible";
 		muestraConjuros();
+	}
+	
+	function calcula() {
+		
+		pj = new PJ();
+		pj.genera();
+		
+		var satrs = pj.tablaAtributos();
+		document.getElementById("atributos").innerHTML = satrs;
+		
+		muestraDatosPJ();
 		/*
 		if ( pj._objClase._descripcion != "" ) {
 			document.getElementById("titulodescripcion").style.visibility="visible";
