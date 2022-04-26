@@ -1,0 +1,46 @@
+{
+    "titulo": "Tablas aleatorias de ejemplo",
+    "url": "",
+    "tablas": [
+            {
+                "titulo": "Primera tabla que se resuelve con 1d12",
+                "url": "",
+                "resultados": [ {"peso": "1", "texto": "Texto del resultado 1"},
+                        {"peso": "1", "texto": "Texto del resultado 2"},
+                        {"peso": "1", "texto": "Texto del resultado 3"},
+                        {"peso": "1", "texto": "Texto del resultado 4"},
+                        {"peso": "1", "texto": "Texto del resultado 5"},
+                        {"peso": "1", "texto": "Texto del resultado 6"},
+                        {"peso": "1", "texto": "Texto del resultado 7"},
+                        {"peso": "1", "texto": "Texto del resultado 8"},
+                        {"peso": "1", "texto": "Texto del resultado 9"},
+                        {"peso": "1", "texto": "Texto del resultado 10"},
+                        {"peso": "1", "texto": "Texto del resultado 11"},
+                        {"peso": "1", "texto": "Texto del resultado 12"} ]
+            },
+            {
+                "titulo": "Segunda tabla que se resuelve con 1d20 y diferentes pesos",
+                "url": "",
+                "resultados": [ {"peso": "1", "texto": "Texto del resultado 1"},
+                        {"peso": "2", "texto": "Texto del resultado 2-3"},
+                        {"peso": "3", "texto": "Texto del resultado 4-6"},
+                        {"peso": "2", "texto": "Texto del resultado 7-8"},
+                        {"peso": "2", "texto": "Texto del resultado 9-10"},
+                        {"peso": "3", "texto": "Texto del resultado 11-13"},
+                        {"peso": "1", "texto": "Texto del resultado 14"},
+                        {"peso": "1", "texto": "Texto del resultado 15"},
+                        {"peso": "1", "texto": "Texto del resultado 16"},
+                        {"peso": "2", "texto": "Texto del resultado 17-18"},
+                        {"peso": "1", "texto": "Texto del resultado 19"},
+                        {"peso": "1", "texto": "Texto del resultado 20"} ]
+            },
+            {
+                "titulo": "Tercera tabla que se resuelve con 1d6 y se enlaza con su supuesto origen",
+                "url": "https://jezgai.github.io/Tablas-Aleatorias.html",
+                "resultados": [ {"peso": "1", "texto": "Texto del resultado 1"},
+                        {"peso": "2", "texto": "Texto del resultado 2-3"},
+                        {"peso": "2", "texto": "Texto del resultado 4-5"},
+                        {"peso": "1", "texto": "Texto del resultado 6"} ]
+            }
+    ]
+}
