@@ -69,9 +69,31 @@
     }
   }
   
+  function obtieneresultado(tabla, total, numero) {
+	  
+	  var ires=0;
+	  var peso=0;
+	  for (ires=0;ires<tabla.length; ires++) {
+		  peso+=parseInt(tabla[ires].peso);
+		  if ( numero <= peso )
+			break;
+	  }
+	  return ires;
+  }
+  
+  function obtienetotaltabla(tabla) {
+		var total = 0;
+		var ires=0;
+		for (ires=0; ires < tabla.length; ires++) {
+			total += parseInt(tabla[ires].peso);
+		}
+		return total;
+  }
+  
   function resultado(indice, total) {
 	  var numero = Math.floor(Math.random() * total) + 1;
-	  
+	  var iresultado = obtieneresultado(tablas.tablas[indice].resultados, total, numero);
+	  /*
 	  var iresultado=0;
 	  var peso=0;
 	  for (iresultado=0;iresultado<tablas.tablas[indice].resultados.length; iresultado++) {
@@ -79,8 +101,18 @@
 		  if ( numero <= peso )
 			break;
 	  }
+	  */
+	  var resultadotirada = "";
+	  if ( tablas.tablas[indice].ocultartirada != "S" )
+			resultadotirada = "(" +numero + ") - ";
+	  var resultado = "<b>" + tablas.tablas[indice].titulo + "</b>:<br/>" + resultadotirada + tablas.tablas[indice].resultados[iresultado].texto
 	  
-	  var resultado = "<b>" + tablas.tablas[indice].titulo + "</b>:<br/>(" +numero + ") - " + tablas.tablas[indice].resultados[iresultado].texto
+	  if ( tablas.tablas[indice].resultados[iresultado].resultados != null ) {
+		  var subtotal = obtienetotaltabla(tablas.tablas[indice].resultados[iresultado].resultados);
+		  numero = Math.floor(Math.random() * subtotal) + 1;
+		  var isub = obtieneresultado(tablas.tablas[indice].resultados[iresultado].resultados, subtotal, numero);
+		  resultado += "<br>" + tablas.tablas[indice].resultados[iresultado].resultados[isub].texto;
+	  }
 	  document.getElementById("resultado").innerHTML = resultado;
   }
   
@@ -97,12 +129,12 @@
 	  var itabla=0;
 		for (itabla=0; itabla< tablas.tablas.length; itabla++) {
 			var dado = "&#9752;"; //"1d" + tablas.tablas[itabla].resultados.length;
-			var total = 0;
+			/*var total = 0;
 			var iresultado=0;
 			for (iresultado=0; iresultado < tablas.tablas[itabla].resultados.length; iresultado++) {
 				total += parseInt(tablas.tablas[itabla].resultados[iresultado].peso);
-			}
-			
+			}*/
+			var total = obtienetotaltabla(tablas.tablas[itabla].resultados);
 			contenido += "<tr><td><button class='w3-button w3-circle w3-padding-small w3-tiny w3-blue' onclick='resultado(" + itabla + "," + total + ")'>"+ dado + "</button> ";
 			if ( tablas.tablas[itabla].url != "")
 				contenido +="<a href=\'" + tablas.tablas[itabla].url + "' target='_blank' >";
