@@ -41,6 +41,56 @@
                         {"peso": "2", "texto": "Texto del resultado 2-3"},
                         {"peso": "2", "texto": "Texto del resultado 4-5"},
                         {"peso": "1", "texto": "Texto del resultado 6"} ]
+            },
+            {
+                "titulo": "Cuarta tabla que se resuelve con 1d12 y algunos tienen subtablas",
+                "url": "",
+                "resultados": [ {"peso": "1", "texto": "Texto del resultado 1"},
+                        {"peso": "1", "texto": "Texto del resultado 2"},
+                        {"peso": "1", "texto": "Texto del resultado 3<br>Realmente es:", "resultados": 
+                                                                                        [ {"peso": "1", "texto": "Texto del resultado 1 de la subtabla 3"},
+                                                                                        {"peso": "1", "texto": "Texto del resultado 2 de la subtabla 3"},
+                                                                                        {"peso": "1", "texto": "Texto del resultado 3 de la subtabla 3"},
+                                                                                        {"peso": "1", "texto": "Texto del resultado 4 de la subtabla 3"},
+                                                                                        {"peso": "1", "texto": "Texto del resultado 5 de la subtabla 3"},
+                                                                                        {"peso": "1", "texto": "Texto del resultado 6 de la subtabla 3"} ]},
+                        {"peso": "1", "texto": "Texto del resultado 4"},
+                        {"peso": "1", "texto": "Texto del resultado 5"},
+                        {"peso": "1", "texto": "Texto del resultado 6"},
+                        {"peso": "1", "texto": "Texto del resultado 7<br>Por ejemplo:", "resultados": 
+                                                                                        [ {"peso": "1", "texto": "Texto del resultado 1 de la subtabla 7"},
+                                                                                        {"peso": "1", "texto": "Texto del resultado 2 de la subtabla 7"},
+                                                                                        {"peso": "1", "texto": "Texto del resultado 3 de la subtabla 7"},
+                                                                                        {"peso": "1", "texto": "Texto del resultado 4 de la subtabla 7"},
+                                                                                        {"peso": "1", "texto": "Texto del resultado 5 de la subtabla 7"},
+                                                                                        {"peso": "1", "texto": "Texto del resultado 6 de la subtabla 7"},
+                                                                                        {"peso": "1", "texto": "Texto del resultado 7 de la subtabla 7"},
+                                                                                        {"peso": "1", "texto": "Texto del resultado 8 de la subtabla 7"} ]},
+                        {"peso": "1", "texto": "Texto del resultado 8"},
+                        {"peso": "1", "texto": "Texto del resultado 9<br>Esto es:", "resultados": 
+                                                                                        [ {"peso": "1", "texto": "Texto del resultado 1 de la subtabla 9"},
+                                                                                        {"peso": "1", "texto": "Texto del resultado 2 de la subtabla 9"},
+                                                                                        {"peso": "1", "texto": "Texto del resultado 5 de la subtabla 9"},
+                                                                                        {"peso": "1", "texto": "Texto del resultado 6 de la subtabla 9"} ]},
+                        {"peso": "1", "texto": "Texto del resultado 10"},
+                        {"peso": "1", "texto": "Texto del resultado 11"},
+                        {"peso": "1", "texto": "Texto del resultado 12"} ]
+            },
+            {
+                "titulo": "Quinta tabla de 2d6 (simulada con d36) que no muestra la tirada porque la incluimos en las descripciones",
+                "url": "",
+                "ocultartirada": "S",
+                "resultados": [ {"peso": "1", "texto": "(2) - Texto del resultado 2 (en nuestro dado 'especial' será un 1)"},
+                        {"peso": "2", "texto": "(3) - Texto del resultado 3 (en nuestro dado 'especial' será un 2 ó 3)"},
+                        {"peso": "3", "texto": "(4) - Texto del resultado 4 (en nuestro dado 'especial' estará entre un 4 y un 6)"},
+                        {"peso": "4", "texto": "(5) - Texto del resultado 5 (en nuestro dado 'especial' estará entre un 7 y un 10)"},
+                        {"peso": "5", "texto": "(6) - Texto del resultado 6 (en nuestro dado 'especial' estará entre un 11 y un 15)"},
+                        {"peso": "6", "texto": "(7) - Texto del resultado 7 (en nuestro dado 'especial' estará entre un 16 y un 21)"},
+                        {"peso": "5", "texto": "(8) - Texto del resultado 8 (en nuestro dado 'especial' estará entre un 22 y un 26)"},
+                        {"peso": "4", "texto": "(9) - Texto del resultado 9 (en nuestro dado 'especial' estará entre un 27 y un 30)"},
+                        {"peso": "3", "texto": "(10) - Texto del resultado 10 (en nuestro dado 'especial' estará entre un 31 y un 33)"},
+                        {"peso": "2", "texto": "(11) - Texto del resultado 11 (en nuestro dado 'especial' estará será un 34 ó un 35)"},
+                        {"peso": "1", "texto": "(12) - Texto del resultado 12 (en nuestro dado 'especial' será un 36)"} ]
             }
     ]
 }
