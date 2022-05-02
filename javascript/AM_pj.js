@@ -14,6 +14,7 @@ class PJ {
 		this._atqad = 0;
 		this._dinero = 0;
 		this._tipoarmas = "d4";
+		this.armas = [];
 	}
 	
 	tablaRequisitos() {
@@ -75,6 +76,35 @@ class PJ {
 		
 		satrs += "</table>";
 		return satrs;
+	}
+	
+	tablaArmas() {
+		var iarma = 0;
+		var sarma = "<table class='w3-table  w3-striped w3-border'><tr><th>Arma</strong></th><th>Tipo</th><th>Daño</th></tr>";
+		for (iarma = 0; iarma < this.armas.length; iarma++) {
+			sarma += "<tr><td>" + this.armas[iarma].nombre + "</td><td align='center'>" + this.armas[iarma].tipo;
+			if ( this.armas[iarma].tipo == "CaC" && this.armas[iarma].danoAD > 0)
+				sarma += " (AD)";
+			else if ( this.armas[iarma].tipo == "AD" && this.armas[iarma].danoCaC > 0)
+				sarma += " (CaC)";
+			sarma += "</td><td align='center'>d";
+			if ( this.armas[iarma].tipo == "CaC" ) 
+			{
+				sarma += this.armas[iarma].danoCaC;
+				if ( this.armas[iarma].danoAD != "" ) 
+					sarma += " (d" + this.armas[iarma].danoAD + ")";
+			}
+			else 
+			{
+				sarma += this.armas[iarma].danoAD + "</td></tr>";
+				if ( this.armas[iarma].danoCaC != "" ) 
+					sarma += " (d" + this.armas[iarma].danoCaC + ")";
+			}
+			sarma += "</td></tr>";
+		}
+		
+		sarma += "</table>";
+		return sarma;
 	}
 	
 
@@ -168,9 +198,14 @@ class PJ {
 			this._pv = this._pvclase + this._atributos._atributos[2].modif + this._objClase.modifadicional[2];
 		}
 		this.calculaTipoArmas();
+		this.calculaArmas();
 		this._atqcc = this._objClase.ataque + this._atributos._atributos[0].modif + this._objClase.modifadicional[0];
 		this._atqad = this._objClase.ataque + this._objClase.ataquead + this._atributos._atributos[1].modif + this._objClase.modifadicional[1];
 		this.recalculaPericiasBasicas();
+	}
+	
+	calculaArmas() {
+		this.armas = this._objClase.sorteaarmas(this._tipoarmas);
 	}
 	
 	calculaDatosPJ() {
@@ -184,6 +219,7 @@ class PJ {
 		this._cacc = 10 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1] + this._objClase.ca;
 		this._caad = 10 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1] + this._objClase.ca;
 		this.calculaTipoArmas();
+		this.calculaArmas();
 		this._dinero = 6 * (Comun.random(8,1) + Comun.random(8,1) + Comun.random(8,1));
 	}
 	
@@ -380,6 +416,19 @@ class PJ {
 					indiceCE++;
 				}
 				
+				
+				var iarma = 0;
+				for (iarma = 0; iarma < this.armas.length; iarma++) {
+					fields[ "NArma" + (iarma+1) ] = [ this.armas[iarma].nombre ];
+					if ( this.armas[iarma].tipo == "CaC" )
+						fields[ "Dano" + (iarma+1) ] = [ "d" + this.armas[iarma].danoCaC ];
+					else
+						fields[ "Dano" + (iarma+1) ] = [ "d" + this.armas[iarma].danoAD ];
+					if ( this.armas[iarma].alcance > 0 )
+						fields[ "Alcance" + (iarma+1) ] = [ this.armas[iarma].alcance ];
+					
+					fields[ "Peso" + (iarma+1) ] = [ this.armas[iarma].peso/1000 ];
+				}
 				
 				
 				return fields;

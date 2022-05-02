@@ -21,6 +21,7 @@ class Clase {
 		this.ataquead = clase.ataquead;
 		this.ca = clase.ca;
 		this.modifadicional = clase.modifadicional;
+		this.armas = clase.armas;
 	}
 	
 	pv() {
@@ -60,6 +61,34 @@ class Clase {
 			}
 		}
 		return conjurosaux;
+	}
+	
+	buscaarmas(numtipoarmas, arma, armasaux) {
+		var indice=0;
+		var armaspj = []
+		for (indice=0; indice < armasaux[arma].length; indice++) {
+			var objarma = listaarmas.arma(armasaux[arma][indice]);
+			if ( objarma != null ) {
+				if ( (objarma.tipo == "CaC" && objarma.danoCaC <= numtipoarmas) || (objarma.tipo == "AD" && objarma.danoAD <= numtipoarmas)) {
+					armaspj.push(objarma);
+				}
+			}
+		}
+		return armaspj;
+	}
+	
+	sorteaarmas(tipoarmas) {
+		var armasaux = Comun.shuffle(this.armas.clone());
+		var arma = 0;
+		var indice = 0;
+		var numtipoarmas = parseInt(tipoarmas.substring(1))
+		var armaspj = [];
+		for (arma=0; arma < armasaux.length; arma++) {
+			armaspj = this.buscaarmas(numtipoarmas, arma, armasaux);
+			if ( armaspj.length > 0 )
+				break;
+		}
+		return armaspj;
 	}
 	
 	
@@ -238,6 +267,7 @@ class Clases {
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Espada corta", "Jabalina" ], [ "Espada larga" ], [ "Daga", "Lanza" ] ],
 			},
 			{
 			  nombre : "Mago",
@@ -271,6 +301,7 @@ class Clases {
 						  numeroN2: 1, conjurosN2: [ "Apertura", "Cerradura arcana", "Detectar lo invisible", "Fuerza fantasmal", "Imágenes múltiples", "Invisibilidad",
 													  "Levitar", "Localizar objeto", "Luz continua", "Oscuridad continua", "Percepción extrasensorial", 
 													  "Protección contra el mal", "Telaraña" ] },
+			  armas: [ [ "Bastón", "Daga" ] ],
 			},
 			{
 			  nombre : "Especialista",
@@ -301,6 +332,7 @@ class Clases {
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 4, pericias: [ { nombre: "Apuñalar", puntos: 0}, { nombre: "Detectar Trampas", puntos: 1}, { nombre: "Juego de Manos", puntos: 0}, { nombre: "Mecanismos", puntos: 0} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Daga", "Ballesta ligera" ], [ "Espada ropera", "Daga"] ],
 			},
 			{
 			  nombre : "Sacerdote",
@@ -333,6 +365,7 @@ class Clases {
 						  numeroN1: -1, conjurosN1: [ "Curar heridas leves", "Causar heridas leves", "Detectar magia", "Detectar bien", "Detectar mal", "Luz", "Oscuridad", "Palabra de mando", 
 													  "Protección contra el mal", "Purificar comida y agua", "Pudrir comida y agua", "Resistir frío", "Retirar miedo", "Causar miedo", "Santuario" ], 
 						  numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Bastón" ] ],
 			},
 			{
 			  nombre : "Clérigo",
@@ -366,6 +399,7 @@ class Clases {
 						  numeroN1: -1, conjurosN1: [ "Curar heridas leves", "Causar heridas leves", "Detectar magia", "Detectar bien", "Detectar mal", "Luz", "Oscuridad", "Palabra de mando", 
 													  "Protección contra el mal", "Purificar comida y agua", "Pudrir comida y agua", "Resistir frío", "Retirar miedo", "Causar miedo", "Santuario" ], 
 						  numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Martillo ligero" ], [ "Maza"] ],
 			},
 			{
 			  nombre : "Paladín",
@@ -396,6 +430,7 @@ class Clases {
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Espada larga" ], [ "Espadón"] ],
 			},
 			{
 			  nombre : "Montaraz",
@@ -426,6 +461,7 @@ class Clases {
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 2, pericias: [ { nombre: "Supervivencia", puntos: 0} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Espada corta", "Arco corto" ], [ "Daga", "Arco corto" ], [ "Daga", "Jabalina" ] ],
 			},
 			{
 			  nombre : "Bardo",
@@ -457,6 +493,7 @@ class Clases {
 			  conjuros: { fijos: [ ], 
 						  numeroN1: 0, conjurosN1: [ ], 
 						  numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Espada ropera", "Daga"] ],
 			},
 			{
 			  nombre : "Bárbaro",
@@ -487,6 +524,7 @@ class Clases {
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Espadón", "Hacha de mano"], [ "Gran hacha", "Hacha de mano" ], [ "Hacha de batalla", "Hacha de mano"] ],
 			},
 			{
 			  nombre : "Asesino",
@@ -517,6 +555,7 @@ class Clases {
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 2, pericias: [ { nombre: "Apuñalar", puntos: 0} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Daga" ], [ "Estoque", "Daga"] ],
 			},
 			{
 			  nombre : "Monje",
@@ -546,6 +585,7 @@ class Clases {
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 2, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Jō (bastón)", "Sai" ], [ "Jian (espada)", "Sai"], [ "Dadao (sable)", "Sai" ] ],
 			},
 			{
 			  nombre : "Guerrero arcano elfo",
@@ -580,6 +620,7 @@ class Clases {
 						  numeroN2: 1, conjurosN2: [ "Apertura", "Cerradura arcana", "Detectar lo invisible", "Fuerza fantasmal", "Imágenes múltiples", "Invisibilidad",
 													  "Levitar", "Localizar objeto", "Luz continua", "Oscuridad continua", "Percepción extrasensorial", 
 													  "Protección contra el mal", "Telaraña" ] },
+			  armas: [ [ "Espada corta", "Arco corto" ], [ "Daga", "Arco corto" ] ],
 			},
 			{
 			  nombre : "Capellán elfo",
@@ -612,6 +653,7 @@ class Clases {
 						  numeroN1: -1, conjurosN1: [ "Curar heridas leves", "Causar heridas leves", "Detectar magia", "Detectar bien", "Detectar mal", "Luz", "Oscuridad", "Palabra de mando", 
 													  "Protección contra el mal", "Purificar comida y agua", "Pudrir comida y agua", "Resistir frío", "Retirar miedo", "Causar miedo", "Santuario" ], 
 						  numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Martillo ligero" ], [ "Maza"] ],
 			},
 			{
 			  nombre : "Defensor enano",
@@ -641,6 +683,7 @@ class Clases {
               periciasespeciales: { puntos: 4, pericias: [ { nombre: "Arquitectura", puntos: 1}, { nombre: "Mecanismos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
               pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Gran hacha", "Hacha de mano" ], [ "Hacha de batalla", "Hacha de mano"] ],
 			},
 			{
 			  nombre : "Luchador enano",
@@ -670,6 +713,7 @@ class Clases {
               periciasespeciales: { puntos: 2, pericias: [ { nombre: "Arquitectura", puntos: 1}, { nombre: "Mecanismos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
               pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Gran hacha", "Hacha de mano" ], [ "Hacha de batalla", "Martillo ligero"], [ "Martillo de guerra", "Hacha de mano" ] ],
 			},
 			{
 			  nombre : "Alguacil mediano",
@@ -700,6 +744,7 @@ class Clases {
               periciasespeciales: { puntos: 2, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Sigilo", puntos: 0},  { nombre: "Detectar", puntos: 1} ] },
               pericias: { puntos: 2, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Daga", "Espada corta" ] ],
 			},
 			{
 			  nombre : "Saqueador mediano",
@@ -730,6 +775,7 @@ class Clases {
               periciasespeciales: { puntos: 6, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Sigilo", puntos: 0},  { nombre: "Detectar", puntos: 1} ] },
               pericias: { puntos: 4, pericias: [ { nombre: "Apuñalar", puntos: 0}, { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1}, { nombre: "Mecanismos", puntos: 0} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Daga", "Honda" ] ],
 			},
 			{
 			  nombre : "Mercenario semiogro",
@@ -760,6 +806,7 @@ class Clases {
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  armas: [ [ "Espadón", "Alfanje"], [ "Gran hacha", "Cimitarra" ], [ "Hacha de batalla", "Maza"] ],
 			},
 		]
 	}

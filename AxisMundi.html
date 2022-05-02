@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="javascript/AM_comun.js"></script>
+<script src="javascript/AM_equipo.js"></script>
 <script src="javascript/AM_atributos.js"></script>
 <script src="javascript/AM_clases.js"></script>
 <script src="javascript/AM_pj.js"></script>
@@ -54,6 +55,7 @@
 		document.getElementById("requisitos").innerHTML="";
 		document.getElementById("rasgos").innerHTML="";
 		document.getElementById("pericias").innerHTML="";
+		document.getElementById("armas").innerHTML="";
 		document.getElementById("clase").innerHTML="";
 		document.getElementById("salvaciones").innerHTML="";
 		document.getElementById("lconjuros").innerHTML="";
@@ -88,6 +90,7 @@
 		pj._pericias[periciasig].puntos = old;
 		
 		document.getElementById("pericias").innerHTML = pj.tablaPericias();
+		document.getElementById("armas").innerHTML = pj.tablaArmas();
 	}
 
 
@@ -114,6 +117,7 @@
 		pj._pericias[periciasiguiente].puntosespecial = old;
 		
 		document.getElementById("pericias").innerHTML = pj.tablaPericias();
+		document.getElementById("armas").innerHTML = pj.tablaArmas();
 	}
 
 	function abajoatr(atributo) {
@@ -131,6 +135,7 @@
 		document.getElementById("atributos").innerHTML = satrs;
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
 		document.getElementById("pericias").innerHTML = pj.tablaPericias();
+		document.getElementById("armas").innerHTML = pj.tablaArmas();
 	}
 	
 	function calculaConjuros() {
@@ -155,6 +160,8 @@
 	}
 	
 	function muestraDatosPJ() {
+		var satrs = pj.tablaAtributos();
+		document.getElementById("atributos").innerHTML = satrs;
 		document.getElementById("conjuros").style.visibility="hidden";
 		document.getElementById("bconjuros").style.visibility="hidden";
 		document.getElementById("salvaciones").innerHTML = pj.tablaSalvaciones();
@@ -163,6 +170,7 @@
 		
 		document.getElementById("clase").innerHTML = "<strong>Clase: </strong>" + pj._clase;
 		document.getElementById("pericias").innerHTML = pj.tablaPericias();
+		document.getElementById("armas").innerHTML = pj.tablaArmas();
 		document.getElementById("botonpdf").style.visibility="visible";
 		muestraConjuros();
 	}
@@ -172,8 +180,6 @@
 		pj = new PJ();
 		pj.genera();
 		
-		var satrs = pj.tablaAtributos();
-		document.getElementById("atributos").innerHTML = satrs;
 		
 		muestraDatosPJ();
 		
@@ -303,6 +309,8 @@
 		<div class="right">
 			<div class="w3-container w3-blue w3-center"><p><strong>Pericias</strong></p></div> 
 			<div id="pericias"></div>
+			<div class="w3-container w3-blue w3-center"><p><strong>Armas</strong></p></div> 
+			<div id="armas"></div>
 		</div>
 	</div>
 	<div style="overflow:auto">
