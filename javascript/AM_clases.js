@@ -819,6 +819,16 @@ class Clases {
 		this._clases = value;
 	}
 	
+	existeclase(nombre) {
+		var iclases=0;
+		for (iclases=0; iclases<this._clases.length; iclases++) {
+			if ( this._clases[iclases].nombre == nombre ) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	clase(nombre) {
 		var iclases=0;
 		for (iclases=0; iclases<this._clases.length; iclases++) {

@@ -217,6 +217,65 @@
 		//document.getElementById("botonclase").innerHTML = "<p></p>";
 	}
 	
+	
+	function loadFile() {
+		var input, file, fr;
+
+		if (typeof window.FileReader !== 'function') {
+			alert("The file API isn't supported on this browser yet.");
+			return;
+		}
+
+		input = document.getElementById('fileinput');
+		if (!input) {
+			alert("Um, couldn't find the fileinput element.");
+		}
+		else if (!input.files) {
+			alert("This browser doesn't seem to support the `files` property of file inputs.");
+		}
+		else if (!input.files[0]) {
+			alert("Por favor seleccione un fichero antes de cargarlo");
+		}
+		else {
+			file = input.files[0];
+			fr = new FileReader();
+			fr.onload = receivedText;
+			fr.readAsText(file);
+		}
+
+		function receivedText(e) {
+			document.getElementById('cargaclases').style.display='none';
+			let lines = e.target.result;
+			var clasescustom = JSON.parse(lines);
+			cargaclases(clasescustom);	
+		}
+	}
+	
+	function cargaclases(clasescustom) {
+		
+		if (document.getElementById('csustituirclases').checked == true) { //value == "Sustituir" ) {
+			clases._clases = [];
+		}
+		
+		var i=0;
+		for(i=0;i<clasescustom.length; i++) {
+			if ( clases.existeclase(clasescustom[i].nombre) == false ) {
+				clases._clases.push(clasescustom[i]);
+			}
+		}
+		sclases = Comun.desplegableClases(clases, "seleccionaclases");
+		document.getElementById("clases").innerHTML = sclases;
+	}
+  
+	function muestraventanacargaclases() {
+		document.getElementById('cargaclases').style.display='block';
+	}
+	
+	function cancelarCarga() {
+		document.getElementById('cargaclases').style.display='none';
+	}
+	
+	
 </script>
 <style>
 	
@@ -250,7 +309,7 @@
 }
 .macroright {
   float:left;
-  width:52%;
+  width:46%;
   padding:0 1px;
 }
 .casitotal {
@@ -278,6 +337,8 @@
   }
   
 </style>
+
+
 </head>
 <body >
 	<div class="w3-container w3-blue w3-center">
@@ -285,10 +346,11 @@
 	</div>
 	<div style="overflow:auto">
 	
-		<div class="left" id="clases">
+		<div class="minileft" id="clases">
 			<p><button class='w3-button w3-block w3-teal' onclick='conclases()'>Clases</button></p>
 		</div>
 		<div class="microleft"><p><button class='w3-button w3-block w3-blue' onclick='calcula()'>Calcula</button></p></div>
+		<div class="microleft" id="botoncargaclases"><p><button class='w3-button w3-block w3-blue' onclick='muestraventanacargaclases()'>Carga Clases</button></p></div>
 		<div class="microleft" id="botonpdf"><p><button class='w3-button w3-block w3-blue' onclick='rellenaPDF()'>Genera PDF</button></p></div>
 		<div class="macroright" id="clase"><p></p></div>
 	</div>
@@ -336,6 +398,24 @@
 			<div id="cita" ></div>
 		</div>
 	</div>
+	
+	
+	<div id="cargaclases" class="w3-modal">
+	  <div class="w3-modal-content">
+		<div class="w3-container">
+			<form id="jsonFile" name="jsonFile" enctype="multipart/form-data" method="post">
+				<h2>Carga de clases propias</h2>
+				<input type="checkbox" id="csustituirclases" name="Sustituir" value="Sustituir">
+				<label for="csustituirclases">Sustituir clases por fichero</label><br>
+				<input type="file" id="fileinput">
+				<input type="button" id="btnLoad" value="Cargar" onclick="loadFile();">
+				<input type="button" id="btnCancel" value="Cancelar" onclick="cancelarCarga()">
+			</form>
+			<a href="json/AxisMundi-Clases-ejemplo.json" target="_blank">Ejemplo de fichero de clases</a>
+		</div>
+	  </div>
+	</div>
+	
 	<script>conclases();</script>
 </body>
 </html>
