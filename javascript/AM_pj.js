@@ -261,7 +261,10 @@ class PJ {
 	}
 	
 	get plantillaPDF() {
-		if ( this._conjuros.length > 0 ) {
+		if ( this._objClase.plantilla != "" ) {
+			return "pdf/" + this._objClase.plantilla;
+		}
+		else if ( this._conjuros.length > 0 ) {
 			return "pdf/AxisMundiC.pdf";
 		}
 		else {

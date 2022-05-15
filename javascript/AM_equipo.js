@@ -457,13 +457,13 @@ class Armas {
 				nombre: "Arco corto",
 				tipo: "AD",
 				tipoCaC: "", 
-				tipoAD: "Arma corto",
+				tipoAD: "Arco corto",
 			},
 			{
 				nombre: "Arco largo",
 				tipo: "AD",
 				tipoCaC: "", 
-				tipoAD: "Arma largo",
+				tipoAD: "Arco largo",
 			},
 			{
 				nombre: "Ballesta ligera",

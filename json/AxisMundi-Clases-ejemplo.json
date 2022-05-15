@@ -186,7 +186,9 @@
         "boniftipoarmas": 1,
         "periciasespeciales": { "puntos": 0, "pericias": [ ] },
         "pericias": { "puntos": 2, "pericias": [ { "nombre": "Supervivencia", "puntos": 0}, { "nombre": "Historia antigua", "puntos": 1} ] },
-        "conjuros": { "fijos": [ ], "numeroN1": 0, "conjurosN1": [ ], "numeroN2": 0, "conjurosN2": [ ] }
+        "conjuros": { "fijos": [ ], "numeroN1": 0, "conjurosN1": [ ], "numeroN2": 0, "conjurosN2": [ ] },
+	    "armas": [ [ "Espada corta", "Arco corto" ], [ "Daga", "Arco corto" ] ],
+        "plantilla": "AxisMundiTM.pdf"
     },
     {
         "nombre": "Guerrero Quendi",
@@ -216,6 +218,8 @@
         "boniftipoarmas": 1,
         "periciasespeciales": { "puntos": 0, "pericias": [ ] },
         "pericias": { "puntos": 0, "pericias": [ { "nombre": "Historia antigua", "puntos": 1} ] },
-        "conjuros": { "fijos": [ ], "numeroN1": 0, "conjurosN1": [ ], "numeroN2": 0, "conjurosN2": [ ] }
+        "conjuros": { "fijos": [ ], "numeroN1": 0, "conjurosN1": [ ], "numeroN2": 0, "conjurosN2": [ ] },
+	    "armas": [ [ "Espada corta", "Arco corto" ], [ "Daga", "Arco corto" ] ],
+        "plantilla": "AxisMundiTM.pdf"
     }
 ]

@@ -22,6 +22,7 @@ class Clase {
 		this.ca = clase.ca;
 		this.modifadicional = clase.modifadicional;
 		this.armas = clase.armas;
+		this.plantilla = clase.plantilla;
 	}
 	
 	pv() {
