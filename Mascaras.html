@@ -25,6 +25,59 @@
 
 	let pj = new ATZ_PJ();
 		
+	function exportaJSON() {
+		var pjexport = {};
+		
+		pjexport.botid = "SUSTITUIR_POR_TOKEN_BOT";
+		pjexport.chatid = "SUSTITUIR_POR_ID_DEL_CHAT";
+		pjexport.nombre = "Encubierta";
+		pjexport.sistema = "Máscaras del Imperio";
+		pjexport.atributos = [ { nombre: "Brio", valor: pj._atributos[0] }, { nombre: "Picaresca", valor: pj._atributos[1] }, { nombre: "Galanteria", valor: pj._atributos[2] }, { nombre: "Erudicion", valor: pj._atributos[3] } ];
+		
+		var indice=0;
+		var atributo = "";
+		var pericias = [];
+		var indiceatributo = 0;
+		for (indice=0;indice<habilidades._habilidades.length; indice++) {
+			if ( atributo != habilidades._habilidades[indice].atributo ) {
+				if ( atributo != "" ) {
+					pjexport.atributos[indiceatributo].pericias = pericias;
+					indiceatributo++;
+				}
+				atributo = habilidades._habilidades[indice].atributo;
+				pericias = [];
+			}
+			var pericia = { "nombre": habilidades._habilidades[indice].nombre, "valor": pj._habilidades[indice] };
+			pericias.push(pericia);
+		}
+		
+		pjexport.atributos[indiceatributo].pericias = pericias;
+		
+		pjexport.caracteristicas = [ { nombre: "PV", valor: pj._pv}, { nombre: "Fortuna", valor: pj._suerte}, { nombre: "Defensa", valor: pj._defensa}, { nombre: "Iniciativa", valor: pj._iniciativa} ];
+		
+		pjexport.talentos = [ ];
+		for (indice=0;indice<pj._talentos.length; indice++) {
+			var talento = { "nombre": talentos._talentos[pj._talentos[indice]].nombre, "descripcion": talentos._talentos[pj._talentos[indice]].descripcion };
+			pjexport.talentos.push(talento);
+		}
+		
+		pjexport.armaCaC = { "nombre": pj._armaCaC.nombre, "daño": pj._armaCaC.dano }
+		pjexport.armaAD = { "nombre": pj._armaAD.nombre, "daño": pj._armaAD.dano }
+		
+		
+		var jsonpj = JSON.stringify(pjexport);
+		
+		let element = document.createElement('a');
+		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(jsonpj));
+		element.setAttribute('download', "Encubierto.json");
+
+		element.style.display = 'none';
+		document.body.appendChild(element);
+
+		element.click();
+
+		document.body.removeChild(element);
+	}
 
 	function rellenaPDF() {
 		var xhr = new XMLHttpRequest();
@@ -117,6 +170,7 @@
 		pintaTalentos();
 		pintaArmas();
 		document.getElementById("botonpdf").style.visibility="visible";
+		document.getElementById("botonjson").style.visibility="visible";
 		
 	}
 	
@@ -202,6 +256,7 @@
 	<div style="overflow:auto">
 		<div class="minicentral"><p><button class='w3-button w3-block w3-green' onclick='calcula()'>Calcula</button></p></div>
 		<div class="minicentral" id="botonpdf"><p><button class='w3-button w3-block w3-green' onclick='rellenaPDF()'>Genera PDF</button></p></div>
+		<div class="minicentral" id="botonjson"><p><button class='w3-button w3-block w3-green' onclick='exportaJSON()'>Exporta json</button></p></div>
 	</div>
 	
 	<div style="overflow:auto">

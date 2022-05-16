@@ -1,0 +1,212 @@
+<!--
+   PJTelegram.html
+   
+   Copyright 2022 Josu Ezgai <josu.ezgais@gmail.com>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   https://closure-compiler.appspot.com/home
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+	
+<head>
+<meta charset="utf-8" />
+<title>Rol por Telegram</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="javascript/RT_comun.js"></script>
+<script src="javascript/RT_mascaras.js"></script>
+<script src="javascript/RT_AxisMundi.js"></script>
+
+<script>
+
+  var personaje = {};
+  var combate = "";
+	
+  function inicial() {
+	  
+	  	document.getElementById("cargajson").innerHTML="<form id=\"jsonFile\" name=\"jsonFile\" enctype=\"multipart/form-data\" method=\"post\">" +
+			  "<fieldset>" +
+				"<h2>Fichero del PJ (json)</h2>" +
+				 "<input type='file' id='fileinput'>" +
+				 "<input type='button' id='btnLoad' value='Cargar' onclick='RolTelegram.loadFile();'>" +
+			  "</fieldset>" +
+			"</form> <a href=\"json/Encubierto.json\">Ejemplo de json para Máscaras del Imperio</a>";
+	  
+		document.getElementById("cabecerasistema").innerHTML = "";
+		document.getElementById("cabeceranombre").innerHTML = "";
+		document.getElementById("seccion1").innerHTML = "";
+		document.getElementById("seccion2").innerHTML = "";
+		document.getElementById("seccion3").innerHTML = "";
+		document.getElementById("seccion4").innerHTML = "";
+		document.getElementById("seccion5").innerHTML = "";
+		document.getElementById("seccion6").innerHTML = "";
+		document.getElementById("seccion7").innerHTML = "";
+		document.getElementById("seccion8").innerHTML = "";
+		document.getElementById("seccion1").style.visibility="hidden";
+		document.getElementById("seccion2").style.visibility="hidden";
+		document.getElementById("seccion3").style.visibility="hidden";
+		document.getElementById("seccion4").style.visibility="hidden";
+		document.getElementById("seccion5").style.visibility="hidden";
+		document.getElementById("seccion6").style.visibility="hidden";
+		document.getElementById("seccion7").style.visibility="hidden";
+		document.getElementById("seccion8").style.visibility="hidden";
+		document.getElementById("botonjson").style.visibility="hidden";
+		
+  }
+  function cargado() {
+	    document.getElementById("cargajson").innerHTML=="";
+		document.getElementById("cargajson").style.visibility="hidden";
+		document.getElementById("seccion1").style.visibility="visible";
+		document.getElementById("seccion2").style.visibility="visible";
+		document.getElementById("seccion3").style.visibility="visible";
+		document.getElementById("seccion4").style.visibility="visible";
+		document.getElementById("seccion5").style.visibility="visible";
+		document.getElementById("seccion6").style.visibility="visible";
+		document.getElementById("seccion7").style.visibility="visible";
+		document.getElementById("seccion8").style.visibility="visible";
+  }
+  
+    
+  
+</script>
+<style>
+	
+* {
+  box-sizing: border-box;
+}
+
+.mano {cursor: all-scroll;}
+
+.cuarto {
+  float:left;
+  width:25%;
+  padding:0 1px;
+}
+.tercio {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.sexto {
+  float:left;
+  width:17%;
+  padding:0 1px;
+}
+.imagenesdados {
+  float:left;
+  width:22%;
+  padding:0 1px;
+}
+
+.octavo {
+  float:left;
+  width:12%;
+  padding:0 1px;
+}
+.terciocentral {
+  float:left;
+  width:34%;
+  padding:0 1px;
+}
+.mitad {
+  float:left;
+  width:50%;
+  padding:0 1px;
+}
+.total {
+  float:left;
+  width:100%;
+  padding:0 1px;
+}
+.dostercios {
+  float:left;
+  width:66%;
+  padding:0 1px;
+}
+
+
+
+@media only screen and (max-width:820px) {
+  /* For mobile phones: */
+  .cuarto, .tercio, .sexto, .octavo, .terciocentral, .mitad, .dostercios, .total {
+    width:100%;
+  }
+  
+</style>
+</head>
+
+
+<body>
+	<div class="w3-container w3-blue w3-center">
+	  <h1>Rol por Telegram</h1>
+	</div>
+
+	<div style="overflow:auto">
+		<div class="tercio w3-border" id="cabecerasistema"></div>
+		<div class="tercio w3-border" id="cabeceranombre"></div>
+		<div class="sexto" id="dados"><button class='w3-button w3-white'> </button></div>
+		<div class="sexto" id="botonjson"><p><button class='w3-button w3-block w3-blue' onclick='RolTelegram.exportaJSON()'>Exporta json</button></p></div>
+	</div>
+	<div style="overflow:auto">
+		<div class="cuarto w3-border" id="seccion1"></div>
+		<div class="cuarto w3-border" id="seccion2"></div>
+		<div class="cuarto w3-border" id="seccion3"></div>
+		<div class="cuarto w3-border" id="seccion4"></div>
+	</div>
+	<div style="overflow:auto">
+		<div class="cuarto w3-border" id="seccion5"></div>
+		<div class="cuarto w3-border" id="seccion6"></div>
+		<div class="mitad w3-border" id="seccion7"></div>
+	</div>
+	<div style="overflow:auto">
+		<div class="total w3-border" id="seccion8"></div>
+		
+		<div class="total" id="cargajson"></div>	
+		<div class="total" id="respuesta"></div>
+	</div>
+	
+	<div id="vdefensa" class="w3-modal">
+	  <div class="w3-modal-content">
+		<div class="w3-container">
+			<label>Defensa</label>
+			<input class="w3-input" type="text" id="defensa">
+			<button class="w3-btn w3-blue" onclick='Mascaras.tiradaConDanyo()'>Enviar</button>
+		</div>
+	  </div>
+	</div>
+	
+	<div id="ccaracteristica" class="w3-modal">
+	  <div class="w3-modal-content">
+		<div class="w3-container">
+			<label id="nbcaracteristica">Característica</label>
+			<input class="w3-input" type="text" id="vcaracteristica">
+			<button class="w3-btn w3-blue" id="btncaracteristica">Modifica</button>
+			<button class="w3-btn w3-blue" id="btncancela" >Cancela</button>
+		</div>
+	  </div>
+	</div>
+
+<script type="text/javascript">
+  inicial();
+</script>
+
+</body>
+</html>
