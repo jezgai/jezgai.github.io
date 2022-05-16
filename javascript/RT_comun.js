@@ -8,7 +8,6 @@ class RolTelegram {
 		var urlsendtlg = "http://en-getafe.org/stelg.php?token=" + telegrambotid + "&chatid=" + chatid + "&message=" + mensaje;
 		var xmlHttp = new XMLHttpRequest();
 		xmlHttp.open( "GET", urlsendtlg, false ); 
-		xmlHttp.setRequestHeader("REFERER", "Localhost");
 		xmlHttp.send( null );
 		//document.getElementById("respuesta").innerHTML = "Enviado " + xmlHttp.responseText;
 	}
