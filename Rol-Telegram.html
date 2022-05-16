@@ -31,62 +31,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<script src="javascript/RT_comun.js"></script>
-<script src="javascript/RT_mascaras.js"></script>
-<script src="javascript/RT_AxisMundi.js"></script>
 
-<script>
 
-  var personaje = {};
-  var combate = "";
-	
-  function inicial() {
-	  
-	  	document.getElementById("cargajson").innerHTML="<form id=\"jsonFile\" name=\"jsonFile\" enctype=\"multipart/form-data\" method=\"post\">" +
-			  "<fieldset>" +
-				"<h2>Fichero del PJ (json)</h2>" +
-				 "<input type='file' id='fileinput'>" +
-				 "<input type='button' id='btnLoad' value='Cargar' onclick='RolTelegram.loadFile();'>" +
-			  "</fieldset>" +
-			"</form> <a href=\"json/Encubierto.json\">Ejemplo de json para Máscaras del Imperio</a>";
-	  
-		document.getElementById("cabecerasistema").innerHTML = "";
-		document.getElementById("cabeceranombre").innerHTML = "";
-		document.getElementById("seccion1").innerHTML = "";
-		document.getElementById("seccion2").innerHTML = "";
-		document.getElementById("seccion3").innerHTML = "";
-		document.getElementById("seccion4").innerHTML = "";
-		document.getElementById("seccion5").innerHTML = "";
-		document.getElementById("seccion6").innerHTML = "";
-		document.getElementById("seccion7").innerHTML = "";
-		document.getElementById("seccion8").innerHTML = "";
-		document.getElementById("seccion1").style.visibility="hidden";
-		document.getElementById("seccion2").style.visibility="hidden";
-		document.getElementById("seccion3").style.visibility="hidden";
-		document.getElementById("seccion4").style.visibility="hidden";
-		document.getElementById("seccion5").style.visibility="hidden";
-		document.getElementById("seccion6").style.visibility="hidden";
-		document.getElementById("seccion7").style.visibility="hidden";
-		document.getElementById("seccion8").style.visibility="hidden";
-		document.getElementById("botonjson").style.visibility="hidden";
-		
-  }
-  function cargado() {
-	    document.getElementById("cargajson").innerHTML=="";
-		document.getElementById("cargajson").style.visibility="hidden";
-		document.getElementById("seccion1").style.visibility="visible";
-		document.getElementById("seccion2").style.visibility="visible";
-		document.getElementById("seccion3").style.visibility="visible";
-		document.getElementById("seccion4").style.visibility="visible";
-		document.getElementById("seccion5").style.visibility="visible";
-		document.getElementById("seccion6").style.visibility="visible";
-		document.getElementById("seccion7").style.visibility="visible";
-		document.getElementById("seccion8").style.visibility="visible";
-  }
-  
-    
-  
-</script>
 <style>
 	
 * {
@@ -160,53 +106,8 @@
 	</div>
 
 	<div style="overflow:auto">
-		<div class="tercio w3-border" id="cabecerasistema"></div>
-		<div class="tercio w3-border" id="cabeceranombre"></div>
-		<div class="sexto" id="dados"><button class='w3-button w3-white'> </button></div>
-		<div class="sexto" id="botonjson"><p><button class='w3-button w3-block w3-blue' onclick='RolTelegram.exportaJSON()'>Exporta json</button></p></div>
+		<div class="total">Movido a <a href="http://roltelg.byethost7.com/Rol-Telegram.html">Byethost7</a> por problemas a la hora de comunicar con Telegram</div>
 	</div>
-	<div style="overflow:auto">
-		<div class="cuarto w3-border" id="seccion1"></div>
-		<div class="cuarto w3-border" id="seccion2"></div>
-		<div class="cuarto w3-border" id="seccion3"></div>
-		<div class="cuarto w3-border" id="seccion4"></div>
-	</div>
-	<div style="overflow:auto">
-		<div class="cuarto w3-border" id="seccion5"></div>
-		<div class="cuarto w3-border" id="seccion6"></div>
-		<div class="mitad w3-border" id="seccion7"></div>
-	</div>
-	<div style="overflow:auto">
-		<div class="total w3-border" id="seccion8"></div>
-		
-		<div class="total" id="cargajson"></div>	
-		<div class="total" id="respuesta"></div>
-	</div>
-	
-	<div id="vdefensa" class="w3-modal">
-	  <div class="w3-modal-content">
-		<div class="w3-container">
-			<label>Defensa</label>
-			<input class="w3-input" type="text" id="defensa">
-			<button class="w3-btn w3-blue" onclick='Mascaras.tiradaConDanyo()'>Enviar</button>
-		</div>
-	  </div>
-	</div>
-	
-	<div id="ccaracteristica" class="w3-modal">
-	  <div class="w3-modal-content">
-		<div class="w3-container">
-			<label id="nbcaracteristica">Característica</label>
-			<input class="w3-input" type="text" id="vcaracteristica">
-			<button class="w3-btn w3-blue" id="btncaracteristica">Modifica</button>
-			<button class="w3-btn w3-blue" id="btncancela" >Cancela</button>
-		</div>
-	  </div>
-	</div>
-
-<script type="text/javascript">
-  inicial();
-</script>
 
 </body>
 </html>
