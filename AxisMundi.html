@@ -39,6 +39,7 @@
 	let hayclases = 0;
 	
 	let sclases = Comun.desplegableClases(clases, "seleccionaclases");
+	
 
 
 	function rellenaPDF() {
@@ -78,6 +79,7 @@
 		document.getElementById("descripcion").innerHTML="";
 		document.getElementById("cita").innerHTML="";
 		document.getElementById("botonpdf").style.visibility="hidden";
+		document.getElementById("botonjson").style.visibility="hidden";
 		document.getElementById("conjuros").style.visibility="hidden";
 		document.getElementById("bconjuros").style.visibility="hidden";
 	}
@@ -186,6 +188,7 @@
 		document.getElementById("pericias").innerHTML = pj.tablaPericias();
 		document.getElementById("armas").innerHTML = pj.tablaArmas();
 		document.getElementById("botonpdf").style.visibility="visible";
+		document.getElementById("botonjson").style.visibility="visible";
 		muestraConjuros();
 	}
 	
@@ -340,6 +343,7 @@
 		element.click();
 
 		document.body.removeChild(element);
+		
 	}
 	
 </script>

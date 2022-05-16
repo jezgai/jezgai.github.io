@@ -1,0 +1,1737 @@
+[
+  {
+    "nombre": "Guerrero",
+    "requisitos": [
+      {
+        "atributo": "FUE",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "FUE",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 8,
+    "caracteristicas": [
+      "Pueden usar cualquier tipo de armadura"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 2000,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 1,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Espada corta",
+        "Jabalina"
+      ],
+      [
+        "Espada larga"
+      ],
+      [
+        "Daga",
+        "Lanza"
+      ]
+    ]
+  },
+  {
+    "nombre": "Mago",
+    "requisitos": [
+      {
+        "atributo": "INT",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "INT",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 4,
+    "caracteristicas": [
+      "No pueden usar ningún tipo de armadura"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 0,
+    "movimiento": 40,
+    "experiencia": 2500,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 15
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 11
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 12
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "conjuros": {
+      "fijos": [
+        "Leer Magia"
+      ],
+      "numeroN1": 2,
+      "conjurosN1": [
+        "Detectar magia",
+        "Detectar mentiras",
+        "Ocultar mentiras",
+        "Disco flotante",
+        "Escudo",
+        "Hechizar persona",
+        "Leer lenguas",
+        "Luz",
+        "Oscuridad",
+        "Misil mágico",
+        "Retener portal",
+        "Sueño",
+        "Ventriloquía"
+      ],
+      "numeroN2": 1,
+      "conjurosN2": [
+        "Apertura",
+        "Cerradura arcana",
+        "Detectar lo invisible",
+        "Fuerza fantasmal",
+        "Imágenes múltiples",
+        "Invisibilidad",
+        "Levitar",
+        "Localizar objeto",
+        "Luz continua",
+        "Oscuridad continua",
+        "Percepción extrasensorial",
+        "Protección contra el mal",
+        "Telaraña"
+      ]
+    },
+    "armas": [
+      [
+        "Bastón",
+        "Daga"
+      ]
+    ]
+  },
+  {
+    "nombre": "Especialista",
+    "requisitos": [
+      {
+        "atributo": "DES",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "DES",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Solo pueden usar armaduras de cuero. Escudos no.",
+      "Dobla ataque y daño al Apuñalar por la espalda",
+      "Ventaja al escalar"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 1400,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 14
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 15
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 4,
+      "pericias": [
+        {
+          "nombre": "Apuñalar",
+          "puntos": 0
+        },
+        {
+          "nombre": "Detectar Trampas",
+          "puntos": 1
+        },
+        {
+          "nombre": "Juego de Manos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Mecanismos",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Daga",
+        "Ballesta ligera"
+      ],
+      [
+        "Espada ropera",
+        "Daga"
+      ]
+    ]
+  },
+  {
+    "nombre": "Sacerdote",
+    "requisitos": [
+      {
+        "atributo": "SAB",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "SAB",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 4,
+    "caracteristicas": [
+      "No pueden usar ningún tipo de armadura",
+      "Poder Expulsar no muertos"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 0,
+    "movimiento": 40,
+    "experiencia": 1500,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 15
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 11
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 12
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": -1,
+      "conjurosN1": [
+        "Curar heridas leves",
+        "Causar heridas leves",
+        "Detectar magia",
+        "Detectar bien",
+        "Detectar mal",
+        "Luz",
+        "Oscuridad",
+        "Palabra de mando",
+        "Protección contra el mal",
+        "Purificar comida y agua",
+        "Pudrir comida y agua",
+        "Resistir frío",
+        "Retirar miedo",
+        "Causar miedo",
+        "Santuario"
+      ],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Bastón"
+      ]
+    ]
+  },
+  {
+    "nombre": "Clérigo",
+    "requisitos": [
+      {
+        "atributo": "SAB",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "SAB",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Puede usar cualquier armadura",
+      "Solo puede usar armas romas y cuerpo a cuerpo",
+      "Poder Expulsar no muertos"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 1650,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 15
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 11
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 12
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": -1,
+      "conjurosN1": [
+        "Curar heridas leves",
+        "Causar heridas leves",
+        "Detectar magia",
+        "Detectar bien",
+        "Detectar mal",
+        "Luz",
+        "Oscuridad",
+        "Palabra de mando",
+        "Protección contra el mal",
+        "Purificar comida y agua",
+        "Pudrir comida y agua",
+        "Resistir frío",
+        "Retirar miedo",
+        "Causar miedo",
+        "Santuario"
+      ],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Martillo ligero"
+      ],
+      [
+        "Maza"
+      ]
+    ]
+  },
+  {
+    "nombre": "Paladín",
+    "requisitos": [
+      {
+        "atributo": "FUE",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "FUE",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Pueden usar cualquier tipo de armadura",
+      "Inmunidad: Purificación",
+      "Poder mágico: Imponer manos"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 1700,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 1,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Espada larga"
+      ],
+      [
+        "Espadón"
+      ]
+    ]
+  },
+  {
+    "nombre": "Montaraz",
+    "requisitos": [
+      {
+        "atributo": "CON",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "CON",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "No pueden usar armaduras mejores que malla",
+      "Bono: Puntería",
+      "Camuflaje natural (+2 a Sigilo en entornos naturales)"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 1850,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 1,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": [
+        {
+          "nombre": "Supervivencia",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Espada corta",
+        "Arco corto"
+      ],
+      [
+        "Daga",
+        "Arco corto"
+      ],
+      [
+        "Daga",
+        "Jabalina"
+      ]
+    ]
+  },
+  {
+    "nombre": "Bardo",
+    "requisitos": [
+      {
+        "atributo": "SAB",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "SAB",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Solo puede usar armaduras de malla o peor",
+      "Poderes mágicos: Música tranquilizadora"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 1825,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 15
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 11
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 12
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": [
+        {
+          "nombre": "Historia antigua",
+          "puntos": 1
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Espada ropera",
+        "Daga"
+      ]
+    ]
+  },
+  {
+    "nombre": "Bárbaro",
+    "requisitos": [
+      {
+        "atributo": "CON",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "CON",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 8,
+    "caracteristicas": [
+      "Solo puede usar armaduras de malla o peor",
+      "Ventaja al escalar",
+      "Fornido. Difícil de matar"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 2450,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 1,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Espadón",
+        "Hacha de mano"
+      ],
+      [
+        "Gran hacha",
+        "Hacha de mano"
+      ],
+      [
+        "Hacha de batalla",
+        "Hacha de mano"
+      ]
+    ]
+  },
+  {
+    "nombre": "Asesino",
+    "requisitos": [
+      {
+        "atributo": "FUE",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "FUE",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Solo pueden usar armaduras de cuero. Escudos no.",
+      "Dobla ataque y daño al Apuñalar por la espalda",
+      "Ventaja al escalar. Pasar desapercibido. Reflejos finos"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 1850,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 1,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": [
+        {
+          "nombre": "Apuñalar",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Daga"
+      ],
+      [
+        "Estoque",
+        "Daga"
+      ]
+    ]
+  },
+  {
+    "nombre": "Monje",
+    "requisitos": [
+      {
+        "atributo": "CON",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "CON",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "No pueden usar ningún tipo de armadura ni escudo.",
+      "Armas naturales. Escurridizo"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 1850,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 1,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": []
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Jō (bastón)",
+        "Sai"
+      ],
+      [
+        "Jian (espada)",
+        "Sai"
+      ],
+      [
+        "Dadao (sable)",
+        "Sai"
+      ]
+    ]
+  },
+  {
+    "nombre": "Guerrero arcano elfo",
+    "requisitos": [
+      {
+        "atributo": "INT",
+        "valor": 11
+      }
+    ],
+    "reqprimario": "INT",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Solo puede usar armaduras de malla o peor",
+      "Camuflaje natural. Nada se le escapa. Bono: Alma liberada"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 3625,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 15
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 11
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 12
+      }
+    ],
+    "idiomas": [
+      "Elfo",
+      "Gnoll",
+      "Grantrasgo",
+      "Orco"
+    ],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 0,
+      "pericias": [
+        {
+          "nombre": "Señor de las bestias",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [
+        "Leer Magia"
+      ],
+      "numeroN1": 2,
+      "conjurosN1": [
+        "Detectar magia",
+        "Detectar mentiras",
+        "Ocultar mentiras",
+        "Disco flotante",
+        "Escudo",
+        "Hechizar persona",
+        "Leer lenguas",
+        "Luz",
+        "Oscuridad",
+        "Misil mágico",
+        "Retener portal",
+        "Sueño",
+        "Ventriloquía"
+      ],
+      "numeroN2": 1,
+      "conjurosN2": [
+        "Apertura",
+        "Cerradura arcana",
+        "Detectar lo invisible",
+        "Fuerza fantasmal",
+        "Imágenes múltiples",
+        "Invisibilidad",
+        "Levitar",
+        "Localizar objeto",
+        "Luz continua",
+        "Oscuridad continua",
+        "Percepción extrasensorial",
+        "Protección contra el mal",
+        "Telaraña"
+      ]
+    },
+    "armas": [
+      [
+        "Espada corta",
+        "Arco corto"
+      ],
+      [
+        "Daga",
+        "Arco corto"
+      ]
+    ]
+  },
+  {
+    "nombre": "Capellán elfo",
+    "requisitos": [
+      {
+        "atributo": "INT",
+        "valor": 9
+      },
+      {
+        "atributo": "SAB",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "SAB",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 4,
+    "caracteristicas": [
+      "No puede usar ningún tipo de armadura",
+      "Expulsar no muertos",
+      "Camuflaje natural. Nada se le escapa. Bono. Alma liberada"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 0,
+    "movimiento": 40,
+    "experiencia": 1750,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 15
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 11
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 12
+      }
+    ],
+    "idiomas": [
+      "Elfo",
+      "Gnoll",
+      "Grantrasgo",
+      "Orco"
+    ],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 0,
+      "pericias": [
+        {
+          "nombre": "Señor de las bestias",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": -1,
+      "conjurosN1": [
+        "Curar heridas leves",
+        "Causar heridas leves",
+        "Detectar magia",
+        "Detectar bien",
+        "Detectar mal",
+        "Luz",
+        "Oscuridad",
+        "Palabra de mando",
+        "Protección contra el mal",
+        "Purificar comida y agua",
+        "Pudrir comida y agua",
+        "Resistir frío",
+        "Retirar miedo",
+        "Causar miedo",
+        "Santuario"
+      ],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Martillo ligero"
+      ],
+      [
+        "Maza"
+      ]
+    ]
+  },
+  {
+    "nombre": "Defensor enano",
+    "requisitos": [
+      {
+        "atributo": "FUE",
+        "valor": 9
+      },
+      {
+        "atributo": "CON",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "FUE",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 8,
+    "caracteristicas": [
+      "Pueden usar cualquier tipo de armadura",
+      "Sensitivo con la piedra. Piel de piedra"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC",
+    "barridos": 1,
+    "movimiento": 30,
+    "experiencia": 2650,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [
+      "Enano",
+      "Gnomo",
+      "Trasgo",
+      "Kobold"
+    ],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 4,
+      "pericias": [
+        {
+          "nombre": "Arquitectura",
+          "puntos": 1
+        },
+        {
+          "nombre": "Mecanismos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Detectar trampas",
+          "puntos": 1
+        },
+        {
+          "nombre": "Detectar",
+          "puntos": 1
+        }
+      ]
+    },
+    "pericias": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Gran hacha",
+        "Hacha de mano"
+      ],
+      [
+        "Hacha de batalla",
+        "Hacha de mano"
+      ]
+    ]
+  },
+  {
+    "nombre": "Luchador enano",
+    "requisitos": [
+      {
+        "atributo": "FUE",
+        "valor": 9
+      },
+      {
+        "atributo": "CON",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "FUE",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 8,
+    "caracteristicas": [
+      "Pueden usar cualquier tipo de armadura",
+      "Armadura natural. Sensitivo con la piedra"
+    ],
+    "ca": 1,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 30,
+    "experiencia": 2400,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [
+      "Enano",
+      "Gnomo",
+      "Trasgo",
+      "Kobold"
+    ],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 2,
+      "pericias": [
+        {
+          "nombre": "Arquitectura",
+          "puntos": 1
+        },
+        {
+          "nombre": "Mecanismos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Detectar trampas",
+          "puntos": 1
+        },
+        {
+          "nombre": "Detectar",
+          "puntos": 1
+        }
+      ]
+    },
+    "pericias": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Gran hacha",
+        "Hacha de mano"
+      ],
+      [
+        "Hacha de batalla",
+        "Martillo ligero"
+      ],
+      [
+        "Martillo de guerra",
+        "Hacha de mano"
+      ]
+    ]
+  },
+  {
+    "nombre": "Alguacil mediano",
+    "requisitos": [
+      {
+        "atributo": "FUE",
+        "valor": 9
+      },
+      {
+        "atributo": "DES",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "DES",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Pueden usar cualquier tipo de armadura",
+      "Buen trato. Correr por su vida. Mal de ojo",
+      "Pasar desapercibido"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 1,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 30,
+    "experiencia": 2275,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [
+      "Mediano"
+    ],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 2,
+      "pericias": [
+        {
+          "nombre": "Curar",
+          "puntos": 0
+        },
+        {
+          "nombre": "Juego de manos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Sigilo",
+          "puntos": 0
+        },
+        {
+          "nombre": "Detectar",
+          "puntos": 1
+        }
+      ]
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": [
+        {
+          "nombre": "Curar",
+          "puntos": 0
+        },
+        {
+          "nombre": "Juego de manos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Detectar trampas",
+          "puntos": 1
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Daga",
+        "Espada corta"
+      ]
+    ]
+  },
+  {
+    "nombre": "Saqueador mediano",
+    "requisitos": [
+      {
+        "atributo": "DES",
+        "valor": 11
+      }
+    ],
+    "reqprimario": "DES",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Pueden usar cualquier tipo de armadura",
+      "Buen trato. Correr por su vida. Mal de ojo",
+      "Pasar desapercibido. Puntería. Camuflaje natural"
+    ],
+    "ca": 1,
+    "ataque": 1,
+    "ataquead": 1,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 30,
+    "experiencia": 2225,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 14
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 15
+      }
+    ],
+    "idiomas": [
+      "Mediano"
+    ],
+    "boniftipoarmas": -1,
+    "periciasespeciales": {
+      "puntos": 6,
+      "pericias": [
+        {
+          "nombre": "Curar",
+          "puntos": 0
+        },
+        {
+          "nombre": "Juego de manos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Sigilo",
+          "puntos": 0
+        },
+        {
+          "nombre": "Detectar",
+          "puntos": 1
+        }
+      ]
+    },
+    "pericias": {
+      "puntos": 4,
+      "pericias": [
+        {
+          "nombre": "Apuñalar",
+          "puntos": 0
+        },
+        {
+          "nombre": "Curar",
+          "puntos": 0
+        },
+        {
+          "nombre": "Juego de manos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Detectar trampas",
+          "puntos": 1
+        },
+        {
+          "nombre": "Mecanismos",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Daga",
+        "Honda"
+      ]
+    ]
+  },
+  {
+    "nombre": "Mercenario semiogro",
+    "requisitos": [
+      {
+        "atributo": "FUE",
+        "valor": 11
+      }
+    ],
+    "reqprimario": "FUE",
+    "modifadicional": [
+      2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 10,
+    "caracteristicas": [
+      "Pueden usar cualquier armadura hasta malla",
+      "Armas naturales, Infravisión, Personalidad feroz",
+      "Armadura natural"
+    ],
+    "ca": 2,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 50,
+    "experiencia": 2000,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 1,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Espadón",
+        "Alfanje"
+      ],
+      [
+        "Gran hacha",
+        "Cimitarra"
+      ],
+      [
+        "Hacha de batalla",
+        "Maza"
+      ]
+    ]
+  }
+]
