@@ -51,11 +51,14 @@ class Comun {
 		return sclases;
 	}
 	
-	static desplegableNivel(nivelMax, nbFuncSel, nbFuncGenera) {
-		var snivel=" <strong>Nivel:</strong> <select class='w3-select'  name='nivel' onchange='" + nbFuncSel + "(this)'><option>1</option>";
+	static desplegableNivel(nivelMax, nbFuncSel, nbFuncGenera, nivelInicial=1) {
+		var snivel=" <strong>Nivel:</strong> <select class='w3-select'  name='nivel' onchange='" + nbFuncSel + "(this)'>"; //<option>" + nivelInicial + "</option>";
 		var inivel=0;
-		for (inivel=2; inivel<= nivelMax; inivel++) {
-			snivel += "<option>" + inivel + "</option>";
+		for (inivel=nivelInicial; inivel<= nivelMax; inivel++) {
+			if ( inivel == 1 )
+				snivel += "<option selected='selected'>" + inivel + "</option>";
+			else
+				snivel += "<option>" + inivel + "</option>";
 		}
 		snivel += "</select>"; // <button class='w3-button w3-block w3-teal' onclick='" + nbFuncGenera + "()'>Genera</button>";
 		return snivel;

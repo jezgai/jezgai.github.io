@@ -235,4 +235,174 @@ class PJ extends PJBase {
 		return fields;
 	}
 	
+	
+	
+	static rellenaCamposPDFCero() {
+		var stalentos1 = pj.pjs[0].talentos[0];
+		if ( pj.pjs[0].talentos.length > 1 ) {
+			stalentos1 += ", " + pj.pjs[0].talentos[1]; 
+		}
+		
+		var stalentos2 = pj.pjs[1].talentos[0];
+		if ( pj.pjs[1].talentos.length > 1 ) {
+			stalentos2 += ", " + pj.pjs[1].talentos[1]; 
+		}
+
+		var stalentos3 = pj.pjs[2].talentos[0];
+		if ( pj.pjs[2].talentos.length > 1 ) {
+			stalentos3 += ", " + pj.pjs[2].talentos[1]; 
+		}
+		
+		var stalentos4 = pj.pjs[3].talentos[0];
+		if ( pj.pjs[3].talentos.length > 1 ) {
+			stalentos4 += ", " + pj.pjs[3].talentos[1]; 
+		}
+		var fields = {
+					'Nombre1' : [ "PJ 1" ],
+					'Oficio1' : [ pj.pjs[0].oficio ],
+					'Raza1' : [ pj.pjs[0].raza ],
+					'FUE1' : [ pj.pjs[0].atributos[0] ],
+					'DES1' : [ pj.pjs[0].atributos[1] ],
+					'CON1' : [ pj.pjs[0].atributos[2] ],
+					'INT1' : [ pj.pjs[0].atributos[3] ],
+					'SAB1' : [ pj.pjs[0].atributos[4] ],
+					'CAR1' : [ pj.pjs[0].atributos[5] ],
+					'mFUE1' : [ Atributos.modif(pj.pjs[0].atributos[0]) ],
+					'mDES1' : [ Atributos.modif(pj.pjs[0].atributos[1]) ],
+					'mCON1' : [ Atributos.modif(pj.pjs[0].atributos[2]) ],
+					'mINT1' : [ Atributos.modif(pj.pjs[0].atributos[3]) ],
+					'mSAB1' : [ Atributos.modif(pj.pjs[0].atributos[4]) ],
+					'mCAR1' : [ Atributos.modif(pj.pjs[0].atributos[5]) ],
+					'PV1' : [ pj.pjs[0].pv ],
+					'PVAct1' : [ pj.pjs[0].pv ],
+					'ATQ1' : [ 0 ],
+					'DEF1' : [ pj.pjs[0].defensa ],
+					'INS1' : [ 0 ],
+					'MOV1' : [ pj.pjs[0].movimiento ],
+					'Equipo1' : [ pj.pjs[0].equipo ],
+					'Talentos1' : [ stalentos1 ],
+					'Nombre2' : [ "PJ 2" ],
+					'Oficio2' : [ pj.pjs[1].oficio ],
+					'Raza2' : [ pj.pjs[1].raza ],
+					'FUE2' : [ pj.pjs[1].atributos[0] ],
+					'DES2' : [ pj.pjs[1].atributos[1] ],
+					'CON2' : [ pj.pjs[1].atributos[2] ],
+					'INT2' : [ pj.pjs[1].atributos[3] ],
+					'SAB2' : [ pj.pjs[1].atributos[4] ],
+					'CAR2' : [ pj.pjs[1].atributos[5] ],
+					'mFUE2' : [ Atributos.modif(pj.pjs[1].atributos[0]) ],
+					'mDES2' : [ Atributos.modif(pj.pjs[1].atributos[1]) ],
+					'mCON2' : [ Atributos.modif(pj.pjs[1].atributos[2]) ],
+					'mINT2' : [ Atributos.modif(pj.pjs[1].atributos[3]) ],
+					'mSAB2' : [ Atributos.modif(pj.pjs[1].atributos[4]) ],
+					'mCAR2' : [ Atributos.modif(pj.pjs[1].atributos[5]) ],
+					'PV2' : [ pj.pjs[1].pv ],
+					'PVAct2' : [ pj.pjs[1].pv ],
+					'ATQ2' : [ 0 ],
+					'DEF2' : [ pj.pjs[1].defensa ],
+					'INS2' : [ 0 ],
+					'MOV2' : [ pj.pjs[1].movimiento ],
+					'Equipo2' : [ pj.pjs[1].equipo ],
+					'Talentos2' : [ stalentos2 ],
+					'Nombre3' : [ "PJ 3" ],
+					'Oficio3' : [ pj.pjs[2].oficio ],
+					'Raza3' : [ pj.pjs[2].raza ],
+					'FUE3' : [ pj.pjs[2].atributos[0] ],
+					'DES3' : [ pj.pjs[2].atributos[1] ],
+					'CON3' : [ pj.pjs[2].atributos[2] ],
+					'INT3' : [ pj.pjs[2].atributos[3] ],
+					'SAB3' : [ pj.pjs[2].atributos[4] ],
+					'CAR3' : [ pj.pjs[2].atributos[5] ],
+					'mFUE3' : [ Atributos.modif(pj.pjs[2].atributos[0]) ],
+					'mDES3' : [ Atributos.modif(pj.pjs[2].atributos[1]) ],
+					'mCON3' : [ Atributos.modif(pj.pjs[2].atributos[2]) ],
+					'mINT3' : [ Atributos.modif(pj.pjs[2].atributos[3]) ],
+					'mSAB3' : [ Atributos.modif(pj.pjs[2].atributos[4]) ],
+					'mCAR3' : [ Atributos.modif(pj.pjs[2].atributos[5]) ],
+					'PV3' : [ pj.pjs[2].pv ],
+					'PVAct3' : [ pj.pjs[2].pv ],
+					'ATQ3' : [ 0 ],
+					'DEF3' : [ pj.pjs[2].defensa ],
+					'INS3' : [ 0 ],
+					'MOV3' : [ pj.pjs[2].movimiento ],
+					'Equipo3' : [ pj.pjs[2].equipo ],
+					'Talentos3' : [ stalentos3 ],
+					'Nombre4' : [ "PJ 4" ],
+					'Oficio4' : [ pj.pjs[3].oficio ],
+					'Raza4' : [ pj.pjs[3].raza ],
+					'FUE4' : [ pj.pjs[3].atributos[0] ],
+					'DES4' : [ pj.pjs[3].atributos[1] ],
+					'CON4' : [ pj.pjs[3].atributos[2] ],
+					'INT4' : [ pj.pjs[3].atributos[3] ],
+					'SAB4' : [ pj.pjs[3].atributos[4] ],
+					'CAR4' : [ pj.pjs[3].atributos[5] ],
+					'mFUE4' : [ Atributos.modif(pj.pjs[3].atributos[0]) ],
+					'mDES4' : [ Atributos.modif(pj.pjs[3].atributos[1]) ],
+					'mCON4' : [ Atributos.modif(pj.pjs[3].atributos[2]) ],
+					'mINT4' : [ Atributos.modif(pj.pjs[3].atributos[3]) ],
+					'mSAB4' : [ Atributos.modif(pj.pjs[3].atributos[4]) ],
+					'mCAR4' : [ Atributos.modif(pj.pjs[3].atributos[5]) ],
+					'PV4' : [ pj.pjs[3].pv ],
+					'PVAct4' : [ pj.pjs[3].pv ],
+					'ATQ4' : [ 0 ],
+					'DEF4' : [ pj.pjs[3].defensa ],
+					'INS4' : [ 0 ],
+					'MOV4' : [ pj.pjs[3].movimiento ],
+					'Equipo4' : [ pj.pjs[3].equipo ],
+					'Talentos4' : [ stalentos4 ],
+		};
+		return fields;
+	}
+	
+	
+	static creapersonajenivelcero() {
+		
+		atributos.ntiradasextras = 0;
+		atributos.excesoatributos = 1;
+		
+		var pjembudo = {};
+		pjembudo.pjs = [];
+		var indice=0;
+		for (indice=0; indice<4; indice++) {
+			var oficio = oficios.oficio();
+			var pjcero = {};
+			pjcero.raza = oficio.raza;
+			pjcero.oficio = oficio.profesion;
+			pjcero.equipo = oficio.equipo;
+			var raza = razas.raza(oficio.raza);
+			pjcero.movimiento = raza.mov;
+			pjcero.talentos = raza.talentos;
+			
+			pjcero.atributos = atributos.valores([]);
+			pjcero.pv = Comun.random(4,1) + Atributos.modif(pjcero.atributos[2]);
+			pjcero.defensa = 10 + Atributos.modif(pjcero.atributos[1]);
+			pjembudo.pjs.push(pjcero);
+		}
+		return pjembudo
+		
+	}
+	
+	
+	static tablaPJCero(ipj) {
+		var indice = 0;
+		var spj = "<b>Raza: </b>" + pj.pjs[ipj].raza + " <b>Oficio:</b> " + pj.pjs[ipj].oficio + "<br/>";
+		spj += "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</th><th>Valor (mod)</th></tr>";
+		for (indice = 0; indice < pj.pjs[ipj].atributos.length; indice++) {
+			spj += "<tr><td>" + atributos.atributos[indice].nbatr + " (" + atributos.atributos[indice].nbmod + ")</td><td align='center'>" + pj.pjs[ipj].atributos[indice] + " (" + Atributos.modif(pj.pjs[ipj].atributos[indice]) + ")</td><td></button><button class=\"w3-button w3-circle w3-teal w3-padding-small w3-tiny\" onclick=\"abajoatrcero('" + ipj + "','" + indice + "')\">&#9660;</button></td></tr>";
+		}
+		spj += "</table>";
+		spj += "<table class='w3-table  w3-striped w3-border'><tr><th>Característica</th><th>Valor</th></tr>";
+		spj += "<tr><td>PV</td><td align='center'>" + pj.pjs[ipj].pv + "</td></tr>";
+		spj += "<tr><td>Defensa</td><td align='center'>" + pj.pjs[ipj].defensa + "</td></tr>";
+		spj += "<tr><td>Movimiento</td><td align='center'>" + pj.pjs[ipj].movimiento + "</td></tr>";
+		spj += "</table>";
+		spj += "<table class='w3-table  w3-striped w3-border'><tr><th>Talento</th></tr>";
+		
+		for (indice = 0; indice < pj.pjs[ipj].talentos.length; indice++) {
+			spj += "<tr><td>" + pj.pjs[ipj].talentos[indice] + "</td></tr>";
+		}
+		spj += "</table>";
+		return spj;
+	}
+	
 }
