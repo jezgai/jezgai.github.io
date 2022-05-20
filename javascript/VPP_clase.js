@@ -188,6 +188,33 @@ class ClasesVPP {
 			  rama : "Heros Fortis",
               pep : 1,
 			},
+			{
+			  nombre : "Legionario",
+			  talentos : { nfijos: 2, fijos: [ "Firmeza", "Instrucción legionaria" ], elegibles: [ "Curtido en la batalla", "Tanque andante", "Temible", "Toma y daca" ] },
+              ntalentos : [ 3, 3, 4, 4, 4 ],
+			  daguante : 8,
+			  competencia : "Puedes llevar cualquier arma o protección",
+			  rama : "Heros Fortis",
+              pep : 1,
+			},
+			{
+			  nombre : "Hechicero",
+			  talentos : { nfijos: 2, fijos: [ "Escuela mágica", "Esencia interna" ], elegibles: [ "Artefacto divino", "Compañero de aventuras", "Orador", "Suspicacias" ] },
+              ntalentos : [ 3, 3, 4, 4, 4 ],
+			  daguante : 4,
+			  competencia : "No puedes llevar protecciones. Solo puedes usar bastones, dagas y hondas",
+			  rama : "Heros Felix",
+              pep : 1,
+			},
+			{
+			  nombre : "Espartano",
+			  talentos : { nfijos: 2, fijos: [ "Coraje", "Instrucción espartana" ], elegibles: [ "Adrenalina curativa", "Curtido en la batalla", "Defensa hoplita", "Ira espartana" ] },
+              ntalentos : [ 3, 3, 4, 4, 4 ],
+			  daguante : 8,
+			  competencia : "Puedes llevar cualquier arma o protección",
+			  rama : "Heros Fortis",
+              pep : 1,
+			},
 		]
 	}
 	
