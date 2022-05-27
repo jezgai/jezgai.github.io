@@ -336,7 +336,7 @@ class ClasesBases {
 			  nombresM: [ "Galvan", "Quinn", "Perth", "Niall", "Artai", "Aldair", "Kilian", "Aod", "Fergal" ],
 			  motesF: [ ],
 			  motesM: [ ],
-			  magia: { numero:-1, conjuros: [] },
+			  magia: { numero: 0, conjuros: [ "Alterar Tamaño", "Comprender Idioma", "Curar heridas", "Dormir", "Orden", "Luz", "Protección contra el Mal", "Purificar sustento", "Valentía" ] },
 			  equipo: { narmasAD: 1, armasAD: [ "Arco corto", "Arco largo", "Cerbatana" ], 
 						narmasCaC: 1, armasCaC: [ "Bastón", "Maza" ], 
 						escudo: [ "Escudo pequeño", "Escudo mediano", "Escudo grande" ],
@@ -948,7 +948,7 @@ class ClasesBases {
 						paquete: "Paquete del cortabolsas", },
 			},
 			{
-			  nombre : "Matasanos",
+			  nombre : "Herborista",
 			  energia : 3,
 			  salud : 4,
 			  atributo: [ "SAB" ],

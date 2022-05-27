@@ -18,6 +18,7 @@
 	
 	
 	let clases = new Clases();
+	let tipopdf = 0;
 
 	let pj = new DH_PJ();
 	//let atributos = [];
@@ -121,6 +122,106 @@
 
 
 		xhr.open('GET', 'pdf/DungeonHackFichaAzul.pdf', true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}	
+	
+	function rellenaPDFAzul2() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		var competencias = '';
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = {
+					'Nombre' : [ pj.nombrepj + pj.genero ],
+					'Nivel' : [ 1 ],
+					'Clase' : [ pj.Clase.nombre ],
+					'CheckFUE' : [ pj.mFUE == -1 ? true : false],
+					'CheckDES' : [ pj.mDES == -1 ? true : false],
+					'CheckCON_2' : [ pj.mCON == -1 ? true : false],
+					'CheckCON' : [ pj.mINT == -1 ? true : false],
+					'CheckSAB' : [ pj.mSAB == -1 ? true : false],
+					'CheckCAR' : [ pj.mCAR == -1 ? true : false],
+					'FUE' : [ 21 - (pj.FUE + pj.mFUE) ],
+					'DES' : [ 21 - (pj.DES + pj.mDES) ],
+					'CON' : [ 21 - (pj.CON + pj.mCON) ],
+					'INT' : [ 21 - (pj.INT + pj.mINT) ],
+					'SAB' : [ 21 - (pj.SAB + pj.mSAB) ],
+					'CAR' : [ 21 - (pj.CAR + pj.mCAR) ],
+					'dFUE' : [ pj.FUE + pj.mFUE ],
+					'dDES' : [ pj.DES + pj.mDES ],
+					'dCON' : [ pj.CON + pj.mCON ],
+					'dINT' : [ pj.INT + pj.mINT ],
+					'dSAB' : [ pj.SAB + pj.mSAB ],
+					'dCAR' : [ pj.CAR + pj.mCAR ],
+					'NSALUD' : [ pj.Clase.salud ],
+					'NENERGIA' : [ pj.Clase.energia ],
+					'NCORDURA' : [ pj.Cordura ],
+					'Competencias' : [ document.getElementById("competencias").innerText ],
+					'Ventajas' : [ document.getElementById("ventajas").innerText ],
+					'Habilidades' : [ pj.Clase.lhabilidades ],
+					'Biografia' : [ document.getElementById("habilidades").innerText ],
+					'MonO' : [ pj.monO ],
+				};
+				
+				if ( pj._monO > 0 ) {
+					fields['MonO'] = [ pj._monO ];
+				}
+				if ( pj._monP > 0 ) {
+					fields['MonP'] = [ pj._monP ];
+				}
+				
+				
+				if ( pj._armas.length > 0 ) {
+					var indice = 0;
+					for (indice = 0; indice<pj._armas.length; indice++) {
+						fields["Arma" + (indice+1)] = [ pj._armas[indice].nombre ];
+						fields["Da#C3#B1o" + (indice+1) ] = [ pj._armas[indice].dano ];
+						if ( pj._armas[indice].du != "" ) {
+							fields["DU" + (indice+1) ] = [ pj._armas[indice].du ];
+						}
+						fields["PE" + (indice+1) ] = [ pj._armas[indice].penetracion ];
+					}
+				}
+				var nProteccion=1;
+				if ( pj._armadura != null ) {
+					fields["Proteccion" + nProteccion] = [ pj._armadura.nombre ];
+					fields["Absorcion" + nProteccion] = [ pj._armadura.absorcion ];
+					fields["PDU" + nProteccion] = [ pj._armadura.du ];
+					nProteccion++;
+				}
+				
+				if ( pj._escudo != null ) {
+					fields["Proteccion" + nProteccion] = [ pj._escudo.nombre ];
+					fields["Absorcion" + nProteccion] = [ pj._escudo.absorcion ];
+					fields["PDU" + nProteccion] = [ pj._escudo.du ];
+				}
+				
+				if ( pj._equipo != null) {
+					var indice = 0;
+					for (indice = 0; indice<pj._equipo.componentes.length; indice++) {
+						fields["Objeto" + (indice+1)] = [ pj._equipo.componentes[indice] ];
+					}
+				}
+				
+				if ( pj._conjuros.length > 0 ) {
+					var indice = 0;
+					for ( indice = 0; indice < pj._conjuros.length; indice++ ) {
+						fields[ 'Poder' + (indice+1) ] = [ pj._conjuros[indice] ];
+					}
+				}
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, pj.nombrepj + '.pdf'); // 'PersonajeDH.pdf');
+			}
+		};
+
+
+		xhr.open('GET', 'pdf/DungeonHackFichaAzul2.pdf', true);
 		xhr.responseType = 'arraybuffer';
 		xhr.setRequestHeader("Content-Type", "application/json");
 		xhr.send();		
@@ -237,7 +338,7 @@
 		document.getElementById("seccionequipo").style.visibility="hidden";
 		document.getElementById("descripcion").innerHTML="";
 		document.getElementById("botonpdf").style.visibility="hidden";
-		document.getElementById("botonpdfazul").style.visibility="hidden";
+		//document.getElementById("botonpdfazul").style.visibility="hidden";
 		document.getElementById("conjuros").style.visibility="hidden";
 		
 		var idx = thelist.selectedIndex;
@@ -619,7 +720,7 @@
 		
 		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> (" + pj.Clase.origen + ") - " + pj.nombrepj + pj.genero + "</center></p>";
 		document.getElementById("botonpdf").style.visibility="visible";
-		document.getElementById("botonpdfazul").style.visibility="visible";
+		//document.getElementById("botonpdfazul").style.visibility="visible";
 	}
 	
 	function descarga() {
@@ -629,6 +730,31 @@
 		jsonElem.setAttribute("download", "pj.json");
 		jsonElem.click();
 		
+	}
+	
+	function seleccionaPDF(thelist) {
+		tipopdf = thelist.selectedIndex;
+	}
+	
+	function cancelaPDF() {
+		document.getElementById('generapdf').style.display='none';
+	}
+	
+	function generaPDF() {
+		cancelaPDF();
+		if ( tipopdf == 0 ) {
+			rellenaPDF();
+		}
+		else if ( tipopdf == 1 ) {
+			rellenaPDFAzul();
+		}
+		else if ( tipopdf == 2 ) {
+			rellenaPDFAzul2();
+		}
+	}
+	
+	function eligePDF() {
+		document.getElementById('generapdf').style.display='block';
 	}
 	
 	function conclases() {
@@ -642,9 +768,11 @@
 		document.getElementById("seccionequipo").style.visibility="hidden";
 		document.getElementById("descripcion").innerHTML="";
 		document.getElementById("botonpdf").style.visibility="hidden";
-		document.getElementById("botonpdfazul").style.visibility="hidden";
+		//document.getElementById("botonpdfazul").style.visibility="hidden";
 		document.getElementById("conjuros").style.visibility="hidden";
 		
+		document.getElementById("generapdf").style.display="none";
+			
 		hayclases = 1;
 		document.getElementById("clases").innerHTML = sclases;
 		//document.getElementById("botonclase").innerHTML = "<p></p>";
@@ -664,6 +792,11 @@
 .minileft {
   float:left;
   width:11%;
+  padding:0 1px;
+}
+.dobleminileft {
+  float:left;
+  width:22%;
   padding:0 1px;
 }
 .main {
@@ -691,7 +824,7 @@
 
 @media only screen and (max-width:820px) {
   /* For mobile phones: */
-  .left, .minileft, .main, .right, .dostercios, .total {
+  .left, .minileft, .main, .dobleminileft, .right, .dostercios, .total {
     width:100%;
   }
   
@@ -707,8 +840,9 @@
 			<p><button class='w3-button w3-block w3-teal' onclick='conclases()'>Clases</button></p>
 		</div>
 		<div class="minileft"><p><button class='w3-button w3-block w3-brown' onclick='calcula()'>Calcula</button></p></div>
-		<div class="minileft" id="botonpdf"><p><button class='w3-button w3-block w3-brown' onclick='rellenaPDF()'>Genera PDF</button></p></div>
-		<div class="minileft" id="botonpdfazul"><p><button class='w3-button w3-block w3-brown' onclick='rellenaPDFAzul()'>Genera PDF Alternativo</button></p></div>
+		<div class="minileft" id="botonpdf"><p><button class='w3-button w3-block w3-brown' onclick='eligePDF()'>Genera PDF</button></p></div>
+		<!--<div class="minileft" id="botonpdfazul"><p><button class='w3-button w3-block w3-brown' onclick='rellenaPDFAzul()'>Genera PDF Alternativo</button></p></div>
+		<div class="minileft" id="botonpdfazul"><p><button class='w3-button w3-block w3-brown' onclick='rellenaPDFAzul2()'>Genera PDF Car vs Dif</button></p></div>-->
 		<div class="right" id="clase"><p></p></div>
 	</div>
 	<div style="overflow:auto">
@@ -755,7 +889,21 @@
 		</div>
 	</div>
 	
+	<div id="generapdf" class="w3-modal">
+	  <div class="w3-modal-content">
+		<div class="w3-container">
+				<h2>Tipo de PDF</h2>
+				<select class="w3-select"  name="tipospdf" onchange='seleccionaPDF(this)'>
+					<option>Modelo Clasico</option>
+					<option>Modelo Azul de Ylat</option>
+					<option>Modelo Azul de Ylat con alternativa de atributos "ascendentes"</option>
+				</select>
+				<input type="button" id="btnLoad" value="Generar PDF" onclick="generaPDF();">
+				<input type="button" id="btnCancel" value="Cancelar" onclick="cancelaPDF()">
+		</div>
+	  </div>
+	</div>
+	
 	<script>conclases();</script>
 </body>
 </html>
-
