@@ -15,6 +15,7 @@ class PJ {
 		this._dinero = 0;
 		this._tipoarmas = "d4";
 		this.armas = [];
+		this.salvaciones = [];
 	}
 	
 	tablaRequisitos() {
@@ -35,8 +36,8 @@ class PJ {
 		
 		var indice = 0;
 		var stabla = "<table class='w3-table  w3-striped w3-border'><tr><th><strong>Salvación</strong></th><th><strong>Valor</strong></th></tr>";
-		for (indice = 0; indice < this._objClase.tsalvacion.length; indice++) {
-			stabla += "<tr><td>" + this._objClase.tsalvacion[indice].nombre + "</td><td align='center'>" + this._objClase.tsalvacion[indice].valor + "</td></tr>";
+		for (indice = 0; indice < this.salvaciones.length; indice++) {
+			stabla += "<tr><td>" + this.salvaciones[indice].nombre + "</td><td align='center'>" + this.salvaciones[indice].valor + "</td></tr>";
 		}
 		
 		stabla += "</table>";
@@ -188,6 +189,20 @@ class PJ {
 		}
 	}
 	
+	calculaSalvaciones() {
+		this.salvaciones = [];
+		var indice = 0;
+		for (indice = 0; indice < this._objClase.tsalvacion.length; indice++) {
+			
+			var salvacion = { nombre: this._objClase.tsalvacion[indice].nombre, valor: parseInt(this._objClase.tsalvacion[indice].valor) };
+			
+			if ( salvacion.nombre == "Artefactos magicos" || salvacion.nombre == "Conjuros" ) {
+				salvacion.valor -= this._atributos._atributos[4].modif;
+			}
+			this.salvaciones.push(salvacion);
+		}
+	}
+	
 	calculaRasgosDerivadosBase(atributo) {
 		atributo = Math.trunc(atributo);
 		if ( atributo <= 1 && this._atributos._atributos[atributo].modif != this._atributos._atributos[atributo+1].modif) {
@@ -202,6 +217,7 @@ class PJ {
 		this._atqcc = this._objClase.ataque + this._atributos._atributos[0].modif + this._objClase.modifadicional[0];
 		this._atqad = this._objClase.ataque + this._objClase.ataquead + this._atributos._atributos[1].modif + this._objClase.modifadicional[1];
 		this.recalculaPericiasBasicas();
+		this.calculaSalvaciones();
 	}
 	
 	calculaArmas() {
@@ -221,6 +237,7 @@ class PJ {
 		this.calculaTipoArmas();
 		this.calculaArmas();
 		this._dinero = 6 * (Comun.random(8,1) + Comun.random(8,1) + Comun.random(8,1));
+		this.calculaSalvaciones();
 	}
 	
 	
@@ -261,7 +278,19 @@ class PJ {
 	}
 	
 	get plantillaPDF() {
-		if ( this._objClase.plantilla != "" ) {
+		if ( this._objClase.plantilla === undefined ) {
+			if ( this._conjuros.length > 0 ) {
+				return "pdf/AxisMundiC.pdf";
+			}
+			else {
+				return "pdf/AxisMundi.pdf";
+			}
+		}
+		else {
+			return "pdf/" + this._objClase.plantilla;
+		}
+		
+		/*if ( this._objClase.plantilla != "" ) {
 			return "pdf/" + this._objClase.plantilla;
 		}
 		else if ( this._conjuros.length > 0 ) {
@@ -269,7 +298,7 @@ class PJ {
 		}
 		else {
 			return "pdf/AxisMundi.pdf";
-		}
+		}*/
 	}
 		
 	rellenaPDF() {
@@ -294,11 +323,11 @@ class PJ {
 					'mINT' : [ this._atributos._atributos[3].modif + this._objClase.modifadicional[3] ],
 					'mSAB' : [ this._atributos._atributos[4].modif + this._objClase.modifadicional[4] ],
 					'mCAR' : [ this._atributos._atributos[5].modif + this._objClase.modifadicional[5] ],
-					'TSCaptura' : [ this._objClase.tsalvacion[0].valor ],
-					'TSAflicciones' : [ this._objClase.tsalvacion[1].valor ],
-					'TSAtqArea' : [ this._objClase.tsalvacion[2].valor ],
-					'TSArtMagicos' : [ this._objClase.tsalvacion[3].valor ],
-					'TSConjuros' : [ this._objClase.tsalvacion[4].valor ],
+					'TSCaptura' : [ this.salvaciones[0].valor ],
+					'TSAflicciones' : [ this.salvaciones[1].valor ],
+					'TSAtqArea' : [ this.salvaciones[2].valor ],
+					'TSArtMagicos' : [ this.salvaciones[3].valor ],
+					'TSConjuros' : [ this.salvaciones[4].valor ],
 					'Requisito' : [ this._objClase.reqprimario ],
 					'Barridos' : [ this._objClase.barridos ],
 					'DineroOro' : [ this._dinero ],

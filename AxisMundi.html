@@ -134,6 +134,7 @@
 		
 		document.getElementById("pericias").innerHTML = pj.tablaPericias();
 		document.getElementById("armas").innerHTML = pj.tablaArmas();
+		document.getElementById("salvaciones").innerHTML = pj.tablaSalvaciones();
 	}
 
 	function abajoatr(atributo) {
@@ -152,6 +153,7 @@
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
 		document.getElementById("pericias").innerHTML = pj.tablaPericias();
 		document.getElementById("armas").innerHTML = pj.tablaArmas();
+		document.getElementById("salvaciones").innerHTML = pj.tablaSalvaciones();
 	}
 	
 	function calculaConjuros() {
@@ -302,7 +304,7 @@
 		pjexport.sistema = "Axis Mundi";
 		pjexport.clase = pj._clase;
 		pjexport.atributos = pj._atributos._atributos;
-		pjexport.salvaciones = pj._objClase.tsalvacion;
+		pjexport.salvaciones = pj.salvaciones; //_objClase.tsalvacion;
 		
 		pjexport.pericias = [];
 		var indice=0;

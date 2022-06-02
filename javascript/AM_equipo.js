@@ -304,6 +304,12 @@ class Armas {
 				tipoAD: "",
 			},
 			{
+				nombre: "Sable dao",
+				tipo: "CaC",
+				tipoCaC: "Arma media", 
+				tipoAD: "",
+			},
+			{
 				nombre: "Daga",
 				tipo: "CaC",
 				tipoCaC: "Arma pequeña", 
@@ -334,9 +340,21 @@ class Armas {
 				tipoAD: "",
 			},
 			{
+				nombre: "Kusarigama",
+				tipo: "CaC",
+				tipoCaC: "Arma media", 
+				tipoAD: "Arrojadiza",
+			},
+			{
 				nombre: "Hacha de mano",
 				tipo: "CaC", 
 				tipoCaC: "Arma pequeña", 
+				tipoAD: "Arrojadiza",
+			},
+			{
+				nombre: "Hacha arrojadiza",
+				tipo: "CaC", 
+				tipoCaC: "Arma media", 
 				tipoAD: "Arrojadiza",
 			},
 			{
@@ -413,6 +431,18 @@ class Armas {
 			},
 			{
 				nombre: "Maza",
+				tipo: "CaC",
+				tipoCaC: "Arma media", 
+				tipoAD: "",
+			},
+			{
+				nombre: "Maza Xi Gua Chui",
+				tipo: "CaC",
+				tipoCaC: "Arma media", 
+				tipoAD: "",
+			},
+			{
+				nombre: "Lucero del alba",
 				tipo: "CaC",
 				tipoCaC: "Arma media", 
 				tipoAD: "",
