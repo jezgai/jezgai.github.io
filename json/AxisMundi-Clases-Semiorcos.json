@@ -1,0 +1,373 @@
+[
+  {
+    "nombre": "Semiorco explorador",
+    "requisitos": [
+      {
+        "atributo": "CON",
+        "valor": 9
+      },
+      {
+        "atributo": "FUE",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "CON",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "No pueden usar armaduras mejores que malla",
+      "Armadura natural, Infravisión, Golpe preciso",
+      "Rastreador, Bono: Puntería"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 2225,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [ "Orco", "Trasgo", "Gnoll" ],
+    "boniftipoarmas": 2,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": [
+        {
+          "nombre": "Supervivencia",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Cimitarra",
+        "Hacha arrojadiza"
+      ],
+      [
+        "Cimitarra",
+        "Arco corto"
+      ]
+    ]
+  },
+  {
+    "nombre": "Semiorco ermitaño",
+    "requisitos": [
+      {
+        "atributo": "CON",
+        "valor": 9
+      },
+      {
+        "atributo": "FUE",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "CON",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "No pueden usar ningún tipo de armadura ni escudos",
+      "Armadura natural, Infravisión, Golpe preciso, Escurridizo",
+      "Perspicacia, Furia de batalla, Armas naturales"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 2425,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [ "Orco", "Trasgo", "Gnoll" ],
+    "boniftipoarmas": 2,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": [ ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Sable dao",
+        "Kusarigama"
+      ],
+      [
+        "Maza Xi Gua Chui",
+        "Kusarigama"
+      ]
+    ]
+  },
+  {
+    "nombre": "Semiorco guardián",
+    "requisitos": [
+      {
+        "atributo": "FUE",
+        "valor": 11
+      }
+    ],
+    "reqprimario": "FUE",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Puede usar cualquier tipo de armadura",
+      "Armadura natural, Golpe preciso",
+      "Infravisión, Furia de batalla"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 3075,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [ "Orco", "Trasgo", "Gnoll" ],
+    "boniftipoarmas": 2,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": [
+        {
+          "nombre": "Supervivencia",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Cimitarra",
+        "Hacha arrojadiza"
+      ],
+      [
+        "Cimitarra",
+        "Lucero del alba"
+      ],
+      [
+        "Hacha de batalla",
+        "Lucero del alba"
+      ]
+    ]
+  },
+  {
+    "nombre": "Semiorco clérigo",
+    "requisitos": [
+      {
+        "atributo": "SAB",
+        "valor": 9
+      },
+      {
+        "atributo": "FUE",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "SAB",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Puede usar cualquier armadura",
+      "Solo puede usar armas romas y cuerpo a cuerpo",
+      "Armadura natural, Infravisión, Golpe preciso",
+      "Poder Expulsar no muertos"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 1825,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 15
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 11
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 12
+      }
+    ],
+    "idiomas": [ "Orco", "Trasgo", "Gnoll" ],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": -1,
+      "conjurosN1": [
+        "Curar heridas leves",
+        "Causar heridas leves",
+        "Detectar magia",
+        "Detectar bien",
+        "Detectar mal",
+        "Luz",
+        "Oscuridad",
+        "Palabra de mando",
+        "Protección contra el mal",
+        "Purificar comida y agua",
+        "Pudrir comida y agua",
+        "Resistir frío",
+        "Retirar miedo",
+        "Causar miedo",
+        "Santuario"
+      ],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Cimitarra",
+        "Martillo ligero"
+      ],
+      [
+        "Lucero del alba",
+        "Hacha arrojadiza"
+      ],
+      [
+        "Cimitarra",
+        "Maza"
+      ]
+    ]
+  }
+]
