@@ -227,6 +227,14 @@ class Armas {
 				alcance: 6,
 			},
 			{
+				nombre: "Arrojadiza media",
+				tipo: "AD",
+				dano: 6,
+				peso: 1000,
+				precio: 100,
+				alcance: 5,
+			},
+			{
 				nombre: "Dardo",
 				tipo: "AD",
 				dano: 4,
@@ -343,7 +351,7 @@ class Armas {
 				nombre: "Kusarigama",
 				tipo: "CaC",
 				tipoCaC: "Arma media", 
-				tipoAD: "Arrojadiza",
+				tipoAD: "Arrojadiza media",
 			},
 			{
 				nombre: "Hacha de mano",
@@ -355,7 +363,7 @@ class Armas {
 				nombre: "Hacha arrojadiza",
 				tipo: "CaC", 
 				tipoCaC: "Arma media", 
-				tipoAD: "Arrojadiza",
+				tipoAD: "Arrojadiza media",
 			},
 			{
 				nombre: "Martillo ligero",
