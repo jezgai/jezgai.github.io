@@ -48,14 +48,14 @@ class Rasgos {
 						"Críptica", "Dialectal", "Entrecortada", "Explosiva", "Florida",
 						"Formal", "Grave", "Incoherente", "Lenta", "Pintoresca",
 						"Precisa", "Rápida", "Ronca", "Susurrante", "Tartamuda" ];
-		this.virtud = [ "", "", "", "", "", 
-							"", "", "", "", "",
-							"", "", "", "", "",
-							"", "", "", "", "" ];
-		this.trasfondo = [ "", "", "", "", "", 
-							"", "", "", "", "",
-							"", "", "", "", "",
-							"", "", "", "", "" ];
+		this.virtud = [ "Ambición", "Atención", "Cautela", "Corrección", "Curiosidad",
+						"Disciplina", "Educación", "Estoicismo", "Generosidad", "Honestidad",
+						"Honorabilidad", "Humildad", "Idealismo", "Justicia", "Lealtad",
+						"Misericordia", "Serenidad", "Sociabilidad", "Tolerancia", "Valentía" ];
+		this.trasfondo = [ "Alquimista", "Carnicero", "Carterista", "Charlatán", "Clérigo",
+							"Cocinero", "Comerciante", "Contrabandista", "Cultista", "Estudiante",
+							"Forajido", "Herbolario", "Intérprete", "Jugador", "Ladrón",
+							"Mago", "Marinero", "Mendigo", "Mercenario", "Rastreador" ];
 		this.vicio = [ "", "", "", "", "", 
 							"", "", "", "", "",
 							"", "", "", "", "",

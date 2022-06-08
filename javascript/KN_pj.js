@@ -78,9 +78,9 @@ class PJ {
 	
 	tablaEquipo() {
 		var i = 0;
-		var stabla = "<table class='w3-table  w3-striped w3-border'><tr><th>Objeto</th><th>Huecos</th></tr>";
+		var stabla = "<table class='w3-table  w3-striped w3-border'><tr><th>Objeto</th></tr>"; //<th>Huecos</th></tr>";
 		for (i = 0; i < this.equipo.length; i++) {
-			stabla += "<tr><td>" + this.equipo[i] + "</td><td align='center'></td></tr>";
+			stabla += "<tr><td>" + this.equipo[i] + "</td></tr>"; //<td align='center'></td></tr>";
 		}
 		
 		stabla += "</table>";
