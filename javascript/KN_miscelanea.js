@@ -24,46 +24,46 @@ class Rasgos {
 		this.alineamientos = [ { alineamiento: "Legal", valor: 5},
 							   { alineamiento: "Neutral", valor: 15},
 							   { alineamiento: "Caótico", valor: 20}];
-		this.fisico = [ "Atlético", "Cimbreño", "Corpulento", "Corto", "Delicado",
-						"Demacrado", "Descarnado", "Destacado", "Enérgico", "Esbelto", 
-						"Escultural", "Flácido", "Fuerte", "Grueso", "Larguirucho",
-						"Musculoso", "Nervioso", "Pequeño", "Rasgado", "Resistente" ];
-		this.cara = [ "Aguda", "Alargada", "Ancha", "Cincelada", "De rata",
-					"Cuadrada", "De halcón", "De halcón", "Delicada", "Embotada",
-					"Estrecha", "Hinchada", "Huesuda", "Hundida", "Imbécil",
-					"Patricio", "Pellizcada", "Redonda", "Rota", "Suave" ];
-		this.piel = [ "Aceitosa", "Apestosa", "Bronceada", "Cetriza", "Cicatriz de batalla",
-						"Cicatriz de látigo", "Cicatriz quemadura", "Curtida", "Maquillaje", "Marca nacimiento",
-						"Oscura", "Pálida", "Perfecta", "Perforada", "Picada de viruela",
-						"Pintura de Guerra", "Quemada por el sol", "Rosada", "Rugosa", "Tatuada" ];
-		this.pelo = [ "Aceitoso", "Calvo", "Cola de caballo", "Cresta", "Despeinado",
-						"Engrasado", "Hirsuto", "Lacio", "Largo", "Lujoso",
-						"Moño", "Muy rizado", "Ondulado", "Rastas", "Recortado",
-						"Rizado", "Sedoso", "Sucio", "Tenue", "Trenzado" ];
-		this.vestimenta = [ "A la moda", "Antiguas", "Ceremoniales", "Decoradas", "Desaliñadas",
-							"Desgarradas", "Deshilachadas", "De talla inferior", "De talla mayor", "Elegantes",
-							"Ensangrentadas", "Excéntricas", "Extranjeras", "Extravagantes", "Librea",
-							"Manchadas", "Parcheadas", "Perfumadas", "Rancias", "Sucias" ];
-		this.habla = [ "Arrastrada", "Balbuceante", "Ceceante", "Chillona", "Contundente",
-						"Críptica", "Dialectal", "Entrecortada", "Explosiva", "Florida",
-						"Formal", "Grave", "Incoherente", "Lenta", "Pintoresca",
-						"Precisa", "Rápida", "Ronca", "Susurrante", "Tartamuda" ];
-		this.virtud = [ "Ambición", "Atención", "Cautela", "Corrección", "Curiosidad",
-						"Disciplina", "Educación", "Estoicismo", "Generosidad", "Honestidad",
-						"Honorabilidad", "Humildad", "Idealismo", "Justicia", "Lealtad",
-						"Misericordia", "Serenidad", "Sociabilidad", "Tolerancia", "Valentía" ];
-		this.trasfondo = [ "Alquimista", "Carnicero", "Carterista", "Charlatán", "Clérigo",
-							"Cocinero", "Comerciante", "Contrabandista", "Cultista", "Estudiante",
-							"Forajido", "Herbolario", "Intérprete", "Jugador", "Ladrón",
-							"Mago", "Marinero", "Mendigo", "Mercenario", "Rastreador" ];
-		this.vicio = [ "", "", "", "", "", 
-							"", "", "", "", "",
-							"", "", "", "", "",
-							"", "", "", "", "" ];
-		this.desdicha = [ "", "", "", "", "", 
-							"", "", "", "", "",
-							"", "", "", "", "",
-							"", "", "", "", "" ];
+		this.fisico = [ "Atlético", "Musculoso", "Corpulento", "Delicado", "Demacrado",
+						"Grueso", "Larguirucho", "Fibrado", "Tosco", "Flaco",
+						"Bajito", "Nervudo", "Esbelto", "Flácido", "Atractivo",
+						"Fuerte", "Pequeño", "Imponente", "Flexible", "Nervioso" ];
+		this.cara = [ "Hinchada", "Franca", "Huesuda", "Cincelada", "Delicada",
+						"Alargada", "De patricio", "Picada", "Aguileña", "Rota",
+						"Traviesa", "Delgada", "Ratuna", "Redonda", "Hundida",
+						"Afilada", "Suave", "Cuadrada", "Ancha", "Lobuna"];
+		this.piel = [ "Cicatriz de guerra", "Marca nacimiento", "Quemadura", "Oscura", "Maquillada",
+						"Aceitosa", "Pálida", "Perfecta", "Piercings", "Marcas de viruela",
+						"Hedionda", "Tatuada", "Rosada", "Rugosa", "Cetrina",
+						"Quemada al sol", "Bronceada", "Pintura guerra", "Curtida", "Cicatriz de látigo" ];
+		this.pelo = [ "Calvo", "Trenzado", "Erizado", "Recortado", "Ensortijado",
+						"Despeinado", "Rastas", "Sucio", "Rizado", "Grasiento",
+						"Flácido", "Largo", "Lujoso", "Cresta", "Aceitoso",
+						"Coleta", "Sedoso", "Moño", "Ondulado", "Ralo" ];
+		this.ropaje = [ "Antiguo", "Ensangrentado", "Ceremonial", "Decorado", "Excéntrico",
+						"Elegante", "A la moda", "Inmundo", "Extravagante", "Manchado",
+						"Extranjero", "Raído", "Desaliñado", "Librea", "Sobredimensionado",
+						"Remendado", "Perfumado", "Rancio", "Rasgado", "Estrecho" ];
+		this.habla = [ "Contundente", "Vozarrón", "Entrecortada", "Críptica", "Arrastrada",
+						"Ahogada", "Florida", "Formal", "Grave", "Ronca",
+						"Murmurosa", "Precisa", "Pintoresca", "Divagante", "Trepidante",
+						"Dialecto", "Lenta", "Chirriante", "Tartamudeo", "Susurro" ];
+		this.virtud = [ "Ambicioso", "Cauto", "Valiente", "Cortés", "Curioso",
+						"Disciplinado", "Atento", "Generoso", "Gregario", "Honesto",
+						"Honorable", "Humilde", "Idealista", "Justo", "Leal",
+						"Piadoso", "Honrado", "Sereno", "Estoico", "Tolerante" ];
+		this.trasfondo = [ "Alquimista", "Mendigo", "Carnicero", "Ladrón", "Charlatán",
+							"Clérigo", "Cocinero", "Cultista", "Jugador", "Herborista",
+							"Mago", "Marinero", "Mercenario", "Mercader", "Proscrito",
+							"Artista", "Carterista", "Contrabandista", "Estudiante", "Rastreador" ];
+		this.vicio = [ "Agresivo", "Arrogante", "Amargado", "Cobarde", "Cruel",
+						"Mentiroso", "Poco serio", "Glotón", "Engreído", "Irascible",
+						"Perezoso", "Nervioso", "Parcial", "Temerario", "Rudo",
+						"Sospechoso", "Vano", "Vengativo", "Derrochador", "Quejumbroso" ];
+		this.desgracia = [ "Abandonado", "Adicto", "Chantajeado", "Condenado", "Maldito",
+							"Defraudado", "Degradado", "Desacreditado", "Repudiado", "Exiliado",
+							"Incriminado", "Cazado", "Secuestrado", "Mutilado", "Pobre",
+							"Perseguido", "Rechazado", "Reemplazado", "Robado", "Sospechoso" ];
 	}
 	
 	alineamiento() {
@@ -86,12 +86,12 @@ class Rasgos {
 		rasgospj.push("Piel: " + this.piel[Comun.random(20,0)]);
 		rasgospj.push("Pelo: " + this.pelo[Comun.random(20,0)]);
 		
-		rasgospj.push("Vestimenta: " + this.vestimenta[Comun.random(20,0)]);
+		rasgospj.push("Ropaje: " + this.ropaje[Comun.random(20,0)]);
 		rasgospj.push("Habla: " + this.habla[Comun.random(20,0)]);
 		rasgospj.push("Virtud: " + this.virtud[Comun.random(20,0)]);
 		rasgospj.push("Trasfondo: " + this.trasfondo[Comun.random(20,0)]);
 		rasgospj.push("Vicio: " + this.vicio[Comun.random(20,0)]);
-		rasgospj.push("Desdicha: " + this.desdicha[Comun.random(20,0)]);
+		rasgospj.push("Desgracia: " + this.desgracia[Comun.random(20,0)]);
 		
 		return rasgospj;
 		
