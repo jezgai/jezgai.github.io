@@ -35,7 +35,7 @@
 <script>
 
   var tablas = {};
-  
+  var indiceresultado = 1;
 
   function loadFile() {
     var input, file, fr;
@@ -105,7 +105,12 @@
 	  var resultadotirada = "";
 	  if ( tablas.tablas[indice].ocultartirada != "S" )
 			resultadotirada = "(" +numero + ") - ";
-	  var resultado = "<b>" + tablas.tablas[indice].titulo + "</b>:<br/>" + resultadotirada + tablas.tablas[indice].resultados[iresultado].texto
+	  //var resultado = "<b>" + tablas.tablas[indice].titulo + "</b>:<br/>" + resultadotirada + tablas.tablas[indice].resultados[iresultado].texto
+	  
+	  var resultado = "<button onclick=" + '"' + "acordeon('resultado" + indiceresultado + "')" + '"' + " class='w3-button w3-block w3-left-align w3-blue'>" + tablas.tablas[indice].titulo + "</button>";
+	  resultado += "<div id='resultado" + indiceresultado + "' class='w3-hide w3-container'>" + resultadotirada + tablas.tablas[indice].resultados[iresultado].texto;
+	    
+	  
 	  
 	  if ( tablas.tablas[indice].resultados[iresultado].resultados != null ) {
 		  var subtotal = obtienetotaltabla(tablas.tablas[indice].resultados[iresultado].resultados);
@@ -113,10 +118,27 @@
 		  var isub = obtieneresultado(tablas.tablas[indice].resultados[iresultado].resultados, subtotal, numero);
 		  resultado += "<br>" + tablas.tablas[indice].resultados[iresultado].resultados[isub].texto;
 	  }
-	  document.getElementById("resultado").innerHTML = resultado;
+	  resultado += "</div>";
+	  if ( indiceresultado > 1 ) {
+		  var indice=1;
+		  for (indice=1; indice<indiceresultado; indice++)
+			oculta('resultado' + (indice));
+	  }
+	  
+	  document.getElementById("resultado").innerHTML = resultado + document.getElementById("resultado").innerHTML;
+	  
+	  muestra('resultado' + indiceresultado);
+	  
+	  indiceresultado++;
+  }
+  
+  function limpiaresultados() {
+	  indiceresultado = 1;
+	  document.getElementById("resultado").innerHTML = "";
   }
   
   function muestraTablas() {
+	  
 	  var contenido = "<center><h2>";
 	  if (tablas.url != "")
 		  contenido +="<a href=\'" + tablas.url + "' target='_blank' >" ;
@@ -125,7 +147,9 @@
 		  contenido += "</a>";
 	  contenido += "</h2></center>";
 	  document.getElementById("titulo").innerHTML = contenido;
-	  var contenido = "<table class='w3-table  w3-striped w3-border'>";
+	  
+	  contenido = "<button onclick='limpiaresultados()' class='w3-button w3-block w3-left-align w3-blue'>Limpiar resultados</button>";
+	  contenido += "<table class='w3-table  w3-striped w3-border'>";
 	  var itabla=0;
 		for (itabla=0; itabla< tablas.tablas.length; itabla++) {
 			var dado = "&#9752;"; //"1d" + tablas.tablas[itabla].resultados.length;
@@ -160,6 +184,30 @@
 		document.getElementById("resultado").innerHTML = "";
 		document.getElementById("listatablas").innerHTML = "";
   }	
+  
+  function acordeon(id) {
+	var x = document.getElementById(id);
+	if (x.className.indexOf("w3-show") == -1) {
+		x.className += " w3-show";
+	} else { 
+		x.className = x.className.replace(" w3-show", "");
+	}
+  }
+	
+  function muestra(id) {
+		var x = document.getElementById(id);
+		if (x.className.indexOf("w3-show") == -1) {
+			x.className += " w3-show";
+		}
+  }
+	
+  function oculta(id) {
+		var x = document.getElementById(id);
+		if (x.className.indexOf("w3-show") != -1) {
+			x.className = x.className.replace(" w3-show", "");
+		}
+  }
+  
 </script>
 
 <style>
