@@ -16,8 +16,7 @@
             {
                 "titulo": "Rumores falsos",
                 "url": "",
-                "resultados": [ {"peso": "1", "texto": "Una horda de guerreros al servicio del Dios Azul se"},
-                                {"peso": "1", "texto": "prepara para atacar desde Gökday Baq."},
+                "resultados": [ {"peso": "1", "texto": "Una horda de guerreros al servicio del Dios Azul se prepara para atacar desde Gökday Baq."},
                                 {"peso": "1", "texto": "Un noble exiliado de Endo se ha apoderado de Gökday Baq por la fuerza."},
                                 {"peso": "1", "texto": "Todo el que duerme en Gökday Baq cambia de forma horrible."},
                                 {"peso": "1", "texto": "Gökday Baq está lleno de enormes serpientes."},
