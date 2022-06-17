@@ -161,6 +161,38 @@
                         {"peso": "1", "texto": "Ropa interior embrujada. Permiten al que la lleve repetir una tirada fallida, pero entonces debe ser embrujada de nuevo."},
                         {"peso": "1", "texto": "Calcetines élficos. Hace más sigiloso a aquel que los lleve sin ningún otro tipo de calzado. Están por lavar."},
                         {"peso": "1", "texto": "Almidón extrafuerte. Básicamente, un buen chorro puede dejar a alguien petrificado para siempre."} ]
+            },
+            {
+                "titulo": "Explicaciones para el retorno de los dinosaurios",
+                "url": "http://paladinenelinfierno.blogspot.com/2017/04/1d12-razones-para-el-retorno-de-los.html",
+                "resultados": [ {"peso": "1", "texto": "Alquimistas locos. Siempre tiene que ser alquimistas locos."},
+                                {"peso": "1", "texto": "Son una proyección de la imaginación colectiva. ¿Pero tienen algo que ver todas esas personas regalando libros ilustrados?"},
+                                {"peso": "1", "texto": "La nobleza los importaba como mascotas de las islas del Sur, pero los soltaban cuando se hacían demasiado grandes y claro..."},
+                                {"peso": "1", "texto": "Llevan millones de años esperando bajo tierra para recuperar su imperio y ahora han visto un momento propicio para atacar."},
+                                {"peso": "1", "texto": "Llegan del espacio en un meteorito. Lo que el espacio te quita, el espacio te lo da."},
+                                {"peso": "1", "texto": "Un brujo loco ha creado un conjuro que convierte a la gente en dinosaurios y lo está usando aleatoriamente."},
+                                {"peso": "1", "texto": "Se han vuelto muy populares entre los estudiantes del Real Colegio de Invocadores."},
+                                {"peso": "1", "texto": "Es lo que pasa cuando un nigromante combina su trabajo con su pasión por la arqueología."},
+                                {"peso": "1", "texto": "Aparecen en fluctuaciones temporales provocadas por las guerras de los Amos del Tiempo en el lejano futuro y el lejano pasado a la vez."},
+                                {"peso": "1", "texto": "Muchos quedaron conservados en el hielo de las tierras del Norte, y ahora que se está descongelando..."},
+                                {"peso": "1", "texto": "Sus almas se han seguido reencarnando hasta nosotros hoy en día y un poderoso hechicero ha encontrado la forma de introducirlas en cuerpos mecánicos."},
+                                {"peso": "1", "texto": "Una gigantesca fuerza invasora salida de un Valle Oculto los usa como monturas y bestias de guerra."} ]
+            },
+            {
+                "titulo": "Planes condenados al fracaso del rey elfo",
+                "url": "http://paladinenelinfierno.blogspot.com/2017/04/1d12-planes-condenados-al-fracaso-del.html",
+                "resultados": [ {"peso": "1", "texto": "Reemplazar a todos los niños humanos por larvas gigantes. «Seguro que no notan la diferencia, son idénticos»."},
+                                {"peso": "1", "texto": "Introducir solapadamente superdroga élfica en el mercado para que los humanos estén demasiado enganchados para luchar. La superdroga es cicuta."},
+                                {"peso": "1", "texto": "Atacar mientras los humanos duermen. «Están durmiendo todo el tiempo, ¿verdad? No debe ser difícil pillarlos desprevenidos»."},
+                                {"peso": "1", "texto": "Comprar a perros y caballos influyentes en la comunidad humana para que exageren el potencial bélico de los elfos."},
+                                {"peso": "1", "texto": "Secuestrar al rey humano y vestir un saco de cuervos vivos con sus ropas. «Atacaremos mientras su sociedad se viene abajo»."},
+                                {"peso": "1", "texto": "Difundir entre la juventud humana propaganda inflamatoria acerca de cómo deben dudar de cualquiera con menos de 120 años para minar su tejido social."},
+                                {"peso": "1", "texto": "Enviar a los exploradores más sigilosos a robar pequeños objetos y cambiar otros de sitio para, con el paso de los siglos, volver a los humanos totalmente locos."},
+                                {"peso": "1", "texto": "Enviar a elfos y elfas atractivos a seducir a humanos de forma que no puedan volver a enamorarse de otros humanos y las acusaciones de adulterio minen su moral."},
+                                {"peso": "1", "texto": "Confeccionar poemas nihilistas en el que se demuestra que lo que los humanos valoran y desean es insignificante comparado con la enormidad del universo. «Sí, un millón de versos bastarán»."},
+                                {"peso": "1", "texto": "Escoger a jóvenes especialmente crédulos y entregarles grandes cantidades de dinero a cambio de 'buenas obras' para producir una inflación galopante a largo plazo."},
+                                {"peso": "1", "texto": "Sobornar a altos cargos con lo único más valioso que el oro: nueces. Deliciosas, deliciosas nueces."},
+                                {"peso": "1", "texto": "Difundir novelas que hagan pensar a los humanos que los elfos son afeminados para pillarlos con la guardia baja."} ]
             }
     ]
 }

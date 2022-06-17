@@ -36,6 +36,7 @@
 
   var tablas = {};
   var indiceresultado = 1;
+  var indicetablas = 1;
 
   function loadFile() {
     var input, file, fr;
@@ -129,6 +130,7 @@
 			resultadotirada = "(" +numero + ") - ";
 	  //var resultado = "<b>" + tablas.tablas[indice].titulo + "</b>:<br/>" + resultadotirada + tablas.tablas[indice].resultados[iresultado].texto
 	  
+	  
 	  var resultado = "<button onclick=" + '"' + "acordeon('resultado" + indiceresultado + "')" + '"' + " class='w3-button w3-block w3-left-align w3-blue'>" + tablas.tablas[indice].titulo + "</button>";
 	  resultado += "<div id='resultado" + indiceresultado + "' class='w3-hide w3-container'>" + resultadotirada + tablas.tablas[indice].resultados[iresultado].texto;
 	    
@@ -161,16 +163,26 @@
   
   function muestraTablas() {
 	  
-	  var contenido = "<center><h2>";
+	  /*var contenido = "<center><h2>";
 	  if (tablas.url != "")
 		  contenido +="<a href=\'" + tablas.url + "' target='_blank' >" ;
 	  contenido += tablas.titulo;
 	  if (tablas.url != "")
 		  contenido += "</a>";
 	  contenido += "</h2></center>";
-	  document.getElementById("titulo").innerHTML = contenido;
+	  document.getElementById("titulo").innerHTML = contenido;*/
 	  
-	  contenido = "<button onclick='limpiaresultados()' class='w3-button w3-block w3-left-align w3-blue'>Limpiar resultados</button>";
+	  //var contenido = "<div class='dostercios'><h2>Tablas aleatorias</h2></div><div class='tercio'<center><button onclick='limpiaresultados()' class='w3-button w3-block w3-center-align w3-blue'>Limpiar resultados</button></center></div>";
+	  //document.getElementById("titulo").innerHTML = contenido;
+	  
+	  if (document.getElementById('caddtablas').checked == false) 
+		indicetablas = 1;
+	  
+	  var contenido = "<button onclick=" + '"' + "acordeon('tabla" + indicetablas + "')" + '"' + " class='w3-button w3-block w3-left-align w3-blue'>" + tablas.titulo + "</button>";
+	  contenido += "<div id='tabla" + indicetablas + "' class='w3-hide w3-container'>";
+	  if ( tablas.url != "" )
+		   contenido += "<h2><a href='" + tablas.url + "' target='_blank' >" + tablas.titulo + "</a></h2>";
+	    	
 	  contenido += "<table class='w3-table  w3-striped w3-border'>";
 	  var itabla=0;
 		for (itabla=0; itabla< tablas.tablas.length; itabla++) {
@@ -190,7 +202,14 @@
 			contenido += "</td></tr>";
 		}
 	  contenido += "</table>";
+	  contenido += "</div>";
+	  
+	  if (document.getElementById('caddtablas').checked == true) 
+		contenido = document.getElementById("listatablas").innerHTML + contenido;
 	  document.getElementById("listatablas").innerHTML = contenido;
+	  muestra('tabla' + indicetablas);  
+	  indicetablas++;
+	  muestra('limpiaresultados');
   }
 
   function inicial() {
@@ -285,10 +304,16 @@
 	<div style="overflow:auto">
 		<div class="microleft" id="botoncargaclases"><p><button class='w3-button w3-block w3-blue' onclick='muestraventanacargatablas()'>Carga de fichero de Tablas</button></p></div>
 		<div class="microleft" id="botoncargavestirdungeon"><p><button class='w3-button w3-block w3-blue' onclick="cargatablas('Tablas-Vestir-un-Dungeon.json')">Tablas Vestir Dungeon</button></p></div>
-		<div class="microleft" id="botoncargavestirdungeon"><p><button class='w3-button w3-block w3-blue' onclick="cargatablas('Tablas-d12-Paladin.json')">Un paladín en el infierno (1-10)</button></p></div>
-		<div class="total" id="titulo"></div>
+		<div class="microleft" id="botoncargapaladin"><p><button class='w3-button w3-block w3-blue' onclick="cargatablas('Tablas-d12-Paladin.json')">Un paladín en el infierno (1-12)</button></p></div>
+		<div class="microleft" id="botoncargadiosazul"><p><button class='w3-button w3-block w3-blue' onclick="cargatablas('Tablas-Dios-Azul.json')">Incursión a la tierra del Dios Azul</button></p></div>
+		<div class="microleft"><br/><input type="checkbox" id="caddtablas" name="AddTablas" value="AddTablas">
+			<label for="caddtablas">Añadir tablas</label>
+		</div>
 		<div class="dostercios" id="listatablas"></div>
-		<div class="tercio" id="resultado"></div>
+		<div class="tercio" >
+			<button id="limpiaresultados" onclick="limpiaresultados()" class="w3-hide w3-button w3-block w3-center-align w3-blue">Limpiar resultados</button>
+			<div id="resultado"></div>
+		</div>
 		<!--<div class="total" id="cargajson"></div>-->
 	</div>
 	

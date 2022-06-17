@@ -1,0 +1,103 @@
+{
+    "titulo": "Tablas de Incursión a la tierra del Dios Azul",
+    "url": "https://codexdelamarca.com/posts/b5-incursion-a-la-tierra-del-dios-azul/",
+    "tablas": [
+            {
+                "titulo": "Rumores ciertos",
+                "url": "",
+                "resultados": [ {"peso": "1", "texto": "Una gran cantidad de guerreros nómadas se ha reunido en el interior de Gökday Baq."},
+                                {"peso": "1", "texto": "Un jefe de clan caído en desgracia ha fundado un culto en honor al Dios Azul."},
+                                {"peso": "1", "texto": "Todo el que duerme en Gökday Baq sueña con el Dios Azul y sus heridas sanan."},
+                                {"peso": "1", "texto": "Hay lobos horribles y mutados en las proximidades de Gökday Baq."},
+                                {"peso": "1", "texto": "En lo profundo de Gökday Baq hay un gran edificio de hierro."},
+                                {"peso": "1", "texto": "En las proximidades de Gökday Baq a veces se ven elfos con extrañas armaduras."}
+                ]
+            },
+            {
+                "titulo": "Rumores falsos",
+                "url": "",
+                "resultados": [ {"peso": "1", "texto": "Una horda de guerreros al servicio del Dios Azul se"},
+                                {"peso": "1", "texto": "prepara para atacar desde Gökday Baq."},
+                                {"peso": "1", "texto": "Un noble exiliado de Endo se ha apoderado de Gökday Baq por la fuerza."},
+                                {"peso": "1", "texto": "Todo el que duerme en Gökday Baq cambia de forma horrible."},
+                                {"peso": "1", "texto": "Gökday Baq está lleno de enormes serpientes."},
+                                {"peso": "1", "texto": "En lo profundo de Gökday Baq hay extrañas cúpulas élficas."},
+                                {"peso": "1", "texto": "Es otro plan de conquista del rajá de Nirmala."}
+                ]
+            },
+            {
+                "titulo": "Mutaciones",
+                "url": "",
+                "ocultartirada": "S",
+                "resultados": [ {"peso": "1", "texto": "2. Se vuelve increíblemente frágil, sus Puntos de Golpe máximos son ahora iguales a su nivel más su bono de CON por cada uno. Si sube de nivel, solo ganará 1PG+CON."},
+                                {"peso": "2", "texto": "3. Se le disuelven los ojos entre inmensos dolores."},
+                                {"peso": "3", "texto": "4. Desarrolla branquias y solo puede respirar bajo el agua. Debe introducir la cabeza en ella cada diez minutos o se ahogará."},
+                                {"peso": "4", "texto": "5. Se le unen los dedos de una mano, dejándola inutilizada."},
+                                {"peso": "5", "texto": "6. Su lengua se vuelve larga y prensil como la de un camaleón, pero ya no puede hablar."},
+                                {"peso": "6", "texto": "7. Se lanza 1d6 adicional: " , "resultados": 
+                                [ {"peso": "1", "texto": "Tu brazo derecho se convierte en tentáculo" },
+                                  {"peso": "1", "texto": "Tu brazo izquierdo se convierte en tentáculo" },
+                                  {"peso": "2", "texto": "Ambos brazos se convierten en tentáculos" },
+                                  {"peso": "2", "texto": "Tus piernas se unen en una cola de serpiente" } ] },
+                                {"peso": "5", "texto": "8. Obtiene garras, puede hacer un ataque desarmado de 1d6 puntos de daño. "},
+                                {"peso": "4", "texto": "9. Sufre gigantismo, gana un +1 a Fuerza y Constitución."},
+                                {"peso": "3", "texto": "10. Sus ojos se salen de las órbitas, pero siguen conectados mediante tallos que puede mover. Puede girarlos 360 grados, independientemente, y alejarlos hasta 15 centímetros."},
+                                {"peso": "2", "texto": "11. Puede vomitar ácido a la misma distancia que arrojar una daga. Su lengua queda inmediatamente destrozada."},
+                                {"peso": "1", "texto": "12. Una de sus manos se vuelve brillante y puede disparar rayos láser por ella que hacen 1d10 puntos de daño. Puede disparar tantos como su nivel al día, cada rayo adicional le inflige 6 puntos de daño. La mano queda incapacitada para cualquier otra tarea."}
+                ]
+            },
+            {
+                "titulo": "Encuentros en la Llanura de Geniges",
+                "url": "",
+                "resultados": [ {"peso": "2", "texto": "Manada de lobos mutados."},
+                                {"peso": "1", "texto": "Ogro mutado."},
+                                {"peso": "1", "texto": "Pequeño grupo de nómadas. Si sale 1-2 en 1d6 pueden aportar un rumor adicional sobre Gökday Baq. Además,pueden vender a los aventureros algunas provisiones y material básico."},
+                                {"peso": "1", "texto": "Oboo. Un montículo de rocas con valor religioso para los nómadas. Si los aventureros han contratado mercenarios nómadas, ellos insistirán en que hay que dejar en él una ración por cada dos personas en el grupo y rodearlo para atraer la buena suerte en el viaje. Si los aventureros se niegan, los mercenarios perderán un punto permanente de moral. Si lo hacen, recibirán la posibilidad de que cualquiera del grupo pueda repetir una única tirada una vez en lo que queda de módulo."},
+                                {"peso": "1", "texto": "Oboo maligno. Un montículo similar al anterior, pero hecho con cráneos y ofrecido a poderes malignos. Si los aventureros han contratado mercenarios nómadas, ellos insistirán en dedicar medio día a desmantelarlo y dar sepultura a los restos. Si los aventureros se niegan, los mercenarios perderán dos puntos permanentes de moral. Si acceden, podrán repetir tres tiradas a lo largo del módulo como ya se expuso anteriormente."},
+                                {"peso": "1", "texto": "1d6+1 nómadas (guerreros de nivel 1) armados con arcos y a caballo, que se dirigen a Gökday Baq. Quieren unirse al Qatchak Bey y aguardar con él el despertar del Dios Azul porque han recibido los sueños."},
+                                {"peso": "1", "texto": "El grupo de samuráis de Endo."}
+                ]
+            },
+            {
+                "titulo": "Encuentros en Gökday Baq",
+                "url": "",
+                "resultados": [ {"peso": "1", "texto": "Manada de lobos mutados (si este encuentro ya tuvo lugar, vuelve a tirar de nuevo)."},
+                                {"peso": "1", "texto": "Ogro mutado (si este encuentro ya se ha producido, vuelve a tirar de nuevo)."},
+                                {"peso": "1", "texto": "El grupo de samuráis de Endo (hay un 50% de posibilidades de que hayan perdido a 1d2 de sus miembros)."},
+                                {"peso": "1", "texto": "Patrulla de Qatchak Bey (1d3+3 nómadas mutados, guerreros de nivel 2)."},
+                                {"peso": "1", "texto": "Loit, el nómada-halcón, reconociendo el terreno desde el cielo."},
+                                {"peso": "1", "texto": "Loit, el nómada-halcón, reconociendo el terreno desde el cielo."},
+                                {"peso": "1", "texto": "2d6 sproutkins (descritos en la sala 25)."},
+                                {"peso": "1", "texto": "1d6 sapos murciélago (descritos en la sala 25)."}
+                ]
+            },
+            {
+                "titulo": "Encuentros de Monstruos errantes",
+                "url": "",
+                "resultados": [ {"peso": "1", "texto": "Limo verde (ver Pasillo Beta (2))."},
+                                {"peso": "1", "texto": "1d6+1 acosadores (ver Puente de armamento (12))."},
+                                {"peso": "1", "texto": "1d6 nómadas zombis deambulando (ver Pasillo Beta (2))."},
+                                {"peso": "1", "texto": "Los elfos espaciales."},
+                                {"peso": "1", "texto": "Los samuráis de Endo (1d3 de ellos decididos al azar habrán caído en combate)."},
+                                {"peso": "1", "texto": "Kenji Ito, explorando como ninja."},
+                                {"peso": "1", "texto": "1d4 robots grandes."},
+                                {"peso": "1", "texto": "1d6+3 robots pequeños"}
+                ]
+            },
+            {
+                "titulo": "Objetos aleatorios en los armarios",
+                "url": "",
+                "resultados": [ {"peso": "8", "texto": "Nada"},
+                                {"peso": "2", "texto": "Tarjeta de acceso básico (roja)"},
+                                {"peso": "1", "texto": "Linterna (media carga)"},
+                                {"peso": "1", "texto": "Pistola láser (descargada)"},
+                                {"peso": "1", "texto": "Pistola láser (media carga)"},
+                                {"peso": "3", "texto": "Batería"},
+                                {"peso": "1", "texto": "Biogel de curación (como la poción, se aplica en la piel)"},
+                                {"peso": "1", "texto": "Biogel de curar enfermedad (como biogel de curación)"},
+                                {"peso": "1", "texto": "Biogel de levitar (como biogel de curación)"},
+                                {"peso": "1", "texto": "Espray de telaraña (como el conjuro)"}
+                ]
+            }
+    ]
+}
