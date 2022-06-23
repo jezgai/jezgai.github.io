@@ -1,0 +1,254 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="javascript/VSC_comun.js"></script>
+<script src="javascript/VSC_atributos.js"></script>
+<script src="javascript/VSC_habilidades.js"></script>
+<script src="javascript/VSC_clases.js"></script>
+<script src="javascript/VSC_pj.js"></script>
+
+<script src="javascript/pdfform.minipdf.dist.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+
+<script>
+
+	let pj = new Object();
+	let nombreclase = "random";
+	let pjgenerado = false;
+
+	function cargadesplegableclases() {
+		
+		var sclases=" <strong>Clase:</strong> <select class='w3-select'  name='clase' onchange='seleccionaclases(this)'><option>--Aleatorio--</option>";
+		var iclase=0;
+		for (iclase=0; iclase< clases.clases.length; iclase++) {
+			sclases += "<option>" + clases.clases[iclase].nombre + "</option>";
+		}
+		sclases += "</select>";
+		document.getElementById("sclases").innerHTML=sclases;
+	}
+	
+
+	function seleccionaclases(thelist) {
+
+		document.getElementById("atributos").innerHTML="";
+		document.getElementById("habilidades").innerHTML="";
+		document.getElementById("rasgos").innerHTML="";
+		document.getElementById("ventajas").innerHTML="";
+				
+		var idx = thelist.selectedIndex;
+		var seleccionado = thelist.options[idx].innerHTML;
+		if ( idx < 1 ) {
+			seleccionado = 'random';
+		}
+		nombreclase = seleccionado;
+	}
+	
+	function calcula() {
+		
+		pj = new PJ();
+		pj.calcula(nombreclase);
+		
+		document.getElementById("nbclase").innerHTML="<br/><center><strong>" + pj.clase.nombre + "</strong></center>";
+		
+		/*var indice = 0;
+		var satributos = "<ul>";
+		for (indice = 0; indice < pj.ptosatributos.length; indice++) {
+			satributos += "<li>" + pj.atributos[indice].nbatr + " (" + pj.atributos[indice].nbmod + "): " + pj.ptosatributos[indice] + " (" + Atributos.modif(pj.ptosatributos[indice]) + ")</li>";
+		}
+		satributos += "</ul>";*/
+		document.getElementById("atributos").innerHTML= pj.tablaAtributos(); // satributos;
+		/*var shabilidades = "<ul>";
+		for (indice = 0; indice < pj.ptoshabilidades.length; indice++) {
+			shabilidades += "<li>" + habilidades.habilidades[indice] + ": " + pj.ptoshabilidades[indice] + "</li>";
+		}
+		shabilidades += "</ul>";*/
+		document.getElementById("rasgos").innerHTML= pj.tablaRasgos(); 
+		
+		document.getElementById("habilidades").innerHTML= pj.tablaHabilidades(); // shabilidades;
+		document.getElementById("ventajas").innerHTML = pj.tablaVentajas();
+		pjgenerado = true;
+	}
+
+	function abajoatr(atributo) {
+		var atributosig = (Math.round(atributo) + 1)%6;
+		var oldv = pj.ptosatributos[atributo];
+		pj.ptosatributos[atributo] = pj.ptosatributos[atributosig];
+		pj.ptosatributos[atributosig] = oldv;
+		
+		pj.calculaRasgos();
+		
+		document.getElementById("atributos").innerHTML = pj.tablaAtributos();
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
+		document.getElementById("habilidades").innerHTML = pj.tablaHabilidades();
+	}
+	
+	
+	function abajohabilidad(habilidad) {
+		var totalhabilidades=pj.ptoshabilidades.length;
+		var habilidadsig = (Math.round(habilidad)+1)%totalhabilidades;
+		
+		var old = pj.ptoshabilidades[habilidad];
+		var sig = pj.ptoshabilidades[habilidadsig];
+		
+		if ( sig < pj.linaje.maxptos && old > 0) {
+			pj.ptoshabilidades[habilidad] = old-1;
+			pj.ptoshabilidades[habilidadsig] = sig+1;
+			pj.calculaRasgos();
+			document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
+			document.getElementById("habilidades").innerHTML = pj.tablaHabilidades();
+		}
+		else if ( old < pj.linaje.maxptos && ((old == 0 && sig > 0) || (old == sig && sig > 0))) {
+			pj.ptoshabilidades[habilidad] = old+1;
+			pj.ptoshabilidades[habilidadsig] = sig-1;
+			pj.calculaRasgos();
+			document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
+			document.getElementById("habilidades").innerHTML = pj.tablaHabilidades();
+		}
+	}
+	
+	
+	function abajohabilidadesp(habilidad) {
+		
+		var habilidadsig = pj.siguientehabilidadesp(habilidad);
+		
+		var old = pj.ptoshabilidadesesp[habilidad].valor;
+		var sig = pj.ptoshabilidadesesp[habilidadsig].valor;
+		
+		if ( sig < pj.ptoshabilidadesesp[habilidadsig].maximo && old > 0) {
+			if ( pj.ptoshabilidadesesp[habilidad].minimo == 0 || pj.ptoshabilidadesesp[habilidad].minimo < old ) {
+				pj.ptoshabilidadesesp[habilidad].valor = old-1;
+				pj.ptoshabilidadesesp[habilidadsig].valor = sig+1;
+				pj.calculaRasgos();
+				document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
+				document.getElementById("habilidades").innerHTML = pj.tablaHabilidades();
+			}
+		}
+		else if ( (old == 0 && sig > 0) || (old == sig && sig > 0)) {
+			if ( pj.ptoshabilidadesesp[habilidadsig].minimo == 0 || pj.ptoshabilidadesesp[habilidadsig].minimo < sig ) {
+				pj.ptoshabilidadesesp[habilidad].valor = old+1;
+				pj.ptoshabilidadesesp[habilidadsig].valor = sig-1;
+				pj.calculaRasgos();
+				document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
+				document.getElementById("habilidades").innerHTML = pj.tablaHabilidades();
+			}
+		}
+	}
+	
+
+	function rellenaPDF() {
+		if ( pjgenerado == false ) {
+			return;
+		}
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		var competencias = '';
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = pj.rellenaPDF();
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, 'PJ_' + pj.clase.nombre + '.pdf'); // 'PersonajeDH.pdf');
+			}
+		};
+
+
+		xhr.open('GET', "pdf/VSC" + pj.pabellon + ".pdf", true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}	
+	
+</script>
+  <style>
+			
+	* {
+	  box-sizing: border-box;
+	}
+	.micro {
+		float:left;
+		width:1%;
+	}
+	.minileft {
+	  float:left;
+	  width:16%;
+	  padding:0 1px;
+	}
+	.mitad {
+	  float:left;
+	  width:50%;
+	  padding:0 1px;
+	}
+	.tercio {
+	  float:left;
+	  width:33%;
+	  padding:0 1px;
+	}
+	.dostercios {
+	  float:left;
+	  width:66%;
+	  padding:0 1px;
+	}
+	.right {
+	  float:left;
+	  width:34%;
+	  padding:0 1px;
+	}
+	.total {
+	  float:left;
+	  width:100%;
+	  padding:0 1px;
+	}
+
+
+
+	@media only screen and (max-width:820px) {
+	  /* For mobile phones: */
+	  .mitad, .micro, .tercio, .dostercios, .right, .total, .minileft {
+		width:100%;
+	  }
+  </style>
+</head>
+<body >
+	<div class="w3-container w3-teal">
+	  <h2>Generador de personajes para Vieja Escoba</h2>
+	</div>
+		
+	<div style="overflow:auto">
+		<div class="tercio" id="sclases"></div>
+		<div class="tercio" id="nbclase"></div>
+		<div class="minileft"><p><button class='w3-button w3-block w3-teal' onclick='calcula()'>Calcula</button></p></div>
+		<div class="minileft"><p><button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button></p></div>
+	</div>
+	
+	<div style="overflow:auto">
+	
+		<div class="tercio">
+			<div class="w3-container w3-teal w3-center"><p><strong>Atributos</strong></p></div> 
+			<div id="atributos"></div>
+		</div>
+		<div class="tercio">
+			<div class="w3-container w3-teal w3-center"><p><strong>Rasgos</strong></p></div> 
+			<div id="rasgos"></div>
+		</div>
+		<div class="right">
+			<div class="w3-container w3-teal w3-center"><p><strong>Habilidades</strong></p></div> 
+			<div id="habilidades"></div>
+		</div>
+		<div class="total">
+			<div class="w3-container w3-teal w3-center"><p><strong>Ventajas</strong></p></div>
+			<div id="ventajas"></div>
+		</div>
+	</div>
+	
+	<div class="w3-container w3-large">	
+		<hr/>
+		<div id="ficha"></div>
+	</div>
+	<script>cargadesplegableclases();</script>
+</body>
+</html>
