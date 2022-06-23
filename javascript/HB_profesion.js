@@ -404,6 +404,18 @@ class Profesiones {
 			  posesiones : { nd10: 2, mult: 1000 },
 			  sueldo : { nd10: 0, mult: 0, inicial: 1000 },
 			},
+			{
+			  nombre : "Técnico/Informático",
+			  habprincipales : "Ciencia Natural, Conocimiento Académico, Humanidades y Vigilancia",
+			  nhabprincipales : 4,
+			  habsecundarias : "Conducir, Juego, Mantenimiento, Negociar, Percepción, Persuasión, Preparación y Primeros Auxilios",
+			  nhabsecundarias : 8,
+			  dotesinvestigativas : "Elige 7 dotes entre: Análisis de Datos, Análisis de Documentos, Análisis de Textos, Balística, Burocracia, Cerrajería, Contabilidad Forense, Criptografía, Derecho, Fabricar, Fotografía, Historia Oral, Huellas Dactilares, Idiomas, Jugador Profesional, Lengua de Plata, Lingüística, Medicina, Psicología Forense, Química, Trivialidades o Vigilancia Electrónica",
+			  requisito : "",
+			  ahorros : { nd10: 1, mult: 500 },
+			  posesiones : { nd10: 2, mult: 2500 },
+			  sueldo : { nd10: 0, mult: 0, inicial: 3000 },
+			},
 		]
 	}
 	
