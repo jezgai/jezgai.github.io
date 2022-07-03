@@ -12,7 +12,9 @@ class AxisMundi {
 		"<img src='imagenes/d8.png' onclick='RolSolo.tiradado(8," + (numpj-1) + ",1)' alt='Dado d8' class='mano'/>" + 
 		"<img src='imagenes/d10.png' onclick='RolSolo.tiradado(10," + (numpj-1) + ",1)' alt='Dado d10' class='mano'/>" + 
 		"<img src='imagenes/d12.png' onclick='RolSolo.tiradado(12," + (numpj-1) + ",1)' alt='Dado d12' class='mano'/>" + 
-		"<img src='imagenes/d20.png' onclick='RolSolo.tiradado(20," + (numpj-1) + ",1)' alt='Dado d20' class='mano'/>";
+		"<img src='imagenes/d20.png' onclick='RolSolo.tiradado(20," + (numpj-1) + ",1)' alt='Dado d20' class='mano'/>" +
+		"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"' +  personaje[numpj-1].nombre + '"' + ")' alt='" + personaje[numpj-1].nombre + " habla' class='mano'/>";
+		//"<p><button class='w3-button w3-block w3-blue' onclick='RolSolo.muestraventanamensajes(" + '"' +  personaje[numpj-1].nombre + '"' + ")'>Habla</button></p></div>";
 		
 		
 		seccion += "<div onclick=" + '"' + "RolSolo.acordeon('pjatributos" + (numpj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Atributos</strong></p></div>";
@@ -150,7 +152,9 @@ class AxisMundi {
 		"<img src='imagenes/d8.png' onclick='RolSolo.tiradado(8," + (numpnj-1) + ",0)' alt='Dado d8' class='mano'/>" + 
 		"<img src='imagenes/d10.png' onclick='RolSolo.tiradado(10," + (numpnj-1) + ",0)' alt='Dado d10' class='mano'/>" + 
 		"<img src='imagenes/d12.png' onclick='RolSolo.tiradado(12," + (numpnj-1) + ",0)' alt='Dado d12' class='mano'/>" + 
-		"<img src='imagenes/d20.png' onclick='RolSolo.tiradado(20," + (numpnj-1) + ",0)' alt='Dado d20' class='mano'/>";
+		"<img src='imagenes/d20.png' onclick='RolSolo.tiradado(20," + (numpnj-1) + ",0)' alt='Dado d20' class='mano'/>" +
+		"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"' +  pnjs[numpnj-1].nombre + '"' + ")' alt='" + pnjs[numpnj-1].nombre + " habla' class='mano'/>";
+		//"<p><button class='w3-button w3-block w3-blue' onclick='RolSolo.muestraventanamensajes(" + '"' +  pnjs[numpnj-1].nombre + '"' + ")'>Habla</button></p></div>";
 		
 		
 		seccion += "<div onclick=" + '"' + "RolSolo.acordeon('pnjatributos" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Atributos</strong></p></div>";

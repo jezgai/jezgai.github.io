@@ -44,6 +44,7 @@
   var numpj = 0;
   var numpnj = 0;
   var partida = { nombre: "" };
+  var quien = "Amo del Calabozo";
 	
   function inicial() {
 	  
@@ -157,7 +158,10 @@
 
 	<div style="overflow:auto">
 		<div class="tercio w3-border" id="cabecerasistema"></div>
-		<div class="tercio w3-border" id="botonoraculo"><p><button class="w3-button w3-block w3-blue" onclick="RolSolo.muestraventanacarga('oraculo')">Oráculo</button></p></div>
+		<div class="tercio w3-border">
+		<div class="mitad" id="botonoraculo"><p><button class="w3-button w3-block w3-blue" onclick="RolSolo.muestraventanacarga('oraculo')">Oráculo</button></p></div>
+		<div class="mitad" id="botonmensaje"><p><button class="w3-button w3-block w3-blue" onclick="RolSolo.muestraventanamensajes('Amo del Calabozo')">Envía mensaje</button></p></div>
+		</div>
 		<div class="sexto" id="dados"><h2>Tiradas</h2></div>
 		<div class="sexto" id="botonjson"><p><button class='w3-button w3-block w3-blue' onclick='RolSolo.exportaJSON()'>Exporta partida (json)</button></p></div>
 	</div>
@@ -182,6 +186,18 @@
 				<input type="text" size="64"  id="preguntaOra">
 				<input type="button" id="btnConsultaOra" value="Consulta" onclick="RolSolo.consultaOraculo();">
 				<input type="button" id="btnCancelOra" value="Cancelar" onclick="RolSolo.cancelarCarga('oraculo')">
+		</div>
+	  </div>
+	</div>
+	
+	<div id="mensajes" class="w3-modal">
+	  <div class="w3-modal-content">
+		<div class="w3-container">
+				<h2>Mensaje</h2>
+				<label for="mensaje">Texto</label>
+				<input type="text" size="64"  id="mensaje">
+				<div id="botonmensaje"><input type="button" id="btnEnviaMsg" value="Envia" onclick="RolSolo.enviamensaje();">
+				<input type="button" id="btnCancelMsg" value="Cancelar" onclick="RolSolo.cancelarCarga('mensajes')"></div>
 		</div>
 	  </div>
 	</div>

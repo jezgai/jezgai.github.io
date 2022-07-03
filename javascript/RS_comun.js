@@ -237,6 +237,15 @@ class RolSolo {
 		document.getElementById(id).style.display='block';
 	}
 
+  
+	static muestraventanamensajes(hablante) {
+		
+		quien = hablante;
+		//document.getElementById("botonmensaje").innerHTML = "<input type='button' id='btnEnviaMsg' value='Envia' onclick='RolSolo.enviamensaje(" + '"' + quien + '"' + ");'> <input type='button' id='btnCancelMsg' value='Cancelar' onclick='RolSolo.cancelarCarga(" + '"' + "mensajes" + '"' + ")'>";
+		document.getElementById("mensajes").style.display='block';
+		
+	}
+
 	
 	static cancelarCarga(id) {
 		document.getElementById(id).style.display='none';
@@ -261,6 +270,13 @@ class RolSolo {
 		var mensaje = "<strong>" + pregunta.value + "</strong><br/>" + respuesta;
 		RolSolo.escribemensaje(mensaje);
 		RolSolo.cancelarCarga('oraculo');
+	}
+	
+	static enviamensaje() {
+		var texto = document.getElementById('mensaje');
+		var mensaje = "<strong>" + quien + "</strong><br/>" + texto.value;
+		RolSolo.escribemensaje(mensaje);
+		RolSolo.cancelarCarga('mensajes');
 	}
   
 	
