@@ -45,6 +45,7 @@
   var numpnj = 0;
   var partida = { nombre: "" };
   var quien = "Amo del Calabozo";
+  var dj = quien;
 	
   function inicial() {
 	  
@@ -159,8 +160,19 @@
 	<div style="overflow:auto">
 		<div class="tercio w3-border" id="cabecerasistema"></div>
 		<div class="tercio w3-border">
-		<div class="mitad" id="botonoraculo"><p><button class="w3-button w3-block w3-blue" onclick="RolSolo.muestraventanacarga('oraculo')">Oráculo</button></p></div>
-		<div class="mitad" id="botonmensaje"><p><button class="w3-button w3-block w3-blue" onclick="RolSolo.muestraventanamensajes('Amo del Calabozo')">Envía mensaje</button></p></div>
+		<div class="tercio" id="botonoraculo"><p><button class="w3-button w3-block w3-blue" onclick="RolSolo.muestraventanacarga('oraculo')">Oráculo</button></p></div>
+		<!--<div class="mitad" id="botonmensaje"><p><button class="w3-button w3-block w3-blue" onclick="RolSolo.muestraventanamensajes('Amo del Calabozo')">Envía mensaje</button></p></div>-->
+		<div class="dostercios">
+			<img src='imagenes/d4.png' onclick='RolSolo.tiradado(4,0,-1)' alt='Dado d4' class='mano'/>
+			<img src='imagenes/d6.png' onclick='RolSolo.tiradado(6,0,-1)' alt='Dado d6' class='mano'/> 
+			<img src='imagenes/d8.png' onclick='RolSolo.tiradado(8,0,-1)' alt='Dado d8' class='mano'/> 
+			<img src='imagenes/d10.png' onclick='RolSolo.tiradado(10,0,-1)' alt='Dado d10' class='mano'/> 
+			<img src='imagenes/d12.png' onclick='RolSolo.tiradado(12,0,-1)' alt='Dado d12' class='mano'/> 
+			<img src='imagenes/d20.png' onclick='RolSolo.tiradado(20,0,-1)' alt='Dado d20' class='mano'/>
+			<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes("Amo del Calabozo")' alt='Amo del Calabozo habla' class='mano'/>
+		</div>
+		
+		
 		</div>
 		<div class="sexto" id="dados"><h2>Tiradas</h2></div>
 		<div class="sexto" id="botonjson"><p><button class='w3-button w3-block w3-blue' onclick='RolSolo.exportaJSON()'>Exporta partida (json)</button></p></div>

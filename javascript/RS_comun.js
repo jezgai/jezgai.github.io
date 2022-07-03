@@ -72,7 +72,9 @@ class RolSolo {
 	static tiradado(numero, npj, pj) {
 		var tirada = RolSolo.random(numero,1);
 		var mensaje = "<b>";
-		if (pj == 0 )
+		if (pj == -1)
+			mensaje += dj + "</b> (d" + numero + "): " + tirada;
+		else if (pj == 0 )
 			mensaje += pnjs[npj].nombre + "</b> (d" + numero + "): " + tirada;
 		else
 			mensaje += personaje[npj].nombre + "</b> (d" + numero + "): " + tirada;
@@ -148,11 +150,13 @@ class RolSolo {
 		//document.getElementById("cabeceranombre").innerHTML = "<h1><strong>Nombre:</strong> " + personaje[numpj-1].nombre + "</h1>";
 		if ( personaje[numpj-1].sistema == "Máscaras del Imperio" ) 
 		{ 
+			dj = "Valido";
 			pjsdet = Mascaras.cargapersonaje(pjsdet);
 			//document.getElementById("botonjson").style.visibility="visible";	
 		}
 		else if ( personaje[numpj-1].sistema == "Axis Mundi" ) 
 		{ 
+			dj = "Amo del Calabozo";
 			pjsdet = AxisMundi.cargapersonaje(pjsdet);		
 			//document.getElementById("botonjson").style.visibility="visible";	
 		}
