@@ -1,0 +1,784 @@
+{
+  "nombre": "La tumba de hielo",
+  "pjs": [
+    {
+      "nombre": "Marcia",
+      "sistema": "Axis Mundi",
+      "clase": "Guerrero",
+      "atributos": [
+        {
+          "nbatr": "Fuerza",
+          "nbmod": "FUE",
+          "valor": 14,
+          "modif": 1
+        },
+        {
+          "nbatr": "Destreza",
+          "nbmod": "DES",
+          "valor": 11,
+          "modif": 0
+        },
+        {
+          "nbatr": "Constitucion",
+          "nbmod": "CON",
+          "valor": 13,
+          "modif": 1
+        },
+        {
+          "nbatr": "Inteligencia",
+          "nbmod": "INT",
+          "valor": 12,
+          "modif": 0
+        },
+        {
+          "nbatr": "Sabiduria",
+          "nbmod": "SAB",
+          "valor": 10,
+          "modif": 0
+        },
+        {
+          "nbatr": "Carisma",
+          "nbmod": "CAR",
+          "valor": 11,
+          "modif": 0
+        }
+      ],
+      "salvaciones": [
+        {
+          "nombre": "Captura",
+          "valor": 15
+        },
+        {
+          "nombre": "Aflicciones",
+          "valor": 14
+        },
+        {
+          "nombre": "Ataque de area",
+          "valor": 16
+        },
+        {
+          "nombre": "Artefactos magicos",
+          "valor": 16
+        },
+        {
+          "nombre": "Conjuros",
+          "valor": 17
+        }
+      ],
+      "pericias": [
+        {
+          "tipo": "Básica",
+          "pericia": "Alerta",
+          "puntos": 2
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Arquitectura",
+          "puntos": 1
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Escalada",
+          "puntos": 2
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Detectar",
+          "puntos": 1
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Forzar Puertas",
+          "puntos": 2
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Idiomas",
+          "puntos": 0
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Sigilo",
+          "puntos": 2
+        }
+      ],
+      "caracteristicas": [
+        "Pueden usar cualquier tipo de armadura"
+      ],
+      "pv": 5,
+      "cacc": 10,
+      "caad": 10,
+      "ataque": 1,
+      "daño": 1,
+      "tipobonifdaño": "CC y AD",
+      "barridos": 1,
+      "ataquecc": 2,
+      "ataquead": 1,
+      "armas": [
+        {
+          "nombre": "Espada corta",
+          "tipo": "CaC",
+          "danoCaC": 6,
+          "danoAD": 0
+        },
+        {
+          "nombre": "Jabalina",
+          "tipo": "AD",
+          "danoAD": 6,
+          "danoCaC": 6
+        }
+      ],
+      "conjuros": []
+    },
+    {
+      "nombre": "Ragnur",
+      "sistema": "Axis Mundi",
+      "clase": "Luchador enano",
+      "atributos": [
+        {
+          "nbatr": "Fuerza",
+          "nbmod": "FUE",
+          "valor": 16,
+          "modif": 2
+        },
+        {
+          "nbatr": "Destreza",
+          "nbmod": "DES",
+          "valor": 11,
+          "modif": 0
+        },
+        {
+          "nbatr": "Constitucion",
+          "nbmod": "CON",
+          "valor": 13,
+          "modif": 1
+        },
+        {
+          "nbatr": "Inteligencia",
+          "nbmod": "INT",
+          "valor": 12,
+          "modif": 0
+        },
+        {
+          "nbatr": "Sabiduria",
+          "nbmod": "SAB",
+          "valor": 10,
+          "modif": 0
+        },
+        {
+          "nbatr": "Carisma",
+          "nbmod": "CAR",
+          "valor": 10,
+          "modif": 0
+        }
+      ],
+      "salvaciones": [
+        {
+          "nombre": "Captura",
+          "valor": 15
+        },
+        {
+          "nombre": "Aflicciones",
+          "valor": 14
+        },
+        {
+          "nombre": "Ataque de area",
+          "valor": 16
+        },
+        {
+          "nombre": "Artefactos magicos",
+          "valor": 16
+        },
+        {
+          "nombre": "Conjuros",
+          "valor": 17
+        }
+      ],
+      "pericias": [
+        {
+          "tipo": "Básica",
+          "pericia": "Alerta",
+          "puntos": 2
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Arquitectura",
+          "puntos": 2
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Escalada",
+          "puntos": 2
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Detectar",
+          "puntos": 1
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Forzar Puertas",
+          "puntos": 3
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Idiomas",
+          "puntos": 0
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Sigilo",
+          "puntos": 2
+        },
+        {
+          "tipo": "Avanzada",
+          "pericia": "Mecanismos",
+          "puntos": 1
+        },
+        {
+          "tipo": "Avanzada",
+          "pericia": "Detectar trampas",
+          "puntos": 1
+        }
+      ],
+      "caracteristicas": [
+        "Pueden usar cualquier tipo de armadura",
+        "Armadura natural. Sensitivo con la piedra"
+      ],
+      "pv": 7,
+      "cacc": 11,
+      "caad": 11,
+      "ataque": 1,
+      "daño": 1,
+      "tipobonifdaño": "CC y AD",
+      "barridos": 1,
+      "ataquecc": 3,
+      "ataquead": 1,
+      "armas": [
+        {
+          "nombre": "Martillo de guerra",
+          "tipo": "CaC",
+          "danoCaC": 8,
+          "danoAD": 0
+        },
+        {
+          "nombre": "Hacha de mano",
+          "tipo": "CaC",
+          "danoCaC": 4,
+          "danoAD": 4
+        }
+      ],
+      "conjuros": []
+    },
+    {
+      "nombre": "Ryliah",
+      "sistema": "Axis Mundi",
+      "clase": "Mago",
+      "atributos": [
+        {
+          "nbatr": "Fuerza",
+          "nbmod": "FUE",
+          "valor": 8,
+          "modif": -1
+        },
+        {
+          "nbatr": "Destreza",
+          "nbmod": "DES",
+          "valor": 9,
+          "modif": 0
+        },
+        {
+          "nbatr": "Constitucion",
+          "nbmod": "CON",
+          "valor": 7,
+          "modif": -1
+        },
+        {
+          "nbatr": "Inteligencia",
+          "nbmod": "INT",
+          "valor": 14,
+          "modif": 1
+        },
+        {
+          "nbatr": "Sabiduria",
+          "nbmod": "SAB",
+          "valor": 15,
+          "modif": 1
+        },
+        {
+          "nbatr": "Carisma",
+          "nbmod": "CAR",
+          "valor": 9,
+          "modif": 0
+        }
+      ],
+      "salvaciones": [
+        {
+          "nombre": "Captura",
+          "valor": 13
+        },
+        {
+          "nombre": "Aflicciones",
+          "valor": 13
+        },
+        {
+          "nombre": "Ataque de area",
+          "valor": 15
+        },
+        {
+          "nombre": "Artefactos magicos",
+          "valor": 11
+        },
+        {
+          "nombre": "Conjuros",
+          "valor": 12
+        }
+      ],
+      "pericias": [
+        {
+          "tipo": "Básica",
+          "pericia": "Alerta",
+          "puntos": 3
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Arquitectura",
+          "puntos": 1
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Escalada",
+          "puntos": 1
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Detectar",
+          "puntos": 1
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Forzar Puertas",
+          "puntos": 1
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Idiomas",
+          "puntos": 1
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Sigilo",
+          "puntos": 2
+        }
+      ],
+      "caracteristicas": [
+        "No pueden usar ningún tipo de armadura"
+      ],
+      "pv": 2,
+      "cacc": 10,
+      "caad": 10,
+      "ataque": 1,
+      "daño": 0,
+      "tipobonifdaño": "CC y AD",
+      "barridos": 0,
+      "ataquecc": 0,
+      "ataquead": 1,
+      "armas": [
+        {
+          "nombre": "Bastón",
+          "tipo": "CaC",
+          "danoCaC": 4,
+          "danoAD": 0
+        },
+        {
+          "nombre": "Daga",
+          "tipo": "CaC",
+          "danoCaC": 4,
+          "danoAD": 4
+        }
+      ],
+      "conjuros": [
+        "Leer Magia",
+        "Misil mágico",
+        "Ocultar mentiras",
+        "Invisibilidad"
+      ]
+    },
+    {
+      "nombre": "Torlus",
+      "sistema": "Axis Mundi",
+      "clase": "Especialista",
+      "atributos": [
+        {
+          "nbatr": "Fuerza",
+          "nbmod": "FUE",
+          "valor": 13,
+          "modif": 1
+        },
+        {
+          "nbatr": "Destreza",
+          "nbmod": "DES",
+          "valor": 13,
+          "modif": 1
+        },
+        {
+          "nbatr": "Constitucion",
+          "nbmod": "CON",
+          "valor": 10,
+          "modif": 0
+        },
+        {
+          "nbatr": "Inteligencia",
+          "nbmod": "INT",
+          "valor": 10,
+          "modif": 0
+        },
+        {
+          "nbatr": "Sabiduria",
+          "nbmod": "SAB",
+          "valor": 12,
+          "modif": 0
+        },
+        {
+          "nbatr": "Carisma",
+          "nbmod": "CAR",
+          "valor": 10,
+          "modif": 0
+        }
+      ],
+      "salvaciones": [
+        {
+          "nombre": "Captura",
+          "valor": 13
+        },
+        {
+          "nombre": "Aflicciones",
+          "valor": 13
+        },
+        {
+          "nombre": "Ataque de area",
+          "valor": 16
+        },
+        {
+          "nombre": "Artefactos magicos",
+          "valor": 14
+        },
+        {
+          "nombre": "Conjuros",
+          "valor": 15
+        }
+      ],
+      "pericias": [
+        {
+          "tipo": "Básica",
+          "pericia": "Alerta",
+          "puntos": 2
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Arquitectura",
+          "puntos": 1
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Escalada",
+          "puntos": 2
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Detectar",
+          "puntos": 1
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Forzar Puertas",
+          "puntos": 2
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Idiomas",
+          "puntos": 0
+        },
+        {
+          "tipo": "Básica",
+          "pericia": "Sigilo",
+          "puntos": 3
+        },
+        {
+          "tipo": "Avanzada",
+          "pericia": "Apuñalar",
+          "puntos": 1
+        },
+        {
+          "tipo": "Avanzada",
+          "pericia": "Detectar Trampas",
+          "puntos": 1
+        },
+        {
+          "tipo": "Avanzada",
+          "pericia": "Juego de Manos",
+          "puntos": 1
+        },
+        {
+          "tipo": "Avanzada",
+          "pericia": "Mecanismos",
+          "puntos": 1
+        }
+      ],
+      "caracteristicas": [
+        "Solo pueden usar armaduras de cuero. Escudos no.",
+        "Dobla ataque y daño al Apuñalar por la espalda",
+        "Ventaja al escalar"
+      ],
+      "pv": 5,
+      "cacc": 11,
+      "caad": 11,
+      "ataque": 1,
+      "daño": 0,
+      "tipobonifdaño": "CC y AD",
+      "barridos": 1,
+      "ataquecc": 2,
+      "ataquead": 2,
+      "armas": [
+        {
+          "nombre": "Espada ropera",
+          "tipo": "CaC",
+          "danoCaC": 6,
+          "danoAD": 0
+        },
+        {
+          "nombre": "Daga",
+          "tipo": "CaC",
+          "danoCaC": 4,
+          "danoAD": 4
+        }
+      ],
+      "conjuros": []
+    }
+  ],
+  "pnjs": [
+    {
+      "nombre": "Goblin 1",
+      "sistema": "Axis Mundi",
+      "clase": "Guerrero",
+      "salvaciones": [
+        {
+          "nombre": "Captura",
+          "valor": 15
+        },
+        {
+          "nombre": "Aflicciones",
+          "valor": 14
+        },
+        {
+          "nombre": "Ataque de area",
+          "valor": 16
+        },
+        {
+          "nombre": "Artefactos magicos",
+          "valor": 16
+        },
+        {
+          "nombre": "Conjuros",
+          "valor": 17
+        }
+      ],
+      "caracteristicas": [],
+      "pv": 5,
+      "cacc": 14,
+      "caad": 14,
+      "ataque": 1,
+      "daño": 1,
+      "tipobonifdaño": "CC y AD",
+      "ataquecc": 1,
+      "ataquead": 1,
+      "moral": 6,
+      "reaccion": 0,
+      "armas": [
+        {
+          "nombre": "Cimitarra",
+          "tipo": "CaC",
+          "danoCaC": 6,
+          "danoAD": 0
+        },
+        {
+          "nombre": "Arco corto",
+          "tipo": "AD",
+          "danoAD": 6,
+          "danoCaC": 0
+        }
+      ],
+      "conjuros": []
+    },
+    {
+      "nombre": "Goblin 2",
+      "sistema": "Axis Mundi",
+      "clase": "Guerrero",
+      "salvaciones": [
+        {
+          "nombre": "Captura",
+          "valor": 15
+        },
+        {
+          "nombre": "Aflicciones",
+          "valor": 14
+        },
+        {
+          "nombre": "Ataque de area",
+          "valor": 16
+        },
+        {
+          "nombre": "Artefactos magicos",
+          "valor": 16
+        },
+        {
+          "nombre": "Conjuros",
+          "valor": 17
+        }
+      ],
+      "caracteristicas": [],
+      "pv": 6,
+      "cacc": 14,
+      "caad": 14,
+      "ataque": 1,
+      "daño": 1,
+      "tipobonifdaño": "CC y AD",
+      "ataquecc": 1,
+      "ataquead": 1,
+      "moral": 6,
+      "reaccion": 0,
+      "armas": [
+        {
+          "nombre": "Cimitarra",
+          "tipo": "CaC",
+          "danoCaC": 6,
+          "danoAD": 0
+        },
+        {
+          "nombre": "Daga",
+          "tipo": "CaC",
+          "danoCaC": 4,
+          "danoAD": 4
+        }
+      ],
+      "conjuros": []
+    },
+    {
+      "nombre": "Goblin 3",
+      "sistema": "Axis Mundi",
+      "clase": "Guerrero",
+      "salvaciones": [
+        {
+          "nombre": "Captura",
+          "valor": 15
+        },
+        {
+          "nombre": "Aflicciones",
+          "valor": 14
+        },
+        {
+          "nombre": "Ataque de area",
+          "valor": 16
+        },
+        {
+          "nombre": "Artefactos magicos",
+          "valor": 16
+        },
+        {
+          "nombre": "Conjuros",
+          "valor": 17
+        }
+      ],
+      "caracteristicas": [],
+      "pv": 4,
+      "cacc": 14,
+      "caad": 14,
+      "ataque": 1,
+      "daño": 1,
+      "tipobonifdaño": "CC y AD",
+      "ataquecc": 1,
+      "ataquead": 1,
+      "moral": 6,
+      "reaccion": 0,
+      "armas": [
+        {
+          "nombre": "Cimitarra",
+          "tipo": "CaC",
+          "danoCaC": 6,
+          "danoAD": 0
+        },
+        {
+          "nombre": "Arco corto",
+          "tipo": "AD",
+          "danoAD": 6,
+          "danoCaC": 0
+        },
+        {
+          "nombre": "Daga",
+          "tipo": "CaC",
+          "danoCaC": 4,
+          "danoAD": 4
+        }
+      ],
+      "conjuros": []
+    },
+    {
+      "nombre": "Goblin 4",
+      "sistema": "Axis Mundi",
+      "clase": "Guerrero",
+      "salvaciones": [
+        {
+          "nombre": "Captura",
+          "valor": 15
+        },
+        {
+          "nombre": "Aflicciones",
+          "valor": 14
+        },
+        {
+          "nombre": "Ataque de area",
+          "valor": 16
+        },
+        {
+          "nombre": "Artefactos magicos",
+          "valor": 16
+        },
+        {
+          "nombre": "Conjuros",
+          "valor": 17
+        }
+      ],
+      "caracteristicas": [],
+      "pv": 7,
+      "cacc": 14,
+      "caad": 14,
+      "ataque": 1,
+      "daño": 1,
+      "tipobonifdaño": "CC y AD",
+      "ataquecc": 1,
+      "ataquead": 1,
+      "moral": 6,
+      "reaccion": 0,
+      "armas": [
+        {
+          "nombre": "Cimitarra",
+          "tipo": "CaC",
+          "danoCaC": 6,
+          "danoAD": 0
+        },
+        {
+          "nombre": "Daga",
+          "tipo": "CaC",
+          "danoCaC": 4,
+          "danoAD": 4
+        }
+      ],
+      "conjuros": []
+    }
+  ],
+  "tiradas": [
+    "<div  onclick=\"RolSolo.acordeon('mensaje1')\"><font color='red'><strong><u>07/04/2022 20:41:28</u></strong></font></div><div id='mensaje1' class='w3-hide'><strong>Ryliah</strong><br/>Nos aproximamos a la Barbacana en cuanto anochezca</div>",
+    "<div  onclick=\"RolSolo.acordeon('mensaje2')\"><font color='red'><strong><u>07/04/2022 20:41:43</u></strong></font></div><div id='mensaje2' class='w3-hide'><b>Amo del Calabozo</b> (d6): 4</div>",
+    "<div  onclick=\"RolSolo.acordeon('mensaje3')\"><font color='red'><strong><u>07/04/2022 20:42:29</u></strong></font></div><div id='mensaje3' class='w3-hide'><strong>Amo del Calabozo</strong><br/>Si hay alguien dentro no parece que se haya percatado de vuestra presencia</div>"
+  ]
+}

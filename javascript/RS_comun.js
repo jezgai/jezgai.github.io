@@ -141,7 +141,7 @@ class RolSolo {
 		var pjsdet = document.getElementById("pjsdet").innerHTML;
 		
 		numpj++;
-		pjsdet += "<button onclick=" + '"' + "RolSolo.acordeon('pj" + numpj + "')" + '"' + " class='w3-button w3-block w3-left-align w3-blue'><h2>" + personaje[numpj-1].nombre + "</h2></button>"
+		pjsdet += "<button onclick=" + '"' + "RolSolo.acordeon('pj" + numpj + "')" + '"' + " class='w3-button w3-block w3-left-align w3-blue'><h2>" + personaje[numpj-1].nombre + " (" + personaje[numpj-1].clase + ")" + "</h2></button>"
 		pjsdet += "<div id='pj" + numpj + "' class='w3-hide w3-container' >";
 		//pjs += "<h2><strong>" + personaje.nombre + "</strong></h2>";
 		
