@@ -133,26 +133,18 @@
   "barridos": 1,
   "ataquecc": 2,
   "ataquead": 2,
-  "dinero": 54,
-  "tipoarmas": "d6",
   "armas": [
     {
       "nombre": "Espada ropera",
       "tipo": "CaC",
       "danoCaC": 6,
-      "peso": 1000,
-      "precio": 100,
-      "danoAD": 0,
-      "alcance": 0
+      "danoAD": 0
     },
     {
       "nombre": "Daga",
       "tipo": "CaC",
       "danoCaC": 4,
-      "peso": 500,
-      "precio": 50,
-      "danoAD": 4,
-      "alcance": 6
+      "danoAD": 4
     }
   ],
   "conjuros": []

@@ -68,9 +68,12 @@ class AxisMundi {
 				seccionbis += "<tr><td><span class='mano' onclick='AxisMundi.tiradapericia(" + indice + "," + (numpj-1) + ",1)'>" + personaje[numpj-1].pericias[indice].pericia + "</span></td><td>" + personaje[numpj-1].pericias[indice].puntos  + "</td></tr>";
 		}
 		if ( seccionbis != "" ) {
-			seccion += "<div class='w3-container w3-blue w3-center'><p class='mano' onclick='AxisMundi.tiradapericia(0" + "," + (numpj-1) + ",1)'><strong>Pericias avanzadas</strong></p></div>" + "<table class='w3-table  w3-striped w3-border'><tr><th>Pericia</th><th>Valor</th></tr>";
+		    seccion += "<div onclick=" + '"' + "RolSolo.acordeon('pjpericiasav" + (numpj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Pericias avanzadas</strong></p></div>";
+			seccion += "<div id='pjpericiasav" + (numpj-1) + "' class='w3-hide w3-container' >"
+			//seccion += "<div class='w3-container w3-blue w3-center'><p class='mano' onclick='AxisMundi.tiradapericia(0" + "," + (numpj-1) + ",1)'><strong>Pericias avanzadas</strong></p></div>" + "<table class='w3-table  w3-striped w3-border'><tr><th>Pericia</th><th>Valor</th></tr>";
+			seccion += "<table class='w3-table  w3-striped w3-border'><tr><th>Pericia</th><th>Valor</th></tr>";
 			seccion += seccionbis;
-			seccion += "</table>";
+			seccion += "</table></div>";
 		}
 		pjs+= seccion + "</div>";
 		//document.getElementById("seccion4").innerHTML = seccion;
@@ -157,7 +160,7 @@ class AxisMundi {
 		//"<p><button class='w3-button w3-block w3-blue' onclick='RolSolo.muestraventanamensajes(" + '"' +  pnjs[numpnj-1].nombre + '"' + ")'>Habla</button></p></div>";
 		
 		
-		seccion += "<div onclick=" + '"' + "RolSolo.acordeon('pnjatributos" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Atributos</strong></p></div>";
+		/*seccion += "<div onclick=" + '"' + "RolSolo.acordeon('pnjatributos" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Atributos</strong></p></div>";
 		
 		seccion += "<div id='pnjatributos" + (numpnj-1) + "' class='w3-hide w3-container' >"
 		seccion += "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</th><th>Valor (mod)</th></tr>";
@@ -165,7 +168,7 @@ class AxisMundi {
 			seccion += "<tr><td><span class='mano' onclick='AxisMundi.tiradaatr(" + indiceatr + "," + (numpnj-1) + ",0)'>" + pnjs[numpnj-1].atributos[indiceatr].nbatr + "</span></td><td>" + pnjs[numpnj-1].atributos[indiceatr].valor + " (" + pnjs[numpnj-1].atributos[indiceatr].modif + ")</td></tr>";
 		}
 		seccion += "</table></div>";
-		pjs+= seccion;
+		pjs+= seccion;*/
 		
 		
 		seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pnjcaracteristicas" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Características</strong></p></div>";
@@ -176,7 +179,8 @@ class AxisMundi {
 		seccion += "<tr><td>CA (AD)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"caad",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].caad + "</td></tr>";
 		seccion += "<tr><td>Ataque (CC)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataquecc",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].ataquecc + "</td></tr>";
 		seccion += "<tr><td>Ataque (AD)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataquead",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].ataquead + "</td></tr>";
-		seccion += "<tr><td>Barridos</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"barridos",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].barridos + "</td></tr>";
+		seccion += "<tr><td class='mano' onclick='AxisMundi.tiradamoral(" + (numpnj-1) + ")'>Moral</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"moral",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].moral + "</td></tr>";
+		seccion += "<tr><td class='mano' onclick='AxisMundi.tiradareaccion(" + (numpnj-1) + ")'>Reacción</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"reaccion",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].reaccion + "</td></tr>";
 		
 		seccion += "</table></div>";
 		pjs+= seccion;
@@ -190,6 +194,7 @@ class AxisMundi {
 		seccion += "</table></div>";
 		pjs+= seccion;
 		
+		/*
 		seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pnjpericias" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Pericias</strong></p></div>";
 		seccion += "<div id='pnjpericias" + (numpnj-1) + "' class='w3-hide w3-container' >"
 		seccion += "<table class='w3-table  w3-striped w3-border'><tr><th>Pericia</th><th>Valor</th></tr>";
@@ -210,6 +215,7 @@ class AxisMundi {
 			seccion += "</table>";
 		}
 		pjs+= seccion + "</div>";
+		*/
 		
 		seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pnjarmas" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Armas</strong></p></div>";
 		seccion += "<div id='pnjarmas" + (numpnj-1) + "' class='w3-hide w3-container' >"
@@ -239,13 +245,13 @@ class AxisMundi {
 		}
 		seccion += "</table></div>";
 		var numeroseccion = 5;
-		if ( seccionbis != "" ) {
+		/*if ( seccionbis != "" ) {
 			pjs+= seccion;
 		}
-		else {
+		else { */
 			pjs+= seccion;
 			numeroseccion++;
-		}
+		//}
 		
 		seccion = "";
 		for (indice=0; indice<pnjs[numpnj-1].conjuros.length; indice++) {
@@ -318,7 +324,9 @@ class AxisMundi {
 			seccion += "<tr><td>CA (AD)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"caad",' + npj + ',"PNJ")' + "' >" + pnjs[npj].caad + "</td></tr>";
 			seccion += "<tr><td>Ataque (CC)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataquecc",' + npj + ',"PNJ")' + "' >" + pnjs[npj].ataquecc + "</td></tr>";
 			seccion += "<tr><td>Ataque (AD)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataquead",' + npj + ',"PNJ")' + "' >" + pnjs[npj].ataquead + "</td></tr>";
-			seccion += "<tr><td>Barridos</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"barridos",' + npj + ',"PNJ")' + "' >" + pnjs[npj].barridos + "</td></tr>";
+		    seccion += "<tr><td class='mano' onclick='AxisMundi.tiradamoral(" + npj + ")'>Moral</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"moral",' + npj + ',"PNJ")' + "' >" + pnjs[numpnj-1].moral + "</td></tr>";
+		    seccion += "<tr><td class='mano' onclick='AxisMundi.tiradareaccion(" + npj + ")'>Reacción</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"reaccion",' + npj + ',"PNJ")' + "' >" + pnjs[numpnj-1].reaccion + "</td></tr>";
+					
 			seccion += "</table>";
 			document.getElementById('pnjcaracteristicas'+npj).innerHTML = seccion;
 			RolSolo.muestra('pnjcaracteristicas'+npj);
@@ -388,6 +396,20 @@ class AxisMundi {
 				valor = pnjs[npj].barridos;
 			else
 				valor = personaje[npj].barridos;
+		}
+		else if ( caracteristica == "moral" ) {
+			literal = "Moral";
+			if ( tipo == "PNJ" )
+				valor = pnjs[npj].moral;
+			else
+				valor = personaje[npj].moral;
+		}
+		else if ( caracteristica == "reaccion" ) {
+			literal = "Reacción";
+			if ( tipo == "PNJ" )
+				valor = pnjs[npj].reaccion;
+			else
+				valor = personaje[npj].reaccion;
 		}
 		if ( literal != "" ){
 			document.getElementById('nbcaracteristica').innerHTML = "<label id='nbcaracteristica'>" + literal + "</label>";
@@ -478,5 +500,30 @@ class AxisMundi {
 			mensaje += personaje[npj].nombre + "</b> " + personaje[npj].armas[indice].nombre + " (AD)<br/><b>Resultado: </b>" + (valor + parseInt(personaje[npj].ataquead)) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
 		}
 		RolSolo.escribemensaje(mensaje);
+	}
+	
+	static tiradamoral(npj) {
+	    var moral = parseInt(pnjs[npj].moral);
+	    var tirada = RolSolo.random(6,1) + RolSolo.random(6,1);
+	    var mensaje = "<b>" + pnjs[npj].nombre + "</b> Moral: " + moral + "<br/>Resultado: " + tirada; 
+	    RolSolo.escribemensaje(mensaje);
+	}
+	
+	static tiradareaccion(npj) {
+	    var reaccion = parseInt(pnjs[npj].reaccion);
+	    var tirada = RolSolo.random(6,1) + RolSolo.random(6,1) + reaccion;
+	    
+	    var actitud = "Amistoso";
+	    if ( tirada <= 2 )
+	        actitud = "Hostil";
+	    else if ( tirada <= 5 )
+	        actitud = "Antipático";
+	    else if ( tirada <= 8 )
+	        actitud = "Indeciso";
+	    else if ( tirada <= 11 )
+	        actitud = "Indiferente";
+	    
+	    var mensaje = "<b>" + pnjs[npj].nombre + "</b> Reacción: " + tirada + "<br/>Resultado: " + actitud; 
+	    RolSolo.escribemensaje(mensaje);
 	}
 }

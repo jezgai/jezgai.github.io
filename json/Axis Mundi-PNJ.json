@@ -1,0 +1,60 @@
+{
+  "nombre": "PNJ Goblin",
+  "sistema": "Axis Mundi",
+  "clase": "Guerrero",
+  "salvaciones": [
+    {
+      "nombre": "Captura",
+      "valor": 15
+    },
+    {
+      "nombre": "Aflicciones",
+      "valor": 14
+    },
+    {
+      "nombre": "Ataque de area",
+      "valor": 16
+    },
+    {
+      "nombre": "Artefactos magicos",
+      "valor": 16
+    },
+    {
+      "nombre": "Conjuros",
+      "valor": 17
+    }
+  ],
+  "caracteristicas": [
+  ],
+  "pv": 5,
+  "cacc": 14,
+  "caad": 14,
+  "ataque": 1,
+  "daño": 1,
+  "tipobonifdaño": "CC y AD",
+  "ataquecc": 1,
+  "ataquead": 1,
+  "moral": 6,
+  "reaccion": 0,
+  "armas": [
+    {
+      "nombre": "Cimitarra",
+      "tipo": "CaC",
+      "danoCaC": 6,
+      "danoAD": 0
+    },
+    {
+      "nombre": "Arco corto",
+      "tipo": "AD",
+      "danoAD": 6,
+      "danoCaC": 0
+    },
+    {
+      "nombre": "Daga",
+      "tipo": "CaC",
+      "danoCaC": 4,
+      "danoAD": 4
+    }
+  ],
+  "conjuros": []
+}
