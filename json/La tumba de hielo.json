@@ -112,8 +112,6 @@
       "daño": 1,
       "tipobonifdaño": "CC y AD",
       "barridos": 1,
-      "ataquecc": 2,
-      "ataquead": 1,
       "armas": [
         {
           "nombre": "Espada corta",
@@ -252,8 +250,6 @@
       "daño": 1,
       "tipobonifdaño": "CC y AD",
       "barridos": 1,
-      "ataquecc": 3,
-      "ataquead": 1,
       "armas": [
         {
           "nombre": "Martillo de guerra",
@@ -381,8 +377,6 @@
       "daño": 0,
       "tipobonifdaño": "CC y AD",
       "barridos": 0,
-      "ataquecc": 0,
-      "ataquead": 1,
       "armas": [
         {
           "nombre": "Bastón",
@@ -537,8 +531,6 @@
       "daño": 0,
       "tipobonifdaño": "CC y AD",
       "barridos": 1,
-      "ataquecc": 2,
-      "ataquead": 2,
       "armas": [
         {
           "nombre": "Espada ropera",
@@ -590,8 +582,6 @@
       "ataque": 1,
       "daño": 1,
       "tipobonifdaño": "CC y AD",
-      "ataquecc": 1,
-      "ataquead": 1,
       "moral": 6,
       "reaccion": 0,
       "armas": [
@@ -643,8 +633,6 @@
       "ataque": 1,
       "daño": 1,
       "tipobonifdaño": "CC y AD",
-      "ataquecc": 1,
-      "ataquead": 1,
       "moral": 6,
       "reaccion": 0,
       "armas": [
@@ -696,8 +684,6 @@
       "ataque": 1,
       "daño": 1,
       "tipobonifdaño": "CC y AD",
-      "ataquecc": 1,
-      "ataquead": 1,
       "moral": 6,
       "reaccion": 0,
       "armas": [
@@ -755,8 +741,6 @@
       "ataque": 1,
       "daño": 1,
       "tipobonifdaño": "CC y AD",
-      "ataquecc": 1,
-      "ataquead": 1,
       "moral": 6,
       "reaccion": 0,
       "armas": [

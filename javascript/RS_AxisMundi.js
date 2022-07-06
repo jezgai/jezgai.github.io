@@ -35,8 +35,7 @@ class AxisMundi {
 		seccion += "<tr><td>PV</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"pv",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].pv + "</td></tr>";
 		seccion += "<tr><td>CA (CC)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"cacc",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].cacc + "</td></tr>";
 		seccion += "<tr><td>CA (AD)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"caad",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].caad + "</td></tr>";
-		seccion += "<tr><td>Ataque (CC)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataquecc",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].ataquecc + "</td></tr>";
-		seccion += "<tr><td>Ataque (AD)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataquead",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].ataquead + "</td></tr>";
+		seccion += "<tr><td>Ataque</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataque",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].ataque + "</td></tr>";
 		seccion += "<tr><td>Barridos</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"barridos",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].barridos + "</td></tr>";
 		
 		seccion += "</table></div>";
@@ -177,8 +176,7 @@ class AxisMundi {
 		seccion += "<tr><td>PV</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"pv",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].pv + "</td></tr>";
 		seccion += "<tr><td>CA (CC)</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"cacc",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].cacc + "</td></tr>";
 		seccion += "<tr><td>CA (AD)</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"caad",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].caad + "</td></tr>";
-		seccion += "<tr><td>Ataque (CC)</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataquecc",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].ataquecc + "</td></tr>";
-		seccion += "<tr><td>Ataque (AD)</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataquead",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].ataquead + "</td></tr>";
+		seccion += "<tr><td>Ataque</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataque",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].ataque + "</td></tr>";
 		seccion += "<tr><td class='mano' onclick='AxisMundi.tiradamoral(" + (numpnj-1) + ")'>Moral</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"moral",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].moral + "</td></tr>";
 		seccion += "<tr><td class='mano' onclick='AxisMundi.tiradareaccion(" + (numpnj-1) + ")'>Reacción</td><td><input type='text' size='6' value='0' id='modreaccion" + (numpnj-1) + "'></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"reaccion",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].reaccion + "</td></tr>";
 		
@@ -322,8 +320,7 @@ class AxisMundi {
 			seccion += "<tr><td>PV</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"pv",' + npj+ ',"PNJ")' + "' >" + pnjs[npj].pv + "</td></tr>";
 			seccion += "<tr><td>CA (CC)</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"cacc",' + npj + ',"PNJ")' + "' >" + pnjs[npj].cacc + "</td></tr>";
 			seccion += "<tr><td>CA (AD)</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"caad",' + npj + ',"PNJ")' + "' >" + pnjs[npj].caad + "</td></tr>";
-			seccion += "<tr><td>Ataque (CC)</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataquecc",' + npj + ',"PNJ")' + "' >" + pnjs[npj].ataquecc + "</td></tr>";
-			seccion += "<tr><td>Ataque (AD)</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataquead",' + npj + ',"PNJ")' + "' >" + pnjs[npj].ataquead + "</td></tr>";
+			seccion += "<tr><td>Ataque</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataque",' + npj + ',"PNJ")' + "' >" + pnjs[npj].ataque + "</td></tr>";
 		    seccion += "<tr><td class='mano' onclick='AxisMundi.tiradamoral(" + npj + ")'>Moral</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"moral",' + npj + ',"PNJ")' + "' >" + pnjs[numpnj-1].moral + "</td></tr>";
 		    seccion += "<tr><td class='mano' onclick='AxisMundi.tiradareaccion(" + npj + ")'>Reacción</td><td><input type='text' size='6' value='0' id='modreaccion" + (numpnj-1) + "'></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"reaccion",' + npj + ',"PNJ")' + "' >" + pnjs[numpnj-1].reaccion + "</td></tr>";
 					
@@ -337,8 +334,7 @@ class AxisMundi {
 			seccion += "<tr><td>PV</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"pv",' + npj+ ',"PJ")' + "' >" + personaje[npj].pv + "</td></tr>";
 			seccion += "<tr><td>CA (CC)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"cacc",' + npj + ',"PJ")' + "' >" + personaje[npj].cacc + "</td></tr>";
 			seccion += "<tr><td>CA (AD)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"caad",' + npj + ',"PJ")' + "' >" + personaje[npj].caad + "</td></tr>";
-			seccion += "<tr><td>Ataque (CC)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataquecc",' + npj + ',"PJ")' + "' >" + personaje[npj].ataquecc + "</td></tr>";
-			seccion += "<tr><td>Ataque (AD)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataquead",' + npj + ',"PJ")' + "' >" + personaje[npj].ataquead + "</td></tr>";
+			seccion += "<tr><td>Ataque</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataque",' + npj + ',"PJ")' + "' >" + personaje[npj].ataque + "</td></tr>";
 			seccion += "<tr><td>Barridos</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"barridos",' + npj + ',"PJ")' + "' >" + personaje[npj].barridos + "</td></tr>";
 			seccion += "</table>";
 			document.getElementById('pjcaracteristicas'+npj).innerHTML = seccion;
@@ -376,19 +372,12 @@ class AxisMundi {
 			else
 				valor = personaje[npj].caad;
 		}
-		else if ( caracteristica == "ataquecc" ) {
-			literal = "Ataque CC";
+		else if ( caracteristica == "ataque" ) {
+			literal = "Ataque";
 			if ( tipo == "PNJ" )
-				valor = pnjs[npj].ataquecc;
+				valor = pnjs[npj].ataque;
 			else
-				valor = personaje[npj].ataquecc;
-		}
-		else if ( caracteristica == "ataquead" ) {
-			literal = "Ataque AD";
-			if ( tipo == "PNJ" )
-				valor = pnjs[npj].ataquead;
-			else
-				valor = personaje[npj].ataquead;
+				valor = personaje[npj].ataque;
 		}
 		else if ( caracteristica == "barridos" ) {
 			literal = "Barridos";
@@ -441,8 +430,21 @@ class AxisMundi {
 		var mensaje = "<b>";
 		if ( tipo == "PNJ" ) 
 			mensaje += pnjs[npj].nombre + "</b> " + pnjs[npj].salvaciones[indice].nombre + " (" +  pnjs[npj].salvaciones[indice].valor + ")<br/><b>Resultado: </b>" + valor;
-		else
-			mensaje += personaje[npj].nombre + "</b> " + personaje[npj].salvaciones[indice].nombre + " (" +  personaje[npj].salvaciones[indice].valor + ")<br/><b>Resultado: </b>" + valor;
+		else {
+			var valorSalvacion = personaje[npj].salvaciones[indice].valor;
+			var modifSAB = 0;
+			if ( personaje[npj].salvaciones[indice].nombre == "Artefactos mágicos" || personaje[npj].salvaciones[indice].nombre == "Conjuros" ) {
+				var iatr=0;
+				for (iatr=0; iatr<personaje[npj].atributos.length; iatr++) {
+					if ( personaje[npj].atributos[iatr].nbatr = "Sabiduría" ) {
+						modifSAB = parseInt(personaje[npj].atributos[iatr].modif);
+						break;
+					}
+				}
+			}
+			valorSalvacion -= modifSAB;
+			mensaje += personaje[npj].nombre + "</b> " + personaje[npj].salvaciones[indice].nombre + " (" +  valorSalvacion + ")<br/><b>Resultado: </b>" + valor;
+		}
 		RolSolo.escribemensaje(mensaje);
 	}
 	
@@ -470,13 +472,21 @@ class AxisMundi {
 			var daño = RolSolo.random(parseInt(pnjs[npj].armas[indice].danoCaC),1);
 			if ( pnjs[npj].tipobonifdaño == "CC" || pnjs.tipobonifdaño == "CC y AD" )
 				daño += parseInt(pnjs[npj].daño);
-			mensaje += pnjs[npj].nombre + "</b> " + pnjs[npj].armas[indice].nombre + " (CaC)<br/><b>Resultado: </b>" + (valor + parseInt(pnjs[npj].ataquecc)) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
+			mensaje += pnjs[npj].nombre + "</b> " + pnjs[npj].armas[indice].nombre + " (CaC)<br/><b>Resultado: </b>" + (valor + parseInt(pnjs[npj].ataque)) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
 		}
 		else {
+			var modifFUE = 0;
+			var iatr=0;
+			for (iatr=0; iatr<personaje[npj].atributos.length; iatr++) {
+				if ( personaje[npj].atributos[iatr].nbatr == "Fuerza" ) {
+					modifFUE = parseInt(personaje[npj].atributos[iatr].modif);
+					break;
+				}
+			}
 			var daño = RolSolo.random(parseInt(personaje[npj].armas[indice].danoCaC),1);
 			if ( personaje[npj].tipobonifdaño == "CC" || personaje.tipobonifdaño == "CC y AD" )
 				daño += parseInt(personaje[npj].daño);
-			mensaje += personaje[npj].nombre + "</b> " + personaje[npj].armas[indice].nombre + " (CaC)<br/><b>Resultado: </b>" + (valor + parseInt(personaje[npj].ataquecc)) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
+			mensaje += personaje[npj].nombre + "</b> " + personaje[npj].armas[indice].nombre + " (CaC)<br/><b>Resultado: </b>" + (valor + parseInt(personaje[npj].ataque) + modifFUE) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
 		}
 		RolSolo.escribemensaje(mensaje);
 	}
@@ -491,13 +501,21 @@ class AxisMundi {
 			var daño = RolSolo.random(parseInt(pnjs[npj].armas[indice].danoAD),1);
 			if ( pnjs[npj].tipobonifdaño == "AD" || pnjs[npj].tipobonifdaño == "CC y AD" )
 				daño += parseInt(pnjs[npj].daño);
-			mensaje += pnjs[npj].nombre + "</b> " + pnjs[npj].armas[indice].nombre + " (AD)<br/><b>Resultado: </b>" + (valor + parseInt(pnjs[npj].ataquead)) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
+			mensaje += pnjs[npj].nombre + "</b> " + pnjs[npj].armas[indice].nombre + " (AD)<br/><b>Resultado: </b>" + (valor + parseInt(pnjs[npj].ataque)) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
 		}
 		else {
+			var modifDES = 0;
+			var iatr=0;
+			for (iatr=0; iatr<personaje[npj].atributos.length; iatr++) {
+				if ( personaje[npj].atributos[iatr].nbatr == "Destreza" ) {
+					modifDES = parseInt(personaje[npj].atributos[iatr].modif);
+					break;
+				}
+			}
 			var daño = RolSolo.random(parseInt(personaje[npj].armas[indice].danoAD),1);
 			if ( personaje[npj].tipobonifdaño == "AD" || personaje[npj].tipobonifdaño == "CC y AD" )
 				daño += parseInt(personaje[npj].daño);
-			mensaje += personaje[npj].nombre + "</b> " + personaje[npj].armas[indice].nombre + " (AD)<br/><b>Resultado: </b>" + (valor + parseInt(personaje[npj].ataquead)) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
+			mensaje += personaje[npj].nombre + "</b> " + personaje[npj].armas[indice].nombre + " (AD)<br/><b>Resultado: </b>" + (valor + parseInt(personaje[npj].ataque) + modifDES) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
 		}
 		RolSolo.escribemensaje(mensaje);
 	}

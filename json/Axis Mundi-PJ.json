@@ -131,8 +131,6 @@
   "daño": 0,
   "tipobonifdaño": "CC y AD",
   "barridos": 1,
-  "ataquecc": 2,
-  "ataquead": 2,
   "armas": [
     {
       "nombre": "Espada ropera",
