@@ -19,8 +19,9 @@ class PJ {
 		this.pg = 0;
 		this.equipo = [];
 		this.da = 11;
-		this.plantillaPDF = "pdf/KnavePJ.pdf";
+		this.plantillaPDF = "pdf/KnaveOutremerPJ.pdf"; // "pdf/KnavePJ.pdf";
 		this.rasgos = [];
+		this.monedas = 0;
 	}
 	
 	bonificador(defensa) {
@@ -129,9 +130,112 @@ class PJ {
 		this.calcula_da();
 		this.rasgos = rasgos.rasgos();
 		
+		this.monedas = (Comun.random(6,1) + Comun.random(6,1) + Comun.random(6,1))*20;
+		
 	}
 	
+	static rellenaPDFPJ(fields, pj, sufijo) {
+		fields['Nivel' + sufijo] = [ 1 ];
+		fields['PGMax' + sufijo] = [ pj.pg ];
+		fields['PGActual' + sufijo] = [ pj.pg ];
+		fields['TipoArmadura' + sufijo] = [ pj.armadura.armadura ];
+		fields['Armadura' + sufijo] = [ pj.da ];
+		fields['bArmadura' + sufijo] = [ pj.bonificador(pj.da) ];
+		fields['FUE' + sufijo] = [ pj.atributos[0].defensa ];
+		fields['bFUE' + sufijo] = [ pj.bonificador(pj.atributos[0].defensa) ];
+		fields['DES' + sufijo] = [ pj.atributos[1].defensa ];
+		fields['bDES' + sufijo] = [ pj.bonificador(pj.atributos[1].defensa) ];
+		fields['CON' + sufijo] = [ pj.atributos[2].defensa ];
+		fields['bCON' + sufijo] = [ pj.bonificador(pj.atributos[2].defensa) ];
+		fields['INT' + sufijo] = [ pj.atributos[3].defensa ];
+		fields['bINT' + sufijo] = [ pj.bonificador(pj.atributos[3].defensa) ];
+		fields['SAB' + sufijo] = [ pj.atributos[4].defensa ];
+		fields['bSAB' + sufijo] = [ pj.bonificador(pj.atributos[4].defensa) ];
+		fields['CAR' + sufijo] = [ pj.atributos[5].defensa ];
+		fields['bCAR' + sufijo] = [ pj.bonificador(pj.atributos[5].defensa) ];
+		
+				
+		var i=0;
+		var inota = 1;		
+		var srasgo = "";
+		for (i=0; i< pj.rasgos.length; i++) {
+			if ( i%2 == 0 ) {
+				srasgo = pj.rasgos[i];
+			}
+			else {
+				srasgo += ". " + pj.rasgos[i];
+				fields[ 'Notas' + (inota) + sufijo ] = [ srasgo ];
+				inota++;
+				srasgo = "";
+			}
+		}
+		if (srasgo != "" ) {
+			fields[ 'Notas' + (inota) + sufijo ] = [ srasgo ];
+		}
+
+		var iarmadura=1;
+		i=0;
+		if ( pj.armadura.armadura != "Sin armadura" ) {
+			fields[ 'Equipo' + iarmadura + sufijo ] = [ "Armadura " + pj.armadura.armadura ];
+			iarmadura++;
+			for (i=1; i<pj.armadura.huecos; i++) {
+				fields[ 'Equipo' + iarmadura + sufijo ] = [ "X" ];
+				iarmadura++;
+			}
+		}
+		if ( pj.escudo.armadura != "" ) {
+			fields[ 'Equipo' + iarmadura + sufijo ] = [ pj.escudo.armadura ];
+			iarmadura++;
+			for (i=1; i<pj.escudo.huecos; i++) {
+				fields[ 'Equipo' + iarmadura + sufijo ] = [ "X" ];
+				iarmadura++;
+			}
+		}				
+		
+		if ( pj.yelmo.armadura != "" ) {
+			fields[ 'Equipo' + iarmadura + sufijo ] = [ pj.yelmo.armadura ];
+			iarmadura++;
+			for (i=1; i<pj.yelmo.huecos; i++) {
+				fields[ 'Equipo' + iarmadura + sufijo ] = [ "X" ];
+				iarmadura++;
+			}
+		}
+				
+		
+		if ( pj.arma.arma != "" ) {
+			fields[ 'Equipo' + iarmadura + sufijo ] = [ pj.arma.arma + " (d" + pj.arma.daño + ")"  ];
+			fields[ 'Arma1' + sufijo ] = [ pj.arma.arma ];
+			iarmadura++;
+			for (i=1; i<pj.arma.huecos; i++) {
+				fields[ 'Equipo' + iarmadura + sufijo ] = [ "X" ];
+				iarmadura++;
+			}
+		}
+		
+		for (i = 0; i < pj.equipo.length; i++, iarmadura++) {
+			fields[ 'Equipo' + iarmadura + sufijo ] = [ pj.equipo[i] ];
+		}
+		
+		fields[ 'Peniques' + sufijo ] = [ pj.monedas ];
+		
+		return fields;
+	}
+	
+	
 	rellenaPDF() {
+		
+		var fields = {};
+		fields = PJ.rellenaPDFPJ(fields, this, "");
+		
+		var pj2 = new PJ();
+		pj2.genera();
+		
+		fields = PJ.rellenaPDFPJ(fields, pj2, "_2");
+		return fields;
+				
+	}
+	
+	rellenaPDFOld() {
 			  var fields = {
 					'Nivel' : [ 1 ],
 					'PGMax' : [ this.pg ],
