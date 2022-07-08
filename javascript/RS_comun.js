@@ -257,7 +257,12 @@ class RolSolo {
 	
 	static consultaOraculo() {
 		var pregunta = document.getElementById('preguntaOra');
-		var resultado = RolSolo.random(6,1);
+		var modificador = parseInt(document.getElementById('modificadorOra').value);
+		var resultado=0;
+		if ( modificador < 0 )
+			resultado = RolSolo.random(6+modificador,1);
+		else
+			resultado = RolSolo.random(6-modificador,1+modificador);
 		if ( resultado == 1 )
 			respuesta = "No y además... (complicación mayor)";
 		else if ( resultado == 2 )

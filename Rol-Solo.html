@@ -195,7 +195,15 @@
 		<div class="w3-container">
 				<h2>Oráculo</h2>
 				<label for="preguntaOra">Pregunta</label>
-				<input type="text" size="64"  id="preguntaOra">
+				<input type="text" size="48"  id="preguntaOra">
+				<label for="modificadorOra">Modificador</label>
+				<select id="modificadorOra">
+					<option value="-2">Muy improbable</option>
+					<option value="-1">Improbable</option>
+					<option value="0" selected="selected">Normal</option>
+					<option value="1">Probable</option>
+					<option value="2">Muy probable</option>
+				</select>
 				<input type="button" id="btnConsultaOra" value="Consulta" onclick="RolSolo.consultaOraculo();">
 				<input type="button" id="btnCancelOra" value="Cancelar" onclick="RolSolo.cancelarCarga('oraculo')">
 		</div>
