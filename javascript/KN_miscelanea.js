@@ -64,6 +64,10 @@ class Rasgos {
 							"Defraudado", "Degradado", "Desacreditado", "Repudiado", "Exiliado",
 							"Incriminado", "Cazado", "Secuestrado", "Mutilado", "Pobre",
 							"Perseguido", "Rechazado", "Reemplazado", "Robado", "Sospechoso" ];
+		this.origen = [ "Aldeano", "Comprado por un mago", "Burgués", "Criado", "Desconocido",
+						"Esclavo", "Exiliado", "Expósito", "Gobernante derrocado", "Granjero", 
+						"Hidalgo", "Liberto", "Montañés", "Noble empobrecido", "Nómada", 
+						"Orden religiosa", "Pastoril", "Pueblerino", "Siervo", "Villano" ];
 	}
 	
 	alineamiento() {
@@ -80,18 +84,17 @@ class Rasgos {
 	rasgos() {
 		var rasgospj = [];
 		rasgospj.push("Alineamiento: " + this.alineamiento());
-		
-		rasgospj.push("Físico: " + this.fisico[Comun.random(20,0)]);
-		rasgospj.push("Cara: " + this.cara[Comun.random(20,0)]);
-		rasgospj.push("Piel: " + this.piel[Comun.random(20,0)]);
-		rasgospj.push("Pelo: " + this.pelo[Comun.random(20,0)]);
-		
-		rasgospj.push("Ropaje: " + this.ropaje[Comun.random(20,0)]);
-		rasgospj.push("Habla: " + this.habla[Comun.random(20,0)]);
-		rasgospj.push("Virtud: " + this.virtud[Comun.random(20,0)]);
+		rasgospj.push("Origen: " + this.origen[Comun.random(20,0)]);
 		rasgospj.push("Trasfondo: " + this.trasfondo[Comun.random(20,0)]);
+		rasgospj.push("Infortunio: " + this.desgracia[Comun.random(20,0)]);
+		rasgospj.push("Vestimenta: " + this.ropaje[Comun.random(20,0)]);
+		rasgospj.push("Habla: " + this.habla[Comun.random(20,0)]);
+		rasgospj.push("Físico: " + this.fisico[Comun.random(20,0)]);
+		rasgospj.push("Piel: " + this.piel[Comun.random(20,0)]);
+		rasgospj.push("Rostro: " + this.cara[Comun.random(20,0)]);
+		rasgospj.push("Pelo: " + this.pelo[Comun.random(20,0)]);
+		rasgospj.push("Virtud: " + this.virtud[Comun.random(20,0)]);
 		rasgospj.push("Vicio: " + this.vicio[Comun.random(20,0)]);
-		rasgospj.push("Desgracia: " + this.desgracia[Comun.random(20,0)]);
 		
 		return rasgospj;
 		

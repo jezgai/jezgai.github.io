@@ -203,8 +203,8 @@ class PJ {
 				
 		
 		if ( pj.arma.arma != "" ) {
-			fields[ 'Equipo' + iarmadura + sufijo ] = [ pj.arma.arma + " (d" + pj.arma.daño + ")"  ];
-			fields[ 'Arma1' + sufijo ] = [ pj.arma.arma ];
+			fields[ 'Equipo' + iarmadura + sufijo ] = [ pj.arma.arma ];
+			fields[ 'Arma1' + sufijo ] = [ pj.arma.arma + " (d" + pj.arma.daño + ")"  ];
 			iarmadura++;
 			for (i=1; i<pj.arma.huecos; i++) {
 				fields[ 'Equipo' + iarmadura + sufijo ] = [ "X" ];
