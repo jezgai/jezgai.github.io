@@ -160,6 +160,12 @@ class RolSolo {
 			pjsdet = AxisMundi.cargapersonaje(pjsdet);		
 			//document.getElementById("botonjson").style.visibility="visible";	
 		}
+		else if ( personaje[numpj-1].sistema == "La Marca del Este" ) 
+		{
+			dj = "Narrador";
+			pjsdet = LaMarcaDelEste.cargapersonaje(pjsdet);
+		}
+		
 		pjsdet += "</div>";
 		document.getElementById("pjsdet").innerHTML = pjsdet;
 		
@@ -203,6 +209,10 @@ class RolSolo {
 		{ 
 			pjsdet = AxisMundi.cargapnj(pjsdet);		
 			//document.getElementById("botonjson").style.visibility="visible";	
+		}
+		else if ( personaje[numpj-1].sistema == "La Marca del Este" ) 
+		{
+			pjsdet = LaMarcaDelEste.cargapnj(pjsdet);
 		}
 		pjsdet += "</div>";
 		document.getElementById("pnjsdet").innerHTML = pjsdet;
