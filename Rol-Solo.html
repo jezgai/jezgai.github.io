@@ -160,7 +160,8 @@
 	<div style="overflow:auto">
 		<div class="tercio w3-border" id="cabecerasistema"></div>
 		<div class="tercio w3-border">
-		<div class="tercio" id="botonoraculo"><p><button class="w3-button w3-block w3-blue" onclick="RolSolo.muestraventanacarga('oraculo')">Oráculo</button></p></div>
+		<div class="sexto" id="botonoraculo"><p><button class="w3-button w3-block w3-blue" onclick="RolSolo.muestraventanacarga('oraculo')">Oráculo</button></p></div>
+		<div class="sexto" id="botonaugur"><p><button class="w3-button w3-block w3-blue" onclick="RolSolo.consultaAugur()">Augur</button></p></div>
 		<!--<div class="mitad" id="botonmensaje"><p><button class="w3-button w3-block w3-blue" onclick="RolSolo.muestraventanamensajes('Amo del Calabozo')">Envía mensaje</button></p></div>-->
 		<div class="dostercios">
 			<img src='imagenes/d4.png' onclick='RolSolo.tiradado(4,0,-1)' alt='Dado d4' class='mano'/>
@@ -198,11 +199,13 @@
 				<input type="text" size="48"  id="preguntaOra">
 				<label for="modificadorOra">Modificador</label>
 				<select id="modificadorOra">
-					<option value="-2">Muy improbable</option>
-					<option value="-1">Improbable</option>
+					<option value="30">Muy improbable</option>
+					<option value="20">Bastante improbable</option>
+					<option value="10">Improbable</option>
 					<option value="0" selected="selected">Normal</option>
-					<option value="1">Probable</option>
-					<option value="2">Muy probable</option>
+					<option value="-10">Probable</option>
+					<option value="-20">Bastante probable</option>
+					<option value="-30">Muy probable</option>
 				</select>
 				<input type="button" id="btnConsultaOra" value="Consulta" onclick="RolSolo.consultaOraculo();">
 				<input type="button" id="btnCancelOra" value="Cancelar" onclick="RolSolo.cancelarCarga('oraculo')">

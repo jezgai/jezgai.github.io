@@ -255,26 +255,65 @@ class RolSolo {
 		document.getElementById(id).style.display='none';
 	}
 	
+	static consultaAugurRespuesta() {
+		// De Reglas para partidas en solitario. Sombrías y peligrosas. De Zweihander - Grim & Perilous RPG
+		var tabla1 = [ "Exagerado", "Aplazamiento", "Adversidad", "Asesinato", "Interrupción", "Usurpación", "Creación", "Traición", "Acuerdo", "Abuso", 
+					"Opresivo", "Inspeccionar", "Emboscada", "Espionaje", "Añadir", "Transportar", "Apertura", "Despreocupado", "Arruinar", "Extravagancia", 
+					"Engañar", "Llegada", "Propuesta", "División", "Rechazo", "Desconfiado", "Engaño", "Crueldad", "Intolerancia", "Confianza", "Emocionante", 
+					"Activo", "Ayuda", "Cuidados", "Negligencia", "Apasionado", "Trabajo duro", "Control", "Atracción", "Defecto", "Persecución", "Vengativo", 
+					"Procedimiento", "Dicusión", "Castigo", "Guía", "Transformación", "Derrocamiento", "Opresivo", "Cambio", "Procrastinación", "Elogios", 
+					"Separación", "Posesión", "Rompedor", "Curación", "Retraso", "Parar", "Mentira", "Regreso", "Imitación", "En apuros", "Información", 
+					"Concesión", "Retrasar", "Revelar", "Regateo", "Encarcelamiento", "Liberación", "Celebración", "Evolución", "Viaje", "Bloqueo", 
+					"Dañino", "Corromper", "Conseguir", "Comienzo", "Descuido", "Pelea", "Reclutamiento", "Triunfante", "Violación", "Oposición", 
+					"Malicia", "Comunicativo", "Persecución", "Incremento", "Reducción", "Abandono", "Gratificante", "Investigación", "Antagonista", 
+					"Movimiento", "Desperdicio", "Tregua", "Liberación", "Hacer amistad", "Juzgar", "Desertar", "Dominante" ];
+		// De Reglas para partidas en solitario. Sombrías y peligrosas. De Zweihander - Grim & Perilous RPG
+		var tabla2 = [ "Objetivos", "Sueños", "Exterior", "Interior", "Aliados", "Enemigos", 
+						"Emociones", "Oposición", "Guerra", "Paz", "Amor", "Nuevas ideas", 
+						"Mensajes", "Tensión", "Amistad", "Lo físico", "Un proyecto", 
+						"Placeres", "Dolor", "Posesiones", "Planes", "Mentiras", 
+						"Expectativas", "Una senda", "Noticias", "Consejo" ];
+		
+		var resultado1=RolSolo.random(tabla1.length, 0);
+		var resultado2=RolSolo.random(tabla2.length, 0);
+		
+		return tabla1[resultado1] + " - " + tabla2[resultado2];
+		
+	}
+	
+	static consultaAugur() {
+		var mensaje = RolSolo.consultaAugurRespuesta();
+		RolSolo.escribemensaje(mensaje);
+	}
+	
 	static consultaOraculo() {
+		// De Reglas para partidas en solitario. Sombrías y peligrosas. De Zweihander - Grim & Perilous RPG
 		var pregunta = document.getElementById('preguntaOra');
 		var modificador = parseInt(document.getElementById('modificadorOra').value);
-		var resultado=0;
-		if ( modificador < 0 )
-			resultado = RolSolo.random(6+modificador,1);
-		else
-			resultado = RolSolo.random(6-modificador,1+modificador);
-		if ( resultado == 1 )
-			respuesta = "No y además... (complicación mayor)";
-		else if ( resultado == 2 )
-			respuesta = "No";
-		else if ( resultado == 3 )
-			respuesta = "No pero... (ventaja menor)";
-		else if ( resultado == 4 )
-			respuesta = "Sí pero... (complicación menor)";
-		else if ( resultado == 5 )
+		var resultado=RolSolo.random(100, 1) + modificador;
+		
+		if ( resultado <= 5 ) {
+			respuesta = "Sí y además...";
+			respuesta += " <em>(" + RolSolo.consultaAugurRespuesta() + ")</em>";
+		}
+		else if ( resultado <= 30 ) {
 			respuesta = "Sí";
-		else
-			respuesta = "Sí y además... (ventaja mayor)";
+		}
+		else if ( resultado <= 50 ) {
+			respuesta = "Sí, pero...";
+			respuesta += " <em>(" + RolSolo.consultaAugurRespuesta() + ")</em>";
+		}
+		else if ( resultado <= 70 ) {
+			respuesta = "No, pero...";
+			respuesta += " <em>(" + RolSolo.consultaAugurRespuesta() + ")</em>";
+		}
+		else if ( resultado <= 95 ) {
+			respuesta = "No";
+		}
+		else  {
+			respuesta = "No y además...";
+			respuesta += " <em>(" + RolSolo.consultaAugurRespuesta() + ")</em>";
+		}
 		
 		var mensaje = "<strong>" + pregunta.value + "</strong><br/>" + respuesta;
 		RolSolo.escribemensaje(mensaje);
