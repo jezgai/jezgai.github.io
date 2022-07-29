@@ -31,6 +31,10 @@ class AxisMundi {
 			personaje[numpj-1].pvinicial = personaje[numpj-1].pv;
 		}
 		
+		if( personaje[numpj-1].hasOwnProperty('px') == false ){
+			personaje[numpj-1].px = 0;
+		}
+		
 		//seccion = "<h2>Atributos</h2>";
 		seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pjcaracteristicas" + (numpj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Características</strong></p></div>";
 		seccion += "<div id='pjcaracteristicas" + (numpj-1) + "' class='w3-hide w3-container' >"
@@ -40,6 +44,7 @@ class AxisMundi {
 		seccion += "<tr><td>CA (AD)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"caad",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].caad + "</td></tr>";
 		seccion += "<tr><td>Ataque</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataque",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].ataque + "</td></tr>";
 		seccion += "<tr><td>Barridos</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"barridos",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].barridos + "</td></tr>";
+		seccion += "<tr><td>PX</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"px",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].px + "</td></tr>";
 		
 		seccion += "</table></div>";
 		pjs+= seccion;
@@ -172,14 +177,14 @@ class AxisMundi {
 		seccion += "</table></div>";
 		pjs+= seccion;*/
 		
-		if( pnjs[numpj-1].hasOwnProperty('pvinicial') == false ){
-			pnjs[numpj-1].pvinicial = pnjs[numpj-1].pv;
+		if( pnjs[numpnj-1].hasOwnProperty('pvinicial') == false ){
+			pnjs[numpnj-1].pvinicial = pnjs[numpnj-1].pv;
 		}
 		
 		seccion += "<div onclick=" + '"' + "RolSolo.acordeon('pnjcaracteristicas" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Características</strong></p></div>";
 		seccion += "<div id='pnjcaracteristicas" + (numpnj-1) + "' class='w3-hide w3-container' >"
 		seccion += "<table class='w3-table  w3-striped w3-border'><tr><th>Característica</th><th></th><th>Valor</th></tr>";
-		seccion += "<tr><td>PV</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"pv",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].pv  + " (" + pnjs[numpj-1].pvinicial + ")" + "</td></tr>";
+		seccion += "<tr><td>PV</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"pv",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].pv  + " (" + pnjs[numpnj-1].pvinicial + ")" + "</td></tr>";
 		seccion += "<tr><td>CA (CC)</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"cacc",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].cacc + "</td></tr>";
 		seccion += "<tr><td>CA (AD)</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"caad",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].caad + "</td></tr>";
 		seccion += "<tr><td>Ataque</td><td></td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataque",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].ataque + "</td></tr>";
@@ -320,6 +325,10 @@ class AxisMundi {
 			else
 				personaje[npj].barridos = document.getElementById('vcaracteristica').value;
 		}
+		else if ( caracteristica == "px" ) {
+			if ( tipo != "PNJ" ) 
+				personaje[npj].px = document.getElementById('vcaracteristica').value;
+		}
 		if ( tipo == "PNJ" ) {
 			//var seccion = "<div id='pnjcaracteristicas" + npj + "' class='w3-hide w3-container' >"
 			var seccion = "<table class='w3-table  w3-striped w3-border'><tr><th>Característica</th><th></th><th>Valor</th></tr>";
@@ -342,6 +351,7 @@ class AxisMundi {
 			seccion += "<tr><td>CA (AD)</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"caad",' + npj + ',"PJ")' + "' >" + personaje[npj].caad + "</td></tr>";
 			seccion += "<tr><td>Ataque</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataque",' + npj + ',"PJ")' + "' >" + personaje[npj].ataque + "</td></tr>";
 			seccion += "<tr><td>Barridos</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"barridos",' + npj + ',"PJ")' + "' >" + personaje[npj].barridos + "</td></tr>";
+			seccion += "<tr><td>PX</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"px",' + npj + ',"PJ")' + "' >" + personaje[npj].px + "</td></tr>";
 			seccion += "</table>";
 			document.getElementById('pjcaracteristicas'+npj).innerHTML = seccion;
 			RolSolo.muestra('pjcaracteristicas'+npj);
@@ -405,6 +415,11 @@ class AxisMundi {
 				valor = pnjs[npj].reaccion;
 			else
 				valor = personaje[npj].reaccion;
+		}
+		else if ( caracteristica == "px" ) {
+			literal = "PX";
+			if ( tipo != "PNJ" )
+				valor = personaje[npj].px;
 		}
 		if ( literal != "" ){
 			document.getElementById('nbcaracteristica').innerHTML = "<label id='nbcaracteristica'>" + literal + "</label>";

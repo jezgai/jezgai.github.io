@@ -31,6 +31,10 @@ class LaMarcaDelEste {
 			personaje[numpj-1].pvinicial = personaje[numpj-1].pv;
 		}
 		
+		if( personaje[numpj-1].hasOwnProperty('px') == false ){
+			personaje[numpj-1].px = 0;
+		}
+		
 		//seccion = "<h2>Atributos</h2>";
 		seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pjcaracteristicas" + (numpj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Características</strong></p></div>";
 		seccion += "<div id='pjcaracteristicas" + (numpj-1) + "' class='w3-hide w3-container' >"
@@ -39,6 +43,7 @@ class LaMarcaDelEste {
 		seccion += "<tr><td>CA</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"ca",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].ca + "</td></tr>";
 		seccion += "<tr><td>Iniciativa</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"ini",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].ini + "</td></tr>";
 		seccion += "<tr><td>Ataque</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"ataque",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].ataque + "</td></tr>";
+		seccion += "<tr><td>PX</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"px",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].px + "</td></tr>";
 		
 		seccion += "</table></div>";
 		pjs+= seccion;
@@ -174,14 +179,14 @@ class LaMarcaDelEste {
 		seccion += "</table></div>";
 		pjs+= seccion;*/
 		
-		if( pnjs[numpj-1].hasOwnProperty('pvinicial') == false ){
-			pnjs[numpj-1].pvinicial = pnjs[numpj-1].pv;
+		if( pnjs[numpnj-1].hasOwnProperty('pvinicial') == false ){
+			pnjs[numpnj-1].pvinicial = pnjs[numpnj-1].pv;
 		}
 		
 		seccion += "<div onclick=" + '"' + "RolSolo.acordeon('pnjcaracteristicas" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Características</strong></p></div>";
 		seccion += "<div id='pnjcaracteristicas" + (numpnj-1) + "' class='w3-hide w3-container' >"
 		seccion += "<table class='w3-table  w3-striped w3-border'><tr><th>Característica</th><th></th><th>Valor</th></tr>";
-		seccion += "<tr><td>PV</td><td></td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"pv",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].pv + " (" + pnjs[numpj-1].pvinicial + ")" + "</td></tr>";
+		seccion += "<tr><td>PV</td><td></td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"pv",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].pv + " (" + pnjs[numpnj-1].pvinicial + ")" + "</td></tr>";
 		seccion += "<tr><td>CA</td><td></td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"ca",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].ca + "</td></tr>";
 		seccion += "<tr><td>Iniciativa</td><td></td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"ini",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].ini + "</td></tr>";
 		seccion += "<tr><td>Ataque</td><td></td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"ataque",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].ataque + "</td></tr>";
@@ -319,6 +324,10 @@ class LaMarcaDelEste {
 			else
 				personaje[npj].barridos = document.getElementById('vcaracteristica').value;
 		}
+		else if ( caracteristica == "px" ) {
+			if ( tipo != "PNJ" ) 
+				personaje[npj].px = document.getElementById('vcaracteristica').value;
+		}
 		if ( tipo == "PNJ" ) {
 			//var seccion = "<div id='pnjcaracteristicas" + npj + "' class='w3-hide w3-container' >"
 			var seccion = "<table class='w3-table  w3-striped w3-border'><tr><th>Característica</th><th></th><th>Valor</th></tr>";
@@ -340,6 +349,7 @@ class LaMarcaDelEste {
 			seccion += "<tr><td>CA</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"ca",' + (npj) + ',"PJ")' + "' >" + personaje[npj].ca + "</td></tr>";
 			seccion += "<tr><td>Iniciativa</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"ini",' + (npj) + ',"PJ")' + "' >" + personaje[npj].ini + "</td></tr>";
 			seccion += "<tr><td>Ataque</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"ataque",' + (npj) + ',"PJ")' + "' >" + personaje[npj].ataque + "</td></tr>";
+			seccion += "<tr><td>PX</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"px",' + (npj) + ',"PJ")' + "' >" + personaje[npj].px + "</td></tr>";
 			
 			seccion += "</table>";
 			document.getElementById('pjcaracteristicas'+npj).innerHTML = seccion;
@@ -411,6 +421,11 @@ class LaMarcaDelEste {
 				valor = pnjs[npj].reaccion;
 			else
 				valor = personaje[npj].reaccion;
+		}
+		else if ( caracteristica == "px" ) {
+			literal = "PX";
+			if ( tipo != "PNJ" )
+				valor = personaje[npj].px;
 		}
 		if ( literal != "" ){
 			document.getElementById('nbcaracteristica').innerHTML = "<label id='nbcaracteristica'>" + literal + "</label>";
