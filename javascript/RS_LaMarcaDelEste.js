@@ -7,13 +7,16 @@ class LaMarcaDelEste {
 		var indiceatr=0;
 		var indice=0;
 				
+		var pjsaux = "";
+		
 		seccion = "<img src='imagenes/d4.png' onclick='RolSolo.tiradado(4," + (numpj-1) + ",1)' alt='Dado d4' class='mano'/>" +
 		"<img src='imagenes/d6.png' onclick='RolSolo.tiradado(6," + (numpj-1) + ",1)' alt='Dado d6' class='mano'/>" + 
 		"<img src='imagenes/d8.png' onclick='RolSolo.tiradado(8," + (numpj-1) + ",1)' alt='Dado d8' class='mano'/>" + 
 		"<img src='imagenes/d10.png' onclick='RolSolo.tiradado(10," + (numpj-1) + ",1)' alt='Dado d10' class='mano'/>" + 
 		"<img src='imagenes/d12.png' onclick='RolSolo.tiradado(12," + (numpj-1) + ",1)' alt='Dado d12' class='mano'/>" + 
 		"<img src='imagenes/d20.png' onclick='RolSolo.tiradado(20," + (numpj-1) + ",1)' alt='Dado d20' class='mano'/>" +
-		"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"' +  personaje[numpj-1].nombre + '"' + ")' alt='" + personaje[numpj-1].nombre + " habla' class='mano'/>";
+		"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"' +  personaje[numpj-1].nombre + '"' + ")' alt='" + personaje[numpj-1].nombre + " habla' class='mano'/>" +
+		"<img src='imagenes/Papelera.jpg' onclick='RolSolo.elimina(" + (numpj-1)  + ',"PJ"' + ")' alt='Borra " + personaje[numpj-1].nombre + "' class='mano'/>";
 		//"<p><button class='w3-button w3-block w3-blue' onclick='RolSolo.muestraventanamensajes(" + '"' +  personaje[numpj-1].nombre + '"' + ")'>Habla</button></p></div>";
 		
 		
@@ -24,7 +27,7 @@ class LaMarcaDelEste {
 			seccion += "<tr><td><span class='mano' onclick='LaMarcaDelEste.tiradaatr(" + indiceatr + "," + (numpj-1) + ",1)'>" + personaje[numpj-1].atributos[indiceatr].nbatr + "</span></td><td>" + personaje[numpj-1].atributos[indiceatr].valor + " (" + personaje[numpj-1].atributos[indiceatr].modif + ")</td></tr>";
 		}
 		seccion += "</table></div>";
-		pjs+= seccion;
+		pjsaux+= seccion;
 		//document.getElementById("seccion1").innerHTML = seccion;
 		
 		if( personaje[numpj-1].hasOwnProperty('pvinicial') == false ){
@@ -46,7 +49,7 @@ class LaMarcaDelEste {
 		seccion += "<tr><td>PX</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"px",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].px + "</td></tr>";
 		
 		seccion += "</table></div>";
-		pjs+= seccion;
+		pjsaux+= seccion;
 		//document.getElementById("seccion2").innerHTML = seccion;
 		
 		seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pjsalvaciones" + (numpj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Salvaciones</strong></p></div>";
@@ -56,7 +59,7 @@ class LaMarcaDelEste {
 			seccion += "<tr><td><span class='mano' onclick='LaMarcaDelEste.tiradasalv(" + indice + "," + (numpj-1) + ",1)'>" + personaje[numpj-1].salvaciones[indice].nombre + "</span></td><td>" + personaje[numpj-1].salvaciones[indice].valor + "</td></tr>";
 		}
 		seccion += "</table></div>";
-		pjs+= seccion;
+		pjsaux+= seccion;
 		//document.getElementById("seccion3").innerHTML = seccion;
 		
 		seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pjhabilidades" + (numpj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Habilidades</strong></p></div>";
@@ -66,7 +69,7 @@ class LaMarcaDelEste {
 			seccion += "<tr><td><span class='mano' onclick='LaMarcaDelEste.tiradahabilidad(" + indice + "," + (numpj-1) + "," + personaje[numpj-1].habilidades[indice].dado + ",1)'>" + personaje[numpj-1].habilidades[indice].nombre + "</span></td><td>" + personaje[numpj-1].habilidades[indice].valor + " (" + personaje[numpj-1].habilidades[indice].dado + ")</td></tr>";
 		}
 		seccion += "</table>";
-		pjs+= seccion + "</div>";
+		pjsaux+= seccion + "</div>";
 		//document.getElementById("seccion4").innerHTML = seccion;
 		
 		seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pjarmas" + (numpj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Armas</strong></p></div>";
@@ -122,7 +125,7 @@ class LaMarcaDelEste {
 			seccion += "<tr><td><span class='mano' onclick='" + funcion + "(" + indice + "," + (numpj-1) + ",1)'>" + personaje[numpj-1].armas[indice].nombre + "</span>" + usoalternativo + "</td><td>" + daño + "</td><td>" + personaje[numpj-1].armas[indice].tipo  + "</td></tr>";
 		}
 		seccion += "</table></div>";
-		pjs+= seccion;
+		pjsaux+= seccion;
 		
 		var numeroseccion = 5;
 		seccion = "";
@@ -133,7 +136,7 @@ class LaMarcaDelEste {
 			var seccionc = "<div onclick=" + '"' + "RolSolo.acordeon('pjconjuros" + (numpj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Conjuros</strong></p></div>";
 			seccionc += "<div id='pjconjuros" + (numpj-1) + "' class='w3-hide w3-container' >"
 			seccionc += "<table class='w3-table  w3-striped w3-border'>" + seccion + "</table></div>";
-			pjs+= seccionc;
+			pjsaux+= seccionc;
 		//document.getElementById("seccion" + numeroseccion).innerHTML = seccion;
 			numeroseccion ++;
 		}
@@ -146,7 +149,11 @@ class LaMarcaDelEste {
 			seccion += "<tr><td>" + personaje[numpj-1].caracteristicas[indice] + "</td></tr>";
 		}
 		seccion += "</table></div>";
-		pjs+= seccion;
+		pjsaux+= seccion;
+		
+		if( personaje[numpj-1].hasOwnProperty('estado') == false || (personaje[numpj-1].hasOwnProperty('estado') == true && personaje[numpj-1].estado != "Eliminado") ){
+			pjs+=pjsaux;
+		}
 		//document.getElementById("seccion7").innerHTML = seccion;
 		return pjs;	
 	}
@@ -159,25 +166,17 @@ class LaMarcaDelEste {
 		var indiceatr=0;
 		var indice=0;
 				
+		var pjsaux = "";
+		
 		seccion = "<img src='imagenes/d4.png' onclick='RolSolo.tiradado(4," + (numpnj-1) + ",0)' alt='Dado d4' class='mano'/>" +
 		"<img src='imagenes/d6.png' onclick='RolSolo.tiradado(6," + (numpnj-1) + ",0)' alt='Dado d6' class='mano'/>" + 
 		"<img src='imagenes/d8.png' onclick='RolSolo.tiradado(8," + (numpnj-1) + ",0)' alt='Dado d8' class='mano'/>" + 
 		"<img src='imagenes/d10.png' onclick='RolSolo.tiradado(10," + (numpnj-1) + ",0)' alt='Dado d10' class='mano'/>" + 
 		"<img src='imagenes/d12.png' onclick='RolSolo.tiradado(12," + (numpnj-1) + ",0)' alt='Dado d12' class='mano'/>" + 
 		"<img src='imagenes/d20.png' onclick='RolSolo.tiradado(20," + (numpnj-1) + ",0)' alt='Dado d20' class='mano'/>" +
-		"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"' +  pnjs[numpnj-1].nombre + '"' + ")' alt='" + pnjs[numpnj-1].nombre + " habla' class='mano'/>";
-		//"<p><button class='w3-button w3-block w3-blue' onclick='RolSolo.muestraventanamensajes(" + '"' +  pnjs[numpnj-1].nombre + '"' + ")'>Habla</button></p></div>";
+		"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"' +  pnjs[numpnj-1].nombre + '"' + ")' alt='" + pnjs[numpnj-1].nombre + " habla' class='mano'/>" +
+		"<img src='imagenes/Papelera.jpg' onclick='RolSolo.elimina(" + (numpnj-1)  + ',"PNJ"' + ")' alt='Borra " + pnjs[numpnj-1].nombre + "' class='mano'/>";
 		
-		
-		/*seccion += "<div onclick=" + '"' + "RolSolo.acordeon('pnjatributos" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Atributos</strong></p></div>";
-		
-		seccion += "<div id='pnjatributos" + (numpnj-1) + "' class='w3-hide w3-container' >"
-		seccion += "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</th><th>Valor (mod)</th></tr>";
-		for (indiceatr=0; indiceatr< pnjs[numpnj-1].atributos.length; indiceatr++) {
-			seccion += "<tr><td><span class='mano' onclick='LaMarcaDelEste.tiradaatr(" + indiceatr + "," + (numpnj-1) + ",0)'>" + pnjs[numpnj-1].atributos[indiceatr].nbatr + "</span></td><td>" + pnjs[numpnj-1].atributos[indiceatr].valor + " (" + pnjs[numpnj-1].atributos[indiceatr].modif + ")</td></tr>";
-		}
-		seccion += "</table></div>";
-		pjs+= seccion;*/
 		
 		if( pnjs[numpnj-1].hasOwnProperty('pvinicial') == false ){
 			pnjs[numpnj-1].pvinicial = pnjs[numpnj-1].pv;
@@ -193,7 +192,7 @@ class LaMarcaDelEste {
 		seccion += "<tr><td class='mano' onclick='LaMarcaDelEste.tiradamoral(" + (numpnj-1) + ")'>Moral</td><td></td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"moral",' + (numpnj-1) + ',"PNJ")' + "' >" + pnjs[numpnj-1].moral + "</td></tr>";
 		
 		seccion += "</table></div>";
-		pjs+= seccion;
+		pjsaux+= seccion;
 		
 		seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pnjsalvaciones" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Salvaciones</strong></p></div>";
 		seccion += "<div id='pnjsalvaciones" + (numpnj-1) + "' class='w3-hide w3-container' >"
@@ -202,7 +201,7 @@ class LaMarcaDelEste {
 			seccion += "<tr><td><span class='mano' onclick='LaMarcaDelEste.tiradasalv(" + indice + "," + (numpnj-1) + ",0)'>" + pnjs[numpnj-1].salvaciones[indice].nombre + "</span></td><td>" + pnjs[numpnj-1].salvaciones[indice].valor + "</td></tr>";
 		}
 		seccion += "</table></div>";
-		pjs+= seccion;
+		pjsaux+= seccion;
 				
 		seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pnjarmas" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Armas</strong></p></div>";
 		seccion += "<div id='pnjarmas" + (numpnj-1) + "' class='w3-hide w3-container' >"
@@ -258,7 +257,7 @@ class LaMarcaDelEste {
 		}
 		seccion += "</table></div>";
 		var numeroseccion = 5;
-		pjs+= seccion;
+		pjsaux+= seccion;
 		numeroseccion++;
 		
 		seccion = "";
@@ -269,7 +268,7 @@ class LaMarcaDelEste {
 			var seccionc = "<div onclick=" + '"' + "RolSolo.acordeon('pnjconjuros" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Conjuros</strong></p></div>";
 			seccionc += "<div id='pnjconjuros" + (numpnj-1) + "' class='w3-hide w3-container' >"
 			seccionc += "<table class='w3-table  w3-striped w3-border'>" + seccion + "</table></div>";
-			pjs+= seccionc;
+			pjsaux+= seccionc;
 			numeroseccion ++;
 		}
 		
@@ -281,7 +280,12 @@ class LaMarcaDelEste {
 			seccion += "<tr><td>" + pnjs[numpnj-1].caracteristicas[indice] + "</td></tr>";
 		}
 		seccion += "</table></div>";
-		pjs+= seccion;
+		pjsaux+= seccion;
+		
+		if( pnjs[numpnj-1].hasOwnProperty('estado') == false || (pnjs[numpnj-1].hasOwnProperty('estado') == true && pnjs[numpnj-1].estado != "Eliminado") ){
+			pjs+=pjsaux;
+		}
+		
 		return pjs;	
 	}
 	

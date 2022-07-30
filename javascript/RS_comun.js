@@ -104,6 +104,12 @@ class RolSolo {
 	
 	static cargapartida() {
 		var indice=0;
+		personaje = [];
+		pnjs = [];
+		tiradas = [];
+		numpj = 0;
+		numpnj = 0;
+		document.getElementById("cabecerasistema").innerHTML = "";
 		for (indice=0; indice<partida.pjs.length; indice++) {
 			personaje.push(partida.pjs[indice]);
 			RolSolo.cargapersonaje();
@@ -141,8 +147,11 @@ class RolSolo {
 		var pjsdet = document.getElementById("pjsdet").innerHTML;
 		
 		numpj++;
-		pjsdet += "<button onclick=" + '"' + "RolSolo.acordeon('pj" + numpj + "')" + '"' + " class='w3-button w3-block w3-left-align w3-blue'><h2>" + personaje[numpj-1].nombre + " (" + personaje[numpj-1].clase + ")" + "</h2></button>"
-		pjsdet += "<div id='pj" + numpj + "' class='w3-hide w3-container' >";
+		if( personaje[numpj-1].hasOwnProperty('estado') == false || (personaje[numpj-1].hasOwnProperty('estado') == true && personaje[numpj-1].estado != "Eliminado") ) {
+			pjsdet += "<button onclick=" + '"' + "RolSolo.acordeon('pj" + numpj + "')" + '"' + " class='w3-button w3-block w3-left-align w3-blue'><h2>" + personaje[numpj-1].nombre + " (" + personaje[numpj-1].clase + ")" + "</h2></button>"
+			pjsdet += "<div id='pj" + numpj + "' class='w3-hide w3-container' >";
+		}
+		
 		//pjs += "<h2><strong>" + personaje.nombre + "</strong></h2>";
 		
 		if ( document.getElementById("cabecerasistema").innerHTML == "" )
@@ -165,8 +174,9 @@ class RolSolo {
 			dj = "Narrador";
 			pjsdet = LaMarcaDelEste.cargapersonaje(pjsdet);
 		}
-		
-		pjsdet += "</div>";
+		if( personaje[numpj-1].hasOwnProperty('estado') == false || (personaje[numpj-1].hasOwnProperty('estado') == true && personaje[numpj-1].estado != "Eliminado") ) {
+			pjsdet += "</div>";
+		}
 		document.getElementById("pjsdet").innerHTML = pjsdet;
 		
 		RolSolo.muestra("pjsdet");
@@ -193,8 +203,10 @@ class RolSolo {
 		var pjsdet = document.getElementById("pnjsdet").innerHTML;
 		
 		numpnj++;
-		pjsdet += "<button onclick=" + '"' + "RolSolo.acordeon('pnj" + numpnj + "')" + '"' + " class='w3-button w3-block w3-left-align w3-blue'><h2>" + pnjs[numpnj-1].nombre + "</h2></button>"
-		pjsdet += "<div id='pnj" + numpnj + "' class='w3-hide w3-container' >";
+		if( pnjs[numpnj-1].hasOwnProperty('estado') == false || (pnjs[numpnj-1].hasOwnProperty('estado') == true && pnjs[numpnj-1].estado != "Eliminado") ) {
+			pjsdet += "<button onclick=" + '"' + "RolSolo.acordeon('pnj" + numpnj + "')" + '"' + " class='w3-button w3-block w3-left-align w3-blue'><h2>" + pnjs[numpnj-1].nombre + "</h2></button>"
+			pjsdet += "<div id='pnj" + numpnj + "' class='w3-hide w3-container' >";
+		}
 		//pjs += "<h2><strong>" + personaje.nombre + "</strong></h2>";
 		
 		if ( document.getElementById("cabecerasistema").innerHTML == "" )
@@ -214,7 +226,9 @@ class RolSolo {
 		{
 			pjsdet = LaMarcaDelEste.cargapnj(pjsdet);
 		}
-		pjsdet += "</div>";
+		if( pnjs[numpnj-1].hasOwnProperty('estado') == false || (pnjs[numpnj-1].hasOwnProperty('estado') == true && pnjs[numpnj-1].estado != "Eliminado") ) {
+			pjsdet += "</div>";
+		}
 		document.getElementById("pnjsdet").innerHTML = pjsdet;
 		
 		RolSolo.muestra("pnjsdet");
@@ -249,6 +263,23 @@ class RolSolo {
 			}
 		}
 		document.getElementById(id).style.display='block';
+	}
+	
+	static elimina(npj, tipo) {
+		if ( tipo == "PNJ" ) {
+			pnjs[npj].estado = "Eliminado";
+			partida.pnjs = pnjs;
+			// Cargar otra vez todo
+		}
+		else {
+			personaje[npj].estado = "Eliminado";
+			partida.pjs = personaje;
+			// Cargar otra vez todo
+		}
+		document.getElementById("PJs").innerHTML = "";
+		document.getElementById("PNJs").innerHTML = "";
+		document.getElementById("chat").innerHTML = "";
+		RolSolo.cargapartida();
 	}
 
   
@@ -336,6 +367,7 @@ class RolSolo {
 		RolSolo.escribemensaje(mensaje);
 		RolSolo.cancelarCarga('mensajes');
 	}
+	
   
 	
 	static exportaJSON() {
@@ -361,7 +393,7 @@ class RolSolo {
 	
 	static muestra(id) {
 		var x = document.getElementById(id);
-		if (x.className.indexOf("w3-show") == -1) {
+		if (x != null && x.className.indexOf("w3-show") == -1) {
 			x.className += " w3-show";
 		}
 	}
@@ -369,16 +401,16 @@ class RolSolo {
 	
 	static oculta(id) {
 		var x = document.getElementById(id);
-		if (x.className.indexOf("w3-show") != -1) {
+		if (x != null && x.className.indexOf("w3-show") != -1) {
 			x.className = x.className.replace(" w3-show", "");
 		}
 	}
 	
 	static acordeon(id) {
 		var x = document.getElementById(id);
-		if (x.className.indexOf("w3-show") == -1) {
+		if (x != null && x.className.indexOf("w3-show") == -1) {
 			x.className += " w3-show";
-		} else { 
+		} else if ( x != null) { 
 			x.className = x.className.replace(" w3-show", "");
 		}
 	}
