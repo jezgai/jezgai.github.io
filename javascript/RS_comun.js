@@ -276,6 +276,7 @@ class RolSolo {
 			partida.pjs = personaje;
 			// Cargar otra vez todo
 		}
+		partida.tiradas = tiradas;
 		document.getElementById("PJs").innerHTML = "";
 		document.getElementById("PNJs").innerHTML = "";
 		document.getElementById("chat").innerHTML = "";
