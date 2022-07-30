@@ -486,23 +486,30 @@ class LaMarcaDelEste {
 			tipo = "PNJ";
 		var valor = RolSolo.random(20, 1);
 		var mensaje = "<b>";
+		var modificador = 0;
 		if ( tipo == "PNJ" ) {
 			var ndados=0;
 			var daño = 0;
+			if ( pnjs[npj].hasOwnProperty('ataquecac') == true ) {
+				modificador = parseInt(pnjs[npj].ataquecac);
+			}
 			for(ndados=0; ndados < parseInt(pnjs[npj].armas[indice].danoCaC.ndados); ndados++) {
 				daño += RolSolo.random(parseInt(pnjs[npj].armas[indice].danoCaC.dado),1);
 			}
 			daño += parseInt(pnjs[npj].armas[indice].danoCaC.modif);
-			mensaje += pnjs[npj].nombre + "</b> " + pnjs[npj].armas[indice].nombre + " (CaC)<br/><b>Resultado: </b>" + (valor + parseInt(pnjs[npj].ataque)) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
+			mensaje += pnjs[npj].nombre + "</b> " + pnjs[npj].armas[indice].nombre + " (CaC)<br/><b>Resultado: </b>" + (valor + parseInt(pnjs[npj].ataque) + modificador) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
 		}
 		else {
 			var ndados=0;
 			var daño = 0;
+			if ( personaje[npj].hasOwnProperty('ataquecac') == true ) {
+				modificador = parseInt(personaje[npj].ataquecac);
+			}
 			for(ndados=0; ndados < parseInt(personaje[npj].armas[indice].danoCaC.ndados); ndados++) {
 				daño += RolSolo.random(parseInt(personaje[npj].armas[indice].danoCaC.dado),1);
 			}
 			daño += parseInt(personaje[npj].armas[indice].danoCaC.modif) + parseInt(personaje[npj].atributos[0].modif);
-			mensaje += personaje[npj].nombre + "</b> " + personaje[npj].armas[indice].nombre + " (CaC)<br/><b>Resultado: </b>" + (valor + parseInt(personaje[npj].ataque) + parseInt(personaje[npj].atributos[0].modif)) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
+			mensaje += personaje[npj].nombre + "</b> " + personaje[npj].armas[indice].nombre + " (CaC)<br/><b>Resultado: </b>" + (valor + parseInt(personaje[npj].ataque) + parseInt(personaje[npj].atributos[0].modif) + modificador) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
 		}
 		RolSolo.escribemensaje(mensaje);
 	}
@@ -513,23 +520,30 @@ class LaMarcaDelEste {
 			tipo = "PNJ";
 		var valor = RolSolo.random(20, 1);
 		var mensaje = "<b>";
+		var modificador = 0;
 		if ( tipo == "PNJ" ) {
 			var ndados=0;
 			var daño = 0;
+			if ( pnjs[npj].hasOwnProperty('ataquead') == true ) {
+				modificador = parseInt(pnjs[npj].ataquead);
+			}
 			for(ndados=0; ndados < parseInt(pnjs[npj].armas[indice].danoAD.ndados); ndados++) {
 				daño += RolSolo.random(parseInt(pnjs[npj].armas[indice].danoAD.dado),1);
 			}
 			daño += parseInt(pnjs[npj].armas[indice].danoAD.modif);
-			mensaje += pnjs[npj].nombre + "</b> " + pnjs[npj].armas[indice].nombre + " (AD)<br/><b>Resultado: </b>" + (valor + parseInt(pnjs[npj].ataque)) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
+			mensaje += pnjs[npj].nombre + "</b> " + pnjs[npj].armas[indice].nombre + " (AD)<br/><b>Resultado: </b>" + (valor + parseInt(pnjs[npj].ataque) + modificador) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
 		}
 		else {
 			var ndados=0;
 			var daño = 0;
+			if ( personaje[npj].hasOwnProperty('ataquead') == true ) {
+				modificador = parseInt(personaje[npj].ataquead);
+			}
 			for(ndados=0; ndados < parseInt(personaje[npj].armas[indice].danoAD.ndados); ndados++) {
 				daño += RolSolo.random(parseInt(personaje[npj].armas[indice].danoAD.dado),1);
 			}
 			daño += parseInt(personaje[npj].armas[indice].danoAD.modif);
-			mensaje += personaje[npj].nombre + "</b> " + personaje[npj].armas[indice].nombre + " (AD)<br/><b>Resultado: </b>" + (valor + parseInt(personaje[npj].ataque) + parseInt(personaje[npj].atributos[1].modif)) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
+			mensaje += personaje[npj].nombre + "</b> " + personaje[npj].armas[indice].nombre + " (AD)<br/><b>Resultado: </b>" + (valor + parseInt(personaje[npj].ataque) + parseInt(personaje[npj].atributos[1].modif) + modificador) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
 		}
 		RolSolo.escribemensaje(mensaje);
 	}
