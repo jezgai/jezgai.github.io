@@ -6,24 +6,27 @@ class Mascaras {
 		var seccion = "";
 		var indiceatr=0;
 		var indice=0;
+		var pjsaux="";
 		
 		//document.getElementById("dados").innerHTML = "<img src='imagenes/d6.png' onclick='RolSolo.tiradado(6)' alt='Dado d6' class='mano'/>";
 		
-		pjs += "<img src='imagenes/d6.png' onclick='RolSolo.tiradado(6," + (numpj-1) + ")' alt='Dado d6' class='mano'/>";
+		pjsaux += "<img src='imagenes/d6.png' onclick='RolSolo.tiradado(6," + (numpj-1) + ",1)'"  + " alt='Dado d6' class='mano'/>"+
+		"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"' +  personaje[numpj-1].nombre + '"' + ")' alt='" + personaje[numpj-1].nombre + " habla' class='mano'/>" +
+		"<img src='imagenes/Papelera.jpg' onclick='RolSolo.elimina(" + (numpj-1)  + ',"PJ"' + ")' alt='Borra " + personaje[numpj-1].nombre + "' class='mano'/>";
 		for (indiceatr=0; indiceatr< personaje[numpj-1].atributos.length; indiceatr++) {
-			seccion = "<div class='w3-container w3-blue w3-center'><p class='mano' onclick='Mascaras.tiradaatr(" + indiceatr +")'><strong>" + personaje[numpj-1].atributos[indiceatr].nombre + "</strong> " + personaje[numpj-1].atributos[indiceatr].valor + "</p></div>"
+			seccion = "<div class='w3-container w3-blue w3-center'><p class='mano' onclick='Mascaras.tiradaatr(" + (numpj-1) + ", " + indiceatr + ', "PJ"' + ")'><strong>" + personaje[numpj-1].atributos[indiceatr].nombre + "</strong> " + personaje[numpj-1].atributos[indiceatr].valor + "</p></div>"
 			seccion += "<table class='w3-table  w3-striped w3-border'>";
 			
 			
 			for (indice=0; indice< personaje[numpj-1].atributos[indiceatr].pericias.length; indice++) {
-				var funcion="Mascaras.tiradapericia(" + indiceatr + ", " + indice + ")";
-				if ( personaje[numpj-1].atributos[indiceatr].pericias[indice].nombre == "Combate cuerpo a cuerpo")
+				var funcion="Mascaras.tiradapericia(" + (numpj-1) + ", " + indiceatr + ", " + indice + ', "PJ"' + ")";
+				/*if ( personaje[numpj-1].atributos[indiceatr].pericias[indice].nombre == "Combate cuerpo a cuerpo")
 					funcion="Mascaras.tiradaCombate(1)";
 				else if ( personaje[numpj-1].atributos[indiceatr].pericias[indice].nombre == "Combate sin armas")
 					funcion="Mascaras.tiradaCombate(2)";
 				else if ( personaje[numpj-1].atributos[indiceatr].pericias[indice].nombre == "Combate a distancia" )
 					funcion="Mascaras.tiradaCombate(3)";
-				
+				*/
 				seccion += "<tr><td><span class='mano' onclick='" + funcion + "' >" + personaje[numpj-1].atributos[indiceatr].pericias[indice].nombre + "</span></td><td>";
 				if ( personaje[numpj-1].atributos[indiceatr].pericias[indice].valor == true ) {
 					seccion += "<input type='checkbox' checked disabled>";
@@ -36,7 +39,7 @@ class Mascaras {
 			}
 			seccion += "</table>";
 			//document.getElementById("seccion" + (indiceatr+1)).innerHTML = seccion + "</ul>";
-			pjs += seccion;
+			pjsaux += seccion;
 		}
 		seccion = "<div class='w3-container w3-blue w3-center'><p><strong>Características</strong></p></div>"
 		seccion += "<table class='w3-table  w3-striped w3-border'>";
@@ -44,7 +47,7 @@ class Mascaras {
 			seccion += "<tr><td>" + personaje[numpj-1].caracteristicas[indice].nombre + "</td><td><span class='mano' onclick='Mascaras.cambiacaracteristica(" + indice + "," + (numpj-1) + ")' >" + personaje[numpj-1].caracteristicas[indice].valor + "</span></td><tr>";
 		}
 		seccion += "</table>";
-		pjs += seccion;
+		pjsaux += seccion;
 		//document.getElementById("seccion5").innerHTML = seccion;
 		
 		seccion = "<div class='w3-container w3-blue w3-center'><p><strong>Armas</strong></p></div>"
@@ -54,19 +57,98 @@ class Mascaras {
 		
 		
 		seccion +="</table>";
-		pjs += seccion;
+		pjsaux += seccion;
 		//document.getElementById("seccion6").innerHTML = seccion;
 		
 		seccion = "<div class='w3-container w3-blue w3-center'><p><strong>Talentos</strong></p></div>"
 		for (indice=0; indice<personaje[numpj-1].talentos.length; indice++) {
 			seccion += "<b>" + personaje[numpj-1].talentos[indice].nombre + "</b>: " + personaje[numpj-1].talentos[indice].descripcion + "<br/>";
 		}
-		pjs += seccion;
+		pjsaux += seccion;
+		
+		if( personaje[numpj-1].hasOwnProperty('estado') == false || (personaje[numpj-1].hasOwnProperty('estado') == true && personaje[numpj-1].estado != "Eliminado") ){
+			pjs+=pjsaux;
+		}
+		//document.getElementById("seccion7").innerHTML = seccion;
+		return pjs;
+	}
+  
+	static cargapnj(pjs) {
+
+		var atributo = "";
+		var seccion = "";
+		var indiceatr=0;
+		var indice=0;
+		var pjsaux="";
+		
+		//document.getElementById("dados").innerHTML = "<img src='imagenes/d6.png' onclick='RolSolo.tiradado(6)' alt='Dado d6' class='mano'/>";
+		
+		pjsaux += "<img src='imagenes/d6.png' onclick='RolSolo.tiradado(6," + (numpnj-1) + ",0)'"  + " alt='Dado d6' class='mano'/>" +
+		"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"' +  pnjs[numpnj-1].nombre + '"' + ")' alt='" + personaje[numpnj-1].nombre + " habla' class='mano'/>" +
+		"<img src='imagenes/Papelera.jpg' onclick='RolSolo.elimina(" + (numpj-1)  + ',"PNJ"' + ")' alt='Borra " + pnjs[numpj-1].nombre + "' class='mano'/>";
+		
+		for (indiceatr=0; indiceatr< pnjs[numpnj-1].atributos.length; indiceatr++) {
+			seccion = "<div class='w3-container w3-blue w3-center'><p class='mano' onclick='Mascaras.tiradaatr(" + (numpnj-1) + ", " + indiceatr + ', "PNJ"' + ")'><strong>" + pnjs[numpnj-1].atributos[indiceatr].nombre + "</strong> " + pnjs[numpnj-1].atributos[indiceatr].valor + "</p></div>"
+			seccion += "<table class='w3-table  w3-striped w3-border'>";
+			
+			
+			for (indice=0; indice< pnjs[numpnj-1].atributos[indiceatr].pericias.length; indice++) {
+				var funcion="Mascaras.tiradapericia(" + (numpnj-1) + ", " + indiceatr + ", " + indice + ', "PNJ"' + ")";
+				/*if ( pnjs[numpnj-1].atributos[indiceatr].pericias[indice].nombre == "Combate cuerpo a cuerpo")
+					funcion="Mascaras.tiradaCombate(1)";
+				else if ( pnjs[numpnj-1].atributos[indiceatr].pericias[indice].nombre == "Combate sin armas")
+					funcion="Mascaras.tiradaCombate(2)";
+				else if ( pnjs[numpnj-1].atributos[indiceatr].pericias[indice].nombre == "Combate a distancia" )
+					funcion="Mascaras.tiradaCombate(3)";
+				*/
+				seccion += "<tr><td><span class='mano' onclick='" + funcion + "' >" + pnjs[numpnj-1].atributos[indiceatr].pericias[indice].nombre + "</span></td><td>";
+				if ( pnjs[numpnj-1].atributos[indiceatr].pericias[indice].valor == true ) {
+					seccion += "<input type='checkbox' checked disabled>";
+				}
+				else {
+					seccion += "<input type='checkbox' disabled>";
+				}
+				seccion += "</td></tr>";
+				
+			}
+			seccion += "</table>";
+			//document.getElementById("seccion" + (indiceatr+1)).innerHTML = seccion + "</ul>";
+			pjsaux += seccion;
+		}
+		seccion = "<div class='w3-container w3-blue w3-center'><p><strong>Características</strong></p></div>"
+		seccion += "<table class='w3-table  w3-striped w3-border'>";
+		for (indice=0; indice<pnjs[numpnj-1].caracteristicas.length; indice++) {
+			seccion += "<tr><td>" + pnjs[numpnj-1].caracteristicas[indice].nombre + "</td><td><span class='mano' onclick='Mascaras.cambiacaracteristica(" + indice + "," + (numpnj-1) + ")' >" + pnjs[numpnj-1].caracteristicas[indice].valor + "</span></td><tr>";
+		}
+		seccion += "</table>";
+		pjsaux += seccion;
+		//document.getElementById("seccion5").innerHTML = seccion;
+		
+		seccion = "<div class='w3-container w3-blue w3-center'><p><strong>Armas</strong></p></div>"
+		seccion += "<table class='w3-table  w3-striped w3-border'><tr><th>Arma</th><th>Tipo</th><th>Daño</th></tr>";
+		seccion += "<tr><td>" + pnjs[numpnj-1].armaCaC.nombre + "</td><td>(CaC)</td><td>" + pnjs[numpnj-1].armaCaC.daño + "</td></tr>";
+		seccion += "<tr><td>" + pnjs[numpnj-1].armaAD.nombre + "</td><td>(AD)</td><td>" + pnjs[numpnj-1].armaAD.daño + "</td></tr>";
+		
+		
+		seccion +="</table>";
+		pjsaux += seccion;
+		//document.getElementById("seccion6").innerHTML = seccion;
+		
+		seccion = "<div class='w3-container w3-blue w3-center'><p><strong>Talentos</strong></p></div>"
+		for (indice=0; indice<pnjs[numpnj-1].talentos.length; indice++) {
+			seccion += "<b>" + pnjs[numpnj-1].talentos[indice].nombre + "</b>: " + pnjs[numpnj-1].talentos[indice].descripcion + "<br/>";
+		}
+		pjsaux += seccion;
+		
+		
+		if( pnjs[numpnj-1].hasOwnProperty('estado') == false || (pnjs[numpnj-1].hasOwnProperty('estado') == true && pnjs[numpnj-1].estado != "Eliminado") ){
+			pjs+=pjsaux;
+		}
+		
 		//document.getElementById("seccion7").innerHTML = seccion;
 		return pjs;
 	}
 	
-  
 	static modificacaracteristica(indice, npj) {
 		personaje[npj].caracteristicas[indice].valor = document.getElementById('vcaracteristica').value;
 		document.getElementById('ccaracteristica').style.display='none';
@@ -87,32 +169,71 @@ class Mascaras {
 	
 	
   static tirada() {
-	  var valor = RolTelegram.random(6,1);
+	  var valor = RolSolo.random(6,1);
 	  if ( valor == 6 ) {
 		  valor = 5 + Mascaras.tirada();
 	  }
 	  return valor;
   }
   
-  static tiradaatr(indiceatr) {
-	  var valor = Mascaras.tirada() + personaje.atributos[indiceatr].valor;
-	  var valor2 = Mascaras.tirada() + personaje.atributos[indiceatr].valor;
-	  var mensaje = "<b>" + personaje.nombre + "</b> " + personaje.atributos[indiceatr].nombre + "[SL]<b>Resultado: </b>" + valor + " <b>V/D: </b>" + valor2;
-	  RolTelegram.enviaTelegram(mensaje, personaje.chatid, personaje.botid);
+  static tiradaatr(npj, indiceatr, tipo) {
+	  var valor = Mascaras.tirada();
+	  if ( tipo == "PNJ" )
+		valor += pnjs[npj].atributos[indiceatr].valor;
+	  else
+		valor += personaje[npj].atributos[indiceatr].valor;
+	  var valor2 = Mascaras.tirada();
+	  if ( tipo == "PNJ" )
+		valor2 += pnjs[npj].atributos[indiceatr].valor;
+	  else
+		valor2 += personaje[npj].atributos[indiceatr].valor;
+		
+	  var mensaje = "<b>";
+	  if ( tipo == "PNJ" )
+		mensaje += pnjs[npj].nombre + "</b> " + pnjs[npj].atributos[indiceatr].nombre;
+	  else
+		mensaje += personaje[npj].nombre + "</b> " + personaje[npj].atributos[indiceatr].nombre;
+	  mensaje += "<br/><b>Resultado: </b>" + valor + " (<b>Ventaja/Desventaja: </b>" + valor2 + ")";
+	  RolSolo.escribemensaje(mensaje);
+  }
+  
+  static valortiradapericia(npj, indiceatr, indicepericia, tipo) {
+	  var valorpj = 0;
+	  
+	  if ( tipo == "PNJ" ) {
+		valorpj = pnjs[npj].atributos[indiceatr].valor;
+		if ( pnjs[npj].atributos[indiceatr].pericias[indicepericia].valor == true ) {
+		  valorpj += 2;
+		}
+	  }
+	  else {
+		valorpj = personaje[npj].atributos[indiceatr].valor;
+		if ( personaje[npj].atributos[indiceatr].pericias[indicepericia].valor == true ) {
+		  valorpj += 2;
+		}
+	  }
+	  return Mascaras.tirada() + valorpj;
   }
   
   
-  static tiradapericia(indiceatr, indicepericia) {
+  static tiradapericia(npj, indiceatr, indicepericia, tipo) {
 	  
-	  var valorpj = personaje.atributos[indiceatr].valor;
-	  if ( personaje.atributos[indiceatr].pericias[indicepericia].valor == true ) {
-		  valorpj += 2;
+	  var valor = Mascaras.valortiradapericia(npj, indiceatr, indicepericia, tipo);
+	  var valor2 = Mascaras.valortiradapericia(npj, indiceatr, indicepericia, tipo);
+	  
+	  var nombre = "";
+	  var nombrepericia = "";
+	  if ( tipo == "PNJ" ) {
+		nombre = pnjs[npj].nombre;
+		nombrepericia = pnjs[npj].atributos[indiceatr].pericias[indicepericia].nombre;
+	  }
+	  else {
+		nombre = personaje[npj].nombre;
+		nombrepericia = personaje[npj].atributos[indiceatr].pericias[indicepericia].nombre;
 	  }
 	  
-	  var valor = Mascaras.tirada() + valorpj;
-	  var valor2 = Mascaras.tirada() + valorpj;
-	  var mensaje = "<b>" + personaje.nombre + "</b> " + personaje.atributos[indiceatr].pericias[indicepericia].nombre + "[SL]<b>Resultado: </b>" + valor + " <b>V/D: </b>" + valor2;
-	  RolTelegram.enviaTelegram(mensaje, personaje.chatid, personaje.botid);
+	  var mensaje = "<b>" + nombre + "</b> " + nombrepericia + "<br/><b>Resultado: </b>" + valor + " (<b>Ventaja/Desventaja: </b>" + valor2 + ")";
+	  RolSolo.escribemensaje(mensaje);
 	  
   }
   

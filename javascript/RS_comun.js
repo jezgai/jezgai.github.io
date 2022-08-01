@@ -148,7 +148,10 @@ class RolSolo {
 		
 		numpj++;
 		if( personaje[numpj-1].hasOwnProperty('estado') == false || (personaje[numpj-1].hasOwnProperty('estado') == true && personaje[numpj-1].estado != "Eliminado") ) {
-			pjsdet += "<button onclick=" + '"' + "RolSolo.acordeon('pj" + numpj + "')" + '"' + " class='w3-button w3-block w3-left-align w3-blue'><h2>" + personaje[numpj-1].nombre + " (" + personaje[numpj-1].clase + ")" + "</h2></button>"
+			pjsdet += "<button onclick=" + '"' + "RolSolo.acordeon('pj" + numpj + "')" + '"' + " class='w3-button w3-block w3-left-align w3-blue'><h2>" + personaje[numpj-1].nombre;
+			if ( personaje[numpj-1].hasOwnProperty('clase') == true ) 
+				pjsdet += " (" + personaje[numpj-1].clase + ")";
+			pjsdet += "</h2></button>"
 			pjsdet += "<div id='pj" + numpj + "' class='w3-hide w3-container' >";
 		}
 		
@@ -268,14 +271,16 @@ class RolSolo {
 	static elimina(npj, tipo) {
 		if ( tipo == "PNJ" ) {
 			pnjs[npj].estado = "Eliminado";
-			partida.pnjs = pnjs;
+			//partida.pnjs = pnjs;
 			// Cargar otra vez todo
 		}
 		else {
 			personaje[npj].estado = "Eliminado";
-			partida.pjs = personaje;
+			//partida.pjs = personaje;
 			// Cargar otra vez todo
 		}
+		partida.pnjs = pnjs;
+		partida.pjs = personaje;
 		partida.tiradas = tiradas;
 		document.getElementById("PJs").innerHTML = "";
 		document.getElementById("PNJs").innerHTML = "";
