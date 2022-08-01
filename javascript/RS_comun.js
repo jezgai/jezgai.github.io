@@ -164,18 +164,40 @@ class RolSolo {
 		{ 
 			dj = "Valido";
 			pjsdet = Mascaras.cargapersonaje(pjsdet);
+			document.getElementById("dadosdj").innerHTML = 
+				"<img src='imagenes/d6.png' onclick='RolSolo.tiradado(6,0,-1)' alt='Dado d6' class='mano'/>" + 
+				"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"Valido"' + ")' alt='Valido habla' class='mano'/>";
 			//document.getElementById("botonjson").style.visibility="visible";	
 		}
 		else if ( personaje[numpj-1].sistema == "Axis Mundi" ) 
 		{ 
 			dj = "Amo del Calabozo";
 			pjsdet = AxisMundi.cargapersonaje(pjsdet);		
+			document.getElementById("dadosdj").innerHTML = 
+				"<img src='imagenes/d4.png' onclick='RolSolo.tiradado(4,0,-1)' alt='Dado d4' class='mano'/>" +
+				"<img src='imagenes/d6.png' onclick='RolSolo.tiradado(6,0,-1)' alt='Dado d6' class='mano'/>" + 
+				"<img src='imagenes/d8.png' onclick='RolSolo.tiradado(8,0,-1)' alt='Dado d8' class='mano'/>" + 
+				"<img src='imagenes/d10.png' onclick='RolSolo.tiradado(10,0,-1)' alt='Dado d10' class='mano'/>" + 
+				"<img src='imagenes/d12.png' onclick='RolSolo.tiradado(12,0,-1)' alt='Dado d12' class='mano'/>" + 
+				"<img src='imagenes/d20.png' onclick='RolSolo.tiradado(20,0,-1)' alt='Dado d20' class='mano'/>" +
+				"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"Amo del Calabozo"' + ")' alt='Amo del Calabozo habla' class='mano'/>";
 			//document.getElementById("botonjson").style.visibility="visible";	
 		}
 		else if ( personaje[numpj-1].sistema == "La Marca del Este" ) 
 		{
 			dj = "Narrador";
 			pjsdet = LaMarcaDelEste.cargapersonaje(pjsdet);
+			
+			document.getElementById("dadosdj").innerHTML = 
+				"<img src='imagenes/d4.png' onclick='RolSolo.tiradado(4,0,-1)' alt='Dado d4' class='mano'/>" +
+				"<img src='imagenes/d6.png' onclick='RolSolo.tiradado(6,0,-1)' alt='Dado d6' class='mano'/>" + 
+				"<img src='imagenes/d8.png' onclick='RolSolo.tiradado(8,0,-1)' alt='Dado d8' class='mano'/>" + 
+				"<img src='imagenes/d10.png' onclick='RolSolo.tiradado(10,0,-1)' alt='Dado d10' class='mano'/>" + 
+				"<img src='imagenes/d12.png' onclick='RolSolo.tiradado(12,0,-1)' alt='Dado d12' class='mano'/>" + 
+				"<img src='imagenes/d20.png' onclick='RolSolo.tiradado(20,0,-1)' alt='Dado d20' class='mano'/>" +
+				"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"Narrador"' + ")' alt='Narrador habla' class='mano'/>";
+			
+			
 		}
 		if( personaje[numpj-1].hasOwnProperty('estado') == false || (personaje[numpj-1].hasOwnProperty('estado') == true && personaje[numpj-1].estado != "Eliminado") ) {
 			pjsdet += "</div>";
