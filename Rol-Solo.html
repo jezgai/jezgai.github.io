@@ -47,6 +47,9 @@
   var partida = { nombre: "" };
   var quien = "Amo del Calabozo";
   var dj = quien;
+  
+  var indicepersonaje = -1;
+  var tipopersonaje = "";
 	
   function inicial() {
 	  
@@ -164,7 +167,7 @@
 		<div class="sexto" id="botonoraculo"><p><button class="w3-button w3-block w3-blue" onclick="RolSolo.muestraventanacarga('oraculo')">Oráculo</button></p></div>
 		<div class="sexto" id="botonaugur"><p><button class="w3-button w3-block w3-blue" onclick="RolSolo.consultaAugur()">Augur</button></p></div>
 		<!--<div class="mitad" id="botonmensaje"><p><button class="w3-button w3-block w3-blue" onclick="RolSolo.muestraventanamensajes('Amo del Calabozo')">Envía mensaje</button></p></div>-->
-		<div class="dostercios">
+		<div id="dadosdj" class="dostercios">
 			<img src='imagenes/d4.png' onclick='RolSolo.tiradado(4,0,-1)' alt='Dado d4' class='mano'/>
 			<img src='imagenes/d6.png' onclick='RolSolo.tiradado(6,0,-1)' alt='Dado d6' class='mano'/> 
 			<img src='imagenes/d8.png' onclick='RolSolo.tiradado(8,0,-1)' alt='Dado d8' class='mano'/> 
@@ -224,6 +227,18 @@
 				<input type="button" id="btnCancelMsg" value="Cancelar" onclick="RolSolo.cancelarCarga('mensajes')"></div>
 		</div>
 	  </div>
+	</div>
+	
+	<div id="ventanaequipo" class="w3-modal">
+		<div class="w3-modal-content">
+			<div class="w3-container">
+				<h2>Equipo</h2>
+				<textarea id="equipo" name="equipo" rows="4" cols="50"></textarea>
+				<div id="botonequipo"><input type="button" id="btnModificaEquipo" value="Modifica" onclick="RolSolo.cambiaequipo();">
+				<input type="button" id="btnCancelEquipo" value="Cancelar" onclick="RolSolo.cancelarCarga('ventanaequipo')"></div>
+				
+			</div>
+		</div>
 	</div>
 	
 	<div id="cargapartida" class="w3-modal">

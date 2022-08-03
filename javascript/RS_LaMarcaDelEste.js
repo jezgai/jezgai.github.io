@@ -151,6 +151,15 @@ class LaMarcaDelEste {
 		seccion += "</table></div>";
 		pjsaux+= seccion;
 		
+		if ( personaje[numpj-1].hasOwnProperty('equipo') == false ) {
+			personaje[numpj-1].equipo = ".";
+		}
+		seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pjequipo" + (numpj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Equipo</strong></p></div>";
+		seccion += "<div id='pjequipo" + (numpj-1) + "' class='w3-hide w3-container' >"
+		seccion += personaje[numpj-1].equipo;
+		seccion += "</div>";
+		pjsaux += seccion;
+		
 		if( personaje[numpj-1].hasOwnProperty('estado') == false || (personaje[numpj-1].hasOwnProperty('estado') == true && personaje[numpj-1].estado != "Eliminado") ){
 			pjs+=pjsaux;
 		}
@@ -281,6 +290,16 @@ class LaMarcaDelEste {
 		}
 		seccion += "</table></div>";
 		pjsaux+= seccion;
+		
+		if ( pnjs[numpnj-1].hasOwnProperty('equipo') == false ) {
+			pnjs[numpnj-1].equipo = ".";
+		}
+		
+		seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pnjequipo" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Equipo</strong></p></div>";
+		seccion += "<div id='pnjequipo" + (numpnj-1) + "' class='w3-hide w3-container' onclick='RolSolo.ventanaequipo(" + (numpnj-1) + ', "PNJ")' + "' >";
+		seccion += pnjs[numpnj-1].equipo;
+		seccion += "</div>";
+		pjsaux += seccion;
 		
 		if( pnjs[numpnj-1].hasOwnProperty('estado') == false || (pnjs[numpnj-1].hasOwnProperty('estado') == true && pnjs[numpnj-1].estado != "Eliminado") ){
 			pjs+=pjsaux;

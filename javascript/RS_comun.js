@@ -318,6 +318,42 @@ class RolSolo {
 		document.getElementById("mensajes").style.display='block';
 		
 	}
+	
+	static ventanaequipo(npj, tipo) {
+		indicepersonaje = npj;
+		tipopersonaje = tipo;
+		if ( tipopersonaje == "PNJ" ) {
+			document.getElementById('equipo').value = pnjs[indicepersonaje].equipo;
+		}
+		else if ( tipopersonaje == "PJ" ) {
+			document.getElementById('equipo').value = personaje[indicepersonaje].equipo;
+		}
+		document.getElementById("ventanaequipo").style.display='block';
+	}
+	
+	static cambiaequipo() {
+		if ( indicepersonaje != -1 ) {
+			if ( tipopersonaje == "PNJ" ) {
+				pnjs[indicepersonaje].equipo = document.getElementById('equipo').value;
+				/*
+				var seccion = "<div id='pnjequipo" + indicepersonaje + "' class='w3-hide w3-container' onclick='RolSolo.ventanaequipo(" + indicepersonaje + ', "PNJ")' + "' >";
+				seccion += pnjs[indicepersonaje].equipo;
+				seccion += "</div>";*/
+				
+				document.getElementById('pnjequipo'+indicepersonaje).innerHTML = pnjs[indicepersonaje].equipo;
+				RolSolo.muestra('pnjequipo'+indicepersonaje);
+			}
+			else if ( tipopersonaje == "PJ" ) {
+				personaje[indicepersonaje].equipo = document.getElementById('equipo').value;
+				/*var seccion = "<div id='pjequipo" + indicepersonaje + "' class='w3-hide w3-container' onclick='RolSolo.ventanaequipo(" + indicepersonaje + ', "PJ")' + "' >";
+				seccion += personaje[indicepersonaje].equipo;
+				seccion += "</div>";*/
+				document.getElementById('pjequipo'+indicepersonaje).innerHTML = personaje[indicepersonaje].equipo;
+				RolSolo.muestra('pjequipo'+indicepersonaje);
+			}
+		}
+		RolSolo.cancelarCarga('ventanaequipo')
+	}
 
 	
 	static cancelarCarga(id) {
