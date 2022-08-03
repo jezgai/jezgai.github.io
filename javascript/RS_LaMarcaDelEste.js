@@ -155,7 +155,7 @@ class LaMarcaDelEste {
 			personaje[numpj-1].equipo = ".";
 		}
 		seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pjequipo" + (numpj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Equipo</strong></p></div>";
-		seccion += "<div id='pjequipo" + (numpj-1) + "' class='w3-hide w3-container' >"
+		seccion += "<div id='pjequipo" + (numpj-1) + "' class='w3-hide w3-container' onclick='RolSolo.ventanaequipo(" + (numpj-1) + ', "PJ")' + "' >";
 		seccion += personaje[numpj-1].equipo;
 		seccion += "</div>";
 		pjsaux += seccion;
