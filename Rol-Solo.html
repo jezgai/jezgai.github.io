@@ -222,7 +222,7 @@
 		<div class="w3-container">
 				<h2>Mensaje</h2>
 				<label for="mensaje">Texto</label>
-				<input type="text" size="64"  id="mensaje">
+				<textarea id="mensaje" name="mensaje"  rows="4" cols="65"></textarea>
 				<div id="botonmensaje"><input type="button" id="btnEnviaMsg" value="Envia" onclick="RolSolo.enviamensaje();">
 				<input type="button" id="btnCancelMsg" value="Cancelar" onclick="RolSolo.cancelarCarga('mensajes')"></div>
 		</div>
@@ -236,6 +236,18 @@
 				<textarea id="equipo" name="equipo" rows="4" cols="50"></textarea>
 				<div id="botonequipo"><input type="button" id="btnModificaEquipo" value="Modifica" onclick="RolSolo.cambiaequipo();">
 				<input type="button" id="btnCancelEquipo" value="Cancelar" onclick="RolSolo.cancelarCarga('ventanaequipo')"></div>
+				
+			</div>
+		</div>
+	</div>
+	
+	<div id="ventananotas" class="w3-modal">
+		<div class="w3-modal-content">
+			<div class="w3-container">
+				<h2>Notas</h2>
+				<textarea id="notas" name="equipo" rows="6" cols="70"></textarea>
+				<div id="botonnotas"><input type="button" id="btnModificaNotas" value="Modifica" onclick="RolSolo.cambianotas();">
+				<input type="button" id="btnCancelNotas" value="Cancelar" onclick="RolSolo.cancelarCarga('ventananotas')"></div>
 				
 			</div>
 		</div>

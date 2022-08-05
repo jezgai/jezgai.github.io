@@ -356,6 +356,36 @@ class RolSolo {
 	}
 
 	
+	static ventananotas(npj, tipo) {
+		indicepersonaje = npj;
+		tipopersonaje = tipo;
+		if ( tipopersonaje == "PNJ" ) {
+			document.getElementById('notas').value = pnjs[indicepersonaje].notas;
+		}
+		else if ( tipopersonaje == "PJ" ) {
+			document.getElementById('notas').value = personaje[indicepersonaje].notas;
+		}
+		document.getElementById("ventananotas").style.display='block';
+	}
+	
+	static cambianotas() {
+		if ( indicepersonaje != -1 ) {
+			if ( tipopersonaje == "PNJ" ) {
+				pnjs[indicepersonaje].notas = document.getElementById('notas').value;
+				
+				document.getElementById('pnjnotas'+indicepersonaje).innerHTML = pnjs[indicepersonaje].notas;
+				RolSolo.muestra('pnjnotas'+indicepersonaje);
+			}
+			else if ( tipopersonaje == "PJ" ) {
+				personaje[indicepersonaje].notas = document.getElementById('notas').value;
+				document.getElementById('pjnotas'+indicepersonaje).innerHTML = personaje[indicepersonaje].notas;
+				RolSolo.muestra('pjnotas'+indicepersonaje);
+			}
+		}
+		RolSolo.cancelarCarga('ventananotas')
+	}
+
+	
 	static cancelarCarga(id) {
 		document.getElementById(id).style.display='none';
 	}
