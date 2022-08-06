@@ -84,8 +84,8 @@ class RolSolo {
 	static escribemensaje(mensaje) {
 		var ahora = new Date();
 		var sAhora =
-                ("00" + (ahora.getMonth() + 1)).slice(-2)
-                + "/" + ("00" + ahora.getDate()).slice(-2)
+                ("00" + ahora.getDate()).slice(-2)
+                + "/" + ("00" + (ahora.getMonth() + 1)).slice(-2)
                 + "/" + ahora.getFullYear() + " "
                 + ("00" + ahora.getHours()).slice(-2) + ":"
                 + ("00" + ahora.getMinutes()).slice(-2)
