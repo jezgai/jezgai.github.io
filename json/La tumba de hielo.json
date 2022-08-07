@@ -116,14 +116,30 @@
         {
           "nombre": "Espada corta",
           "tipo": "CaC",
-          "danoCaC": 6,
-          "danoAD": 0
+          "danoCaC": {
+            "dado": 6,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoAD": {
+            "dado": 0,
+            "ndados": 1,
+            "modif": 0
+          }
         },
         {
           "nombre": "Jabalina",
           "tipo": "AD",
-          "danoAD": 6,
-          "danoCaC": 6
+          "danoAD": {
+            "dado": 6,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoCaC": {
+            "dado": 6,
+            "ndados": 1,
+            "modif": 0
+          }
         }
       ],
       "conjuros": []
@@ -254,14 +270,30 @@
         {
           "nombre": "Martillo de guerra",
           "tipo": "CaC",
-          "danoCaC": 8,
-          "danoAD": 0
+          "danoCaC": {
+            "dado": 8,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoAD": {
+            "dado": 0,
+            "ndados": 1,
+            "modif": 0
+          }
         },
         {
           "nombre": "Hacha de mano",
           "tipo": "CaC",
-          "danoCaC": 4,
-          "danoAD": 4
+          "danoCaC": {
+            "dado": 4,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoAD": {
+            "dado": 4,
+            "ndados": 1,
+            "modif": 0
+          }
         }
       ],
       "conjuros": []
@@ -381,14 +413,30 @@
         {
           "nombre": "Bastón",
           "tipo": "CaC",
-          "danoCaC": 4,
-          "danoAD": 0
+          "danoCaC": {
+            "dado": 4,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoAD": {
+            "dado": 0,
+            "ndados": 1,
+            "modif": 0
+          }
         },
         {
           "nombre": "Daga",
           "tipo": "CaC",
-          "danoCaC": 4,
-          "danoAD": 4
+          "danoCaC": {
+            "dado": 4,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoAD": {
+            "dado": 4,
+            "ndados": 1,
+            "modif": 0
+          }
         }
       ],
       "conjuros": [
@@ -535,14 +583,30 @@
         {
           "nombre": "Espada ropera",
           "tipo": "CaC",
-          "danoCaC": 6,
-          "danoAD": 0
+          "danoCaC": {
+            "dado": 6,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoAD": {
+            "dado": 0,
+            "ndados": 1,
+            "modif": 0
+          }
         },
         {
           "nombre": "Daga",
           "tipo": "CaC",
-          "danoCaC": 4,
-          "danoAD": 4
+          "danoCaC": {
+            "dado": 4,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoAD": {
+            "dado": 4,
+            "ndados": 1,
+            "modif": 0
+          }
         }
       ],
       "conjuros": []
@@ -588,14 +652,30 @@
         {
           "nombre": "Cimitarra",
           "tipo": "CaC",
-          "danoCaC": 6,
-          "danoAD": 0
+          "danoCaC": {
+            "dado": 6,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoAD": {
+            "dado": 0,
+            "ndados": 1,
+            "modif": 0
+          }
         },
         {
           "nombre": "Arco corto",
           "tipo": "AD",
-          "danoAD": 6,
-          "danoCaC": 0
+          "danoAD": {
+            "dado": 6,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoCaC": {
+            "dado": 0,
+            "ndados": 1,
+            "modif": 0
+          }
         }
       ],
       "conjuros": []
@@ -639,14 +719,30 @@
         {
           "nombre": "Cimitarra",
           "tipo": "CaC",
-          "danoCaC": 6,
-          "danoAD": 0
+          "danoCaC": {
+            "dado": 6,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoAD": {
+            "dado": 0,
+            "ndados": 1,
+            "modif": 0
+          }
         },
         {
           "nombre": "Daga",
           "tipo": "CaC",
-          "danoCaC": 4,
-          "danoAD": 4
+          "danoCaC": {
+            "dado": 4,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoAD": {
+            "dado": 4,
+            "ndados": 1,
+            "modif": 0
+          }
         }
       ],
       "conjuros": []
@@ -690,20 +786,44 @@
         {
           "nombre": "Cimitarra",
           "tipo": "CaC",
-          "danoCaC": 6,
-          "danoAD": 0
+          "danoCaC": {
+            "dado": 6,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoAD": {
+            "dado": 0,
+            "ndados": 1,
+            "modif": 0
+          }
         },
         {
           "nombre": "Arco corto",
           "tipo": "AD",
-          "danoAD": 6,
-          "danoCaC": 0
+          "danoAD": {
+            "dado": 6,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoCaC": {
+            "dado": 0,
+            "ndados": 1,
+            "modif": 0
+          }
         },
         {
           "nombre": "Daga",
           "tipo": "CaC",
-          "danoCaC": 4,
-          "danoAD": 4
+          "danoCaC": {
+            "dado": 4,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoAD": {
+            "dado": 4,
+            "ndados": 1,
+            "modif": 0
+          }
         }
       ],
       "conjuros": []
@@ -747,14 +867,30 @@
         {
           "nombre": "Cimitarra",
           "tipo": "CaC",
-          "danoCaC": 6,
-          "danoAD": 0
+          "danoCaC": {
+            "dado": 6,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoAD": {
+            "dado": 0,
+            "ndados": 1,
+            "modif": 0
+          }
         },
         {
           "nombre": "Daga",
           "tipo": "CaC",
-          "danoCaC": 4,
-          "danoAD": 4
+          "danoCaC": {
+            "dado": 4,
+            "ndados": 1,
+            "modif": 0
+          },
+          "danoAD": {
+            "dado": 4,
+            "ndados": 1,
+            "modif": 0
+          }
         }
       ],
       "conjuros": []
