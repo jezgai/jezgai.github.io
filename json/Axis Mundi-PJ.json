@@ -135,14 +135,34 @@
     {
       "nombre": "Espada ropera",
       "tipo": "CaC",
-      "danoCaC": 6,
-      "danoAD": 0
+      "danoCaC": 
+          {
+            "dado": 6,
+            "ndados": 1,
+            "modif": 0
+          },
+      "danoAD": 
+          {
+            "dado": 0,
+            "ndados": 1,
+            "modif": 0
+          }
     },
     {
       "nombre": "Daga",
       "tipo": "CaC",
-      "danoCaC": 4,
-      "danoAD": 4
+      "danoCaC": 
+          {
+            "dado": 4,
+            "ndados": 1,
+            "modif": 0
+          },
+      "danoAD": 
+          {
+            "dado": 4,
+            "ndados": 1,
+            "modif": 0
+          }
     }
   ],
   "conjuros": []
