@@ -298,8 +298,8 @@
 	function exportaJSON() {
 
 		var pjexport = {}; //pj;
-		pjexport.botid = "SUSTITUIR_POR_TOKEN_BOT";
-		pjexport.chatid = "SUSTITUIR_POR_ID_DEL_CHAT";
+		//pjexport.botid = "SUSTITUIR_POR_TOKEN_BOT";
+		//pjexport.chatid = "SUSTITUIR_POR_ID_DEL_CHAT";
 		pjexport.nombre = "PJ " + pj._clase;
 		pjexport.sistema = "Axis Mundi";
 		pjexport.clase = pj._clase;
@@ -330,6 +330,37 @@
 		pjexport.dinero = pj._dinero;
 		pjexport.tipoarmas = pj._tipoarmas;
 		pjexport.armas = pj.armas;
+		
+		var indice = 0;
+		for (indice=0; indice<pjexport.armas.length; indice++) {
+			if (pjexport.armas[indice].hasOwnProperty('danoCaC') == true) {
+				var danoaux = pjexport.armas[indice].danoCaC;
+				pjexport.armas[indice].danoCaC = {};
+				pjexport.armas[indice].danoCaC.dado = danoaux;
+				pjexport.armas[indice].danoCaC.ndados = 1;
+				pjexport.armas[indice].danoCaC.modif = 0;
+			}
+			else {
+				pjexport.armas[indice].danoCaC = {};
+				pjexport.armas[indice].danoCaC.dado = 0;
+				pjexport.armas[indice].danoCaC.ndados = 0;
+				pjexport.armas[indice].danoCaC.modif = 0;
+			}
+			if (pjexport.armas[indice].hasOwnProperty('danoAD') == true) {
+				var danoaux = pjexport.armas[indice].danoAD;
+				pjexport.armas[indice].danoAD = {};
+				pjexport.armas[indice].danoAD.dado = danoaux;
+				pjexport.armas[indice].danoAD.ndados = 1;
+				pjexport.armas[indice].danoAD.modif = 0;
+			}
+			else {
+				pjexport.armas[indice].danoAD = {};
+				pjexport.armas[indice].danoAD.dado = 0;
+				pjexport.armas[indice].danoAD.ndados = 0;
+				pjexport.armas[indice].danoAD.modif = 0;
+			}
+		}
+		
 		pjexport.conjuros = pj._conjuros;
 		
 		
