@@ -96,19 +96,45 @@ class AxisMundi {
 			var funcion="";
 			var usoalternativo = "";
 			if ( personaje[numpj-1].armas[indice].tipo == "CaC" ) {
-				daño = "d" + personaje[numpj-1].armas[indice].danoCaC;
+				daño = personaje[numpj-1].armas[indice].danoCaC.ndados + "d" + personaje[numpj-1].armas[indice].danoCaC.dado;
+				if ( parseInt(personaje[numpj-1].armas[indice].danoCaC.modif) > 0 ) {
+					daño += "+" + personaje[numpj-1].armas[indice].danoCaC.modif;
+				}
+				else if ( parseInt(personaje[numpj-1].armas[indice].danoCaC.modif) < 0 ) {
+					daño += personaje[numpj-1].armas[indice].danoCaC.modif;
+				}
 				funcion = "AxisMundi.tiradaarmaCaC";
-				if ( personaje[numpj-1].armas[indice].danoAD != 0 ) {
-					daño += " (d" + personaje[numpj-1].armas[indice].danoAD + ")";
-					usoalternativo = " <span class='mano' onclick='AxisMundi.tiradaarmaAD("+ indice + "," + (numpj-1) + ",1)'>(A distancia)</span>"
+				if ( personaje[numpj-1].armas[indice].hasOwnProperty('danoAD') == true && personaje[numpj-1].armas[indice].danoAD.dado != 0 ) {
+					daño += " (" + personaje[numpj-1].armas[indice].danoAD.ndados +"d" + personaje[numpj-1].armas[indice].danoAD.dado;
+					if ( parseInt(personaje[numpj-1].armas[indice].danoAD.modif) > 0 ) {
+						daño += "+" + personaje[numpj-1].armas[indice].danoAD.modif;
+					}
+					else if ( parseInt(personaje[numpj-1].armas[indice].danoAD.modif) < 0 ) {
+						daño += personaje[numpj-1].armas[indice].danoAD.modif;
+					}
+					daño += ")";
+					usoalternativo = " <span class='mano' onclick='AxisMundi.tiradaarmaAD("+ indice + "," + (numpj-1) + ",1)'>(A distancia)</span>";
 				}
 			}
 			else {
-				daño = "d" + personaje[numpj-1].armas[indice].danoAD;
+				daño = personaje[numpj-1].armas[indice].danoAD.ndados + "d" + personaje[numpj-1].armas[indice].danoAD.dado;
+				if ( parseInt(personaje[numpj-1].armas[indice].danoAD.modif) > 0 ) {
+					daño += "+" + personaje[numpj-1].armas[indice].danoAD.modif;
+				}
+				else if ( parseInt(personaje[numpj-1].armas[indice].danoAD.modif) < 0 ) {
+					daño += personaje[numpj-1].armas[indice].danoAD.modif;
+				}
 				funcion = "AxisMundi.tiradaarmaAD";
-				if ( personaje[numpj-1].armas[indice].danoCaC != 0 ) {
-					daño += " (d" + personaje[numpj-1].armas[indice].danoCaC + ")";
-					usoalternativo = " <span class='mano' onclick='AxisMundi.tiradaarmaCaC("+ indice + "," + (numpj-1) + ",1)'>(Cuerpo a cuerpo)</span>"
+				if ( personaje[numpj-1].armas[indice].hasOwnProperty('danoCaC') == true && personaje[numpj-1].armas[indice].danoCaC.dado != 0 ) {
+					daño += " (" + personaje[numpj-1].armas[indice].danoCaC.ndados + "d" + personaje[numpj-1].armas[indice].danoCaC.dado;
+					if ( parseInt(personaje[numpj-1].armas[indice].danoCaC.modif) > 0 ) {
+						daño += "+" + personaje[numpj-1].armas[indice].danoCaC.modif;
+					}
+					else if ( parseInt(personaje[numpj-1].armas[indice].danoCaC.modif) < 0 ) {
+						daño += personaje[numpj-1].armas[indice].danoCaC.modif;
+					}
+					daño += ")";
+					usoalternativo = " <span class='mano' onclick='AxisMundi.tiradaarmaCaC("+ indice + "," + (numpj-1) + ",1)'>(Cuerpo a cuerpo)</span>";
 				}
 			}
 			
@@ -230,19 +256,45 @@ class AxisMundi {
 			var funcion="";
 			var usoalternativo = "";
 			if ( pnjs[numpnj-1].armas[indice].tipo == "CaC" ) {
-				daño = "d" + pnjs[numpnj-1].armas[indice].danoCaC;
+				daño = pnjs[numpnj-1].armas[indice].danoCaC.ndados + "d" + pnjs[numpnj-1].armas[indice].danoCaC.dado;
+				if ( parseInt(pnjs[numpnj-1].armas[indice].danoCaC.modif) > 0 ) {
+					daño += "+" + pnjs[numpnj-1].armas[indice].danoCaC.modif;
+				}
+				else if ( parseInt(pnjs[numpnj-1].armas[indice].danoCaC.modif) < 0 ) {
+					daño += pnjs[numpnj-1].armas[indice].danoCaC.modif;
+				}
 				funcion = "AxisMundi.tiradaarmaCaC";
-				if ( pnjs[numpnj-1].armas[indice].danoAD != 0 ) {
-					daño += " (d" + pnjs[numpnj-1].armas[indice].danoAD + ")";
-					usoalternativo = " <span class='mano' onclick='AxisMundi.tiradaarmaAD("+ indice + "," + (numpnj-1) + ",0)'>(A distancia)</span>"
+				if ( pnjs[numpnj-1].armas[indice].hasOwnProperty('danoAD') == true && pnjs[numpnj-1].armas[indice].danoAD.dado != 0 ) {
+					daño += " (" + pnjs[numpnj-1].armas[indice].danoAD.ndados +"d" + pnjs[numpnj-1].armas[indice].danoAD.dado;
+					if ( parseInt(pnjs[numpnj-1].armas[indice].danoAD.modif) > 0 ) {
+						daño += "+" + pnjs[numpnj-1].armas[indice].danoAD.modif;
+					}
+					else if ( parseInt(pnjs[numpnj-1].armas[indice].danoAD.modif) < 0 ) {
+						daño += pnjs[numpnj-1].armas[indice].danoAD.modif;
+					}
+					daño += ")";
+					usoalternativo = " <span class='mano' onclick='AxisMundi.tiradaarmaAD("+ indice + "," + (numpnj-1) + ",0)'>(A distancia)</span>";
 				}
 			}
-			else {
-				daño = "d" + pnjs[numpnj-1].armas[indice].danoAD;
+			else {				
+				daño = pnjs[numpnj-1].armas[indice].danoAD.ndados + "d" + pnjs[numpnj-1].armas[indice].danoAD.dado;
+				if ( parseInt(pnjs[numpnj-1].armas[indice].danoAD.modif) > 0 ) {
+					daño += "+" + pnjs[numpnj-1].armas[indice].danoAD.modif;
+				}
+				else if ( parseInt(pnjs[numpnj-1].armas[indice].danoAD.modif) < 0 ) {
+					daño += pnjs[numpnj-1].armas[indice].danoAD.modif;
+				}
 				funcion = "AxisMundi.tiradaarmaAD";
-				if ( pnjs[numpnj-1].armas[indice].danoCaC != 0 ) {
-					daño += " (d" + pnjs[numpnj-1].armas[indice].danoCaC + ")";
-					usoalternativo = " <span class='mano' onclick='AxisMundi.tiradaarmaCaC("+ indice + "," + (numpnj-1) + ",0)'>(Cuerpo a cuerpo)</span>"
+				if ( pnjs[numpnj-1].armas[indice].hasOwnProperty('danoCaC') == true && pnjs[numpnj-1].armas[indice].danoCaC.dado != 0 ) {
+					daño += " (" + pnjs[numpnj-1].armas[indice].danoCaC.ndados + "d" + pnjs[numpnj-1].armas[indice].danoCaC.dado;
+					if ( parseInt(pnjs[numpnj-1].armas[indice].danoCaC.modif) > 0 ) {
+						daño += "+" + pnjs[numpnj-1].armas[indice].danoCaC.modif;
+					}
+					else if ( parseInt(pnjs[numpnj-1].armas[indice].danoCaC.modif) < 0 ) {
+						daño += pnjs[numpnj-1].armas[indice].danoCaC.modif;
+					}
+					daño += ")";
+					usoalternativo = " <span class='mano' onclick='AxisMundi.tiradaarmaCaC("+ indice + "," + (numpnj-1) + ",1)'>(Cuerpo a cuerpo)</span>";
 				}
 			}
 			
@@ -506,9 +558,17 @@ class AxisMundi {
 		var valor = RolSolo.random(20, 1);
 		var mensaje = "<b>";
 		if ( tipo == "PNJ" ) {
-			var daño = RolSolo.random(parseInt(pnjs[npj].armas[indice].danoCaC),1);
+			//var daño = RolSolo.random(parseInt(pnjs[npj].armas[indice].danoCaC),1);
+			var ndados=0;
+			var daño = 0;
+			for(ndados=0; ndados < parseInt(pnjs[npj].armas[indice].danoCaC.ndados); ndados++) {
+				daño += RolSolo.random(parseInt(pnjs[npj].armas[indice].danoCaC.dado),1);
+			}
+			daño += parseInt(pnjs[npj].armas[indice].danoCaC.modif);
+			
 			if ( pnjs[npj].tipobonifdaño == "CC" || pnjs.tipobonifdaño == "CC y AD" )
 				daño += parseInt(pnjs[npj].daño);
+			
 			mensaje += pnjs[npj].nombre + "</b> " + pnjs[npj].armas[indice].nombre + " (CaC)<br/><b>Resultado: </b>" + (valor + parseInt(pnjs[npj].ataque)) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
 		}
 		else {
@@ -520,7 +580,16 @@ class AxisMundi {
 					break;
 				}
 			}
-			var daño = RolSolo.random(parseInt(personaje[npj].armas[indice].danoCaC),1);
+			
+			//var daño = RolSolo.random(parseInt(personaje[npj].armas[indice].danoCaC),1);
+			
+			var ndados=0;
+			var daño = 0;
+			for(ndados=0; ndados < parseInt(personaje[npj].armas[indice].danoCaC.ndados); ndados++) {
+				daño += RolSolo.random(parseInt(personaje[npj].armas[indice].danoCaC.dado),1);
+			}
+			daño += parseInt(personaje[npj].armas[indice].danoCaC.modif);
+			
 			if ( personaje[npj].tipobonifdaño == "CC" || personaje.tipobonifdaño == "CC y AD" )
 				daño += parseInt(personaje[npj].daño);
 			mensaje += personaje[npj].nombre + "</b> " + personaje[npj].armas[indice].nombre + " (CaC)<br/><b>Resultado: </b>" + (valor + parseInt(personaje[npj].ataque) + modifFUE) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
@@ -535,7 +604,15 @@ class AxisMundi {
 		var valor = RolSolo.random(20, 1);
 		var mensaje = "<b>";
 		if ( tipo == "PNJ" ) {
-			var daño = RolSolo.random(parseInt(pnjs[npj].armas[indice].danoAD),1);
+			//var daño = RolSolo.random(parseInt(pnjs[npj].armas[indice].danoAD),1);
+			
+			var ndados=0;
+			var daño = 0;
+			for(ndados=0; ndados < parseInt(pnjs[npj].armas[indice].danoAD.ndados); ndados++) {
+				daño += RolSolo.random(parseInt(pnjs[npj].armas[indice].danoAD.dado),1);
+			}
+			daño += parseInt(pnjs[npj].armas[indice].danoAD.modif);
+						
 			if ( pnjs[npj].tipobonifdaño == "AD" || pnjs[npj].tipobonifdaño == "CC y AD" )
 				daño += parseInt(pnjs[npj].daño);
 			mensaje += pnjs[npj].nombre + "</b> " + pnjs[npj].armas[indice].nombre + " (AD)<br/><b>Resultado: </b>" + (valor + parseInt(pnjs[npj].ataque)) + " (" + valor + ")<br/><b>Daño: </b>" + daño;
@@ -549,7 +626,15 @@ class AxisMundi {
 					break;
 				}
 			}
-			var daño = RolSolo.random(parseInt(personaje[npj].armas[indice].danoAD),1);
+			//var daño = RolSolo.random(parseInt(personaje[npj].armas[indice].danoAD),1);
+			
+			var ndados=0;
+			var daño = 0;
+			for(ndados=0; ndados < parseInt(personaje[npj].armas[indice].danoAD.ndados); ndados++) {
+				daño += RolSolo.random(parseInt(personaje[npj].armas[indice].danoAD.dado),1);
+			}
+			daño += parseInt(personaje[npj].armas[indice].danoAD.modif);
+						
 			if ( personaje[npj].tipobonifdaño == "AD" || personaje[npj].tipobonifdaño == "CC y AD" )
 				daño += parseInt(personaje[npj].daño);
 			mensaje += personaje[npj].nombre + "</b> " + personaje[npj].armas[indice].nombre + " (AD)<br/><b>Resultado: </b>" + (valor + parseInt(personaje[npj].ataque) + modifDES) + " (" + valor + ")<br/><b>Daño: </b>" + daño;

@@ -229,7 +229,7 @@ class LaMarcaDelEste {
 			var funcion="";
 			var usoalternativo = "";
 			if ( pnjs[numpnj-1].armas[indice].tipo == "CaC" ) {
-								daño = pnjs[numpnj-1].armas[indice].danoCaC.ndados + "d" + pnjs[numpnj-1].armas[indice].danoCaC.dado;
+				daño = pnjs[numpnj-1].armas[indice].danoCaC.ndados + "d" + pnjs[numpnj-1].armas[indice].danoCaC.dado;
 				if ( parseInt(pnjs[numpnj-1].armas[indice].danoCaC.modif) > 0 ) {
 					daño += "+" + pnjs[numpnj-1].armas[indice].danoCaC.modif;
 				}
