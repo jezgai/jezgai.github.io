@@ -48,6 +48,14 @@ class LaMarcaDelEste {
 		seccion += "<tr><td>Ataque</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"ataque",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].ataque + "</td></tr>";
 		seccion += "<tr><td>PX</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"px",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].px + "</td></tr>";
 		
+		
+		if( personaje[numpj-1].hasOwnProperty('pfp') == true ){
+		    if( personaje[numpj-1].hasOwnProperty('pfpinicial') == false ){
+			    personaje[numpj-1].pfpinicial = personaje[numpj-1].pfp;
+		    }
+		    seccion += "<tr><td>PFP</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"pfp",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].pfp + " (" + personaje[numpj-1].pfpinicial + ")" + "</td></tr>";
+		}
+		
 		seccion += "</table></div>";
 		pjsaux+= seccion;
 		//document.getElementById("seccion2").innerHTML = seccion;
@@ -369,6 +377,10 @@ class LaMarcaDelEste {
 			if ( tipo != "PNJ" ) 
 				personaje[npj].px = document.getElementById('vcaracteristica').value;
 		}
+		else if ( caracteristica == "pfp" ) {
+			if ( tipo != "PNJ" ) 
+				personaje[npj].pfp = document.getElementById('vcaracteristica').value;
+		}
 		if ( tipo == "PNJ" ) {
 			//var seccion = "<div id='pnjcaracteristicas" + npj + "' class='w3-hide w3-container' >"
 			var seccion = "<table class='w3-table  w3-striped w3-border'><tr><th>Característica</th><th></th><th>Valor</th></tr>";
@@ -391,6 +403,10 @@ class LaMarcaDelEste {
 			seccion += "<tr><td>Iniciativa</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"ini",' + (npj) + ',"PJ")' + "' >" + personaje[npj].ini + "</td></tr>";
 			seccion += "<tr><td>Ataque</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"ataque",' + (npj) + ',"PJ")' + "' >" + personaje[npj].ataque + "</td></tr>";
 			seccion += "<tr><td>PX</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"px",' + (npj) + ',"PJ")' + "' >" + personaje[npj].px + "</td></tr>";
+			
+		    if( personaje[npj].hasOwnProperty('pfp') == true ){
+		        seccion += "<tr><td>PFP</td><td class='mano' onclick='LaMarcaDelEste.cambiacaracteristica(" + '"pfp",' + (npj) + ',"PJ")' + "' >" + personaje[npj].pfp + " (" + personaje[npj].pfpinicial + ")" + "</td></tr>";
+		    }
 			
 			seccion += "</table>";
 			document.getElementById('pjcaracteristicas'+npj).innerHTML = seccion;
@@ -467,6 +483,11 @@ class LaMarcaDelEste {
 			literal = "PX";
 			if ( tipo != "PNJ" )
 				valor = personaje[npj].px;
+		}
+		else if ( caracteristica == "pfp" ) {
+			literal = "Puntos Fuerza Psiónica";
+			if ( tipo != "PNJ" )
+				valor = personaje[npj].pfp;
 		}
 		if ( literal != "" ){
 			document.getElementById('nbcaracteristica').innerHTML = "<label id='nbcaracteristica'>" + literal + "</label>";
