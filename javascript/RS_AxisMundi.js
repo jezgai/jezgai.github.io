@@ -418,8 +418,20 @@ class AxisMundi {
 				personaje[npj].virtud = document.getElementById('vcaracteristica').value;
 		}
 		else if ( caracteristica == "degeneraciontemp" ) {
-			if ( tipo != "PNJ" ) 
-				personaje[npj].degeneraciontemp = document.getElementById('vcaracteristica').value;
+			if ( tipo != "PNJ" ) {
+				var valor = document.getElementById('vcaracteristica').value;
+				if ( valor > 3 ) {
+					valor = 3;
+				}
+				if ( personaje[npj].degeneraciontemp < valor ) {
+					personaje[npj].virtud = personaje[npj].virtud - 10 * (valor - personaje[npj].degeneraciontemp);
+				}
+				if ( valor == 3 ) {
+					valor = 0;
+					personaje[npj].degeneracionperm = personaje[npj].degeneracionperm + 1;
+				}
+				personaje[npj].degeneraciontemp = valor;
+			}
 		}
 		else if ( caracteristica == "degeneracionperm" ) {
 			if ( tipo != "PNJ" ) 
