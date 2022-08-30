@@ -49,6 +49,22 @@ class AxisMundi {
 		seccion += "<tr><td>Barridos</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"barridos",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].barridos + "</td></tr>";
 		seccion += "<tr><td>PX</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"px",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].px + "</td></tr>";
 		
+		if ( personaje[numpj-1].hasOwnProperty('virtud') == true ) {
+			seccion += "<tr><td class='mano' onclick='AxisMundi.tiradavirtud(" + (numpj-1)  +")'>Virtud</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"virtud",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].virtud + "</td></tr>";
+			
+			if ( personaje[numpj-1].hasOwnProperty('degeneraciontemp') == false ) {
+				personaje[numpj-1].degeneraciontemp = 0;
+			}
+			seccion += "<tr><td>Degeneración temporal</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"degeneraciontemp",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].degeneraciontemp + "</td></tr>";
+			
+			
+			if ( personaje[numpj-1].hasOwnProperty('degeneracionperm') == false ) {
+				personaje[numpj-1].degeneracionperm = 0;
+			}
+			seccion += "<tr><td>Degeneración permanente</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"degeneracionperm",' + (numpj-1) + ',"PJ")' + "' >" + personaje[numpj-1].degeneracionperm + "</td></tr>";
+		}
+		
+		
 		seccion += "</table></div>";
 		pjsaux+= seccion;
 		//document.getElementById("seccion2").innerHTML = seccion;
@@ -397,6 +413,19 @@ class AxisMundi {
 			if ( tipo != "PNJ" ) 
 				personaje[npj].px = document.getElementById('vcaracteristica').value;
 		}
+		else if ( caracteristica == "virtud" ) {
+			if ( tipo != "PNJ" ) 
+				personaje[npj].virtud = document.getElementById('vcaracteristica').value;
+		}
+		else if ( caracteristica == "degeneraciontemp" ) {
+			if ( tipo != "PNJ" ) 
+				personaje[npj].degeneraciontemp = document.getElementById('vcaracteristica').value;
+		}
+		else if ( caracteristica == "degeneracionperm" ) {
+			if ( tipo != "PNJ" ) 
+				personaje[npj].degeneracionperm = document.getElementById('vcaracteristica').value;
+		}
+		
 		if ( tipo == "PNJ" ) {
 			//var seccion = "<div id='pnjcaracteristicas" + npj + "' class='w3-hide w3-container' >"
 			var seccion = "<table class='w3-table  w3-striped w3-border'><tr><th>Característica</th><th></th><th>Valor</th></tr>";
@@ -420,6 +449,23 @@ class AxisMundi {
 			seccion += "<tr><td>Ataque</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"ataque",' + npj + ',"PJ")' + "' >" + personaje[npj].ataque + "</td></tr>";
 			seccion += "<tr><td>Barridos</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"barridos",' + npj + ',"PJ")' + "' >" + personaje[npj].barridos + "</td></tr>";
 			seccion += "<tr><td>PX</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"px",' + npj + ',"PJ")' + "' >" + personaje[npj].px + "</td></tr>";
+			
+			
+			if ( personaje[npj].hasOwnProperty('virtud') == true ) {
+				seccion += "<tr><td>Virtud</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"virtud",' + (npj) + ',"PJ")' + "' >" + personaje[npj].virtud + "</td></tr>";
+				
+				if ( personaje[npj].hasOwnProperty('degeneraciontemp') == false ) {
+					personaje[npj].degeneraciontemp = 0;
+				}
+				seccion += "<tr><td>Degeneración temporal</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"degeneraciontemp",' + (npj) + ',"PJ")' + "' >" + personaje[npj].degeneraciontemp + "</td></tr>";
+				
+				
+				if ( personaje[npj].hasOwnProperty('degeneracionperm') == false ) {
+					personaje[npj].degeneracionperm = 0;
+				}
+				seccion += "<tr><td>Degeneración permanente</td><td class='mano' onclick='AxisMundi.cambiacaracteristica(" + '"degeneracionperm",' + (npj) + ',"PJ")' + "' >" + personaje[npj].degeneracionperm + "</td></tr>";
+			}
+			
 			seccion += "</table>";
 			document.getElementById('pjcaracteristicas'+npj).innerHTML = seccion;
 			RolSolo.muestra('pjcaracteristicas'+npj);
@@ -489,6 +535,25 @@ class AxisMundi {
 			if ( tipo != "PNJ" )
 				valor = personaje[npj].px;
 		}
+		else if ( caracteristica == "virtud" ) {
+			literal = "Virtud";
+			if ( tipo != "PNJ" ) {
+				valor = personaje[npj].virtud;
+			}
+		}
+		else if ( caracteristica == "degeneraciontemp" ) {
+			literal = "Degeneración temporal";
+			if ( tipo != "PNJ" ) {
+				valor = personaje[npj].degeneraciontemp;
+			}
+		}
+		else if ( caracteristica == "degeneracionperm" ) {
+			literal = "Degeneración permanente";
+			if ( tipo != "PNJ" ) {
+				valor = personaje[npj].degeneracionperm;
+			}
+		}
+		
 		if ( literal != "" ){
 			document.getElementById('nbcaracteristica').innerHTML = "<label id='nbcaracteristica'>" + literal + "</label>";
 			document.getElementById('btncaracteristica').innerHTML = "<button class='w3-btn w3-blue' id='btncaracteristica' onclick='AxisMundi.modificacaracteristica(" + '"' + caracteristica + '"' + "," + npj + ',"' + tipo + '"' + ")'>Modifica</button>";
@@ -496,6 +561,13 @@ class AxisMundi {
 			document.getElementById('vcaracteristica').value = valor;
 			document.getElementById('ccaracteristica').style.display='block';
 		}
+	}
+	
+	static tiradavirtud(npj) {
+		var valor = RolSolo.random(100,1);
+		var mensaje = "<b>";
+		mensaje += personaje[npj].nombre + "</b> Virtud(" + personaje[npj].virtud + ")<br/><b>Resultado: </b>" + valor;
+		RolSolo.escribemensaje(mensaje);
 	}
 	
 	static tiradaatr(indice, npj, pj) {
