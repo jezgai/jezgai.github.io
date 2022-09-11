@@ -53,7 +53,7 @@
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
 		
 		document.getElementById("botonpdf").style.visibility="visible";
-		document.getElementById("botonjson").style.visibility="hidden";
+		document.getElementById("botonjson").style.visibility="visible"; //"hidden";
 
 	}
 	
@@ -63,7 +63,8 @@
 		var pjexport = {}; //pj;
 		pjexport.botid = "SUSTITUIR_POR_TOKEN_BOT";
 		pjexport.chatid = "SUSTITUIR_POR_ID_DEL_CHAT";
-		pjexport.nombre = "PJ";
+		pjexport.nombre = pj.nombre;
+		pjexport.genero = pj.genero;
 		pjexport.sistema = "Knave";
 		pjexport.atributos = pj.atributos;
 		pjexport.pg = pj.pg;
@@ -184,7 +185,7 @@
 	<div style="overflow:auto">
 		<div class="total">
 			<br/>
-			Para hacer este generador se han usado las traducciones de Knave de <a href="https://github.com/Alberaan/knave" target="_blank">Alberaan y floyd303</a>, de <a href="http://apuntesosr.blogspot.com/p/descargas.html" target="_blank">Sergio Cotelo</a> y la reciente traducción oficial de <a href="https://outremer.es/index.php/producto/knave-version-digital/" target="_blank">Outremer</a>, así como la <a href="https://outremer.es/index.php/descargas/" target="_blank">hoja de personaje de Outremer</a>
+			Para hacer este generador se han usado las traducciones de Knave de <a href="https://github.com/Alberaan/knave" target="_blank">Alberaan y floyd303</a>, de <a href="http://apuntesosr.blogspot.com/p/descargas.html" target="_blank">Sergio Cotelo</a> y la reciente traducción oficial de <a href="https://outremer.es/index.php/producto/knave-version-digital/" target="_blank">Outremer</a>, así como la <a href="https://outremer.es/index.php/descargas/" target="_blank">hoja de personaje de Outremer</a> y la lista de nombres de <a href="https://es.cairnrpg.com" target="_blank">Cairn</a>
 			<br/>
 		</div>
 	</div>

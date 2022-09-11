@@ -19,6 +19,38 @@ class Comun {
 	
 }
 
+class Nombres {
+    constructor() {
+        this.nombresF = [ "Agune", "Beatriz", "Breagan", "Bronwyn", "Cannora",
+                            "Drelil", "Elgile", "Esme", "Griya", "Henaine",
+                            "Lirann", "Lirathil", "Lisabeth", "Moralil", "Morgwen",
+                            "Sybil", "Theune", "Wenain", "Ygwal", "Yslen" ];
+        this.nombresM = [ "Arwel", "Bevan", "Boroth", "Borrid", "Breagle",
+                            "Breglor", "Canhoreal", "Emrys", "Ethex", "Gringle",
+                            "Grinwit", "Gruwid", "Gruwth", "Gwestin", "Mannog",
+                            "Melnax", "Orthax", "Triunein", "Wenlan", "Yirmeor" ];
+        this.apellidos = [ "Abernathy", "Addercap", "Burl", "Candlewick", "Cormick",
+                            "Crumwaller", "Dunswallow", "Getri", "Glass", "Harkness",
+                            "Harper", "Loomer", "Malksmilk", "Smythe", "Sunderman",
+                            "Swinney", "Thatcher", "Tolmen", "Weaver", "Wolder" ];
+    }
+    
+    nombre(genero) {
+		var nombre = "";
+		if ( genero == "F" ) {
+			nombre = this.nombresF[Comun.random(20,0)];
+		}
+		else {
+			nombre = this.nombresM[Comun.random(20,0)];
+		}
+		
+		nombre += " " + this.apellidos[Comun.random(20,0)];
+		return nombre;
+	}
+    
+}
+
+
 class Rasgos {
 	constructor() {
 		this.alineamientos = [ { alineamiento: "Legal", valor: 5},
@@ -102,4 +134,5 @@ class Rasgos {
 	
 }
 
+let nombres = new Nombres();
 let rasgos = new Rasgos();

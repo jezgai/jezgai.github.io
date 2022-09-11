@@ -3,6 +3,7 @@ class PJ {
 	
 	constructor() {
 		this.nombre = '';
+		this.genero = "";
 		this.nivel = 1;
 		this.atributos = [
 			{ nombre: "FUE", defensa: 11 },
@@ -90,7 +91,9 @@ class PJ {
 	
 	tablaRasgos() {
 		var i=0;
-		var srasgos = "<ul>";
+		
+		var srasgos = "<strong>Nombre:</strong> " + this.nombre + " (" + this.genero + ")";
+		srasgos += "<ul>";
 		for (i=0; i< this.rasgos.length; i++) {
 			srasgos += "<li>" + this.rasgos[i] + "</li>";
 		}
@@ -132,9 +135,16 @@ class PJ {
 		
 		this.monedas = (Comun.random(6,1) + Comun.random(6,1) + Comun.random(6,1))*20;
 		
+		if (Comun.random(2,1) == 1 )
+			this.genero = "M"; // Masculino;
+		else
+			this.genero = "F"; // Femenino;
+		this.nombre = nombres.nombre(this.genero);
+		
 	}
 	
 	static rellenaPDFPJ(fields, pj, sufijo) {
+		fields['Nombre' + sufijo] = [ pj.nombre + " (" + pj.genero + ")" ];
 		fields['Nivel' + sufijo] = [ 1 ];
 		fields['PGMax' + sufijo] = [ pj.pg ];
 		fields['PGActual' + sufijo] = [ pj.pg ];
