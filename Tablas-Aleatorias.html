@@ -262,6 +262,12 @@
   padding:0 1px;
 }
 
+.noveno {
+  float:left;
+  width:11%;
+  padding:0 1px;
+}
+
 .microleft {
   float:left;
   width:15%;
@@ -287,7 +293,7 @@
 
 @media only screen and (max-width:820px) {
   /* For mobile phones: */
-  .mitad, .microleft, .tercio, .dostercios, .total {
+  .mitad, .microleft, .tercio, .dostercios, .total, .noveno {
     width:100%;
   }
   
@@ -303,11 +309,12 @@
 
 	<div style="overflow:auto">
 		<div class="microleft" id="botoncargaclases"><p><button class='w3-button w3-block w3-blue' onclick='muestraventanacargatablas()'>Carga de fichero de Tablas</button></p></div>
-		<div class="microleft" id="botoncargavestirdungeon"><p><button class='w3-button w3-block w3-blue' onclick="cargatablas('Tablas-Vestir-un-Dungeon.json')">Tablas Vestir Dungeon</button></p></div>
+		<div class="noveno" id="botoncargavestirdungeon"><p><button class='w3-button w3-block w3-blue' onclick="cargatablas('Tablas-Vestir-un-Dungeon.json')">Tablas Vestir Dungeon</button></p></div>
 		<div class="microleft" id="botoncargapaladin"><p><button class='w3-button w3-block w3-blue' onclick="cargatablas('Tablas-d12-Paladin.json')">Un paladín en el infierno (1-12)</button></p></div>
 		<div class="microleft" id="botoncargadiosazul"><p><button class='w3-button w3-block w3-blue' onclick="cargatablas('Tablas-Dios-Azul.json')">Incursión a la tierra del Dios Azul</button></p></div>
 		<div class="microleft" id="botoncarganombrescyber"><p><button class='w3-button w3-block w3-blue' onclick="cargatablas('Nombres-Apellidos-Cyberpunk.json')">Nombres y Apellidos Cyberpunk</button></p></div>
-		<div class="microleft"><br/><input type="checkbox" id="caddtablas" name="AddTablas" value="AddTablas">
+		<div class="noveno" id="botoncargacairn"><p><button class='w3-button w3-block w3-blue' onclick="cargatablas('Tablas-Cairn.json')">Tablas de Cairn</button></p></div>
+		<div class="noveno"><br/><input type="checkbox" id="caddtablas" name="AddTablas" value="AddTablas">
 			<label for="caddtablas">Añadir tablas</label>
 		</div>
 		<div class="dostercios" id="listatablas"></div>
