@@ -364,8 +364,8 @@
 		pjexport.conjuros = pj._conjuros;
 		
 		
-		var jsonpj = JSON.stringify(pjexport);
-		
+		//var jsonpj = JSON.stringify(pjexport);
+		var jsonpj = JSON.stringify(pjexport, null, "\t");
 		let element = document.createElement('a');
 		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(jsonpj));
 		element.setAttribute('download', pjexport.nombre + ".json");

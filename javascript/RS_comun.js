@@ -199,6 +199,20 @@ class RolSolo {
 			
 			
 		}
+		else if ( personaje[numpj-1].sistema == "Dungeon Hack" )
+		{
+			dj = "Arbitro";
+			pjsdet = DungeonHack.cargapersonaje(pjsdet);
+			
+			document.getElementById("dadosdj").innerHTML = 
+				"<img src='imagenes/d4.png' onclick='RolSolo.tiradado(4,0,-1)' alt='Dado d4' class='mano'/>" +
+				"<img src='imagenes/d6.png' onclick='RolSolo.tiradado(6,0,-1)' alt='Dado d6' class='mano'/>" + 
+				"<img src='imagenes/d8.png' onclick='RolSolo.tiradado(8,0,-1)' alt='Dado d8' class='mano'/>" + 
+				"<img src='imagenes/d10.png' onclick='RolSolo.tiradado(10,0,-1)' alt='Dado d10' class='mano'/>" + 
+				"<img src='imagenes/d12.png' onclick='RolSolo.tiradado(12,0,-1)' alt='Dado d12' class='mano'/>" + 
+				"<img src='imagenes/d20.png' onclick='RolSolo.tiradado(20,0,-1)' alt='Dado d20' class='mano'/>" +
+				"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"Arbitro"' + ")' alt='Arbitro habla' class='mano'/>";
+		}
 		if( personaje[numpj-1].hasOwnProperty('estado') == false || (personaje[numpj-1].hasOwnProperty('estado') == true && personaje[numpj-1].estado != "Eliminado") ) {
 			pjsdet += "</div>";
 		}
@@ -251,6 +265,11 @@ class RolSolo {
 		{
 			pjsdet = LaMarcaDelEste.cargapnj(pjsdet);
 		}
+		else if ( personaje[numpj-1].sistema == "Dungeon Hack" ) 
+		{
+			pjsdet = DungeonHack.cargapnj(pjsdet);
+		}
+		
 		if( pnjs[numpnj-1].hasOwnProperty('estado') == false || (pnjs[numpnj-1].hasOwnProperty('estado') == true && pnjs[numpnj-1].estado != "Eliminado") ) {
 			pjsdet += "</div>";
 		}
@@ -471,8 +490,8 @@ class RolSolo {
 		partidajson.pnjs = pnjs;
 		partidajson.tiradas = tiradas;
 		
-		var jsonpj = JSON.stringify(partidajson);
-		
+		//var jsonpj = JSON.stringify(partidajson);
+		var jsonpj = JSON.stringify(partidajson, null, "\t");
 		let element = document.createElement('a');
 		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(jsonpj));
 		element.setAttribute('download', partida.nombre + ".json");
