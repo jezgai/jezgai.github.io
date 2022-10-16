@@ -255,6 +255,9 @@ class PJ {
 	
 	genera() {
 		this._atributos = new Atributos();
+		this._atributos._ntiradasextras = 1;
+		this._atributos._excesoatributos = 1;
+		this._atributos.calculaValores();
 		
 		this._objClase = clases.clase(nombreclase);
 		this._pvclase = this._objClase.pv();

@@ -235,12 +235,10 @@ class AxisMundi {
 		"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"' +  pnjs[numpnj-1].nombre + '"' + ")' alt='" + pnjs[numpnj-1].nombre + " habla' class='mano'/>" +
 		"<img src='imagenes/Papelera.jpg' onclick='RolSolo.elimina(" + (numpnj-1)  + ',"PNJ"' + ")' alt='Borra " + pnjs[numpnj-1].nombre + "' class='mano'/>";
 		
-		
-		
 		if( pnjs[numpnj-1].hasOwnProperty('pvinicial') == false ){
 			pnjs[numpnj-1].pvinicial = pnjs[numpnj-1].pv;
-		}
-		
+		}		
+				
 		seccion += "<div onclick=" + '"' + "RolSolo.acordeon('pnjcaracteristicas" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Características</strong></p></div>";
 		seccion += "<div id='pnjcaracteristicas" + (numpnj-1) + "' class='w3-hide w3-container' >"
 		seccion += "<table class='w3-table  w3-striped w3-border'><tr><th>Característica</th><th></th><th>Valor</th></tr>";
@@ -263,6 +261,18 @@ class AxisMundi {
 		seccion += "</table></div>";
 		pjsaux+= seccion;
 		
+		if( pnjs[numpnj-1].hasOwnProperty('pericias') == true ){
+			
+			seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pnjpericias" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Pericias</strong></p></div>";
+			seccion += "<div id='pnjpericias" + (numpnj-1) + "' class='w3-hide w3-container' >"
+			seccion += "<table class='w3-table  w3-striped w3-border'><tr><th>Pericia</th><th>Valor</th></tr>";
+			for (indice=0; indice<pnjs[numpnj-1].pericias.length; indice++) {
+				seccion += "<tr><td><span class='mano' onclick='AxisMundi.tiradapericia(" + indice + "," + (numpnj-1) + ",0)'>" + pnjs[numpnj-1].pericias[indice].pericia + "</span></td><td>" + pnjs[numpnj-1].pericias[indice].puntos  + "</td></tr>";
+			}
+			seccion += "</table>";
+			
+			pjsaux+= seccion + "</div>";
+		}
 		
 		seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pnjarmas" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Armas</strong></p></div>";
 		seccion += "<div id='pnjarmas" + (numpnj-1) + "' class='w3-hide w3-container' >"
@@ -334,15 +344,17 @@ class AxisMundi {
 			numeroseccion ++;
 		}
 		
-			
-		seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pnjcarespeciales" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Características especiales</strong></p></div>";
-		seccion += "<div id='pnjcarespeciales" + (numpnj-1) + "' class='w3-hide w3-container' >"
-		seccion += "<table class='w3-table  w3-striped w3-border'>";
-		for (indice=0; indice<pnjs[numpnj-1].caracteristicas.length; indice++) {
-			seccion += "<tr><td>" + pnjs[numpnj-1].caracteristicas[indice] + "</td></tr>";
+		
+		if ( pnjs[numpnj-1].hasOwnProperty('caracteristicas') == true && pnjs[numpnj-1].caracteristicas.length > 1){
+			seccion = "<div onclick=" + '"' + "RolSolo.acordeon('pnjcarespeciales" + (numpnj-1) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Características especiales</strong></p></div>";
+			seccion += "<div id='pnjcarespeciales" + (numpnj-1) + "' class='w3-hide w3-container' >"
+			seccion += "<table class='w3-table  w3-striped w3-border'>";
+			for (indice=0; indice<pnjs[numpnj-1].caracteristicas.length; indice++) {
+				seccion += "<tr><td>" + pnjs[numpnj-1].caracteristicas[indice] + "</td></tr>";
+			}
+			seccion += "</table></div>";
+			pjsaux+= seccion;
 		}
-		seccion += "</table></div>";
-		pjsaux+= seccion;
 		
 		if ( pnjs[numpnj-1].hasOwnProperty('equipo') == false ) {
 			pnjs[numpnj-1].equipo = ".";

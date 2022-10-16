@@ -61,21 +61,34 @@
 	function exportaJSON() {
 
 		var pjexport = {}; //pj;
-		pjexport.botid = "SUSTITUIR_POR_TOKEN_BOT";
-		pjexport.chatid = "SUSTITUIR_POR_ID_DEL_CHAT";
+		//pjexport.botid = "SUSTITUIR_POR_TOKEN_BOT";
+		//pjexport.chatid = "SUSTITUIR_POR_ID_DEL_CHAT";
 		pjexport.nombre = pj.nombre;
 		pjexport.genero = pj.genero;
 		pjexport.sistema = "Knave";
 		pjexport.atributos = pj.atributos;
-		pjexport.pg = pj.pg;
-		pjexport.da = pj.da;
+		pjexport.pv = pj.pg;
+		pjexport.pvinicial = pj.pg;
+		//pjexport.da = pj.da;
+		pjexport.defensa = { };
+		pjexport.defensa["bono"] = pj.da - 10;
+		pjexport.defensa["da"] = pj.da;
 		pjexport.arma = pj.arma;
 		pjexport.armadura = pj.armadura;
 		pjexport.yelmo = pj.yelmo;
 		pjexport.escudo = pj.escudo;
+		
+		pjexport.rasgos = {}; 
+		var literales = rasgos.lrasgos();
+		var i=0;
+		for (i=0;i<literales.length; i++) {
+			pjexport.rasgos[literales[i]]=pj.rasgos[i];
+		}
 		pjexport.equipo = pj.equipo;
+		pjexport.notas = ".";
+		pjexport.px = 0;
 				
-		var jsonpj = JSON.stringify(pjexport);
+		var jsonpj = JSON.stringify(pjexport, null, "\t");
 		
 		let element = document.createElement('a');
 		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(jsonpj));

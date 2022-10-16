@@ -94,8 +94,9 @@ class PJ {
 		
 		var srasgos = "<strong>Nombre:</strong> " + this.nombre + " (" + this.genero + ")";
 		srasgos += "<ul>";
-		for (i=0; i< this.rasgos.length; i++) {
-			srasgos += "<li>" + this.rasgos[i] + "</li>";
+		var rasgospj = rasgos.rasgospj(this);
+		for (i=0; i< rasgospj.length; i++) {
+			srasgos += "<li>" + rasgospj[i] + "</li>";
 		}
 		srasgos += "</ul>";
 		return srasgos;
@@ -105,7 +106,8 @@ class PJ {
 	genera() {
 		var i=0;
 		for (i=0; i<6; i++) {
-			this.atributos[i].defensa = Comun.atributo() + 10;
+			this.atributos[i].bono = Comun.atributo();
+			this.atributos[i].defensa = this.atributos[i].bono + 10;
 		}
 		
 		this.pg = Comun.random(8,1);
@@ -132,6 +134,7 @@ class PJ {
 		}
 		this.calcula_da();
 		this.rasgos = rasgos.rasgos();
+		
 		
 		this.monedas = (Comun.random(6,1) + Comun.random(6,1) + Comun.random(6,1))*20;
 		
@@ -168,12 +171,13 @@ class PJ {
 		var i=0;
 		var inota = 1;		
 		var srasgo = "";
-		for (i=0; i< pj.rasgos.length; i++) {
+		var rasgospj = rasgos.rasgospj(pj);
+		for (i=0; i< rasgospj.length; i++) {
 			if ( i%2 == 0 ) {
-				srasgo = pj.rasgos[i];
+				srasgo = rasgospj[i];
 			}
 			else {
-				srasgo += ". " + pj.rasgos[i];
+				srasgo += ". " + rasgospj[i];
 				fields[ 'Notas' + (inota) + sufijo ] = [ srasgo ];
 				inota++;
 				srasgo = "";

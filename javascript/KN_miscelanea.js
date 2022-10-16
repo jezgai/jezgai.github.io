@@ -115,19 +115,45 @@ class Rasgos {
 	
 	rasgos() {
 		var rasgospj = [];
-		rasgospj.push("Alineamiento: " + this.alineamiento());
-		rasgospj.push("Origen: " + this.origen[Comun.random(20,0)]);
-		rasgospj.push("Trasfondo: " + this.trasfondo[Comun.random(20,0)]);
-		rasgospj.push("Infortunio: " + this.desgracia[Comun.random(20,0)]);
-		rasgospj.push("Vestimenta: " + this.ropaje[Comun.random(20,0)]);
-		rasgospj.push("Habla: " + this.habla[Comun.random(20,0)]);
-		rasgospj.push("Físico: " + this.fisico[Comun.random(20,0)]);
-		rasgospj.push("Piel: " + this.piel[Comun.random(20,0)]);
-		rasgospj.push("Rostro: " + this.cara[Comun.random(20,0)]);
-		rasgospj.push("Pelo: " + this.pelo[Comun.random(20,0)]);
-		rasgospj.push("Virtud: " + this.virtud[Comun.random(20,0)]);
-		rasgospj.push("Vicio: " + this.vicio[Comun.random(20,0)]);
-		
+		rasgospj.push(this.alineamiento());
+		rasgospj.push(this.origen[Comun.random(20,0)]);
+		rasgospj.push(this.trasfondo[Comun.random(20,0)]);
+		rasgospj.push(this.desgracia[Comun.random(20,0)]);
+		rasgospj.push(this.ropaje[Comun.random(20,0)]);
+		rasgospj.push(this.habla[Comun.random(20,0)]);
+		rasgospj.push(this.fisico[Comun.random(20,0)]);
+		rasgospj.push(this.piel[Comun.random(20,0)]);
+		rasgospj.push(this.cara[Comun.random(20,0)]);
+		rasgospj.push(this.pelo[Comun.random(20,0)]);
+		rasgospj.push(this.virtud[Comun.random(20,0)]);
+		rasgospj.push(this.vicio[Comun.random(20,0)]);
+		return rasgospj;
+	}
+	
+	lrasgos() {
+		var literales = [];
+		literales.push("Alineamiento");
+		literales.push("Origen");
+		literales.push("Trasfondo");
+		literales.push("Infortunio");
+		literales.push("Vestimenta");
+		literales.push("Habla");
+		literales.push("Físico");
+		literales.push("Piel");
+		literales.push("Rostro");
+		literales.push("Pelo");
+		literales.push("Virtud");
+		literales.push("Vicio");
+		return literales;
+	}
+	
+	rasgospj(pj) {
+		var literales = rasgos.lrasgos();
+		var rasgospj = [];
+		var i=0;
+		for (i=0; i<literales.length; i++) {
+			rasgospj.push(literales[i] + ": " + pj.rasgos[i]);
+		}
 		return rasgospj;
 		
 	}
