@@ -113,6 +113,50 @@
 		return total;
   }
   
+  class Subresultado {
+	  constructor(res) {
+		  this.resultado = res;
+	  }
+	  subresultado(resultados, iresultado) {
+		  var subtotal = obtienetotaltabla(resultados[iresultado].resultados);
+		  var numero = Math.floor(Math.random() * subtotal) + 1;
+		  var isub = obtieneresultado(resultados[iresultado].resultados, subtotal, numero);
+		  if ( resultados[iresultado].resultados[isub].resultados != null )
+				isub = this.subresultado(resultados[iresultado], isub);
+		  var saltodelinea=true;
+		  if ( resultados[iresultado].hasOwnProperty('saltodelinea') == true ) {
+			  saltodelinea = resultados[iresultado].saltodelinea;
+		  }
+		  if ( saltodelinea == true )
+			this.resultado += "<br>";
+		  this.resultado += resultados[iresultado].resultados[isub].texto;
+		  
+		  return isub;
+	  }
+  }
+  
+  function subresultado(resultados, iresultado, resultado) {
+	  
+	  var subres = new Subresultado(resultado);
+	  subres.subresultado(resultados, iresultado);
+	  return subres.resultado;
+	  
+	  /*var subtotal = obtienetotaltabla(resultados[iresultado].resultados);
+	  numero = Math.floor(Math.random() * subtotal) + 1;
+	  var isub = obtieneresultado(resultados[iresultado].resultados, subtotal, numero);
+	  if ( resultados[iresultado].resultados[isub].resultados != null )
+			isub = subresultado(resultados[iresultado], isub, resultado);
+	  var saltodelinea=true;
+	  if ( resultados[iresultado].hasOwnProperty('saltodelinea') == true ) {
+		  saltodelinea = resultados[iresultado].saltodelinea;
+	  }
+	  if ( saltodelinea == true )
+		resultado += "<br>";
+	  resultado += resultados[iresultado].resultados[isub].texto;
+	  
+	  return isub;*/
+  }
+  
   function resultado(indice, total) {
 	  var numero = Math.floor(Math.random() * total) + 1;
 	  var iresultado = obtieneresultado(tablas.tablas[indice].resultados, total, numero);
@@ -135,7 +179,11 @@
 	  resultado += "<div id='resultado" + indiceresultado + "' class='w3-hide w3-container'>" + resultadotirada + tablas.tablas[indice].resultados[iresultado].texto;
 	    
 	  
-	  
+	  if ( tablas.tablas[indice].resultados[iresultado].resultados != null ) {
+		  resultado = subresultado(tablas.tablas[indice].resultados, iresultado, resultado);
+		  
+	  }
+	  /*
 	  if ( tablas.tablas[indice].resultados[iresultado].resultados != null ) {
 		  var subtotal = obtienetotaltabla(tablas.tablas[indice].resultados[iresultado].resultados);
 		  numero = Math.floor(Math.random() * subtotal) + 1;
@@ -147,7 +195,7 @@
 		  if ( saltodelinea == true )
 			resultado += "<br>";
 		  resultado += tablas.tablas[indice].resultados[iresultado].resultados[isub].texto;
-	  }
+	  }*/
 	  resultado += "</div>";
 	  if ( indiceresultado > 1 ) {
 		  var indice=1;
