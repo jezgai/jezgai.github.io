@@ -79,6 +79,7 @@ class PJ {
 		return satrs;
 	}
 	
+	
 	tablaArmas() {
 		var iarma = 0;
 		var sarma = "<table class='w3-table  w3-striped w3-border'><tr><th>Arma</strong></th><th>Tipo</th><th>Daño</th></tr>";
@@ -88,16 +89,16 @@ class PJ {
 				sarma += " (AD)";
 			else if ( this.armas[iarma].tipo == "AD" && this.armas[iarma].danoCaC > 0)
 				sarma += " (CaC)";
-			sarma += "</td><td align='center'>d";
+			sarma += "</td><td align='center'>";
 			if ( this.armas[iarma].tipo == "CaC" ) 
 			{
-				sarma += this.armas[iarma].danoCaC;
+				sarma += "d" + this.armas[iarma].danoCaC;
 				if ( this.armas[iarma].danoAD != "" ) 
 					sarma += " (d" + this.armas[iarma].danoAD + ")";
 			}
 			else 
 			{
-				sarma += this.armas[iarma].danoAD + "</td></tr>";
+				sarma += "d"+ this.armas[iarma].danoAD ;
 				if ( this.armas[iarma].danoCaC != "" ) 
 					sarma += " (d" + this.armas[iarma].danoCaC + ")";
 			}
