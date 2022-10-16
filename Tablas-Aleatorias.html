@@ -140,7 +140,13 @@
 		  var subtotal = obtienetotaltabla(tablas.tablas[indice].resultados[iresultado].resultados);
 		  numero = Math.floor(Math.random() * subtotal) + 1;
 		  var isub = obtieneresultado(tablas.tablas[indice].resultados[iresultado].resultados, subtotal, numero);
-		  resultado += "<br>" + tablas.tablas[indice].resultados[iresultado].resultados[isub].texto;
+		  var saltodelinea=true;
+		  if ( tablas.tablas[indice].resultados[iresultado].hasOwnProperty('saltodelinea') == true ) {
+			  saltodelinea = tablas.tablas[indice].resultados[iresultado].saltodelinea;
+		  }
+		  if ( saltodelinea == true )
+			resultado += "<br>";
+		  resultado += tablas.tablas[indice].resultados[iresultado].resultados[isub].texto;
 	  }
 	  resultado += "</div>";
 	  if ( indiceresultado > 1 ) {
