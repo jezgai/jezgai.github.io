@@ -107,6 +107,7 @@
 			seleccionado = 'random';
 		}
 		nombreorigen = seleccionado;
+		pintaOrigen(seleccionado);
   }
   
   function seleccionaProfesion(thelist) {
@@ -147,6 +148,7 @@
 		document.getElementById("btncalcular").style.visibility="hidden";
 		document.getElementById("btnrecargar").style.visibility="hidden";
 		document.getElementById("origen").style.visibility="hidden";
+		document.getElementById("descorigen").style.visibility="hidden";
 		document.getElementById("profesion").style.visibility="hidden";
 		document.getElementById("habilidades").style.visibility="hidden";
 		document.getElementById("habilidadesprofesionales").style.visibility="hidden";
@@ -178,6 +180,30 @@
 	  return array;
   }
   
+  function pintaOrigen(nborig) {
+	  var norig;
+	  for (norig = 0; norig<origenes.origenes.length; norig++) {
+		  if ( origenes.origenes[norig].nombre == nborig ) {
+			  break;
+		  }
+	  }
+	  
+	  if (norig < origenes.origenes.length ) {
+		document.getElementById("origen").innerHTML = "<center><strong>Origen</strong><br/>" + origenes.origenes[norig].nombre + " - " + origenes.origenes[norig].cultura  + "</center>";
+		document.getElementById("origen").style.visibility="visible";
+		document.getElementById("descorigen").innerHTML = "<hr/><strong>" + origenes.origenes[norig].descripcion + "</strong><hr/>";
+		document.getElementById("descorigen").style.visibility="visible";
+	  }
+	  else {
+	    document.getElementById("origen").innerHTML = "";
+	    document.getElementById("origen").style.visibility="hidden";
+	    document.getElementById("descorigen").innerHTML = "";
+	    document.getElementById("descorigen").style.visibility="hidden";
+	    
+	  }
+	  return norig;
+  }
+  
   function calcular() {
 
 	  var nborig = nombreorigen;
@@ -189,25 +215,28 @@
 			nbprof = origenes.profesiones[Math.floor(Math.random() * origenes.profesiones.length)].nombre;
 	  }
 	  
-	  document.getElementById("origen").innerHTML = "<center><strong>Origen</strong><br/>" + nborig + "</center>";
-	  document.getElementById("origen").style.visibility="visible";
+	  /*document.getElementById("origen").innerHTML = "<center><strong>Origen</strong><br/>" + nborig + "</center>";
+	  document.getElementById("origen").style.visibility="visible";*/
 	  
 	  document.getElementById("profesion").innerHTML = "<center><strong>Profesión</strong></br>" + nbprof + "</center>";
 	  document.getElementById("profesion").style.visibility="visible";
 	  
-	  var norig;
+	  var norig = pintaOrigen(nborig);
+	  /*var norig;
 	  for (norig = 0; norig<origenes.origenes.length; norig++) {
 		  if ( origenes.origenes[norig].nombre == nborig ) {
 			  break;
 		  }
 	  }
-	  
+	  document.getElementById("origen").innerHTML = "<center><strong>Origen</strong><br/>" + origenes.origenes[norig].nombre + " - " + origenes.origenes[norig].cultura  + "</center>";
+	  */
 	  var nprof;
 	  for (nprof = 0; nprof<origenes.profesiones.length; nprof++) {
 		  if ( origenes.profesiones[nprof].nombre == nbprof ) {
 			  break;
 		  }
 	  }
+	  
 	  
 	  
 	  var i;
@@ -348,6 +377,7 @@
 		</select></div>
 		<div class="octavo" id="btncalcular"><p><button class='w3-button w3-block w3-blue' onclick='calcular()'>Calcular</button></p></div>
 		<div class="octavo" id="btnrecargar"><p><button class='w3-button w3-block w3-blue' onclick='inicial()'>Recargar</button></p></div>
+		<div class="total" id="descorigen"></div>
 		<div class="sexto" id="habilidades"></div>
 		<div class="sexto" id="habilidadesprofesionales"></div>
 		<div class="dostercios" id="eventos"></div>
