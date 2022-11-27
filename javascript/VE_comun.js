@@ -95,9 +95,9 @@ class Comun {
 		return shabs;
 	}
 	
-	static tablaTalentos() {
+	static tablaTalentos(literal="Talentos") {
 		var itals = 0;
-		var stals = "<table class='w3-table  w3-striped w3-border'><tr><th>Talentos</th></tr>";
+		var stals = "<table class='w3-table  w3-striped w3-border'><tr><th>" + literal + "</th></tr>";
 		for (itals = 0; itals < pj.talentos.length; itals++) {
 			stals += "<tr><td>" + pj.talentos[itals] + " </td></tr>";
 		}

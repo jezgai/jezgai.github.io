@@ -8,6 +8,7 @@ class Habilidades {
 		this._habilidadesNUV = [ "Al loro", "Empollon", "Manitas", "Ninja", "Palique", "Rambo" ];
 		this._habilidadesVC = [ "Ciudadano", "Ocultista", "Político", "Ratero", "Manitas", "Veterano" ];
 		this._habilidadesVES = [ "Alerta", "Comunicación", "Erudición", "Subterfugio", "Supervivencia", "Tecnología" ];
+		this._habilidadesVM = [ "Ciudadano", "Detective", "Profesor", "Ingeniero", "Idolo", "Sombra" ];
 		this._habilidades = this._habilidadesGen.slice(0);
 	}
 	
@@ -55,6 +56,10 @@ class Habilidades {
 	
 	habilidadesVES() {
 		this._habilidades = this._habilidadesVES.slice(0);
+	}
+	
+	habilidadesVM() {
+		this._habilidades = this._habilidadesVM.slice(0);
 	}
 	
 	puntuaciones1(nivel, mod_ptos_ini ) {
@@ -231,6 +236,21 @@ class Habilidades {
 		
 		return phab;
 	}	
+	
+	puntuacionesAdicionales(nivel) {
+		var ptos = [ 0 , 0 , 0, 0, 0, 0 ];
+		if ( nivel < 2 )
+			return ptos;
+			
+		var indice=1;
+		for (indice=1; indice<nivel; indice++) {
+			ptos = Comun.shuffle(ptos);
+			ptos[0]++;
+			ptos[1]++;
+		}
+		ptos = Comun.shuffle(ptos);
+		return ptos;
+	}
 	
 }
 

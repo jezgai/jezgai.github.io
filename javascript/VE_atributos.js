@@ -185,6 +185,25 @@ class Atributos {
 		}
 		return 3;
 	}
+	
+	static modifVM(valor) {
+		if (valor <= 3 ) {
+			return -2;
+		}
+		else if (valor <= 6) {
+			return -1;
+		}
+		else if (valor <= 10) {
+			return 0;
+		}
+		else if (valor <= 14) {
+			return 1;
+		}
+		else if (valor <= 17) {
+			return 2;
+		}
+		return 3;
+	}
 
 	
 }
