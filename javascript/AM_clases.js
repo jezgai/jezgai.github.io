@@ -25,18 +25,22 @@ class Clase {
 		this.plantilla = clase.plantilla;
 	}
 	
-	ptosbasepericia(nombrepericia) {
+	buscapericia(nombrepericia, tablapericias) {
 		var indice=0;
-		for (indice=0; indice<this.pericias.pericias.length; indice++) {
-			if ( this.pericias.pericias[indice].nombre == nombrepericia )
-				return this.pericias.pericias[indice].puntos;
+		for (indice=0; indice<tablapericias.length; indice++) {
+			if ( tablapericias[indice].pericia == nombrepericia )
+				return indice;
 		}
-		
-		
-		for (indice=0; indice<this.periciasespeciales.pericias.length; indice++) {
-			if ( this.periciasespeciales.pericias[indice].nombre == nombrepericia )
-				return this.periciasespeciales.pericias[indice].puntos;
-		}
+		return -1;
+	}
+	
+	ptosbasepericia(nombrepericia) {
+		var indice=this.buscapericia(nombrepericia, this.pericias.pericias);
+		if (indice != -1)
+			return this.pericias.pericias[indice].puntos;
+		indice=this.buscapericia(nombrepericia, this.periciasespeciales.pericias);
+		if (indice != -1)
+			return this.periciasespeciales.pericias[indice].puntos;
 		return 0;
 	}
 	
@@ -182,15 +186,17 @@ class Clase {
 		this.ptospericia.push(pericia);
 		
 		for (indice=0; indice < this.pericias.pericias.length; indice++ ) {
-			var pericia = new Object();
-			pericia.tipo = "Avanzada";
-			pericia.pericia = this.pericias.pericias[indice].nombre;
-			pericia.puntosbase = this.pericias.pericias[indice].puntos;
-			pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
-			pericia.puntos = 0;
-			pericia.especial = false;
-			pericia.puntosespecial = 0;
-			this.ptospericia.push(pericia);
+			if ( this.buscapericia(this.pericias.pericias[indice].nombre, this.ptospericia) == -1 ) {
+				var pericia = new Object();
+				pericia.tipo = "Avanzada";
+				pericia.pericia = this.pericias.pericias[indice].nombre;
+				pericia.puntosbase = this.pericias.pericias[indice].puntos;
+				pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
+				pericia.puntos = 0;
+				pericia.especial = false;
+				pericia.puntosespecial = 0;
+				this.ptospericia.push(pericia);
+			}
 		}
 		
 		if ( this.pericias.puntos > 0 ) {
@@ -220,15 +226,18 @@ class Clase {
 					}
 				}
 				if ( indice2 == this.ptospericia.length ) {
-					var pericia = new Object();
-					pericia.tipo = "Avanzada";
-					pericia.pericia = this.periciasespeciales.pericias[indice].nombre;
-					pericia.puntosbase = this.periciasespeciales.pericias[indice].puntos;
-					pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
-					pericia.puntos = 0;
-					pericia.especial = true;
-					pericia.puntosespecial = 0;
-					this.ptospericia.push(pericia);
+					
+					if ( this.buscapericia(this.periciasespeciales.pericias[indice].nombre, this.ptospericia) == -1 ) {
+						var pericia = new Object();
+						pericia.tipo = "Avanzada";
+						pericia.pericia = this.periciasespeciales.pericias[indice].nombre;
+						pericia.puntosbase = this.periciasespeciales.pericias[indice].puntos;
+						pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
+						pericia.puntos = 0;
+						pericia.especial = true;
+						pericia.puntosespecial = 0;
+						this.ptospericia.push(pericia);
+					}
 				}
 			}
 			var ptos = this.periciasespeciales.puntos;
