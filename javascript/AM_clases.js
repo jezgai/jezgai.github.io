@@ -25,6 +25,21 @@ class Clase {
 		this.plantilla = clase.plantilla;
 	}
 	
+	ptosbasepericia(nombrepericia) {
+		var indice=0;
+		for (indice=0; indice<this.pericias.pericias.length; indice++) {
+			if ( this.pericias.pericias[indice].nombre == nombrepericia )
+				return this.pericias.pericias[indice].puntos;
+		}
+		
+		
+		for (indice=0; indice<this.periciasespeciales.pericias.length; indice++) {
+			if ( this.periciasespeciales.pericias[indice].nombre == nombrepericia )
+				return this.periciasespeciales.pericias[indice].puntos;
+		}
+		return 0;
+	}
+	
 	pv() {
 		return Comun.random(this.dg, 1);
 	}
@@ -101,6 +116,7 @@ class Clase {
 		pericia.tipo = "Básica";
 		pericia.pericia = "Alerta";
 		pericia.puntosbase = (atributospj[4].modif + this.modifadicional[4]) < -1 ? 1 : 2 + atributospj[4].modif + this.modifadicional[4];
+		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
 		pericia.puntos = 0;
 		pericia.especial = false;
 		pericia.puntosespecial = 0;
@@ -110,6 +126,7 @@ class Clase {
 		pericia.tipo = "Básica";
 		pericia.pericia = "Arquitectura";
 		pericia.puntosbase = 1;
+		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
 		pericia.puntos = 0;
 		pericia.especial = false;
 		pericia.puntosespecial = 0;
@@ -119,6 +136,7 @@ class Clase {
 		pericia.tipo = "Básica";
 		pericia.pericia = "Escalada";
 		pericia.puntosbase = (atributospj[2].modif + this.modifadicional[2]) < 0 ? 1 : 1 + atributospj[2].modif + this.modifadicional[2];
+		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
 		pericia.puntos = 0;
 		pericia.especial = false;
 		pericia.puntosespecial = 0;
@@ -137,6 +155,7 @@ class Clase {
 		pericia.tipo = "Básica";
 		pericia.pericia = "Forzar Puertas";
 		pericia.puntosbase = (atributospj[0].modif + this.modifadicional[0]) < 0 ? 1 : 1 + atributospj[0].modif + this.modifadicional[0];
+		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
 		pericia.puntos = 0;
 		pericia.especial = false;
 		pericia.puntosespecial = 0;
@@ -146,6 +165,7 @@ class Clase {
 		pericia.tipo = "Básica";
 		pericia.pericia = "Idiomas";
 		pericia.puntosbase = (atributospj[3].modif + this.modifadicional[3]) < 0 ? 0 : atributospj[3].modif + this.modifadicional[3];
+		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
 		pericia.puntos = 0;
 		pericia.especial = false;
 		pericia.puntosespecial = 0;
@@ -155,6 +175,7 @@ class Clase {
 		pericia.tipo = "Básica";
 		pericia.pericia = "Sigilo";
 		pericia.puntosbase = (atributospj[1].modif + this.modifadicional[1]) < -1 ? 1 : 2 + atributospj[1].modif + this.modifadicional[1];
+		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
 		pericia.puntos = 0;
 		pericia.especial = false;
 		pericia.puntosespecial = 0;
@@ -165,6 +186,7 @@ class Clase {
 			pericia.tipo = "Avanzada";
 			pericia.pericia = this.pericias.pericias[indice].nombre;
 			pericia.puntosbase = this.pericias.pericias[indice].puntos;
+			pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
 			pericia.puntos = 0;
 			pericia.especial = false;
 			pericia.puntosespecial = 0;
@@ -202,6 +224,7 @@ class Clase {
 					pericia.tipo = "Avanzada";
 					pericia.pericia = this.periciasespeciales.pericias[indice].nombre;
 					pericia.puntosbase = this.periciasespeciales.pericias[indice].puntos;
+					pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
 					pericia.puntos = 0;
 					pericia.especial = true;
 					pericia.puntosespecial = 0;
@@ -664,7 +687,7 @@ class Clases {
 			  dg : 8,
 			  caracteristicas: [ "Pueden usar cualquier tipo de armadura",
 								 "Sensitivo con la piedra. Piel de piedra" ],
-              ca: 0,
+              ca: 1,
               ataque: 1,
               ataquead: 0,
               dano: 1,
@@ -682,7 +705,7 @@ class Clases {
               idiomas: [ "Enano", "Gnomo", "Trasgo", "Kobold" ],
               boniftipoarmas: 0,
               periciasespeciales: { puntos: 4, pericias: [ { nombre: "Arquitectura", puntos: 1}, { nombre: "Mecanismos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
-              pericias: { puntos: 0, pericias: [ ] },
+              pericias: { puntos: 0, pericias: [ { nombre: "Sigilo", puntos: 1} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Gran hacha", "Hacha de mano" ], [ "Hacha de batalla", "Hacha de mano"] ],
 			},
@@ -694,7 +717,7 @@ class Clases {
 			  dg : 8,
 			  caracteristicas: [ "Pueden usar cualquier tipo de armadura",
 								 "Armadura natural. Sensitivo con la piedra" ],
-              ca: 1,
+              ca: 2,
               ataque: 1,
               ataquead: 0,
               dano: 1,
@@ -712,7 +735,7 @@ class Clases {
               idiomas: [ "Enano", "Gnomo", "Trasgo", "Kobold" ],
               boniftipoarmas: 0,
               periciasespeciales: { puntos: 2, pericias: [ { nombre: "Arquitectura", puntos: 1}, { nombre: "Mecanismos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
-              pericias: { puntos: 0, pericias: [ ] },
+              pericias: { puntos: 0, pericias: [ { nombre: "Sigilo", puntos: 1} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Gran hacha", "Hacha de mano" ], [ "Hacha de batalla", "Martillo ligero"], [ "Martillo de guerra", "Hacha de mano" ] ],
 			},
@@ -725,7 +748,7 @@ class Clases {
 			  caracteristicas: [ "Pueden usar cualquier tipo de armadura",
 								 "Buen trato. Correr por su vida. Mal de ojo",
 								 "Pasar desapercibido" ],
-              ca: 0,
+              ca: 1,
               ataque: 1,
               ataquead: 1,
               dano: 1,
@@ -741,8 +764,8 @@ class Clases {
 				{ nombre: "Conjuros", valor: 17 },
               ],
               idiomas: [ "Mediano" ],
-              boniftipoarmas: 0,
-              periciasespeciales: { puntos: 2, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Sigilo", puntos: 0},  { nombre: "Detectar", puntos: 1} ] },
+              boniftipoarmas: -1,
+              periciasespeciales: { puntos: 2, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Sigilo", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
               pericias: { puntos: 2, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Daga", "Espada corta" ] ],
@@ -773,7 +796,7 @@ class Clases {
               ],
               idiomas: [ "Mediano" ],
               boniftipoarmas: -1,
-              periciasespeciales: { puntos: 6, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Sigilo", puntos: 0},  { nombre: "Detectar", puntos: 1} ] },
+              periciasespeciales: { puntos: 6, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Sigilo", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
               pericias: { puntos: 4, pericias: [ { nombre: "Apuñalar", puntos: 0}, { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1}, { nombre: "Mecanismos", puntos: 0} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Daga", "Honda" ] ],
@@ -786,8 +809,8 @@ class Clases {
 			  dg : 10,
 			  caracteristicas: [ "Pueden usar cualquier armadura hasta malla",
 								 "Armas naturales, Infravisión, Personalidad feroz",
-								 "Armadura natural" ],
-              ca: 2,
+								 "Armadura natural", "+2 a la Fuerza" ],
+              ca: 1,
               ataque: 1,
               ataquead: 0,
               dano: 1,
@@ -805,7 +828,7 @@ class Clases {
               idiomas: [ ],
               boniftipoarmas: 1,
               periciasespeciales: { puntos: 0, pericias: [ ] },
-              pericias: { puntos: 0, pericias: [ ] },
+              pericias: { puntos: 0, pericias: [ { nombre: "Sigilo", puntos: -1} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Espadón", "Alfanje"], [ "Gran hacha", "Cimitarra" ], [ "Hacha de batalla", "Maza"] ],
 			},

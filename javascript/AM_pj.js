@@ -55,11 +55,11 @@ class PJ {
 	}
 	
 	recalculaPericiasBasicas() {
-		this._pericias[0].puntosbase = (this._atributos._atributos[4].modif + this._objClase.modifadicional[4]) < -1 ? 1 : 2 + this._atributos._atributos[4].modif + this._objClase.modifadicional[4];
-		this._pericias[2].puntosbase = (this._atributos._atributos[2].modif + this._objClase.modifadicional[2]) < 0 ? 1 : 1 + this._atributos._atributos[2].modif + this._objClase.modifadicional[2];
-		this._pericias[4].puntosbase = (this._atributos._atributos[0].modif + this._objClase.modifadicional[0]) < 0 ? 1 : 1 + this._atributos._atributos[0].modif + this._objClase.modifadicional[0];
-		this._pericias[5].puntosbase = (this._atributos._atributos[3].modif + this._objClase.modifadicional[3]) < 0 ? 0 : this._atributos._atributos[3].modif + this._objClase.modifadicional[3];
-		this._pericias[6].puntosbase = (this._atributos._atributos[1].modif + this._objClase.modifadicional[1]) < -1 ? 1 : 2 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1];
+		this._pericias[0].puntosbase = (this._atributos._atributos[4].modif + this._objClase.modifadicional[4]) < -1 ? 1 : 2 + this._atributos._atributos[4].modif + this._objClase.modifadicional[4] + this._objClase.ptosbasepericia(this._pericias[0].pericia);
+		this._pericias[2].puntosbase = (this._atributos._atributos[2].modif + this._objClase.modifadicional[2]) < 0 ? 1 : 1 + this._atributos._atributos[2].modif + this._objClase.modifadicional[2] + this._objClase.ptosbasepericia(this._pericias[2].pericia);
+		this._pericias[4].puntosbase = (this._atributos._atributos[0].modif + this._objClase.modifadicional[0]) < 0 ? 1 : 1 + this._atributos._atributos[0].modif + this._objClase.modifadicional[0] + this._objClase.ptosbasepericia(this._pericias[4].pericia);
+		this._pericias[5].puntosbase = (this._atributos._atributos[3].modif + this._objClase.modifadicional[3]) < 0 ? 0 : this._atributos._atributos[3].modif + this._objClase.modifadicional[3] + this._objClase.ptosbasepericia(this._pericias[5].pericia);
+		this._pericias[6].puntosbase = (this._atributos._atributos[1].modif + this._objClase.modifadicional[1]) < -1 ? 1 : 2 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1] + this._objClase.ptosbasepericia(this._pericias[6].pericia);
 
 	}
 	
