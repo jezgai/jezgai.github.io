@@ -45,8 +45,11 @@
 		document.getElementById("atributos").innerHTML = "";
 		document.getElementById("rasgos").innerHTML = "";
 		document.getElementById("habilidades").innerHTML = "";
+		document.getElementById("talento").innerHTML = "";
+		document.getElementById("dtalento").innerHTML = "";
 		document.getElementById("botonpdf").style.visibility="hidden";
 		document.getElementById("botonjson").style.visibility="hidden";
+		document.getElementById("botontalento").style.visibility="hidden";
 		
 	}
 	
@@ -69,8 +72,11 @@
 		document.getElementById("atributos").innerHTML = pj.tablaAtributos();
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
 		document.getElementById("habilidades").innerHTML = pj.tablaHabilidades();
+		document.getElementById("talento").innerHTML = pj.nombreTalento();
+		document.getElementById("dtalento").innerHTML = pj.descripcionTalento();
 		document.getElementById("botonpdf").style.visibility="visible";
 		document.getElementById("botonjson").style.visibility="visible";
+		document.getElementById("botontalento").style.visibility="visible";
 	}
 	
 	function calcula() {
@@ -79,6 +85,11 @@
 		pj.genera();
 		muestraDatosPJ();
 		
+	}
+	
+	function recalculaTalentos() {
+		pj.calculaTalento();
+		muestraDatosPJ();
 	}
 	
 	
@@ -115,6 +126,7 @@
 		pjexport.resmental = pj.resmental;
 		pjexport.proezas = pj.proezas_total;
 		pjexport.iniciativa = pj.iniciativa;
+		pjexport.talento = pj.talento;
 		
 		var jsonpj = JSON.stringify(pjexport, null, "\t");
 		let element = document.createElement('a');
@@ -208,6 +220,10 @@
 		<div class="left">
 			<div class="w3-container w3-blue w3-center"><p><strong>Atributos</strong></p></div> 
 			<div id="atributos"></div>
+			<div class="w3-container w3-blue w3-center"><p><strong>Talento</strong></p></div> 
+			<div id="botontalento" ><button class='w3-button w3-block w3-blue' onclick='recalculaTalentos()'>Recalcula talento</button></div>
+			<div id="talento"></div>
+			<div id="dtalento"></div>
 		</div>
 		<div class="main">
 			<div class="w3-container w3-blue w3-center"><p><strong>Rasgos derivados</strong></p></div> 
@@ -218,6 +234,11 @@
 			<div id="habilidades"></div>
 		</div>
 	</div>
+	<script>
+		if ( pj.talento == null ) {
+			vaciaDiv();
+		}
+	</script>
 </body>
 </html>
 
