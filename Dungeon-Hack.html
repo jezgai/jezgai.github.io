@@ -338,6 +338,8 @@
 		document.getElementById("seccionequipo").style.visibility="hidden";
 		document.getElementById("descripcion").innerHTML="";
 		document.getElementById("botonpdf").style.visibility="hidden";
+		document.getElementById("botonjson").style.visibility="hidden";
+		
 		//document.getElementById("botonpdfazul").style.visibility="hidden";
 		document.getElementById("conjuros").style.visibility="hidden";
 		
@@ -720,15 +722,71 @@
 		
 		document.getElementById("clase").innerHTML="<p><center><strong>CLASE: " + pj.Clase.nombre + "</strong> (" + pj.Clase.origen + ") - " + pj.nombrepj + pj.genero + "</center></p>";
 		document.getElementById("botonpdf").style.visibility="visible";
+		document.getElementById("botonjson").style.visibility="visible";
 		//document.getElementById("botonpdfazul").style.visibility="visible";
 	}
 	
-	function descarga() {
-		var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pj));
+	function exportaJSON() {
+		
+		var pjexport = {}; //pj;
+		pjexport.botid = "SUSTITUIR_POR_TOKEN_BOT";
+		pjexport.chatid = "SUSTITUIR_POR_ID_DEL_CHAT";
+		pjexport.nombre = pj._nombrepj;
+		pjexport.sistema = "Dungeon Hack";
+		pjexport.clase = pj._Clase._nombre;
+		pjexport.salud = pj._Clase._salud;
+		pjexport.energia = pj._Clase._energia;
+		
+		pjexport.atributos = [];
+		pjexport.atributos.push( { "nbatr": "FUE", "valor": pj._FUE, "valorASC": (21 - pj._FUE) } );
+		pjexport.atributos.push( { "nbatr": "DES", "valor": pj._DES, "valorASC": (21 - pj._DES) } );
+		pjexport.atributos.push( { "nbatr": "CON", "valor": pj._CON, "valorASC": (21 - pj._CON) } );
+		pjexport.atributos.push( { "nbatr": "INT", "valor": pj._INT, "valorASC": (21 - pj._INT) } );
+		pjexport.atributos.push( { "nbatr": "SAB", "valor": pj._SAB, "valorASC": (21 - pj._SAB) } );
+		pjexport.atributos.push( { "nbatr": "CAR", "valor": pj._CAR, "valorASC": (21 - pj._CAR) } );
+		if ( pj._Clase._cordura == "FUE" )
+			pjexport.cordura = pj._FUE;
+		else if ( pj._Clase._cordura == "DES" )
+			pjexport.cordura = pj._DES;
+		else if ( pj._Clase._cordura == "CON" )
+			pjexport.cordura = pj._CON;
+		else if ( pj._Clase._cordura == "INT" )
+			pjexport.cordura = pj._INT;
+		else if ( pj._Clase._cordura == "SAB" )
+			pjexport.cordura = pj._SAB;
+		else
+			pjexport.cordura = pj._CAR;
+		
+		pjexport.competencias = pj._Clase._competencias;
+		pjexport.ventajas = pj._Clase._ventajas;
+		pjexport.habilidades = pj._Clase._habilidades;
+		pjexport.conjuros = pj._conjuros;
+		pjexport.armas = pj._armas;
+		pjexport.armadura = pj._armadura;
+		pjexport.escudo = pj._escudo;
+		pjexport.equipo = pj._equipo;
+		
+		
+		
+		var jsonpj = JSON.stringify(pjexport);
+		
+		let element = document.createElement('a');
+		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(jsonpj));
+		element.setAttribute('download', "PJ " + pjexport.nombre + ".json");
+
+		element.style.display = 'none';
+		document.body.appendChild(element);
+
+		element.click();
+
+		document.body.removeChild(element);
+		
+		
+		/*var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(pj));
 		var jsonElem = document.getElementById('downloadpjsonpj');
 		jsonElem.setAttribute("href",     dataStr     );
 		jsonElem.setAttribute("download", "pj.json");
-		jsonElem.click();
+		jsonElem.click();*/
 		
 	}
 	
@@ -768,6 +826,7 @@
 		document.getElementById("seccionequipo").style.visibility="hidden";
 		document.getElementById("descripcion").innerHTML="";
 		document.getElementById("botonpdf").style.visibility="hidden";
+		document.getElementById("botonjson").style.visibility="hidden";
 		//document.getElementById("botonpdfazul").style.visibility="hidden";
 		document.getElementById("conjuros").style.visibility="hidden";
 		
@@ -841,6 +900,7 @@
 		</div>
 		<div class="minileft"><p><button class='w3-button w3-block w3-brown' onclick='calcula()'>Calcula</button></p></div>
 		<div class="minileft" id="botonpdf"><p><button class='w3-button w3-block w3-brown' onclick='eligePDF()'>Genera PDF</button></p></div>
+		<div class="minileft" id="botonjson"><p><button class='w3-button w3-block w3-brown' onclick='exportaJSON()'>Descarga json</button></p></div>
 		<!--<div class="minileft" id="botonpdfazul"><p><button class='w3-button w3-block w3-brown' onclick='rellenaPDFAzul()'>Genera PDF Alternativo</button></p></div>
 		<div class="minileft" id="botonpdfazul"><p><button class='w3-button w3-block w3-brown' onclick='rellenaPDFAzul2()'>Genera PDF Car vs Dif</button></p></div>-->
 		<div class="right" id="clase"><p></p></div>

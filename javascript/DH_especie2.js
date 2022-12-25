@@ -61,6 +61,14 @@ class Especies {
 			  lhabilidades: [ "Visión en la oscuridad, Corpulencia, " ],
 			},
 			{
+			  nombre : "Gatónido",
+			  requisitos : "Destreza 13-",
+			  rapidez : "Te puedes mover hasta 35 pies (10,5 m) por asalto.",
+			  habilidades: [ "<strong>Visión en la oscuridad</strong><br/>Tu especie proviene de túneles bajo tierra, por lo que ha desarrollado la capacidad de ver en la oscuridad no mágica.", 
+							 "<strong>Baja estatura</strong><br/>Tu tamaño es más pequeño que lo habitual, por lo que tienes dificultades para usar armas y armaduras comunes." ],
+			  lhabilidades: [ "Visión en la oscuridad, Baja estatura, " ],
+			},
+			{
 			  nombre : "Gnomo",
 			  requisitos : "Inteligencia 13-",
 			  rapidez : "Te puedes mover 25 pies (7,5 m) por asalto.",

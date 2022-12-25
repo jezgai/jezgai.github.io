@@ -20,6 +20,7 @@
 	
 	let clases = new Clases();
 	let especies = new Especies();
+	let tipopdf = 0;
 
 	let pj = new DH_PJ();
 	//let atributos = [];
@@ -69,7 +70,7 @@
 					'Competencias' : [ document.getElementById("competencias").innerText ],
 					'Ventajas' : [ document.getElementById("ventajas").innerText ],
 					'Habilidades' : [ pj.Especie.lhabilidades + pj.Clase.lhabilidades ],
-					'Biografia' : [ document.getElementById("habilidades").innerText ],
+					'Biografia' : [ "Rapidez: " + pj.Especie.rapidez + "\n\n" + document.getElementById("habilidades").innerText ],
 					'MonO' : [ pj.monO ],
 				};
 				
@@ -132,6 +133,110 @@
 		xhr.send();		
 		
 	}	
+	
+	
+	function rellenaPDF2() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		var competencias = '';
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = {
+					'Nombre' : [ pj.nombrepj + pj.genero ],
+					'Nivel' : [ 1 ],
+					'Clase' : [ pj.Clase.nombre ],
+					'Especie' : [pj.Especie.nombre ],
+					'CheckFUE' : [ pj.mFUE == -1 ? true : false],
+					'CheckDES' : [ pj.mDES == -1 ? true : false],
+					'CheckCON_2' : [ pj.mCON == -1 ? true : false],
+					'CheckCON' : [ pj.mINT == -1 ? true : false],
+					'CheckSAB' : [ pj.mSAB == -1 ? true : false],
+					'CheckCAR' : [ pj.mCAR == -1 ? true : false],
+					'FUE' : [ 21 - (pj.FUE + pj.mFUE) ],
+					'DES' : [ 21 - (pj.DES + pj.mDES) ],
+					'CON' : [ 21 - (pj.CON + pj.mCON) ],
+					'INT' : [ 21 - (pj.INT + pj.mINT) ],
+					'SAB' : [ 21 - (pj.SAB + pj.mSAB) ],
+					'CAR' : [ 21 - (pj.CAR + pj.mCAR) ],
+					'dFUE' : [ pj.FUE + pj.mFUE ],
+					'dDES' : [ pj.DES + pj.mDES ],
+					'dCON' : [ pj.CON + pj.mCON ],
+					'dINT' : [ pj.INT + pj.mINT ],
+					'dSAB' : [ pj.SAB + pj.mSAB ],
+					'dCAR' : [ pj.CAR + pj.mCAR ],
+					'NSALUD' : [ pj.Clase.salud ],
+					'NENERGIA' : [ pj.Clase.energia ],
+					'NCORDURA' : [ pj.Cordura ],
+					'Competencias' : [ document.getElementById("competencias").innerText ],
+					'Ventajas' : [ document.getElementById("ventajas").innerText ],
+					'Habilidades' : [ pj.Especie.lhabilidades + pj.Clase.lhabilidades ],
+					'Biografia' : [ "Rapidez: " + pj.Especie.rapidez + "\n\n" + document.getElementById("habilidades").innerText ],
+					'MonO' : [ pj.monO ],
+				};
+				
+				if ( pj._monO > 0 ) {
+					fields['MonO'] = [ pj._monO ];
+				}
+				if ( pj._monP > 0 ) {
+					fields['MonP'] = [ pj._monP ];
+				}
+				
+				
+				if ( pj._armas.length > 0 ) {
+					var indice = 0;
+					for (indice = 0; indice<pj._armas.length; indice++) {
+						fields["Arma" + (indice+1)] = [ pj._armas[indice].nombre ];
+						fields["Da#C3#B1o" + (indice+1) ] = [ pj._armas[indice].dano ];
+						if ( pj._armas[indice].du != "" ) {
+							fields["DU" + (indice+1) ] = [ pj._armas[indice].du ];
+						}
+						fields["PE" + (indice+1) ] = [ pj._armas[indice].penetracion ];
+					}
+				}
+				var nProteccion=1;
+				if ( pj._armadura != null ) {
+					fields["Proteccion" + nProteccion] = [ pj._armadura.nombre ];
+					fields["Absorcion" + nProteccion] = [ pj._armadura.absorcion ];
+					fields["PDU" + nProteccion] = [ pj._armadura.du ];
+					nProteccion++;
+				}
+				
+				if ( pj._escudo != null ) {
+					fields["Proteccion" + nProteccion] = [ pj._escudo.nombre ];
+					fields["Absorcion" + nProteccion] = [ pj._escudo.absorcion ];
+					fields["PDU" + nProteccion] = [ pj._escudo.du ];
+				}
+				
+				if ( pj._equipo != null) {
+					var indice = 0;
+					for (indice = 0; indice<pj._equipo.componentes.length; indice++) {
+						fields["Objeto" + (indice+1)] = [ pj._equipo.componentes[indice] ];
+					}
+				}
+				
+				if ( pj._conjuros.length > 0 ) {
+					var indice = 0;
+					for ( indice = 0; indice < pj._conjuros.length; indice++ ) {
+						fields[ 'Poder' + (indice+1) ] = [ pj._conjuros[indice] ];
+					}
+				}
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, pj.nombrepj + '.pdf'); // 'PersonajeDH.pdf');
+			}
+		};
+
+
+		xhr.open('GET', 'pdf/DungeonHackFichaYlat2.pdf', true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}	
+	
+	
 	
 	function vaciaDiv() {
 		document.getElementById("atributos").innerHTML="";
@@ -547,6 +652,29 @@
 		
 	}
 	
+	function seleccionaPDF(thelist) {
+		tipopdf = thelist.selectedIndex;
+	}
+	
+	function cancelaPDF() {
+		document.getElementById('generapdf').style.display='none';
+	}
+	
+	function generaPDF() {
+		cancelaPDF();
+		if ( tipopdf == 0 ) {
+			rellenaPDF();
+		}
+		else if ( tipopdf == 1 ) {
+			rellenaPDF2();
+		}
+	}
+	
+	
+	function eligePDF() {
+		document.getElementById('generapdf').style.display='block';
+	}
+	
 	function conclases() {
 		vaciaDiv();
 		
@@ -632,7 +760,7 @@
 		<div class="minileft" id="especies">
 		</div>
 		<div class="microleft"><p><button class='w3-button w3-block w3-blue' onclick='calcula()'>Calcula</button></p></div>
-		<div class="microleft" id="botonpdf"><p><button class='w3-button w3-block w3-blue' onclick='rellenaPDF()'>Genera PDF</button></p></div>
+		<div class="minileft" id="botonpdf"><p><button class='w3-button w3-block w3-blue' onclick='eligePDF()'>Genera PDF</button></p></div>
 		<div class="macroright" id="clase"><p></p></div>
 	</div>
 	<div style="overflow:auto">
@@ -680,6 +808,19 @@
 			<div class="w3-container w3-blue w3-center"><p><strong>Descripción de la clase</strong></p></div> 
 			<div id="descripcion" ></div>
 		</div>
+	</div>
+	<div id="generapdf" class="w3-modal">
+	  <div class="w3-modal-content">
+		<div class="w3-container">
+				<h2>Modelo de PDF</h2>
+				<select class="w3-select"  name="tipospdf" onchange='seleccionaPDF(this)'>
+					<option>Modelo Clasico</option>
+					<option>Modelo con alternativa de características "ascendentes"</option>
+				</select>
+				<input type="button" id="btnLoad" value="Generar PDF" onclick="generaPDF();">
+				<input type="button" id="btnCancel" value="Cancelar" onclick="cancelaPDF()">
+		</div>
+	  </div>
 	</div>
 	<script>conclases();</script>
 </body>
