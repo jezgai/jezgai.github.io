@@ -84,7 +84,12 @@
 		for (i=0;i<literales.length; i++) {
 			pjexport.rasgos[literales[i]]=pj.rasgos[i];
 		}
-		pjexport.equipo = pj.equipo;
+		var sequipo = "";
+		for (i = 0; i < pj.equipo.length; i++) {
+			sequipo += pj.equipo[i] + "<br/>";
+		}
+		
+		pjexport.equipo = sequipo;
 		pjexport.notas = ".";
 		pjexport.px = 0;
 				

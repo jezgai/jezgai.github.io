@@ -73,7 +73,16 @@ class PJ {
 	
 	tablaArma() {
 		var stabla = "<table class='w3-table  w3-striped w3-border'><tr><th>Arma</th><th>Daño</th><th>Huecos</th></tr>";
-		stabla += "<tr><td>" + this.arma.arma + "</td><td>d" + this.arma.daño + "</td><td>" + this.arma.huecos + "</td></tr>";
+		
+		var daño = "";
+		if ( this.arma.dañoCaC != null ) {
+			daño += "d" + this.arma.dañoCaC + " (CaC) ";
+		}
+		if ( this.arma.dañoAD != null ) {
+			daño += "d" + this.arma.dañoAD + " (AD)";
+		}
+		
+		stabla += "<tr><td>" + this.arma.arma + "</td><td>" + daño + "</td><td>" + this.arma.huecos + "</td></tr>";
 		stabla += "</table>";
 		return stabla;
 	}
@@ -218,7 +227,16 @@ class PJ {
 		
 		if ( pj.arma.arma != "" ) {
 			fields[ 'Equipo' + iarmadura + sufijo ] = [ pj.arma.arma ];
-			fields[ 'Arma1' + sufijo ] = [ pj.arma.arma + " (d" + pj.arma.daño + ")"  ];
+			
+			var daño = "";
+			if ( pj.arma.dañoCaC != null ) {
+				daño += " (d" + pj.arma.dañoCaC + " CaC)";
+			}
+			if ( pj.arma.dañoAD != null ) {
+				daño += " (d" + pj.arma.dañoAD + " AD)";
+			}
+			
+			fields[ 'Arma1' + sufijo ] = [ pj.arma.arma + daño  ];
 			iarmadura++;
 			for (i=1; i<pj.arma.huecos; i++) {
 				fields[ 'Equipo' + iarmadura + sufijo ] = [ "X" ];
@@ -301,7 +319,14 @@ class PJ {
 						
 				
 				if ( this.arma.arma != "" ) {
-					fields[ 'Inventario' + iarmadura ] = [ this.arma.arma + " (d" + this.arma.daño + ")"  ];
+					var daño = "";
+					if ( this.arma.dañoCaC != null ) {
+						daño += " (d" + this.arma.dañoCaC + " CaC)";
+					}
+					if ( this.arma.dañoAD != null ) {
+						daño += " (d" + this.arma.dañoAD + " AD)";
+					}
+					fields[ 'Inventario' + iarmadura ] = [ this.arma.arma + daño  ];
 					iarmadura++;
 					for (i=1; i<this.arma.huecos; i++) {
 						fields[ 'Inventario' + iarmadura ] = [ "X" ];

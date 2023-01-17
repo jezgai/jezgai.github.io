@@ -9,21 +9,21 @@ class ArmasyArmaduras {
 						   { armadura: "Placas", da: 15, huecos: 4, calidad: 6 },
 						   { armadura: "Placas completa", da: 16, huecos: 5, calidad: 7 } ];
 						   
-		this.armas = [ { arma: "Daga", daño: 6, manos: 1, huecos: 1, calidad: 3 },
-					   { arma: "Garrote", daño: 6, manos: 1, huecos: 1, calidad: 3 },
-					   { arma: "Hoz", daño: 6, manos: 1, huecos: 1, calidad: 3 },
-					   { arma: "Bastón", daño: 6, manos: 1, huecos: 1, calidad: 3 },
-					   { arma: "Lanza", daño: 8, manos: 1, huecos: 2, calidad: 3 },
-					   { arma: "Espada", daño: 8, manos: 1, huecos: 2, calidad: 3 },
-					   { arma: "Maza", daño: 8, manos: 1, huecos: 2, calidad: 3 },
-					   { arma: "Hacha", daño: 8, manos: 1, huecos: 2, calidad: 3 },
-					   { arma: "Mayal", daño: 8, manos: 1, huecos: 2, calidad: 3 },
-					   { arma: "Martillo de guerra", daño: 10, manos: 2, huecos: 3, calidad: 3 },
-					   { arma: "Espada larga", daño: 10, manos: 2, huecos: 3, calidad: 3 },
-					   { arma: "Hacha de batalla", daño: 10, manos: 2, huecos: 3, calidad: 3 },
-					   { arma: "Honda", daño: 4, manos: 1, huecos: 1, calidad: 3 },
-					   { arma: "Arco", daño: 6, manos: 2, huecos: 2, calidad: 3 },
-					   { arma: "Ballesta", daño: 8, manos: 2, huecos: 3, calidad: 3 } ];
+		this.armas = [ { arma: "Daga", tipo: "CaC", dañoAD: 4, dañoCaC: 6, manos: 1, huecos: 1, calidad: 3 },
+					   { arma: "Garrote", tipo: "CaC", dañoAD: null, dañoCaC: 6, manos: 1, huecos: 1, calidad: 3 },
+					   { arma: "Hoz", tipo: "CaC", dañoAD: null, dañoCaC: 6, manos: 1, huecos: 1, calidad: 3 },
+					   { arma: "Bastón", tipo: "CaC", dañoAD: null, dañoCaC: 6, manos: 1, huecos: 1, calidad: 3 },
+					   { arma: "Lanza", tipo: "CaC", dañoAD: 8, dañoCaC: 8, manos: 1, huecos: 2, calidad: 3 },
+					   { arma: "Espada", tipo: "CaC", dañoAD: null, dañoCaC: 8, manos: 1, huecos: 2, calidad: 3 },
+					   { arma: "Maza", tipo: "CaC", dañoAD: null, dañoCaC: 8, manos: 1, huecos: 2, calidad: 3 },
+					   { arma: "Hacha", tipo: "CaC", dañoAD: null, dañoCaC: 8, manos: 1, huecos: 2, calidad: 3 },
+					   { arma: "Mayal", tipo: "CaC", dañoAD: null, dañoCaC: 8, manos: 1, huecos: 2, calidad: 3 },
+					   { arma: "Martillo de guerra", tipo: "CaC", dañoAD: null, dañoCaC: 10, manos: 2, huecos: 3, calidad: 3 },
+					   { arma: "Espada larga", tipo: "CaC", dañoAD: null, dañoCaC: 10, manos: 2, huecos: 3, calidad: 3 },
+					   { arma: "Hacha de batalla", tipo: "CaC", dañoAD: null, dañoCaC: 10, manos: 2, huecos: 3, calidad: 3 },
+					   { arma: "Honda", tipo: "AD", dañoAD: 4, dañoCaC: null, manos: 1, huecos: 1, calidad: 3 },
+					   { arma: "Arco", tipo: "AD", dañoAD: 6, dañoCaC: null, manos: 2, huecos: 2, calidad: 3 },
+					   { arma: "Ballesta", tipo: "AD", dañoAD: 8, dañoCaC: null, manos: 2, huecos: 3, calidad: 3 } ];
 	}
 	
 	recuperaarmadura(nombre) {
