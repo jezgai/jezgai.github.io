@@ -101,9 +101,8 @@ class CronicasDeLaMarca {
 					usoalternativo = " <span class='mano' onclick='CronicasDeLaMarca.tiradaarma("+ (npj) + "," + indice + ",2," + ntipo + ")'>(A distancia)</span>";
 				}
 			}
-			else if ( pj.arma.tipo == "AD" ) {
-				
-				funcion += indice + ",2," + ntipo + ")";
+			else if ( pj.armas[indice].tipo== "AD" ) {
+				funcion = "CronicasDeLaMarca.tiradaarma("+(npj) + "," + indice + ",2," + ntipo + ")";
 				daño = pj.armas[indice].dañoAD.ndados + "d" + pj.armas[indice].dañoAD.tdado;
 				if ( parseInt(pj.armas[indice].dañoAD.modif) > 0 ) {
 					daño += "+" + pj.armas[indice].dañoAD.modif;
