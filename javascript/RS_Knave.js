@@ -68,6 +68,7 @@ class Knave {
 		return seccion;
 	}
 	
+	/*
 	static seccionEquipo(npj, pj, ntipo) {
 		var stipo = Knave.ntipo2stipo(ntipo);
 		var seccion = "<div onclick=" + '"' + "RolSolo.acordeon('" + Knave.prefijoseccion(ntipo) + "equipo" + (npj) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Equipo</strong></p></div>";
@@ -82,6 +83,18 @@ class Knave {
 		var seccion = "<div onclick=" + '"' + "RolSolo.acordeon('" + Knave.prefijoseccion(ntipo) + "notas" + (npj) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Notas</strong></p></div>";
 		seccion += "<div id='" + Knave.prefijoseccion(ntipo) + "notas" + (npj) + "' class='w3-hide w3-container' onclick='RolSolo.ventananotas(" + (npj) + ', "' + stipo + '")' + "' >";
 		seccion += pj.notas;
+		seccion += "</div>";
+		return seccion;
+	}
+	*/
+	
+	
+	static seccionAdicional(npj, pj, ntipo, campo, literal) {
+		var stipo = Knave.ntipo2stipo(ntipo);
+		var seccion = "<div onclick=" + '"' + "RolSolo.acordeon('" + Knave.prefijoseccion(ntipo) + campo + (npj) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>" + literal + "</strong></p></div>";
+		seccion += "<div id='" + Knave.prefijoseccion(ntipo) + campo + (npj) + "' class='w3-hide w3-container' onclick='RolSolo.ventanaadicional(" + (npj) + ', "' + stipo + '", "' + campo + '", "' + literal + '")' + "' >";
+		
+		seccion += pj[campo];
 		seccion += "</div>";
 		return seccion;
 	}
@@ -112,12 +125,14 @@ class Knave {
 		if ( personaje[numpj-1].hasOwnProperty('equipo') == false ) {
 			personaje[numpj-1].equipo = ".";
 		}
-		pjsaux += Knave.seccionEquipo((numpj-1), personaje[numpj-1], 1);
+		//pjsaux += Knave.seccionEquipo((numpj-1), personaje[numpj-1], 1);
+		pjsaux += Knave.seccionAdicional((numpj-1), personaje[numpj-1], 1, "equipo","Equipo");
 		
 		if ( personaje[numpj-1].hasOwnProperty('notas') == false ) {
 			personaje[numpj-1].notas = ".";
 		}
-		pjsaux += Knave.seccionNotas((numpj-1), personaje[numpj-1], 1);
+		//pjsaux += Knave.seccionNotas((numpj-1), personaje[numpj-1], 1);
+		pjsaux += Knave.seccionAdicional((numpj-1), personaje[numpj-1], 1, "notas","Notas");
 				
 		if( personaje[numpj-1].hasOwnProperty('estado') == false || (personaje[numpj-1].hasOwnProperty('estado') == true && personaje[numpj-1].estado != "Eliminado") ){
 			pjs+=pjsaux;
@@ -151,12 +166,14 @@ class Knave {
 		if ( pnjs[numpnj-1].hasOwnProperty('equipo') == false ) {
 			pnjs[numpnj-1].equipo = ".";
 		}
-		pjsaux += Knave.seccionEquipo((numpnj-1), pnjs[numpnj-1], 2);
+		//pjsaux += Knave.seccionEquipo((numpnj-1), pnjs[numpnj-1], 2);
+		pjsaux += Knave.seccionAdicional((numpnj-1), pnjs[numpnj-1], 2, "equipo","Equipo");
 		
 		if ( pnjs[numpnj-1].hasOwnProperty('notas') == false ) {
 			pnjs[numpnj-1].notas = ".";
 		}
-		pjsaux += Knave.seccionNotas((numpnj-1), pnjs[numpnj-1], 2);
+		//pjsaux += Knave.seccionNotas((numpnj-1), pnjs[numpnj-1], 2);
+		pjsaux += Knave.seccionAdicional((numpnj-1), pnjs[numpnj-1], 2, "notas","Notas");
 				
 		if( pnjs[numpnj-1].hasOwnProperty('estado') == false || (pnjs[numpnj-1].hasOwnProperty('estado') == true && pnjs[numpnj-1].estado != "Eliminado") ){
 			pjs+=pjsaux;

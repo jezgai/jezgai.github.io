@@ -417,6 +417,38 @@ class RolSolo {
 	}
 	
 	
+	static ventanaadicional(npj, tipo, campo, literal) {
+		indicepersonaje = npj;
+		tipopersonaje = tipo;
+		if ( tipopersonaje == "PNJ" ) {
+			document.getElementById('textoadicional').value = pnjs[indicepersonaje][campo];
+		}
+		else if ( tipopersonaje == "PJ" ) {
+			document.getElementById('textoadicional').value = personaje[indicepersonaje][campo];
+		}
+		document.getElementById('lbladicional').innerHTML = "<label id='lbladicional'><strong>" + literal + "</strong></label>";
+		document.getElementById('vadicional').value = campo;
+		document.getElementById("ventanaadicional").style.display='block';
+	}
+	
+	static cambiaadicional() {
+		if ( indicepersonaje != -1 ) {
+		    var campo = document.getElementById('vadicional').value;
+			if ( tipopersonaje == "PNJ" ) {
+				pnjs[indicepersonaje][campo] = document.getElementById('textoadicional').value;
+				
+				document.getElementById('pnj'+campo+indicepersonaje).innerHTML = pnjs[indicepersonaje][campo];
+				RolSolo.muestra('pnj'+ [campo]+indicepersonaje);
+			}
+			else if ( tipopersonaje == "PJ" ) {
+				personaje[indicepersonaje][campo] = document.getElementById('textoadicional').value;
+				document.getElementById('pj'+ [campo] + indicepersonaje).innerHTML = personaje[indicepersonaje][campo];
+				RolSolo.muestra('pj'+ [campo] + indicepersonaje);
+			}
+		}
+		RolSolo.cancelarCarga('ventanaadicional')
+	}
+
 	
 	static ventanaequipo(npj, tipo) {
 		indicepersonaje = npj;

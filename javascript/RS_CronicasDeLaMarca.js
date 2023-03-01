@@ -124,6 +124,7 @@ class CronicasDeLaMarca {
 		return seccion;
 	}
 	
+	/*
 	static seccionEquipo(npj, pj, ntipo) {
 		var stipo = CronicasDeLaMarca.ntipo2stipo(ntipo);
 		var seccion = "<div onclick=" + '"' + "RolSolo.acordeon('" + CronicasDeLaMarca.prefijoseccion(ntipo) + "equipo" + (npj) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Equipo</strong></p></div>";
@@ -138,6 +139,18 @@ class CronicasDeLaMarca {
 		var seccion = "<div onclick=" + '"' + "RolSolo.acordeon('" + CronicasDeLaMarca.prefijoseccion(ntipo) + "notas" + (npj) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>Notas</strong></p></div>";
 		seccion += "<div id='" + CronicasDeLaMarca.prefijoseccion(ntipo) + "notas" + (npj) + "' class='w3-hide w3-container' onclick='RolSolo.ventananotas(" + (npj) + ', "' + stipo + '")' + "' >";
 		seccion += pj.notas;
+		seccion += "</div>";
+		return seccion;
+	}
+	*/
+	
+	
+	static seccionAdicional(npj, pj, ntipo, campo, literal) {
+		var stipo = CronicasDeLaMarca.ntipo2stipo(ntipo);
+		var seccion = "<div onclick=" + '"' + "RolSolo.acordeon('" + CronicasDeLaMarca.prefijoseccion(ntipo) + campo + (npj) + "')" + '"' + "class='w3-container w3-blue w3-center'><p><strong>" + literal + "</strong></p></div>";
+		seccion += "<div id='" + CronicasDeLaMarca.prefijoseccion(ntipo) + campo + (npj) + "' class='w3-hide w3-container' onclick='RolSolo.ventanaadicional(" + (npj) + ', "' + stipo + '", "' + campo + '", "' + literal + '")' + "' >";
+		
+		seccion += pj[campo];
 		seccion += "</div>";
 		return seccion;
 	}
@@ -168,12 +181,19 @@ class CronicasDeLaMarca {
 		if ( personaje[numpj-1].hasOwnProperty('equipo') == false ) {
 			personaje[numpj-1].equipo = ".";
 		}
-		pjsaux += CronicasDeLaMarca.seccionEquipo((numpj-1), personaje[numpj-1], 1);
+		pjsaux += CronicasDeLaMarca.seccionAdicional((numpj-1), personaje[numpj-1], 1, "equipo","Equipo");
+		//pjsaux += CronicasDeLaMarca.seccionEquipo((numpj-1), personaje[numpj-1], 1);
+		
+		if ( personaje[numpj-1].hasOwnProperty('habilidades') == false ) {
+			personaje[numpj-1].habilidades = ".";
+		}
+		pjsaux += CronicasDeLaMarca.seccionAdicional((numpj-1), personaje[numpj-1], 1, "habilidades","Habilidades y Conjuros");
 		
 		if ( personaje[numpj-1].hasOwnProperty('notas') == false ) {
 			personaje[numpj-1].notas = ".";
 		}
-		pjsaux += CronicasDeLaMarca.seccionNotas((numpj-1), personaje[numpj-1], 1);
+		pjsaux += CronicasDeLaMarca.seccionAdicional((numpj-1), personaje[numpj-1], 1, "notas","Notas");
+			
 				
 		if( personaje[numpj-1].hasOwnProperty('estado') == false || (personaje[numpj-1].hasOwnProperty('estado') == true && personaje[numpj-1].estado != "Eliminado") ){
 			pjs+=pjsaux;
@@ -204,12 +224,14 @@ class CronicasDeLaMarca {
 		if ( pnjs[numpnj-1].hasOwnProperty('equipo') == false ) {
 			pnjs[numpnj-1].equipo = ".";
 		}
-		pjsaux += CronicasDeLaMarca.seccionEquipo((numpnj-1), pnjs[numpnj-1], 2);
+		//pjsaux += CronicasDeLaMarca.seccionEquipo((numpnj-1), pnjs[numpnj-1], 2);
+		pjsaux += CronicasDeLaMarca.seccionAdicional((numpnj-1), pnjs[numpnj-1], 2, "equipo","Equipo");
 		
 		if ( pnjs[numpnj-1].hasOwnProperty('notas') == false ) {
 			pnjs[numpnj-1].notas = ".";
 		}
-		pjsaux += CronicasDeLaMarca.seccionNotas((numpnj-1), pnjs[numpnj-1], 2);
+		//pjsaux += CronicasDeLaMarca.seccionNotas((numpnj-1), pnjs[numpnj-1], 2);
+		pjsaux += CronicasDeLaMarca.seccionAdicional((numpnj-1), pnjs[numpnj-1], 2, "notas","Notas");
 				
 		if( pnjs[numpnj-1].hasOwnProperty('estado') == false || (pnjs[numpnj-1].hasOwnProperty('estado') == true && pnjs[numpnj-1].estado != "Eliminado") ){
 			pjs+=pjsaux;
