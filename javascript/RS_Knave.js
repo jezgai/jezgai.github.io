@@ -63,7 +63,7 @@ class Knave {
 				usoalternativo = " <span class='mano' onclick='Knave.tiradaarma("+ (npj) + "," + pj.arma.dañoCaC + ",1," + ntipo + ")'>(Cuerpo a cuerpo)</span>";
 			}
 		}
-		seccion += "<tr><td><span class='mano' onclick='" + funcion + "'>" + pj.arma.arma + "</span>" + usoalternativo + "</td><td>" + daño + "</td><td>" + pj.arma.tipo  + "</td></tr>";
+		seccion += "<tr><td><span class='mano' onclick='" + funcion + "'>" + pj.arma.nombre + "</span>" + usoalternativo + "</td><td>" + daño + "</td><td>" + pj.arma.tipo  + "</td></tr>";
 		seccion += "</table></div>";
 		return seccion;
 	}
@@ -175,21 +175,30 @@ class Knave {
 	
 	static contenidoSeccionCaracteristicas(npj, pj, stipo) {
 		var seccion = "<table class='w3-table  w3-striped w3-border'><tr><th>Característica</th><th>Valor</th></tr>";
-		seccion += "<tr><td>PV</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"pv",' + (npj) + ',"' + stipo + '")' + "' >" + pj.pv + " (" + pj.pvinicial + ")" + "</td></tr>";
-		seccion += "<tr><td>Defensa de armadura</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"da",' + (npj) + ',"' + stipo + '")' + "' >" + pj.defensa.da + " (" + pj.defensa.bono + ")</td></tr>";
+		var da = parseInt(pj.defensa.da) + parseInt(pj.defensa.escudo) + parseInt(pj.defensa.yelmo);
+		var bono= da - 10;
+		seccion += "<tr><td>PV</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"pg",' + (npj) + ',"' + stipo + '")' + "' >" + pj.pg + " (" + pj.pginicial + ")" + "</td></tr>";
+		seccion += "<tr><td>Defensa de armadura</td><td>" + da + " (" + bono + ")</td></tr>";		
+		
+		seccion += "<tr><td class='mano' onclick='Knave.cambiacaracteristica(" + '"tipoda",' + (npj) + ',"' + stipo + '")' + "' > - " + pj.defensa.tipo + "</td>";
+		seccion += "<td class='mano' onclick='Knave.cambiacaracteristica(" + '"da",' + (npj) + ',"' + stipo + '")' + "' >" + pj.defensa.da + "</td></tr>";
+		
+		seccion += "<tr><td> - Escudo</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"escudo",' + (npj) + ',"' + stipo + '")' + "' >" + pj.defensa.escudo + "</td></tr>";
+		seccion += "<tr><td> - Yelmo</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"yelmo",' + (npj) + ',"' + stipo + '")' + "' >" + pj.defensa.yelmo + "</td></tr>";
+		
 		seccion += "<tr><td>PX</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"px",' + (npj) + ',"' + stipo + '")' + "' >" + pj.px + "</td></tr>";
-		seccion += "<tr><td>Alineamiento</td><td>" + pj.rasgos.Alineamiento + "</td></tr>";
-		seccion += "<tr><td>Origen</td><td>" + pj.rasgos.Origen + "</td></tr>";
-		seccion += "<tr><td>Trasfondo</td><td>" + pj.rasgos.Trasfondo + "</td></tr>";
-		seccion += "<tr><td>Infortunio</td><td>" + pj.rasgos.Infortunio + "</td></tr>";
-		seccion += "<tr><td>Vestimenta</td><td>" + pj.rasgos.Vestimenta + "</td></tr>";
-		seccion += "<tr><td>Habla</td><td>" + pj.rasgos.Habla + "</td></tr>";
-		seccion += "<tr><td>Físico</td><td>" + pj.rasgos.Físico + "</td></tr>";
-		seccion += "<tr><td>Piel</td><td>" + pj.rasgos.Piel + "</td></tr>";
-		seccion += "<tr><td>Rostro</td><td>" + pj.rasgos.Rostro + "</td></tr>";
-		seccion += "<tr><td>Pelo</td><td>" + pj.rasgos.Pelo + "</td></tr>";
-		seccion += "<tr><td>Virtud</td><td>" + pj.rasgos.Virtud + "</td></tr>";
-		seccion += "<tr><td>Vicio</td><td>" + pj.rasgos.Vicio + "</td></tr>";
+		seccion += "<tr><td>Alineamiento</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"alineamiento",' + (npj) + ',"' + stipo + '")' + "' >" + pj.rasgos.Alineamiento + "</td></tr>";
+		seccion += "<tr><td>Origen</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"origen",' + (npj) + ',"' + stipo + '")' + "' >" + pj.rasgos.Origen + "</td></tr>";
+		seccion += "<tr><td>Trasfondo</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"trasfondo",' + (npj) + ',"' + stipo + '")' + "' >" + pj.rasgos.Trasfondo + "</td></tr>";
+		seccion += "<tr><td>Infortunio</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"infortunio",' + (npj) + ',"' + stipo + '")' + "' >" + pj.rasgos.Infortunio + "</td></tr>";
+		seccion += "<tr><td>Vestimenta</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"vestimenta",' + (npj) + ',"' + stipo + '")' + "' >" + pj.rasgos.Vestimenta + "</td></tr>";
+		seccion += "<tr><td>Habla</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"habla",' + (npj) + ',"' + stipo + '")' + "' >" + pj.rasgos.Habla + "</td></tr>";
+		seccion += "<tr><td>Físico</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"fisico",' + (npj) + ',"' + stipo + '")' + "' >" + pj.rasgos.Físico + "</td></tr>";
+		seccion += "<tr><td>Piel</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"piel",' + (npj) + ',"' + stipo + '")' + "' >" + pj.rasgos.Piel + "</td></tr>";
+		seccion += "<tr><td>Rostro</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"rostro",' + (npj) + ',"' + stipo + '")' + "' >" + pj.rasgos.Rostro + "</td></tr>";
+		seccion += "<tr><td>Pelo</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"pelo",' + (npj) + ',"' + stipo + '")' + "' >" + pj.rasgos.Pelo + "</td></tr>";
+		seccion += "<tr><td>Virtud</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"virtud",' + (npj) + ',"' + stipo + '")' + "' >" + pj.rasgos.Virtud + "</td></tr>";
+		seccion += "<tr><td>Vicio</td><td class='mano' onclick='Knave.cambiacaracteristica(" + '"vicio",' + (npj) + ',"' + stipo + '")' + "' >" + pj.rasgos.Vicio + "</td></tr>";
 		seccion += "</table>";
 		return seccion;
 	}
@@ -197,20 +206,42 @@ class Knave {
 	
 	static modificacaracteristica(caracteristica, npj, tipo) {
 		var valor = document.getElementById('vcaracteristica').value;
-		if ( caracteristica == "pv" ) {
+		if ( caracteristica == "pg" ) {
 			if ( tipo == "PNJ" ) 
-				pnjs[npj].pv = document.getElementById('vcaracteristica').value;
+				pnjs[npj].pg = document.getElementById('vcaracteristica').value;
 			else
-				personaje[npj].pv = document.getElementById('vcaracteristica').value;
+				personaje[npj].pg = document.getElementById('vcaracteristica').value;
 		}
 		else if ( caracteristica == "da" ) {
 			if ( tipo == "PNJ" ) {
-				pnjs[npj].defensa.da = document.getElementById('vcaracteristica').value;
-				pnjs[npj].defensa.bono = parseInt(pnjs[npj].defensa.da)-10;
+				pnjs[npj].defensa.da = parseInt(document.getElementById('vcaracteristica').value);
 			}
 			else {
-				personaje[npj].defensa.da = document.getElementById('vcaracteristica').value;
-				personaje[npj].defensa.bono = parseInt(personaje[npj].defensa.da)-10;
+				personaje[npj].defensa.da = parseInt(document.getElementById('vcaracteristica').value);
+			}
+		}
+		else if ( caracteristica == "tipoda" ) {
+			if ( tipo == "PNJ" ) {
+				pnjs[npj].defensa.tipo = document.getElementById('vcaracteristica').value;
+			}
+			else {
+				personaje[npj].defensa.tipo = document.getElementById('vcaracteristica').value;
+			}
+		}
+		else if ( caracteristica == "escudo" ) {
+			if ( tipo == "PNJ" ) {
+				pnjs[npj].defensa.escudo = parseInt(document.getElementById('vcaracteristica').value);
+			}
+			else {
+				personaje[npj].defensa.escudo = parseInt(document.getElementById('vcaracteristica').value);
+			}
+		}
+		else if ( caracteristica == "yelmo" ) {
+			if ( tipo == "PNJ" ) {
+				pnjs[npj].defensa.yelmo = parseInt(document.getElementById('vcaracteristica').value);
+			}
+			else {
+				personaje[npj].defensa.yelmo = parseInt(document.getElementById('vcaracteristica').value);
 			}
 		}
 		else if ( caracteristica == "px" ) {
@@ -255,6 +286,27 @@ class Knave {
 			else
 				valor = personaje[npj].defensa.da;
 		}
+		else if ( caracteristica == "tipoda" ) {
+			literal = "Tipo de armadura";
+			if ( tipo == "PNJ" )
+				valor = pnjs[npj].defensa.tipo;
+			else
+				valor = personaje[npj].defensa.tipo;
+		}
+		else if ( caracteristica == "escudo" ) {
+			literal = "Escudo";
+			if ( tipo == "PNJ" )
+				valor = pnjs[npj].defensa.escudo;
+			else
+				valor = personaje[npj].defensa.escudo;
+		}
+		else if ( caracteristica == "yelmo" ) {
+			literal = "Yelmo";
+			if ( tipo == "PNJ" )
+				valor = pnjs[npj].defensa.yelmo;
+			else
+				valor = personaje[npj].defensa.yelmo;
+		}
 		else if ( caracteristica == "px" ) {
 			literal = "PX";
 			if ( tipo == "PNJ" )
@@ -281,10 +333,10 @@ class Knave {
 		else {
 			pj = pnjs[npj];
 		}
-		KN_tirada = RolSolo.random(20, 1);
-		KN_mensaje = "<b>";
-		KN_tirada += parseInt(pj.atributos[indice].bono);
-		KN_mensaje += pj.nombre + "</b> " + pj.atributos[indice].nombre + " (" +  pj.atributos[indice].defensa + ")<br/><b>Resultado: " + KN_tirada + "</b>";
+		CM_tirada = RolSolo.random(20, 1);
+		CM_mensaje = "<b>";
+		CM_tirada += parseInt(pj.atributos[indice].bono);
+		CM_mensaje += pj.nombre + "</b> " + pj.atributos[indice].nombre + " (" +  pj.atributos[indice].defensa + ")<br/><b>Resultado: " + CM_tirada + "</b>";
 		document.getElementById('vtirada').style.display='block';
 		document.getElementById("dificultad").value = "15";
 	}
@@ -308,17 +360,17 @@ class Knave {
 			stipo = "CaC";
 		}
 		
-		KN_tirada = RolSolo.random(20, 1);
+		CM_tirada = RolSolo.random(20, 1);
 		if ( stipo == "CaC" ) {
-			KN_tirada += parseInt(pj.atributos[0].bono);
+			CM_tirada += parseInt(pj.atributos[0].bono);
 			
 		}
 		else {
-			KN_tirada += parseInt(pj.atributos[5].bono);
+			CM_tirada += parseInt(pj.atributos[5].bono);
 		}
 		var resdaño = RolSolo.random(daño, 1);
-		KN_mensaje = "<b>";
-		KN_mensaje += pj.nombre + "</b> " + pj.arma.arma + " (" + stipo + ") <b>Daño:</b> " + resdaño + "<br/><b>Resultado: " + KN_tirada + "</b>";
+		CM_mensaje = "<b>";
+		CM_mensaje += pj.nombre + "</b> " + pj.arma.nombre + " (" + stipo + ") <b>Daño:</b> " + resdaño + "<br/><b>Resultado: " + CM_tirada + "</b>";
 		document.getElementById('vtirada').style.display='block';
 		document.getElementById("dificultad").value = "15";
 	}
@@ -328,14 +380,11 @@ class Knave {
 		document.getElementById('vtirada').style.display='none';
 		var dificultad = parseInt(document.getElementById("dificultad").value);
 		var resultado = " <strong>fallo</strong>";
-		if ( KN_tirada > dificultad ) {
+		if ( CM_tirada > dificultad ) {
 			resultado = " <strong>éxito</strong>";
 		}
-		KN_mensaje += " -> " + dificultad + " " + resultado;
-		RolSolo.escribemensaje(KN_mensaje);
+		CM_mensaje += " -> " + dificultad + " " + resultado;
+		RolSolo.escribemensaje(CM_mensaje);
 	}
 	  
 }
-
-let KN_mensaje = "";
-let KN_tirada = 0;

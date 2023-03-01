@@ -37,6 +37,8 @@
 <script src="javascript/RS_LaMarcaDelEste.js"></script>
 <script src="javascript/RS_DungeonHack.js"></script>
 <script src="javascript/RS_Knave.js"></script>
+<!--<script src="javascript/RS_Mythras.js"></script>-->
+<script src="javascript/RS_CronicasDeLaMarca.js"></script>
 
 <script>
 
@@ -302,9 +304,11 @@
 	<div id="vtirada" class="w3-modal">
 	  <div class="w3-modal-content">
 		<div class="w3-container">
-			<label>Dificultad</label>
+			<label id="lbldificultad">Dificultad</label>
 			<input class="w3-input" type="text" id="dificultad">
-			<button class="w3-btn w3-blue" onclick="Knave.tirada()">Enviar</button>
+			<input type="hidden" id="dbase">
+			<input type="hidden" id="ttirada">
+			<button class="w3-btn w3-blue" onclick="RolSolo.tirada()" id="btirada">Enviar</button>
 		</div>
 	  </div>
 	</div>

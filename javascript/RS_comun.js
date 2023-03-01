@@ -81,6 +81,32 @@ class RolSolo {
 		RolSolo.escribemensaje(mensaje);
 	}
 	
+	static tirada() {
+		var ttirada = document.getElementById("ttirada").value;
+		if ( ttirada == "CronicasDeLaMarca" ) {
+			CronicasDeLaMarca.tirada();
+		}
+		else if ( ttirada == "Moral" ) {
+			RolSolo.tiradamoral();
+		}
+		else {
+			Knave.tirada();
+		}
+	}
+	
+		
+	static tiradamoral() {
+		document.getElementById('vtirada').style.display='none';
+		var dificultad = parseInt(document.getElementById("dificultad").value);
+		var resultado = " <strong>sigue luchando</strong>";
+		if ( CM_tirada > dificultad ) {
+			resultado = " <strong>huye o se rinde</strong>";
+		}
+		CM_mensaje += " -> Moral: " + dificultad + " " + resultado;
+		RolSolo.escribemensaje(CM_mensaje);
+	}
+	
+	
 	static escribemensaje(mensaje) {
 		var ahora = new Date();
 		var sAhora =
@@ -227,6 +253,35 @@ class RolSolo {
 				"<img src='imagenes/d20.png' onclick='RolSolo.tiradado(20,0,-1)' alt='Dado d20' class='mano'/>" +
 				"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"DJ"' + ")' alt='DJ habla' class='mano'/>";
 		}
+		else if ( personaje[numpj-1].sistema == "Mythras" )
+		{
+			dj = "DJ";
+			pjsdet = Mythras.cargapersonaje(pjsdet);
+			
+			document.getElementById("dadosdj").innerHTML = 
+				"<img src='imagenes/d4.png' onclick='RolSolo.tiradado(4,0,-1)' alt='Dado d4' class='mano'/>" +
+				"<img src='imagenes/d6.png' onclick='RolSolo.tiradado(6,0,-1)' alt='Dado d6' class='mano'/>" + 
+				"<img src='imagenes/d8.png' onclick='RolSolo.tiradado(8,0,-1)' alt='Dado d8' class='mano'/>" + 
+				"<img src='imagenes/d10.png' onclick='RolSolo.tiradado(10,0,-1)' alt='Dado d10' class='mano'/>" + 
+				"<img src='imagenes/d12.png' onclick='RolSolo.tiradado(12,0,-1)' alt='Dado d12' class='mano'/>" + 
+				"<img src='imagenes/d20.png' onclick='RolSolo.tiradado(20,0,-1)' alt='Dado d20' class='mano'/>" +
+				"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"DJ"' + ")' alt='DJ habla' class='mano'/>";
+		}
+		else if ( personaje[numpj-1].sistema == "Cronicas de la Marca" ) 
+		{
+			dj = "Narrador";
+			pjsdet = CronicasDeLaMarca.cargapersonaje(pjsdet);
+			
+			document.getElementById("dadosdj").innerHTML = 
+				"<img src='imagenes/d4.png' onclick='RolSolo.tiradado(4,0,-1)' alt='Dado d4' class='mano'/>" +
+				"<img src='imagenes/d6.png' onclick='RolSolo.tiradado(6,0,-1)' alt='Dado d6' class='mano'/>" + 
+				"<img src='imagenes/d8.png' onclick='RolSolo.tiradado(8,0,-1)' alt='Dado d8' class='mano'/>" + 
+				"<img src='imagenes/d10.png' onclick='RolSolo.tiradado(10,0,-1)' alt='Dado d10' class='mano'/>" + 
+				"<img src='imagenes/d12.png' onclick='RolSolo.tiradado(12,0,-1)' alt='Dado d12' class='mano'/>" + 
+				"<img src='imagenes/d20.png' onclick='RolSolo.tiradado(20,0,-1)' alt='Dado d20' class='mano'/>" +
+				"<img src='imagenes/Bocadillo.jpg' onclick='RolSolo.muestraventanamensajes(" + '"DJ"' + ")' alt='DJ habla' class='mano'/>";
+		}
+		
 		if( personaje[numpj-1].hasOwnProperty('estado') == false || (personaje[numpj-1].hasOwnProperty('estado') == true && personaje[numpj-1].estado != "Eliminado") ) {
 			pjsdet += "</div>";
 		}
@@ -286,6 +341,10 @@ class RolSolo {
 		else if ( pnjs[numpnj-1].sistema == "Knave" )
 		{
 			pjsdet = Knave.cargapnj(pjsdet);
+		}
+		else if ( pnjs[numpnj-1].sistema == "Cronicas de la Marca" )
+		{
+			pjsdet = CronicasDeLaMarca.cargapnj(pjsdet);
 		}
 		
 		if( pnjs[numpnj-1].hasOwnProperty('estado') == false || (pnjs[numpnj-1].hasOwnProperty('estado') == true && pnjs[numpnj-1].estado != "Eliminado") ) {
@@ -351,10 +410,13 @@ class RolSolo {
 	static muestraventanamensajes(hablante) {
 		
 		quien = hablante;
+		document.getElementById("mensaje").value = ""; //.innerHTML = "";
 		//document.getElementById("botonmensaje").innerHTML = "<input type='button' id='btnEnviaMsg' value='Envia' onclick='RolSolo.enviamensaje(" + '"' + quien + '"' + ");'> <input type='button' id='btnCancelMsg' value='Cancelar' onclick='RolSolo.cancelarCarga(" + '"' + "mensajes" + '"' + ")'>";
 		document.getElementById("mensajes").style.display='block';
 		
 	}
+	
+	
 	
 	static ventanaequipo(npj, tipo) {
 		indicepersonaje = npj;
@@ -547,3 +609,6 @@ class RolSolo {
 	}
 
 }
+
+let CM_mensaje = "";
+let CM_tirada = 0;
