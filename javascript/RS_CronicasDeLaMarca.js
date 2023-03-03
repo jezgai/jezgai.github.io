@@ -475,8 +475,9 @@ class CronicasDeLaMarca {
 				tdado = pj.armas[numarma].dañoCaC.tdado;
 				modif = pj.armas[numarma].dañoCaC.modif;
 				modifatributo = parseInt(pj.atributos[0].modif);
+				modif += modifatributo;
 			}
-			desglosetirada = " (" + tirada + "+" + modifatributo + "+" + pj.nivel + ")";
+			desglosetirada = " (" + tirada + "+" + pj.ba + "+" + modifatributo + "+" + pj.nivel + ")";
 			modifatributo += parseInt(pj.ba);
 			CM_tirada = tirada + modifatributo + parseInt(pj.nivel);
 			var indice = 0;
