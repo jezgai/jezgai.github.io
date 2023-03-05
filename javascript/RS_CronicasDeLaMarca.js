@@ -466,7 +466,7 @@ class CronicasDeLaMarca {
 				stipo = "AD";
 				ndados = pj.armas[numarma].dañoAD.ndados;
 				tdado = pj.armas[numarma].dañoAD.tdado;
-				modif = pj.armas[numarma].dañoAD.modif;
+				modif = pj.armas[numarma].dañoAD.modif + parseInt(pj.atributos[0].modif);;
 				modifatributo = parseInt(pj.atributos[5].modif);
 			}
 			else {
@@ -477,9 +477,9 @@ class CronicasDeLaMarca {
 				modifatributo = parseInt(pj.atributos[0].modif);
 				modif += modifatributo;
 			}
-			desglosetirada = " (" + tirada + "+" + pj.ba + "+" + modifatributo + "+" + pj.nivel + ")";
+			desglosetirada = " (" + tirada + "+" + pj.ba + "+" + modifatributo + ")";
 			modifatributo += parseInt(pj.ba);
-			CM_tirada = tirada + modifatributo + parseInt(pj.nivel);
+			CM_tirada = tirada + modifatributo;
 			var indice = 0;
 			for (indice = 0; indice < ndados; indice++) {
 				resdaño += RolSolo.random(tdado, 1);
