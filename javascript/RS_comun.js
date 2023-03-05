@@ -74,7 +74,7 @@ class RolSolo {
 		var mensaje = "<b>";
 		if (pj == -1)
 			mensaje += dj + "</b> (d" + numero + "): " + tirada;
-		else if (pj == 0 )
+		else if (pj == 0 || pj == 2 )
 			mensaje += pnjs[npj].nombre + "</b> (d" + numero + "): " + tirada;
 		else
 			mensaje += personaje[npj].nombre + "</b> (d" + numero + "): " + tirada;
@@ -345,6 +345,10 @@ class RolSolo {
 		else if ( pnjs[numpnj-1].sistema == "Cronicas de la Marca" )
 		{
 			pjsdet = CronicasDeLaMarca.cargapnj(pjsdet);
+		}
+		else if ( pnjs[numpnj-1].sistema == "Mythras" )
+		{
+			pjsdet = Mythras.cargapnj(pjsdet);
 		}
 		
 		if( pnjs[numpnj-1].hasOwnProperty('estado') == false || (pnjs[numpnj-1].hasOwnProperty('estado') == true && pnjs[numpnj-1].estado != "Eliminado") ) {
