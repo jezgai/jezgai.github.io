@@ -55,11 +55,12 @@ class PJ {
 	}
 	
 	recalculaPericiasBasicas() {
-		this._pericias[0].puntosbase = (this._atributos._atributos[4].modif + this._objClase.modifadicional[4]) < -1 ? 1 : 2 + this._atributos._atributos[4].modif + this._objClase.modifadicional[4] + this._objClase.ptosbasepericia(this._pericias[0].pericia);
-		this._pericias[2].puntosbase = (this._atributos._atributos[2].modif + this._objClase.modifadicional[2]) < 0 ? 1 : 1 + this._atributos._atributos[2].modif + this._objClase.modifadicional[2] + this._objClase.ptosbasepericia(this._pericias[2].pericia);
-		this._pericias[4].puntosbase = (this._atributos._atributos[0].modif + this._objClase.modifadicional[0]) < 0 ? 1 : 1 + this._atributos._atributos[0].modif + this._objClase.modifadicional[0] + this._objClase.ptosbasepericia(this._pericias[4].pericia);
-		this._pericias[5].puntosbase = (this._atributos._atributos[3].modif + this._objClase.modifadicional[3]) < 0 ? 0 : this._atributos._atributos[3].modif + this._objClase.modifadicional[3] + this._objClase.ptosbasepericia(this._pericias[5].pericia);
-		this._pericias[6].puntosbase = (this._atributos._atributos[1].modif + this._objClase.modifadicional[1]) < -1 ? 1 : 2 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1] + this._objClase.ptosbasepericia(this._pericias[6].pericia);
+		 
+		this._pericias[0].puntosbase = Atributos.modificador(this._atributos._atributos[4].valor + this._objClase.modifadicional[4]) < -1 ? 1 : 2 + Atributos.modificador(this._atributos._atributos[4].valor + this._objClase.modifadicional[4]) + this._objClase.ptosbasepericia(this._pericias[0].pericia);
+		this._pericias[2].puntosbase = Atributos.modificador(this._atributos._atributos[2].valor + this._objClase.modifadicional[2]) < 0 ? 1 : 1 + Atributos.modificador(this._atributos._atributos[2].valor + this._objClase.modifadicional[2]) + this._objClase.ptosbasepericia(this._pericias[2].pericia);
+		this._pericias[4].puntosbase = Atributos.modificador(this._atributos._atributos[0].valor + this._objClase.modifadicional[0]) < 0 ? 1 : 1 + Atributos.modificador(this._atributos._atributos[0].valor + this._objClase.modifadicional[0]) + this._objClase.ptosbasepericia(this._pericias[4].pericia);
+		this._pericias[5].puntosbase = Atributos.modificador(this._atributos._atributos[3].valor + this._objClase.modifadicional[3]) < 0 ? 0 : Atributos.modificador(this._atributos._atributos[3].valor + this._objClase.modifadicional[3]) + this._objClase.ptosbasepericia(this._pericias[5].pericia);
+		this._pericias[6].puntosbase = Atributos.modificador(this._atributos._atributos[1].valor + this._objClase.modifadicional[1]) < -1 ? 1 : 2 + Atributos.modificador(this._atributos._atributos[1].valor + this._objClase.modifadicional[1]) + this._objClase.ptosbasepericia(this._pericias[6].pericia);
 
 	}
 	
@@ -68,11 +69,19 @@ class PJ {
 		var iatrb = 0;
 		var satrs = "<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</strong></th><th>Valor (mod)</th></tr>";
 		for (iatrb = 0; iatrb < this._atributos._atributos.length; iatrb++) {
-			satrs += "<tr><td>" + this._atributos._atributos[iatrb].nbatr + " (" + this._atributos._atributos[iatrb].nbmod + ")</td><td align='center'>" + this._atributos._atributos[iatrb].valor + " (" + this._atributos._atributos[iatrb].modif + ") " + Comun.construyeBotonAbajo(iatrb, "abajoatr");
+			/*satrs += "<tr><td>" + this._atributos._atributos[iatrb].nbatr + " (" + this._atributos._atributos[iatrb].nbmod + ")</td><td align='center'>" + this._atributos._atributos[iatrb].valor + " (" + this._atributos._atributos[iatrb].modif + ") " + Comun.construyeBotonAbajo(iatrb, "abajoatr");
 			if ( this._objClase.modifadicional[iatrb] > 0 ) {
 				satrs += " (+" + this._objClase.modifadicional[iatrb] + ")";
+			}*/
+			satrs += "<tr><td>" + this._atributos._atributos[iatrb].nbatr + " (" + this._atributos._atributos[iatrb].nbmod + ")</td><td align='center'>";
+			 
+			if ( this._objClase.modifadicional[iatrb] > 0 ) {
+				satrs += (this._atributos._atributos[iatrb].valor+this._objClase.modifadicional[iatrb]) + " (" + Atributos.modificador(this._atributos._atributos[iatrb].valor+this._objClase.modifadicional[iatrb]);
 			}
-			satrs += "</td></tr>";
+			else {
+				satrs += this._atributos._atributos[iatrb].valor + " (" + this._atributos._atributos[iatrb].modif;
+			}
+			satrs += ") " + Comun.construyeBotonAbajo(iatrb, "abajoatr") + "</td></tr>";
 		}
 		
 		satrs += "</table>";
@@ -177,7 +186,7 @@ class PJ {
 	}
 	
 	calculaTipoArmas() {
-		var bonif = this._objClase.boniftipoarmas + this._atributos._atributos[0].modif + this._objClase.modifadicional[0];
+		var bonif = this._objClase.boniftipoarmas + Atributos.modificador(this._atributos._atributos[0].valor + this._objClase.modifadicional[0]);
 		this._tipoarmas = "d4";
 		if ( bonif == 1 ) {
 			this._tipoarmas = "d6";
@@ -207,16 +216,16 @@ class PJ {
 	calculaRasgosDerivadosBase(atributo) {
 		atributo = Math.trunc(atributo);
 		if ( atributo <= 1 && this._atributos._atributos[atributo].modif != this._atributos._atributos[atributo+1].modif) {
-			this._cacc = 10 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1] + this._objClase.ca;
-			this._caad = 10 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1] + this._objClase.ca;
+			this._cacc = 10 + Atributos.modificador(this._atributos._atributos[1].valor + this._objClase.modifadicional[1]) + this._objClase.ca;
+			this._caad = 10 + Atributos.modificador(this._atributos._atributos[1].valor + this._objClase.modifadicional[1]) + this._objClase.ca;
 		}
 		if ( (atributo == 1 || atributo == 2) && this._atributos._atributos[atributo].modif != this._atributos._atributos[atributo+1].modif ) {
-			this._pv = this._pvclase + this._atributos._atributos[2].modif + this._objClase.modifadicional[2];
+			this._pv = this._pvclase + Atributos.modificador(this._atributos._atributos[2].valor + this._objClase.modifadicional[2]);
 		}
 		this.calculaTipoArmas();
 		this.calculaArmas();
-		this._atqcc = this._objClase.ataque + this._atributos._atributos[0].modif + this._objClase.modifadicional[0];
-		this._atqad = this._objClase.ataque + this._objClase.ataquead + this._atributos._atributos[1].modif + this._objClase.modifadicional[1];
+		this._atqcc = this._objClase.ataque + Atributos.modificador(this._atributos._atributos[0].valor + this._objClase.modifadicional[0]);
+		this._atqad = this._objClase.ataque + this._objClase.ataquead + Atributos.modificador(this._atributos._atributos[1].valor + this._objClase.modifadicional[1]);
 		this.recalculaPericiasBasicas();
 		this.calculaSalvaciones();
 	}
@@ -227,14 +236,14 @@ class PJ {
 	
 	calculaDatosPJ() {
 		this._clase = this._objClase.nombre;
-		this._pv = this._pvclase + this._atributos._atributos[2].modif;
+		this._pv = this._pvclase + Atributos.modificador(this._atributos._atributos[2].valor + this._objClase.modifadicional[2]);
 		this.calculaConjuros();
 		this._objClase.calculapericias(this._atributos._atributos);
 		this._pericias = this._objClase.ptospericia;
-		this._atqcc = this._objClase.ataque + this._atributos._atributos[0].modif + this._objClase.modifadicional[0];
-		this._atqad = this._objClase.ataque + this._objClase.ataquead + this._atributos._atributos[1].modif + this._objClase.modifadicional[1];
-		this._cacc = 10 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1] + this._objClase.ca;
-		this._caad = 10 + this._atributos._atributos[1].modif + this._objClase.modifadicional[1] + this._objClase.ca;
+		this._atqcc = this._objClase.ataque + Atributos.modificador(this._atributos._atributos[0].valor + this._objClase.modifadicional[0]);
+		this._atqad = this._objClase.ataque + this._objClase.ataquead + Atributos.modificador(this._atributos._atributos[1].valor + this._objClase.modifadicional[1]);
+		this._cacc = 10 + Atributos.modificador(this._atributos._atributos[1].valor + this._objClase.modifadicional[1]) + this._objClase.ca;
+		this._caad = 10 + Atributos.modificador(this._atributos._atributos[1].valor + this._objClase.modifadicional[1]) + this._objClase.ca;
 		this.calculaTipoArmas();
 		this.calculaArmas();
 		this._dinero = 6 * (Comun.random(8,1) + Comun.random(8,1) + Comun.random(8,1));
@@ -315,18 +324,18 @@ class PJ {
 					'CAAD' : [ this._caad ],
 					'AtqCC' : [ this._atqcc ],
 					'AtqAD' : [ this._atqad ],
-					'FUE' : [ this._atributos._atributos[0].valor ],
-					'DES' : [ this._atributos._atributos[1].valor ],
-					'CON' : [ this._atributos._atributos[2].valor ],
-					'INT' : [ this._atributos._atributos[3].valor ],
-					'SAB' : [ this._atributos._atributos[4].valor ],
-					'CAR' : [ this._atributos._atributos[5].valor ],
-					'mFUE' : [ this._atributos._atributos[0].modif + this._objClase.modifadicional[0] ],
-					'mDES' : [ this._atributos._atributos[1].modif + this._objClase.modifadicional[1] ],
-					'mCON' : [ this._atributos._atributos[2].modif + this._objClase.modifadicional[2] ],
-					'mINT' : [ this._atributos._atributos[3].modif + this._objClase.modifadicional[3] ],
-					'mSAB' : [ this._atributos._atributos[4].modif + this._objClase.modifadicional[4] ],
-					'mCAR' : [ this._atributos._atributos[5].modif + this._objClase.modifadicional[5] ],
+					'FUE' : [ (this._atributos._atributos[0].valor + this._objClase.modifadicional[0]) ],
+					'DES' : [ (this._atributos._atributos[1].valor + this._objClase.modifadicional[1]) ],
+					'CON' : [ (this._atributos._atributos[2].valor + this._objClase.modifadicional[2]) ],
+					'INT' : [ (this._atributos._atributos[3].valor + this._objClase.modifadicional[3]) ],
+					'SAB' : [ (this._atributos._atributos[4].valor + this._objClase.modifadicional[4]) ],
+					'CAR' : [ (this._atributos._atributos[5].valor + this._objClase.modifadicional[5]) ],
+					'mFUE' : [ Atributos.modificador(this._atributos._atributos[0].valor + this._objClase.modifadicional[0]) ],
+					'mDES' : [ Atributos.modificador(this._atributos._atributos[1].valor + this._objClase.modifadicional[1]) ],
+					'mCON' : [ Atributos.modificador(this._atributos._atributos[2].valor + this._objClase.modifadicional[2]) ],
+					'mINT' : [ Atributos.modificador(this._atributos._atributos[3].valor + this._objClase.modifadicional[3]) ],
+					'mSAB' : [ Atributos.modificador(this._atributos._atributos[4].valor + this._objClase.modifadicional[4]) ],
+					'mCAR' : [ Atributos.modificador(this._atributos._atributos[5].valor + this._objClase.modifadicional[5]) ],
 					'TSCaptura' : [ this.salvaciones[0].valor ],
 					'TSAflicciones' : [ this.salvaciones[1].valor ],
 					'TSAtqArea' : [ this.salvaciones[2].valor ],
@@ -336,9 +345,9 @@ class PJ {
 					'Barridos' : [ this._objClase.barridos ],
 					'DineroOro' : [ this._dinero ],
 					'KilosSC' : [ 0 ],
-					'KilosL' : [ "<" + this._atributos._atributos[0].valor ],
-					'KilosM' : [ "<" + (this._atributos._atributos[0].valor*4) ],
-					'KilosP' : [ ">" + (this._atributos._atributos[0].valor*4) ],
+					'KilosL' : [ "<" + (this._atributos._atributos[0].valor+this._objClase.modifadicional[0]) ],
+					'KilosM' : [ "<" + ((this._atributos._atributos[0].valor+this._objClase.modifadicional[0])*4) ],
+					'KilosP' : [ ">" + ((this._atributos._atributos[0].valor+this._objClase.modifadicional[0])*4) ],
 					'ViajeSC' : [ this._objClase.movimiento ],
 					'ViajeL' : [ Math.trunc(this._objClase.movimiento*3/4) ],
 					'ViajeM' : [ Math.trunc(this._objClase.movimiento/2) ],

@@ -96,7 +96,11 @@ class Atributos {
 	
 	
 	modif(valor) {
-		
+		return Atributos.modificador(valor);
+	}
+	
+	
+	static modificador(valor) {
 		if ( valor <= 3 )
 		{
 			return -1;

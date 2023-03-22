@@ -119,7 +119,7 @@ class Clase {
 		var pericia = new Object();
 		pericia.tipo = "Básica";
 		pericia.pericia = "Alerta";
-		pericia.puntosbase = (atributospj[4].modif + this.modifadicional[4]) < -1 ? 1 : 2 + atributospj[4].modif + this.modifadicional[4];
+		pericia.puntosbase = (atributospj[4].modif + this.modifadicional[4]) < -1 ? 1 : 2 + Atributos.modificador(atributospj[4].valor + this.modifadicional[4]);
 		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
 		pericia.puntos = 0;
 		pericia.especial = false;
@@ -139,7 +139,7 @@ class Clase {
 		pericia = new Object();
 		pericia.tipo = "Básica";
 		pericia.pericia = "Escalada";
-		pericia.puntosbase = (atributospj[2].modif + this.modifadicional[2]) < 0 ? 1 : 1 + atributospj[2].modif + this.modifadicional[2];
+		pericia.puntosbase = (atributospj[2].modif + this.modifadicional[2]) < 0 ? 1 : 1 + Atributos.modificador(atributospj[2].valor + this.modifadicional[2]);
 		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
 		pericia.puntos = 0;
 		pericia.especial = false;
@@ -158,7 +158,7 @@ class Clase {
 		pericia = new Object();
 		pericia.tipo = "Básica";
 		pericia.pericia = "Forzar Puertas";
-		pericia.puntosbase = (atributospj[0].modif + this.modifadicional[0]) < 0 ? 1 : 1 + atributospj[0].modif + this.modifadicional[0];
+		pericia.puntosbase = (atributospj[0].modif + this.modifadicional[0]) < 0 ? 1 : 1 + Atributos.modificador(atributospj[0].valor + this.modifadicional[0]);
 		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
 		pericia.puntos = 0;
 		pericia.especial = false;
@@ -168,7 +168,7 @@ class Clase {
 		pericia = new Object();
 		pericia.tipo = "Básica";
 		pericia.pericia = "Idiomas";
-		pericia.puntosbase = (atributospj[3].modif + this.modifadicional[3]) < 0 ? 0 : atributospj[3].modif + this.modifadicional[3];
+		pericia.puntosbase = (atributospj[3].modif + this.modifadicional[3]) < 0 ? 0 : Atributos.modificador(atributospj[3].valor + this.modifadicional[3]);
 		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
 		pericia.puntos = 0;
 		pericia.especial = false;
@@ -178,7 +178,7 @@ class Clase {
 		pericia = new Object();
 		pericia.tipo = "Básica";
 		pericia.pericia = "Sigilo";
-		pericia.puntosbase = (atributospj[1].modif + this.modifadicional[1]) < -1 ? 1 : 2 + atributospj[1].modif + this.modifadicional[1];
+		pericia.puntosbase = (atributospj[1].modif + this.modifadicional[1]) < -1 ? 1 : 2 + Atributos.modificador(atributospj[1].valor + this.modifadicional[1]);
 		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
 		pericia.puntos = 0;
 		pericia.especial = false;
