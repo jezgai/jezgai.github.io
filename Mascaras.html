@@ -28,8 +28,8 @@
 	function exportaJSON() {
 		var pjexport = {};
 		
-		pjexport.botid = "SUSTITUIR_POR_TOKEN_BOT";
-		pjexport.chatid = "SUSTITUIR_POR_ID_DEL_CHAT";
+		//pjexport.botid = "SUSTITUIR_POR_TOKEN_BOT";
+		//pjexport.chatid = "SUSTITUIR_POR_ID_DEL_CHAT";
 		pjexport.nombre = "Encubierta";
 		pjexport.sistema = "Máscaras del Imperio";
 		pjexport.atributos = [ { nombre: "Brio", valor: pj._atributos[0] }, { nombre: "Picaresca", valor: pj._atributos[1] }, { nombre: "Galanteria", valor: pj._atributos[2] }, { nombre: "Erudicion", valor: pj._atributos[3] } ];
@@ -130,7 +130,7 @@
 		};
 
 
-		xhr.open('GET', 'pdf/MdI.pdf', true);
+		xhr.open('GET', 'pdf/MdI2.pdf', true);
 		xhr.responseType = 'arraybuffer';
 		xhr.setRequestHeader("Content-Type", "application/json");
 		xhr.send();		
