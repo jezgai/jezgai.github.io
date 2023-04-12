@@ -110,18 +110,23 @@
 				}
 	
 				var stalentos="";
-				var dettalentos = "";
+				var notas = "";
 				if ( pj._talentos.length > 0 ) {
 					stalentos = talentos._talentos[pj._talentos[0]].nombre;
-					dettalentos = talentos._talentos[pj._talentos[0]].nombre + ": " + talentos._talentos[pj._talentos[0]].descripcion;
+					notas = talentos._talentos[pj._talentos[0]].nombre + ": " + talentos._talentos[pj._talentos[0]].descripcion;
 					for (indice=1; indice<pj._talentos.length;indice++) {
 						stalentos += "\n" + talentos._talentos[pj._talentos[indice]].nombre;
-						dettalentos += "\n\n" + talentos._talentos[pj._talentos[indice]].nombre + ": " + talentos._talentos[pj._talentos[indice]].descripcion;
+						notas += "\n\n" + talentos._talentos[pj._talentos[indice]].nombre + ": " + talentos._talentos[pj._talentos[indice]].descripcion;
 					}
 			
-					fields [ 'Talentos' ] = [ stalentos ];
-					fields [ 'Notas' ] = [ dettalentos ];
 				}
+				if ( notas != "" ) {
+					notas += "\n\n";
+				}
+				notas += "Alcance " + pj._armaAD.nombre + ": " + pj._armaAD.alcance + " metros";
+				
+				fields [ 'Talentos' ] = [ stalentos ];
+				fields [ 'Notas' ] = [ notas ];
 				
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
