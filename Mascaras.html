@@ -98,16 +98,30 @@
 					'Fortuna_Act' : [ pj._suerte ],
 					'Defensa_Act' : [ pj._defensa ],
 					'Iniciativa' : [ pj._iniciativa ],
-					'Talentos' : [ document.getElementById("talentos").innerText ],
 					'Armas' : [ document.getElementById("armas").innerText ],
 					'Anotaciones' : [ pj._dinero + " escudos" ],
 				};
+				
+				// 'Talentos' : [ document.getElementById("talentos").innerText ],
 				
 				var indice=0;
 				for (indice=0;indice<habilidades._habilidades.length; indice++) {
 					fields [ habilidades._habilidades[indice].nombrepdf ] = [ pj._habilidades[indice] ];
 				}
-		
+	
+				var stalentos="";
+				var dettalentos = "";
+				if ( pj._talentos.length > 0 ) {
+					stalentos = talentos._talentos[pj._talentos[0]].nombre;
+					dettalentos = talentos._talentos[pj._talentos[0]].nombre + ": " + talentos._talentos[pj._talentos[0]].descripcion;
+					for (indice=1; indice<pj._talentos.length;indice++) {
+						stalentos += "\n" + talentos._talentos[pj._talentos[indice]].nombre;
+						dettalentos += "\n\n" + talentos._talentos[pj._talentos[indice]].nombre + ": " + talentos._talentos[pj._talentos[indice]].descripcion;
+					}
+			
+					fields [ 'Talentos' ] = [ stalentos ];
+					fields [ 'Notas' ] = [ dettalentos ];
+				}
 				
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
