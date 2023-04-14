@@ -1,10 +1,35 @@
 class ATZ_PJ {
 	
+	
+	calculaVoluntad() {
+		var minimo = Math.trunc(this._atributos[0]);
+		var maximo = Math.trunc(minimo);
+		
+		if (Math.trunc(this._atributos[1]) < minimo)
+			minimo = Math.trunc(this._atributos[1]);
+		if (Math.trunc(this._atributos[1]) > maximo)
+			maximo = Math.trunc(this._atributos[1]);
+			
+		if (Math.trunc(this._atributos[2]) < minimo)
+			minimo = Math.trunc(this._atributos[2]);
+		if (Math.trunc(this._atributos[2]) > maximo)
+			maximo = Math.trunc(this._atributos[2]);
+						
+		if (Math.trunc(this._atributos[3]) < minimo)
+			minimo = Math.trunc(this._atributos[3]);
+		if (Math.trunc(this._atributos[3]) > maximo)
+			maximo = Math.trunc(this._atributos[3]);
+			
+		this._voluntad = Math.trunc( (minimo + maximo) / 2 );
+			
+	}
+	
 	calculaRasgos() {
 		this._pv = 6 + this._atributos[0]; // Vigor
 		this._suerte = Math.trunc( (this._atributos[2] + this._atributos[3]) / 2);
 		this._iniciativa = Math.trunc( (this._atributos[1] + this._atributos[3]) / 2);
 		this._defensa = 4 + Math.trunc( (this._atributos[0] + this._atributos[1]) / 2);
+		this.calculaVoluntad();
 	}
 	
 	
@@ -40,6 +65,7 @@ class ATZ_PJ {
 		rasgos+= "<tr><td>Fortuna</td><td>" + this._suerte + "</td></tr>";
 		rasgos+= "<tr><td>Iniciativa</td><td>" + this._iniciativa + "</td></tr>";
 		rasgos+= "<tr><td>Defensa</td><td>" + this._defensa + "</td></tr>";
+		rasgos+= "<tr><td>Voluntad</td><td>" + this._voluntad + "</td></tr>";
 		rasgos += "</table>";
 		return rasgos;
 	}
