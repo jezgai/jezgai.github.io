@@ -111,6 +111,10 @@ class Talentos {
 				descripcion: "el personaje ha dedicado su vida entera a formar su cuerpo y su mente hasta llevarlos a límites casi sobrehumanos. Tienes 2 pericias más.",
 			},
 			{
+				nombre: "Experto en la Destreza", 
+				descripcion: "tira dos dados y quédate el mejor resultado en las tiradas de Brío (Combate cuerpo a cuerpo) cuando combatas con un estoque. Además, suma 1 a las tiradas de Iniciativa si tu espada ya está desenvainada al inicio del combate.",
+			},
+			{
 				nombre: "Guante blanco", 
 				descripcion: "tira dos dados y quédate el mejor resultado en las tiradas de Picaresca (Latrocinio).",
 			},
