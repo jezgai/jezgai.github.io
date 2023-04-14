@@ -82,8 +82,8 @@ class ATZ_PJ {
 	
 	pintaArmas() {
 		var arms = "<table class='w3-table  w3-striped  w3-border'>";
-		arms+= "<tr><td><strong>" + this._armaCaC.nombre + "</strong>: (daño " + this._armaCaC.dano + ")</td></tr>";
-		arms+= "<tr><td><strong>" + this._armaAD.nombre + "</strong>: (daño " + this._armaAD.dano + ")</td></tr>";
+		arms+= "<tr><td><strong>" + this._armaCaC.nombre + "</strong>: (Brío. Daño " + this._armaCaC.dano + ")</td></tr>";
+		arms+= "<tr><td><strong>" + this._armaAD.nombre + "</strong>: (Picaresca. Daño " + this._armaAD.dano + ")</td></tr>";
 		arms += "</table>";
 		return arms;
 	}
