@@ -146,12 +146,12 @@
 					'CheckCON' : [ pj.mINT == -1 ? true : false],
 					'CheckSAB' : [ pj.mSAB == -1 ? true : false],
 					'CheckCAR' : [ pj.mCAR == -1 ? true : false],
-					'FUE' : [ 21 - (pj.FUE + pj.mFUE) ],
-					'DES' : [ 21 - (pj.DES + pj.mDES) ],
-					'CON' : [ 21 - (pj.CON + pj.mCON) ],
-					'INT' : [ 21 - (pj.INT + pj.mINT) ],
-					'SAB' : [ 21 - (pj.SAB + pj.mSAB) ],
-					'CAR' : [ 21 - (pj.CAR + pj.mCAR) ],
+					'FUE' : [ 20 - (pj.FUE + pj.mFUE) ],
+					'DES' : [ 20 - (pj.DES + pj.mDES) ],
+					'CON' : [ 20 - (pj.CON + pj.mCON) ],
+					'INT' : [ 20 - (pj.INT + pj.mINT) ],
+					'SAB' : [ 20 - (pj.SAB + pj.mSAB) ],
+					'CAR' : [ 20 - (pj.CAR + pj.mCAR) ],
 					'dFUE' : [ pj.FUE + pj.mFUE ],
 					'dDES' : [ pj.DES + pj.mDES ],
 					'dCON' : [ pj.CON + pj.mCON ],
@@ -468,22 +468,22 @@
 			checkedCAR = "checked='checked'";
 			
 		document.getElementById("atributos").innerHTML = "<table class='w3-table  w3-striped  w3-border'><tr><td><strong>FUE (Fuerza)</strong></td><td>" + pj.FUE +
-													  "</td><td>" + pintablancosicero(pj.mFUE) + "</td><td>" + (pj.FUE+pj.mFUE) +
+													  "</td><td>" + pintablancosicero(pj.mFUE) + "</td><td>" + (pj.FUE+pj.mFUE) + " (" + (20-(pj.FUE+pj.mFUE)) + ") " +
 													  " </td><td>" + construyeBoton('FUE') + "</td><td><input type='radio' id='cFUE' name='ratrs' " + checkedFUE + " onclick=\"checkFUE();\"></td></tr>" +
 													  "<tr><td><strong>DES (Destreza)</strong></td><td>" + pj.DES +
-													  "</td><td>" + pintablancosicero(pj.mDES) + "</td><td>" + (pj.DES+pj.mDES) +
+													  "</td><td>" + pintablancosicero(pj.mDES) + "</td><td>" + (pj.DES+pj.mDES) + " (" + (20-(pj.DES+pj.mDES)) + ") " +
 													  " </td><td>" + construyeBoton('DES') + "</td><td><input type='radio' id='cDES' name='ratrs' " + checkedDES + " onclick=\"checkDES();\"></td></tr>" +
             		                                  "<tr><td><strong>CON (Constitución)</strong></td><td>" + pj.CON +
-													  "</td><td>" + pintablancosicero(pj.mCON) + "</td><td>" + (pj.CON+pj.mCON) +
+													  "</td><td>" + pintablancosicero(pj.mCON) + "</td><td>" + (pj.CON+pj.mCON) + " (" + (20-(pj.CON+pj.mCON)) + ") " +
 													  " </td><td>" + construyeBoton('CON') + "</td><td><input type='radio' id='cCON' name='ratrs' " + checkedCON + " onclick=\"checkCON();\"></td></tr>" +
 													  "<tr><td><strong>INT (Inteligencia)</strong></td><td>" + pj.INT +
-													  "</td><td>" + pintablancosicero(pj.mINT) + "</td><td>" + (pj.INT+pj.mINT) +
+													  "</td><td>" + pintablancosicero(pj.mINT) + "</td><td>" + (pj.INT+pj.mINT) + " (" + (20-(pj.INT+pj.mINT)) + ") " +
 													  " </td><td>" + construyeBoton('INT') + "</td><td><input type='radio' id='cINT' name='ratrs' " + checkedINT + " onclick=\"checkINT();\"></td></tr>" +
 													  "<tr><td><strong>SAB (Sabiduria)</strong></td><td>" + pj.SAB +
-													  "</td><td>" + pintablancosicero(pj.mSAB) + "</td><td>" + (pj.SAB+pj.mSAB) +
+													  "</td><td>" + pintablancosicero(pj.mSAB) + "</td><td>" + (pj.SAB+pj.mSAB) + " (" + (20-(pj.SAB+pj.mSAB)) + ") " +
 													  " </td><td>" + construyeBoton('SAB') + "</td><td><input type='radio' id='cSAB' name='ratrs' " + checkedSAB + " onclick=\"checkSAB();\"></td></tr>" +
 													  "<tr><td><strong>CAR (Carisma)</strong></td><td>" + pj.CAR +
-													  "</td><td>" + pintablancosicero(pj.mCAR) + "</td><td>" + (pj.CAR+pj.mCAR) +
+													  "</td><td>" + pintablancosicero(pj.mCAR) + "</td><td>" + (pj.CAR+pj.mCAR) + " (" + (20-(pj.CAR+pj.mCAR)) + ") " +
 													  " </td><td>" + construyeBoton('CAR') + "</td><td><input type='radio' id='cCAR' name='ratrs' " + checkedCAR + " onclick=\"checkCAR();\"></td></tr></table>";
 
 		if ( deshabilitar("FUE") )
