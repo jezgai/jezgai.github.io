@@ -244,6 +244,23 @@
 	  for (i=0;i<origenes.origenes[norig].habilidades.basicas.length; i++) {
 		  shabilidades += "<tr><td>" + origenes.origenes[norig].habilidades.basicas[i] + "</td></tr>";
 	  }
+	  
+	  if ( origenes.profesiones[nprof].hasOwnProperty('habilidades') == true && origenes.profesiones[nprof].habilidades.hasOwnProperty('basicas') == true ) {
+		  for (i=0;i<origenes.profesiones[nprof].habilidades.basicas.length; i++) {
+			  shabilidades += "<tr><td>" + origenes.profesiones[nprof].habilidades.basicas[i] + "</td></tr>";
+		  }
+		  
+		  for (i=0;i<origenes.profesiones[nprof].habilidades.basicas.length; i++) {
+			  var j=0;
+			  for (j=0;j<origenes.origenes[norig].habilidades.basicas.length; j++) {
+				  if (origenes.origenes[norig].habilidades.basicas[j] == origenes.profesiones[nprof].habilidades.basicas[i])
+					break;
+			  }
+			  if (j>=origenes.origenes[norig].habilidades.basicas.length)
+				shabilidades += "<tr><td>" + origenes.profesiones[nprof].habilidades.basicas[i] + "</td></tr>";
+		  }
+	  }
+	  
 	  shabilidades+="</table>";
 	  
 	  document.getElementById("habilidades").innerHTML = shabilidades;
@@ -253,6 +270,19 @@
 	  for (i=0;i<origenes.origenes[norig].habilidades.profesionales.length; i++) {
 		  shabilidades += "<tr><td>" + origenes.origenes[norig].habilidades.profesionales[i] + "</td></tr>";
 	  }
+	  
+	  if ( origenes.profesiones[nprof].hasOwnProperty('habilidades') == true && origenes.profesiones[nprof].habilidades.hasOwnProperty('profesionales') == true ) {
+		  for (i=0;i<origenes.profesiones[nprof].habilidades.profesionales.length; i++) {
+			  var j=0;
+			  for (j=0;j<origenes.origenes[norig].habilidades.profesionales.length; j++) {
+				  if (origenes.origenes[norig].habilidades.profesionales[j] == origenes.profesiones[nprof].habilidades.profesionales[i])
+					break;
+			  }
+			  if (j>=origenes.origenes[norig].habilidades.profesionales.length)
+				shabilidades += "<tr><td>" + origenes.profesiones[nprof].habilidades.profesionales[i] + "</td></tr>";
+		  }
+	  }
+	  
 	  shabilidades+="</table>";
 	  
 	  document.getElementById("habilidadesprofesionales").innerHTML = shabilidades;
