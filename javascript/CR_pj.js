@@ -102,8 +102,8 @@ class CR_PJ {
 		fields['Nombre'] = [ "" ];
 		fields['Nivel' ] = [ pj.nivel ];
 		fields['Via' ] = [ pj.objVia.nombre ];
-		fields['pv' ] = [ pj.pv ];
-		fields['pd' ] = [ 1 ];
+		fields['Pv' ] = [ pj.pv ];
+		fields['Pd' ] = [ 1 ];
 		fields['FUE' ] = [ pj.FUE ];
 		fields['DES' ] = [ pj.DES ];
 		fields['CON' ] = [ pj.CON ];
