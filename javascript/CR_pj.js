@@ -87,6 +87,7 @@ class CR_PJ {
 		for (i=0; i<pj.pertrechos.length; i++) {
 			sequipo += "<tr><td>" + pj.pertrechos[i].nombre + "</td><td>" + pj.pertrechos[i].du + "</td></tr>";
 		}
+		sequipo += "</table>";
 		return sequipo;
 	}
 	
