@@ -87,6 +87,18 @@ class CR_PJ {
 		}
 	}
 	
+	progresionatributo(valor, atr) {
+		var tirada = Comun.random(20,1);
+		if ( tirada > valor )
+			return 1;
+		if ( atr == this.atributo ) {
+			tirada = Comun.random(20,1);
+			if ( tirada > valor )
+				return 1;
+		}
+		return 0;
+	}
+	
 	genera() {
 		
 		this.nivel = Math.trunc(nivelpj);
@@ -116,6 +128,15 @@ class CR_PJ {
 			this.circulos = this.objVia.circulos[this.nivel-1];
 		}
 		//this.atributo = this.objVia.atributo[Comun.random( this.objVia.atributo.length, 0)];
+		
+		for (i=1;i<this.nivel; i++) {
+			this.FUE += this.progresionatributo(this.FUE, "FUE");
+			this.DES += this.progresionatributo(this.DES, "DES");
+			this.CON += this.progresionatributo(this.CON, "CON");
+			this.INT += this.progresionatributo(this.INT, "INT");
+			this.SAB += this.progresionatributo(this.SAB, "SAB");
+			this.CAR += this.progresionatributo(this.CAR, "CAR");
+		}
 		
 	}
 	
