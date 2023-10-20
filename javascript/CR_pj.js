@@ -87,14 +87,18 @@ class CR_PJ {
 		
 		this.pv = this.objVia.ptosvida(this.nivel);
 		
-		this.rasgospj = this.objVia.rasgos.clone();
+		var rasgoini = Comun.random(this.objVia.rasgos.length,0);
+		this.rasgospj = [];
+		this.rasgospj.push(this.objVia.rasgos[rasgoini]);
+		this.atributo = lrasgos.rasgo(this.objVia.rasgos[rasgoini]).atributo;
+		//this.rasgospj = this.objVia.rasgos.clone();
 		var rasgosadicionales = Math.trunc(this.nivel/3);
 		var i=0;
 		var rasgosgenericos = Comun.shuffle(lrasgos.genericos().clone());
 		for (i=0;i<rasgosadicionales;i++) {
 			this.rasgospj.push(rasgosgenericos[i].nombre);
 		}
-		this.atributo = this.objVia.atributo[Comun.random( this.objVia.atributo.length, 0)];
+		//this.atributo = this.objVia.atributo[Comun.random( this.objVia.atributo.length, 0)];
 		
 	}
 	
@@ -115,10 +119,10 @@ class CR_PJ {
 		
 		var i=0;
 		fields[ 'Rasgo' ] = [ pj.rasgospj[0] ];
-		var srasgos = "Rasgos\n" + pj.rasgospj[0] + ": " + lrasgos.rasgo(pj.rasgospj[0]).descripcion;
+		var srasgos = "Rasgos\n- " + pj.rasgospj[0] + ": " + lrasgos.rasgo(pj.rasgospj[0]).descripcion;
 		for (i=1;i<pj.rasgospj.length; i++) {
 			fields[ 'RasgoAdicional' + i ] = [ pj.rasgospj[i] ];
-			srasgos += "\n" + pj.rasgospj[i] + ": " + lrasgos.rasgo(pj.rasgospj[i]).descripcion;
+			srasgos += "\n- " + pj.rasgospj[i] + ": " + lrasgos.rasgo(pj.rasgospj[i]).descripcion;
 		}
 		fields[ 'DescripcionNotas' ] = [ srasgos ];
 		

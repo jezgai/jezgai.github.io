@@ -1,7 +1,7 @@
 class Rasgo {
 	constructor(rasgo) {
 		this.nombre = rasgo.nombre;
-		this.atributo = rasgo.generico;
+		this.atributo = rasgo.atributo;
 		this.generico = rasgo.generico;
 		this.descripcion = rasgo.descripcion;
 	}
