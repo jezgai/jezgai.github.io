@@ -19,6 +19,7 @@ class CR_PJ {
 		this.objVia = null;
 		this.rasgospj = [];
 		this.atributo = "";
+		this.circulos = [];
 	}
 	
 	static calculaatributo(valorant) {
@@ -29,8 +30,6 @@ class CR_PJ {
 			modificador = 2;
 		}
 		var valor = Comun.dados(ndados,6,modificador,1);
-		if ( valor <= 4 )
-			valor = CR_PJ.calculaatributo(valorant);
 		return valor;
 	}
 	
@@ -66,6 +65,21 @@ class CR_PJ {
 		
 	}
 	
+	apartadoProdigios() {
+		var prodigios="";
+		if ( pj.circulos.length > 0 ){
+			prodigios = "<h2>Prodigios</h2>";			
+			prodigios += "<table class='w3-table  w3-striped w3-border'><tr><th>Círculo</strong></th><th>Número</th></tr>";
+			
+			var i=0;
+			for (i=0; i<pj.circulos.length; i++) {
+				prodigios += "<tr><td>" + (i+1) + "</td><td>" + pj.circulos[i] + "</td></tr>";
+			}
+			prodigios += "</table>";
+		}
+		return prodigios;
+	}
+	
 	
 	cambiavia() {
 		if ( this.objVia != null && nombrevia != this.objVia.nombre ) {
@@ -98,6 +112,9 @@ class CR_PJ {
 		for (i=0;i<rasgosadicionales;i++) {
 			this.rasgospj.push(rasgosgenericos[i].nombre);
 		}
+		if ( this.objVia.circulos.length > 0 ) {
+			this.circulos = this.objVia.circulos[this.nivel-1];
+		}
 		//this.atributo = this.objVia.atributo[Comun.random( this.objVia.atributo.length, 0)];
 		
 	}
@@ -125,6 +142,13 @@ class CR_PJ {
 			srasgos += "\n- " + pj.rasgospj[i] + ": " + lrasgos.rasgo(pj.rasgospj[i]).descripcion;
 		}
 		fields[ 'DescripcionNotas' ] = [ srasgos ];
+		if ( pj.circulos.length > 0 ){
+			var prodigios = "Número de prodigios por círculo que puede hacer.";
+			for (i=0; i<pj.circulos.length; i++) {
+				prodigios += "\n- Circulo " + (i+1) + ": " + pj.circulos[i];
+			}
+			fields[ 'ProdigiosPertrechos' ] = [ prodigios ];
+		}
 		
 		return fields;
 	}

@@ -94,6 +94,7 @@
 		strpvpd += "<tr><td><strong>PV</strong></td><td>" + pj.pv + "</td></tr>";
 		strpvpd += "<tr><td><strong>PD</strong></td><td>" + pj.pd + "</td></tr>";
 		strpvpd += "<tr><td><strong>Nivel</strong></td><td>" + pj.nivel + "</td></tr></table>";
+		strpvpd += pj.apartadoProdigios();
 		document.getElementById("pvpd").innerHTML = strpvpd;
 		
 		document.getElementById("via").innerHTML = "<strong>Via: </strong>" + pj.objVia.nombre;

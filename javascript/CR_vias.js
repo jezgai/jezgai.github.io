@@ -7,6 +7,7 @@ class Via {
 		this.atributo = via.atributo;
 		this.competencias = via.competencias;
 		this.rasgos = via.rasgos;
+		this.circulos = via.circulos;
 	}
 	
 	ptosvida(nivel) {
@@ -30,7 +31,8 @@ class Vias {
 								pvnivel: { ndados: 1, tdado: 10, modificador: 0 },
 								atributo: [ "FUE" ],
 								competencias: "Cualquier arma o armadura",
-								rasgos: [ "Lucha sin filo", "Lancero", "Filo letal", "Rompe Cráneos" ]
+								rasgos: [ "Lucha sin filo", "Lancero", "Filo letal", "Rompe Cráneos" ],
+								circulos: []
 							},
 							{
 								nombre: "Vía de la Energía",
@@ -38,7 +40,8 @@ class Vias {
 								pvnivel: { ndados: 1, tdado: 4, modificador: 0 },
 								atributo: [ "INT", "SAB" ],
 								competencias: "Bastones, dagas, hondas y dardos. Acceso a los círculos de prodigios.",
-								rasgos: [ "Ritualista", "Velador del bosque", "Tocado por los dioses", "Guardían de Almas" ]
+								rasgos: [ "Ritualista", "Velador del bosque", "Tocado por los dioses", "Guardían de Almas" ],
+								circulos: [ [ 1 ], [ 2 ], [ 2, 1 ], [ 2, 2 ], [ 2, 2, 1 ], [ 2, 2, 2 ], [ 2, 2, 2, 1 ], [ 2, 2, 2, 2, 1 ], [ 3, 3, 2, 2, 2, 1 ], [ 3, 3, 3, 2, 2, 2, 1 ] ]
 							},
 							{
 								nombre: "Vía Agreste",
@@ -46,7 +49,8 @@ class Vias {
 								pvnivel: { ndados: 1, tdado: 8, modificador: 0 },
 								atributo: [ "CON", "DES" ],
 								competencias: "Cualquier arma. Armadura ligera y media.",
-								rasgos: [ "Tirador experto", "Rastreador incansable", "Espíritu animal", "Jinete del Yermo" ]
+								rasgos: [ "Tirador experto", "Rastreador incansable", "Espíritu animal", "Jinete del Yermo" ],
+								circulos: []
 							},
 							{
 								nombre: "Vía del Subterfugio",
@@ -54,7 +58,8 @@ class Vias {
 								pvnivel: { ndados: 1, tdado: 6, modificador: 0 },
 								atributo: [ "DES", "CAR" ],
 								competencias: "Dagas, espadas cortas y ballestas. Armadura ligera.",
-								rasgos: [ "Danzante de sombras", "Acróbata ambulante", "Ratero", "Corazón de tinta" ]
+								rasgos: [ "Danzante de sombras", "Acróbata ambulante", "Ratero", "Corazón de tinta" ],
+								circulos: []
 							}
 						]
 	}
