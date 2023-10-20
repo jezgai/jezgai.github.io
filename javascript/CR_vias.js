@@ -8,6 +8,8 @@ class Via {
 		this.competencias = via.competencias;
 		this.rasgos = via.rasgos;
 		this.circulos = via.circulos;
+		this.armas = via.armas;
+		this.armaduras = via.armaduras;
 	}
 	
 	ptosvida(nivel) {
@@ -32,7 +34,9 @@ class Vias {
 								atributo: [ "FUE" ],
 								competencias: "Cualquier arma o armadura",
 								rasgos: [ "Lucha sin filo", "Lancero", "Filo letal", "Rompe Cráneos" ],
-								circulos: []
+								circulos: [],
+								armas: [ ],
+								armaduras: [ "Ropa", "Jubón acolchado", "Cuero", "Cuero tachonado", "Malla/Anillas", "Placas" ]
 							},
 							{
 								nombre: "Vía de la Energía",
@@ -41,7 +45,9 @@ class Vias {
 								atributo: [ "INT", "SAB" ],
 								competencias: "Bastones, dagas, hondas y dardos. Acceso a los círculos de prodigios.",
 								rasgos: [ "Ritualista", "Velador del bosque", "Tocado por los dioses", "Guardían de Almas" ],
-								circulos: [ [ 1 ], [ 2 ], [ 2, 1 ], [ 2, 2 ], [ 2, 2, 1 ], [ 2, 2, 2 ], [ 2, 2, 2, 1 ], [ 2, 2, 2, 2, 1 ], [ 3, 3, 2, 2, 2, 1 ], [ 3, 3, 3, 2, 2, 2, 1 ] ]
+								circulos: [ [ 1 ], [ 2 ], [ 2, 1 ], [ 2, 2 ], [ 2, 2, 1 ], [ 2, 2, 2 ], [ 2, 2, 2, 1 ], [ 2, 2, 2, 2, 1 ], [ 3, 3, 2, 2, 2, 1 ], [ 3, 3, 3, 2, 2, 2, 1 ] ],
+								armas: [ "Bastón", "Daga", "Honda", "Dardo" ],
+								armaduras: [ "Ropa" ]
 							},
 							{
 								nombre: "Vía Agreste",
@@ -50,7 +56,9 @@ class Vias {
 								atributo: [ "CON", "DES" ],
 								competencias: "Cualquier arma. Armadura ligera y media.",
 								rasgos: [ "Tirador experto", "Rastreador incansable", "Espíritu animal", "Jinete del Yermo" ],
-								circulos: []
+								circulos: [],
+								armas: [ ],
+								armaduras: [ "Ropa", "Jubón acolchado", "Cuero", "Cuero tachonado", "Malla/Anillas" ]
 							},
 							{
 								nombre: "Vía del Subterfugio",
@@ -59,7 +67,9 @@ class Vias {
 								atributo: [ "DES", "CAR" ],
 								competencias: "Dagas, espadas cortas y ballestas. Armadura ligera.",
 								rasgos: [ "Danzante de sombras", "Acróbata ambulante", "Ratero", "Corazón de tinta" ],
-								circulos: []
+								circulos: [],
+								armas: [ "Daga", "Espada corta", "Ballesta" ],
+								armaduras: [ "Ropa", "Jubón acolchado", "Cuero" ]
 							}
 						]
 	}

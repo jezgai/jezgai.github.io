@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <script src="javascript/CR_comun.js"></script>
 <script src="javascript/CR_rasgos.js"></script>
+<script src="javascript/CR_pertrechos.js"></script>
 <script src="javascript/CR_vias.js"></script>
 <script src="javascript/CR_pj.js"></script>
 
@@ -38,7 +39,7 @@
 			  var fields = pj.rellenaPDF();
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  saveAs(blob, 'PJ ' + pj.objVia.nombre + '.pdf');
+			  saveAs(blob, pj.nombre + ".pdf"); // 'PJ ' + pj.objVia.nombre + '.pdf');
 			}
 		};
 
@@ -89,15 +90,9 @@
 	function muestraDatosPJ() {
 		document.getElementById("atributos").innerHTML = pj.tablaAtributos();
 		document.getElementById("rasgos").innerHTML = pj.apartadoRasgos();
+		document.getElementById("pvpd").innerHTML = pj.tablaResto();
 		
-		var strpvpd = "<table class='w3-table  w3-striped w3-border'>";
-		strpvpd += "<tr><td><strong>PV</strong></td><td>" + pj.pv + "</td></tr>";
-		strpvpd += "<tr><td><strong>PD</strong></td><td>" + pj.pd + "</td></tr>";
-		strpvpd += "<tr><td><strong>Nivel</strong></td><td>" + pj.nivel + "</td></tr></table>";
-		strpvpd += pj.apartadoProdigios();
-		document.getElementById("pvpd").innerHTML = strpvpd;
-		
-		document.getElementById("via").innerHTML = "<strong>Via: </strong>" + pj.objVia.nombre;
+		document.getElementById("via").innerHTML = pj.nombre + " <strong>Via: </strong>" + pj.objVia.nombre;
 		document.getElementById("botonpdf").style.visibility="visible";
 		//document.getElementById("botonjson").style.visibility="visible";
 	}
@@ -211,7 +206,7 @@
 		var pjexport = {}; //pj;
 		//pjexport.botid = "SUSTITUIR_POR_TOKEN_BOT";
 		//pjexport.chatid = "SUSTITUIR_POR_ID_DEL_CHAT";
-		pjexport.nombre = "PJ " + pj._clase;
+		pjexport.nombre = pj.nombre;
 		pjexport.sistema = "CORE";
 		pjexport.via = pj.objVia.nombre;
 		pjexport.atributos = [];

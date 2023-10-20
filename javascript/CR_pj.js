@@ -20,6 +20,16 @@ class CR_PJ {
 		this.rasgospj = [];
 		this.atributo = "";
 		this.circulos = [];
+		this.monedas = new Moneda();
+		this.arma = null;
+		this.armadura = null;
+		this.pertrechos = [];
+	}
+	
+	static asignanombre() {
+		var nombres = [ "Andrea", "Asder", "Barrek", "Brilda", "Desmond", "Dis", "Drix", "Ellisar", "Farändulin", "Finace", "Garnin", 
+						"Gathar", "Gomin", "Gurglia", "Nedri", "Quintan", "Saeir", "Thali", "Tomann", "Vadan", "Vaola", "Ylin" ];
+		return nombres[Comun.random(nombres.length, 0)];
 	}
 	
 	static calculaatributo(valorant) {
@@ -51,6 +61,33 @@ class CR_PJ {
 		satrs += "<tr><td>CAR</td><td align='center'>" + this.CAR + this.atributoprincipal("CAR") + "</td></tr>";
 		satrs += "</table>";
 		return satrs;
+	}
+	
+	tablaResto() {
+		var resto = "<table class='w3-table  w3-striped w3-border'>";
+		resto += "<tr><td><strong>PV</strong></td><td>" + this.pv + "</td></tr>";
+		resto += "<tr><td><strong>PD</strong></td><td>" + this.pd + "</td></tr>";
+		resto += "<tr><td><strong>Nivel</strong></td><td>" + this.nivel + "</td></tr>";
+		if ( this.arma != null )
+			resto += "<tr><td><strong>Arma</strong></td><td>" + this.arma.nombre + " (daño " + this.daño + ")</td></tr>";
+		if ( this.armadura != null)
+			resto += "<tr><td><strong>Armadura</strong></td><td>" + this.armadura.nombre + " (du: " + this.armadura.du + ") (abs: " + this.armadura.abs + ")</td></tr>";
+		resto += "<tr><td><strong>Monedas</strong></td><td>" + this.monedas.po + " PO, " + this.monedas.pp + " PP, " + this.monedas.pc + " PC</td></tr></table>";
+		resto += this.apartadoEquipo();
+		resto += this.apartadoProdigios();
+		return resto;
+	}
+	
+	apartadoEquipo() {
+		if ( this.pertrechos == null || this.pertrechos.length <= 0)
+			return "";
+		var sequipo = "<h2>Pertrechos</h2>";
+		sequipo += "<table class='w3-table  w3-striped w3-border'><tr><th>Pertrecho</strong></th><th>du</th></tr>";
+		var i=0;
+		for (i=0; i<pj.pertrechos.length; i++) {
+			sequipo += "<tr><td>" + pj.pertrechos[i].nombre + "</td><td>" + pj.pertrechos[i].du + "</td></tr>";
+		}
+		return sequipo;
 	}
 	
 	apartadoRasgos() {
@@ -101,6 +138,7 @@ class CR_PJ {
 	
 	genera() {
 		
+		this.nombre = CR_PJ.asignanombre();
 		this.nivel = Math.trunc(nivelpj);
 		
 		this.objVia = vias.via(nombrevia);
@@ -110,6 +148,8 @@ class CR_PJ {
 		this.INT = CR_PJ.calculaatributo(this.CON);
 		this.SAB = CR_PJ.calculaatributo(this.INT);
 		this.CAR = CR_PJ.calculaatributo(this.SAB);
+		
+		this.monedas.carga(Comun.dados(3,6,0,1), 0, 0);
 		
 		this.pv = this.objVia.ptosvida(this.nivel);
 		
@@ -138,10 +178,80 @@ class CR_PJ {
 			this.CAR += this.progresionatributo(this.CAR, "CAR");
 		}
 		
+		var precio=this.monedas.conviertepc() + 1;
+		i=0;
+		var tmpobj=null;
+		while (precio > this.monedas.conviertepc() && i<5) {
+			
+			if ( this.objVia.armas.length > 0 ) {
+				tmpobj = armas.arma(this.objVia.armas[Comun.random(this.objVia.armas.length, 0)]);
+			}
+			else {
+				tmpobj = armas.arma("random");
+			}
+			precio = tmpobj.precio;
+			i++;
+		}
+		
+		if ( precio > this.monedas.conviertepc() )
+		{
+			this.arma = null;
+			this.daño = "";
+		}	
+		else 
+		{
+			this.arma = tmpobj;
+			this.daño = pj.arma.daño.ndados + "d" + pj.arma.daño.tdado;
+			if ( pj.arma.daño.modificador > 0 )
+				this.daño += "+" + pj.arma.daño.modificador;
+			else if ( pj.arma.daño.modificador < 0 )
+				this.daño += pj.arma.daño.modificador;
+			
+			this.monedas.gasta(this.arma.precio);
+		}
+		
+		tmpobj = null;
+		precio=this.monedas.conviertepc() + 1;
+		i=0;
+		while (precio > this.monedas.conviertepc() && i<5) {
+			
+			if ( this.objVia.armaduras.length > 0 ) {
+				tmpobj = armaduras.armadura(this.objVia.armaduras[Comun.random(this.objVia.armaduras.length, 0)]);
+			}
+			else {
+				tmpobj = armaduras.armadura("random");
+			}
+			precio = tmpobj.precio;
+			i++;
+		}
+		
+		
+		if ( precio > this.monedas.conviertepc() )
+		{
+			this.armadura = null;
+		}	
+		else 
+		{
+			this.armadura = tmpobj;			
+			this.monedas.gasta(this.armadura.precio);
+		}
+				
+		var equipo = Comun.shuffle(pertrechos.pertrechos.clone());
+		i=0;
+		var indice=0;
+		while (this.monedas.conviertepc() > 300 && i < 3 && indice < equipo.length) {
+			if ( equipo[indice].precio + 300 < this.monedas.conviertepc() ) {
+				this.pertrechos.push(equipo[indice]);
+				this.monedas.gasta(equipo[indice].precio);
+				i++;
+			}
+			indice++;
+		}
+		
 	}
 	
 	static rellenaPDFPJ(fields, pj ) {
-		fields['Nombre'] = [ "" ];
+		fields['Nombre'] = [ pj.nombre ];
 		fields['Nivel' ] = [ pj.nivel ];
 		fields['Via' ] = [ pj.objVia.nombre ];
 		fields['Pv' ] = [ pj.pv ];
@@ -163,12 +273,38 @@ class CR_PJ {
 			srasgos += "\n- " + pj.rasgospj[i] + ": " + lrasgos.rasgo(pj.rasgospj[i]).descripcion;
 		}
 		fields[ 'DescripcionNotas' ] = [ srasgos ];
+		var prodigiosypertrechos = "";
 		if ( pj.circulos.length > 0 ){
-			var prodigios = "Número de prodigios por círculo que puede hacer.";
+			prodigiosypertrechos = "Número de prodigios por círculo que puede hacer.";
 			for (i=0; i<pj.circulos.length; i++) {
-				prodigios += "\n- Circulo " + (i+1) + ": " + pj.circulos[i];
+				prodigiosypertrechos += "\n- Circulo " + (i+1) + ": " + pj.circulos[i];
 			}
-			fields[ 'ProdigiosPertrechos' ] = [ prodigios ];
+		}
+		if (pj.pertrechos.length>0) {
+			if (prodigiosypertrechos != "")
+				prodigiosypertrechos+="\n\n";
+			prodigiosypertrechos+="Pertrechos";
+			for (i=0; i<pj.pertrechos.length; i++) {
+				prodigiosypertrechos += "\n- " + pj.pertrechos[i].nombre + " (du: " + pj.pertrechos[i].du + ")";
+			}
+		}
+		
+		fields[ 'ProdigiosPertrechos' ] = [ prodigiosypertrechos ];
+		fields[ 'PO' ] = [ pj.monedas.po ];
+		fields[ 'PP' ] = [ pj.monedas.pp ];
+		fields[ 'PC' ] = [ pj.monedas.pc ];
+		
+		i=1;
+		if ( pj.arma != null ) {
+			fields[ 'Arma1' ] = [ pj.arma.nombre ];
+			fields[ 'Dg1' ] = [ pj.daño ];
+			i++
+		}
+		
+		if ( pj.armadura != null ) {
+			fields[ 'Arma' + i ] = [ pj.armadura.nombre ];
+			fields[ 'Du' + i ] = [ pj.armadura.du ];
+			fields[ 'Abs' + i ] = [ pj.armadura.abs ];
 		}
 		
 		return fields;
