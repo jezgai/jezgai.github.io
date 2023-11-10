@@ -235,10 +235,14 @@ class YS_PJ {
 				this.resfisica += diferencia;
 				
 				this.iniciativa += diferencia;
+				this.perspicacia += diferencia;
+				
 			}
 			else if ( idesde == 3 ) { // de 3 a 4
 				this.aplomo -= diferencia;
 				this.estabilidad -= diferencia;
+				
+				this.proezas_total = 3 + Math.trunc((this.atributos[2].valor - diferencia + this.atributos[3].valor)/2);
 			}
 			else if ( idesde == 4 ) {  // de 4 a 0
 				this.perspicacia -= diferencia;
