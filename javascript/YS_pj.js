@@ -241,6 +241,7 @@ class YS_PJ {
 			else if ( idesde == 3 ) { // de 3 a 4
 				this.aplomo -= diferencia;
 				this.estabilidad -= diferencia;
+				this.iniciativa -= diferencia;
 				
 				this.proezas_total = 3 + Math.trunc((this.atributos[2].valor - diferencia + this.atributos[3].valor)/2);
 			}
