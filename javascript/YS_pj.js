@@ -214,6 +214,8 @@ class YS_PJ {
 				this.agilidad += diferencia;
 				this.iniciativa += diferencia;
 				
+				this.resmental += diferencia;
+				
 			}
 			else if ( idesde == 1 ) { // de 1 a 2
 				this.agilidad -= diferencia;
@@ -242,6 +244,7 @@ class YS_PJ {
 				this.perspicacia -= diferencia;
 				this.aplomo += diferencia;
 				this.estabilidad += diferencia;
+				this.resmental -= diferencia;
 			}
 			
 			var valordesde = this.atributos[idesde].valor;
