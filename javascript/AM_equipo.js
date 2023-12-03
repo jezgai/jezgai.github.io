@@ -54,7 +54,7 @@ class Armaduras {
 				nombre: "Acolchada",
 				ca: 11, 
 				precio: 10,
-				peso: 5,
+				peso: 5000,
 			},
 			{
 				nombre: "Cuero tachonado",
@@ -66,13 +66,13 @@ class Armaduras {
 				nombre: "Cota de escamas",
 				ca: 13, 
 				precio: 50,
-				peso: 20,
+				peso: 20000,
 			},
 			{
 				nombre: "Cota de mallas",
 				ca: 14, 
 				precio: 100,
-				peso: 15,
+				peso: 15000,
 			},
 			{
 				nombre: "Armadura de bandas",
@@ -500,7 +500,7 @@ class Armas {
 			{
 				nombre: "Bayoneta",
 				tipo: "CaC", 
-				tipoCaC: "Arma pequeña", 
+				tipoCaC: "Arma media", 
 				tipoAD: "",
 			},
 			{
@@ -555,12 +555,12 @@ class Armas {
 				nombre: "Pistola",
 				tipo: "AD",
 				tipoCaC: "Arma pequeña", 
-				tipoAD: "Arma de pólvora media",
+				tipoAD: "Arma de pólvora pequeña",
 			},
 			{
 				nombre: "Trabuco",
 				tipo: "AD",
-				tipoCaC: "Arma pequeña", 
+				tipoCaC: "Arma media", 
 				tipoAD: "Arma de pólvora pequeña",
 			},
 			{
@@ -578,13 +578,13 @@ class Armas {
 			{
 				nombre: "Carabina",
 				tipo: "AD",
-				tipoCaC: "Arma media", 
-				tipoAD: "Arma de pólvora grande",
+				tipoCaC: "Arma pequeña", 
+				tipoAD: "Arma de pólvora media",
 			},
 			{
 				nombre: "Fusil",
 				tipo: "AD",
-				tipoCaC: "Arma media", 
+				tipoCaC: "Arma grande", 
 				tipoAD: "Arma de pólvora grande",
 			},
 		];
