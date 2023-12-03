@@ -492,6 +492,24 @@ class Armas {
 				tipoAD: "",
 			},
 			{
+				nombre: "Machete",
+				tipo: "CaC", 
+				tipoCaC: "Arma pequeña", 
+				tipoAD: "",
+			},
+			{
+				nombre: "Bayoneta",
+				tipo: "CaC", 
+				tipoCaC: "Arma pequeña", 
+				tipoAD: "",
+			},
+			{
+				nombre: "Cuchillo",
+				tipo: "CaC",
+				tipoCaC: "Arma pequeña", 
+				tipoAD: "Arrojadiza",
+			},
+			{
 				nombre: "Arco corto",
 				tipo: "AD",
 				tipoCaC: "", 
