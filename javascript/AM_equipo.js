@@ -575,6 +575,18 @@ class Armas {
 				tipoCaC: "Arma media", 
 				tipoAD: "Arma de pólvora grande",
 			},
+			{
+				nombre: "Carabina",
+				tipo: "AD",
+				tipoCaC: "Arma media", 
+				tipoAD: "Arma de pólvora grande",
+			},
+			{
+				nombre: "Fusil",
+				tipo: "AD",
+				tipoCaC: "Arma media", 
+				tipoAD: "Arma de pólvora grande",
+			},
 		];
 	}
 	
