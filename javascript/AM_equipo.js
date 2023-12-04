@@ -278,17 +278,17 @@ class Armas {
 				nombre: "Arma de pólvora media",
 				tipo: "AD",
 				dano: 8,
-				peso: 7000,
+				peso: 5000,
 				precio: 1500,
-				alcance: 25,
+				alcance: 50,
 			},
 			{
 				nombre: "Arma de pólvora grande",
 				tipo: "AD",
 				dano: 10,
-				peso: 9000,
+				peso: 7000,
 				precio: 2000,
-				alcance: 50,
+				alcance: 100,
 			},
 		];
 		this.armas = 
@@ -572,8 +572,8 @@ class Armas {
 			{
 				nombre: "Mosquete",
 				tipo: "AD",
-				tipoCaC: "Arma media", 
-				tipoAD: "Arma de pólvora grande",
+				tipoCaC: "Arma grande", 
+				tipoAD: "Arma de pólvora media",
 			},
 			{
 				nombre: "Carabina",

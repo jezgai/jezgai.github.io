@@ -448,7 +448,7 @@ class PJ {
 					}
 				}
 				*/
-				if ( this._objClase.dano > 0 && this._objClase.tipobonifdano == "CC y AC" ) {
+				if ( this._objClase.dano > 0 && this._objClase.tipobonifdano == "CC y AD" ) {
 					fields[ "CarEspeciales" + (indiceCE) ] = [ "Bono al daño " + this._objClase.dano ];
 					indiceCE++;
 				}
@@ -464,14 +464,27 @@ class PJ {
 				
 				var iarma = 0;
 				for (iarma = 0; iarma < this.armas.length; iarma++) {
-					fields[ "NArma" + (iarma+1) ] = [ this.armas[iarma].nombre ];
-					if ( this.armas[iarma].tipo == "CaC" )
-						fields[ "Dano" + (iarma+1) ] = [ "d" + this.armas[iarma].danoCaC ];
-					else
-						fields[ "Dano" + (iarma+1) ] = [ "d" + this.armas[iarma].danoAD ];
+					var nombrearma = this.armas[iarma].nombre;
+					var danoarma = "";
+					if ( this.armas[iarma].tipo == "CaC" ) {
+						danoarma = "d" + this.armas[iarma].danoCaC;
+						if ( this.armas[iarma].danoAD > 0) {
+							danoarma += " (d" + this.armas[iarma].danoAD + ")";
+							nombrearma += " (CaC)";
+						}
+					}
+					else {
+						danoarma = "d" + this.armas[iarma].danoAD;
+						if ( this.armas[iarma].danoCaC > 0) {
+							danoarma += " (d" + this.armas[iarma].danoCaC + ")";
+							nombrearma += " (AD)";
+						}
+					}
 					if ( this.armas[iarma].alcance > 0 )
 						fields[ "Alcance" + (iarma+1) ] = [ this.armas[iarma].alcance ];
 					
+					fields[ "NArma" + (iarma+1) ] = [ nombrearma ];
+					fields[ "Dano" + (iarma+1) ] = [ danoarma ];
 					fields[ "Peso" + (iarma+1) ] = [ this.armas[iarma].peso/1000 ];
 				}
 				
