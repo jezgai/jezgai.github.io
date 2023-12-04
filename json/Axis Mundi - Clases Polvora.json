@@ -1,0 +1,793 @@
+[
+  {
+    "nombre": "Soldado",
+    "requisitos": [
+      {
+        "atributo": "FUE",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "FUE",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 8,
+    "caracteristicas": [
+      "Pueden usar cualquier tipo de armadura"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 2000,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 1,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Espada corta",
+        "Pistola"
+      ],
+      [
+        "Espada ropera",
+        "Daga",
+        "Pistola"
+      ],
+      [
+        "Fusil",
+        "Estoque",
+        "Bayoneta"
+      ]
+    ]
+  },
+  {
+    "nombre": "Pirata",
+    "requisitos": [
+      {
+        "atributo": "DES",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "DES",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Solo pueden usar armaduras de cuero. Escudos no.",
+      "Dobla ataque y daño al Apuñalar por la espalda",
+      "Ventaja al escalar"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 1400,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 14
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 15
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 4,
+      "pericias": [
+        {
+          "nombre": "Apuñalar",
+          "puntos": 0
+        },
+        {
+          "nombre": "Detectar Trampas",
+          "puntos": 1
+        },
+        {
+          "nombre": "Juego de Manos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Mecanismos",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Daga",
+        "Pistola",
+        "Estoque"
+      ],
+      [
+        "Sable",
+        "Daga",
+        "Pistola"
+      ],
+      [
+        "Sable",
+        "Trabuco",
+        "Machete"
+      ],
+      [
+        "Sable",
+        "Mosquete",
+        "Pistola"
+      ]
+    ]
+  },
+  {
+    "nombre": "Explorador indígena",
+    "requisitos": [
+      {
+        "atributo": "CON",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "CON",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "No pueden usar armaduras mejores que malla",
+      "Bono: Puntería",
+      "Camuflaje natural (+2 a Sigilo en entornos naturales)"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 1850,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 1,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": [
+        {
+          "nombre": "Supervivencia",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Machete",
+        "Arco corto"
+      ],
+      [
+        "Hacha de mano",
+        "Arco corto"
+      ],
+      [
+        "Machete",
+        "Carabina"
+      ]
+    ]
+  },
+  {
+    "nombre": "Cazador",
+    "requisitos": [ { "atributo": "CON", "valor": 9} ],
+    "reqprimario": "CON",
+    "modifadicional": [ 0, 0, 0, 0, 0, 0 ],
+    "dg" : 6,
+    "caracteristicas": [ "No pueden usar armaduras mejores que malla", 
+			             "Bono: Puntería",
+			             "Rastreador (+2 a Supervivencia cuando sigue rastros" ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 1850,
+    "tsalvacion": [
+                    { "nombre": "Captura", "valor": 15 },
+                    { "nombre": "Aflicciones", "valor": 14 },
+                    { "nombre": "Ataque de area", "valor": 16 },
+                    { "nombre": "Artefactos magicos", "valor": 16 },
+                    { "nombre": "Conjuros", "valor": 17 }
+    ],
+    "idiomas": [  ],
+    "boniftipoarmas": 1,
+    "periciasespeciales": { "puntos": 0, "pericias": [ ] },
+    "pericias": { "puntos": 2, "pericias": [ { "nombre": "Supervivencia", "puntos": 0} ] },
+    "conjuros": { "fijos": [ ], "numeroN1": 0, "conjurosN1": [ ], "numeroN2": 0, "conjurosN2": [ ] },
+    "armas": [
+      [
+        "Machete",
+        "Carabina"
+      ],
+      [
+        "Daga",
+        "Mosquete"
+      ],
+      [
+        "Daga",
+        "Jabalina"
+      ]
+    ]
+  },
+  {
+    "nombre": "Guerrero indígena",
+    "requisitos": [
+      {
+        "atributo": "CON",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "CON",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 8,
+    "caracteristicas": [
+      "Solo puede usar armaduras de malla o peor",
+      "Ventaja al escalar",
+      "Fornido. Difícil de matar"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 2450,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 1,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Arco corto",
+        "Hacha de mano",
+        "Machete"
+      ],
+      [
+        "Lanza",
+        "Machete",
+        "Hacha de mano"
+      ],
+      [
+        "Carabina",
+        "Hacha de mano",
+        "Machete"
+      ]
+    ]
+  },
+  {
+    "nombre": "Asesino",
+    "requisitos": [
+      {
+        "atributo": "FUE",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "FUE",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Solo pueden usar armaduras de cuero. Escudos no.",
+      "Dobla ataque y daño al Apuñalar por la espalda",
+      "Ventaja al escalar. Pasar desapercibido. Reflejos finos"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 1850,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 1,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": [
+        {
+          "nombre": "Apuñalar",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Daga",
+        "Pistola"
+      ],
+      [
+        "Estoque",
+        "Daga"
+      ]
+    ]
+  },
+  {
+    "nombre": "Curandero",
+    "requisitos": [
+      {
+        "atributo": "INT",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "INT",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 4,
+    "caracteristicas": [
+      "No pueden usar ningún tipo de armadura"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 0,
+    "movimiento": 40,
+    "experiencia": 1250,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 15
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 11
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 12
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 6,
+      "pericias": [ 
+        {
+          "nombre": "Curar",
+          "puntos": 0
+        },
+        {
+          "nombre": "Boticario",
+          "puntos": 0
+        },
+        {
+          "nombre": "Historia antigua",
+          "puntos": 1
+        },
+        {
+          "nombre": "Ojo para las hierbas",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Pistola",
+        "Daga"
+      ],
+      [
+        "Cuchillo",
+        "Hacha de mano"
+      ],
+      [
+        "Cuchillo",
+        "Arco corto"
+      ]
+    ]
+  },
+  {
+    "nombre": "Ladrón",
+    "requisitos": [
+      {
+        "atributo": "DES",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "DES",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Solo pueden usar armaduras de cuero. Escudos no.",
+      "Dobla ataque y daño al Apuñalar por la espalda",
+      "Ventaja al escalar"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 1400,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 14
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 15
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 4,
+      "pericias": [
+        {
+          "nombre": "Apuñalar",
+          "puntos": 0
+        },
+        {
+          "nombre": "Detectar Trampas",
+          "puntos": 1
+        },
+        {
+          "nombre": "Juego de Manos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Mecanismos",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Daga",
+        "Pistola"
+      ],
+      [
+        "Estoque",
+        "Daga"
+      ]
+    ]
+  },
+  {
+    "nombre": "Diplomático",
+    "requisitos": [
+      {
+        "atributo": "SAB",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "SAB",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Pueden usar cualquier tipo de armadura",
+      "Discurso persuasivo"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 1700,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 15
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 11
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 12
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 1,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": [ 
+        {
+          "nombre": "Historia antigua",
+          "puntos": 1
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+      [
+        "Pistola",
+        "Daga"
+      ],
+      [
+        "Pistola",
+        "Estoque"
+      ],
+      [
+        "Daga",
+        "Espada ropera",
+        "Pistola"
+      ]
+    ]
+  }
+]
