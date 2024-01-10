@@ -1,0 +1,215 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>A Rasp of Sand - Ayuda para crear personajes</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="javascript/AROS_oficios.js"></script>
+<script src="javascript/AROS_miscelanea.js"></script>
+<script src="javascript/AROS_equipo.js"></script>
+<script src="javascript/AROS_pj.js"></script>
+
+<script src="javascript/pdfform.minipdf.dist.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+
+<script>
+	
+
+	let pj = new PJ();
+	
+	function rellenaPDF() {
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		var competencias = '';
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = pj.rellenaPDF();
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, 'PJ.pdf'); // 'PersonajeDH.pdf');
+			}
+		};
+
+
+		xhr.open('GET', pj.plantillaPDF, true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();		
+		
+	}	
+		
+	function calcula() {
+		
+		pj = new PJ();
+		pj.genera();
+		
+		var satrs = pj.tablaAtributos();
+		document.getElementById("atributos").innerHTML = satrs;
+		document.getElementById("armaduras").innerHTML = pj.tablaArmaduras();
+		document.getElementById("armas").innerHTML = pj.tablaArma();
+		document.getElementById("equipo").innerHTML = pj.tablaEquipo();
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
+		
+		document.getElementById("botonpdf").style.visibility="visible";
+		document.getElementById("botonjson").style.visibility="hidden";
+
+	}
+	
+	
+	function exportaJSON() {
+
+		var pjexport = {}; //pj;
+		//pjexport.botid = "SUSTITUIR_POR_TOKEN_BOT";
+		//pjexport.chatid = "SUSTITUIR_POR_ID_DEL_CHAT";
+		pjexport.nombre = pj.nombre;
+		pjexport.genero = pj.genero;
+		pjexport.sistema = "Knave";
+		pjexport.atributos = pj.atributos;
+		pjexport.pv = pj.pg;
+		pjexport.pvinicial = pj.pg;
+		//pjexport.da = pj.da;
+		pjexport.defensa = { };
+		pjexport.defensa["bono"] = pj.da - 10;
+		pjexport.defensa["da"] = pj.da;
+		pjexport.arma = pj.arma;
+		pjexport.armadura = pj.armadura;
+		pjexport.yelmo = pj.yelmo;
+		pjexport.escudo = pj.escudo;
+		
+		pjexport.rasgos = {}; 
+		var literales = rasgos.lrasgos();
+		var i=0;
+		for (i=0;i<literales.length; i++) {
+			pjexport.rasgos[literales[i]]=pj.rasgos[i];
+		}
+		var sequipo = "";
+		for (i = 0; i < pj.equipo.length; i++) {
+			sequipo += pj.equipo[i] + "<br/>";
+		}
+		
+		pjexport.equipo = sequipo;
+		pjexport.notas = ".";
+		pjexport.px = 0;
+				
+		var jsonpj = JSON.stringify(pjexport, null, "\t");
+		
+		let element = document.createElement('a');
+		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(jsonpj));
+		element.setAttribute('download', pjexport.nombre + ".json");
+
+		element.style.display = 'none';
+		document.body.appendChild(element);
+
+		element.click();
+
+		document.body.removeChild(element);
+		
+	}
+	
+</script>
+<style>
+	
+* {
+  box-sizing: border-box;
+}
+.minileft {
+  float:left;
+  width:16%;
+  padding:0 1px;
+}
+.left {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.microleft {
+  float:left;
+  width:8%;
+  padding:0 1px;
+}
+.main {
+  float:left;
+  width:34%;
+  padding:0 1px;
+}
+.right {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.macroright {
+  float:left;
+  width:46%;
+  padding:0 1px;
+}
+.casitotal {
+  float:left;
+  width:82%;
+  padding:0 1px;
+}
+.total {
+  float:left;
+  width:100%;
+  padding:0 1px;
+}
+.dostercios {
+  float:left;
+  width:67%;
+  padding:0 1px;
+}
+
+
+
+@media only screen and (max-width:820px) {
+  /* For mobile phones: */
+  .left, .main, .minileft, .microleft, .macroright, .right, .casitotal, .total, .minileft, .dostercios {
+    width:100%;
+  }
+  
+</style>
+
+
+</head>
+<body >
+	<div class="w3-container w3-blue w3-center">
+	  <h2>A Rasp of Sand - Ayuda para crear personajes</h2>
+	</div>
+	<div style="overflow:auto">
+		<div class="minileft"><p><button class='w3-button w3-block w3-blue' onclick='calcula()'>Calcula</button></p></div>
+		<div class="minileft" id="botonpdf"><p><button class='w3-button w3-block w3-blue' onclick='rellenaPDF()'>Genera PDF</button></p></div>
+		<div class="minileft" id="botonjson"><p><button class='w3-button w3-block w3-blue' onclick='exportaJSON()'>Exporta json</button></p></div>
+	</div>
+	<div style="overflow:auto">
+	
+		<div class="left">
+			<div class="w3-container w3-blue w3-center"><p><strong>Atributos</strong></p></div> 
+			<div id="atributos"></div>
+		</div>
+		<div class="main">
+			<div class="w3-container w3-blue w3-center"><p><strong>Equipo</strong></p></div> 
+			<div id="equipo"></div>
+			<div class="w3-container w3-blue w3-center"><p><strong>Rasgos</strong></p></div> 
+			<div id="rasgos"></div>
+		</div>
+		<div class="right">
+			<div class="w3-container w3-blue w3-center"><p><strong>Armas y Armaduras</strong></p></div> 
+			<div id="armaduras"></div>
+			<div id="armas"></div>
+		</div>
+	</div>	
+	
+	<div style="overflow:auto">
+		<div class="total">
+			<br/>
+			Para hacer este generador se ha usado la traducción de A Rasp of Sand de <a href="https://outremer.es/index.php/producto/a-rasp-of-sand-version-digital/" target="_blank">Outremer</a>, así como la <a href="https://outremer.es/index.php/descargas/" target="_blank">hoja de personaje de Outremer</a> y la lista de nombres de <a href="https://es.cairnrpg.com" target="_blank">Cairn</a>
+			<br/>
+		</div>
+	</div>
+	
+	<script>calcula();</script>
+</body>
+</html>
+
