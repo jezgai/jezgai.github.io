@@ -31,7 +31,7 @@
 		var num=0;
 		for (i=0; i<lHechizos.length; i++) {
 			if ( document.getElementById("chechizos" + i).checked ) {
-				hechizosSeleccionados.push(lHechizos[i]);
+				hechizosSeleccionados.push(lHechizos[i].nombre);
 				num++;
 			}
 			if ( num == numHechizos ) {
@@ -40,7 +40,7 @@
 		}
 		if ( num == 0 ) {
 			for (i=0; i<lHechizos.length && i<numHechizos; i++) {
-				hechizosSeleccionados.push(lHechizos[i]);
+				hechizosSeleccionados.push(lHechizos[i].nombre);
 			}
 		}
 		
@@ -160,7 +160,10 @@
 	        var i=0;
 	        var hechizoshtml = "<ul>";
 	        for (i=0; i<lHechizos.length; i++) {
-			    hechizoshtml += "<li><label><input type='checkbox' id='chechizos"+i+"' /> " + lHechizos[i] + "</label></li>";
+			    hechizoshtml += "<li><label><input type='checkbox' id='chechizos"+i+"' /> " + lHechizos[i].nombre;
+			    if ( lHechizos[i].nivel != null) 
+					hechizoshtml += " (nivel " + lHechizos[i].nivel + ")";
+				hechizoshtml += "</label></li>";
 	        }
 	        hechizoshtml += "</ul>";
 	        document.getElementById("listahechizos").innerHTML = hechizoshtml;
