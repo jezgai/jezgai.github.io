@@ -23,27 +23,40 @@
 	let tipossistema = [];
 	let lHechizos = [];
 	let tipohechizos = "";
-	function rellenaPDF() {
+	
+	function generaPDF() {
+	    
 		if ( objsistema == null ) return;
 		var numHechizos = objsistema.numeroHechizos(tipohechizos);
 		var hechizosSeleccionados = [];
 		var i=0;
 		var num=0;
+		var j=1;
 		for (i=0; i<lHechizos.length; i++) {
 			if ( document.getElementById("chechizos" + i).checked ) {
 				hechizosSeleccionados.push(lHechizos[i].nombre);
 				num++;
 			}
-			if ( num == numHechizos ) {
-				break;
+			if ( hechizosSeleccionados.length == numHechizos ) {
+			    rellenaPDF(hechizosSeleccionados, " " + j);
+			    hechizosSeleccionados = [];
+			    j++;
 			}
 		}
-		if ( num == 0 ) {
+		if ( hechizosSeleccionados.length > 0 ) {
+		    rellenaPDF(hechizosSeleccionados, " " + j);
+		    hechizosSeleccionados = [];
+		}
+		else if ( num == 0 ) {
 			for (i=0; i<lHechizos.length && i<numHechizos; i++) {
 				hechizosSeleccionados.push(lHechizos[i].nombre);
 			}
+			rellenaPDF(hechizosSeleccionados, "");
 		}
-		
+	}
+	
+	function rellenaPDF(hechizosSeleccionados, subindice) {
+		if ( objsistema == null ) return;		
 		
 		var xhr = new XMLHttpRequest();
 		var contenido;
@@ -55,7 +68,7 @@
 			  var fields = objsistema.rellenaPDF(hechizosSeleccionados);
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  saveAs(blob, 'Tarjeta ' + tipohechizos + '.pdf'); 
+			  saveAs(blob, 'Tarjeta ' + tipohechizos + subindice + '.pdf'); 
 			}
 		};
 
@@ -263,7 +276,7 @@
 	    </div>
 	    <div class="main" id="divtipo">	        
 	    </div>
-		<div class="left" id="botonpdf"><p><button class='w3-button w3-block w3-blue' onclick='rellenaPDF()'>Genera PDF</button></p></div>
+		<div class="left" id="botonpdf"><p><button class='w3-button w3-block w3-blue' onclick='generaPDF()'>Genera PDF</button></p></div>
 	</div>
 	<div style="overflow:auto">
 		<div class="total" id="listahechizos">
