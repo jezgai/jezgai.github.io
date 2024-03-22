@@ -16,6 +16,7 @@
 
 <script src="javascript/pdfform.minipdf.dist.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js"></script>
 
 <script>
 		
@@ -80,33 +81,6 @@
 		xhr.send();	
 	}
 	
-	function cargahechizos() {
-		var i=0;
-		var lTrucos = magia.listaHechizos("Trucos");
-		var trucos = "<h2>Selecciona un máximo de " + magia.numeroHechizos("Trucos") + " trucos</h2><ul>"; 
-		for (i=0;i<lTrucos.length;i++) {
-			trucos += "<li><label><input type='checkbox' id='ctrucos"+i+"' /> " + lTrucos[i] + "</label></li>";
-		}
-		trucos += "</ul>";
-		
-		var lConjuros = magia.listaHechizos("Conjuros");
-		var conjuros = "<h2>Selecciona un máximo de " + magia.numeroHechizos("Conjuros") + " conjuros</h2><ul>";
-		for (i=0;i<lConjuros.length;i++) {
-			conjuros += "<li><label><input type='checkbox' id='cconjuros"+i+"' /> " + lConjuros[i] + "</label></li>";
-		}
-		conjuros += "</ul>";
-		var lRituales = magia.listaHechizos("Rituales");
-		var rituales = "<h2>Selecciona un máximo de " + magia.numeroHechizos("Rituales") + " rituales</h2><ul>";
-		for (i=0;i<lRituales.length;i++) {
-			rituales += "<li><label><input type='checkbox' id='crituales"+i+"' /> " + lRituales[i] + "</label></li>";
-		}
-		rituales += "</ul>";
-		
-		document.getElementById("trucos").innerHTML = trucos;
-		document.getElementById("conjuros").innerHTML = conjuros;
-		document.getElementById("rituales").innerHTML = rituales;
-	}
-	
 	function cargapagina() {
 	    document.getElementById("divtipo").style.visibility="hidden";
 	    document.getElementById("botonpdf").style.visibility="hidden";
@@ -115,7 +89,9 @@
 	
 	function vacia() {
     	document.getElementById("divtipo").innerHTML = "";
-    	document.getElementById("listahechizos").innerHTML = "";
+    	document.getElementById("hechizos1").innerHTML = "";
+    	document.getElementById("hechizos2").innerHTML = "";
+    	document.getElementById("hechizos3").innerHTML = "";
 	    document.getElementById("divtipo").style.visibility="hidden";
 	    document.getElementById("botonpdf").style.visibility="hidden";
 	    document.getElementById("listahechizos").style.visibility="hidden";
@@ -171,22 +147,29 @@
 	        tipohechizos = tipossistema[idx-1];
 	        lHechizos = objsistema.listaHechizos(tipossistema[idx-1])
 	        var i=0;
-	        var hechizoshtml = "<ul>";
+	        var hechizoshtml = [ "<ul>", "<ul>", "<ul>" ];
 	        for (i=0; i<lHechizos.length; i++) {
-			    hechizoshtml += "<li><label><input type='checkbox' id='chechizos"+i+"' /> " + lHechizos[i].nombre;
+	            var indicehechizo = math.mod(i,3);
+			    hechizoshtml[indicehechizo] += "<li><label><input type='checkbox' id='chechizos"+i+"' /> " + lHechizos[i].nombre;
 			    if ( lHechizos[i].nivel != null) 
-					hechizoshtml += " (nivel " + lHechizos[i].nivel + ")";
-				hechizoshtml += "</label></li>";
+					hechizoshtml[indicehechizo] += " (nivel " + lHechizos[i].nivel + ")";
+				hechizoshtml[indicehechizo] += "</label></li>";
 	        }
-	        hechizoshtml += "</ul>";
-	        document.getElementById("listahechizos").innerHTML = hechizoshtml;
+	        hechizoshtml[0] += "</ul>";
+	        hechizoshtml[1] += "</ul>";
+	        hechizoshtml[2] += "</ul>";
+	        document.getElementById("hechizos1").innerHTML = hechizoshtml[0];
+	        document.getElementById("hechizos2").innerHTML = hechizoshtml[1];
+	        document.getElementById("hechizos3").innerHTML = hechizoshtml[2];
 	        document.getElementById("listahechizos").style.visibility="visible";
     	    document.getElementById("botonpdf").style.visibility="visible";
 	    }
 	    else {
 		    tipohechizos = "";
 	        lHechizos = [];
-	        document.getElementById("listahechizos").innerHTML = "";
+	        document.getElementById("hechizos1").innerHTML = "";
+	        document.getElementById("hechizos2").innerHTML = "";
+	        document.getElementById("hechizos3").innerHTML = "";
 	        document.getElementById("listahechizos").style.visibility="hidden";
 	    document.getElementById("botonpdf").style.visibility="hidden";
 	    }
@@ -281,7 +264,9 @@
 	<div style="overflow:auto">
 		<div class="total" id="listahechizos">
 			<div class="w3-container w3-blue w3-center"><p><strong>Hechizos</strong></p></div> 
-			<div id="hechizos"></div>
+			<div class="left" id="hechizos1"></div>
+			<div class="main" id="hechizos2"></div>
+			<div class="left" id="hechizos3"></div>
 		</div>
 	</div>	
 	<script>cargapagina();</script>
