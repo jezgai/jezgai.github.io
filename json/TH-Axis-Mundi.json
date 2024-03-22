@@ -1,0 +1,84 @@
+{
+    "Hechizos": {
+		    "Acelerar": {    "Descripción": "Duplica la rutina de ataques del objetivo, aunque este no puede lanzar dos conjuros por ronda, y duplica su movimiento; también contrarresta ralentizar.\nRevertido, reduce a la mitad el movimiento del objetivo y solo le permite actuar una de cada dos rondas. Cada vez que se lanza, el objetivo envejece 1d6 años",
+                "Alcance": "80 m",
+                "Duración": "3 turnos",
+                "Nivel": 3,
+                "Categoria": "Desplazamiento",
+                "Resistencia": "No"
+            },
+		    "Adivinación": {    "Descripción": "Indica si una acción tendrá un resultado beneficioso o perjudicial. El Amo del Calabozo hará una tirada oculta que indicará si la respuesta es correcta (60% de posibilidades). El augurio puede ver 1 semana en el futuro.",
+                "Alcance": "Propio",
+                "Duración": "Inmediato",
+                "Nivel": 4,
+                "Categoria": "Detección",
+                "Resistencia": "No"
+            },
+		    "Agrandar animal": {    "Descripción": "Duplica el tamaño del objetivo: su daño se dobla y su CA mejora en 2",
+                "Alcance": "40 m",
+                "Duración": "12 turnos",
+                "Nivel": 3,
+                "Categoria": "Transformación",
+                "Resistencia": "Si"
+            },
+		    "Apertura": {    "Descripción": "Abre puertas atascadas, atrancadas, cerradas con llave o retenidas, incluso si son secretas (si han sido descubiertas de antemano) o cofres que se abran de forma especial. No puede levantar puertas como rastrillos ni afecta otras formas de cerrar como cuerdas o cadenas. Una vez abierta una puerta, permanece así.",
+                "Alcance": "10 m",
+                "Duración": "Instantánea",
+                "Nivel": 2,
+                "Categoria": "Terraformación",
+                "Resistencia": "Si"
+            },
+		    "Arma sagrada": {    "Descripción": "El arma hace 1d6 más de daño y puede golpear a criaturas a las que solo les afectan armas mágicas.",
+                "Alcance": "0 m",
+                "Duración": "1 ronda/nivel",
+                "Nivel": 2,
+                "Categoria": "Mejora",
+                "Resistencia": "No"
+            },
+            "Asesino fantasmal": {    "Descripción": "Crea una ilusión de aquello que el objetivo más teme. Cada ronda trata de golpear al objetivo como un monstruo de 4 DG. un único golpe exitoso causa miedo, como la habilidad especial. Es inmaterial, por lo que es invulnerable y puede atravesar barreras físicas.",
+                "Alcance": "10 m",
+                "Duración": "1 ronda/nivel",
+                "Nivel": 5,
+                "Categoria": "Ilusión",
+                "Resistencia": "Si"
+            },
+		    "Augurio": {    "Descripción": "Indica si una acción tendrá un resultado beneficioso o perjudicial. El Amo del Calabozo hará una tirada oculta que indicará si la respuesta es correcta (70% de posibilidades). El augurio solo puede ver 3 turnos en el futuro.",
+                "Alcance": "Propio",
+                "Duración": "Inmediato",
+                "Nivel": 2,
+                "Categoria": "Detección",
+                "Resistencia": "No"
+            },
+		    "Bendición": {    "Descripción": "Otorga +1 a moral, daño, ataque y tiradas de salvación contra miedo. Afecta a los aliados que no pueden estar enzarzados en combate.",
+                "Alcance": "Propio",
+                "Duración": "6 turnos",
+                "Nivel": 2,
+                "Categoria": "Mejora",
+                "Resistencia": "No"
+            },
+            "Bola de fuego": {    "Descripción": "Provoca en el espacio de una esfera de 6 metros de radio, 1d6 de daño de fuego por nivel del lanzador",
+                "Alcance": "70 m",
+                "Duración": "Instantánea",
+                "Nivel": 3,
+                "Categoria": "Ráfaga",
+                "Resistencia": "Si (mitad daño)"
+            },
+            "Búsqueda": {    "Descripción": "El objetivo es enviado en una misión. Esta puede ser peligrosa, pero el objetivo no puede recibir orden de dañarse a sí mismo. Si el objetivo se resiste a tratar de seguir la misión, quedará bajo una maldición a decidir por el Amo del Calabozo hasta que complete la misión.",
+                "Alcance": "10 m",
+                "Duración": "Indefinida",
+                "Nivel": 5,
+                "Categoria": "Control",
+                "Resistencia": "Si"
+            },
+		    "Maldición": {    "Descripción": "Penaliza a la víctima con -1 a moral, daño, ataque y tiradas de salvación contra miedo. Afecta a los enemigos del lanzador (que sí pueden estar en combate).",
+                "Alcance": "Propio",
+                "Duración": "6 turnos",
+                "Nivel": 2,
+                "Categoria": "Mejora",
+                "Resistencia": "Si"
+            }
+    },
+    "Arcana": [ "Acelerar", "Apertura", "Asesino fantasmal", "Bola de fuego", "Búsqueda" ],
+    "Divina": [ "Adivinación", "Agrandar animal", "Arma sagrada", "Augurio", "Bendición", "Búsqueda", "Maldición" ]
+}
+

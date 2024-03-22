@@ -4,28 +4,34 @@ class AxM extends SistemaBase {
         super();
         this.hechizos.EtiquetaTipos = "Listas de hechizos";
         this.hechizos.Tipos = {
-                    "Mago": { "Numero": 4, "PDF": "pdf/TM_AxM_Hechizos.pdf" },
-                    "Clerigo": { "Numero": 4, "PDF": "pdf/TM_AxM_Hechizos.pdf" },
-                    "Sacerdote": { "Numero": 4, "PDF": "pdf/TM_AxM_Hechizos.pdf" }
+                    "Arcana": { "Numero": 4, "PDF": "pdf/TH_AxM_Hechizos.pdf" },
+                    "Divina": { "Numero": 4, "PDF": "pdf/TH_AxM_Hechizos.pdf" }
                 };
-        this.hechizos.Mago = [ ];
-        this.hechizos.Clerigo = [ ];
-        this.hechizos.Sacerdote = [ ];
+        this.hechizos.Arcana = [ ];
+        this.hechizos.Divina = [ ];
         
-        /*var tablas = [ {} ];
-        Comun.cargatablas("TH-Axis-Mundi.json", this);*/
+        Comun.cargatablas("TH-Axis-Mundi.json", this);
     }
     
     init(tablas) {
         this.hechizos.Hechizos = tablas.Hechizos;
-        this.hechizos.Mago = tablas.Mago;
-        this.hechizos.Clerigo = tablas.Clerigo;
-        this.hechizos.Sacerdote = tablas.Sacerdote;
+        this.hechizos.Arcana = tablas.Arcana;
+        this.hechizos.Divina = tablas.Divina;
     }
     
+
 	rellenaPDF(lHechizos) {
 		var i=0;
-		var fields = {};
+		var fields = {};		
+		for (i=0;i<lHechizos.length;i++) {
+            fields["Nombre" + (i+1)] = [ lHechizos[i] ];
+            fields["Categoria" + (i+1) ] =  [ this.hechizos.Hechizos[lHechizos[i]].Categoria ];
+            fields["Resistencia" + (i+1) ] =  [ this.hechizos.Hechizos[lHechizos[i]].Resistencia ];
+            fields["Descripcion" + (i+1) ] =  [ this.hechizos.Hechizos[lHechizos[i]].Descripción ];
+			fields["Alcance" + (i+1) ] = [ this.hechizos.Hechizos[lHechizos[i]].Alcance ];
+			fields["Duracion" + (i+1) ] = [ this.hechizos.Hechizos[lHechizos[i]]["Duración"] ];
+			fields["Nivel" + (i+1) ] = [ this.hechizos.Hechizos[lHechizos[i]].Nivel ];
+		}
 		return fields;
 	}
 }
