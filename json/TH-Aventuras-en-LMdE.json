@@ -10,7 +10,7 @@
                 "Duración": "6 turnos",
                 "Nivel": 6
             },
-            "Abrir las aguas": {    "Descripción": "Mediante este conjuro, el clérigo puede abrir un sendero en medio de las aguas. Por cada nivel de lanzador se crea un surco de 1 metro d profundidad por 2,5 metros de ancho y 20 metros de largo. Una vez terminado el conjuro, el sendero desaparece y las aguas vuelven a su cauce. Este conjuro se puede lanzar bajo el agua creando un cilindro de aire para respirar en lugar de un sendero.",
+            "Abrir las aguas (clérigo)": {    "Descripción": "Mediante este conjuro, el clérigo puede abrir un sendero en medio de las aguas. Por cada nivel de lanzador se crea un surco de 1 metro d profundidad por 2,5 metros de ancho y 20 metros de largo. Una vez terminado el conjuro, el sendero desaparece y las aguas vuelven a su cauce. Este conjuro se puede lanzar bajo el agua creando un cilindro de aire para respirar en lugar de un sendero.",
                 "Alcance": "6 metros por nivel",
                 "Duración": "1 turno por nivel",
                 "Nivel": 6
@@ -150,7 +150,7 @@
                 "Duración": "Especial",
                 "Nivel": 9
             },
-	        "Auxilio": {    "Descripción": "Para lanzar este conjuro el clérigo elige un objeto relacionado con su deidad, como un símbolo, una talla, etc. Una vez lanzado, el objeto irradia una poderosa magia que permite al portador teletransportarse a la guarida del lanzador al mencionar la palabra de mando que designe. Este conjuro es inverso y puede lanzarse para transportar al clérigo a las inmediaciones del portador cuando se dice la palabra de mando.",
+	        "Auxilio (clérigo)": {    "Descripción": "Para lanzar este conjuro el clérigo elige un objeto relacionado con su deidad, como un símbolo, una talla, etc. Una vez lanzado, el objeto irradia una poderosa magia que permite al portador teletransportarse a la guarida del lanzador al mencionar la palabra de mando que designe. Este conjuro es inverso y puede lanzarse para transportar al clérigo a las inmediaciones del portador cuando se dice la palabra de mando.",
                 "Alcance": "Objeto",
                 "Duración": "Especial",
                 "Nivel": 7
@@ -170,7 +170,7 @@
                 "Duración": "10 turnos",
                 "Nivel": 6
             },
-	        "Bajar las aguas": {    "Descripción": "Este potente hechizo permitirá al conjurador bajar el nivel de las aguas a la mitad de su caudal en una superficie igual o menor a 3.000 metros cuadrados como si de una marea se tratara.",
+	        "Bajar las aguas (clérigo)": {    "Descripción": "Este potente hechizo permitirá al conjurador bajar el nivel de las aguas a la mitad de su caudal en una superficie igual o menor a 3.000 metros cuadrados como si de una marea se tratara.",
                 "Alcance": "80 metros",
                 "Duración": "10 turnos",
                 "Nivel": 4
@@ -270,20 +270,10 @@
                 "Duración": "6 turnos por nivel",
                 "Nivel": 7
             },
-	        "Caminar por el aire": {    "Descripción": "Este conjuro otorga al receptor la capacidad de caminar por el aire como si estuviera pisando terreno sólido, permite caminar en cualquier dirección con la velocidad de movimiento normal de la criatura. No hay límite en cuanto al tamaño de la criatura, ésta podrá caminar por el aire independientemente de su tamaño.",
-                "Alcance": "Receptor",
-                "Duración": "1 hora + 10 minutos/nivel",
-                "Nivel": 5
-            },
-	        "Caminar por el aire": {    "Descripción": "Este conjuro otorga al receptor la capacidad de caminar por el aire como si estuviera pisando terreno sólido, pudiendo avanzar en cualquier dirección con la velocidad de movimiento normal de la criatura. No hay límite en cuanto al tamaño de la criatura.",
+	        "Caminar por el aire (druida)": {    "Descripción": "Este conjuro otorga al receptor la capacidad de caminar por el aire como si estuviera pisando terreno sólido, pudiendo avanzar en cualquier dirección con la velocidad de movimiento normal de la criatura. No hay límite en cuanto al tamaño de la criatura.",
                 "Alcance": "Contacto",
                 "Duración": "1 hora + 10 minutos/nivel",
                 "Nivel": 4
-            },
-	        "Caminar sobre el agua": {    "Descripción": "Una vez lanzado el conjuro, el lanzador puede conferir la capacidad de caminar por el agua como si se tratara de tierra firme. El hechizo funciona sobre una persona, pero por cada nivel de experiencia por encima de 5, el druida puede afectar a una criatura adicional. Los receptores del conjuro pueden caminar sobre el agua a su índice de movimiento normal. Mientras las criaturas se encuentren bajo los efectos del encantamiento no podrán sumergirse en ningún líquido.",
-                "Alcance": "Contacto",
-                "Duración": "10 minutos + 10 minutos/nivel",
-                "Nivel": 3
             },
 	        "Caminar sobre llamas": {    "Descripción": "Por medio de este conjuro, el lanzador dota a una o más criaturas del poder de resistir fuegos no mágicos con temperaturas de hasta 1.000&deg; (lo que les permite caminar incluso sobre lava fundida). También confiere una bonificación de +2 a las tiradas de salvación contra fuego mágico, no recibiendo daño si se supera la tirada y reduciendo el daño de los mismos a la mitad si se falla. El conjuro funciona sobre una persona, pero por cada nivel de experiencia por encima de 5, el druida puede afectar a una criatura adicional. Este hechizo no es acumulativo con el de resistir el fuego u otras protecciones similares.",
                 "Alcance": "Contacto",
@@ -385,7 +375,7 @@
                 "Duración": "1 asalto por nivel",
                 "Nivel": 6
             },
-	        "Confusión (div)": {    "Descripción": "Cuando es lanzado este conjuro hace que las criaturas que se encuentren dentro del área de efecto del conjuro, un cuadrado de 10 metros de lado dentro del alcance del conjuro en el lugar que desee el lanzador, entren en un estado de confusión que provoca las siguientes reacciones:\nTirada D10: Reacción\n1-3: Salen corriendo en cualquier dirección durante 1d10 turnos\n4-7: Permanecen quietas durante 1d10 turnos (Aunque se les ataque permanecen igual)\n8-10: Atacan a la criatura más próxima durante 1d10 turnos\nCuando se acaba el efecto de la confusión dentro de la duración del conjuro, la criatura tiene derecho a una nueva tirada de salvación, si la falla tira de nuevo en la tabla para ver el efecto que produce el conjuro sobre la criatura.  Las criaturas que se vean afectadas por el conjuro tienen derecho a una tirada de salvación contra conjuros, si la superan no se ven afectadas por el conjuro, pero si permanecen en el área de efecto en el asalto siguiente han de volver a realizar la tirada de salvación.",
+	        "Confusión (clérigo)": {    "Descripción": "Cuando es lanzado este conjuro hace que las criaturas que se encuentren dentro del área de efecto del conjuro, un cuadrado de 10 metros de lado dentro del alcance del conjuro en el lugar que desee el lanzador, entren en un estado de confusión que provoca las siguientes reacciones:\nTirada D10: Reacción\n1-3: Salen corriendo en cualquier dirección durante 1d10 turnos\n4-7: Permanecen quietas durante 1d10 turnos (Aunque se les ataque permanecen igual)\n8-10: Atacan a la criatura más próxima durante 1d10 turnos\nCuando se acaba el efecto de la confusión dentro de la duración del conjuro, la criatura tiene derecho a una nueva tirada de salvación, si la falla tira de nuevo en la tabla para ver el efecto que produce el conjuro sobre la criatura.  Las criaturas que se vean afectadas por el conjuro tienen derecho a una tirada de salvación contra conjuros, si la superan no se ven afectadas por el conjuro, pero si permanecen en el área de efecto en el asalto siguiente han de volver a realizar la tirada de salvación.",
                 "Alcance": "80 metros",
                 "Duración": "1 asalto/nivel",
                 "Nivel": 7
@@ -510,47 +500,47 @@
                 "Duración": "2 asaltos + 1 asalto/nivel",
                 "Nivel": 3
             },
-	        "Convocar monstruos I (clérigo)": {    "Descripción": ">Este conjuro funciona exactamente igual que el conjuro homónimo de mago de nivel 3 que aparece en este libro.",
+	        "Convocar monstruos I (clérigo)": {    "Descripción": "En el turno siguiente al lanzamiento de este conjuro aparecen dentro del área del conjuro 2d4 monstruos de 1 dado de golpe. Estos serán seleccionados por el Narrador de su tabla de encuentros aleatorios o bien de los que pueden estar por el entorno. Los monstruos atacaran a los enemigos del mago hasta que sean abatidos o cese el conjuro, los monstruos no se ven afectados por las tiradas de moral y luchan hasta la muerte, si mueren en combate desaparecen. Las estadísticas de los monstruos son las que se indican en su ficha.",
                 "Alcance": "30 metros",
                 "Duración": "2 asaltos + 1 asalto/nivel",
                 "Nivel": 4
             },
-	        "Convocar monstruos II": {    "Descripción": "El conjuro funciona igual que 'Convocar monstruos I', con la diferencia de que convoca 2d4 monstruos de 2 dados de golpe.",
+	        "Convocar monstruos II": {    "Descripción": "En el turno siguiente al lanzamiento de este conjuro aparecen dentro del área del conjuro 2d4 monstruos de 2 dados de golpe. Estos serán seleccionados por el Narrador de su tabla de encuentros aleatorios o bien de los que pueden estar por el entorno. Los monstruos atacaran a los enemigos del mago hasta que sean abatidos o cese el conjuro, los monstruos no se ven afectados por las tiradas de moral y luchan hasta la muerte, si mueren en combate desaparecen. Las estadísticas de los monstruos son las que se indican en su ficha.",
                 "Alcance": "40 metros",
                 "Duración": " 3 asaltos + 1 asalto/nivel",
                 "Nivel": 4
             },
-	        "Convocar monstruos II (clérigo)": {    "Descripción": "El conjuro funciona igual que 'Convocar monstruos I', con la diferencia que llama 2d4 monstruos de 2 dados de golpe.",
+	        "Convocar monstruos II (clérigo)": {    "Descripción": "En el turno siguiente al lanzamiento de este conjuro aparecen dentro del área del conjuro 2d4 monstruos de 2 dados de golpe. Estos serán seleccionados por el Narrador de su tabla de encuentros aleatorios o bien de los que pueden estar por el entorno. Los monstruos atacaran a los enemigos del mago hasta que sean abatidos o cese el conjuro, los monstruos no se ven afectados por las tiradas de moral y luchan hasta la muerte, si mueren en combate desaparecen. Las estadísticas de los monstruos son las que se indican en su ficha.",
                 "Alcance": "40 metros",
                 "Duración": "3 asaltos + 1 asalto/nivel",
                 "Nivel": 5
             },
-	        "Convocar monstruos III": {    "Descripción": "El conjuro funciona igual que 'Convocar monstruos I', con la diferencia que llama 1d6 monstruos de 3 dados de golpe.",
+	        "Convocar monstruos III": {    "Descripción": "En el turno siguiente al lanzamiento de este conjuro aparecen dentro del área del conjuro 1d6 monstruos de 3 dados de golpe. Estos serán seleccionados por el Narrador de su tabla de encuentros aleatorios o bien de los que pueden estar por el entorno. Los monstruos atacaran a los enemigos del mago hasta que sean abatidos o cese el conjuro, los monstruos no se ven afectados por las tiradas de moral y luchan hasta la muerte, si mueren en combate desaparecen. Las estadísticas de los monstruos son las que se indican en su ficha.",
                 "Alcance": "50 metros",
                 "Duración": "4 asaltos + 1 asalto/nivel",
                 "Nivel": 5
             },
-	        "Convocar monstruos III (clérigo)": {    "Descripción": "El conjuro funciona igual que 'Convocar monstruos I', con la diferencia que llama 1d6 monstruos de 3 dados de golpe.",
+	        "Convocar monstruos III (clérigo)": {    "Descripción": "En el turno siguiente al lanzamiento de este conjuro aparecen dentro del área del conjuro 1d6 monstruos de 3 dados de golpe. Estos serán seleccionados por el Narrador de su tabla de encuentros aleatorios o bien de los que pueden estar por el entorno. Los monstruos atacaran a los enemigos del mago hasta que sean abatidos o cese el conjuro, los monstruos no se ven afectados por las tiradas de moral y luchan hasta la muerte, si mueren en combate desaparecen. Las estadísticas de los monstruos son las que se indican en su ficha.",
                 "Alcance": "50 metros",
                 "Duración": "4 asaltos + 1 asalto/nivel",
                 "Nivel": 6
             },
-	        "Convocar monstruos IV": {    "Descripción": "El conjuro funciona igual que convocar monstruos I, con la diferencia que llama 1d6 monstruos de 4 dados de golpe.",
+	        "Convocar monstruos IV": {    "Descripción": "En el turno siguiente al lanzamiento de este conjuro aparecen dentro del área del conjuro 1d6 monstruos de 4 dados de golpe. Estos serán seleccionados por el Narrador de su tabla de encuentros aleatorios o bien de los que pueden estar por el entorno. Los monstruos atacaran a los enemigos del mago hasta que sean abatidos o cese el conjuro, los monstruos no se ven afectados por las tiradas de moral y luchan hasta la muerte, si mueren en combate desaparecen. Las estadísticas de los monstruos son las que se indican en su ficha.",
                 "Alcance": "60 metros",
                 "Duración": "5 asaltos + 1 asalto/nivel",
                 "Nivel": 6
             },
-	        "Convocar monstruos V": {    "Descripción": "El conjuro funciona igual que convocar monstruos I, con la diferencia que llama 1d4 monstruos de 5 dados de golpe.",
+	        "Convocar monstruos V": {    "Descripción": "En el turno siguiente al lanzamiento de este conjuro aparecen dentro del área del conjuro 1d4 monstruos de 5 dados de golpe. Estos serán seleccionados por el Narrador de su tabla de encuentros aleatorios o bien de los que pueden estar por el entorno. Los monstruos atacaran a los enemigos del mago hasta que sean abatidos o cese el conjuro, los monstruos no se ven afectados por las tiradas de moral y luchan hasta la muerte, si mueren en combate desaparecen. Las estadísticas de los monstruos son las que se indican en su ficha.",
                 "Alcance": "60 metros",
                 "Duración": "5 asaltos + 1 asalto/nivel",
                 "Nivel": 7
             },
-	        "Convocar monstruos VI": {    "Descripción": "El conjuro funciona igual que llamar monstruos I, con la diferencia que llama 1d4 monstruos de 6 dados de golpe.",
+	        "Convocar monstruos VI": {    "Descripción": "En el turno siguiente al lanzamiento de este conjuro aparecen dentro del área del conjuro 1d4 monstruos de 6 dados de golpe. Estos serán seleccionados por el Narrador de su tabla de encuentros aleatorios o bien de los que pueden estar por el entorno. Los monstruos atacaran a los enemigos del mago hasta que sean abatidos o cese el conjuro, los monstruos no se ven afectados por las tiradas de moral y luchan hasta la muerte, si mueren en combate desaparecen. Las estadísticas de los monstruos son las que se indican en su ficha.",
                 "Alcance": "60 metros",
                 "Duración": "7 asaltos + 1 asalto/nivel",
                 "Nivel": 8
             },
-	        "Convocar monstruos VII": {    "Descripción": "El conjuro funciona igual que llamar monstruos I, con la diferencia que llama 1d4 monstruos de 7 dados de golpe.",
+	        "Convocar monstruos VII": {    "Descripción": "En el turno siguiente al lanzamiento de este conjuro aparecen dentro del área del conjuro 1d4 monstruos de 7 dados de golpe. Estos serán seleccionados por el Narrador de su tabla de encuentros aleatorios o bien de los que pueden estar por el entorno. Los monstruos atacaran a los enemigos del mago hasta que sean abatidos o cese el conjuro, los monstruos no se ven afectados por las tiradas de moral y luchan hasta la muerte, si mueren en combate desaparecen. Las estadísticas de los monstruos son las que se indican en su ficha.",
                 "Alcance": "90 metros",
                 "Duración": "8 asaltos + 1 asalto/nivel",
                 "Nivel": 9
@@ -560,7 +550,7 @@
                 "Duración": "1 asalto",
                 "Nivel": 1
             },
-	        "Corcel fantasmal de Karkemish": {    "Descripción": "Este hechizo crea un caballo fantasmal, que sólo puede ser montado por el lanzador del conjuro o por la persona que designe. El aspecto de la criatura es de color negro en todo su cuerpo excepto los cascos que son de una sustancia etérea parecida al humo y que evitan que la montura haga ruido cuando se desplaza.\nLa montura tiene categoría de armadura 2 y 10 puntos de golpe, más 1 pg por nivel de lanzador. Si pierde todos sus puntos de golpe la criatura desaparece, y si está siendo montada en ese momento el jinete caerá al suelo y sufrirá 1d6 puntos de daño por cada 10 metros de índice de movimiento. El corcel tendrá un índice de movimiento de 5 por nivel de lanzador y puede transportar al jinete más 10kg por nivel de lanzador hasta un máximo de 100 kg. Además las monturas tendrán los siguientes poderes según el nivel de lanzador:\n<b>Nivel 10: </b>podrá caminar por el agua como si fuera tierra firme.\n<b>Nivel 15</b>: podrá caminar por el aire como si fuera tierra firme si tuviera que cruzar un precipicio o un abismo de un máximo de 150 metros.\n<b>Nivel 20:</b> podrá volar y su índice de movimiento será como el de un pegaso.</font></font>",
+	        "Corcel fantasmal de Karkemish": {    "Descripción": "Este hechizo crea un caballo fantasmal, que sólo puede ser montado por el lanzador del conjuro o por la persona que designe. El aspecto de la criatura es de color negro en todo su cuerpo excepto los cascos que son de una sustancia etérea parecida al humo y que evitan que la montura haga ruido cuando se desplaza.\nLa montura tiene categoría de armadura 2 y 10 puntos de golpe, más 1 pg por nivel de lanzador. Si pierde todos sus puntos de golpe la criatura desaparece, y si está siendo montada en ese momento el jinete caerá al suelo y sufrirá 1d6 puntos de daño por cada 10 metros de índice de movimiento. El corcel tendrá un índice de movimiento de 5 por nivel de lanzador y puede transportar al jinete más 10kg por nivel de lanzador hasta un máximo de 100 kg. Además las monturas tendrán los siguientes poderes según el nivel de lanzador:\n - Nivel 10: podrá caminar por el agua como si fuera tierra firme.\n - Nivel 15: podrá caminar por el aire como si fuera tierra firme si tuviera que cruzar un precipicio o un abismo de un máximo de 150 metros.\n - Nivel 20: podrá volar y su índice de movimiento será como el de un pegaso.",
                 "Alcance": "Toque",
                 "Duración": "1 hora por nivel",
                 "Nivel": 3
@@ -2220,7 +2210,7 @@
                 "Duración": "1d4 turno + 1 turno/nivel",
                 "Nivel": 5
             },
-	        "Visión verdadera": {    "Descripción": "Este conjuro permite al receptor ver todas las cosas a su alrededor tal y como son realmente. Puede ver las puertas secretas, trampas, ilusiones, los objetos o criaturas invisibles, polimorfadas o transmutadas, incluso el aura de las criaturas. Además permite ver el plano etéreo.",
+	        "Visión verdadera (clérigo)": {    "Descripción": "Este conjuro permite al receptor ver todas las cosas a su alrededor tal y como son realmente. Puede ver las puertas secretas, trampas, ilusiones, los objetos o criaturas invisibles, polimorfadas o transmutadas, incluso el aura de las criaturas. Además permite ver el plano etéreo.",
                 "Alcance": "Toque",
                 "Duración": "Un asalto/nivel",
                 "Nivel": 5
@@ -2230,7 +2220,7 @@
                 "Duración": "10 minutos por nivel",
                 "Nivel": 5
             },
-	        "Visión verdadera": {    "Descripción": "Este conjuro permite al receptor ver todas las cosas a su alrededor tal y como son realmente. Puede ver las puertas secretas, trampas, ilusiones, los objetos o criaturas invisibles, polimorfadas o transmutadas, incluso el aura de las criaturas. Además permite ver el plano etéreo.",
+	        "Visión verdadera (druida)": {    "Descripción": "Este conjuro permite al receptor ver todas las cosas a su alrededor tal y como son realmente. Puede ver las puertas secretas, trampas, ilusiones, los objetos o criaturas invisibles, polimorfadas o transmutadas, incluso el aura de las criaturas. Además permite ver el plano etéreo.",
                 "Alcance": "Contacto",
                 "Duración": "1 asalto/nivel",
                 "Nivel": 7
@@ -2250,11 +2240,69 @@
                 "Duración": "Permanente",
                 "Nivel": 9
             }
-        },
-    "Clérigo": [ "Abrir las aguas", "Adivinación", "Animar a los muertos", "Animar objetos", "Animar rocas" ],
-    "Elfo": [ "Abrir", "Abrir las Aguas", "Acechador invisible", "Acelerar", "Agrandar", "Alarma", "Alma" ],
-    "Mago": [ "Abrir", "Abrir las Aguas", "Acechador invisible", "Acelerar", "Agrandar", "Alarma", "Alma" ],
-    "Paladín": [ "Abrir las aguas", "Adivinación", "Animar a los muertos", "Animar objetos", "Animar rocas" ],
-    "Druida": [ "Abrir las aguas", "Afectar fuegos normales", "Agua aérea", "Ahuyentar madera", "Amistad animal", "Animar rocas" ],
-    "Elfo oscuro": [ "Abrir", "Abrir las Aguas", "Acechador invisible", "Acelerar", "Agrandar", "Alarma", "Alma" ]
+        },      
+    "Elfo": [ "Abrir", "Abrir las Aguas", "Acechador invisible", "Acelerar", "Agrandar", "Alarma", "Alma",
+               "Antipatía-Simpatía", "Aprisionar", "Araña nefanda de la muerte", "Armadura natural",
+               "Asesino fantasmal", "Atontar", "Atraer objeto", "Atrapamiento", "Atrapar el Alma", 
+               "Atravesar muros", "Aura mágica", "Auxilio", "Bajar las Aguas", "Bola de Fuego",
+               "Bola de nieve de Fistan", "Bolsillos Ocultos", "Borrar", "Calavera vigía",
+               "Cambiar el yo", "Cambiar forma", "Cambio de aspecto", "Caos mental", "Cara cadáver",
+               "Catalepsia de Usher", "Cavar", "Caída de pluma", "Ceguera", "Cerradura Arcana", "Cerrar Portal", 
+               "Clarividencia", "Clonar", "Color mágico", "Confundir", "Confusión", "Conjuro de Muerte", 
+               "Conjuro de inmunidad de Nébula", "Cono de frío", "Conocimiento de leyendas", "Contactar con otro Plano", 
+               "Contagiar enfermedad", "Contingencia", "Controlar los Elementos", "Controlar muertos vivientes", 
+               "Convocar elemental", "Convocar monstruos I", "Convocar monstruos II", "Convocar monstruos III", 
+               "Convocar monstruos IV", "Convocar monstruos V", "Convocar monstruos VI", "Convocar monstruos VII",
+               "Corcel fantasmal de Karkemish", "Crear aire fresco de Nefertiri", "Crear ilusión" ],
+    "Mago": [ "Abrir", "Abrir las Aguas", "Acechador invisible", "Acelerar", "Agrandar", "Alarma", "Alma",
+               "Antipatía-Simpatía", "Aprisionar", "Araña nefanda de la muerte", "Armadura natural",
+               "Asesino fantasmal", "Atontar", "Atraer objeto", "Atrapamiento", "Atrapar el Alma", 
+               "Atravesar muros", "Aura mágica", "Auxilio", "Bajar las Aguas", "Bola de Fuego",
+               "Bola de Fuego de Explosión Retardada", "Bola de nieve de Fistan", "Bolsillos Ocultos", "Borrar",
+               "Calavera vigía", "Cambiar el yo", "Cambiar forma", "Cambio de aspecto", "Caos mental", "Cara cadáver",
+               "Catalepsia de Usher", "Cavar", "Caída de pluma", "Ceguera", "Cerradura Arcana", "Cerrar Portal", 
+               "Clarividencia", "Clonar", "Color mágico", "Confundir", "Confusión", "Conjuro de Muerte", 
+               "Conjuro de inmunidad de Nébula", "Cono de frío", "Conocimiento de leyendas", "Contactar con otro Plano", 
+               "Contagiar enfermedad", "Contingencia", "Controlar los Elementos", "Controlar muertos vivientes", 
+               "Convocar elemental", "Convocar monstruos I", "Convocar monstruos II", "Convocar monstruos III", 
+               "Convocar monstruos IV", "Convocar monstruos V", "Convocar monstruos VI", "Convocar monstruos VII",
+               "Corcel fantasmal de Karkemish", "Crear aire fresco de Nefertiri", "Crear ilusión" ],
+    "Elfo oscuro": [ "Abrir", "Abrir las Aguas", "Acechador invisible", "Acelerar", "Agrandar", "Alarma",
+                      "Alma", "Antipatía-Simpatía", "Aprisionar", "Araña nefanda de la muerte", 
+                      "Armadura natural", "Asesino fantasmal", "Atontar", "Atraer objeto", 
+                      "Atrapamiento", "Atrapar el Alma", "Atravesar muros", "Aura mágica", "Auxilio",
+                      "Bajar las Aguas", "Bola de Fuego", "Bola de Fuego de Explosión Retardada",
+                      "Bola de nieve de Fistan", "Bolsillos Ocultos", "Borrar", "Calavera vigía",
+                      "Cambiar el yo", "Cambiar forma", "Cambio de aspecto", "Caos mental", "Cara cadáver",
+                      "Catalepsia de Usher", "Cavar", "Caída de pluma", "Ceguera", "Cerradura Arcana", 
+                      "Cerrar Portal", "Clarividencia", "Clonar", "Color mágico", "Confundir", 
+                      "Confusión", "Conjuro de Muerte", "Conjuro de inmunidad de Nébula", "Cono de frío", 
+                      "Conocimiento de leyendas", "Contactar con otro Plano", "Contagiar enfermedad", "Contingencia",
+                      "Controlar los Elementos", "Controlar muertos vivientes", 
+                      "Convocar elemental", "Convocar monstruos I", "Convocar monstruos II", "Convocar monstruos III", 
+                      "Convocar monstruos IV", "Convocar monstruos V", "Convocar monstruos VI", "Convocar monstruos VII",
+                      "Corcel fantasmal de Karkemish", "Crear aire fresco de Nefertiri", "Crear ilusión" ],
+    "Clérigo": [ "Abrir las aguas (clérigo)", "Adivinación", "Animar a los muertos", "Animar objetos",
+                  "Animar rocas", "Augurio", "Auxilio (clérigo)", "Ayuda", "Bajar las aguas (clérigo)",
+                  "Barrera de cuchillas", "Bendecir", "Calentar metal", "Cambiar de plano",
+                  "Caminar por el aire", "Canto", "Carro de Steinkel", "Comunicar", "Confusión (clérigo)", 
+                  "Conocer alineamiento", "Controlar el clima", "Controlar los vientos", "Controlar temperatura", 
+                  "Convocar animales", "Convocar monstruos I (clérigo)", "Convocar monstruos II (clérigo)", 
+                  "Convocar monstruos III (clérigo)", "Cooperación", "Crear agua", "Crear comida y agua" ],
+    "Paladín": [ "Abrir las aguas (clérigo)", "Adivinación", "Animar a los muertos", "Animar objetos",
+                  "Animar rocas", "Augurio", "Auxilio (clérigo)", "Ayuda", "Bajar las aguas (clérigo)",
+                  "Barrera de cuchillas", "Bendecir", "Bola de Fuego de Explosión Retardada", "Calentar metal",
+                  "Cambiar de plano", "Caminar por el aire", "Canto", "Carro de Steinkel", "Comunicar", "Confusión (clérigo)", 
+                  "Conocer alineamiento", "Controlar el clima", "Controlar los vientos", "Controlar temperatura", 
+                  "Convocar animales", "Convocar monstruos I (clérigo)", "Convocar monstruos II (clérigo)", 
+                  "Convocar monstruos III (clérigo)", "Cooperación", "Crear agua", "Crear comida y agua" ],
+    "Druida": [ "Abrir las aguas (clérigo)", "Afectar fuegos normales", "Agua aérea", "Ahuyentar madera", 
+                 "Amistad animal", "Animal mensajero", "Animar rocas", "Armadura natural",
+                 "Bajar el nivel de las aguas menor", "Bajar las Aguas", "Bastón de conjuro", "Bayas druídicas",
+                 "Bosque alucinatorio", "Calentar metal", "Cambiar de forma", "Cambiar vara",
+                 "Caminar por el aire (druida)", "Caminar sobre llamas", "Caparazón antivida", "Combar madera",
+                 "Comunicar con la naturaleza", "Concha antiplantas", "Cono de frío", "Controlar el clima", "Controlar los Elementos",
+                 "Controlar los vientos", "Convocar animales I", "Convocar animales II", "Convocar animales III", 
+                 "Convocar animales IV", "Convocar animales V", "Convocar animales VI", "Convocar animales VII", "Crear agua",
+                 "Crear comida y agua", "Crear llama" ]
 }
