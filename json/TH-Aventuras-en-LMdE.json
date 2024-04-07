@@ -25,7 +25,7 @@
                 "Duración": "3 turnos",
                 "Nivel": 3
             },
-            "Adivinación": {    "Descripción": "Mediante este conjuro el clérigo solicita a su deidad un consejo ñtil sobre una acción concreta que vaya a realizar en la siguiente semana, existiendo una probabilidad del 50% más un 5% por nivel de lanzador de obtener una respuesta. Es el Narrador quien realiza la tirada y decide la respuesta. Por ejemplo, si la pregunta es: ¿qué pasará si abrimos la puerta que hay al final del pasillo? Y detrás de la puerta hay un licántropo, la respuesta puede ser: Las armas de plata acabarán con tu enemigo. En cualquier caso, la respuesta no será muy obvia.",
+            "Adivinación": {    "Descripción": "Mediante este conjuro el clérigo solicita a su deidad un consejo útil sobre una acción concreta que vaya a realizar en la siguiente semana, existiendo una probabilidad del 50% más un 5% por nivel de lanzador de obtener una respuesta. Es el Narrador quien realiza la tirada y decide la respuesta. Por ejemplo, si la pregunta es: ¿qué pasará si abrimos la puerta que hay al final del pasillo? Y detrás de la puerta hay un licántropo, la respuesta puede ser: Las armas de plata acabarán con tu enemigo. En cualquier caso, la respuesta no será muy obvia.",
                 "Alcance": "El receptor",
                 "Duración": "Especial",
                 "Nivel": 4
@@ -600,12 +600,12 @@
                 "Duración": "12 turnos",
                 "Nivel": 3
             },
-	        "Crecimiento animal": {    "Descripción": "Este conjuro hace que todos los animales dentro de un área de un cuadrado de 5 metros de lado dentro del alcance del conjuro en el lugar que designe el lanzador doblen su tamaño, este crecimiento hace que también doblen sus DG, sus puntos de golpe y su ataque. La CA y el movimiento no varían.\nEste encantamiento es reversible y reduce a los animales a la mitad de su tamaño, reduciendo a la mitad sus dados de golpe, sus puntos de golpe y su ataque.",
+	        "Crecimiento animal (druida)": {    "Descripción": "Este conjuro hace que todos los animales dentro de un área de un cuadrado de 5 metros de lado dentro del alcance del conjuro en el lugar que designe el lanzador doblen su tamaño, este crecimiento hace que también doblen sus DG, sus puntos de golpe y su ataque. La CA y el movimiento no varían.\nEste encantamiento es reversible y reduce a los animales a la mitad de su tamaño, reduciendo a la mitad sus dados de golpe, sus puntos de golpe y su ataque.",
                 "Alcance": "100 metros",
                 "Duración": "2 asaltos/nivel",
                 "Nivel": 5
             },
-	        "Crecimiento de pñas": {    "Descripción": "Para realizar este conjuro es necesario que haya vegetación en la zona y tiene efecto sobre un cuadrado de 3 metros de lado por nivel de druida. Una vez lanzado, las raíces y hierbas que haya en suelo y paredes se convierten en una zona dura y llena de púas afiladas. Cualquier criatura que intente atravesar la zona sufrirá 2d4 puntos de daño por cada tres metros de avance, además, una vez sufrido el daño, la criatura realiza una tirada de salvación contra conjuros, si la falla ve su índice de movimiento reducido a la mitad, y así sucesivamente hasta que salga de la zona de púas.\nLa zona afectada parece normal y únicamente puede ser detectada por un ladrón que busque trampas activamente o por un conjuro de visión verdadera. Si se observa la zona bajo los efectos de un hechizo de detectar magia la zona aparecerá como mágica. Si se lanza un disipar magia el conjuro se disipa.",
+	        "Crecimiento de púas": {    "Descripción": "Para realizar este conjuro es necesario que haya vegetación en la zona y tiene efecto sobre un cuadrado de 3 metros de lado por nivel de druida. Una vez lanzado, las raíces y hierbas que haya en suelo y paredes se convierten en una zona dura y llena de púas afiladas. Cualquier criatura que intente atravesar la zona sufrirá 2d4 puntos de daño por cada tres metros de avance, además, una vez sufrido el daño, la criatura realiza una tirada de salvación contra conjuros, si la falla ve su índice de movimiento reducido a la mitad, y así sucesivamente hasta que salga de la zona de púas.\nLa zona afectada parece normal y únicamente puede ser detectada por un ladrón que busque trampas activamente o por un conjuro de visión verdadera. Si se observa la zona bajo los efectos de un hechizo de detectar magia la zona aparecerá como mágica. Si se lanza un disipar magia el conjuro se disipa.",
                 "Alcance": "60 metros",
                 "Duración": "2d4 minutos + 1 minuto/nivel",
                 "Nivel": 3
@@ -645,13 +645,8 @@
                 "Duración": "Permanente",
                 "Nivel": 4
             },
-	        "Curar heridas leves": {    "Descripción": "Este ñtil conjuro permitirá al clérigo sanar una herida leve o eliminar la parálisis de un aventurero o criatura. Si usamos el conjuro para curar una herida, la misma sanará 1d8 puntos de daño. Por el contrario, no curará punto alguno si el conjuro es empleado para eliminar los efectos de la parálisis (si el clérigo está paralizado, no podrán conjurar este hechizo). Este sortilegio nunca subirá los puntos de golpe por encima del máximo actual del aventurero.\nEste conjuro tiene un reverso, denominado Causar Heridas Leves que provocará una herida de 1d8 puntos de daño en una criatura, siempre que el clérigo logre tocarla con una tirada normal de ataque, a no ser que la criatura esté indefensa, en cuyo caso no será necesaria la tirada de ataque.",
+	        "Curar heridas leves": {    "Descripción": "Este útil conjuro permitirá al clérigo sanar una herida leve o eliminar la parálisis de un aventurero o criatura. Si usamos el conjuro para curar una herida, la misma sanará 1d8 puntos de daño. Por el contrario, no curará punto alguno si el conjuro es empleado para eliminar los efectos de la parálisis (si el clérigo está paralizado, no podrán conjurar este hechizo). Este sortilegio nunca subirá los puntos de golpe por encima del máximo actual del aventurero.\nEste conjuro tiene un reverso, denominado Causar Heridas Leves que provocará una herida de 1d8 puntos de daño en una criatura, siempre que el clérigo logre tocarla con una tirada normal de ataque, a no ser que la criatura esté indefensa, en cuyo caso no será necesaria la tirada de ataque.",
                 "Alcance": "Toque",
-                "Duración": "Permanente",
-                "Nivel": 1
-            },
-	        "Curar heridas leves": {    "Descripción": "Este útil conjuro permitirá restañar una herida leve o eliminar la parálisis. Si se usa el conjuro para curar una herida, la misma sanará 1d6+1 puntos de golpe. Este sortilegio nunca subirá los puntos de golpe por encima del tope actual del aventurero. En el caso de utilizarlo para eliminar los efectos de la parálisis, solamente actuará para tal fin y no curará punto alguno. El druida puede curarse a sí mismo o a otra persona.",
-                "Alcance": "Contacto",
                 "Duración": "Permanente",
                 "Nivel": 1
             },
@@ -2215,7 +2210,7 @@
                 "Duración": "Un asalto/nivel",
                 "Nivel": 5
             },
-	        "Visión verdadera": {    "Descripción": "Este conjuro permite al receptor ver todo lo que hay a su alrededor tal y como es realmente: verá las puertas y compartimentos secretos, las trampas ocultas, los objetos o criaturas invisibles o polimorfadas de alguna manera, las ilusiones, etc. Ante sus ojos todo lo que hay se muestra tal y como es, incluso puede atravesar la oscuridad mágica. El alcance de la visión es de 20 metros. Los elfos llaman a este poderoso y ñtil conjuro Los Ojos de Valion.",
+	        "Visión verdadera": {    "Descripción": "Este conjuro permite al receptor ver todo lo que hay a su alrededor tal y como es realmente: verá las puertas y compartimentos secretos, las trampas ocultas, los objetos o criaturas invisibles o polimorfadas de alguna manera, las ilusiones, etc. Ante sus ojos todo lo que hay se muestra tal y como es, incluso puede atravesar la oscuridad mágica. El alcance de la visión es de 20 metros. Los elfos llaman a este poderoso y útil conjuro Los Ojos de Valion.",
                 "Alcance": "20 metros",
                 "Duración": "10 minutos por nivel",
                 "Nivel": 5
@@ -2253,7 +2248,8 @@
                "Contagiar enfermedad", "Contingencia", "Controlar los Elementos", "Controlar muertos vivientes", 
                "Convocar elemental", "Convocar monstruos I", "Convocar monstruos II", "Convocar monstruos III", 
                "Convocar monstruos IV", "Convocar monstruos V", "Convocar monstruos VI", "Convocar monstruos VII",
-               "Corcel fantasmal de Karkemish", "Crear aire fresco de Nefertiri", "Crear ilusión" ],
+               "Corcel fantasmal de Karkemish", "Crear aire fresco de Nefertiri", "Crear ilusión", 
+               "Crear muertos vivientes", "Crear objeto", "Crecimiento Vegetal", "Cristal de Hierro", "Cristal frágil" ],
     "Mago": [ "Abrir", "Abrir las Aguas", "Acechador invisible", "Acelerar", "Agrandar", "Alarma", "Alma",
                "Antipatía-Simpatía", "Aprisionar", "Araña nefanda de la muerte", "Armadura natural",
                "Asesino fantasmal", "Atontar", "Atraer objeto", "Atrapamiento", "Atrapar el Alma", 
@@ -2266,7 +2262,8 @@
                "Contagiar enfermedad", "Contingencia", "Controlar los Elementos", "Controlar muertos vivientes", 
                "Convocar elemental", "Convocar monstruos I", "Convocar monstruos II", "Convocar monstruos III", 
                "Convocar monstruos IV", "Convocar monstruos V", "Convocar monstruos VI", "Convocar monstruos VII",
-               "Corcel fantasmal de Karkemish", "Crear aire fresco de Nefertiri", "Crear ilusión" ],
+               "Corcel fantasmal de Karkemish", "Crear aire fresco de Nefertiri", "Crear ilusión", 
+               "Crear muertos vivientes", "Crear objeto", "Crecimiento Vegetal", "Cristal de Hierro", "Cristal frágil" ],
     "Elfo oscuro": [ "Abrir", "Abrir las Aguas", "Acechador invisible", "Acelerar", "Agrandar", "Alarma",
                       "Alma", "Antipatía-Simpatía", "Aprisionar", "Araña nefanda de la muerte", 
                       "Armadura natural", "Asesino fantasmal", "Atontar", "Atraer objeto", 
@@ -2281,21 +2278,26 @@
                       "Controlar los Elementos", "Controlar muertos vivientes", 
                       "Convocar elemental", "Convocar monstruos I", "Convocar monstruos II", "Convocar monstruos III", 
                       "Convocar monstruos IV", "Convocar monstruos V", "Convocar monstruos VI", "Convocar monstruos VII",
-                      "Corcel fantasmal de Karkemish", "Crear aire fresco de Nefertiri", "Crear ilusión" ],
+                      "Corcel fantasmal de Karkemish", "Crear aire fresco de Nefertiri", "Crear ilusión", 
+                      "Crear muertos vivientes", "Crear objeto", "Crecimiento Vegetal", "Cristal de Hierro", "Cristal frágil" ],
     "Clérigo": [ "Abrir las aguas (clérigo)", "Adivinación", "Animar a los muertos", "Animar objetos",
                   "Animar rocas", "Augurio", "Auxilio (clérigo)", "Ayuda", "Bajar las aguas (clérigo)",
                   "Barrera de cuchillas", "Bendecir", "Calentar metal", "Cambiar de plano",
                   "Caminar por el aire", "Canto", "Carro de Steinkel", "Comunicar", "Confusión (clérigo)", 
                   "Conocer alineamiento", "Controlar el clima", "Controlar los vientos", "Controlar temperatura", 
                   "Convocar animales", "Convocar monstruos I (clérigo)", "Convocar monstruos II (clérigo)", 
-                  "Convocar monstruos III (clérigo)", "Cooperación", "Crear agua", "Crear comida y agua" ],
+                  "Convocar monstruos III (clérigo)", "Cooperación", "Crear agua", "Crear comida y agua", 
+                  "Crecimiento animal", "Curar ceguera y sordera", "Curar enfermedad", "Curar heridas críticas", 
+                  "Curar heridas graves", "Curar heridas leves" ],
     "Paladín": [ "Abrir las aguas (clérigo)", "Adivinación", "Animar a los muertos", "Animar objetos",
                   "Animar rocas", "Augurio", "Auxilio (clérigo)", "Ayuda", "Bajar las aguas (clérigo)",
                   "Barrera de cuchillas", "Bendecir", "Bola de Fuego de Explosión Retardada", "Calentar metal",
                   "Cambiar de plano", "Caminar por el aire", "Canto", "Carro de Steinkel", "Comunicar", "Confusión (clérigo)", 
                   "Conocer alineamiento", "Controlar el clima", "Controlar los vientos", "Controlar temperatura", 
                   "Convocar animales", "Convocar monstruos I (clérigo)", "Convocar monstruos II (clérigo)", 
-                  "Convocar monstruos III (clérigo)", "Cooperación", "Crear agua", "Crear comida y agua" ],
+                  "Convocar monstruos III (clérigo)", "Cooperación", "Crear agua", "Crear comida y agua", 
+                  "Crecimiento animal", "Curar ceguera y sordera", "Curar enfermedad", "Curar heridas críticas", 
+                  "Curar heridas graves", "Curar heridas leves" ],
     "Druida": [ "Abrir las aguas (clérigo)", "Afectar fuegos normales", "Agua aérea", "Ahuyentar madera", 
                  "Amistad animal", "Animal mensajero", "Animar rocas", "Armadura natural",
                  "Bajar el nivel de las aguas menor", "Bajar las Aguas", "Bastón de conjuro", "Bayas druídicas",
@@ -2304,5 +2306,6 @@
                  "Comunicar con la naturaleza", "Concha antiplantas", "Cono de frío", "Controlar el clima", "Controlar los Elementos",
                  "Controlar los vientos", "Convocar animales I", "Convocar animales II", "Convocar animales III", 
                  "Convocar animales IV", "Convocar animales V", "Convocar animales VI", "Convocar animales VII", "Crear agua",
-                 "Crear comida y agua", "Crear llama" ]
+                 "Crear comida y agua", "Crear llama", "Crecimiento animal (druida)", "Crecimiento de púas", "Crecimiento vegetal", "Curar enfermedad", 
+                 "Curar heridas graves", "Curar heridas leves" ]
 }
