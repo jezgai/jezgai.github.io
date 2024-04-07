@@ -1,0 +1,168 @@
+{
+    "Hechizos": {
+		    "Abrir/Cerrar": {  
+		        "Descripción": "El conjurador podrá abrir una puerta o recipiente cerrado normalmente. La versión inversa permite cerrar un elemento por medios mundanos, por ejemplo, echando la llave de una puerta con cerradura.",
+                "TL": "1",
+                "Alcance": "8 metros",
+                "Componentes": "V y S",
+                "Duración": "-",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": 0
+            }, 
+		    "Acelerar/Ralentizar": {  
+		        "Descripción": "Este hechizo permitirá al conjurador acelerar los movimientos de un individuo. Una criatura bajo los efectos de este conjuro puede doblar el número de sus ataques en un asalto, así como duplicar su rango de movimiento, inclusive volando, nadando, corriendo, escalando, etc. Sin embargo, un conjurador afectado por este hechizo no podrá en ningún caso lanzar más de un conjuro por asalto. Los efectos de este sortilegio no son acumulativos.\nEl reverso de este conjuro, ralentizar, reduce a la mitad el rango de movimiento de la criatura afectada y el número de ataques que puede realizar.",
+                "TL": "1",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "CON",
+                "RC": "Sí",
+                "Nivel": 3
+            }, 
+		    "Adivinación": {  
+		        "Descripción": "El lanzador podrá emplear este poderoso conjuro para extraer información sobre un acontecimiento que se prevea ocurra a una semana vista. La información se recibe en forma de consejo, proporcionado por los dioses a los que sirve el conjurador. Generalmente, este consejo llega contenido en una frase, muchas veces algo críptica o con doble sentido, oscura y enigmática, tal vez incluso un acertijo.",
+                "TL": "10 minutos",
+                "Alcance": "Ver texto",
+                "Componentes": "V y S",
+                "Duración": "Ver texto",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": 4
+            }, 
+		    "Adoptar apariencia": {  
+		        "Descripción": "El lanzador puede alterar la apariencia, atuendo y equipo de una criatura por cada dos niveles de experiencia. Las criaturas afectadas deben mantener sus formas básicas (humanoide, cuadrúpedo, etc.), pero pueden parecer hasta 30 centímetros más altas o bajas, así como modificar su complexión hasta en un 50%. La ilusión es solo visual, sin incluir posibles habilidades especiales o de clase de la nueva apariencia. Los cambios en el equipo también serán solo a nivel visual, por ejemplo: una armadura disfrazada de ropa seguirá crujiendo y tintineando, y cualquiera que la toque la sentirá como lo que es. Las criaturas afectadas pueden separarse. La ilusión se mantiene activa en todas ellas hasta que el hechizo expira, una criatura afectada muere o cualquier ser que interactúe con alguna de ellas supere una tirada de salvación de INT.",
+                "TL": "1",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "12 horas",
+                "TS": "Ver texto",
+                "RC": "No",
+                "Nivel": 4
+            }, 
+		    "Agrandar/Empequeñecer": {  
+		        "Descripción": "El conjurador puede lanzar este hechizo contra una criatura u objeto. Si el blanco no supera la tirada de salvación de CON, su tamaño y su peso se verán incrementados o disminuidos inmediatamente hasta un 10% por nivel del lanzador, a elección de este. Por el contrario, si se supera la tirada de salvación, el conjuro no tiene efecto. El objetivo crece o decrece de manera proporcional a su altura, anchura y peso; además, todo el equipo que porte en ese momento se incrementa en la misma proporción. Sin embargo, no se puede superar un tamaño mayor al 50% del original.\nPara lanzar este conjuro el objetivo ha de estar dentro del alcance visual del mago. Si en el lugar donde se encuentra el objetivo no existiera espacio suficiente para alcanzar el tamaño deseado por el conjurador, el objetivo crecerá lo máximo posible.\nNo se ven afectadas las características mágicas, la clase de armadura (CA), ni las tiradas de ataque, que serán las de la criatura base. Es reversible, y puede reducir con las mismas características que agrandar. Además, cualquiera de ellos sirve para negar al otro, es decir, un objetivo reducido que se vea afectado por un conjuro de agrandar volverá a su tamaño normal. El límite existente para reducir es hasta el 90% del tamaño original; como mucho, el objetivo tendrá un 10% de su tamaño original.",
+                "TL": "1",
+                "Alcance": "15 m./toque",
+                "Componentes": "V y S",
+                "Duración": "1 turno/nivel",
+                "TS": "CON",
+                "RC": "Si",
+                "Nivel": 1
+            }, 
+		    "Alarido ensordecedor": {  
+		        "Descripción": "El mago es capaz de proferir un alarido mágico ensordecedor, que se expandirá desde su boca en forma de cono con un alcance efectivo de unos 20 metros. Esta onda sónica causará 2d6 de daño a toda criatura presente en el área afectada. Adicionalmente, todo aquel que falle una tirada de CON quedará ensordecido por un número de asaltos equivalente al total de puntos de daño recibidos.",
+                "TL": "1",
+                "Alcance": "Ver texto",
+                "Componentes": "V y S",
+                "Duración": "Instantáneo",
+                "TS": "Ver texto",
+                "RC": "Si",
+                "Nivel": 4
+            }, 
+		    "Alarma": {  
+		        "Descripción": "El lanzador puede convocar a un pequeño animal para que guarde un área de 15 metros de radio como máximo. Cada vez que alguien penetre en el área, el animal podrá o bien comunicarse mentalmente con el druida para alertarle, o bien emitir un sonido, según el animal. Si la alarma es sonora, será perfectamente audible por todos dentro del área. El lanzador dispondrá de una palabra de mando que puede transmitir a sus compañeros, si estos pronuncian la palabra de mando al entrar en el área la alarma no saltará.",
+                "TL": "1",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "2 hora/nivel",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": 1
+            }, 
+		    "Aliado mayor de los planos": {  
+		        "Descripción": "Gracias a este conjuro, el lanzador podrá interpelar a su deidad para que esta le envíe ayuda en forma de elementales o criaturas extraplanares. El conjurador podrá disponer de hasta 16 dados de golpe de criaturas que acudirán en su ayuda. El lanzador podrá pedir una criatura determinada, pero la deidad puede escoger entre las disponibles a voluntad, no atendiendo el ruego específico de su servidor. Una vez ante el lanzador, este podrá requerir a la criatura o criaturas convocadas que lleven a cabo una determinada acción, incluso combatir, pero puede que según las circunstancias de la tarea requerida, la criatura o criaturas pidan algo a cambio.",
+                "TL": "1",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "Ver texto",
+                "TS": "Ver texto",
+                "RC": "Ver texto",
+                "Nivel": 8
+            }, 
+		    "Aliento de dragón": {  
+		        "Descripción": "El lanzador adopta la apariencia de un dragón que lanza su terrible aliento sobre una víctima a no más de 50 metros. Si la víctima falla su salvación de INT, sufre 5d6 puntos de daño, no sufriendo daño en caso contrario. La ilusión desaparece inmediatamente tras el ataque.",
+                "TL": "1",
+                "Alcance": "50 metros",
+                "Componentes": "V y S",
+                "Duración": "Instantáneo",
+                "TS": "INT",
+                "RC": "Si",
+                "Nivel": 5
+            }, 
+		    "Alterar atributo": {  
+		        "Descripción": "El lanzador adopta la apariencia de un dragón que lanza su terrible aliento sobre una víctima a no más de 50 metros. Si la víctima falla su salvación de INT, sufre 5d6 puntos de daño, no sufriendo daño en caso contrario. La ilusión desaparece inmediatamente tras el ataque.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "1 hora/nivel",
+                "TS": "CON",
+                "RC": "Si",
+                "Nivel": 2
+            }, 
+		    "Alterar el yo": {  
+		        "Descripción": "El lanzador adopta la apariencia de un dragón que lanza su terrible aliento sobre una víctima a no más de 50 metros. Si la víctima falla su salvación de INT, sufre 5d6 puntos de daño, no sufriendo daño en caso contrario. La ilusión desaparece inmediatamente tras el ataque.",
+                "TL": "1",
+                "Alcance": "Personal",
+                "Componentes": "V y S",
+                "Duración": "10 minutos/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": 2
+            },
+		    "Amistad animal": {  
+		        "Descripción": "Gracias a este conjuro, el lanzador puede ganarse la amistad de un animal. La amistad del animal será natural y no de naturaleza mágica, y perdurará en el tiempo. Sin embargo, el animal tiene derecho a una tirada de salvación de CAR para evitar los efectos del hechizo. El conjurador podrá enseñar de 3 a 6 trucos al animal, a discreción del Narrador. Con todo, el animal seguirá siendo un animal, y no ganará en inteligencia tras ser afectado por este sortilegio. No obstante, defenderá al lanzador ante el ataque de otros animales.",
+                "TL": "1 minuto",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "CAR",
+                "RC": "Si",
+                "Nivel": 1
+            },
+		    "Animal mensajero": {
+		        "Descripción": "Gracias a este conjuro, el lanzador puede ganarse la amistad de un animal. La amistad del animal será natural y no de naturaleza mágica, y perdurará en el tiempo. Sin embargo, el animal tiene derecho a una tirada de salvación de CAR para evitar los efectos del hechizo. El conjurador podrá enseñar de 3 a 6 trucos al animal, a discreción del Narrador. Con todo, el animal seguirá siendo un animal, y no ganará en inteligencia tras ser afectado por este sortilegio. No obstante, defenderá al lanzador ante el ataque de otros animales.",
+                "TL": "1",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "1 día/nivel",
+                "TS": "CAR",
+                "RC": "Si",
+                "Nivel": 2
+            },
+		    "Antipatía/Simpatía": {
+		        "Descripción": "El lanzador establece desde un objeto o punto concreto, en un área de efecto de 20 metros de radio, unas emanaciones que afectarán a las criaturas que pasen por el área afectada en función de la naturaleza de las mismas. El lanzador decidirá a qué tipo de criaturas afectará el conjuro, por ejemplo, a humanos, a criaturas trasgoides, dragones, vampiros, etc. Una vez decidido el tipo de criatura, el lanzador también debe escoger el efecto que quiere entre los 2 siguientes:\n - Antipatía: La criatura del tipo seleccionado al pasar por el área de efecto sentirá que debe abandonar inmediatamente el lugar o no tocar el objeto afectado. Tiene derecho a una tirada de salvación de CAR; si la supera, podrá tocar el objeto o pasar por el lugar, pero sufrirá la pérdida de un punto de destreza (DES) por asalto mientras permanezca en la zona. Una vez que salga de la misma, recuperará los puntos perdidos; si falla la tirada se verá obligado a abandonar la zona inmediatamente.\n - Simpatía: La criatura afectada sentirá un irresistible deseo de coger el objeto o permanecer en la zona. Si falla la tirada de salvación, se negará a abandonar la zona o soltar el objeto hasta que expire el mismo; si la supera, tendrá que repetir la tirada una vez por cada dos turnos que permanezca dentro del área de efecto.",
+                "TL": "1",
+                "Alcance": "20 metros",
+                "Componentes": "V y S",
+                "Duración": "2 horas/nivel",
+                "TS": "CAR",
+                "RC": "Si",
+                "Nivel": 9
+            },
+		    "Antipatía/Simpatía (arcano)": {
+		        "Descripción": "El lanzador establece desde un objeto o punto concreto, en un área de efecto de 20 metros de radio, unas emanaciones que afectarán a las criaturas que pasen por el área afectada en función de la naturaleza de las mismas. El lanzador decidirá a qué tipo de criaturas afectará el conjuro, por ejemplo, a humanos, a criaturas trasgoides, dragones, vampiros, etc. Una vez decidido el tipo de criatura, el lanzador también debe escoger el efecto que quiere entre los 2 siguientes:\n - Antipatía: La criatura del tipo seleccionado al pasar por el área de efecto sentirá que debe abandonar inmediatamente el lugar o no tocar el objeto afectado. Tiene derecho a una tirada de salvación de CAR; si la supera, podrá tocar el objeto o pasar por el lugar, pero sufrirá la pérdida de un punto de destreza (DES) por asalto mientras permanezca en la zona. Una vez que salga de la misma, recuperará los puntos perdidos; si falla la tirada se verá obligado a abandonar la zona inmediatamente.\n - Simpatía: La criatura afectada sentirá un irresistible deseo de coger el objeto o permanecer en la zona. Si falla la tirada de salvación, se negará a abandonar la zona o soltar el objeto hasta que expire el mismo; si la supera, tendrá que repetir la tirada una vez por cada dos turnos que permanezca dentro del área de efecto.",
+                "TL": "1",
+                "Alcance": "20 metros",
+                "Componentes": "V y S",
+                "Duración": "2 horas/nivel",
+                "TS": "CAR",
+                "RC": "Si",
+                "Nivel": 8
+            },
+		    "Apariencia de dragón": {
+		        "Descripción": "El lanzador establece desde un objeto o punto concreto, en un área de efecto de 20 metros de radio, unas emanaciones que afectarán a las criaturas que pasen por el área afectada en función de la naturaleza de las mismas. El lanzador decidirá a qué tipo de criaturas afectará el conjuro, por ejemplo, a humanos, a criaturas trasgoides, dragones, vampiros, etc. Una vez decidido el tipo de criatura, el lanzador también debe escoger el efecto que quiere entre los 2 siguientes:\n - Antipatía: La criatura del tipo seleccionado al pasar por el área de efecto sentirá que debe abandonar inmediatamente el lugar o no tocar el objeto afectado. Tiene derecho a una tirada de salvación de CAR; si la supera, podrá tocar el objeto o pasar por el lugar, pero sufrirá la pérdida de un punto de destreza (DES) por asalto mientras permanezca en la zona. Una vez que salga de la misma, recuperará los puntos perdidos; si falla la tirada se verá obligado a abandonar la zona inmediatamente.\n - Simpatía: La criatura afectada sentirá un irresistible deseo de coger el objeto o permanecer en la zona. Si falla la tirada de salvación, se negará a abandonar la zona o soltar el objeto hasta que expire el mismo; si la supera, tendrá que repetir la tirada una vez por cada dos turnos que permanezca dentro del área de efecto.",
+                "TL": "1",
+                "Alcance": "8 metros",
+                "Componentes": "V y S",
+                "Duración": "Instantáneo",
+                "TS": "INT",
+                "RC": "Si",
+                "Nivel": 1
+            }
+        },   
+    "Mago": [ "Abrir/Cerrar", "Acelerar/Ralentizar", "Agrandar/Empequeñecer", "Alarido ensordecedor", "Alterar atributo", "Antipatía/Simpatía (arcano)" ],
+    "Clerigo": [ "Adivinación", "Aliado mayor de los planos", "Antipatía/Simpatía" ],
+    "Ilusionista": [ "Adoptar apariencia", "Aliento de dragón", "Alterar el yo", "Antipatía/Simpatía (arcano)", "Apariencia de dragón" ],
+    "Druida": [ "Alarma", "Amistad animal", "Animal mensajero", "Antipatía/Simpatía" ]
+}
