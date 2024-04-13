@@ -159,9 +159,30 @@
                 "TS": "INT",
                 "RC": "Si",
                 "Nivel": 1
+            },
+		    "Apertura": {
+		        "Descripción": "Mediante este conjuro el lanzador podrá abrir cualquier tipo de cerradura o cancela a la que se enfrente. Cualquier puerta que esté cerrada, ya sea por medios físicos convencionales o con el concurso de la magia, podrá abrirse usando este conjuro. Asimismo, también podrá ser empleado para abrir puertas secretas u otros compartimentos similares, incluso si están bloqueados por una barra de madera o hierro, y siempre que hayan sido detectados previamente.",
+                "TL": "1",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": 2
+            },
+		    "Cerradura": {
+		        "Descripción": "Es el equivalente inverso de apertura. El lanzador puede bloquear una puerta, cofre o contenedor con tapa de forma que no pueda abrirse por métodos mundanos. El lanzador podrá abrir el elemento cerrado mágicamente sin afectar al conjuro de cerradura.",
+                "TL": "1",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": 2
             }
         },   
-    "Mago": [ "Abrir/Cerrar", "Acelerar/Ralentizar", "Agrandar/Empequeñecer", "Alarido ensordecedor", "Alterar atributo", "Antipatía/Simpatía (arcano)" ],
+    "Mago": [ "Abrir/Cerrar", "Acelerar/Ralentizar", "Agrandar/Empequeñecer", "Alarido ensordecedor", "Alterar atributo", "Antipatía/Simpatía (arcano)", "Apertura",
+              "Cerradura" ],
     "Clerigo": [ "Adivinación", "Aliado mayor de los planos", "Antipatía/Simpatía" ],
     "Ilusionista": [ "Adoptar apariencia", "Aliento de dragón", "Alterar el yo", "Antipatía/Simpatía (arcano)", "Apariencia de dragón" ],
     "Druida": [ "Alarma", "Amistad animal", "Animal mensajero", "Antipatía/Simpatía" ]

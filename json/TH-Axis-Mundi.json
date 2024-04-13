@@ -70,6 +70,34 @@
                 "Categoria": "Control",
                 "Resistencia": "Si"
             },
+            "Cerradura arcana": {    "Descripción": "Mantiene una puerta o cerradura cerrada como si estuviera cerrada con normalidad por medios físicos. El mago que lo lanzó o uno de 3 niveles más puede abrirlo sin cancelarlo. Apertura solo abre el portal momentáneamente, es necesario contraconjurar la retención para anularla.",
+                "Alcance": "3 m",
+                "Duración": "Indefinida",
+                "Nivel": 2,
+                "Categoria": "Terraformación",
+                "Resistencia": "No"
+            },
+            "Clariaudiencia": {    "Descripción": "Permiten oir en lugares apartados del lanzador. Si el objetivo es una criatura, oirá lo que oiga la criatura. Si es un área, oirá cuanto ocurra en ella. Si es un objeto, oirá cuanto haya a su alrededor como si fuera el propio lanzador. Una barrera sólida de piedra o plomo de al menos medio metro interrumpe el vínculo.",
+                "Alcance": "20 m",
+                "Duración": "12 turnos",
+                "Nivel": 3,
+                "Categoria": "Detección",
+                "Resistencia": "No"
+            },
+            "Clarividencia": {    "Descripción": "Permiten ver en lugares apartados del lanzador. Si el objetivo es una criatura, verá lo que vea la criatura. Si es un área, verá cuanto ocurra en ella. Si es un objeto, verá cuanto haya a su alrededor como si fuera el propio lanzador. Una barrera sólida de piedra o plomo de al menos medio metro interrumpe el vínculo.",
+                "Alcance": "20 m",
+                "Duración": "12 turnos",
+                "Nivel": 3,
+                "Categoria": "Detección",
+                "Resistencia": "No"
+            },
+		    "Comunión": {    "Descripción": "El lanzador invoca poderes divinos para obtener conocimiento, entrando en un trance. El lanzador puede hacer tres preguntas que se contestarán con “sí” o “no”. Los poderes divinos no suelen tomarse a bien que se les interrogue sobre materias triviales o demasiado a menudo. El conjuro tarda un turno en lanzarse",
+                "Alcance": "Propio",
+                "Duración": "Inmediato",
+                "Nivel": 5,
+                "Categoria": "Detección",
+                "Resistencia": "Si"
+            },
 		    "Maldición": {    "Descripción": "Penaliza a la víctima con -1 a moral, daño, ataque y tiradas de salvación contra miedo. Afecta a los enemigos del lanzador (que sí pueden estar en combate).",
                 "Alcance": "Propio",
                 "Duración": "6 turnos",
@@ -78,7 +106,7 @@
                 "Resistencia": "Si"
             }
     },
-    "Arcana": [ "Acelerar", "Apertura", "Asesino fantasmal", "Bola de fuego", "Búsqueda" ],
-    "Divina": [ "Adivinación", "Agrandar animal", "Arma sagrada", "Augurio", "Bendición", "Búsqueda", "Maldición" ]
+    "Arcana": [ "Acelerar", "Apertura", "Asesino fantasmal", "Bola de fuego", "Búsqueda", "Cerradura arcana", "Clariaudiencia", "Clarividencia" ],
+    "Divina": [ "Adivinación", "Agrandar animal", "Arma sagrada", "Augurio", "Bendición", "Búsqueda", "Comunión", "Maldición" ]
 }
 
