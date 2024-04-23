@@ -1,0 +1,163 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+<style>
+	
+* {
+  box-sizing: border-box;
+}
+.minileft {
+  float:left;
+  width:16%;
+  padding:0 1px;
+}
+.left {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.microleft {
+  float:left;
+  width:8%;
+  padding:0 1px;
+}
+.main {
+  float:left;
+  width:34%;
+  padding:0 1px;
+}
+.right {
+  float:left;
+  width:33%;
+  padding:0 1px;
+}
+.macroright {
+  float:left;
+  width:46%;
+  padding:0 1px;
+}
+.casitotal {
+  float:left;
+  width:82%;
+  padding:0 1px;
+}
+.total {
+  float:left;
+  width:100%;
+  padding:0 1px;
+}
+.dostercios {
+  float:left;
+  width:67%;
+  padding:0 1px;
+}
+
+
+
+@media only screen and (max-width:820px) {
+  /* For mobile phones: */
+  .left, .main, .minileft, .microleft, .macroright, .right, .casitotal, .total, .minileft, .dostercios {
+    width:100%;
+  }
+  
+</style>
+
+<script>
+	function convierte() {
+		var Fuerza = document.getElementById('Fuerza').value;
+		var Destreza = document.getElementById('Destreza').value;
+		var Constitucion = document.getElementById('Constitucion').value;
+		var Inteligencia = document.getElementById('Inteligencia').value;
+		var Sabiduria = document.getElementById('Sabiduria').value;
+		var Carisma = document.getElementById('Carisma').value;
+		var numDG = document.getElementById('NumDG').value;
+		var tipoDG = document.getElementById('tipoDG').value;
+		if ( numDG != "" ) {
+			var nuevoDG = Math.ceil(parseInt(numDG) / 2);
+			nuevoDG = nuevoDG + "d" + tipoDG;
+			document.getElementById("DG").innerHTML = nuevoDG;
+		}
+		else {
+			document.getElementById("DG").innerHTML = "";
+		}
+		var fisico = 0;
+		var mental = 0;
+		if ( Fuerza > 0 ) {
+			fisico = Fuerza;
+		}
+		if ( Destreza > fisico ) {
+			fisico = Destreza;
+		}
+		if ( Constitucion > fisico ) {
+			fisico = Constitucion;
+		}
+		if ( Inteligencia > 0 ) {
+			mental = Inteligencia;
+		}
+		if ( Sabiduria > mental ) {
+			mental = Sabiduria;
+		}
+		if ( Carisma > mental ) {
+			mental = Carisma;
+		}
+		if ( fisico == 0 && mental == 0 ) {
+			document.getElementById("Salvacion").innerHTML = "";
+		}
+		else if ( fisico > mental ) {
+			document.getElementById("Salvacion").innerHTML = "F";
+		}
+		else if ( fisico < mental ) {
+			document.getElementById("Salvacion").innerHTML = "M";
+		}
+		else {
+			document.getElementById("Salvacion").innerHTML = "F y M";
+		}
+	}
+</script>
+
+</head>
+<body >
+	<div class="w3-container w3-blue">
+	  <h2>Cutre conversor de monstruos de D&D 5ª a Crónicas de la Marca</h2>
+	</div>
+	<div style="overflow:auto">
+	
+		<div class="left">
+			<h3>D&D 5ª</h3>
+			<table class='w3-table  w3-striped w3-border'><tr><th>Atributo</th><th>Valor</th></tr>
+				<tr><td>Fuerza</td><td><input type="number" id="Fuerza" name="Fuerza" ></td></tr>
+				<tr><td>Destreza</td><td><input type="number" id="Destreza" name="Destreza" ></td></tr>
+				<tr><td>Constitución</td><td><input type="number" id="Constitucion" name="Constitucion" ></td></tr>
+				<tr><td>Inteligencia</td><td><input type="number" id="Inteligencia" name="Inteligencia" ></td></tr>
+				<tr><td>Sabiduría</td><td><input type="number" id="Sabiduria" name="Sabiduria" ></td></tr>
+				<tr><td>Carisma</td><td><input type="number" id="Carisma" name="Carisma" ></td></tr>
+				<tr><td>Número DG</td><td><input type="number" id="NumDG" name="NumDG" placeholder="5 si DG=5d8+3" ></td></tr>
+				<tr><td>Tipo DG</td><td>
+				<select id="tipoDG">
+					<option value="4">d4</option>
+					<option value="6">d6</option>
+					<option value="8" selected="selected">d8</option>
+					<option value="10">d10</option>
+					<option value="12">d12</option>
+				</select></td></tr>
+				<tr><td>Modificador DG (no se usa)</td><td><input type="number" id="ModDG" name="ModDG" placeholder="3 si DG=5d8+3"></td></tr>
+			</table>
+		</div>
+		<div class="microleft">
+			<h3>Conversión</h3>
+			<center><p><button class='w3-button w3-block w3-blue' onclick='convierte()'>  ----> </button></p></center>
+		</div>
+		<div class="right">
+			<h3>Crónicas de la Marca</h3>
+			<table class='w3-table  w3-striped w3-border'>
+				<tr><td>Salvación</td><td><div id="Salvacion"></div></td></tr>
+				<tr><td>DG</td><td><div id="DG"></div></td></tr>
+			</table>
+		</div>
+	</div>	
+</body>
+</html>
