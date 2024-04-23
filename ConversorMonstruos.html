@@ -84,6 +84,28 @@
 		else {
 			document.getElementById("DG").innerHTML = "";
 		}
+		
+		var numDados = document.getElementById('NumDados').value;
+		var tipoDado = document.getElementById('tipoDado').value;
+		
+		if ( numDados != "" ) {
+			var dano = numDados;
+			var dado = "d4";
+			if ( tipoDado == 20 )
+				dado = "d12";
+			else if (tipoDado == 12 )
+				dado = "d10";
+			else if (tipoDado == 10 )
+				dado = "d8";
+			else if (tipoDado == 8 )
+				dado = "d6";
+				
+			document.getElementById("Dano").innerHTML = dano + dado;
+		}
+		else {
+			document.getElementById("Dano").innerHTML = "";
+		}
+		
 		var fisico = 0;
 		var mental = 0;
 		if ( Fuerza > 0 ) {
@@ -152,6 +174,18 @@
 					<option value="12">d12</option>
 				</select></td></tr>
 				<tr><td>Modificador DG (no se usa)</td><td><input type="number" id="ModDG" name="ModDG" placeholder="3 si DG=5d8+3"></td></tr>
+				<tr><td><strong>Arma natural</strong></td><td><strong>Daño</strong></td></tr>
+				<tr><td>Número de dados</td><td><input type="number" id="NumDados" name="NumDados" placeholder="4 si DG=4d6-1" ></td></tr>
+				<tr><td>Tipo de dado</td><td>
+				<select id="tipoDado">
+					<option value="4" selected="selected">d4</option>
+					<option value="6">d6</option>
+					<option value="8">d8</option>
+					<option value="10">d10</option>
+					<option value="12">d12</option>
+					<option value="20">d20</option>
+				</select></td></tr>
+				<tr><td>Modificador de daño (no se usa)</td><td><input type="number" id="ModDano" name="ModDano" placeholder="-2 si DG=4d6-1"></td></tr>
 			</table>
 		</div>
 		<div class="microleft">
@@ -163,6 +197,7 @@
 			<table class='w3-table  w3-striped w3-border'>
 				<tr><td>Salvación</td><td><div id="Salvacion"></div></td></tr>
 				<tr><td>DG</td><td><div id="DG"></div></td></tr>
+				<tr><td>Daño arma natural</td><td><div id="Dano"></div></td></tr>
 			</table>
 		</div>
 	</div>	
