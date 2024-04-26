@@ -7,6 +7,7 @@ class Sistemas {
         this.sistemas.set("Cronicas de la Marca", new CdLM());
         this.sistemas.set("Axis Mundi", new AxM());
         this.sistemas.set("Dungeon Hack", new DH());
+        this.sistemas.set("Tierras Quebradas", new TQuebradas());
     }
     
     getSistema(_sistema) {

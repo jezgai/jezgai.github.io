@@ -12,6 +12,7 @@
 <script src="javascript/TH_cdlm.js"></script>
 <script src="javascript/TH_aelmde.js"></script>
 <script src="javascript/TH_dh.js"></script>
+<script src="javascript/TH_TQuebradas.js"></script>
 <script src="javascript/TH_sistemas.js"></script>
 
 <script src="javascript/pdfform.minipdf.dist.js"></script>
@@ -24,6 +25,8 @@
 	let tipossistema = [];
 	let lHechizos = [];
 	let tipohechizos = "";
+	
+	let verbo_esfera = [ "", "" ]; // Solo sirve para Tierras Quebradas
 	
 	function generaPDF() {
 	    
@@ -100,12 +103,7 @@
 	function cargaTipos() {
 	    if ( objsistema != null ) {
 	        tipossistema = objsistema.listaTipos();
-	        var i=0;
-	        var tiposhtml = "<label class='w3-text-blue'><strong>" + objsistema.etiquetaTipos() + "</strong></label><select class='w3-select' name='tipossistema' onChange='seleccionatipo(this)'><option>--Selecciona--</option>";
-	        for (i=0; i<tipossistema.length; i++) {
-	            tiposhtml += '<option>' + tipossistema[i] + '</option>';
-	        }
-	        tiposhtml += '</select>';
+	        var tiposhtml = objsistema.construyeSelectTipos(tipossistema);
 	        document.getElementById("divtipo").innerHTML = tiposhtml;
     	    document.getElementById("divtipo").style.visibility="visible";
 	    }
@@ -130,6 +128,10 @@
 		    case 5:
 		        objsistema=sistemas.getSistema("Dungeon Hack");
 		        break;
+		    case 6:
+		        objsistema=sistemas.getSistema("Tierras Quebradas");
+				cargaHechizosTQ();
+		        break;
 		    default:
 		        objsistema=null;
 		        tipossistema = [];
@@ -138,6 +140,48 @@
 		}
 		cargaTipos();
 		
+	}
+	
+	function cargaHechizosTQ() {
+	        lHechizos = objsistema.listaHechizos(verbo_esfera[0], verbo_esfera[1]);
+	        var i=0;
+	        var hechizoshtml = [ "<ul>", "<ul>", "<ul>" ];
+	        for (i=0; i<lHechizos.length; i++) {
+	            var indicehechizo = math.mod(i,3);
+			    hechizoshtml[indicehechizo] += "<li><label><input type='checkbox' id='chechizos"+i+"' /> " + lHechizos[i].nombre;
+				hechizoshtml[indicehechizo] += "</label></li>";
+	        }
+	        hechizoshtml[0] += "</ul>";
+	        hechizoshtml[1] += "</ul>";
+	        hechizoshtml[2] += "</ul>";
+	        document.getElementById("hechizos1").innerHTML = hechizoshtml[0];
+	        document.getElementById("hechizos2").innerHTML = hechizoshtml[1];
+	        document.getElementById("hechizos3").innerHTML = hechizoshtml[2];
+	        document.getElementById("listahechizos").style.visibility="visible";
+    	    document.getElementById("botonpdf").style.visibility="visible";
+	}
+	
+	function seleccionatipoTQ(thelist, indice) {
+	    var idx = thelist.selectedIndex;
+	    if ( idx > 0 && tipossistema[indice].length > 0)
+	    {	    
+	        tipohechizos = tipossistema[indice][idx-1];
+	        verbo_esfera[indice] = tipohechizos;
+	        cargaHechizosTQ();
+	    }
+	    else if (tipossistema[indice].length > 0) {
+			verbo_esfera[indice] = "";
+	        cargaHechizosTQ();
+		}
+	    else {
+		    tipohechizos = "";
+	        lHechizos = [];
+	        document.getElementById("hechizos1").innerHTML = "";
+	        document.getElementById("hechizos2").innerHTML = "";
+	        document.getElementById("hechizos3").innerHTML = "";
+	        document.getElementById("listahechizos").style.visibility="hidden";
+	    document.getElementById("botonpdf").style.visibility="hidden";
+	    }
 	}
 	
 	function seleccionatipo(thelist) {
@@ -202,6 +246,11 @@
   width:34%;
   padding:0 1px;
 }
+.mitad {
+  float:left;
+  width:50%;
+  padding:0 1px;
+}
 .right {
   float:left;
   width:33%;
@@ -232,7 +281,7 @@
 
 @media only screen and (max-width:820px) {
   /* For mobile phones: */
-  .left, .main, .minileft, .microleft, .macroright, .right, .casitotal, .total, .minileft, .dostercios {
+  .left, .main, .mitad, .minileft, .microleft, .macroright, .right, .casitotal, .total, .minileft, .dostercios {
     width:100%;
   }
   
@@ -255,6 +304,7 @@
 			    <option>Aventuras en La Marca del Este</option>
 			    <option>Axis Mundi</option>
 			    <option>Dungeon Hack</option>
+			    <option>Tierras Quebradas</option>
 		    </select>
 	    </div>
 	    <div class="main" id="divtipo">	        

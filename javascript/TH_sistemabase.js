@@ -11,6 +11,16 @@ class SistemaBase {
     listaTipos() {
         return Object.keys(this.hechizos.Tipos);
     }
+    construyeSelectTipos(tipossistema) {
+		var i=0;
+		var tiposhtml = "<label class='w3-text-blue'><strong>" + this.etiquetaTipos() + "</strong></label><select class='w3-select' name='tipossistema' onChange='seleccionatipo(this)'><option>--Selecciona--</option>";
+		for (i=0; i<tipossistema.length; i++) {
+			tiposhtml += '<option>' + tipossistema[i] + '</option>';
+		}
+		tiposhtml += '</select>';
+		return tiposhtml;
+	}
+    
     etiquetaTipos() {
         return this.hechizos.EtiquetaTipos;
     }

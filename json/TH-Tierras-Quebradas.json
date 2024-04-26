@@ -1,0 +1,1454 @@
+{
+    "Hechizos": {
+                    "Abrazo del mar": { 
+                              "descripcion": "Hunde al blanco hasta el fondo si se encuentra en el agua.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Abrir caminos interplanares": { 
+                              "descripcion": "Lanza al hechicero y sus acompañantes al entramado de caminos interplanares en el Multiverso.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Abrir grieta": { 
+                              "descripcion": "Se abre una grieta en el suelo de dos metros de largo por uno de ancho. Víctima tira Equilibrio /Saltar Dif.15 o caer y sufrir 1d6 PD.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Absorber fuerza espiritual": { 
+                              "descripcion": "Absore 1 PM por turno, que pasa a la reserva propia.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Espíritu" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Acelerar ciclo vegetal": { 
+                              "descripcion": "Permite simular en una planta el paso de tantos años como el ESP del hechicero.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Planta" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Acelerar tiempo": { 
+                              "descripcion": "Consigue +3 a base de Agilidad y duplica la velocidad del blanco.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Agonía": { 
+                              "descripcion": "El blanco queda incapacitado. Cada turno puede sobreponerse con CUE vs ESP, quedando ese turno Debilitado, pero cada nuevo turno debe tirar.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Agotar": { 
+                              "descripcion": "Deja al blanco Debilitado.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Agua ardiente": { 
+                              "descripcion": "Transforma agua en fuego líquido. Víctima rociada sufre 1d6 PD/turno.",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Agua", "Fuego" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Alas": { 
+                              "descripcion": "Los brazos del blanco se transforman en alas. Debe usar Volar para hacer maniobras arriesgadas.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Alteración caótica": { 
+                              "descripcion": "Otorga al blanco un poder mágico de 1-5 VM.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "20",
+                              "PM": "1-5" 
+                    },
+                    "Alterar música": { 
+                              "descripcion": "Embellece o estropea una melodía.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Alterar objeto": { 
+                              "descripcion": "Cambia la apariencia o color de un objeto grande o pequeño.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "10",
+                              "PM": "1-2" 
+                    },
+                    "Alzar en el aire": { 
+                              "descripcion": "El blanco es alzado 3d6 metros menos TAM del blanco.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Alzar zombi": { 
+                              "descripcion": "Transforma un cadáver en zombi.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Espíritu", "Cuerpo" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Animar árbol": { 
+                              "descripcion": "Hace que un árbol cobre vida y pueda desplazarse, obedeciendo al hechicero.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Espíritu", "Planta" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Animar esqueleto": { 
+                              "descripcion": "Anima un esqueleto.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Espíritu", "Cuerpo" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Animar estatua": { 
+                              "descripcion": "Anima una estatua de piedra, bronce, hierro o acero, de TAM igua a la mitad del ESP del hechicero.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Espíritu", "Tierra" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Anular hechicero": { 
+                              "descripcion": "El blanco pierde la capacidad de producir magia.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Apartar las aguas": { 
+                              "descripcion": "Forma un corredor en un río o estrecho.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "25",
+                              "PM": "4" 
+                    },
+                    "Asfixia": { 
+                              "descripcion": "El blanco no puede respirar.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Atar demonio": { 
+                              "descripcion": "Somete a un demonio no atado.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Atar gnomo": { 
+                              "descripcion": "Somete a un elemental de Tierra.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Atar ondina": { 
+                              "descripcion": "Somete a una ondina.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Atar salamandra": { 
+                              "descripcion": "Somete una salamandra.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Atar silfo": { 
+                              "descripcion": "Somete a un silfo.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Atrapar con la maleza": { 
+                              "descripcion": "Las plantas en radio 5m entorno al blanco cobran vida e intentan capturarlo.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Planta" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Baile mágico": { 
+                              "descripcion": "Los que oigan la melodía, se pondrán a bailar.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Balbuceos": { 
+                              "descripcion": "El blanco es incapaz de hacerse entender con el habla.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Belleza": { 
+                              "descripcion": "El blanco aumenta su Atractivo entre 1-3 puntos.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "10",
+                              "PM": "1-3" 
+                    },
+                    "Borrar recuerdos": { 
+                              "descripcion": "Elimina los recuerdos que desee el hechicero, durante la duración del conjuro.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Bosque encantado": { 
+                              "descripcion": "El bosque comienza a favorecer al hechicero y desfavorecer a sus enemigos.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Planta" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Bramido ensordecedor": { 
+                              "descripcion": "Las víctimas sufren 1 PD, quedan ensordecidas 5min y debilitadas 1 turno o bien sufren tantos PD como ESP del hechicero y quedan también ensordecidas 5min y debilitadas 1 turno.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "25",
+                              "PM": "4" 
+                    },
+                    "Caída ligera": { 
+                              "descripcion": "Se amortigua una caída. Daño a la mitad.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Calcinar enemigo": { 
+                              "descripcion": "Transforma en llamas la ropa del blanco y pone al rojo partes metálicas. Sufre 1d6 PD +1/pto.Carga de armadura metálica.",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Tierra", "Fuego" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Calmar vientos": { 
+                              "descripcion": "Pone fin a vientos y torbellinos.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Cambiar de sexo": { 
+                              "descripcion": "Cambia de sexo al blanco. El cambio a mujer otorga +1 TAM.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Caminar por las paredes": { 
+                              "descripcion": "El blanco camina por paredes y techo como por el suelo.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Capa de oscuridad": { 
+                              "descripcion": "Esfera de oscuridad en radio 4 metros alrededor del blanco.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Cegar": { 
+                              "descripcion": "Ciega al blanco 1d6 turnos de combate. Alcance 15m.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Comprender lenguas": { 
+                              "descripcion": "El blanco comprende todos los idiomas.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Comprobar pureza": { 
+                              "descripcion": "Comprueba si hay tóxicos en un líquido.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Concluir inundación": { 
+                              "descripcion": "La tierra absorbe el agua de un terreno inundado.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Conexión espiritual": { 
+                              "descripcion": "El hechicero crea lazo con el blanco y puede lanzarle hechizos sin que se halle presente.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Espíritu" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Confundir": { 
+                              "descripcion": "El blanco se desorienta y no puede realizar acciones activamente, aunque puede defenderse y moverse. Persuadir Dif.10 lo puede convencer de algo razonable.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Congelar líquido": { 
+                              "descripcion": "Congela tantos litros de agua como el ESP del hechicero.",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "10",
+                              "PM": "1-3" 
+                    },
+                    "Convocar (animal)": { 
+                              "descripcion": "Llama a su presencia a un animal de las cercanías de una especie concreta.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "10",
+                              "PM": "1-3" 
+                    },
+                    "Corriente de agua": { 
+                              "descripcion": "Crea una fuerte corriente en una superficie de agua capaz de transportar un barco de 10m manga.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Crear alimento": { 
+                              "descripcion": "Se genera una sustancia alimenticia en recipiente tipo bote, cacerola o botella.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Crear manantial": { 
+                              "descripcion": "Hace brotar un manantial en el punto elegido.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Cuerpo quebradizo": { 
+                              "descripcion": "El daño por armas que reciba el blanco se multiplica por dos.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Curar herida": { 
+                              "descripcion": "Cura entre 1-3 PD de una herida, aunque se hayan aplicado antes primeros auxilios.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "15",
+                              "PM": "1-3" 
+                    },
+                    "Debilitar demonio": { 
+                              "descripcion": "Destruye poderes demoniacos de VM 1-5.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "10",
+                              "PM": "1-5" 
+                    },
+                    "Debilitar fuerza espiritual": { 
+                              "descripcion": "Resta al blanco 1d6 PM por turno durante 1 turno/PM gastado.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Espíritu" ],
+                              "dificultad": "15",
+                              "PM": "1-4" 
+                    },
+                    "Deformar": { 
+                              "descripcion": "Reduce Atractivo en 1-3 puntos.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "15",
+                              "PM": "1-3" 
+                    },
+                    "Dejar de existir": { 
+                              "descripcion": "El blanco desaparece y es olvidado.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Depurar líquido": { 
+                              "descripcion": "Limpia de tóxicos un litro de agua.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Derrumbar edificio": { 
+                              "descripcion": "Hace que un edificio del tamaño de una casa grande o torre se desmorone.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "25",
+                              "PM": "4" 
+                    },
+                    "Descongelar": { 
+                              "descripcion": "Descongela un volumen entre el de una persona y el de una cabaña grande.",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "10",
+                              "PM": "1-3" 
+                    },
+                    "Deshacer magia": { 
+                              "descripcion": "Deshace un hechizo de PM iguales o inferiores.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "15",
+                              "PM": "1+" 
+                    },
+                    "Destruir atadura": { 
+                              "descripcion": "Rompe la atadura que une a un demonio con su amo.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Destruir gnomo": { 
+                              "descripcion": "El elemental sufre la pérdida de 1d6 PM por PM gastado.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "15",
+                              "PM": "1-4" 
+                    },
+                    "Destruir objeto": { 
+                              "descripcion": "Daña irremediablemente cualquier objeto, incluidos aquellos que encarnan virtudes o están encantados.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Destruir ondina": { 
+                              "descripcion": "El elemental sufre la pérdida de 1d6 PM por PM gastado.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "15",
+                              "PM": "1-4" 
+                    },
+                    "Destruir salamandra": { 
+                              "descripcion": "El elemental sufre la pérdida de 1d6 PM por PM gastado.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "15",
+                              "PM": "1-4" 
+                    },
+                    "Destruir silfo": { 
+                              "descripcion": "El elemental sufre la pérdida de 1d6 PM por PM gastado.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "15",
+                              "PM": "1-4" 
+                    },
+                    "Destruir virtud": { 
+                              "descripcion": "La virtud pierde 1d6 PM, sin tirada enfrentada de ESP.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Detectar don": { 
+                              "descripcion": "Permite detectar a aquellos con el don de la hechicería. Distingue entre quienes tienen la capacidad y quienes han aprendido a usarla.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Espíritu" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Detectar enemigo": { 
+                              "descripcion": "Detecta si hay alguien con malas intenciones hacia él.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Detener desprendimiento": { 
+                              "descripcion": "Detiene derrumbes y desprendimientos. ",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Detener proyectiles": { 
+                              "descripcion": "Detiene los proyectiles lanzados contra un blanco.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Detener tiempo": { 
+                              "descripcion": "El tiempo se para excepto para el lanzador del hechizo. ",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Diagnosticar": { 
+                              "descripcion": "Revela el estado del salud del blanco (heridas, enfermedades, veneno...). Otorga +3 a Medicina o P.Auxilios del hechicero.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Dormir": { 
+                              "descripcion": "El blanco cae dormido durante la duración del conjuro.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Ejército de muertos": { 
+                              "descripcion": "Anima todos los cadáveres en radio 100m en torno al hechicero, bien como zombies o como esqueletos.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Espíritu", "Cuerpo" ],
+                              "dificultad": "25",
+                              "PM": "4" 
+                    },
+                    "Emocionar": { 
+                              "descripcion": "El blanco se ve dominado por una poderosa emoción: ira, lujuria, miedo, trsiteza, alegría o deseperación. La víctima actuará en consonancia con sus emociones.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Empequeñecer": { 
+                              "descripcion": "Reduce 2 TAM del blanco por PM hasta máx. -5 TAM. CUE se reduce en misma cantidad.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "20",
+                              "PM": "1-4" 
+                    },
+                    "Empozoñar": { 
+                              "descripcion": "Una planta o producto vegetal se torna tóxico durante la duración del hechizo.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Planta" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Enamorar": { 
+                              "descripcion": "El blanco se enamora del lanzador del conjuro. Si la orientación sexual no lo permite, surgirá una poderosa amistad.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Enredadera": { 
+                              "descripcion": "Se utiliza semilla o esqueje de planta trepadora. La planta trepadora crece por superficie en dirección deseada por hechicero. Crece ESPx3 metros. Puede usarse para trepar.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Planta" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Escudriñar": { 
+                              "descripcion": "Se puede observar un lugar, persona u objeto que se conozca.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Exorcismo": { 
+                              "descripcion": "Se expulsa un espíritu al limbo, ya estuviera poseyendo un cuerpo o fuera zombie o esqueleto.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Espíritu" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Expulsar demonio": { 
+                              "descripcion": "Expulsa a un demonio a su plano de origen.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Expulsar virtud": { 
+                              "descripcion": "Expulsa de la Tierra una virtud.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Extinguir incendio": { 
+                              "descripcion": "Se extingue un fuego pequeño o todas las llamas presentes.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "15",
+                              "PM": "1-2" 
+                    },
+                    "Favorecer embarcación": { 
+                              "descripcion": "Ayuda a guiar un navío.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Fundirse con árbol": { 
+                              "descripcion": "El blanco desaparece en el interior de un árbol.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Cuerpo", "Planta" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Furia": { 
+                              "descripcion": "El blanco se ve forzado a luchar,  suma +1 al daño e ignora Debilitado o Incapacitado. Escoge siempre a quién atacar.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Garras": { 
+                              "descripcion": "Las manos del blanco se convierten en garras, que usando Pelea causan 1 PD. Se consideran mágicas.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Gema luminosa": { 
+                              "descripcion": "Una piedra preciosa comienza a brillar.",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Tierra", "Fuego" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Grilletes espirituales": { 
+                              "descripcion": "La víctima lanza 1d6 en vez de 1d10 en tiradas enfrentadas de ESP.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Espíritu" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Guiar masa de agua": { 
+                              "descripcion": "Pone en movimiento una masa de agua de 16m3.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Guiar masa de tierra": { 
+                              "descripcion": "Mueve una masa de 16 m3 de tierra, piedras, rocas y arena (en bruto) a la velocidad de una persona andando.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Guiar viento": { 
+                              "descripcion": "El viento sopla en la dirección deseada.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Herrumbre": { 
+                              "descripcion": "Deteriora un arma (-2 al daño) o armadura (mitad de Protección).",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Historia de árbol": { 
+                              "descripcion": "Permite visualizar durante 5 min. todo lo acontecido en las proximidades de un árbol.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Planta" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Homúnculo": { 
+                              "descripcion": "Genera una copia diminuta del blanco de 1/3 CUE y -5 TAM.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Identificar demonio": { 
+                              "descripcion": "Revela los poderes, debilidades y atadura de un demonio.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Identificar hechizo": { 
+                              "descripcion": "Detecta si una persona u objeto está siendo afectado por un hechizo y qué efectos tiene.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Identificar planta": { 
+                              "descripcion": "Se puede identificar una planta y conocer sus propiedades.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Planta" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Ilusión acústica": { 
+                              "descripcion": "Surge un sonido simple (olas, cristales rotos) o complejo (voces, música).",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "15",
+                              "PM": "1-2" 
+                    },
+                    "Ilusión visual": { 
+                              "descripcion": "Crea imagen bidimensional o tridimensional.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "10",
+                              "PM": "1-2" 
+                    },
+                    "Ilustrar recuerdo": { 
+                              "descripcion": "Crea imágenes a partir de un recuerdo del blanco. Sirve para mostrar exactamente una persona o lugar.",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Mente", "Fuego" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Imitar apariencia": { 
+                              "descripcion": "El blanco asume el aspecto de otra persona. ",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Incrementar cuerpo": { 
+                              "descripcion": "Aumenta Cuerpo 1 punto.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Incrementar Mente": { 
+                              "descripcion": "Aumenta la Mente 1 punto.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Inmunidad al fuego": { 
+                              "descripcion": "El blanco y sus pertenencias son inmunes al fuego, pero puede asfixiarse.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Inscribir": { 
+                              "descripcion": "El blanco puede escribir sobre piedra o metal con el dedo, quedando la inscripción permanente.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Insertar recuerdos": { 
+                              "descripcion": "Se introducen en la memoria de la víctima recuerdos falsos (escena simple, describible con una frase).",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Inspiración tecnológica": { 
+                              "descripcion": "Recibe la inspiración para crear un artefacto o autómata de la Ley.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "15",
+                              "PM": "2-3" 
+                    },
+                    "Interrogar muerto": { 
+                              "descripcion": "Un cadáver contesta una pregunta.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Espíritu" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Invertir dirección": { 
+                              "descripcion": "El blanco se desplaza en la dirección contraria.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "15",
+                              "PM": "1-3" 
+                    },
+                    "Invisibilidad": { 
+                              "descripcion": "El blanco y sus pertenencias se tornan invisibles.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "20",
+                              "PM": "2-4" 
+                    },
+                    "Invocar (criatura)": { 
+                              "descripcion": "Invoca un demonio o criatura mágica de otro plano. ",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "10-20",
+                              "PM": "1-4" 
+                    },
+                    "Invocar (especie)": { 
+                              "descripcion": "Aparece un ejemplar de una especie animal concreta.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Invocar a (dios del Caos)": { 
+                              "descripcion": "Invoca al señor del Caos que da nombre al conjuro.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "25",
+                              "PM": "4" 
+                    },
+                    "Invocar a (señor de la Ley)": { 
+                              "descripcion": "Trae a la Tierra al dios de la Ley que da nombre al conjuro.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "25",
+                              "PM": "4" 
+                    },
+                    "Invocar a Kamin": { 
+                              "descripcion": "Invoca a la diosa elemental de la tierra.",
+                              "verbos": [ "Invocar " ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Invocar a Tepel": { 
+                              "descripcion": "Se invoca al dios elemental del fuego.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Invocar a Visdu": { 
+                              "descripcion": "Invoca a la diosa elemental del aire.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Invocar a Vodar": { 
+                              "descripcion": "Invoca al dios elemental del agua.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Invocar antepasado": { 
+                              "descripcion": "Invoca a uno de los espíritus deificados de los Caídos.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Espíritu" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Invocar fantasma": { 
+                              "descripcion": "Invoca el espíritu de un muerto, pudiendo ser fantasma o espectro.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Espíritu" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Invocar gnomo": { 
+                              "descripcion": "Invoca 1, 2 o 3 gnomos.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "15",
+                              "PM": "2-4" 
+                    },
+                    "Invocar ondina": { 
+                              "descripcion": "Invoca 1, 2 o 3 ondinas.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "15",
+                              "PM": "2-4" 
+                    },
+                    "Invocar salamandra": { 
+                              "descripcion": "Invoca 1, 2 o 3 salamandras.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "15",
+                              "PM": "2-4" 
+                    },
+                    "Invocar silfo": { 
+                              "descripcion": "Invoca 1, 2 o 3 silfos.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "15",
+                              "PM": "2-4" 
+                    },
+                    "Invocar virtud": { 
+                              "descripcion": "Trae a la Tierra a una virtud de ESP 1d6+2.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Invulnerabilidad  ": { 
+                              "descripcion": "El blanco es inmune al daño físico no mágico.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "25",
+                              "PM": "4" 
+                    },
+                    "Invulnerabilidad a la magia": { 
+                              "descripcion": "El blanco se torna invulnerable a hechizos y poderes mágicos.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Lastrar": { 
+                              "descripcion": "La Carga que lleve el objetivo se ve triplicada.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Lazo irrompible": { 
+                              "descripcion": "Cadenas invisibles atrapan una parte del cuerpo del blanco.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Leer libro mentalmente": { 
+                              "descripcion": "Se puede leer un texto de idioma conocido solo con la mente, sin abrirlo.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Mente", "Tierra" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Leer recuerdos": { 
+                              "descripcion": "Se pueden examinar los recuerdos del blanco. ",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Llamada de la tierra": { 
+                              "descripcion": "Todos los muertos vivientes presentes se dirigirán irremediablemente hacía las entrañas de la tierra.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Llamar a (dios del Caos)": { 
+                              "descripcion": "El dios del Caos que da nombre al hechizo se manifiesta.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Llamar a (señor de la Ley)": { 
+                              "descripcion": "Hace que se manifieste el dios de la Ley que da nombre al hechizo.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Llamaradas": { 
+                              "descripcion": "El blanco gana la facultad de expulsar fuego por la boca. Alcance 3m e impactan automáticamente. Ocasiona 1d6 PD y armaduras protegen mitad.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Locura": { 
+                              "descripcion": "El blanco se vuelve loco y no es dueño de sus actos. Comportamiento impredecible y potencialmente peligroso.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Magnetizar": { 
+                              "descripcion": "Magnetiza poderosamente un objeto de hierro de Carga ≤ ESP Hechicero. Atrae todo en 30m distancia con Fuerza = ESP Hechicero. La Fuerza es doble a menos de 5m.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Mareos": { 
+                              "descripcion": "El blanco sufre -2 a todas sus acciones.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Mariposas de fuego": { 
+                              "descripcion": "Transforma un fuego ≤ al de una casa en un enjambre de mariposas que se dispersan y provocan nuevos incendios.",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Fuego", "Cuerpo" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Masa de fuego": { 
+                              "descripcion": "Crea una masa móvil de fuego flotante del tamaño de una hoguera 3m diámetro, que se mueve a velocidad andando. Cauda 2d6 PD/turno.",
+                              "verbos": [ "Aumentar", "Dirigir" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Matar vegetación": { 
+                              "descripcion": "Acaba con un conjunto vegetal.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Planta" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Mejorar (habilidad)": { 
+                              "descripcion": "El blanco aumenta la habilidad en 1-3 puntos.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "15",
+                              "PM": "1-3" 
+                    },
+                    "Mejorar arma": { 
+                              "descripcion": "Por cada PM el arma o proyectil hace un punto más de daño.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "15",
+                              "PM": "1-2" 
+                    },
+                    "Mente de bosque": { 
+                              "descripcion": "Permite conocer a la perfección la geografía y dimensiones de un bosque.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Planta" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Mover árbol": { 
+                              "descripcion": "El hechicero puede hacer que un árbol se mueva. No puede atacar.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Planta" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Movimiento sin sonido": { 
+                              "descripcion": "El blanco deja de generar sonido.",
+                              "verbos": [ "Inhibir " ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Muro de cuarzo": { 
+                              "descripcion": "Hace aparecer un muro de cuarzo translúcido de 2m alto y largo. Protege doble ESP hechicero.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Necrología": { 
+                              "descripcion": "Se experimenta el último minuto de vida de un cadáver.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Espíritu" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Niebla": { 
+                              "descripcion": "Crea una espasa niebla que ocupa una habitación, una plaza o una ciudad.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "10",
+                              "PM": "1-3" 
+                    },
+                    "Octógono de contención": { 
+                              "descripcion": "Aprisiona a un demonio de ESP ≤ al doble del ESP del hechicero en un octógono de 3m diámetro.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Ojo en la mano": { 
+                              "descripcion": "Aparece un ojo en la palma de la mano. +2 Percatarse.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Olor": { 
+                              "descripcion": "Surge un olor de intensidad variable pero pudiendo llegar a provocar naúseas.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Paralizar": { 
+                              "descripcion": "El blanco queda paralizado y no puede parpadear ni hablar. Si estaba corriendo, caera al suelo.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Paseo por el pasado": { 
+                              "descripcion": "Viaja como ente invisible a un momento del pasado.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Espíritu", "Ley" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Percibir fuerza espiritual": { 
+                              "descripcion": "Revela cantidad de PM en personas, criaturas y objetos. Revela lugares y objetos como mágicos.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Espíritu" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Peso en oro": { 
+                              "descripcion": "El blanco vomita monedas y sufre tantos PD como Espíritu del mago. Si hay Herida grave: pérdida permanente 1 CUE.",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Cuerpo", "Tierra" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Petrificar": { 
+                              "descripcion": "La víctima es transformada en una estatua de piedra. No ve, pero oye y habla.",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Cuerpo", "Tierra" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Piedra de fuego": { 
+                              "descripcion": "Hace que una piedra, al ser lanzada, se transforme en bola de fuego de 2d6 PD.",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Tierra", "Fuego" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Piel endurecida": { 
+                              "descripcion": "El blanco recibe 1-3 puntos de Protección. No puede evitarse con el Golpe Épico 'Ignorar Armadura'.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "15",
+                              "PM": "1-3" 
+                    },
+                    "Posesión": { 
+                              "descripcion": "Se posee el cuerpo de una persona, animal, demonio u autómata (seres con mente).",
+                              "verbos": [ "Dirigir", "Disminuir" ],
+                              "esferas": [ "Espíritu" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Prender": { 
+                              "descripcion": "Se inicia un fuego en cualquier sustancia combustible, tamaño vela e irá aumentando.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Proyectar palabras": { 
+                              "descripcion": "El blanco dice lo que el hechicero quiera.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Purificar planta": { 
+                              "descripcion": "Acaba con la toxicidad de una planta o sustancia de origen vegetal, pudiendo ser comida.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Planta" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Ralentizar tiempo": { 
+                              "descripcion": "La base de Agilidad del blanco sufre -3 y su velocidad se reduce a la mitad.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Reflejar hechizo": { 
+                              "descripcion": "Los hechizos lanzados sobre el blanco, de 1-4 PM, afectan a su lanzador.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "15",
+                              "PM": "1-4" 
+                    },
+                    "Refugio subterráneo": { 
+                              "descripcion": "La tierra se traga al blanco del hechizo.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Cuerpo", "Tierra" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Regenerar fuerza espiritual": { 
+                              "descripcion": "Cambia PV por PM hasta PM máximos. La pérdida de PV no genera ninguna herida.",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Cuerpo", "Espíritu" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Remolino": { 
+                              "descripcion": "Forma un remolino de 10m radio en una superficie de agua.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Reparar": { 
+                              "descripcion": "Arregla un objeto roto del tamaño de arma o herramienta, o bien de tamaño de carro o portón. Restablece objetos encantados.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "10",
+                              "PM": "1-2" 
+                    },
+                    "Respirar bajo el agua": { 
+                              "descripcion": "Permite respirar bajo el agua",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Agua", "Aire" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Resquebrajar roca": { 
+                              "descripcion": "Hace pedazos una roca o muro de piedra o adobe de hasta 5x5x5 metros.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Restauración corporal": { 
+                              "descripcion": "El blanco se recupera por completo de heridas, miembros amputados, dientes, ojos, etc. Cura cualquier intoxicación o enfermedad.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "25",
+                              "PM": "4" 
+                    },
+                    "Retener fuego": { 
+                              "descripcion": "Impide que un fuego o incendio deje de extenderse.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "10",
+                              "PM": "1-2" 
+                    },
+                    "Retorno del bosque": { 
+                              "descripcion": "El bosque vuelve a crecer en un área de 1 km2  dominada por el hombre.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Planta" ],
+                              "dificultad": "25",
+                              "PM": "4" 
+                    },
+                    "Revitalizar": { 
+                              "descripcion": "Alivia las consecuencias de estar Debilitado o Incapacitado, pero no los efectos del Estorbo.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "15",
+                              "PM": "2-3" 
+                    },
+                    "Revivir madera": { 
+                              "descripcion": "Devuelve a la vida un trozo de madera de hasta 5 de Carga. Inutiliza objetos que contengan madera.",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Tierra", "Planta" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Rielar": { 
+                              "descripcion": "El blanco genera de forma rápida e intermitente, copias de sí mismo. Provoca -2 a atacarle.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Sabotear mecanismo": { 
+                              "descripcion": "Hace que una máquina deje de funcionar. Afecta a artefactos y autómatas de la Ley.",
+                              "verbos": [ "Disminuir" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Sanar vegetación": { 
+                              "descripcion": "Sana un conjunto de vegetación afectado por una enfermedad, plaga o accidente(fuego, rayo…).",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Planta" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Sellar puerta": { 
+                              "descripcion": "Bloquea cualquier puerta, no mayor que la entrada a un castillo.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Sinceridad": { 
+                              "descripcion": "El blanco no puede mentir durante la duración del hechizo.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Sol abrasador": { 
+                              "descripcion": "Deja en estado Debilitado y sufren 1PD/turno a los que se hallen en un área de 100 metros diámetro al aire libre y bajo el sol.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Fuego" ],
+                              "dificultad": "25",
+                              "PM": "4" 
+                    },
+                    "Sonámbulo cautivo": { 
+                              "descripcion": "Una criatura durmiente se alza y obedece al hechicero.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Sonido lejano": { 
+                              "descripcion": "El blanco escucha y es escuchado en cualquier lugar que vea.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Suelo resbaladizo": { 
+                              "descripcion": "Humedece una superficie de 10m2 para hacerla resbaladiza.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Suerte": { 
+                              "descripcion": "Permite sumar 1-2 puntos a la Fortuna.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "20",
+                              "PM": "3-4" 
+                    },
+                    "Telepatía": { 
+                              "descripcion": "Se establece comunicación telepática con otra persona.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Teletransporte": { 
+                              "descripcion": "El blanco es transportado instantáneamente a cualquier lugar que sea visible por el lanzador y a menos de 50m.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Cuerpo", "Ley" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Temblor": { 
+                              "descripcion": "Sacude un área de 100 m2. Los presentes pueden caer al suelo.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Tentáculo": { 
+                              "descripcion": "Uno de los brazos del blanco se transforma en tentáculo. Peude atacar con Pelea, longitud media y 1 PD.",
+                              "verbos": [ "Modificar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Tranquilizar": { 
+                              "descripcion": "Elimina cualquier pasión o emoción que estuviera dominando al blanco.",
+                              "verbos": [ "Inhibir " ],
+                              "esferas": [ "Mente" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Transferir poder mágico": { 
+                              "descripcion": "Transfiere al blanco 1-4 PM.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Espíritu" ],
+                              "dificultad": "10",
+                              "PM": "1-4" 
+                    },
+                    "Transformar en (animal)": { 
+                              "descripcion": "Transforma al blanco en el animal que da título al hechizo.",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Cuerpo" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Transformar en árbol": { 
+                              "descripcion": "El blanco se transforma en un árbol.",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Cuerpo", "Planta" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Transformar en humo": { 
+                              "descripcion": "El blanco se transforma en una nube de humo.",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Cuerpo", "Aire" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Triángulo de protección": { 
+                              "descripcion": "Protege del Caos al que se halle en el triángulo.",
+                              "verbos": [ "Inhibir" ],
+                              "esferas": [ "Caos" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Vaso lleno": { 
+                              "descripcion": "Llena un recipiente de no más de medio litro.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Agua" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Vendaval": { 
+                              "descripcion": "Víctimas ≥4 TAM pueden ser derribados Dif. 15. Con <0 TAM Dif. 20.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Aire" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Ver en la oscuridad": { 
+                              "descripcion": "El blanco puede ver en total oscuridad, pero sin percibir los colores.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Vergel": { 
+                              "descripcion": "En 10 metros alrededor del hechicero crece un conjunto de vegetación rico en frutos, hojas o raices alimenticias.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Planta" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Viajar al plano de (plano)": { 
+                              "descripcion": "Se viaja a un plano en concreto.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Cuerpo", "Ley" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Viaje astral": { 
+                              "descripcion": "El espíritu del blanco sale de su cuerpo en forma de fantasma.",
+                              "verbos": [ "Dirigir" ],
+                              "esferas": [ "Espíritu" ],
+                              "dificultad": "20",
+                              "PM": "3" 
+                    },
+                    "Visión lejana": { 
+                              "descripcion": "Se ve algo hasta 300 metros más cerca durante un turno.",
+                              "verbos": [ "Conocer" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
+                    "Zona libre de magia": { 
+                              "descripcion": "En 50 metros en torno al hechicero no funcionan la magia ni los demonios.",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Ley" ],
+                              "dificultad": "20",
+                              "PM": "3"
+                    }
+                }
+}
+
