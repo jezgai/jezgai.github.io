@@ -1090,7 +1090,7 @@
                 "Duración": "1 turno/nivel",
                 "Nivel": 1
             },
-	        "Imagen Reflejada ": {    "Descripción": "Gracias a este conjuro, el mago podrá crear 1d4 reflejos de su propia imagen que imitarán todos sus movimientos, siendo indistinguibles. Estas imágenes aparecerán próximas al lanzador y se moverán a la par que él mismo. El lanzador no necesita mantener la concentración y sus imágenes reflejadas permanecerán junto a él hasta que se agote el conjuro. Las imágenes no son reales y no pueden, por tanto, realizar tareas, pues son una mera ilusión. Cualquier ataque sobre el lanzador golpeará primero contra una de estas imágenes, haciendo que desaparezca hasta que no quede ninguna.",
+	        "Imagen Reflejada": {    "Descripción": "Gracias a este conjuro, el mago podrá crear 1d4 reflejos de su propia imagen que imitarán todos sus movimientos, siendo indistinguibles. Estas imágenes aparecerán próximas al lanzador y se moverán a la par que él mismo. El lanzador no necesita mantener la concentración y sus imágenes reflejadas permanecerán junto a él hasta que se agote el conjuro. Las imágenes no son reales y no pueden, por tanto, realizar tareas, pues son una mera ilusión. Cualquier ataque sobre el lanzador golpeará primero contra una de estas imágenes, haciendo que desaparezca hasta que no quede ninguna.",
                 "Alcance": "0",
                 "Duración": "6 turnos",
                 "Nivel": 2
@@ -1140,7 +1140,7 @@
                 "Duración": "1 asalto por nivel",
                 "Nivel": 7
             },
-	        "Invisibilidad ": {    "Descripción": "Este conjuro tornará invisible a cualquier individuo u objeto elegido por el lanzador, incluyéndose a sí mismo. Cuando una criatura se vuelve invisible, todos los objetos que porta también se vuelven invisibles. Un individuo invisible permanecerá en dicho estado hasta que decida atacar, lanzar un nuevo sortilegio o sea atacado por alguien que pueda localizarlo. Un objeto invisible volverá a ser visible de nuevo si es tocado por alguien. Cualquier objeto que recoja el sujeto invisible se volverá invisible a su vez. No obstante, cualquier objeto que deje caer se tornará visible. Un objeto que sobresalga más de 3 metros del personaje invisible se volverá visible.",
+	        "Invisibilidad": {    "Descripción": "Este conjuro tornará invisible a cualquier individuo u objeto elegido por el lanzador, incluyéndose a sí mismo. Cuando una criatura se vuelve invisible, todos los objetos que porta también se vuelven invisibles. Un individuo invisible permanecerá en dicho estado hasta que decida atacar, lanzar un nuevo sortilegio o sea atacado por alguien que pueda localizarlo. Un objeto invisible volverá a ser visible de nuevo si es tocado por alguien. Cualquier objeto que recoja el sujeto invisible se volverá invisible a su vez. No obstante, cualquier objeto que deje caer se tornará visible. Un objeto que sobresalga más de 3 metros del personaje invisible se volverá visible.",
                 "Alcance": "80 metros",
                 "Duración": "Permanente",
                 "Nivel": 2
@@ -1170,7 +1170,7 @@
                 "Duración": "Permanente",
                 "Nivel": 5
             },
-	        "Invocar elemental": {    "Descripción": "Cuando es lanzado este conjuro, el druida convoca a un elemental. Existe una probabilidad del 75% de que aparezca un elemental de 14 DG y un 25% de que sea de 18 DG. El elemental obedece las órdenes del lanzador, sin que exista posibilidad de que se vuelva contra él. El elemental permanecerá durante toda la duración del conjuro o hasta que se vea reducido a 0 puntos golpe. Cada tipo de elemental es invocado por un conjuro diferente.",
+	        "Invocar Elemental (druida)": {    "Descripción": "Cuando es lanzado este conjuro, el druida convoca a un elemental. Existe una probabilidad del 75% de que aparezca un elemental de 14 DG y un 25% de que sea de 18 DG. El elemental obedece las órdenes del lanzador, sin que exista posibilidad de que se vuelva contra él. El elemental permanecerá durante toda la duración del conjuro o hasta que se vea reducido a 0 puntos golpe. Cada tipo de elemental es invocado por un conjuro diferente.",
                 "Alcance": "80 metros",
                 "Duración": "1 asalto/nivel",
                 "Nivel": 5
@@ -2248,7 +2248,9 @@
                "Enviar mensaje", "Escudo", "Escudo Protector Contra la Magia", "Escudo de fuego/hielo de Karkemish", "Esfera Prismática", "Esfera de Fistan",
                "Esfera invulnerable de Karkemish", "Esfera invulnerable menor", "Esfera llameante", "Esfera telequinética de Fistan", 
                "Espada Mágica de Talandar", "Estatua", "Flecha ácida de Nefertiri", "Fuerza Fantasmal", "Fuerza extraordinaria de Kurgus",
-               "Geas", "Grasa", "Hechizar Monstruo", "Hechizar Persona", "Hechizar a las Masas", "Hoja resplandeciente" ],
+               "Geas", "Grasa", "Hechizar Monstruo", "Hechizar Persona", "Hechizar a las Masas", "Hoja resplandeciente", "Identificar", "Imagen Reflejada", 
+               "Imagen espectral", "Imbecilidad", "Indetectabilidad", "Infravisión", "Inmovilizar Persona", "Invertir gravedad", "Invisibilidad", 
+               "Invisibilidad en Grupo", "Invisibilidad mejorada", "Invocar Elemental", "Irresistible danza de Nébula", "Jaula de fuerza" ],
     "Mago": [ "Abrir", "Abrir las Aguas", "Acechador invisible", "Acelerar", "Agrandar", "Alarma", "Alma",
                "Antipatía-Simpatía", "Aprisionar", "Araña nefanda de la muerte", "Armadura natural",
                "Asesino fantasmal", "Atontar", "Atraer objeto", "Atrapamiento", "Atrapar el Alma", 
@@ -2271,7 +2273,9 @@
                "Enviar mensaje", "Escudo", "Escudo Protector Contra la Magia", "Escudo de fuego/hielo de Karkemish", "Esfera Prismática", "Esfera de Fistan", 
                "Esfera invulnerable de Karkemish", "Esfera invulnerable menor", "Esfera llameante", "Esfera telequinética de Fistan", 
                "Espada Mágica de Talandar", "Estatua", "Flecha ácida de Nefertiri", "Fuerza Fantasmal", "Fuerza extraordinaria de Kurgus",
-               "Geas", "Grasa", "Hechizar Monstruo", "Hechizar Persona", "Hechizar a las Masas", "Hoja resplandeciente" ],
+               "Geas", "Grasa", "Hechizar Monstruo", "Hechizar Persona", "Hechizar a las Masas", "Hoja resplandeciente", "Identificar", "Imagen Reflejada", 
+               "Imagen espectral", "Imbecilidad", "Indetectabilidad", "Infravisión", "Inmovilizar Persona", "Invertir gravedad", "Invisibilidad", 
+               "Invisibilidad en Grupo", "Invisibilidad mejorada", "Invocar Elemental", "Irresistible danza de Nébula", "Jaula de fuerza" ],
     "Elfo oscuro": [ "Abrir", "Abrir las Aguas", "Acechador invisible", "Acelerar", "Agrandar", "Alarma",
                       "Alma", "Antipatía-Simpatía", "Aprisionar", "Araña nefanda de la muerte", 
                       "Armadura natural", "Asesino fantasmal", "Atontar", "Atraer objeto", 
@@ -2296,7 +2300,9 @@
                       "Enviar mensaje", "Escudo", "Escudo Protector Contra la Magia", "Escudo de fuego/hielo de Karkemish", "Esfera Prismática", "Esfera de Fistan",
                       "Esfera invulnerable de Karkemish", "Esfera invulnerable menor", "Esfera llameante", "Esfera telequinética de Fistan", 
                       "Espada Mágica de Talandar", "Estatua", "Flecha ácida de Nefertiri", "Fuerza Fantasmal", "Fuerza extraordinaria de Kurgus",
-                      "Geas", "Grasa", "Hechizar Monstruo", "Hechizar Persona", "Hechizar a las Masas", "Hoja de llamas", "Hoja resplandeciente" ],
+                      "Geas", "Grasa", "Hechizar Monstruo", "Hechizar Persona", "Hechizar a las Masas", "Hoja de llamas", "Hoja resplandeciente", "Identificar", 
+                      "Imagen Reflejada", "Imagen espectral", "Imbecilidad", "Indetectabilidad", "Infravisión", "Inmovilizar Persona", "Invertir gravedad", "Invisibilidad", 
+                      "Invisibilidad en Grupo", "Invisibilidad mejorada", "Invocar Elemental", "Irresistible danza de Nébula", "Jaula de fuerza" ],
     "Clérigo": [ "Abrir las aguas (clérigo)", "Adivinación", "Animar a los muertos", "Animar objetos",
                   "Animar rocas", "Augurio", "Auxilio (clérigo)", "Ayuda", "Bajar las aguas (clérigo)",
                   "Barrera de cuchillas", "Bendecir", "Calentar metal", "Cambiar de plano",
@@ -2309,7 +2315,8 @@
                   "Detectar magia", "Detectar mentiras", "Disipar Magia", "Disipar el mal", "Encantar serpientes", "Encontrar el camino", 
                   "Encontrar trampas", "Enredar", "Extirpar parálisis", "Festín de los héroes", "Fingir muerte", "Fuego imaginario", "Fuente mágica",
                   "Fulgor de estrellas", "Fundir en piedra", "Glifo de protección", "Golpe flamígero", "Golpear ", "Guardia del dragón alado", "Hablar con las plantas",
-                  "Hablar con los animales", "Hablar con los monstruos", "Hablar con los muertos", "Hoja de llamas" ],
+                  "Hablar con los animales", "Hablar con los monstruos", "Hablar con los muertos", "Hoja de llamas", "Idea espontánea de Steinkel", "Imbuir la habilidad de conjurar", 
+                  "Inmunidad contra conjuros", "Invisibilidad ante los muertos vivientes", "Invocar elemental de fuego" ],
     "Paladín": [ "Abrir las aguas (clérigo)", "Adivinación", "Animar a los muertos", "Animar objetos",
                   "Animar rocas", "Augurio", "Auxilio (clérigo)", "Ayuda", "Bajar las aguas (clérigo)",
                   "Barrera de cuchillas", "Bendecir", "Bola de Fuego de Explosión Retardada", "Calentar metal",
@@ -2322,7 +2329,8 @@
                   "Detectar magia", "Detectar mentiras", "Disipar Magia", "Disipar el mal", "Encantar serpientes", "Encontrar el camino",
                   "Encontrar trampas", "Enredar", "Extirpar parálisis", "Festín de los héroes", "Fingir muerte", "Fuego imaginario", "Fuente mágica",
                   "Fulgor de estrellas", "Fundir en piedra", "Glifo de protección", "Golpe flamígero", "Golpear ", "Guardia del dragón alado", "Hablar con las plantas",
-                  "Hablar con los animales", "Hablar con los monstruos", "Hablar con los muertos", "Hoja de llamas" ],
+                  "Hablar con los animales", "Hablar con los monstruos", "Hablar con los muertos", "Hoja de llamas", "Idea espontánea de Steinkel", "Imbuir la habilidad de conjurar", 
+                  "Inmunidad contra conjuros", "Invisibilidad ante los muertos vivientes", "Invocar elemental de fuego" ],
     "Druida": [ "Abrir las aguas (clérigo)", "Afectar fuegos normales", "Agua aérea", "Ahuyentar madera", 
                  "Amistad animal", "Animal mensajero", "Animar rocas", "Armadura natural",
                  "Bajar el nivel de las aguas menor", "Bajar las Aguas", "Bastón de conjuro", "Bayas druídicas",
@@ -2336,5 +2344,5 @@
                  "Detectar trampas y pozos", "Detectar veneno", "Disipar Magia", "Dotar de consciencia", "Encantar serpientes", "Encontrar la senda",
                  "Enjambre elemental", "Enredar", "Escalada de araña", "Esfera flamígera", "Extirpar parálisis", "Forma arbórea", "Formas de animal",
                  "Fulgor de estrellas", "Fundir en piedra", "Garrote", "Golpe Flamígero (druida)", "Hablar con las plantas (druida)", "Hablar con los animales",
-                 "Hechizar animales", "Helar metal", "Hoja de llamas" ]
+                 "Hechizar animales", "Helar metal", "Hoja de llamas", "Inmovilizar animal", "Invisibilidad ante los animales", "Invocar Elemental (druida)" ]
 }
