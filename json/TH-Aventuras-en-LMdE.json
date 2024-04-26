@@ -995,7 +995,7 @@
                 "Duración": "Permanente hasta descargado",
                 "Nivel": 3
             },
-	        "Golpe Flamígero": {    "Descripción": "Mediante este conjuro se crea una columna vertical de fuego, de 2 x 2 metros, en el lugar que designe el clérigo dentro del alcance del conjuro. Esta columna causa a cualquier criatura que se halle dentro del área 6d8 de daño. Si la criatura supera una tirada de salvación contra conjuros sólo recibe la mitad de daño.",
+	        "Golpe Flamígero (druida)": {    "Descripción": "Mediante este conjuro se crea una columna vertical de fuego, de 2 x 2 metros, en el lugar que designe el druida dentro del alcance del conjuro. Esta columna causa a cualquier criatura que se halle dentro del área 6d8 de daño. Si la criatura supera una tirada de salvación contra conjuros sólo recibe la mitad de daño.",
                 "Alcance": "20 metros",
                 "Duración": "Instantáneo",
                 "Nivel": 4
@@ -1025,7 +1025,7 @@
                 "Duración": "3 turnos",
                 "Nivel": 4
             },
-	        "Hablar con las plantas": {    "Descripción": "Este conjuro permite al clérigo comunicarse y controlar a las plantas no mágicas de manera simple. Por ejemplo, les puede pedir que se aparten para despejar el camino o preguntar si ha pasado por allí una criatura en concreto.",
+	        "Hablar con las plantas (druida)": {    "Descripción": "Este conjuro permite al druida comunicarse y controlar a las plantas no mágicas de manera simple. Por ejemplo, les puede pedir que se aparten para despejar el camino o preguntar si ha pasado por allí una criatura en concreto.",
                 "Alcance": "0",
                 "Duración": "1 asalto/nivel",
                 "Nivel": 3
@@ -2247,7 +2247,8 @@
                "Dominación", "Dormir", "Drenar energía", "Elucubración de Fistan", "Encantar arma", "Encontrar familiar", 
                "Enviar mensaje", "Escudo", "Escudo Protector Contra la Magia", "Escudo de fuego/hielo de Karkemish", "Esfera Prismática", "Esfera de Fistan",
                "Esfera invulnerable de Karkemish", "Esfera invulnerable menor", "Esfera llameante", "Esfera telequinética de Fistan", 
-               "Espada Mágica de Talandar", "Estatua" ],
+               "Espada Mágica de Talandar", "Estatua", "Flecha ácida de Nefertiri", "Fuerza Fantasmal", "Fuerza extraordinaria de Kurgus",
+               "Geas", "Grasa", "Hechizar Monstruo", "Hechizar Persona", "Hechizar a las Masas", "Hoja resplandeciente" ],
     "Mago": [ "Abrir", "Abrir las Aguas", "Acechador invisible", "Acelerar", "Agrandar", "Alarma", "Alma",
                "Antipatía-Simpatía", "Aprisionar", "Araña nefanda de la muerte", "Armadura natural",
                "Asesino fantasmal", "Atontar", "Atraer objeto", "Atrapamiento", "Atrapar el Alma", 
@@ -2269,7 +2270,8 @@
                "Dominación", "Dormir", "Drenar energía", "Elucubración de Fistan", "Encantar arma", "Encontrar familiar", 
                "Enviar mensaje", "Escudo", "Escudo Protector Contra la Magia", "Escudo de fuego/hielo de Karkemish", "Esfera Prismática", "Esfera de Fistan", 
                "Esfera invulnerable de Karkemish", "Esfera invulnerable menor", "Esfera llameante", "Esfera telequinética de Fistan", 
-               "Espada Mágica de Talandar", "Estatua" ],
+               "Espada Mágica de Talandar", "Estatua", "Flecha ácida de Nefertiri", "Fuerza Fantasmal", "Fuerza extraordinaria de Kurgus",
+               "Geas", "Grasa", "Hechizar Monstruo", "Hechizar Persona", "Hechizar a las Masas", "Hoja resplandeciente" ],
     "Elfo oscuro": [ "Abrir", "Abrir las Aguas", "Acechador invisible", "Acelerar", "Agrandar", "Alarma",
                       "Alma", "Antipatía-Simpatía", "Aprisionar", "Araña nefanda de la muerte", 
                       "Armadura natural", "Asesino fantasmal", "Atontar", "Atraer objeto", 
@@ -2293,7 +2295,8 @@
                       "Dominación", "Dormir", "Drenar energía", "Elucubración de Fistan", "Encantar arma", "Encontrar familiar", 
                       "Enviar mensaje", "Escudo", "Escudo Protector Contra la Magia", "Escudo de fuego/hielo de Karkemish", "Esfera Prismática", "Esfera de Fistan",
                       "Esfera invulnerable de Karkemish", "Esfera invulnerable menor", "Esfera llameante", "Esfera telequinética de Fistan", 
-                      "Espada Mágica de Talandar", "Estatua" ],
+                      "Espada Mágica de Talandar", "Estatua", "Flecha ácida de Nefertiri", "Fuerza Fantasmal", "Fuerza extraordinaria de Kurgus",
+                      "Geas", "Grasa", "Hechizar Monstruo", "Hechizar Persona", "Hechizar a las Masas", "Hoja de llamas", "Hoja resplandeciente" ],
     "Clérigo": [ "Abrir las aguas (clérigo)", "Adivinación", "Animar a los muertos", "Animar objetos",
                   "Animar rocas", "Augurio", "Auxilio (clérigo)", "Ayuda", "Bajar las aguas (clérigo)",
                   "Barrera de cuchillas", "Bendecir", "Calentar metal", "Cambiar de plano",
@@ -2304,7 +2307,9 @@
                   "Crecimiento animal", "Curar ceguera y sordera", "Curar enfermedad", "Curar heridas críticas", 
                   "Curar heridas graves", "Curar heridas leves", "Demonio del polvo", "Detectar el mal (clérigo)", "Detectar hechizos",
                   "Detectar magia", "Detectar mentiras", "Disipar Magia", "Disipar el mal", "Encantar serpientes", "Encontrar el camino", 
-                  "Encontrar trampas", "Enredar", "Extirpar parálisis" ],
+                  "Encontrar trampas", "Enredar", "Extirpar parálisis", "Festín de los héroes", "Fingir muerte", "Fuego imaginario", "Fuente mágica",
+                  "Fulgor de estrellas", "Fundir en piedra", "Glifo de protección", "Golpe flamígero", "Golpear ", "Guardia del dragón alado", "Hablar con las plantas",
+                  "Hablar con los animales", "Hablar con los monstruos", "Hablar con los muertos", "Hoja de llamas" ],
     "Paladín": [ "Abrir las aguas (clérigo)", "Adivinación", "Animar a los muertos", "Animar objetos",
                   "Animar rocas", "Augurio", "Auxilio (clérigo)", "Ayuda", "Bajar las aguas (clérigo)",
                   "Barrera de cuchillas", "Bendecir", "Bola de Fuego de Explosión Retardada", "Calentar metal",
@@ -2315,7 +2320,9 @@
                   "Crecimiento animal", "Curar ceguera y sordera", "Curar enfermedad", "Curar heridas críticas", 
                   "Curar heridas graves", "Curar heridas leves", "Demonio del polvo", "Detectar el mal (clérigo)", "Detectar hechizos",
                   "Detectar magia", "Detectar mentiras", "Disipar Magia", "Disipar el mal", "Encantar serpientes", "Encontrar el camino",
-                  "Encontrar trampas", "Enredar", "Extirpar parálisis" ],
+                  "Encontrar trampas", "Enredar", "Extirpar parálisis", "Festín de los héroes", "Fingir muerte", "Fuego imaginario", "Fuente mágica",
+                  "Fulgor de estrellas", "Fundir en piedra", "Glifo de protección", "Golpe flamígero", "Golpear ", "Guardia del dragón alado", "Hablar con las plantas",
+                  "Hablar con los animales", "Hablar con los monstruos", "Hablar con los muertos", "Hoja de llamas" ],
     "Druida": [ "Abrir las aguas (clérigo)", "Afectar fuegos normales", "Agua aérea", "Ahuyentar madera", 
                  "Amistad animal", "Animal mensajero", "Animar rocas", "Armadura natural",
                  "Bajar el nivel de las aguas menor", "Bajar las Aguas", "Bastón de conjuro", "Bayas druídicas",
@@ -2327,5 +2334,7 @@
                  "Crear comida y agua", "Crear llama", "Crecimiento animal (druida)", "Crecimiento de púas", "Crecimiento vegetal", "Curar enfermedad", 
                  "Curar heridas graves", "Curar heridas leves", "De la Piedra a la Carne", "Desbrozar",
                  "Detectar trampas y pozos", "Detectar veneno", "Disipar Magia", "Dotar de consciencia", "Encantar serpientes", "Encontrar la senda",
-                 "Enjambre elemental", "Enredar", "Escalada de araña", "Esfera flamígera", "Extirpar parálisis" ]
+                 "Enjambre elemental", "Enredar", "Escalada de araña", "Esfera flamígera", "Extirpar parálisis", "Forma arbórea", "Formas de animal",
+                 "Fulgor de estrellas", "Fundir en piedra", "Garrote", "Golpe Flamígero (druida)", "Hablar con las plantas (druida)", "Hablar con los animales",
+                 "Hechizar animales", "Helar metal", "Hoja de llamas" ]
 }
