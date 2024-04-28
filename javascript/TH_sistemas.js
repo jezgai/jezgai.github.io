@@ -1,13 +1,14 @@
 
 class Sistemas {
     constructor() {
+		this.nombressistemas = [ "", "Por las Tierras Hundidas", "Aventuras en La Marca del Este", "Cronicas de la Marca", "Axis Mundi", "Dungeon Hack", "Tierras Quebradas" ];
         this.sistemas = new Map();
-        this.sistemas.set("Por las Tierras Hundidas", new PlTH());
-        this.sistemas.set("Aventuras en La Marca del Este", new AeLMdE());
-        this.sistemas.set("Cronicas de la Marca", new CdLM());
-        this.sistemas.set("Axis Mundi", new AxM());
-        this.sistemas.set("Dungeon Hack", new DH());
-        this.sistemas.set("Tierras Quebradas", new TQuebradas());
+        this.sistemas.set(this.nombressistemas[1], new PlTH());
+        this.sistemas.set(this.nombressistemas[2], new AeLMdE());
+        this.sistemas.set(this.nombressistemas[3], new CdLM());
+        this.sistemas.set(this.nombressistemas[4], new AxM());
+        this.sistemas.set(this.nombressistemas[5], new DH());
+        this.sistemas.set(this.nombressistemas[6], new TQuebradas());
     }
     
     getSistema(_sistema) {
@@ -17,6 +18,15 @@ class Sistemas {
     getSistemas() {
         return Array.from(this.sistemas.keys());
     }
+    
+    seleccionasistema(thelist) {
+		var objsistema = null;
+		var idx = thelist.selectedIndex;
+		if ( idx > 0 ) {
+			objsistema=this.getSistema(this.nombressistemas[idx]);
+		}
+		return objsistema;
+	}
 }
 
 let sistemas = new Sistemas();

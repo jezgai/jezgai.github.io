@@ -5,18 +5,22 @@ class TQuebradas extends SistemaBase {
         this.hechizos.EtiquetaTipos = "Listas de conjuros";
         this.hechizos.Verbos = { };
         this.hechizos.Esferas = { };
-        this.hechizos.Tipos = { };        
+        this.hechizos.Tipos = { };
         
         Comun.cargatablas("TH-Tierras-Quebradas.json", this);
     }
     
-    numeroHechizos(tipo) {
-        return 4;
+    numeroHechizos() {
+        return this.numeroHechizosDefault;
     }
-	nombrePDF(tipo) {
+	nombrePDF() {
 		return "pdf/TH_TQuebradas_Hechizos.pdf";
 	}
     
+	nombretarjetaPDF() {
+		return objsistema.tiposconjuros[0] + objsistema.tiposconjuros[1];
+	}
+	
     listaTipos() {
 		return [ Object.keys(this.hechizos.Verbos), Object.keys(this.hechizos.Esferas) ];
     }
@@ -24,14 +28,14 @@ class TQuebradas extends SistemaBase {
 		var i=0;
 		var verbos = tipossistema[0];
 		var esferas = tipossistema[1];
-		var tiposhtml = "<div class='mitad'>	<label class='w3-text-blue'><strong>Verbos</strong></label><select class='w3-select' name='verbos' onChange='seleccionatipoTQ(this, 0)'><option>--Selecciona--</option>";
+		var tiposhtml = "<div class='mitad'>	<label class='w3-text-blue'><strong>Verbos</strong></label><select class='w3-select' name='verbos' onChange='seleccionatipo(this, 0)'><option>--Selecciona--</option>";
 		for (i=0; i<verbos.length; i++) {
 			tiposhtml += '<option>' + verbos[i] + '</option>';
 		}
 		tiposhtml += '</select></div>';
 		
 		
-		tiposhtml += "<div class='mitad'>	<label class='w3-text-blue'><strong>Esferas</strong></label><select class='w3-select' name='esferas' onChange='seleccionatipoTQ(this, 1)'><option>--Selecciona--</option>";
+		tiposhtml += "<div class='mitad'>	<label class='w3-text-blue'><strong>Esferas</strong></label><select class='w3-select' name='esferas' onChange='seleccionatipo(this, 1)'><option>--Selecciona--</option>";
 		for (i=0; i<esferas.length; i++) {
 			tiposhtml += '<option>' + esferas[i] + '</option>';
 		}
@@ -111,7 +115,30 @@ class TQuebradas extends SistemaBase {
 		}
 		return lHechizos;
 	}
-        
+	
+	cargaHechizos() {
+	        lHechizos = this.listaHechizos(this.tiposconjuros[0], this.tiposconjuros[1]);
+	        this.pintaHechizos(lHechizos);
+    	    return lHechizos;
+    	    /*
+	        var i=0;
+	        var hechizoshtml = [ "<ul>", "<ul>", "<ul>" ];
+	        for (i=0; i<lHechizos.length; i++) {
+	            var indicehechizo = math.mod(i,3);
+			    hechizoshtml[indicehechizo] += "<li><label><input type='checkbox' id='chechizos"+i+"' /> " + lHechizos[i].nombre;
+				hechizoshtml[indicehechizo] += "</label></li>";
+	        }
+	        hechizoshtml[0] += "</ul>";
+	        hechizoshtml[1] += "</ul>";
+	        hechizoshtml[2] += "</ul>";
+	        document.getElementById("hechizos1").innerHTML = hechizoshtml[0];
+	        document.getElementById("hechizos2").innerHTML = hechizoshtml[1];
+	        document.getElementById("hechizos3").innerHTML = hechizoshtml[2];
+	        document.getElementById("listahechizos").style.visibility="visible";
+    	    document.getElementById("botonpdf").style.visibility="visible";
+    	    return lHechizos;*/
+	}
+	
     init(tablas) {
         this.hechizos.Hechizos = tablas.Hechizos;
         

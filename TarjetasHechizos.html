@@ -25,13 +25,11 @@
 	let tipossistema = [];
 	let lHechizos = [];
 	let tipohechizos = "";
-	
-	let verbo_esfera = [ "", "" ]; // Solo sirve para Tierras Quebradas
-	
+		
 	function generaPDF() {
 	    
 		if ( objsistema == null ) return;
-		var numHechizos = objsistema.numeroHechizos(tipohechizos);
+		var numHechizos = objsistema.numeroHechizos();
 		var hechizosSeleccionados = [];
 		var i=0;
 		var num=0;
@@ -72,13 +70,13 @@
 			  var fields = objsistema.rellenaPDF(hechizosSeleccionados);
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  saveAs(blob, 'Tarjeta ' + tipohechizos + subindice + '.pdf'); 
+			  saveAs(blob, 'Tarjeta ' + objsistema.nombretarjetaPDF() + subindice + '.pdf'); 
 			}
 		};
 
 
 
-		xhr.open('GET', objsistema.nombrePDF(tipohechizos), true);
+		xhr.open('GET', objsistema.nombrePDF(), true);
 		xhr.responseType = 'arraybuffer';
 		xhr.setRequestHeader("Content-Type", "application/json");
 		xhr.send();	
@@ -111,103 +109,31 @@
 	
 	function seleccionasistema(thelist) {
 		vacia();
-		var idx = thelist.selectedIndex;
-		switch (idx) {
-		    case 1:
-		        objsistema=sistemas.getSistema("Por las Tierras Hundidas");
-		        break;
-		    case 2:
-		        objsistema=sistemas.getSistema("Cronicas de la Marca");
-		        break;
-		    case 3:
-		        objsistema=sistemas.getSistema("Aventuras en La Marca del Este");
-		        break;
-		    case 4:
-		        objsistema=sistemas.getSistema("Axis Mundi");
-		        break;
-		    case 5:
-		        objsistema=sistemas.getSistema("Dungeon Hack");
-		        break;
-		    case 6:
-		        objsistema=sistemas.getSistema("Tierras Quebradas");
-				cargaHechizosTQ();
-		        break;
-		    default:
-		        objsistema=null;
-		        tipossistema = [];
-		        lHechizos = [];
-		        tipohechizos = "";
-		}
-		cargaTipos();
 		
+		tipossistema = [];
+		lHechizos = [];
+		tipohechizos = "";
+		
+		objsistema = sistemas.seleccionasistema(thelist);
+		lHechizos = objsistema.cargaHechizos();
+		
+		cargaTipos();
+				
 	}
 	
-	function cargaHechizosTQ() {
-	        lHechizos = objsistema.listaHechizos(verbo_esfera[0], verbo_esfera[1]);
-	        var i=0;
-	        var hechizoshtml = [ "<ul>", "<ul>", "<ul>" ];
-	        for (i=0; i<lHechizos.length; i++) {
-	            var indicehechizo = math.mod(i,3);
-			    hechizoshtml[indicehechizo] += "<li><label><input type='checkbox' id='chechizos"+i+"' /> " + lHechizos[i].nombre;
-				hechizoshtml[indicehechizo] += "</label></li>";
-	        }
-	        hechizoshtml[0] += "</ul>";
-	        hechizoshtml[1] += "</ul>";
-	        hechizoshtml[2] += "</ul>";
-	        document.getElementById("hechizos1").innerHTML = hechizoshtml[0];
-	        document.getElementById("hechizos2").innerHTML = hechizoshtml[1];
-	        document.getElementById("hechizos3").innerHTML = hechizoshtml[2];
-	        document.getElementById("listahechizos").style.visibility="visible";
-    	    document.getElementById("botonpdf").style.visibility="visible";
-	}
 	
-	function seleccionatipoTQ(thelist, indice) {
+	function seleccionatipo(thelist, indice) {
 	    var idx = thelist.selectedIndex;
 	    if ( idx > 0 && tipossistema[indice].length > 0)
 	    {	    
 	        tipohechizos = tipossistema[indice][idx-1];
-	        verbo_esfera[indice] = tipohechizos;
-	        cargaHechizosTQ();
+	        objsistema.setTipo(tipohechizos, indice);
+	        objsistema.cargaHechizos();
 	    }
 	    else if (tipossistema[indice].length > 0) {
-			verbo_esfera[indice] = "";
-	        cargaHechizosTQ();
+			objsistema.setTipo("", indice);
+	        objsistema.cargaHechizos();
 		}
-	    else {
-		    tipohechizos = "";
-	        lHechizos = [];
-	        document.getElementById("hechizos1").innerHTML = "";
-	        document.getElementById("hechizos2").innerHTML = "";
-	        document.getElementById("hechizos3").innerHTML = "";
-	        document.getElementById("listahechizos").style.visibility="hidden";
-	    document.getElementById("botonpdf").style.visibility="hidden";
-	    }
-	}
-	
-	function seleccionatipo(thelist) {
-	    var idx = thelist.selectedIndex;
-	    if ( idx > 0 && tipossistema.length > 0)
-	    {	    
-	        tipohechizos = tipossistema[idx-1];
-	        lHechizos = objsistema.listaHechizos(tipossistema[idx-1])
-	        var i=0;
-	        var hechizoshtml = [ "<ul>", "<ul>", "<ul>" ];
-	        for (i=0; i<lHechizos.length; i++) {
-	            var indicehechizo = math.mod(i,3);
-			    hechizoshtml[indicehechizo] += "<li><label><input type='checkbox' id='chechizos"+i+"' /> " + lHechizos[i].nombre;
-			    if ( lHechizos[i].nivel != null) 
-					hechizoshtml[indicehechizo] += " (nivel " + lHechizos[i].nivel + ")";
-				hechizoshtml[indicehechizo] += "</label></li>";
-	        }
-	        hechizoshtml[0] += "</ul>";
-	        hechizoshtml[1] += "</ul>";
-	        hechizoshtml[2] += "</ul>";
-	        document.getElementById("hechizos1").innerHTML = hechizoshtml[0];
-	        document.getElementById("hechizos2").innerHTML = hechizoshtml[1];
-	        document.getElementById("hechizos3").innerHTML = hechizoshtml[2];
-	        document.getElementById("listahechizos").style.visibility="visible";
-    	    document.getElementById("botonpdf").style.visibility="visible";
-	    }
 	    else {
 		    tipohechizos = "";
 	        lHechizos = [];
@@ -300,8 +226,8 @@
 		    <select class="w3-select"  name="sistema" onChange="seleccionasistema(this)">
 			    <option>--Selecciona--</option>
 			    <option>Por las Tierras Hundidas</option>
-			    <option>Crónicas de La Marca</option>
 			    <option>Aventuras en La Marca del Este</option>
+			    <option>Crónicas de La Marca</option>
 			    <option>Axis Mundi</option>
 			    <option>Dungeon Hack</option>
 			    <option>Tierras Quebradas</option>

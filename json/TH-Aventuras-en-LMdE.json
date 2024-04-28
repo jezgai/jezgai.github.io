@@ -1260,7 +1260,7 @@
                 "Duración": "2 turnos",
                 "Nivel": 2
             },
-	        "Localizar Objeto": {    "Descripción": "Mediante este conjuro el lanzador puede localizar un objeto conocido o familiar para el clérigo. Una vez lanzado el clérigo comenzara a girar lentamente y se dará cuenta de la dirección en la que se halle el objeto, siempre que el mismo se encuentre dentro del alcance del conjuro. Una vez localizada la dirección, el clérigo ha de concentrarse durante 2 asaltos para saber hacia donde se encuentra exactamente el objeto. Personas, monstruos o criaturas no pueden localizarse con este conjuro.",
+	        "Localizar Objeto (clérigo)": {    "Descripción": "Mediante este conjuro el lanzador puede localizar un objeto conocido o familiar para el clérigo. Una vez lanzado el clérigo comenzara a girar lentamente y se dará cuenta de la dirección en la que se halle el objeto, siempre que el mismo se encuentre dentro del alcance del conjuro. Una vez localizada la dirección, el clérigo ha de concentrarse durante 2 asaltos para saber hacia donde se encuentra exactamente el objeto. Personas, monstruos o criaturas no pueden localizarse con este conjuro.",
                 "Alcance": "40 metros",
                 "Duración": "6 turnos",
                 "Nivel": 3
@@ -1275,7 +1275,7 @@
                 "Duración": "1 asalto + 1 asalto/nivel",
                 "Nivel": 2
             },
-	        "Luz": {    "Descripción": "El conjuro crea un globo de luz a partir de un punto elegido por el lanzador de 5 metros de radio que concede la misma visión que una antorcha. El objeto ha de estar en la línea de visión del lanzador. El efecto es inmóvil a menos que se centre específicamente en un objeto o criatura móvil. El conjuro también puede utilizarse para cegar a una criatura, lanzándolo directamente sobre sus ojos. La víctima deberá tener éxito en una tirada de salvación contra conjuros o quedará cegada durante 12 turnos.Este conjuro es reversible, es decir, el lanzador podrá decidir crear 'Oscuridad' en lugar de 'luz'. Un conjuro de 'oscuridad' cancela uno de 'luz' y viceversa.",
+	        "Luz (clérigo)": {    "Descripción": "El conjuro crea un globo de luz a partir de un punto elegido por el lanzador de 5 metros de radio que concede la misma visión que una antorcha. El objeto ha de estar en la línea de visión del lanzador. El efecto es inmóvil a menos que se centre específicamente en un objeto o criatura móvil. El conjuro también puede utilizarse para cegar a una criatura, lanzándolo directamente sobre sus ojos. La víctima deberá tener éxito en una tirada de salvación contra conjuros o quedará cegada durante 12 turnos.Este conjuro es reversible, es decir, el lanzador podrá decidir crear 'Oscuridad' en lugar de 'luz'. Un conjuro de 'oscuridad' cancela uno de 'luz' y viceversa.",
                 "Alcance": "40 metros",
                 "Duración": "12 turnos",
                 "Nivel": 1
@@ -1295,7 +1295,7 @@
                 "Duración": "1 turno por nivel",
                 "Nivel": 1
             },
-	        "Luz cadaverosa": {    "Descripción": "Este sortilegio provoca que un cuerpo muerto o muerto viviente brille con una radiación pálida mortecina. El resplandor puede ser blanco, amarillo, verde o púrpura, según el deseo del lanzador. éste podrá alterar el brillo a voluntad, siempre que se halle en un radio de 10 metros del cuerpo. La luz puede variar desde marcar tenuemente el cuerpo hasta destacarlo con el resplandor de un antorcha, suficiente para leer o para efectuar un trabajo minucioso. El resplandor es difuso y constante, y no penaliza a la figura muerta viviente en combate. El lanzador puede afectar un cuerpo de tamaño mediano por nivel, dos veces este de número de cuerpos pequeños y la mitad de este número de cuerpos de tamaño grande, y una cuarta parte si son cuerpos de tamaño enorme. Nada mayor de tamaño enorme resultará afectado por este conjuro. El resplandor no daña a la criatura, y puede ser lanzado incluso sobre muertos vivientes en estado gaseoso, como un vampiro, excluyendo a los fantasmas, ya que éstos se manifiestan desde otro plano de existencia.",
+	        "Luz cadaverosa (clérigo)": {    "Descripción": "Este sortilegio provoca que un cuerpo muerto o muerto viviente brille con una radiación pálida mortecina. El resplandor puede ser blanco, amarillo, verde o púrpura, según el deseo del lanzador. éste podrá alterar el brillo a voluntad, siempre que se halle en un radio de 10 metros del cuerpo. La luz puede variar desde marcar tenuemente el cuerpo hasta destacarlo con el resplandor de un antorcha, suficiente para leer o para efectuar un trabajo minucioso. El resplandor es difuso y constante, y no penaliza a la figura muerta viviente en combate. El lanzador puede afectar un cuerpo de tamaño mediano por nivel, dos veces este de número de cuerpos pequeños y la mitad de este número de cuerpos de tamaño grande, y una cuarta parte si son cuerpos de tamaño enorme. Nada mayor de tamaño enorme resultará afectado por este conjuro. El resplandor no daña a la criatura, y puede ser lanzado incluso sobre muertos vivientes en estado gaseoso, como un vampiro, excluyendo a los fantasmas, ya que éstos se manifiestan desde otro plano de existencia.",
                 "Alcance": "10 metros por nivel",
                 "Duración": "10 minutos por nivel",
                 "Nivel": 1
@@ -1380,7 +1380,7 @@
                 "Duración": "Objetivo",
                 "Nivel": 5
             },
-	        "Modelar piedra": {    "Descripción": "Este conjuro permite al lanzador modelar piedra del tamaño de un cubo de 1 metros de lado más 0,25 metros por nivel. El lanzador podrá dar la forma que desee a la piedra, por ejemplo puede realizar una figura, modelar un portal que le deje el paso franco, etc.",
+	        "Modelar piedra (clérigo)": {    "Descripción": "Este conjuro permite al lanzador modelar piedra del tamaño de un cubo de 1 metros de lado más 0,25 metros por nivel. El lanzador podrá dar la forma que desee a la piedra, por ejemplo puede realizar una figura, modelar un portal que le deje el paso franco, etc.",
                 "Alcance": "Toque",
                 "Duración": "Permanente",
                 "Nivel": 3
@@ -1390,7 +1390,7 @@
                 "Duración": "Permanente",
                 "Nivel": 5
             },
-	        "Montura": {    "Descripción": "Cuando el druida lanza este conjuro, invoca a una montura para que le sirva mientras se mantenga activo el hechizo. El druida elige la montura que quiere invocar según sus niveles:\n<table>\n<tbody>\n<tr>\n<td>Nivel de Druida</td>\n<td>Montura</td>\n</tr>\n<tr>\n<td>1-3</td>\n<td>Mula</td>\n</tr>\n<tr>\n<td>4-7</td>\n<td>Caballo</td>\n</tr>\n<tr>\n<td>8-12</td>\n<td>Camello</td>\n</tr>\n<tr>\n<td>13-15</td>\n<td>Elefante</td>\n</tr>\n<tr>\n<td>16</td>\n<td>Grifo</td>\n</tr>\n</tbody>\n</table>\nLa montura aparece sin ningún tipo de silla para montarla, a excepción de que el lanzador llame a una montura inferior a la de su nivel; a partir de nivel 17, cualquier montura que convoque aparecerá con una silla de montar.",
+	        "Montura": {    "Descripción": "Cuando el druida lanza este conjuro, invoca a una montura para que le sirva mientras se mantenga activo el hechizo. El druida elige la montura que quiere invocar según sus niveles:\n - Nivel 1-3: Mula\n - Nivel 4-7: Caballo\n - Nivel 8-12: Camello\n - Nivel 13-15: Elefante\n - Nivel 16: Grifo\nLa montura aparece sin ningún tipo de silla para montarla, a excepción de que el lanzador llame a una montura inferior a la de su nivel; a partir de nivel 17, cualquier montura que convoque aparecerá con una silla de montar.",
                 "Alcance": "10 metros",
                 "Duración": "2 horas + 1 hora/nivel",
                 "Nivel": 1
@@ -1405,7 +1405,7 @@
                 "Duración": "Leer",
                 "Nivel": 4
             },
-	        "Muro de Fuego": {    "Descripción": "Este conjuro crea un muro de fuego de un máximo de un cuadrado de 5 metros de lado por nivel de lanzador y 5 metros de altura, o de un anillo de 2 metros de radio por nivel y 5 metros de altura. Uno de los lados del muro, a elección del lanzador, lanzará llamas de fuego que causarán 2d6 puntos de daño a todas las criaturas que se hallen a menos de dos metros del muro y 1d6 a aquellas que se encuentren entre 2 y 5 metros, sin derecho a tirada de salvación. Cualquier criatura que atraviese el muro sufrirá 4d6 puntos de daño +1 punto adicional por nivel del lanzador. La duración del conjuro es de un turno por nivel de lanzador, a partir de ese momento, si el clérigo desea mantener el muro, ha de concentrarse y no podrá realizar ninguna otra acción que no sea mantener el muro de fuego activo.",
+	        "Muro de Fuego (druida)": {    "Descripción": "Este conjuro crea un muro de fuego de un máximo de un cuadrado de 5 metros de lado por nivel de lanzador y 5 metros de altura, o de un anillo de 2 metros de radio por nivel y 5 metros de altura. Uno de los lados del muro, a elección del lanzador, lanzará llamas de fuego que causarán 2d6 puntos de daño a todas las criaturas que se hallen a menos de dos metros del muro y 1d6 a aquellas que se encuentren entre 2 y 5 metros, sin derecho a tirada de salvación. Cualquier criatura que atraviese el muro sufrirá 4d6 puntos de daño +1 punto adicional por nivel del lanzador. La duración del conjuro es de un turno por nivel de lanzador, a partir de ese momento, si el clérigo desea mantener el muro, ha de concentrarse y no podrá realizar ninguna otra acción que no sea mantener el muro de fuego activo.",
                 "Alcance": "80 metros",
                 "Duración": "Especial",
                 "Nivel": 4
@@ -1425,7 +1425,7 @@
                 "Duración": "10 minutos/nivel",
                 "Nivel": 6
             },
-	        "Muro de fuego": {    "Descripción": "Este conjuro crea un muro de fuego de un máximo de un cuadrado de 5 metros de lado por nivel de lanzador, o de un anillo de 2 metros de radio por nivel y 5 metros de altura. Uno de los lados del muro, a elección del lanzador, lanzará llamas de fuego que causarán 2d6 puntos de daño a todas las criaturas que se hallen a menos de dos metros del muro y 1d6 a aquellas que se encuentren entre 2 y 5 metros, sin derecho a tirada de salvación. Cualquier criatura que atraviese el muro sufrirá 4d6 puntos de daño +1 punto adicional por nivel del lanzador. La duración del conjuro es de un turno por nivel de lanzador, a partir de ese momento si el clérigo desea mantener el muro ha de concentrarse y no podrá realizar ninguna otra acción que no sea mantener el muro de fuego activo.",
+	        "Muro de Fuego (clérigo)": {    "Descripción": "Este conjuro crea un muro de fuego de un máximo de un cuadrado de 5 metros de lado por nivel de lanzador, o de un anillo de 2 metros de radio por nivel y 5 metros de altura. Uno de los lados del muro, a elección del lanzador, lanzará llamas de fuego que causarán 2d6 puntos de daño a todas las criaturas que se hallen a menos de dos metros del muro y 1d6 a aquellas que se encuentren entre 2 y 5 metros, sin derecho a tirada de salvación. Cualquier criatura que atraviese el muro sufrirá 4d6 puntos de daño +1 punto adicional por nivel del lanzador. La duración del conjuro es de un turno por nivel de lanzador, a partir de ese momento si el clérigo desea mantener el muro ha de concentrarse y no podrá realizar ninguna otra acción que no sea mantener el muro de fuego activo.",
                 "Alcance": "80 metros",
                 "Duración": "Especial",
                 "Nivel": 5
@@ -1455,7 +1455,7 @@
                 "Duración": "Permanente (leer descripción)",
                 "Nivel": 7
             },
-	        "Negraesfera ": {    "Descripción": "Este conjuro permite al lanzador convocar una esfera de energía negativa (del tamaño de una sandía) que puede lanzar contra cualquier criatura en una radio de 10 metros a su alrededor. La esfera, al golpear, causa 1d4 puntos de daños más un punto adicional por nivel del lanzador. Los individuos golpeados por la esfera deben superar una tirada de salvación contra conjuros para no quedar atrapados en su interior por la duración del conjuro (2d4 asaltos + 1 asalto por nivel del lanzador). El conjuro puede afectar a 1 criatura por nivel del lanzador. Las criaturas, para resultar afectadas, no pueden ser mayores en tamaño que un humano o humanoide (como orcos o similares).",
+	        "Negraesfera": {    "Descripción": "Este conjuro permite al lanzador convocar una esfera de energía negativa (del tamaño de una sandía) que puede lanzar contra cualquier criatura en una radio de 10 metros a su alrededor. La esfera, al golpear, causa 1d4 puntos de daños más un punto adicional por nivel del lanzador. Los individuos golpeados por la esfera deben superar una tirada de salvación contra conjuros para no quedar atrapados en su interior por la duración del conjuro (2d4 asaltos + 1 asalto por nivel del lanzador). El conjuro puede afectar a 1 criatura por nivel del lanzador. Las criaturas, para resultar afectadas, no pueden ser mayores en tamaño que un humano o humanoide (como orcos o similares).",
                 "Alcance": "10",
                 "Duración": "2d4 asaltos + 1 asalto por nivel ",
                 "Nivel": 4
@@ -1470,7 +1470,7 @@
                 "Duración": "Permanente",
                 "Nivel": 4
             },
-	        "Neutralizar veneno": {    "Descripción": "Cuando el clérigo lanza este conjuro sobre una criatura envenenada consigue que ésta se vuelva inmune al veneno de manera permanente y repara los efectos que el veneno pudiera haberle causado. Si un personaje ha muerto debido al efecto de un veneno, este conjuro puede traerlo a la vida si no han transcurrido más de 10 asaltos desde su muerte.",
+	        "Neutralizar veneno (druida)": {    "Descripción": "Cuando el clérigo lanza este conjuro sobre una criatura envenenada consigue que ésta se vuelva inmune al veneno de manera permanente y repara los efectos que el veneno pudiera haberle causado. Si un personaje ha muerto debido al efecto de un veneno, este conjuro puede traerlo a la vida si no han transcurrido más de 10 asaltos desde su muerte.",
                 "Alcance": "Contacto",
                 "Duración": "Permanente",
                 "Nivel": 3
@@ -1485,12 +1485,12 @@
                 "Duración": "6 turnos",
                 "Nivel": 5
             },
-	        "Nube Incendiaria": {    "Descripción": "El lanzador podrá crear una nebulosa de la que brotarán llamaradas. Este denso humo negruzco bloqueará la visión parcialmente en un área de 10 x 10 x 5 metros. Toda criatura dentro de la nube recibirá un daño equivalente a 1d6 por nivel del lanzador durante cada asalto que permanezca en el área de efecto del conjuro. Las víctimas de este conjuro tienen derecho a una tirada de salvación contra arma de aliento para mitad de daño.",
+	        "Nube Incendiaria (druida)": {    "Descripción": "El lanzador podrá crear una nebulosa de la que brotarán llamaradas. Este denso humo negruzco bloqueará la visión parcialmente en un área de 10 x 10 x 5 metros. Toda criatura dentro de la nube recibirá un daño equivalente a 1d6 por nivel del lanzador durante cada asalto que permanezca en el área de efecto del conjuro. Las víctimas de este conjuro tienen derecho a una tirada de salvación contra arma de aliento para mitad de daño.",
                 "Alcance": "10 metros",
                 "Duración": "4 asaltos",
                 "Nivel": 7
             },
-	        "Nube incendiaria": {    "Descripción": "El lanzador podrá crear una nebulosa de la que brotarán llamaradas. Este denso humo negruzco bloqueará la visión parcialmente en un área de 10 x 10 x 5 metros. Toda criatura dentro de la nube recibirá un daño equivalente a 1d6 por nivel del lanzador durante cada asalto que permanezca en el área de efecto del conjuro. Las víctimas de este conjuro tienen derecho a una tirada de salvación contra arma de aliento para mitad de daño.",
+	        "Nube Incendiaria": {    "Descripción": "El lanzador podrá crear una nebulosa de la que brotarán llamaradas. Este denso humo negruzco bloqueará la visión parcialmente en un área de 10 x 10 x 5 metros. Toda criatura dentro de la nube recibirá un daño equivalente a 1d6 por nivel del lanzador durante cada asalto que permanezca en el área de efecto del conjuro. Las víctimas de este conjuro tienen derecho a una tirada de salvación contra arma de aliento para mitad de daño.",
                 "Alcance": "10 metros",
                 "Duración": "4 asaltos",
                 "Nivel": 8
@@ -1590,12 +1590,12 @@
                 "Duración": "6 turnos",
                 "Nivel": 1
             },
-	        "Piedras en pña": {    "Descripción": "Este conjuro crea una trampa de piedras con forma de púa. El lanzador puede afectar a piedras en un área de un cuadrado de 5 metros de lado por nivel. En el área afectada por el hechizo, toda piedra que exista, ya sea natural o pared de piedra trabajada, sufrirá una pequeña transformación haciendo que se formen en las mismas pequeñas púas. Cualquier criatura que pase por el área verá como miles de pequeñas púas se lanzarán contra ella, sufriendo 2d4 puntos de daño por asalto que permanezca en el área, sin derecho a tirada de salvación. Esta trampa solo puede ser detectada por ladrones y ninjas.",
+	        "Piedras en púas (druida)": {    "Descripción": "Este conjuro crea una trampa de piedras con forma de púa. El lanzador puede afectar a piedras en un área de un cuadrado de 5 metros de lado por nivel. En el área afectada por el hechizo, toda piedra que exista, ya sea natural o pared de piedra trabajada, sufrirá una pequeña transformación haciendo que se formen en las mismas pequeñas púas. Cualquier criatura que pase por el área verá como miles de pequeñas púas se lanzarán contra ella, sufriendo 2d4 puntos de daño por asalto que permanezca en el área, sin derecho a tirada de salvación. Esta trampa solo puede ser detectada por ladrones y ninjas.",
                 "Alcance": "30 metros",
                 "Duración": "1 hora + 1 turno/nivel",
                 "Nivel": 4
             },
-	        "Piedras en pñas": {    "Descripción": "Este conjuro crea una trampa de piedras con forma de pña, el lanzador puede afectar a piedras en un área de un cuadrado de 5 metros de lado por nivel. En el área afectada por el conjuro, toda  piedra que exista, ya sean naturales o paredes de piedra trabajada, sufrirá una pequeña transformación haciendo que se formen en las mismas pequeñas pñas. Cualquier criatura que pase por el área de influencia del conjuro sufrirá 2d4 puntos de golpe por  asalto que se encuentre en el área, sin derecho a tirada de salvación. Al pasar, miles de pequeñas pñas se lanzarán contra la criatura. Esta trampa sólo puede ser detectada por ladrones y ninjas.",
+	        "Piedras en púas": {    "Descripción": "Este conjuro crea una trampa de piedras con forma de pña, el lanzador puede afectar a piedras en un área de un cuadrado de 5 metros de lado por nivel. En el área afectada por el conjuro, toda  piedra que exista, ya sean naturales o paredes de piedra trabajada, sufrirá una pequeña transformación haciendo que se formen en las mismas pequeñas pñas. Cualquier criatura que pase por el área de influencia del conjuro sufrirá 2d4 puntos de golpe por  asalto que se encuentre en el área, sin derecho a tirada de salvación. Al pasar, miles de pequeñas pñas se lanzarán contra la criatura. Esta trampa sólo puede ser detectada por ladrones y ninjas.",
                 "Alcance": "30 metors",
                 "Duración": "1 hora + 1 turno/nivel",
                 "Nivel": 5
@@ -1675,12 +1675,12 @@
                 "Duración": "Especial",
                 "Nivel": 3
             },
-	        "Protección contra el mal": {    "Descripción": "Este conjuro concede al portador las siguientes protecciones contra todas las criaturas malignas\n - El receptor de ese conjuro gana un bonificador -1 a su CA y un +1 a sus tiradas de salvación.\n - El conjuro impide el contacto corporal con las criaturas procedentes de otro plano o que hayan sido invocadas, lo cual implica que el receptor del conjuro no puede ser atacado por criaturas extraplanares.\nEste conjuro es reversible y se puede transformar en un 'protección contra el bien'.",
+	        "Protección contra el Mal (clérigo)": {    "Descripción": "Este conjuro concede al portador las siguientes protecciones contra todas las criaturas malignas\n - El receptor de ese conjuro gana un bonificador -1 a su CA y un +1 a sus tiradas de salvación.\n - El conjuro impide el contacto corporal con las criaturas procedentes de otro plano o que hayan sido invocadas, lo cual implica que el receptor del conjuro no puede ser atacado por criaturas extraplanares.\nEste conjuro es reversible y se puede transformar en un 'protección contra el bien'.",
                 "Alcance": "Toque",
                 "Duración": "12",
                 "Nivel": 1
             },
-	        "Protección contra el mal en grupo": {    "Descripción": "Este conjuro concede al portador las siguientes protecciones contra todas las criaturas malignas: 1. Un bonificador -1 a la CA y un +1 a las tiradas de salvación. 2. El conjuro impide el contacto corporal con las criaturas procedentes de otro plano o que hayan sido invocadas. Esto implica que el receptor del conjuro no puede ser atacado por criaturas extraplanares. Este conjuro es reversible y se puede transformar en un hechizo de protección contra el bien.",
+	        "Protección contra el Mal en Grupo (clérigo)": {    "Descripción": "Este conjuro concede al portador las siguientes protecciones contra todas las criaturas malignas: 1. Un bonificador -1 a la CA y un +1 a las tiradas de salvación. 2. El conjuro impide el contacto corporal con las criaturas procedentes de otro plano o que hayan sido invocadas. Esto implica que el receptor del conjuro no puede ser atacado por criaturas extraplanares. Este conjuro es reversible y se puede transformar en un hechizo de protección contra el bien.",
                 "Alcance": "3 metros",
                 "Duración": "12 turnos",
                 "Nivel": 4
@@ -1700,7 +1700,7 @@
                 "Duración": "Instantánea",
                 "Nivel": 1
             },
-	        "Puerta": {    "Descripción": "Este conjuro crea una puerta interdimensional entre el lugar en el que se encuentra el clérigo y el plano donde se encuentra una criatura de gran poder, el lanzador debe nombrar a la criatura y se creará la puerta que inmediatamente llamará la atención de esta poderosa criatura, lo que ocurra una vez abierta la puerta queda a discreción del Narrador y dependerá del motivo de crear la puerta, del alineamiento del lanzador en relación con el de la criatura, etc.",
+	        "Puerta (clérigo)": {    "Descripción": "Este conjuro crea una puerta interdimensional entre el lugar en el que se encuentra el clérigo y el plano donde se encuentra una criatura de gran poder, el lanzador debe nombrar a la criatura y se creará la puerta que inmediatamente llamará la atención de esta poderosa criatura, lo que ocurra una vez abierta la puerta queda a discreción del Narrador y dependerá del motivo de crear la puerta, del alineamiento del lanzador en relación con el de la criatura, etc.",
                 "Alcance": "50 metros",
                 "Duración": "Especial",
                 "Nivel": 7
@@ -1730,11 +1730,6 @@
                 "Duración": "Permanente",
                 "Nivel": 1
             },
-	        "Purificar agua y comida": {    "Descripción": "Este conjuro hace que cualquier tipo de comida y agua que haya sido contaminada, esté en mal estado o envenenada se vuelva pura y en perfecto estado para ser ingerida. Se puede purificar hasta 10 metros cñbicos de agua por nivel.Este conjuro es reversible y se puede transformar en un 'pudrir comida y agua'. Este conjuro es capaz de estropear incluso el agua sagrada.",
-                "Alcance": "30 metros",
-                "Duración": "Permanente",
-                "Nivel": 1
-            },
 	        "Puño golpeador de Fistan": {    "Descripción": "Este hechizo crea una gran y poderosa mano fantasmal que es capaz de golpear a una criatura, u objeto, a elección del lanzador, cada asalto. Este ataque siempre golpeará a la víctima elegida, aunque para calcular el daño ocasionado por el golpe se requerirá de una tirada de 1d20 para consultar la tabla abajo reseñada:  Tirada 1d20 Daño 1-9 1d6 10-15 2d6 16-19 3d6 + aturdimiento durante 1 asalto 20+ 4d6 + aturdimiento durante 3 asaltos",
                 "Alcance": "3 m por nivel",
                 "Duración": "1 asalto por nivel",
@@ -1750,7 +1745,7 @@
                 "Duración": "2 turnos",
                 "Nivel": 1
             },
-	        "Quitar maldición": {    "Descripción": "Mediante este conjuro el clérigo es capaz de extirpar una maldición de una criatura u objeto. Este conjuro es capaz de quitar todas las maldiciones excepto aquellas de carácter especial, tarea que dejamos a discreción del Narrador.\nEste conjuro es reversible, Maldición, y puede emplearse para lanzar maldiciones sobre criaturas u objetos. El efecto de la maldición se determina tirando un dado porcentual y comparando el resultado con la siguiente tabla:\n1 \u2013 50% reduce una característica al azar en -3 puntos.\n51-75% las tiradas de salvación y ataques de la víctima sufren un penalizador de -4.\n76-100% la víctima suelta lo que tenga en las manos y huye.\n\t\t\t\nAparte de la tabla, las maldiciones pueden ser muy diversas y, con el permiso del Narrador, el aventurero puede ser creativo en este campo e idear nuevas y maléficas maldiciones para torturar a sus enemigos.",
+	        "Quitar Maldición (clérigo)": {    "Descripción": "Mediante este conjuro el clérigo es capaz de extirpar una maldición de una criatura u objeto. Este conjuro es capaz de quitar todas las maldiciones excepto aquellas de carácter especial, tarea que dejamos a discreción del Narrador.\nEste conjuro es reversible, Maldición, y puede emplearse para lanzar maldiciones sobre criaturas u objetos. El efecto de la maldición se determina tirando un dado porcentual y comparando el resultado con la siguiente tabla:\n1 \u2013 50% reduce una característica al azar en -3 puntos.\n51-75% las tiradas de salvación y ataques de la víctima sufren un penalizador de -4.\n76-100% la víctima suelta lo que tenga en las manos y huye.\n\t\t\t\nAparte de la tabla, las maldiciones pueden ser muy diversas y, con el permiso del Narrador, el aventurero puede ser creativo en este campo e idear nuevas y maléficas maldiciones para torturar a sus enemigos.",
                 "Alcance": "Toque",
                 "Duración": "Permanente",
                 "Nivel": 3
@@ -1840,11 +1835,6 @@
                 "Duración": "Permanente",
                 "Nivel": 7
             },
-	        "Regenerar": {    "Descripción": "Este conjuro permite al druida regenerar los miembros amputados de la criatura tocada, la única condición para que el conjuro resulte efectivo es que la criatura permanezca con vida.\nEste conjuro es reversible y hace que el miembro que toque el druida se marchite hasta morir, la criatura tocada tiene en este caso derecho a una tirada de salvación contra conjuros para evitar el efecto: si supera la tirada sufre 5d6 puntos de daño, pero el miembro tocado no se marchita.",
-                "Alcance": "Contacto",
-                "Duración": "Permanente",
-                "Nivel": 7
-            },
 	        "Relato de piedra de Nomolos": {    "Descripción": "Este hechizo ha de ser lanzado en un área donde existan piedras, el clérigo va tocando las piedras y estas le cuentas quien las ha tocado y en qué momento, además le desvelarán todo lo que hay a su alrededor, si están tapando u ocultando algo. Es el Narrador el que relata la descripción que hacen las piedras como crea conveniente.",
                 "Alcance": "Toque",
                 "Duración": "10 minutos",
@@ -1890,7 +1880,7 @@
                 "Duración": "Permanente",
                 "Nivel": 7
             },
-	        "Resurección": {    "Descripción": "Funciona igual que revivir a los muertos pero sin límite de tiempo para la resurrección, es decir, no importa si la víctima lleva 1 día o diez años muerta. Además sólo es necesario un fragmento de su cuerpo para llevar a cabo la resurrección. El receptor resucitará curado de cualquier enfermedad y con todos sus puntos de golpe, de característica y habilidades restaurados.\nEl reverso de este conjuro (Destrucción) destruye a la víctima y la convierte en polvo de manera inmediata. Para poder destruir a la víctima, el lanzador ha de tocarla teniendo éxito en una tirada de ataque.\nUna vez se lance este conjuro, el clérigo deberá descansar 1 día por nivel del personaje resucitado o destruido, no pudiendo lanzar más conjuros o combatir.",
+	        "Resurrección": {    "Descripción": "Funciona igual que revivir a los muertos pero sin límite de tiempo para la resurrección, es decir, no importa si la víctima lleva 1 día o diez años muerta. Además sólo es necesario un fragmento de su cuerpo para llevar a cabo la resurrección. El receptor resucitará curado de cualquier enfermedad y con todos sus puntos de golpe, de característica y habilidades restaurados.\nEl reverso de este conjuro (Destrucción) destruye a la víctima y la convierte en polvo de manera inmediata. Para poder destruir a la víctima, el lanzador ha de tocarla teniendo éxito en una tirada de ataque.\nUna vez se lance este conjuro, el clérigo deberá descansar 1 día por nivel del personaje resucitado o destruido, no pudiendo lanzar más conjuros o combatir.",
                 "Alcance": "Toque",
                 "Duración": "Permanente ",
                 "Nivel": 7
@@ -1905,7 +1895,7 @@
                 "Duración": " 1d4 asaltos + 4 asaltos/nivel",
                 "Nivel": 3
             },
-	        "Retener persona": {    "Descripción": "Una vez lanzado el conjuro, las criaturas humanoides quedan paralizadas. El conjuro sólo afecta a 1d4 individuos de tamaño mediano o inferior, pero no a criaturas grandes o superiores en tamaño a un ogro. Para eludir los efectos del conjuro, las criaturas han de superar una tirada de salvación contra conjuros. Quien quede retenido no podrá moverse ni hablar, pero es consciente de lo que ocurre a su alrededor. Si el conjuro es dirigido a un solo individuo, éste realizará su tirada de salvación con un penalizador de -2. El conjuro no afecta a muertos vivientes.",
+	        "Retener personas (clérigo)": {    "Descripción": "Una vez lanzado el conjuro, las criaturas humanoides quedan paralizadas. El conjuro sólo afecta a 1d4 individuos de tamaño mediano o inferior, pero no a criaturas grandes o superiores en tamaño a un ogro. Para eludir los efectos del conjuro, las criaturas han de superar una tirada de salvación contra conjuros. Quien quede retenido no podrá moverse ni hablar, pero es consciente de lo que ocurre a su alrededor. Si el conjuro es dirigido a un solo individuo, éste realizará su tirada de salvación con un penalizador de -2. El conjuro no afecta a muertos vivientes.",
                 "Alcance": "120 metros",
                 "Duración": "9 turnos",
                 "Nivel": 2
@@ -1955,7 +1945,7 @@
                 "Duración": "Permanente",
                 "Nivel": 6
             },
-	        "Sanar": {    "Descripción": "Este conjuro restablece todos los puntos de golpe perdidos por la criatura tocada. Por otra parte, el conjuro se considera reversible (Dañar). Si el lanzador tiene éxito en un ataque contra un enemigo, éste debe realizar una tirada de salvación contra muerte. Si la supera, el conjuro sólo le inflige 6d8 puntos de golpe, en caso contrario la criatura muere inmediatamente. Si la criatura tiene más de 100 punto de golpe pierde un máximo de 10d10 puntos de golpe si falla la tirada pero no muere.",
+	        "Sanar (druida)": {    "Descripción": "Este conjuro restablece todos los puntos de golpe perdidos por la criatura tocada. Por otra parte, el conjuro se considera reversible (Dañar). Si el lanzador tiene éxito en un ataque contra un enemigo, éste debe realizar una tirada de salvación contra muerte. Si la supera, el conjuro sólo le inflige 6d8 puntos de golpe, en caso contrario la criatura muere inmediatamente. Si la criatura tiene más de 100 punto de golpe pierde un máximo de 10d10 puntos de golpe si falla la tirada pero no muere.",
                 "Alcance": "Contacto",
                 "Duración": "Permanente",
                 "Nivel": 7
@@ -2145,7 +2135,7 @@
                 "Duración": "Permanente",
                 "Nivel": 4
             },
-	        "Transportarse vía plantas": {    "Descripción": "Este conjuro permite al lanzador penetrar en cualquier planta de tamaño humanoide y teletransportarse hasta otra planta del mismo tipo, sin importar la distancia a la que se encuentre. Si el lanzador quiere ir a una zona concreta, aparecerá en la planta del mismo tipo más cercana que haya a ese lugar. Existe una probabilidad del 35% disminuida en un 1% por nivel de lanzador de aparecer en una planta a una distancia de 500 km del lugar deseado.",
+	        "Transportarse vía plantas (druida)": {    "Descripción": "Este conjuro permite al lanzador penetrar en cualquier planta de tamaño humanoide y teletransportarse hasta otra planta del mismo tipo, sin importar la distancia a la que se encuentre. Si el lanzador quiere ir a una zona concreta, aparecerá en la planta del mismo tipo más cercana que haya a ese lugar. Existe una probabilidad del 35% disminuida en un 1% por nivel de lanzador de aparecer en una planta a una distancia de 500 km del lugar deseado.",
                 "Alcance": "Contacto",
                 "Duración": "Especial",
                 "Nivel": 5
@@ -2247,10 +2237,24 @@
                "Dominación", "Dormir", "Drenar energía", "Elucubración de Fistan", "Encantar arma", "Encontrar familiar", 
                "Enviar mensaje", "Escudo", "Escudo Protector Contra la Magia", "Escudo de fuego/hielo de Karkemish", "Esfera Prismática", "Esfera de Fistan",
                "Esfera invulnerable de Karkemish", "Esfera invulnerable menor", "Esfera llameante", "Esfera telequinética de Fistan", 
-               "Espada Mágica de Talandar", "Estatua", "Flecha ácida de Nefertiri", "Fuerza Fantasmal", "Fuerza extraordinaria de Kurgus",
+               "Espada Mágica de Talandar", "Estatua", "Éxtasis Temporal", "Flecha ácida de Nefertiri", "Fuerza Fantasmal", "Fuerza extraordinaria de Kurgus",
                "Geas", "Grasa", "Hechizar Monstruo", "Hechizar Persona", "Hechizar a las Masas", "Hoja resplandeciente", "Identificar", "Imagen Reflejada", 
                "Imagen espectral", "Imbecilidad", "Indetectabilidad", "Infravisión", "Inmovilizar Persona", "Invertir gravedad", "Invisibilidad", 
-               "Invisibilidad en Grupo", "Invisibilidad mejorada", "Invocar Elemental", "Irresistible danza de Nébula", "Jaula de fuerza" ],
+               "Invisibilidad en Grupo", "Invisibilidad mejorada", "Invocar Elemental", "Irresistible danza de Nébula", "Jaula de fuerza",
+               "Laberinto", "Lanza de hielo", "Leer Lenguas", "Leer Magia", "Lentitud", "Levitar", "Lluvia de Meteoritos", "Localizar Objeto", "Locura de Takhsi", 
+               "Luz" , "Luz Permanente", "Luz cadaverosa", "Maldición de sueño eterno de Takhsi", "Maldición licantrópica de Steinkel", "Mano Aplastante de Fistan", 
+               "Mano Apresadora de Fistan", "Mano de Fistan", "Mano espectral", "Manos ardientes", "Mente en blanco", "Merodeador Invisible", "Meteoros igneos de Nébula", "Miedo", 
+               "Modelar piedra", "Mover la tierra", "Muro de Fuego", "Muro de Hielo", "Muro de Piedra", "Muro de fuerza", "Muro de viento", "Muro prismático", "Negraesfera", 
+               "Nube Aniquiladora", "Nube Incendiaria", "Ocultar", "Ojo Arcano", "Oscuridad", "Palabra Poderosa Atontar", "Palabra Poderosa Matar", "Palabra poderosa cegar", 
+               "Paralizar monstruo", "Pasadizo Arcano", "Pedir", "Pequeño refugio de Nébula", "Percepción Extrasensorial", "Permanencia", "Piedra a carne", "Poliformarse a uno mismo", 
+               "Polimorfar", "Polimorfar objeto", "Polimorfar otro", "Presciencia", "Protección contra Proyectiles", "Protección contra el Mal", "Protección contra el Mal en Grupo", 
+               "Proyectar Imagen", "Proyectil Mágico", "Puerta", "Puerta Dimensional", "Puerta de Fase", "Puño golpeador de Fistan", "Quitar Maldición", "Rayo Eléctrico", "Rayo de ectoplasma", 
+               "Rayo debilitador de Karkemish", "Rayo golpeador", "Rayos multicolores", "Rechazo", "Recurso danzante de Nébula", "Reencarnación de Usher", "Refugio de Nébula", 
+               "Refugio mayor de Nébula", "Reparar", "Repulsión", "Respirar Bajo el Agua", "Retener muertos vivientes", "Retener personas", "Revivir a los Muertos", "Runas explosivas", 
+               "Salto", "Sentido ampliado", "Simulacro", "Sirviente invisible", "Sombras", "Sordera", "Sugestión", "Sugestión de masas", "Símbolo", "Telaraña", "Teleportación planaria", 
+               "Teleportar", "Telequinesis", "Terreno ilusorio", "Terrorífico marchitamiento de Alhazred", "Toque helado", "Toque putrefacto de momia de Nefertiri", "Toque vampírico", 
+               "Tormenta de hielo", "Tos", "Trampa de fuego de Nefertiri", "Transformación de Nébula", "Truco de la cuerda", "Ventriloquia", "Visión", "Visión falsa", "Visión verdadera", 
+               "Volar" ],
     "Mago": [ "Abrir", "Abrir las Aguas", "Acechador invisible", "Acelerar", "Agrandar", "Alarma", "Alma",
                "Antipatía-Simpatía", "Aprisionar", "Araña nefanda de la muerte", "Armadura natural",
                "Asesino fantasmal", "Atontar", "Atraer objeto", "Atrapamiento", "Atrapar el Alma", 
@@ -2272,10 +2276,24 @@
                "Dominación", "Dormir", "Drenar energía", "Elucubración de Fistan", "Encantar arma", "Encontrar familiar", 
                "Enviar mensaje", "Escudo", "Escudo Protector Contra la Magia", "Escudo de fuego/hielo de Karkemish", "Esfera Prismática", "Esfera de Fistan", 
                "Esfera invulnerable de Karkemish", "Esfera invulnerable menor", "Esfera llameante", "Esfera telequinética de Fistan", 
-               "Espada Mágica de Talandar", "Estatua", "Flecha ácida de Nefertiri", "Fuerza Fantasmal", "Fuerza extraordinaria de Kurgus",
+               "Espada Mágica de Talandar", "Estatua", "Éxtasis Temporal", "Flecha ácida de Nefertiri", "Fuerza Fantasmal", "Fuerza extraordinaria de Kurgus",
                "Geas", "Grasa", "Hechizar Monstruo", "Hechizar Persona", "Hechizar a las Masas", "Hoja resplandeciente", "Identificar", "Imagen Reflejada", 
                "Imagen espectral", "Imbecilidad", "Indetectabilidad", "Infravisión", "Inmovilizar Persona", "Invertir gravedad", "Invisibilidad", 
-               "Invisibilidad en Grupo", "Invisibilidad mejorada", "Invocar Elemental", "Irresistible danza de Nébula", "Jaula de fuerza" ],
+               "Invisibilidad en Grupo", "Invisibilidad mejorada", "Invocar Elemental", "Irresistible danza de Nébula", "Jaula de fuerza",
+               "Laberinto", "Lanza de hielo", "Leer Lenguas", "Leer Magia", "Lentitud", "Levitar", "Lluvia de Meteoritos", "Localizar Objeto", "Locura de Takhsi", 
+               "Luz" , "Luz Permanente", "Luz cadaverosa", "Maldición de sueño eterno de Takhsi", "Maldición licantrópica de Steinkel", "Mano Aplastante de Fistan", 
+               "Mano Apresadora de Fistan", "Mano de Fistan", "Mano espectral", "Manos ardientes", "Mente en blanco", "Merodeador Invisible", "Meteoros igneos de Nébula", "Miedo", 
+               "Modelar piedra", "Mover la tierra", "Muro de Fuego", "Muro de Hielo", "Muro de Piedra", "Muro de fuerza", "Muro de viento", "Muro prismático", "Negraesfera", 
+               "Nube Aniquiladora", "Nube Incendiaria", "Ocultar", "Ojo Arcano", "Oscuridad", "Palabra Poderosa Atontar", "Palabra Poderosa Matar", "Palabra poderosa cegar", 
+               "Paralizar monstruo", "Pasadizo Arcano", "Pedir", "Pequeño refugio de Nébula", "Percepción Extrasensorial", "Permanencia", "Piedra a carne", "Poliformarse a uno mismo", 
+               "Polimorfar", "Polimorfar objeto", "Polimorfar otro", "Presciencia", "Protección contra Proyectiles", "Protección contra el Mal", "Protección contra el Mal en Grupo", 
+               "Proyectar Imagen", "Proyectil Mágico", "Puerta", "Puerta Dimensional", "Puerta de Fase", "Puño golpeador de Fistan", "Quitar Maldición", "Rayo Eléctrico", "Rayo de ectoplasma", 
+               "Rayo debilitador de Karkemish", "Rayo golpeador", "Rayos multicolores", "Rechazo", "Recurso danzante de Nébula", "Reencarnación de Usher", "Refugio de Nébula", 
+               "Refugio mayor de Nébula", "Reparar", "Repulsión", "Respirar Bajo el Agua", "Retener muertos vivientes", "Retener personas", "Revivir a los Muertos", "Runas explosivas", 
+               "Salto", "Sentido ampliado", "Simulacro", "Sirviente invisible", "Sombras", "Sordera", "Sugestión", "Sugestión de masas", "Símbolo", "Telaraña", "Teleportación planaria", 
+               "Teleportar", "Telequinesis", "Terreno ilusorio", "Terrorífico marchitamiento de Alhazred", "Toque helado", "Toque putrefacto de momia de Nefertiri", "Toque vampírico", 
+               "Tormenta de hielo", "Tos", "Trampa de fuego de Nefertiri", "Transformación de Nébula", "Truco de la cuerda", "Ventriloquia", "Visión", "Visión falsa", "Visión verdadera", 
+               "Volar" ],
     "Elfo oscuro": [ "Abrir", "Abrir las Aguas", "Acechador invisible", "Acelerar", "Agrandar", "Alarma",
                       "Alma", "Antipatía-Simpatía", "Aprisionar", "Araña nefanda de la muerte", 
                       "Armadura natural", "Asesino fantasmal", "Atontar", "Atraer objeto", 
@@ -2299,10 +2317,24 @@
                       "Dominación", "Dormir", "Drenar energía", "Elucubración de Fistan", "Encantar arma", "Encontrar familiar", 
                       "Enviar mensaje", "Escudo", "Escudo Protector Contra la Magia", "Escudo de fuego/hielo de Karkemish", "Esfera Prismática", "Esfera de Fistan",
                       "Esfera invulnerable de Karkemish", "Esfera invulnerable menor", "Esfera llameante", "Esfera telequinética de Fistan", 
-                      "Espada Mágica de Talandar", "Estatua", "Flecha ácida de Nefertiri", "Fuerza Fantasmal", "Fuerza extraordinaria de Kurgus",
+                      "Espada Mágica de Talandar", "Estatua", "Éxtasis Temporal", "Flecha ácida de Nefertiri", "Fuerza Fantasmal", "Fuerza extraordinaria de Kurgus",
                       "Geas", "Grasa", "Hechizar Monstruo", "Hechizar Persona", "Hechizar a las Masas", "Hoja de llamas", "Hoja resplandeciente", "Identificar", 
                       "Imagen Reflejada", "Imagen espectral", "Imbecilidad", "Indetectabilidad", "Infravisión", "Inmovilizar Persona", "Invertir gravedad", "Invisibilidad", 
-                      "Invisibilidad en Grupo", "Invisibilidad mejorada", "Invocar Elemental", "Irresistible danza de Nébula", "Jaula de fuerza" ],
+                      "Invisibilidad en Grupo", "Invisibilidad mejorada", "Invocar Elemental", "Irresistible danza de Nébula", "Jaula de fuerza",
+                      "Laberinto", "Lanza de hielo", "Leer Lenguas", "Leer Magia", "Lentitud", "Levitar", "Lluvia de Meteoritos", "Localizar Objeto", "Locura de Takhsi", 
+                      "Luz" , "Luz Permanente", "Luz cadaverosa", "Maldición de sueño eterno de Takhsi", "Maldición licantrópica de Steinkel", "Mano Aplastante de Fistan", 
+                      "Mano Apresadora de Fistan", "Mano de Fistan", "Mano espectral", "Manos ardientes", "Mente en blanco", "Merodeador Invisible", "Meteoros igneos de Nébula", "Miedo", 
+                      "Modelar piedra", "Mover la tierra", "Muro de Fuego", "Muro de Hielo", "Muro de Piedra", "Muro de fuerza", "Muro de viento", "Muro prismático", "Negraesfera", 
+                      "Nube Aniquiladora", "Nube Incendiaria", "Ocultar", "Ojo Arcano", "Oscuridad", "Palabra Poderosa Atontar", "Palabra Poderosa Matar", "Palabra poderosa cegar", 
+                      "Paralizar monstruo", "Pasadizo Arcano", "Pedir", "Pequeño refugio de Nébula", "Percepción Extrasensorial", "Permanencia", "Piedra a carne", "Poliformarse a uno mismo", 
+                      "Polimorfar", "Polimorfar objeto", "Polimorfar otro", "Presciencia", "Protección contra Proyectiles", "Protección contra el Mal", "Protección contra el Mal en Grupo", 
+                      "Proyectar Imagen", "Proyectil Mágico", "Puerta", "Puerta Dimensional", "Puerta de Fase", "Puño golpeador de Fistan", "Quitar Maldición", "Rayo Eléctrico", "Rayo de ectoplasma", 
+                      "Rayo debilitador de Karkemish", "Rayo golpeador", "Rayos multicolores", "Rechazo", "Recurso danzante de Nébula", "Reencarnación de Usher", "Refugio de Nébula", 
+                      "Refugio mayor de Nébula", "Reparar", "Repulsión", "Respirar Bajo el Agua", "Retener muertos vivientes", "Retener personas", "Revivir a los Muertos", "Runas explosivas", 
+                      "Salto", "Sentido ampliado", "Simulacro", "Sirviente invisible", "Sombras", "Sordera", "Sugestión", "Sugestión de masas", "Símbolo", "Telaraña", "Teleportación planaria", 
+                      "Teleportar", "Telequinesis", "Terreno ilusorio", "Terrorífico marchitamiento de Alhazred", "Toque helado", "Toque putrefacto de momia de Nefertiri", "Toque vampírico", 
+                      "Tormenta de hielo", "Tos", "Trampa de fuego de Nefertiri", "Transformación de Nébula", "Truco de la cuerda", "Ventriloquia", "Visión", "Visión falsa", "Visión verdadera", 
+                      "Volar" ],
     "Clérigo": [ "Abrir las aguas (clérigo)", "Adivinación", "Animar a los muertos", "Animar objetos",
                   "Animar rocas", "Augurio", "Auxilio (clérigo)", "Ayuda", "Bajar las aguas (clérigo)",
                   "Barrera de cuchillas", "Bendecir", "Calentar metal", "Cambiar de plano",
@@ -2316,7 +2348,16 @@
                   "Encontrar trampas", "Enredar", "Extirpar parálisis", "Festín de los héroes", "Fingir muerte", "Fuego imaginario", "Fuente mágica",
                   "Fulgor de estrellas", "Fundir en piedra", "Glifo de protección", "Golpe flamígero", "Golpear ", "Guardia del dragón alado", "Hablar con las plantas",
                   "Hablar con los animales", "Hablar con los monstruos", "Hablar con los muertos", "Hoja de llamas", "Idea espontánea de Steinkel", "Imbuir la habilidad de conjurar", 
-                  "Inmunidad contra conjuros", "Invisibilidad ante los muertos vivientes", "Invocar elemental de fuego" ],
+                  "Inmunidad contra conjuros", "Invisibilidad ante los muertos vivientes", "Invocar elemental de fuego", "Lenguas", "Libre acción", "Llamar rayos", 
+                  "Localizar Objeto (clérigo)", "Localizar animales o plantas", "Luz (clérigo)", "Luz cadaverosa (clérigo)" , "Luz permanente", "Manto de valor", "Milagro", "Misión", 
+                  "Modelar piedra (clérigo)", "Muro de Fuego (clérigo)", "Muros tentaculares de Steinkel", "Nemesis reptante de Nomolos", "Neutralizar veneno", "Orden de retirada", 
+                  "Ordenar", "Palabra sagrada", "Piedra mágica", "Pasar sin dejar huella", "Piedras en púas", "Piel de corteza", "Pirotecnia", "Plaga de insectos", "Plegaria", "Prohibición", 
+                  "Protección contra el fuego", "Protección contra el Mal (clérigo)", "Protección contra el Mal en Grupo (clérigo)", "Protección contra el rayo", "Puerta (clérigo)", 
+                  "Purificar agua y comida", "Quitar el miedo", "Quitar Maldición (clérigo)", "Ramas en serpientes", "Rayo de luna", "Rayo de sol", "Redención", "Refugio", "Regenerar", 
+                  "Relato de piedra de Nomolos", "Repudiar", "Resistencia al frío", "Resistencia al fuego", "Restablecimiento", "Resurrección", "Retener personas (clérigo)", "Retraerse", 
+                  "Revivir a los Muertos", "Roble perenne", "Sanar", "Semillas de fuego", "Siesta", "Silencio", "Sirviente aéreo", "Subyugar", "Sudario de heridas", "Símbolo divino", 
+                  "Terremoto", "Tormenta de fuego", "Trampa de fuego de Sitandras", "Trampa de lazo", "Transmutar agua en polvo", "Transportarse vía plantas", "Tronco siempreardiente", 
+                  "Tropezar", "Vestimenta de Nomolos", "Visión verdadera (clérigo)" ],
     "Paladín": [ "Abrir las aguas (clérigo)", "Adivinación", "Animar a los muertos", "Animar objetos",
                   "Animar rocas", "Augurio", "Auxilio (clérigo)", "Ayuda", "Bajar las aguas (clérigo)",
                   "Barrera de cuchillas", "Bendecir", "Bola de Fuego de Explosión Retardada", "Calentar metal",
@@ -2330,7 +2371,16 @@
                   "Encontrar trampas", "Enredar", "Extirpar parálisis", "Festín de los héroes", "Fingir muerte", "Fuego imaginario", "Fuente mágica",
                   "Fulgor de estrellas", "Fundir en piedra", "Glifo de protección", "Golpe flamígero", "Golpear ", "Guardia del dragón alado", "Hablar con las plantas",
                   "Hablar con los animales", "Hablar con los monstruos", "Hablar con los muertos", "Hoja de llamas", "Idea espontánea de Steinkel", "Imbuir la habilidad de conjurar", 
-                  "Inmunidad contra conjuros", "Invisibilidad ante los muertos vivientes", "Invocar elemental de fuego" ],
+                  "Inmunidad contra conjuros", "Invisibilidad ante los muertos vivientes", "Invocar elemental de fuego", "Lenguas", "Libre acción", "Llamar rayos", 
+                  "Localizar Objeto (clérigo)", "Localizar animales o plantas", "Luz (clérigo)", "Luz cadaverosa (clérigo)" , "Luz permanente", "Manto de valor", "Milagro", "Misión", 
+                  "Modelar piedra (clérigo)", "Muro de Fuego (clérigo)", "Muros tentaculares de Steinkel", "Nemesis reptante de Nomolos", "Neutralizar veneno", "Orden de retirada", 
+                  "Ordenar", "Palabra sagrada", "Piedra mágica", "Pasar sin dejar huella", "Piedras en púas", "Piel de corteza", "Pirotecnia", "Plaga de insectos", "Plegaria", "Prohibición", 
+                  "Protección contra el fuego", "Protección contra el Mal (clérigo)", "Protección contra el Mal en Grupo (clérigo)", "Protección contra el rayo", "Puerta (clérigo)", 
+                  "Purificar agua y comida", "Quitar el miedo", "Quitar Maldición (clérigo)", "Ramas en serpientes", "Rayo de luna", "Rayo de sol", "Redención", "Refugio", "Regenerar", 
+                  "Relato de piedra de Nomolos", "Repudiar", "Resistencia al frío", "Resistencia al fuego", "Restablecimiento", "Resurrección", "Retener personas (clérigo)", "Retraerse", 
+                  "Revivir a los Muertos", "Roble perenne", "Sanar", "Semillas de fuego", "Siesta", "Silencio", "Sirviente aéreo", "Subyugar", "Sudario de heridas", "Símbolo divino", 
+                  "Terremoto", "Tormenta de fuego", "Trampa de fuego de Sitandras", "Trampa de lazo", "Transmutar agua en polvo", "Transportarse vía plantas", "Tronco siempreardiente", 
+                  "Tropezar", "Vestimenta de Nomolos", "Visión verdadera (clérigo)" ],
     "Druida": [ "Abrir las aguas (clérigo)", "Afectar fuegos normales", "Agua aérea", "Ahuyentar madera", 
                  "Amistad animal", "Animal mensajero", "Animar rocas", "Armadura natural",
                  "Bajar el nivel de las aguas menor", "Bajar las Aguas", "Bastón de conjuro", "Bayas druídicas",
@@ -2344,5 +2394,13 @@
                  "Detectar trampas y pozos", "Detectar veneno", "Disipar Magia", "Dotar de consciencia", "Encantar serpientes", "Encontrar la senda",
                  "Enjambre elemental", "Enredar", "Escalada de araña", "Esfera flamígera", "Extirpar parálisis", "Forma arbórea", "Formas de animal",
                  "Fulgor de estrellas", "Fundir en piedra", "Garrote", "Golpe Flamígero (druida)", "Hablar con las plantas (druida)", "Hablar con los animales",
-                 "Hechizar animales", "Helar metal", "Hoja de llamas", "Inmovilizar animal", "Invisibilidad ante los animales", "Invocar Elemental (druida)" ]
+                 "Hechizar animales", "Helar metal", "Hoja de llamas", "Inmovilizar animal", "Invisibilidad ante los animales", "Invocar Elemental (druida)", 
+                 "Llamar a tormenta de relámpagos", "Llamar insectos", "Llamar rayos", "Llamar seres de los bosques", "Localizar animales o plantas", 
+                 "Luz" , "Luz Permanente", "Marabunta", "Modelar piedra (clérigo)", "Montura", "Mover la tierra", "Muro de Fuego (druida)", "Muro de Hielo", "Muro de Piedra", 
+                 "Muro de espinas", "Muro de niebla", "Muro de viento", "Neutralizar veneno (druida)", "Niebla Preternatural", "Nube Incendiaria (druida)", "Nube letal", 
+                 "Piedras en púas (druida)", "Piel de corteza", "Plaga de insectos", "Producir fuego", "Protección contra el rayo", "Puerta vegetal", "Ramas en serpientes", 
+                 "Rayo Eléctrico", "Rayo de luna", "Rayo de sol", "Rayo golpeador", "Reducir plantas", "Regenerar", "Resistencia al frío / calor", "Resistencia al fuego", 
+                 "Respirar Bajo el Agua", "Retener animales", "Retener plantas", "Roble perenne", "Ráfaga de viento", "Sanar (druida)", "Semillas de fuego", "Terremoto", 
+                 "Tormenta de hielo", "Tormenta de venganza", "Transformar madera", "Transmutar agua en polvo", "Transmutar metal en madera", "Transmutar roca en lodo", 
+                 "Transportarse vía plantas (druida)", "Veneno lento", "Visión verdadera (druida)", "Zancada Prodigiosa" ]
 }
