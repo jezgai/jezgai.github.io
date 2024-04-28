@@ -98,6 +98,69 @@
                 "Categoria": "Detección",
                 "Resistencia": "Si"
             },
+		    "Concha antimagia": {    "Descripción": "Custodia contra magia (25 PP) que afecta a cualquier efecto mágico que trate de atravesarla desde dentro o desde fuera. Los conjuros de alcance Propio o Toque que el lanzador use consigo mismo sí funcionan.",
+                "Alcance": "Propio",
+                "Duración": "12 turnos",
+                "Nivel": 6,
+                "Categoria": "Mejora",
+                "Resistencia": "No"
+            },
+		    "Confusión": {    "Descripción": "Las criaturas afectadas llevarán a cabo una acción al azar decidida con una tirada de 2d6:\n - 2-5. tratará de atacar al lanzador o sus aliados o acercarse para atacar\n - 6-8. no hará nada excepto balbucear incoherentemente\n - 9-12. atacará a una criatura de su propio grupo o aliada. Si no pudiera llevar a cabo la acción indicada, solo se quedará ahí balbuceando.\nSalvación para evitar el efecto si la criatura tiene 3 DG o más",
+                "Alcance": "40 m.",
+                "Duración": "12 rondas",
+                "Nivel": 4,
+                "Categoria": "Control",
+                "Resistencia": "Si"
+            },
+		    "Conjurar animal": {    "Descripción": "Invoca tantos DG en total de mamíferos comunes como el nivel del lanzador. Atacarán a enemigos designados por su invocador y lucharán hasta la muerte.",
+                "Alcance": "10 m.",
+                "Duración": "1 turno",
+                "Nivel": 3,
+                "Categoria": "Invocación",
+                "Resistencia": "No"
+            },
+		    "Conjurar elemental": {    "Descripción": "Invoca un elemental por la duración del conjuro. Mientras mantenga la concentración, el lanzador puede darle órdenes, incluido ordenarle volver a su plano para terminar el conjuro. También volverá si es objetivo de un conjuro de disipar el mal o contraconjuro. Si rompe la concentración, el elemental le atacará y no será capaz de recuperar el control. Este conjuro solo se puede lanzar una vez al día",
+                "Alcance": "50 m.",
+                "Duración": "Indefinida",
+                "Nivel": 5,
+                "Categoria": "Invocación",
+                "Resistencia": "No"
+            },
+		    "Conjuro mortal": {    "Descripción": "Muerte instantánea",
+                "Alcance": "80 m.",
+                "Duración": "Instantáneo",
+                "Nivel": 6,
+                "Categoria": "Muerte",
+                "Resistencia": "No"
+            },
+		    "Cono de frío": {    "Descripción": "1d6 de daño de frío (x1) por nivel del lanzador\nSalvación para reducir el daño a la mitad",
+                "Alcance": "0 m.",
+                "Duración": "Instantáne1",
+                "Nivel": 5,
+                "Categoria": "Ráfaga",
+                "Resistencia": "Sí"
+            },
+		    "Contactar otro plano": {    "Descripción": "El lanzador envía su mente a otro plano donde puede hacer un número preguntas decidido de antemano (entre 3 y 12) que se responderán con 'sí' o 'no'. Al hacer más preguntas, más probable es que las respuestas sean correctas, pero también volverse loco. Al hacer 3 preguntas, hay un 25% de que la entidad contactada conozca la respuesta a una pregunta (de no saberla, no tiene por qué hacérselo saber al lanzador) y un 50% de que esta sea correcta. De la misma forma, el mago tiene 5% de posibilidades de volverse loco y pasar incapacitado tantas semanas como el número de preguntas. Cada pregunta adicional añade 5% a cada categoría. Las posibilidades de volverse loco, asimismo, se reducen en 5% por cada nivel del lanzador por encima de 10\nSe necesita una ronda por pregunta.",
+                "Alcance": "Propio",
+                "Duración": "Concentración",
+                "Nivel": 5,
+                "Categoria": "Ráfaga",
+                "Resistencia": "No"
+            },
+		    "Contraconjuro": {    "Descripción": "Anula los efectos mágicos: los efectos de conjuros de igual o menor nivel que los del lanzador (lanzados en el área o previamente) no funcionan. Por cada nivel por encima del lanzador, hay un 5% de posibilidades acumulativas de que el conjuro funcione. Los objetos mágicos no tienen efecto.",
+                "Alcance": "40 m.",
+                "Duración": "Instantáneo",
+                "Nivel": 3,
+                "Categoria": "Mejora",
+                "Resistencia": "No"
+            },
+		    "Contraconjuro (divina)": {    "Descripción": "Anula los efectos mágicos: los efectos de conjuros de igual o menor nivel que los del lanzador (lanzados en el área o previamente) no funcionan. Por cada nivel por encima del lanzador, hay un 5% de posibilidades acumulativas de que el conjuro funcione. Los objetos mágicos no tienen efecto.",
+                "Alcance": "40 m.",
+                "Duración": "Instantáneo",
+                "Nivel": 4,
+                "Categoria": "Mejora",
+                "Resistencia": "No"
+            },
 		    "Maldición": {    "Descripción": "Penaliza a la víctima con -1 a moral, daño, ataque y tiradas de salvación contra miedo. Afecta a los enemigos del lanzador (que sí pueden estar en combate).",
                 "Alcance": "Propio",
                 "Duración": "6 turnos",
@@ -106,7 +169,9 @@
                 "Resistencia": "Si"
             }
     },
-    "Arcana": [ "Acelerar", "Apertura", "Asesino fantasmal", "Bola de fuego", "Búsqueda", "Cerradura arcana", "Clariaudiencia", "Clarividencia" ],
-    "Divina": [ "Adivinación", "Agrandar animal", "Arma sagrada", "Augurio", "Bendición", "Búsqueda", "Comunión", "Maldición" ]
+    "Arcana": [ "Acelerar", "Apertura", "Asesino fantasmal", "Bola de fuego", "Búsqueda", "Cerradura arcana", "Clariaudiencia", "Clarividencia", "Concha antimagia", "Confusión",
+                "Conjurar animal", "Conjurar elemental", "Conjuro mortal", "Cono de frío", "Contactar otro plano", "Contraconjuro" ],
+    "Divina": [ "Adivinación", "Agrandar animal", "Arma sagrada", "Augurio", "Bendición", "Búsqueda", "Comunión", "Concha antimagia", "Conjurar animal", "Maldición",
+                "Contraconjuro (divina)" ]
 }
 
