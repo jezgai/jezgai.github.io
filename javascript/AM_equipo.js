@@ -360,6 +360,12 @@ class Armas {
 				tipoAD: "Arrojadiza",
 			},
 			{
+				nombre: "Hacha",
+				tipo: "CaC", 
+				tipoCaC: "Arma media", 
+				tipoAD: "",
+			},
+			{
 				nombre: "Hacha arrojadiza",
 				tipo: "CaC", 
 				tipoCaC: "Arma media", 
