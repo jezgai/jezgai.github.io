@@ -45,6 +45,12 @@ class SistemaBase {
 		return objsistema.tiposconjuros[0];
 	}
 	
+	getNivelHechizo(nombre, tipo) {
+		if ( this.hechizos.Hechizos[nombre].hasOwnProperty('Nivel') )
+				return this.hechizos.Hechizos[nombre].Nivel;
+		return null;
+	}
+	
     listaHechizos(tipo) {
 		var i=0;
 		var lHechizos = [];
@@ -53,16 +59,24 @@ class SistemaBase {
 		for (i=0; i<this.hechizos[tipo].length;i++) {
 			var hechizo = {};
 			hechizo.nombre = this.hechizos[tipo][i];
-			if ( this.hechizos.Hechizos[hechizo.nombre].hasOwnProperty('Nivel') )
+			hechizo.nivel = this.getNivelHechizo(hechizo.nombre, tipo);
+			/*if ( this.hechizos.Hechizos[hechizo.nombre].hasOwnProperty('Nivel') )
 				hechizo.nivel = this.hechizos.Hechizos[hechizo.nombre].Nivel;
 			else
-				hechizo.nivel = null;
+				hechizo.nivel = null;*/
 			lHechizos.push(hechizo);
 		}
 		return lHechizos;
 		//return this.hechizos[tipo];
 	}
 	
+	nivelHechizo(nivel) {
+		if (nivel.hasOwnProperty(this.tiposconjuros[0]) )
+			return nivel[this.tiposconjuros[0]];
+		return nivel;
+	}
+	
+    
 	pintaHechizos(lHechizos) {
 	        var i=0;
 	        var hechizoshtml = [ "<ul>", "<ul>", "<ul>" ];
@@ -70,7 +84,7 @@ class SistemaBase {
 	            var indicehechizo = math.mod(i,3);
 			    hechizoshtml[indicehechizo] += "<li><label><input type='checkbox' id='chechizos"+i+"' /> " + lHechizos[i].nombre;
 				if ( lHechizos[i].nivel != null) 
-					hechizoshtml[indicehechizo] += " (nivel " + lHechizos[i].nivel + ")";
+					hechizoshtml[indicehechizo] += " (nivel " + this.nivelHechizo(lHechizos[i].nivel) + ")";
 				hechizoshtml[indicehechizo] += "</label></li>";
 	        }
 	        hechizoshtml[0] += "</ul>";

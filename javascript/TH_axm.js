@@ -18,6 +18,7 @@ class AxM extends SistemaBase {
         this.hechizos.Arcana = tablas.Arcana;
         this.hechizos.Divina = tablas.Divina;
     }
+    
         
     listaHechizosTipoNivel(tipo, nivel) {
 		var i=0;
@@ -33,7 +34,7 @@ class AxM extends SistemaBase {
 		var nivelint = parseInt(nivel);
 		
 		for (i=0; i<listaHechizosAux.length; i++) {
-			if ( listaHechizosAux[i].nivel == nivelint )
+			if ( listaHechizosAux[i].nivel[tipo] == nivelint )
 			{
 				var hechizo = {};
 				hechizo.nombre = listaHechizosAux[i].nombre;
@@ -85,7 +86,7 @@ class AxM extends SistemaBase {
             fields["Descripcion" + (i+1) ] =  [ this.hechizos.Hechizos[lHechizos[i]].Descripción ];
 			fields["Alcance" + (i+1) ] = [ this.hechizos.Hechizos[lHechizos[i]].Alcance ];
 			fields["Duracion" + (i+1) ] = [ this.hechizos.Hechizos[lHechizos[i]]["Duración"] ];
-			fields["Nivel" + (i+1) ] = [ this.hechizos.Hechizos[lHechizos[i]].Nivel ];
+			fields["Nivel" + (i+1) ] = [ this.nivelHechizo(this.hechizos.Hechizos[lHechizos[i]].Nivel) ];
 		}
 		return fields;
 	}
