@@ -8,7 +8,7 @@
                 "Duración": "-",
                 "TS": "No",
                 "RC": "No",
-                "Nivel": 0
+                "Nivel": { "Mago": 0}
             }, 
 		    "Acelerar/Ralentizar": {  
 		        "Descripción": "Este hechizo permitirá al conjurador acelerar los movimientos de un individuo. Una criatura bajo los efectos de este conjuro puede doblar el número de sus ataques en un asalto, así como duplicar su rango de movimiento, inclusive volando, nadando, corriendo, escalando, etc. Sin embargo, un conjurador afectado por este hechizo no podrá en ningún caso lanzar más de un conjuro por asalto. Los efectos de este sortilegio no son acumulativos.\nEl reverso de este conjuro, ralentizar, reduce a la mitad el rango de movimiento de la criatura afectada y el número de ataques que puede realizar.",
@@ -18,7 +18,7 @@
                 "Duración": "1 asalto/nivel",
                 "TS": "CON",
                 "RC": "Sí",
-                "Nivel": 3
+                "Nivel": { "Mago": 3}
             }, 
 		    "Adivinación": {  
 		        "Descripción": "El lanzador podrá emplear este poderoso conjuro para extraer información sobre un acontecimiento que se prevea ocurra a una semana vista. La información se recibe en forma de consejo, proporcionado por los dioses a los que sirve el conjurador. Generalmente, este consejo llega contenido en una frase, muchas veces algo críptica o con doble sentido, oscura y enigmática, tal vez incluso un acertijo.",
@@ -28,7 +28,7 @@
                 "Duración": "Ver texto",
                 "TS": "No",
                 "RC": "No",
-                "Nivel": 4
+                "Nivel": { "Clerigo": 4}
             }, 
 		    "Adoptar apariencia": {  
 		        "Descripción": "El lanzador puede alterar la apariencia, atuendo y equipo de una criatura por cada dos niveles de experiencia. Las criaturas afectadas deben mantener sus formas básicas (humanoide, cuadrúpedo, etc.), pero pueden parecer hasta 30 centímetros más altas o bajas, así como modificar su complexión hasta en un 50%. La ilusión es solo visual, sin incluir posibles habilidades especiales o de clase de la nueva apariencia. Los cambios en el equipo también serán solo a nivel visual, por ejemplo: una armadura disfrazada de ropa seguirá crujiendo y tintineando, y cualquiera que la toque la sentirá como lo que es. Las criaturas afectadas pueden separarse. La ilusión se mantiene activa en todas ellas hasta que el hechizo expira, una criatura afectada muere o cualquier ser que interactúe con alguna de ellas supere una tirada de salvación de INT.",
@@ -38,7 +38,7 @@
                 "Duración": "12 horas",
                 "TS": "Ver texto",
                 "RC": "No",
-                "Nivel": 4
+                "Nivel": { "Ilusionista": 4} 
             }, 
 		    "Agrandar/Empequeñecer": {  
 		        "Descripción": "El conjurador puede lanzar este hechizo contra una criatura u objeto. Si el blanco no supera la tirada de salvación de CON, su tamaño y su peso se verán incrementados o disminuidos inmediatamente hasta un 10% por nivel del lanzador, a elección de este. Por el contrario, si se supera la tirada de salvación, el conjuro no tiene efecto. El objetivo crece o decrece de manera proporcional a su altura, anchura y peso; además, todo el equipo que porte en ese momento se incrementa en la misma proporción. Sin embargo, no se puede superar un tamaño mayor al 50% del original.\nPara lanzar este conjuro el objetivo ha de estar dentro del alcance visual del mago. Si en el lugar donde se encuentra el objetivo no existiera espacio suficiente para alcanzar el tamaño deseado por el conjurador, el objetivo crecerá lo máximo posible.\nNo se ven afectadas las características mágicas, la clase de armadura (CA), ni las tiradas de ataque, que serán las de la criatura base. Es reversible, y puede reducir con las mismas características que agrandar. Además, cualquiera de ellos sirve para negar al otro, es decir, un objetivo reducido que se vea afectado por un conjuro de agrandar volverá a su tamaño normal. El límite existente para reducir es hasta el 90% del tamaño original; como mucho, el objetivo tendrá un 10% de su tamaño original.",
@@ -48,7 +48,7 @@
                 "Duración": "1 turno/nivel",
                 "TS": "CON",
                 "RC": "Si",
-                "Nivel": 1
+                "Nivel": { "Mago": 1}
             }, 
 		    "Alarido ensordecedor": {  
 		        "Descripción": "El mago es capaz de proferir un alarido mágico ensordecedor, que se expandirá desde su boca en forma de cono con un alcance efectivo de unos 20 metros. Esta onda sónica causará 2d6 de daño a toda criatura presente en el área afectada. Adicionalmente, todo aquel que falle una tirada de CON quedará ensordecido por un número de asaltos equivalente al total de puntos de daño recibidos.",
@@ -58,7 +58,7 @@
                 "Duración": "Instantáneo",
                 "TS": "Ver texto",
                 "RC": "Si",
-                "Nivel": 4
+                "Nivel": { "Mago": 4}
             }, 
 		    "Alarma": {  
 		        "Descripción": "El lanzador puede convocar a un pequeño animal para que guarde un área de 15 metros de radio como máximo. Cada vez que alguien penetre en el área, el animal podrá o bien comunicarse mentalmente con el druida para alertarle, o bien emitir un sonido, según el animal. Si la alarma es sonora, será perfectamente audible por todos dentro del área. El lanzador dispondrá de una palabra de mando que puede transmitir a sus compañeros, si estos pronuncian la palabra de mando al entrar en el área la alarma no saltará.",
@@ -68,7 +68,7 @@
                 "Duración": "2 hora/nivel",
                 "TS": "No",
                 "RC": "Si",
-                "Nivel": 1
+                "Nivel": { "Druida": 1}
             }, 
 		    "Aliado mayor de los planos": {  
 		        "Descripción": "Gracias a este conjuro, el lanzador podrá interpelar a su deidad para que esta le envíe ayuda en forma de elementales o criaturas extraplanares. El conjurador podrá disponer de hasta 16 dados de golpe de criaturas que acudirán en su ayuda. El lanzador podrá pedir una criatura determinada, pero la deidad puede escoger entre las disponibles a voluntad, no atendiendo el ruego específico de su servidor. Una vez ante el lanzador, este podrá requerir a la criatura o criaturas convocadas que lleven a cabo una determinada acción, incluso combatir, pero puede que según las circunstancias de la tarea requerida, la criatura o criaturas pidan algo a cambio.",
@@ -78,7 +78,7 @@
                 "Duración": "Ver texto",
                 "TS": "Ver texto",
                 "RC": "Ver texto",
-                "Nivel": 8
+                "Nivel": { "Clerigo": 8}
             }, 
 		    "Aliento de dragón": {  
 		        "Descripción": "El lanzador adopta la apariencia de un dragón que lanza su terrible aliento sobre una víctima a no más de 50 metros. Si la víctima falla su salvación de INT, sufre 5d6 puntos de daño, no sufriendo daño en caso contrario. La ilusión desaparece inmediatamente tras el ataque.",
@@ -88,7 +88,7 @@
                 "Duración": "Instantáneo",
                 "TS": "INT",
                 "RC": "Si",
-                "Nivel": 5
+                "Nivel": { "Ilusionista": 5}
             }, 
 		    "Alterar atributo": {  
 		        "Descripción": "El lanzador adopta la apariencia de un dragón que lanza su terrible aliento sobre una víctima a no más de 50 metros. Si la víctima falla su salvación de INT, sufre 5d6 puntos de daño, no sufriendo daño en caso contrario. La ilusión desaparece inmediatamente tras el ataque.",
@@ -98,7 +98,7 @@
                 "Duración": "1 hora/nivel",
                 "TS": "CON",
                 "RC": "Si",
-                "Nivel": 2
+                "Nivel": { "Mago": 2} 
             }, 
 		    "Alterar el yo": {  
 		        "Descripción": "El lanzador adopta la apariencia de un dragón que lanza su terrible aliento sobre una víctima a no más de 50 metros. Si la víctima falla su salvación de INT, sufre 5d6 puntos de daño, no sufriendo daño en caso contrario. La ilusión desaparece inmediatamente tras el ataque.",
@@ -108,7 +108,7 @@
                 "Duración": "10 minutos/nivel",
                 "TS": "No",
                 "RC": "No",
-                "Nivel": 2
+                "Nivel": { "Ilusionista": 2}
             },
 		    "Amistad animal": {  
 		        "Descripción": "Gracias a este conjuro, el lanzador puede ganarse la amistad de un animal. La amistad del animal será natural y no de naturaleza mágica, y perdurará en el tiempo. Sin embargo, el animal tiene derecho a una tirada de salvación de CAR para evitar los efectos del hechizo. El conjurador podrá enseñar de 3 a 6 trucos al animal, a discreción del Narrador. Con todo, el animal seguirá siendo un animal, y no ganará en inteligencia tras ser afectado por este sortilegio. No obstante, defenderá al lanzador ante el ataque de otros animales.",
@@ -118,7 +118,7 @@
                 "Duración": "Permanente",
                 "TS": "CAR",
                 "RC": "Si",
-                "Nivel": 1
+                "Nivel": { "Druida": 1}
             },
 		    "Animal mensajero": {
 		        "Descripción": "Gracias a este conjuro, el lanzador puede ganarse la amistad de un animal. La amistad del animal será natural y no de naturaleza mágica, y perdurará en el tiempo. Sin embargo, el animal tiene derecho a una tirada de salvación de CAR para evitar los efectos del hechizo. El conjurador podrá enseñar de 3 a 6 trucos al animal, a discreción del Narrador. Con todo, el animal seguirá siendo un animal, y no ganará en inteligencia tras ser afectado por este sortilegio. No obstante, defenderá al lanzador ante el ataque de otros animales.",
@@ -128,7 +128,7 @@
                 "Duración": "1 día/nivel",
                 "TS": "CAR",
                 "RC": "Si",
-                "Nivel": 2
+                "Nivel": { "Druida": 2}
             },
 		    "Antipatía/Simpatía": {
 		        "Descripción": "El lanzador establece desde un objeto o punto concreto, en un área de efecto de 20 metros de radio, unas emanaciones que afectarán a las criaturas que pasen por el área afectada en función de la naturaleza de las mismas. El lanzador decidirá a qué tipo de criaturas afectará el conjuro, por ejemplo, a humanos, a criaturas trasgoides, dragones, vampiros, etc. Una vez decidido el tipo de criatura, el lanzador también debe escoger el efecto que quiere entre los 2 siguientes:\n - Antipatía: La criatura del tipo seleccionado al pasar por el área de efecto sentirá que debe abandonar inmediatamente el lugar o no tocar el objeto afectado. Tiene derecho a una tirada de salvación de CAR; si la supera, podrá tocar el objeto o pasar por el lugar, pero sufrirá la pérdida de un punto de destreza (DES) por asalto mientras permanezca en la zona. Una vez que salga de la misma, recuperará los puntos perdidos; si falla la tirada se verá obligado a abandonar la zona inmediatamente.\n - Simpatía: La criatura afectada sentirá un irresistible deseo de coger el objeto o permanecer en la zona. Si falla la tirada de salvación, se negará a abandonar la zona o soltar el objeto hasta que expire el mismo; si la supera, tendrá que repetir la tirada una vez por cada dos turnos que permanezca dentro del área de efecto.",
@@ -138,17 +138,7 @@
                 "Duración": "2 horas/nivel",
                 "TS": "CAR",
                 "RC": "Si",
-                "Nivel": 9
-            },
-		    "Antipatía/Simpatía (arcano)": {
-		        "Descripción": "El lanzador establece desde un objeto o punto concreto, en un área de efecto de 20 metros de radio, unas emanaciones que afectarán a las criaturas que pasen por el área afectada en función de la naturaleza de las mismas. El lanzador decidirá a qué tipo de criaturas afectará el conjuro, por ejemplo, a humanos, a criaturas trasgoides, dragones, vampiros, etc. Una vez decidido el tipo de criatura, el lanzador también debe escoger el efecto que quiere entre los 2 siguientes:\n - Antipatía: La criatura del tipo seleccionado al pasar por el área de efecto sentirá que debe abandonar inmediatamente el lugar o no tocar el objeto afectado. Tiene derecho a una tirada de salvación de CAR; si la supera, podrá tocar el objeto o pasar por el lugar, pero sufrirá la pérdida de un punto de destreza (DES) por asalto mientras permanezca en la zona. Una vez que salga de la misma, recuperará los puntos perdidos; si falla la tirada se verá obligado a abandonar la zona inmediatamente.\n - Simpatía: La criatura afectada sentirá un irresistible deseo de coger el objeto o permanecer en la zona. Si falla la tirada de salvación, se negará a abandonar la zona o soltar el objeto hasta que expire el mismo; si la supera, tendrá que repetir la tirada una vez por cada dos turnos que permanezca dentro del área de efecto.",
-                "TL": "1",
-                "Alcance": "20 metros",
-                "Componentes": "V y S",
-                "Duración": "2 horas/nivel",
-                "TS": "CAR",
-                "RC": "Si",
-                "Nivel": 8
+                "Nivel": { "Mago": 8, "Ilusionista": 8, "Clerigo": 9, "Druida": 9 }
             },
 		    "Apariencia de dragón": {
 		        "Descripción": "El lanzador establece desde un objeto o punto concreto, en un área de efecto de 20 metros de radio, unas emanaciones que afectarán a las criaturas que pasen por el área afectada en función de la naturaleza de las mismas. El lanzador decidirá a qué tipo de criaturas afectará el conjuro, por ejemplo, a humanos, a criaturas trasgoides, dragones, vampiros, etc. Una vez decidido el tipo de criatura, el lanzador también debe escoger el efecto que quiere entre los 2 siguientes:\n - Antipatía: La criatura del tipo seleccionado al pasar por el área de efecto sentirá que debe abandonar inmediatamente el lugar o no tocar el objeto afectado. Tiene derecho a una tirada de salvación de CAR; si la supera, podrá tocar el objeto o pasar por el lugar, pero sufrirá la pérdida de un punto de destreza (DES) por asalto mientras permanezca en la zona. Una vez que salga de la misma, recuperará los puntos perdidos; si falla la tirada se verá obligado a abandonar la zona inmediatamente.\n - Simpatía: La criatura afectada sentirá un irresistible deseo de coger el objeto o permanecer en la zona. Si falla la tirada de salvación, se negará a abandonar la zona o soltar el objeto hasta que expire el mismo; si la supera, tendrá que repetir la tirada una vez por cada dos turnos que permanezca dentro del área de efecto.",
@@ -158,7 +148,7 @@
                 "Duración": "Instantáneo",
                 "TS": "INT",
                 "RC": "Si",
-                "Nivel": 1
+                "Nivel": { "Ilusionista": 1}
             },
 		    "Apertura": {
 		        "Descripción": "Mediante este conjuro el lanzador podrá abrir cualquier tipo de cerradura o cancela a la que se enfrente. Cualquier puerta que esté cerrada, ya sea por medios físicos convencionales o con el concurso de la magia, podrá abrirse usando este conjuro. Asimismo, también podrá ser empleado para abrir puertas secretas u otros compartimentos similares, incluso si están bloqueados por una barra de madera o hierro, y siempre que hayan sido detectados previamente.",
@@ -168,8 +158,18 @@
                 "Duración": "Permanente",
                 "TS": "No",
                 "RC": "No",
-                "Nivel": 2
+                "Nivel": { "Mago": 2}
             },
+		    "Aura mágica": {  
+		        "Descripción": "El lanzador dota a un objeto de un aura mágica invisible. Esta aura confunde a los conjuros de detección habituales como detectar magia, haciendo que el objeto parezca mágico. Sin embargo, otros conjuros como identificar revelarán que el aura es falsa. El objeto elegido no puede sobrepasar los 2,5 kilos por nivel del lanzador.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 0}
+            }, 
 		    "Cerradura": {
 		        "Descripción": "Es el equivalente inverso de apertura. El lanzador puede bloquear una puerta, cofre o contenedor con tapa de forma que no pueda abrirse por métodos mundanos. El lanzador podrá abrir el elemento cerrado mágicamente sin afectar al conjuro de cerradura.",
                 "TL": "1",
@@ -178,12 +178,217 @@
                 "Duración": "Permanente",
                 "TS": "No",
                 "RC": "No",
-                "Nivel": 2
+                "Nivel": { "Mago": 2}
+            },
+		    "Crear agua": {  
+		        "Descripción": "Gracias a este conjuro el lanzador podrá crear agua, bien en el interior de un recipiente o en un área determinada. Concretamente, el conjurador podrá generar hasta 10 litros de agua por nivel.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 0, "Druida": 0}
+            },
+		    "Crear comida y agua": {  
+		        "Descripción": "Hace aparecer de la nada comida y agua. Con cada uso de este hechizo, se consigue mantener durante todo un día a tres criaturas de tamaño humano, o a una grande, más una criatura adicional por nivel del conjurador (una grande por cada tres niveles). Cuando transcurren 24 horas, la comida comienza a pudrirse, no así el agua.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 3}
+            },
+		    "Detectar alineamiento": {  
+		        "Descripción": "Podrá detectar el alineamiento de individuos, monstruos e incluso objetos y artefactos. Los objetos o individuos brillarán con una tenue aura solo discernible para el lanzador según su alineamiento (LB, LN, LM, etc.). En el caso particular de la componente malvada, el veneno o las trampas no son objetos malvados como tales, así que no pueden ser detectados por este método. El conjurador deberá concentrarse durante un asalto en una dirección elegida para obtener la información.",
+                "TL": "1",
+                "Alcance": "20 m",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 0}
+            },
+		    "Detectar ilusiones": {  
+		        "Descripción": "La criatura objetivo se percatará de manera inmediata de las ilusiones existentes en la dirección en la que esté mirando, dentro de un área de 15 metros de largo por 3 metros de ancho. La criatura debe concentrarse en la dirección elegida durante un asalto completo para obtener la información.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 0}
+            },
+		    "Detectar magia": {  
+		        "Descripción": "El conjurador se percatará de manera inmediata de todos los objetos y criaturas mágicas existentes dentro de un área de 15 metros alrededor. Todos los objetos e individuos de naturaleza mágica brillarán con una tenue aura solo discernible para el lanzador. Este brillo no traspasa barreras físicas normales, como muros, puertas o baúles. Así, un anillo mágico escondido dentro de un cajón secreto brillará si está dentro del alcance del conjuro, pero no se percatará de su presencia a menos que descubra y abra el cajón.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V",
+                "Duración": "1 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 0, "Ilusionista": 2, "Mago": 0}
+            },
+		    "Detectar neutralidad": {  
+		        "Descripción": "Podrá detectar el alineamiento neutral en un pasillo de 50 metros de largo y 3 metros de ancho frente a él. Los objetos o individuos brillarán con una tenue aura solo discernible para el lanzador según su alineamiento: neutral auténtico, neutral malvado, caótico neutral, etcétera. El conjurador deberá concentrarse durante un asalto en la dirección elegida para obtener la información.",
+                "TL": "1",
+                "Alcance": "50 m",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Druida": 0}
+            },
+		    "Detectar veneno": {  
+		        "Descripción": "Puede detectar si algún objeto o ser vivo es venenoso o ha sido envenenado. Para ello el objeto ha de encontrarse dentro del alcance del conjuro. El conjurador detectará automáticamente la existencia del veneno, además hay un 5% de probabilidades por nivel del lanzador de que detecte el tipo de veneno.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V",
+                "Duración": "10 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 0, "Druida": 0, "Mago": 0}
+            },
+		    "Discernir dirección": {  
+		        "Descripción": "Gracias a este sortilegio, el druida siempre sabrá en qué dirección se encuentra el norte. Retendrá esta información durante un día como mínimo, más si es capaz de establecer algún tipo de señal o recordatorio en la orografía circundante.",
+                "TL": "1",
+                "Alcance": "Personal",
+                "Componentes": "V y S",
+                "Duración": "Ver texto",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Druida": 0}
+            },
+		    "Huella de dragón": {  
+		        "Descripción": "Esta ilusión siempre debe lanzarse sobre una puerta. Cualquier criatura que se acerque a la misma y falle una tirada de salvación de INT, oirá el rugido de un dragón al otro lado de la puerta (e incluso creerá percibir su olor). La ilusión permanece sobre la puerta hasta que alguien la disipa o una criatura la activa.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Ver texto",
+                "TS": "Si",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 0}
+            },
+		    "Influenciar": {  
+		        "Descripción": "Este hechizo permite al lanzador que una criatura de tamaño medio o pequeño le considere como un amigo y aliado de confianza. La víctima tiene derecho a una tirada de salvación de CAR para evitar los efectos, con un +5 de bonificación si en el momento del lanzamiento está siendo atacada o amenazada por el lanzador o sus aliados. Si falla, se sentirá inclinada a realizar lo que el lanzador sugiera, pero bajo ningún concepto actuará como un autómata bajo el control del conjurador.",
+                "TL": "1",
+                "Alcance": "8 m",
+                "Componentes": "V y S",
+                "Duración": "3 asaltos",
+                "TS": "Si",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 0}
+            },
+		    "Luces danzantes": {  
+		        "Descripción": "Puede crear 4 luces similares a antorchas o fanales, o bien 4 esferas de luz o una silueta vagamente humana que brilla con luz trémula. Cada una de estas fuentes de luz deben permanecer cerca, no pudiendo separarse unas de otras más de 6 metros. Puede trasladarlas a voluntad dentro del área de efecto, pudiendo desplazarlas arriba o abajo e incluso hacerlas torcer esquinas. Una criatura que interactúa con una de estas luces tiene derecho a una TS de SAB para descubrir que son una mera ilusión. Iluminan con la intensidad de una antorcha.",
+                "TL": "1",
+                "Alcance": "40 m",
+                "Componentes": "V y S",
+                "Duración": "1 turno",
+                "TS": "Si",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 0, "Mago": 0}
+            },
+		    "Luz": {  
+		        "Descripción": "Se ilumina un área de 10 metros alrededor del lanzador, como si este estuviera equipado con una antorcha normal. El conjuro puede lanzarse sobre un objeto para que este despida luz, como la punta de un bastón, un cetro, o incluso una espada. El conjuro de luz no funcionará en un área donde esté surtiendo efecto un conjuro de oscuridad, y viceversa",
+                "TL": "1",
+                "Alcance": "45 m",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 0, "Druida": 0, "Ilusionista": 0, "Mago": 0}
+            },
+		    "Mano mágica": {  
+		        "Descripción": "El lanzador puede señalar un objeto que pese no más de 3 kilos dentro del área de alcance y mover el mismo a voluntad mientras mantenga la concentración. El efecto de este conjuro se disipa automáticamente, dejando caer el objeto al suelo, siempre que este rebase el alcance máximo del hechizo.",
+                "TL": "1",
+                "Alcance": "7 m",
+                "Componentes": "V y S",
+                "Duración": "Concentración",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Mago": 0}
+            },
+		    "Marca arcana": {  
+		        "Descripción": "Permite inscribir una runa o marca, de no más de 6 caracteres, sobre cualquier sustancia o material sin causar perjuicio o daño. La marca puede ser invisible o visible. Podremos intentar inscribir la runa sobre una criatura, pero esta tendrá derecho a una TS de CAR. Si elegimos aplicar una marca arcana invisible, la misma se tornará visible y brillará bajo un conjuro de detectar magia. La marca no puede ser disipada, excepto por su lanzador o por un conjuro de borrar.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "Si",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 0, "Mago": 0}
+            },
+		    "Mensaje": {  
+		        "Descripción": "Puede susurrar un mensaje a un único objetivo y recibir respuesta a muchos metros de distancia, y siempre que el individuo receptor del mensaje entienda la lengua en la que se ha pronunciado el mismo. Si bien el mensaje es apenas audible, alguien cercano al lanzador podría leer sus labios. Un conjuro de silencio bloquea los efectos de este sortilegio.",
+                "TL": "1",
+                "Alcance": "150 m",
+                "Componentes": "V",
+                "Duración": "1 asalto/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 0, "Mago": 0}
+            },
+		    "Prestidigitación": {  
+		        "Descripción": "Puede originar diversos efectos a voluntad del lanzador. Por ejemplo, puede limpiar, ensuciar o alterar el color de un objeto pequeño (no más de 30 cm cúbicos). También es posible calentar o enfriar un objeto pequeño o sustancia (no más de un litro). Podremos igualmente empujar un objeto pequeño, o crear una voluta de humo y/o efectos de sonido no muy complejos. En fin, pequeños trucos de magia propios de un prestidigitador que se nos pudieran ocurrir.",
+                "TL": "1",
+                "Alcance": "3 m",
+                "Componentes": "V y S",
+                "Duración": "1 turno/nivel",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 0, "Mago": 0}
+            },
+		    "Primeros auxilios": {  
+		        "Descripción": "Este es el conjuro de curación más básico que se conoce. Cuando se usa permite restañar heridas abiertas cortando la hemorragia y evitando la pérdida de más puntos de vida y posibles infecciones (por ejemplo, cuando un aventurero cae por debajo de los 0 puntos de golpe).",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Clerigo": 0, "Druida": 0, "Ilusionista": 0}
+            },
+		    "Purificar/Pudrir agua y comida": {  
+		        "Descripción": "Provoca que cualquier tipo de comida y agua contaminada, en mal estado o envenenada, se torne pura y en perfecto estado para ser ingerida. Se pueden purificar hasta 10 metros cúbicos de agua por nivel. Este conjuro es reversible y se puede transformar en un pudrir comida y agua. Este conjuro es capaz de estropear incluso el agua sagrada.",
+                "TL": "1",
+                "Alcance": "3 m",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 0, "Druida": 0}
+            },
+		    "Reparar": {  
+		        "Descripción": "Puede reparar pequeñas roturas en objetos comunes. Por ejemplo, podría reparar el eslabón de una cadena rota, el pomo de una puerta, una daga mellada, etc. En ningún caso se puede reparar un objeto mágico por pequeña que sea la rotura que tenga; además, únicamente se puede reparar un objeto de no más de 3 kilos de peso. La reparación producida por este conjuro no es mágica, el objeto queda realmente reparado y no podrá ser devuelto a su estado anterior disipando la magia que lo arregló.",
+                "TL": "1",
+                "Alcance": "5 m",
+                "Componentes": "V y S",
+                "Duración": "24 horas",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 0, "Mago": 0}
+            },
+		    "Resistir a los elementos": {  
+		        "Descripción": "Cuando lanzamos este hechizo, una fuerza arcana nos envuelve de manera invisible, protegiéndonos de las inclemencias meteorológicas. Podremos soportar temperaturas extremas de calor y frío sin sufrir consecuencias. Por ejemplo, podremos caminar en plena ventisca invernal solo ataviados con ropas normales, incluso desnudos, sin sufrir congelamiento.",
+                "TL": "1",
+                "Alcance": "1 persona",
+                "Componentes": "V y S",
+                "Duración": "24 horas",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Clerigo": 0, "Druida": 0, "Mago": 0}
+            },
+		    "Sonido fantasma": {  
+		        "Descripción": "Podrá cambiar el tono y timbre de su voz, o la de cualquier otro. También podrá generar un determinado sonido (entrechocar de espadas, un lamento, el sonido de alguien caminando) que parecerá provenir del lugar designado por el lanzador (detrás de una puerta, una estatua, un pozo, etc.). Este hechizo no permite hablar en un idioma que no domine el lanzador.",
+                "TL": "1",
+                "Alcance": "30 m",
+                "Componentes": "V",
+                "Duración": "24 horas",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 0, "Mago": 0}
             }
-        },   
-    "Mago": [ "Abrir/Cerrar", "Acelerar/Ralentizar", "Agrandar/Empequeñecer", "Alarido ensordecedor", "Alterar atributo", "Antipatía/Simpatía (arcano)", "Apertura",
-              "Cerradura" ],
-    "Clerigo": [ "Adivinación", "Aliado mayor de los planos", "Antipatía/Simpatía" ],
-    "Ilusionista": [ "Adoptar apariencia", "Aliento de dragón", "Alterar el yo", "Antipatía/Simpatía (arcano)", "Apariencia de dragón" ],
-    "Druida": [ "Alarma", "Amistad animal", "Animal mensajero", "Antipatía/Simpatía" ]
+        }
 }
