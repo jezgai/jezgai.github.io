@@ -56,16 +56,29 @@ class SistemaBase {
 		var lHechizos = [];
 		if ( tipo == "" )
 			return lHechizos;
+			
+		var lHechizosOrdenada = Object.keys(this.hechizos[tipo].sort());
+		for (i=0; i< lHechizosOrdenada.length; i++) {
+		    if ( this.hechizos.Hechizos[this.hechizos[tipo][lHechizosOrdenada[i]]].hasOwnProperty('Descripción') ) {
+		        if ( this.hechizos.Hechizos[this.hechizos[tipo][lHechizosOrdenada[i]]]["Descripción"] == "-PENDIENTE-" )
+		            continue;
+		    }
+			var hechizo = {};
+			hechizo.nombre = this.hechizos[tipo][lHechizosOrdenada[i]];
+			hechizo.nivel = this.getNivelHechizo(hechizo.nombre, tipo);
+			lHechizos.push(hechizo);
+		}
+		/*
 		for (i=0; i<this.hechizos[tipo].length;i++) {
 			var hechizo = {};
 			hechizo.nombre = this.hechizos[tipo][i];
 			hechizo.nivel = this.getNivelHechizo(hechizo.nombre, tipo);
-			/*if ( this.hechizos.Hechizos[hechizo.nombre].hasOwnProperty('Nivel') )
-				hechizo.nivel = this.hechizos.Hechizos[hechizo.nombre].Nivel;
-			else
-				hechizo.nivel = null;*/
+			//if ( this.hechizos.Hechizos[hechizo.nombre].hasOwnProperty('Nivel') )
+			//	hechizo.nivel = this.hechizos.Hechizos[hechizo.nombre].Nivel;
+			//else
+			//	hechizo.nivel = null;
 			lHechizos.push(hechizo);
-		}
+		}*/
 		return lHechizos;
 		//return this.hechizos[tipo];
 	}

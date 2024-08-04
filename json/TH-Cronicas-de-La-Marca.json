@@ -141,7 +141,7 @@
                 "Nivel": { "Mago": 8, "Ilusionista": 8, "Clerigo": 9, "Druida": 9 }
             },
 		    "Apariencia de dragón": {
-		        "Descripción": "El lanzador establece desde un objeto o punto concreto, en un área de efecto de 20 metros de radio, unas emanaciones que afectarán a las criaturas que pasen por el área afectada en función de la naturaleza de las mismas. El lanzador decidirá a qué tipo de criaturas afectará el conjuro, por ejemplo, a humanos, a criaturas trasgoides, dragones, vampiros, etc. Una vez decidido el tipo de criatura, el lanzador también debe escoger el efecto que quiere entre los 2 siguientes:\n - Antipatía: La criatura del tipo seleccionado al pasar por el área de efecto sentirá que debe abandonar inmediatamente el lugar o no tocar el objeto afectado. Tiene derecho a una tirada de salvación de CAR; si la supera, podrá tocar el objeto o pasar por el lugar, pero sufrirá la pérdida de un punto de destreza (DES) por asalto mientras permanezca en la zona. Una vez que salga de la misma, recuperará los puntos perdidos; si falla la tirada se verá obligado a abandonar la zona inmediatamente.\n - Simpatía: La criatura afectada sentirá un irresistible deseo de coger el objeto o permanecer en la zona. Si falla la tirada de salvación, se negará a abandonar la zona o soltar el objeto hasta que expire el mismo; si la supera, tendrá que repetir la tirada una vez por cada dos turnos que permanezca dentro del área de efecto.",
+		        "Descripción": "El lanzador establece desde un objeto o punto, en un área de efecto de 20 metros de radio, unas emanaciones que afectarán a las criaturas que pasen por alli según su naturaleza. El lanzador decidirá a qué tipo de criaturas afectará el conjuro, por ejemplo, a humanos, a criaturas trasgoides, dragones, vampiros, etc. Una vez decidido el tipo de criatura, el lanzador también debe escoger el efecto que quiere:\n - Antipatía: La criatura del tipo seleccionado al pasar por el área de efecto sentirá que debe abandonar inmediatamente el lugar o no tocar el objeto afectado. Tiene derecho a una TS de CAR; si la supera, podrá tocar el objeto o pasar por el lugar, pero sufrirá la pérdida de un punto de DES por asalto mientras permanezca en la zona. Una vez que salga de la misma, recuperará los puntos perdidos; si falla la tirada se verá obligado a abandonar la zona inmediatamente.\n - Simpatía: La criatura afectada sentirá un irresistible deseo de coger el objeto o permanecer en la zona. Si falla la TS, se negará a abandonar la zona o soltar el objeto hasta que expire el mismo; si la supera, tendrá que repetir la tirada una vez por cada dos turnos que permanezca dentro del área de efecto.",
                 "TL": "1",
                 "Alcance": "8 metros",
                 "Componentes": "V y S",
@@ -389,6 +389,547 @@
                 "TS": "No",
                 "RC": "Si",
                 "Nivel": { "Ilusionista": 0, "Mago": 0}
+            },
+		    "Bendecir/maldecir": {  
+		        "Descripción": "El receptor del conjuro, y todos los compañeros elegidos y dentro de un área de 15 metros de diámetro, ganan un bonus de +1 en las tiradas de ataque y daño y un +1 a las tiradas de salvación contra miedo (CAR) mientras el conjuro esté activo. El reverso, maldecir, impone un penalizador de -1 a las tiradas de ataque y TS contra miedo (CAR).",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "1 min/nive",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Clerigo": 1}
+            },
+		    "Bendecir/maldecir agua": {  
+		        "Descripción": "Este conjuro convierte el agua presente en un odre o recipiente similar en agua bendita. El conjuro es reversible, pudiendo convertir el agua de un recipiente en agua impía.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Clerigo": 1}
+            },
+		    "Curar/Causar heridas leves": {  
+		        "Descripción": "Este útil conjuro permitirá al lanzador sanar 1d8 puntos de daño de una herida leve. Nunca subirá los PG por encima del máximo actual del AJ. En el caso particular de los ilusionistas, el blanco debe realizar una TS de INT. Si tiene éxito, se dará cuenta de que es una ilusión y el conjuro fallará. En todos los casos, si es aplicado contra un muerto viviente, le provocará a la criatura 1d8 puntos de daño. Este conjuro tiene un reverso, denominado causar heridas leves que provocará una herida de 1d8 puntos de daño en una criatura, siempre que el lanzador logre tocarla con una tirada de ataque sin armas. El blanco tendrá derecho a una RS de SAB para reducir el daño a la mitad.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "V texto",
+                "RC": "No",
+                "Nivel": { "Clerigo": 1, "Druida": 2, "Ilusionista": 2}
+            },
+		    "Detectar muertos vivientes": {  
+		        "Descripción": "Por medio de este hechizo, el lanzador es capaz de detectar la presencia de criaturas muertas vivientes en un área determinada. El conjurador deberá mantenerse concentrado durante al menos un asalto en la dirección seleccionada para obtener la información.",
+                "TL": "1",
+                "Alcance": "30 m",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 1}
+            },
+		    "Detectar puertas secretas": {  
+		        "Descripción": "Gracias a este poder, el lanzador es capaz de localizar puertas secretas en el área elegida. El lanzador deberá concentrarse durante un asalto en una dirección para obtener la información.",
+                "TL": "1",
+                "Alcance": "30 m",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 1}
+            },
+		    "Escudo de la fe": {  
+		        "Descripción": "Escudo de la fe produce una esfera de protección compuesta de energía divina que proporciona un +2 a la CA y a las tiradas de salvación.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Clerigo": 1}
+            },
+		    "Invisibilidad a los muertos vivientes": {  
+		        "Descripción": "La persona tocada por el lanzador se tornará invisible a los muertos vivientes. Los muertos vivientes sin inteligencia, como esqueletos y zombis, no podrán ver a la persona afectada por el conjuro. No obstante, muertos vivientes más inteligentes, como vampiros o liches, tendrán derecho a una TS de INT.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "Si",
+                "RC": "Si",
+                "Nivel": { "Clerigo": 1}
+            },
+		    "Onda sónica": {  
+		        "Descripción": "El lanzador es capaz de provocar una poderosa onda sónica, que puede dañar a criaturas dentro del alcance de 15 metros frente a él. Toda criatura afectada sufre 1d8 puntos de daño y debe realizar una TS de SAB para no quedar aturdida (no podrá llevar a cabo ninguna acción) durante 1 asalto.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "Instantáneo",
+                "TS": "Si",
+                "RC": "Si",
+                "Nivel": { "Clerigo": 1}
+            },
+		    "Protección contra el mal/bien": {  
+		        "Descripción": "Este hechizo crea una esfera invisible en torno al cuerpo del lanzador, de manera que el conjurador ganará un +2 a su CA y a todas sus tiradas de salvación mientras dure el efecto del conjuro contra criaturas malignas o benignas, a elección del lanzador. Adicionalmente, todo individuo bajo los efectos de un conjuro de hechizar persona no podrá atacar al conjurador. Este conjuro no contrarresta los efectos dañinos de un proyectil mágico, pero bloquea efectivamente los efectos de los conjuros de encantamiento y control mental.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "3 asaltos/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 1, "Mago": 1}
+            },
+		    "Quitar/Causar el miedo": {  
+		        "Descripción": "El lanzador inspira valor al receptor de este conjuro, elevando sus TS con un +4 contra los ataques por miedo (CAR) durante 10 minutos. Si la criatura ya está afectada por el miedo, este conjuro disipa los efectos adversos, restaurando el valor de la criatura afectada. Su reverso, hace que una criatura huya presa del pánico, alejándose del lanzador, a su velocidad máxima de movimiento durante 1d4 asaltos. Superar una TS de CAR anula este efecto. Ambos conjuros, se contrarrestan entre sí y no tienen efecto sobre muertos vivientes.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Clerigo": 1}
+            },
+		    "Santuario": {  
+		        "Descripción": "Este conjuro protege a la criatura tocada de cualquier ataque. Así pues, quien pretenda atacar a la criatura protegida deberá realizar una tirada de CAR. Si falla la tirada, deberá seleccionar otro objetivo. No obstante, la criatura bajo el hechizo de santuario no podrá conjurar ni atacar con armas convencionales, pues si lo hace el conjuro termina.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "10 asaltos/nivel",
+                "TS": "Si",
+                "RC": "Si",
+                "Nivel": { "Clerigo": 1}
+            },
+		    "Soportar los elementos": {  
+		        "Descripción": "El receptor de este conjuro queda protegido de los efectos de un elemento a elección del lanzador: frío/hielo, calor/fuego, electricidad/rayo, ácido y sonido/aire, ya sean de naturaleza convencional o mágica. El conjuro otorga un bonificador de +2 a las TS contra efectos del elemento seleccionado.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Clerigo": 1}
+            },
+		    "Buenas bayas": {  
+		        "Descripción": "El druida puede encantar un puñado de bayas o frutos de cualquier tipo, que podrán alimentar a un individuo como si hubiera ingerido una comida completa. Además, cada baya permite recuperar 1 punto de golpe. Solo se pueden comer 8 bayas cada 8 horas.",
+                "TL": "1",
+                "Alcance": "Ver texto",
+                "Componentes": "V y S",
+                "Duración": "1 día/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Druida": 1}
+            },
+		    "Calmar animales": {  
+		        "Descripción": "Este sortilegio apaciguará a todos los animales en un área de 10 x 10 metros si no superan una TS de CAR. El lanzador podrá afectar a una cantidad de animales que no sumen más de 2d4 dados de golpe +1 DG por nivel del lanzador. Los animales se ven afectados en orden ascendente de dados de golpe.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "Si",
+                "RC": "Si",
+                "Nivel": { "Druida": 1}
+            },
+		    "Detectar trampas y fosos": {  
+		        "Descripción": "Este conjuro permitirá al lanzador detectar trampas básicas (nada basado en mecanismos complicados) y fosos en un trecho de 15 metros de largo y tres metros frente a él. El conjurador deberá concentrarse durante 1 asalto en la dirección escogida para detectar alguna anomalía.",
+                "TL": "1",
+                "Alcance": "Ver texto",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "No",
+                "RC": "si",
+                "Nivel": { "Druida": 1}
+            },
+		    "Enmarañar": {  
+		        "Descripción": "El druida podrá alterar el crecimiento vegetal de las plantas en un área de 15 metros de diámetro. Las enramadas aumentarán y se animarán mágicamente para tratar de atrapar y entorpecer a las criaturas dentro del área, que tendrán derecho a una TS de DES para evitar quedar bloqueadas por el ramaje. Dicha tirada de salvación debe superarse cada asalto que permanezcan en la zona. Las criaturas atrapadas no pueden moverse, sufren un -2 a sus tiradas de ataque y un penalizador de -4 a su modificador por DES",
+                "TL": "1",
+                "Alcance": "140 m",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "Si",
+                "RC": "No",
+                "Nivel": { "Druida": 1}
+            },
+		    "Fuego feérico": {  
+		        "Descripción": "Un fuego de naturaleza mágica rodea a las criaturas en un área de 3 x 3 metros. Este fuego no quema, pero tiene la intensidad lumínica de una vela, así que los individuos afectados serán visibles con nitidez en la oscuridad. Los atacantes ganarán un bonificador de +1 a la tirada de ataque cuando traben combate con criaturas afectadas por el fuego feérico.",
+                "TL": "1",
+                "Alcance": "50 m",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Druida": 1}
+            },
+		    "Garrote": {  
+		        "Descripción": "Este hechizo permite dotar de poder mágico a un garrote, palo u objeto similar, que ganará un bonificador de +1 en la tirada de ataque, y pasando a causar 1d6+1 de daño. \nAdemás, el garrote será considerado arma mágica mientras dure el conjuro.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Druida": 1}
+            },
+		    "Invisibilidad a los animales": {  
+		        "Descripción": "La criatura tocada por el clérigo se tornará invisible para los animales.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Druida": 1}
+            },
+		    "Niebla de oscurecimiento": {  
+		        "Descripción": "El lanzador es capaz de crear una densa niebla que cubrirá su cuerpo extendiéndose por un área de 6 x 6 x 6 metros, entorpeciendo la visión, incluyendo la visión en la oscuridad y la infravisión. Un viento moderado dispersará la niebla en 1d4 asaltos.",
+                "TL": "1",
+                "Alcance": "Ver texto",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Druida": 1, "Ilusionista": 1}
+            },
+		    "Pasar sin dejar rastro": {  
+		        "Descripción": "El receptor de este conjuro podrá moverse por cualquier tipo de terreno sin dejar rastro alguno.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Druida": 1}
+            },
+		    "Piedra mágica": {  
+		        "Descripción": "El lanzador podrá encantar tres guijarros o piedras pequeñas que golpearán con gran fuerza si son lanzados a mano o por medio de una honda. La criatura que use estas piedras podrá lanzar las mismas con un bonificador de +1 a la tirada de ataque, causando 1d6+1 puntos de daño (2d6+2 de daño contra muertos vivientes).",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Ver texto",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Druida": 1}
+            },
+
+		    "Armadura ilusoria": {  
+		        "Descripción": "Este conjuro crea la ilusión de una armadura de placas que otorga un +1 de CA al blanco tocado por el lanzador. Los atacantes que superen una TS de INT ignoran esa bonificación. En cualquier caso, el bonificador adicional de CA no se puede acumular a otros bonificadores mágicos (por objetos mágicos, otros conjuros, etc.).",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "Si",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1}
+            },
+		    "Aturdir": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1}
+            },
+		    "Aura indetectable": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1}
+            },
+		    "Borrar": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1, "Mago": 1}
+            },
+		    "Cambiar el yo": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1, "Mago": 1}
+            },
+		    "Detectar lo invisible": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1}
+            },
+		    "Fuerza temporal de Dejavú": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1}
+            },
+		    "Glamour feérico": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1}
+            },
+		    "Hechizar persona": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1, "Mago": 1}
+            },
+		    "Hipnosis": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1}
+            },
+		    "Imagen silenciosa": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1}
+            },
+		    "Leer magia": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1, "Mago": 1}
+            },
+		    "Mastines ilusorios": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1}
+            },
+		    "Niebla ofuscadora": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1}
+            },
+		    "Oscuridad/luz diurna": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1}
+            },
+		    "Rociada de color": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1}
+            },
+		    "Tentáculos menores de Silas": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1}
+            },
+		    "Ventriloquia": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 1}
+            },
+		    "Caída de pluma": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 1}
+            },
+		    "Cerrar portal": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 1}
+            },
+		    "Descarga eléctrica": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 1}
+            },
+		    "Disco flotante de Nébula": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 1}
+            },
+		    "Dormir": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 1}
+            },
+		    "Encontrar familiar": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 1}
+            },
+		    "Escalada de araña": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 1}
+            },
+		    "Escudo": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 1}
+            },
+		    "Identificar": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 1}
+            },
+		    "Leer y comprender lenguas": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 1}
+            },
+		    "Manos ardientes": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 1}
+            },
+		    "Proyectil mágico": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 1}
+            },
+		    "Salto": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 1}
+            },
+		    "Sirviente invisible": {  
+		        "Descripción": "-PENDIENTE-",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 1}
             }
         }
 }
