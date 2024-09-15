@@ -191,7 +191,7 @@
 	  if (norig < origenes.origenes.length ) {
 		document.getElementById("origen").innerHTML = "<center><strong>Origen</strong><br/>" + origenes.origenes[norig].nombre + " - " + origenes.origenes[norig].cultura  + "</center>";
 		document.getElementById("origen").style.visibility="visible";
-		document.getElementById("descorigen").innerHTML = "<hr/><strong>" + origenes.origenes[norig].descripcion + "</strong><hr/>";
+		document.getElementById("descorigen").innerHTML = "<hr/><strong>" + origenes.origenes[norig].descripcion + "</strong><br/>";
 		document.getElementById("descorigen").style.visibility="visible";
 	  }
 	  else {
@@ -202,6 +202,23 @@
 	    
 	  }
 	  return norig;
+  }
+  
+  function pintaProfesion(nbprof) {
+	  var nprof;
+	  for (nprof = 0; nprof<origenes.profesiones.length; nprof++) {
+		  if ( origenes.profesiones[nprof].nombre == nbprof ) {
+			  break;
+		  }
+	  }
+	  
+	  if (nprof < origenes.profesiones.length ) {
+	    if ( origenes.profesiones[nprof].hasOwnProperty("nota") == true ) {
+    		document.getElementById("descorigen").innerHTML = document.getElementById("descorigen").innerHTML + "<strong>Profesión " + origenes.profesiones[nprof].nombre + "</strong>: " +  origenes.profesiones[nprof].nota;
+	    }
+	  }
+	  document.getElementById("descorigen").innerHTML = document.getElementById("descorigen").innerHTML + "<hr/>"
+	  return nprof;
   }
   
   function calcular() {
@@ -237,15 +254,16 @@
 		  }
 	  }
 	  
+	  pintaProfesion(nbprof);
 	  
 	  
 	  var i;
-	  var shabilidades="<strong>Habilidades</strong><table class='w3-table  w3-striped  w3-border'>";
+	  var shabilidades="<strong>Habilidades básicas Origen</strong><table class='w3-table  w3-striped  w3-border'>";
 	  for (i=0;i<origenes.origenes[norig].habilidades.basicas.length; i++) {
 		  shabilidades += "<tr><td>" + origenes.origenes[norig].habilidades.basicas[i] + "</td></tr>";
 	  }
 	  
-	  if ( origenes.profesiones[nprof].hasOwnProperty('habilidades') == true && origenes.profesiones[nprof].habilidades.hasOwnProperty('basicas') == true ) {
+	  /*if ( origenes.profesiones[nprof].hasOwnProperty('habilidades') == true && origenes.profesiones[nprof].habilidades.hasOwnProperty('basicas') == true ) {
 		  for (i=0;i<origenes.profesiones[nprof].habilidades.basicas.length; i++) {
 			  shabilidades += "<tr><td>" + origenes.profesiones[nprof].habilidades.basicas[i] + "</td></tr>";
 		  }
@@ -259,31 +277,48 @@
 			  if (j>=origenes.origenes[norig].habilidades.basicas.length)
 				shabilidades += "<tr><td>" + origenes.profesiones[nprof].habilidades.basicas[i] + "</td></tr>";
 		  }
-	  }
-	  
+	  }*/
+	  	  
 	  shabilidades+="</table>";
+	  
+	  if ( origenes.profesiones[nprof].hasOwnProperty('habilidades') == true && origenes.profesiones[nprof].habilidades.hasOwnProperty('basicas') == true ) {
+	      shabilidades+="<strong>Habilidades básicas Profesión</strong><table class='w3-table  w3-striped  w3-border'>";
+		  for (i=0;i<origenes.profesiones[nprof].habilidades.basicas.length; i++) {
+			  shabilidades += "<tr><td>" + origenes.profesiones[nprof].habilidades.basicas[i] + "</td></tr>";
+		  }
+	      shabilidades+="</table>";
+	  }
+	  	  	  
+	  
 	  
 	  document.getElementById("habilidades").innerHTML = shabilidades;
 	  document.getElementById("habilidades").style.visibility="visible";
 	  
-	  var shabilidades="<strong>Habilidades profesionales (3)</strong><table class='w3-table  w3-striped  w3-border'>";
+	  var nhabprofesionales = 3;
+	  if ( origenes.origenes[norig].hasOwnProperty('nhabprofesionales') == true ) {
+	    nhabprofesionales = origenes.origenes[norig].nhabprofesionales;
+	  }
+	  shabilidades="<strong>Habilidades profesionales Origen (" + nhabprofesionales + ")</strong><table class='w3-table  w3-striped  w3-border'>";
 	  for (i=0;i<origenes.origenes[norig].habilidades.profesionales.length; i++) {
 		  shabilidades += "<tr><td>" + origenes.origenes[norig].habilidades.profesionales[i] + "</td></tr>";
 	  }
 	  
+	  shabilidades+="</table>";
+	  
 	  if ( origenes.profesiones[nprof].hasOwnProperty('habilidades') == true && origenes.profesiones[nprof].habilidades.hasOwnProperty('profesionales') == true ) {
+	      shabilidades+="<strong>Habilidades profesionales Profesión</strong><table class='w3-table  w3-striped  w3-border'>";
 		  for (i=0;i<origenes.profesiones[nprof].habilidades.profesionales.length; i++) {
-			  var j=0;
+			  /*var j=0;
 			  for (j=0;j<origenes.origenes[norig].habilidades.profesionales.length; j++) {
 				  if (origenes.origenes[norig].habilidades.profesionales[j] == origenes.profesiones[nprof].habilidades.profesionales[i])
 					break;
 			  }
-			  if (j>=origenes.origenes[norig].habilidades.profesionales.length)
+			  if (j>=origenes.origenes[norig].habilidades.profesionales.length)*/
 				shabilidades += "<tr><td>" + origenes.profesiones[nprof].habilidades.profesionales[i] + "</td></tr>";
 		  }
+	      shabilidades+="</table>";
 	  }
 	  
-	  shabilidades+="</table>";
 	  
 	  document.getElementById("habilidadesprofesionales").innerHTML = shabilidades;
 	  document.getElementById("habilidadesprofesionales").style.visibility="visible";
