@@ -91,6 +91,13 @@
                               "dificultad": "10",
                               "PM": "1-2" 
                     },
+                    "Alzar alimaña": { 
+                              "descripcion": "Reanima a un animal no mayor que un gato para que le sirva mientras dura el conjuro. El animal no ningún tipo de habilidad de combate, pero puede comunicarse telepáticamdente con us invocador y mantener una conversación dentro de los límites de la inteligencia del animal. Si la criatura es destruida por cualquier medio que no sea el fin del conjuro, el hechicero sufre 1 Punto de Daño.",
+                              "verbos": [ "Invocar" ],
+                              "esferas": [ "Espíritu", "Cuerpo" ],
+                              "dificultad": "10",
+                              "PM": "1" 
+                    },
                     "Alzar en el aire": { 
                               "descripcion": "El blanco es alzado 3d6 metros menos TAM del blanco.",
                               "verbos": [ "Dirigir" ],
@@ -146,6 +153,13 @@
                               "esferas": [ "Aire" ],
                               "dificultad": "20",
                               "PM": "3" 
+                    },
+                    "Asiento pétreo": { 
+                              "descripcion": "Crea un asiento pétreo cómodo que surge del suelo. Estará presente siempre que alguien esté sentado en él, incluso si ha superado la duración del conjuro. Cuando el usuario se levante del asiento desaparece. Con 2 PM puede levantar tantos asientos como la mitad del Espíritu del hechicero. Con 3 PM, el usuario del asiento se considera descansando a todos los efectos (sueño, regeneración de magia o curación natural).",
+                              "verbos": [ "Aumentar" ],
+                              "esferas": [ "Tierra" ],
+                              "dificultad": "10",
+                              "PM": "1-3" 
                     },
                     "Atar demonio": { 
                               "descripcion": "Somete a un demonio no atado.",
@@ -256,6 +270,13 @@
                               "descripcion": "Cambia de sexo al blanco. El cambio a mujer otorga +1 TAM.",
                               "verbos": [ "Modificar" ],
                               "esferas": [ "Cuerpo" ],
+                              "dificultad": "15",
+                              "PM": "2" 
+                    },
+                    "Cambiar madera": { 
+                              "descripcion": "Transforma madera muerta (en cantidad igual a una silla o escudo) en otro material no valioso. Por ejemplo un bastón de madera en uno de cristal de roca (convirtiéndolo en uno muy frágil). Si el objeto está en manos de alguien, el hechicero debe superar al poseedor en una lucha de Espíritu",
+                              "verbos": [ "Transformar" ],
+                              "esferas": [ "Tierra" ],
                               "dificultad": "15",
                               "PM": "2" 
                     },

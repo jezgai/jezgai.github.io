@@ -1011,6 +1011,16 @@
                 "RC": "Si",
                 "Nivel": { "Clerigo": 2}
             },
+		    "Restablecimiento": {  
+		        "Descripción": "Este conjuro restablece la energía vital de una única criatura, pudiendo recuperar las mermas temporales en características causadas por efectos mágicos. El hechizo también recupera 1 nivel perdido. Aunque no podrán recuperarse puntos de característica perdidos de manera permanente. El sortilegio no recupera puntos de CON o niveles perdidos por causa de una resurrección.",
+                "TL": "1 hora",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Clerigo": 4, "Ilusionista": 7}
+            },
 		    "Silencio": {  
 		        "Descripción": "El conjurador puede crear un área de silencio mágico hasta 120 metros de distancia desde su posición. El área será de 4 x 4 metros, y en su interior no pueden desarrollarse conversaciones, ni formularse conjuros verbales. Ningún sonido será audible dentro del área. Cuando esta área se conjura centrada en una criatura, el área se mueve con esta. Sin embargo, si la criatura está al corriente del intento, tiene derecho a una TS de DES para evitar los efectos, que pasan a quedar centrados en el espacio que ocupaba la criatura en el momento del lanzamiento.",
                 "TL": "1",
@@ -1449,7 +1459,7 @@
                 "Duración": "Ver texto",
                 "TS": "No",
                 "RC": "Si",
-                "Nivel": { "Clerigo": 3, "Ilusionista": 3, "Mago": 3 }
+                "Nivel": { "Clerigo": 3, "Druida": 4, "Ilusionista": 3, "Mago": 3 }
             },
 		    "Glifo custodio": {  
 		        "Descripción": "Protege con una runa protectora invisible un lugar (área de 6 x 6 metros) o un objeto. Cualquier criatura que atraviese el área, toque o mueva el objeto, o cumpla con la condición enunciada por el conjurador, sufrirá los efectos del hechizo. Este hechizo es activado incluso por criaturas invisibles. Aunque algunos conjuros pueden burlar estos glifos, al igual que algunas condiciones físicas del intruso, como un vampiro en forma gaseosa (siempre a discreción del DJ).\nHay muchos tipos de glifos custodios; generalmente se crean para descargar los efectos de un conjuro determinado (de nivel 3 máximo), como un proyectil mágico, un conjuro de retener persona o una bola de fuego.",
@@ -1840,6 +1850,476 @@
                 "TS": "No",
                 "RC": "Si",
                 "Nivel": { "Mago": 3}
+            },
+		    "Caminar por las aguas/aire": {  
+		        "Descripción": "La criatura tocada podrá caminar por las aguas o por el aire, a elección del conjurador durante el lanzamiento. Si la elección es sobre el agua, la criatura podrá caminar sobre cualquier líquido, típicamente agua, barro o lodo, o incluso lava. Si la elección es aire, la criatura podrá caminar por el aire y ascender o descender a mitad de su rango de movimiento y con una pendiente máxima de 45 grados.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 4}
+            },
+		    "Círculo sanador": {  
+		        "Descripción": "En un radio de 6 metros desde el lanzador, todo aquel dentro del área será sanado 2d8 puntos de golpe, sin importar si son aliados o enemigos. Cualquier muerto viviente que penetre en esta área recibirá 2d8 puntos de daño.",
+                "TL": "1",
+                "Alcance": "Ver texto",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Clerigo": 4}
+            },
+		    "Consagrar mayor": {  
+		        "Descripción": "Santifica y purifica un área de 50 x 50 metros centrada en el lanzador. Toda el área reacciona como un conjuro de protección contra el mal/bien en grupo, recibiendo todas las criaturas en su interior un bonificador de +2 a su CA y a sus tiradas de salvación. Todo intento de expulsar criaturas muertas vivientes se bonifica con un +3 y toda criatura enterrada en la zona consagrada no podrá ser animada como muerto viviente. Por último, el lanzador podrá decidir proteger el área o complementarla con un conjuro de su elección, cuyos efectos serán permanentes (como disipar magia, silencio, etcétera).",
+                "TL": "1",
+                "Alcance": "Ver texto",
+                "Componentes": "V y S",
+                "Duración": "1 año",
+                "TS": "No",
+                "RC": "ver texto",
+                "Nivel": { "Clerigo": 4}
+            },
+		    "Controlar las aguas": {  
+		        "Descripción": "Puede bajar o subir el nivel de las mismas medio metro por nivel del lanzador en un área cuadrada de 1 metro por nivel. En masas de agua muy grandes y profundas, un conjurador muy poderoso podría emplear este conjuro para crear un vigoroso remolino capaz de hacer zozobrar embarcaciones. Por último, si este conjuro se lanza sobre un elemental de agua, será capaz de ralentizarlo considerablemente, reduciendo a la mitad su rango de movimiento.",
+                "TL": "1",
+                "Alcance": "120 metros",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 4}
+            },
+		    "Detectar/Ocultar mentiras": {  
+		        "Descripción": "Cuando un conjurador lanza este conjuro, pasa a ser capaz de discernir si una criatura que se encuentra dentro del alcance del conjuro está mintiendo (si bien la criatura tiene derecho a una tirada de salvación de CAR para negar este efecto).\nDetectar mentiras es reversible, versión que impide la detección mágica de las mentiras durante 24 horas.",
+                "TL": "1",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "Si",
+                "RC": "No",
+                "Nivel": { "Clerigo": 4}
+            },
+		    "Exorcismo": {  
+		        "Descripción": "Este conjuro repele a una criatura extraplanar, obligándola a retornar a su plano natal siempre que la criatura falle la correspondiente tirada de salvación de CAR.",
+                "TL": "1",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "Instantáneo",
+                "TS": "Si",
+                "RC": "si",
+                "Nivel": { "Clerigo": 4}
+            },
+		    "Libertad de movimiento": {  
+		        "Descripción": "La criatura afectada por este conjuro podrá desplazarse sin impedimento por medios que normalmente afectarían a su rango de movimiento, como, por ejemplo, por el agua hasta la cintura, el lodo u otro elemento líquido, o bien ignorando los efectos de un conjuro de inmovilizar persona, ralentizar, telaraña, etcétera.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Clerigo": 4, "Druida": 4}
+            },
+		    "Recado": {  
+		        "Descripción": "Permite remitir un mensaje de no más de 25 palabras a un individuo conocido, incluyendo familiares animales, que serán capaces de comprender el mensaje, por muy lejos que se encuentren. No obstante, si el destinatario de nuestro mensaje se encuentra en otro plano de existencia, el lanzador deberá tener éxito en una tirada de CAR para lograr que el mensaje alcance a su objetivo.",
+                "TL": "10 min",
+                "Alcance": "Ver texto",
+                "Componentes": "V y S",
+                "Duración": "Ver texto",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 4}
+            },
+		    "Caparazón antivegetal": {  
+		        "Descripción": "Este potente sortilegio crea un escudo mágico de 1 metros de radio alrededor del lanzador que evita que cualquier planta, criatura tipo planta o plantas animadas penetren en su interior.",
+                "TL": "1",
+                "Alcance": "Personal",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Druida": 4}
+            },
+		    "Controlar plantas": {  
+		        "Descripción": "Mediante este ritual, el lanzador podrá controlar las plantas de su alrededor (en un área de 8 x 8 metros) e incluso comunicarse con ellas a un nivel muy básico. Es incluso posible controlar y comunicarse con plantas animadas y similares, tales como hombres hongo, aunque las dotadas de cierta inteligencia tendrán derecho a una TS de CAR para negar los efectos del conjuro.",
+                "TL": "1",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "Ver texto",
+                "RC": "Si",
+                "Nivel": { "Druida": 4}
+            },
+		    "Convocar animal": {  
+		        "Descripción": "Podremos recibir la asistencia de criaturas de la naturaleza presentes en el área. Convoca animales según el nivel del lanzador, así un conjurador de nivel 6 podrá convocar a un animal de 6 DG o uno de 4 DG y otro de 2 DG o a 6 de 1 DG, etc. Aunque el entorno en el que se encuentre el lanzador limita que animales responderán a la llamada. El conjurador podrá comunicarse a un nivel muy básico y pedir que peleen o realicen otras tareas sencillas. Los animales aparecerán en el punto designado dentro del alcance del conjuro y actuarán en el momento de iniciativa del lanzador.",
+                "TL": "1",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Druida": 4}
+            },
+		    "Escudriñamiento": {  
+		        "Descripción": "Da al lanzador la facultad de espiar a una criatura a distancia, siendo capaz de captar en su mente sus actos e incluso lo que está diciendo mientras dure el conjuro. Si el individuo afectado es especialmente inteligente (INT 13+), puede que sienta que está siendo observado si tiene éxito en una tirada de INT. En cualquier caso, para que el conjuro surta efecto en primera instancia, el lanzador debe superar una tirada de INT modificada como verás en la siguiente tabla.",
+                "TL": "10 min",
+                "Alcance": "Ver texto",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "Ver texto",
+                "RC": "No",
+                "Nivel": { "Clerigo": 5, "Druida": 4, "Mago": 4}
+            },
+		    "Extinguir fuego": {  
+		        "Descripción": "Extingue cualquier fuego no mágico en un área de 15 x 15 metros desde el punto designado por el lanzador o el fuego mágico creado por un único objeto mágico (los artefactos mágicos de especial poder son inmunes al conjuro). También puede disipar los efectos de otros conjuros basados en un fuego presente en el área. En este último caso, el lanzador deberá realizar una tirada enfrentada de INT cuyo GD será igual al nivel del lanzador del conjuro que deseamos disipar. Criaturas de fuego presentes en el área, como elementales de fuego, sufren 1d4 puntos de daño por nivel del lanzador.",
+                "TL": "1",
+                "Alcance": "50 metros",
+                "Componentes": "V y S",
+                "Duración": "Ver texto",
+                "TS": "Ver texto",
+                "RC": "Si",
+                "Nivel": { "Druida": 4}
+            },
+		    "Piedras puntiagudas": {  
+		        "Descripción": "Las paredes o el suelo, sea natural o artificial, así como cualquier formación rocosa próxima al lanzador, podrá desarrollar en su superficie puntas aguzadas. Afecta un área de 6 x 6 metros por nivel. Las puntas permanecen ocultas hasta que una criatura ajena al lanzador intenta pasar por el área encantada, momento en el que se revelan causando 1d8 puntos de daño por cada metro que se avance. Si buscan de forma activa, tienen derecho a una TS de INT con un penalizador de -1 por nivel del lanzador (GD de 1) para localizar las púas. Si las descubren y aún así tratan de cruzar, recibirán 1d4 puntos de daño por cada metro que avancen por el área afectada.",
+                "TL": "1",
+                "Alcance": "50 metros",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Druida": 4}
+            },
+		    "Reencarnar": {  
+		        "Descripción": "Permite traer de nuevo a la vida al espíritu de una criatura muerta (siempre que no haya transcurrido más de una semana desde su fallecimiento), reencarnando su alma en el cuerpo de un animal de la elección del conjurador: gatos, perros, felinos, úrsidos, aves rapaces, mapaches, etcétera. La criatura reencarnada retendrá sus recuerdos, conservando sus puntuaciones de característica de INT, SAB y CAR. Las restantes características serán establecidas según el criterio del DJ y teniendo en cuenta el tipo de animal escogido. La criatura también retendrá su clase de aventurero, pero según el tipo de animal, lo más probable es que no pueda ganar más niveles o emplear sus habilidades especiales de clase. Un conjuro de reencarnar, sumado a un conjuro de deseo, podría devolver a la criatura a su forma original, siempre a criterio del DJ.",
+                "TL": "3",
+                "Alcance": "Toque",
+                "Componentes": "V",
+                "Duración": "1 día/nivel",
+                "TS": "Ver texto",
+                "RC": "No",
+                "Nivel": { "Druida": 4}
+            },
+		    "Repeler sabandijas": {  
+		        "Descripción": "Crea una esfera de 6 metros de diámetro alrededor del lanzador que le protegerá de toda clase de sabandijas, tales como arácnidos, insectos, serpientes, roedores y similares. Si las sabandijas tienen menos de un tercio en dados de golpe del nivel del lanzador, no podrán atravesar el escudo de ninguna forma. Las sabandijas con al menos un tercio en DG, tienen derecho a una TS de SAB. Si la superan, podrán atravesar el escudo, aunque recibirán 1d6 puntos de daño al hacerlo.",
+                "TL": "1",
+                "Alcance": "Personal",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "Ver texto",
+                "RC": "Si",
+                "Nivel": { "Druida": 4}
+            },
+		    "Asesino fantasma": {  
+		        "Descripción": "El lanzador proyecta en la mente del blanco la imagen de la criatura más horrible que la víctima se pueda imaginar. Solo el lanzador y el blanco pueden ver a la criatura invocada, que simulará atacar a la víctima. Si el blanco falla una TS de INT, morirá instantáneamente a causa del miedo y el daño psíquico sufridos. Una tirada de salvación exitosa resulta en 4d6 puntos de daño. Este conjuro no puede atravesar ciertas protecciones mágicas, como una esfera invulnerable o un área de antimagia.",
+                "TL": "1",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "Ver texto",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 4}
+            },
+		    "Confusión": {  
+		        "Descripción": "Provoca un estado de confusión en todas las criaturas en un área de 15 x 15 metros que no superen una TS de SAB. El comportamiento de las criaturas afectadas se determina lanzando 1d10:\n - 1. Vaga errática 1 minuto\n - 2-3. Intenta hacer cosas mundanas como cocinar, durante 1 asalto\n - 4-6. No hace nada durante 1 asalto\n - 7-8. Busca objetos perdidos durante 1 asalto\n - 9. Ataca a la criatura más próxima durante 1 asalto\n - 10. Actúa de forma normal durante 1 asalto",
+                "TL": "1",
+                "Alcance": "40 metros",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "Si",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 4, "Mago": 4}
+            },
+		    "Creación menor": {  
+		        "Descripción": "Genera un elemento no mágico de materia vegetal muerta (madera, cáñamo, etc.). El volumen del objeto creado no puede exceder los 30 centímetros cúbicos por nivel de lanzador. Si el objeto tiene cierta complejidad y está formado por diversas piezas, el lanzador deberá tener éxito en una tirada de INT para crearlo con éxito.",
+                "TL": "1",
+                "Alcance": "3 metros",
+                "Componentes": "V y S",
+                "Duración": "1 hora/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 4}
+            },
+		    "Escamas de dragón": {  
+		        "Descripción": "Este conjuro invoca la imagen de un dragón que rodea al ilusionista y cualquier aliado dentro de un radio de 8 metros. El cuerpo del dragón fluye y rodea a las criaturas afectadas, otorgándoles un bonificador máximo de +4 a la CA hasta que finalice el hechizo. Esta bonificación no es acumulable a otras protecciones por equipo, ya sean mágicas o mundanas. Esto quiere decir que un aventurero con una armadura de +3 a su CA, solo obtendría un +1 por las escamas de dragón.",
+                "TL": "1",
+                "Alcance": "Personal",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 4}
+            },
+		    "Espejismo arcano": {  
+		        "Descripción": "Puede camuflar un terreno determinado, pudiendo afectar o incluir estructuras artificiales, bajo la apariencia de otro terreno diferente. El área de efecto es de 3 metros cuadrados por nivel del conjurador. La ilusión creada hace que el área afectada se vea, suene, huela y se perciba como otro tipo de terreno. Las construcciones existentes en el área se pueden alterar para que tengan otra apariencia, o se pueden incluir nuevas construcciones ilusorias. Ni los objetos ni las criaturas dentro del área en el momento del lanzamiento se ven afectadas, aunque sí pueden esconderse dentro de la ilusión como si esta fuera real. La ilusión se mantiene hasta que una criatura supere la TS de INT, momento en el que desaparecerá. La ilusión invocada debe mantener cierta coherencia con el entorno y con el área afectada; de no ser así, el DJ puede aplicar bonificadores especiales a las TS.",
+                "TL": "5 min",
+                "Alcance": "50 metros",
+                "Componentes": "V y S",
+                "Duración": "Ver texto",
+                "TS": "Si",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 4}
+            },
+		    "Hechizar monstruo": {  
+		        "Descripción": "Hechiza a un monstruo de su elección. Si la criatura falla su TS de CAR, durante el tiempo efectivo de conjuro, tomará al lanzador como un aliado y amigo. El monstruo encantado no actuará como un autómata, pero tomará las acciones y palabras del lanzador con buena predisposición. Si el monstruo es amenazado, o su vida corre peligro, el hechizo quedará roto. El lanzador debe hablar la misma lengua que la criatura para comunicarse.",
+                "TL": "1",
+                "Alcance": "20 metros",
+                "Componentes": "V y S",
+                "Duración": "1 dia/nivel",
+                "TS": "Si",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 4, "Mago": 4}
+            },
+		    "Idolo protector": {  
+		        "Descripción": "Invoca una imagen de sí mismo en arcilla del tamaño de un puño. Mientras dure el conjuro, dicha figura absorberá los tres primeros puntos de daño sufridos por el lanzador en cada impacto directo. Sin embargo, los ataques de área causarán el doble de daño, ya que afectan tanto al lanzador como a la imagen. El hechizo termina inmediatamente si la estatuilla se aleja a más de 3 metros del lanzador. Mientras esté en funcionamiento, ningún otro conjuro del estilo (a discreción del DJ) tendrá efecto sobre el conjurador.",
+                "TL": "2",
+                "Alcance": "Personal",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 4}
+            },
+		    "Implantar emoción": {  
+		        "Descripción": "Induce una poderosa emoción en las mentes de las criaturas dentro de un área de 8 x 8 metros. El lanzador puede elegir qué emoción infligir, y las víctimas pueden evitar los efectos mediante una TS de CAR:\n - Desesperanza: -2 a tiradas de característica, ataque, daño y TS. Cancela sentimiento de odio\n - Miedo: huye como si fuera conjuro Miedo. Cancela sentimiento de rabia\n - Odio: +2 a tiradas de característica, ataque, daño y TS. Cancela sentimiento de desesperanza\n - Rabia: +2 a FUE y CON. +1 a TS contra miedo. -1 a CA. Cancela sentimiento de miedo",
+                "TL": "1",
+                "Alcance": "50 metros",
+                "Componentes": "V y S",
+                "Duración": "Concentración",
+                "TS": "Si",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 4}
+            },
+		    "Invisibilidad mejorada": {  
+		        "Descripción": "El blanco del conjuro y todo su equipo se vuelven invisibles ante todas las formas de visión natural, incluidas la infravisión y la visión en la oscuridad. Permite al blanco atacar, lanzar hechizos o usar objetos mágicos sin hacerse visible. Los objetos abandonados por el blanco se volverán visibles, mientras que cualquier objeto recogido se volverá invisible. La luz emitida nunca se vuelve invisible, aunque su fuente si lo sea (como un farol sostenido por el blanco). Los objetos especialmente largos, que se extiendan más allá de 3 metros del cuerpo del blanco, se vuelven visibles. En cualquier caso, el blanco sigue haciendo ruido y dejando rastros, como por ejemplo unas pisadas en el barro.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "1 min + 1 asalto/nivel",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 4}
+            },
+		    "Miedo": {  
+		        "Descripción": "Afecta a todas las criaturas dentro de un área de 8 x 8 metros que no superen una TS de CAR. El pánico y el terror azotan sus corazones, haciendo que huyan del lanzador lo más rápido posible. Si dichas criaturas son acorraladas y se ven obligadas a luchar contra el conjurador, lo harán aplicando una penalización de -2 a todas sus tiradas.",
+                "TL": "1",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "Si",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 4, "Mago": 4}
+            },
+		    "Moldear sombras": {  
+		        "Descripción": "Moldea ilusiones casi perfectas de un grupo de monstruos que atacarán a sus enemigos a no más de 50 metros del lanzador. Se pueden moldear criaturas por un valor total en dados de golpe igual al nivel del lanzador. El conjurador elige la forma que adopta cada una de las ilusiones (goblin, enano, ...), pero el tamaño de las criaturas debe ser pequeño o mediano. Las ilusiones tienen solo un 20% de los PG normales de la criatura.\nLas criaturas atacadas por las ilusiones creerán que son enemigos reales a menos que tengan éxito en una TS de INT. Si es un fallo, las ilusiones infligen daño normal y tienen todas las habilidades y debilidades habituales del monstruo. Si la TS tiene éxito, las habilidades especiales, la CA, el daño que causan, etc., de las ilusiones a las que se enfrenten se reduce a un 20% de los valores habituales. Para que el conjuro funcione, en el área debe haber sombras, siendo válida la del propio lanzador.",
+                "TL": "1",
+                "Alcance": "50 metros",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "Ver texto",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 4}
+            },
+		    "Niebla sólida": {  
+		        "Descripción": "Invoca una esfera de niebla densa de 8 metros de diámetro centrada en el lanzador. La esfera entorpece la visión, incluyendo la visión en la oscuridad y la infravisión. Cualquier criatura que intente atravesarla, solo podrá moverse a una décima parte de su rango de movimiento. Además, todos los ataques dentro de la niebla sufren una penalización de -2 a golpear y al daño. Cualquier ataque de área basado en el fuego que cause más de 12 puntos de daño en un mismo asalto, destruirá inmediatamente la esfera. Un viento muy fuerte también puede dispersarla.",
+                "TL": "1",
+                "Alcance": "50 metros",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 4}
+            },
+		    "Pared ilusoria": {  
+		        "Descripción": "Este conjuro crea la ilusión de una pared, suelo, techo o superficie similar de hasta 9 metros cuadrados de largaria por 30 centímetros de grosor. Parece absolutamente real, aunque los objetos físicos lo atravesarán sin dificultad. Si se usa para ocultar pozos, trampas o puertas, todas las habilidades de detección que no se basen en la vista funcionan normalmente. Tocar o sondear la superficie revela su naturaleza ilusoria, aunque eso no hace que la ilusión desaparezca.",
+                "TL": "1",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 4}
+            },
+		    "Patrón arcoíris": {  
+		        "Descripción": "Un patrón brillante de colores entrelazados encandila y hechiza a las criaturas dentro de una esfera de 8 metros de diámetro. El número máximo de criaturas afectadas será de 24 DG en total (afectando de menor a mayor y de cerca a lejos). Las criaturas no podrán moverse ni realizar acciones más allá de defenderse si son atacadas, momento en el que se rompe el encantamiento. Todas las criaturas tienen derecho a una TS de INT para evitar los efectos del conjuro. Este conjuro no afectará a las criaturas ciegas.\nMientras esté activo, el lanzador puede desplazar el patrón luminoso a razón de 10 metros por asalto. Todas las criaturas bajo su influjo seguirán a las luces, tratando de permanecer dentro del área de efecto. Si este desplazamiento lleva a las criaturas hechizadas hacia un terreno peligroso, ganan la oportunidad de una nueva TS.",
+                "TL": "1",
+                "Alcance": "15 metros",
+                "Componentes": "S",
+                "Duración": "1 asalto/nivel",
+                "TS": "Si",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 4}
+            },
+		    "Portal ilusorio de Dejavú": {  
+		        "Descripción": "Este hechizo abre un pequeño agujero dimensional de 25 centímetros de radio conectado con el dormitorio del lanzador en su último lugar de residencia. El conjurador puede depositar hasta siete objetos en dicho portal, que serán transportados y colocados sin daño en el suelo del dormitorio.",
+                "TL": "2",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "Ver texto",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 4}
+            },
+		    "Refugio seguro": {  
+		        "Descripción": "Crea una cabaña o refugio de 8 x 8 metros a partir de materiales disponibles en el área. A todos los efectos, el refugio parecerá una cabaña normal, con una puerta robusta, 2 ventanas con contraventanas, una pequeña chimenea y muebles sencillos, incluyendo hasta 8 literas, una pequeña mesa, 8 taburetes, un escritorio y utensilios de cocina simples. El refugio es tan seguro como una cabaña normal, pero la puerta y las contraventanas están protegidas por un hechizo de cerradura (ver apertura/cerradura) y la chimenea por una rejilla de hierro y un tiro estrecho. Además, las tres áreas están afectadas por un conjuro de alarma. Por último, el refugio cuenta con un sirviente invisible a las órdenes del lanzador y a los demás ocupantes del refugio, que podrá asistirles aunque no combatirá ni se enfrentará a criatura alguna.",
+                "TL": "10 min",
+                "Alcance": "15 metros",
+                "Componentes": "V y S",
+                "Duración": "2 horas/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 4}
+            },
+		    "Tentáculos verdaderos de Silas": {  
+		        "Descripción": "Un par de tentáculos oscuros y brumosos crecen de las manos del lanzador, que puede emplearlos como látigos. Impactan automáticamente causando cada uno 10 puntos de daño a sus víctimas, a menos que estas superen una TS de INT. Los tentáculos duran 2 asaltos y las víctimas pueden hacer una nueva TS por cada ataque que reciban.",
+                "TL": "3",
+                "Alcance": "5 metros",
+                "Componentes": "V y S",
+                "Duración": "2 asaltos",
+                "TS": "Si",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 4}
+            },
+		    "Tesoro ilusorio": {  
+		        "Descripción": "El lanzador podrá camuflar un terreno determinado bajo la apariencia de otro terreno diferente. Por ejemplo, podrá cubrir de hierba ilusoria una colina rocosa, o de nieve una duna desértica. La superficie total que puede enmascararse de este modo no puede sobrepasar los 3 x 3 metros por nivel del lanzador, y no afectará a las criaturas que se encuentren en dicha área (ni a su equipamiento). Los efectos del conjuro finalizan tras un disipar magia o si una criatura inteligente descubre el engaño mediante una tirada de salvación con éxito de INT.",
+                "TL": "10 min",
+                "Alcance": "40 metros",
+                "Componentes": "V y S",
+                "Duración": "Ver texto",
+                "TS": "Si",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 4}
+            },
+		    "Detectar escudriñamiento": {  
+		        "Descripción": "Una vez lanzado el conjuro, el conjurador será consciente de cualquier intento de observarle a través de la magia, ya sea por un conjuro u objeto mágico. Una vez detectado el intento de observación, si la fuente de la misma se encuentra a no más de 50 metros del lanzador, este obtendrá una idea clara de su posición.",
+                "TL": "1",
+                "Alcance": "Ver texto",
+                "Componentes": "V",
+                "Duración": "1 día",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 4}
+            },
+		    "Escudo de fuego/hielo de Karkemish": {  
+		        "Descripción": "Al ser lanzado aparece un contorno de llamas azules y verdes alrededor del conjurador o de la criatura que este designe. Proporciona la misma iluminación que una antorcha y, además, protege al portador de los ataques basados en frío. Las llamas son cálidas al contacto, pero no causan ningún tipo de daño. Todas las tiradas para resistir daño basado en frío se realizan con un bonificador de +2. Si se pasa la tirada, no se sufre ningún daño y, si se falla, únicamente se sufre mitad de daño. Si recibe daño por fuego y no supera la tirada, sufrirá el doble de daño.\nEste conjuro es reversible y se puede lanzar escudo de hielo, que protege contra los ataques de fuego. Para este caso, un ataque de frío provocará doble de daño al receptor del conjuro.",
+                "TL": "1",
+                "Alcance": "Ver texto",
+                "Componentes": "V y S",
+                "Duración": "2 asaltos + otro/nivel",
+                "TS": "No",
+                "RC": "Ver texto",
+                "Nivel": { "Mago": 4}
+            },
+		    "Esfera invulnerable menor": {  
+		        "Descripción": "Este conjuro crea alrededor del lanzador una esfera mágica e inmóvil que impide que el lanzador se vea afectado por cualquier conjuro de nivel 1, 2 y 3. El conjurador sí podrá lanzar conjuros desde dentro de la esfera al exterior. La esfera solo puede ser eliminada si el lanzador decide salir de ella, si se lanza un disipar magia contra la esfera o si expira el conjuro.",
+                "TL": "1",
+                "Alcance": "Personal",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 4}
+            },
+		    "Globo elástico de Fistan": {  
+		        "Descripción": "Genera una esfera de 3 metros de diámetro que envuelve a la criatura blanco del conjuro, siempre que su tamaño no rebase el de la esfera. La criatura tiene derecho a una TS de DES para evitar quedar atrapada, salvo que lo desee. Protege contra cualquier tipo de daño físico o mágico que se quiera infligir exceptuando los conjuros de disipar magia o desintegrar, que destruirán la esfera sin causar daño a quien se encuentre en su interior. Nadie puede entrar ni salir del globo hasta que no expire el conjuro. La esfera se puede mover si se empuja desde el exterior o por los movimientos de la criatura que se encuentre en su interior.",
+                "TL": "1",
+                "Alcance": "20 metros",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "Si",
+                "RC": "Si",
+                "Nivel": { "Mago": 4}
+            },
+		    "Localizar criatura": {  
+		        "Descripción": "Usando este hechizo, el lanzador puede localizar la criatura más cercana de un tipo específico con el que se haya topado con anterioridad (como un humano, elfo, orco, unicornio, etc.), o una criatura individual específica que el lanzador conozca, y siempre que esté dentro del alcance del conjuro. El agua corriente bloquea el hechizo que, además, puede ser burlado por conjuros de defensa contra la observación mágica, polimorfar, etc. Localizar criatura no sirve para detectar objetos.",
+                "TL": "1",
+                "Alcance": "150 metros",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 4}
+            },
+		    "Mnemotecnia de Fistan": {  
+		        "Descripción": "El lanzador es capaz de memorizar hechizos adicionales. En total, se podrán memorizar hasta 3 niveles adicionales; por ejemplo: 3 conjuros de nivel 1, o 1 conjuro de nivel 3. Los conjuros de nivel 0 cuentan como 1/2 nivel. Los conjuros extras se pierden transcurridas 24 horas si no han sido lanzados antes.",
+                "TL": "10 min",
+                "Alcance": "Personal",
+                "Componentes": "V y S",
+                "Duración": "Ver texto",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 4}
+            },
+		    "Muro de fuego": {  
+		        "Descripción": "Crea un muro inmóvil de fuego de 30 cm de espesor y 6 metros de altura, que permanecerá activo mientras el lanzador se mantenga concentrado y no realice ninguna otra acción. Este muro, o cortina de fuego, puede variar en dimensiones y formas a voluntad del lanzador (por ejemplo, un círculo que rodee al conjurador), nunca excediendo los 40 metros cuadrados. El muro de fuego resultará mortal y, por tanto, impenetrable, para toda criatura con menos de 4 DG. Monstruos con 4 DG o más recibirán 1d6 puntos de daño por fuego durante cada asalto que permanezcan dentro de las llamas o al intentar penetrar. Este fuego mágico causa doble de daño a muertos vivientes y seres de naturaleza basada en el frío.",
+                "TL": "1",
+                "Alcance": "40 metros",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Druida": 5, "Mago": 4}
+            },
+		    "Muro de hielo": {  
+		        "Descripción": "Crea un muro inmóvil de hielo translúcido de 30 cm de espesor y 6 metros de altura que permanecerá activo mientras el conjurador se mantenga concentrado y no realice ninguna otra acción. Este muro puede variar en dimensiones y forma a voluntad del lanzador (por ejemplo, un círculo que rodee al conjurador), nunca excediendo los 40 metros cuadrados. El muro de hielo resulta impenetrable para toda criatura con menos de 4 DG. Monstruos con 4 DG o más recibirán 1d6 puntos de daño al romper el hielo para atravesarlo. Este hielo mágico causa doble de daño a seres de naturaleza afín al calor. El muro de hielo debe ser conjurado sobre una superficie sólida y no puede invocarse en una ubicación ocupada por un objeto o estructura.",
+                "TL": "1",
+                "Alcance": "40 metros",
+                "Componentes": "V y S",
+                "Duración": "1 turno/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 4}
+            },
+		    "Ojo arcano": {  
+		        "Descripción": "El lanzador crea un orbe invisible flotante que es capaz de observar el entorno trasmitiendo esta información vía telepática al mago. Este ojo arcano puede ver en la oscuridad como si estuviera dotado de infravisión, con un alcance de 30 metros. El ojo arcano puede flotar lentamente en cualquier dirección, aunque los obstáculos naturales bloquearán normalmente su paso.",
+                "TL": "1",
+                "Alcance": "Ver texto",
+                "Componentes": "V y S",
+                "Duración": "1 turno/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 4}
+            },
+		    "Polimorfar": {  
+		        "Descripción": "El conjurador es capaz de transformarse en otra criatura lanzándolo sobre sí mismo. En este caso, la transformación dura 10 minutos por nivel del lanzador. Por otro lado, el lanzador puede cambiar de forma permanente la forma de un individuo de su elección a no más de 15 metros. Si el conjuro se lanza sobre una criatura que no desea ser transformada, tendrá derecho a una TS de SAB para evitarlo. Si falla, deberá hacer una nueva TS cada 12 horas o perder la consciencia sobre sí misma para adoptar la de su forma actual.\nLa nueva forma retendrá los mismos PG que los de la criatura de partida y debe poseer los mismos DG o menos que el nivel del lanzador. Todas las demás habilidades de la nueva criatura estarán presentes, incluyendo características primarias y secundarias, nivel de inteligencia, instintos, preferencias, alineamiento, etcétera, con la excepción de las habilidades de carácter mágico, si las hubiere (en su nueva forma, la criatura será incapaz de lanzar nuevos conjuros).",
+                "TL": "1",
+                "Alcance": "Ver texto",
+                "Componentes": "V y S",
+                "Duración": "Ver texto",
+                "TS": "Ver texto",
+                "RC": "Si",
+                "Nivel": { "Ilusionista": 8, "Mago": 4}
+            },
+		    "Puerta dimensional": {  
+		        "Descripción": "El lanzador se transporta instantáneamente desde la ubicación actual a cualquier otro lugar dentro del alcance del hechizo. El conjurador siempre llega exactamente al punto deseado e indicado. Tras usar este hechizo, el lanzador no puede realizar ninguna otra acción hasta su siguiente asalto. Si el conjurador trata de materializarse en un punto que ya está ocupado por un cuerpo sólido, quedará atrapado en el plano astral. Todo lo que el lanzador lleva, hasta un máximo de 250 kilos, se transporta con él.",
+                "TL": "1",
+                "Alcance": "150 metros",
+                "Componentes": "V",
+                "Duración": "Instantáneo",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 4}
+            },
+            "Tormenta de escarcha": {
+		        "Descripción": "Este conjuro invocará una terrible tormenta de hielo en el punto designado por el lanzador. Dicha tormenta cubrirá un área de 15 metros x 15 metros x 6 metros, reduciendo el movimiento y la visibilidad a la mitad, y tornando el suelo resbaladizo, pudiendo así desequilibrar a las criaturas presentes en el área, que deberán tener éxito en una tirada de DES cada asalto para no resbalar y caer.",
+                "TL": "1",
+                "Alcance": "140 metros",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "Ver texto",
+                "RC": "No",
+                "Nivel": { "Druida": 4}
+            },
+		    "Tormenta de hielo": {  
+		        "Descripción": "Este conjuro invoca una terrible tormenta de granizo en un área de 15 metros de diámetro y 15 metros de alto que causa 5d6 puntos de daño a todas las criaturas que se encuentren dentro de dicha área. Además, reduce la capacidad de movimiento en el área a la mitad durante 1 asalto por nivel del lanzador.",
+                "TL": "10 min",
+                "Alcance": "40 metros",
+                "Componentes": "V y S",
+                "Duración": "Ver texto",
+                "TS": "No",
+                "RC": "Si",
+                "Nivel": { "Druida": 5, "Mago": 4}
             }
         }
 }
