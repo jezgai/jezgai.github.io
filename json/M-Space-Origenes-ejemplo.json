@@ -2,7 +2,9 @@
     "origenes"  : [
         {
             "nombre" : "Origen 1",
+            "descripcion": "Descripción del Origen 1",
             "cultura" : "Urbana",
+            "nhabprofesionales": 4,
             "habilidades" : {
                 "basicas" : [ "Conducir (cualquiera)", "Conocimiento Local", "Engañar", "Influencia", "Ocultar", "Perspicacia", "Voluntad", "Estilo de Combate" ],
                 "profesionales" : [ "Arte (cualquiera)", "Artesanía (cualquiera)", "Callejeo", "Comerciar", "Cortesía", "Idioma (cualquiera)", "Música", "Saber (cualquiera)" ]
@@ -44,6 +46,7 @@
         },
         {
             "nombre" : "Origen 2",
+            "descripcion": "Descripción del Origen 2",
             "cultura" : "Urbana",
             "habilidades" : {
                 "basicas" : [ "Conocimiento Local", "Influencia", "Manejo de Botes", "Nadar", "Perspicacia", "Conducir (sumergibles)", "Voluntad", "Estilo de Combate" ],
@@ -121,6 +124,7 @@
         },
         {
             "nombre" : "Profesión 2",
+            "nota": "Nota (adicional) sobre la Profesión 2",
             "eventos" : [
                 {
                     "peso" : 10,
@@ -141,6 +145,50 @@
                 {
                     "peso" : 4,
                     "evento" : "Texto del evento vital (91-94)"
+                },
+                {
+                    "peso" : 5,
+                    "evento" : "Texto del evento vital (86-90)"
+                },
+                {
+                    "peso" : 4,
+                    "evento" : "Texto del evento vital (91-94)"
+                },
+                {
+                    "peso" : 3,
+                    "evento" : "Texto del evento vital (95-97)"
+                },
+                {
+                    "peso" : 2,
+                    "evento" : "Texto del evento vital (98-99)"
+                },
+                {
+                    "peso" : 1,
+                    "evento" : "Texto del evento vital (00)"
+                }
+            ]
+        },
+        {
+            "nombre" : "Profesión 3",
+            "habilidades": {
+                "profesionales": [
+                  "Cero-G",
+                  "Supervivencia (Espacio)",
+                  "Traje de Vacío"
+                ]
+            },
+            "eventos" : [
+                {
+                    "peso" : 15,
+                    "evento" : "Texto del evento vital (51-65)"
+                },
+                {
+                    "peso" : 10,
+                    "evento" : "Texto del evento vital (66-75)"
+                },
+                {
+                    "peso" : 10,
+                    "evento" : "Texto del evento vital (76-85)"
                 },
                 {
                     "peso" : 5,
