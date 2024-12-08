@@ -3160,6 +3160,296 @@
                 "TS": "SAB",
                 "RC": "Sí",
                 "Nivel": { "Mago": 6}
+            },
+            "Auxilio": {  
+		        "Descripción": "El lanzador ha de elegir un objeto sobre el que invocar las fuerzas arcanas: un medallón, un anillo, un broche, etc. A partir del momento, el objeto irradia magia y tiene la capacidad de teleportar al poseedor hasta la morada del conjurador, siempre que pronuncie la palabra de mando. El lanzador debe entregar el objeto voluntariamente a una criatura en concreto y revelarle dicha palabra de mando. El objeto solo funcionará con esa criatura, que será la única transportada junto al equipo que lleve encima en ese momento, no pudiendo transportar a ninguna otra criatura.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 7, "Mago": 9}
+            },
+		    "Escudriñamiento mayor": {  
+		        "Descripción": "Es una versión mejorada de escudriñamiento, ya que su duración es superior y permite al lanzador, siempre que el intento tenga éxito, conjurar los siguientes hechizos adicionales: detectar alineamiento, detectar magia, leer magia, lenguas, leer y comprender lenguaje, y mensaje. El resto de su funcionamiento es igual al del conjuro básico de escudriñamiento.",
+                "TL": "1",
+                "Alcance": "1 min/nivel",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Clerigo": 7, "Druida": 7, "Mago": 7}
+            },
+		    "Palabra sagrada/impía": {  
+		        "Descripción": "Cualquier criatura malvada en un área de 20 metros alrededor del conjurador sufrirá los siguientes efectos según los DG o nivel del objetivo:\n - 3 o menos - Muertos\n - 8-11 - Atontados 2d4 asaltos: movimiento al 50% y -4 a golpear\n - 12+ - Sordos 1d4 asaltos: movimiento al 25% y -2 a golpear\n\nEste conjuro tiene efecto inverso, y funcionará con las mismas características contra criaturas benévolas.",
+                "TL": "1",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Clerigo": 7}
+            },
+		    "Regenerar": {  
+		        "Descripción": "El lanzador podrá, gracias a este conjuro, regenerar extremidades cercenadas, huesos rotos u otros órganos maltrechos por motivos muy diversos. El conjuro restaura adicionalmente 1d8 puntos de golpe + 1 PG por nivel del lanzador. Las extremidades regeneradas tardarán 1d12 asaltos en volver a ser totalmente funcionales.",
+                "TL": "3",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Clerigo": 7, "Druida": 8, "Ilusionista": 9}
+            },
+		    "Repulsión": {  
+		        "Descripción": "Este conjuro crea un campo de fuerza de 3 metros de radio alrededor del lanzador, que se desplazará con él. Cualquier criatura que intente atravesar dicho campo será repelida, y deberá realizar una TS de FUE para no quedar aturdida durante 1d4 asaltos (durante los que no podrá llevar a cabo ninguna acción).",
+                "TL": "1",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "FUE",
+                "RC": "No",
+                "Nivel": { "Clerigo": 7}
+            },
+		    "Restablecimiento mayor": {  
+		        "Descripción": "Elimina todos los efectos que reducen o penalizan los bonificadores de característica, restaura todos los puntos de característica perdidos, sin importar si la pérdida era temporal o permanente. También sana todas las formas de locura, confusión, debilidad mental y otros efectos mentales similares. Incluso es capaz de restaurar todos los niveles perdidos a causa del toque de los muertos vivientes (restituyendo todos los beneficios de clase perdidos, como los puntos de golpe o las habilidades especiales). Sin embargo, este último uso solo funciona si el hechizo se lanza antes de que transcurra más de 1 semana desde la pérdida.",
+                "TL": "1 hora",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Clerigo": 7}
+            },
+		    "Resurrección mayor": {  
+		        "Descripción": "Devuelve a la vida a una criatura que no lleve muerta más de 10 años por nivel del lanzador. Para que el conjuro surta efecto solo se precisará una pequeña porción del cadáver. La criatura revivida perderá 2 puntos de CON cuando sea resucitada si es de primer nivel, o un nivel entero en otro caso (por ejemplo, un guerrero de nivel 5 que fuera resucitado, volvería a la vida como un guerrero de nivel 4). La criatura resucitada recuperará todos los PG que tenía en vida, y regenerará cualquier extremidad que hubiera perdido, curando de igual forma de toda enfermedad o veneno que pudiera estar aún latente. No obstante, no recuperará puntos de característica o niveles que perdiera en vida. Este hechizo es tan potente que es incluso posible lanzarlo sobre muertos vivientes para retornarlos a la vida.",
+                "TL": "1 hora",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanete",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Clerigo": 7}
+            },
+"Bastón cambiante": {  
+		        "Descripción": "Puede transformar un bastón en una criatura animada tipo planta similar a un treant (árbol viviente), con sus mismas características, salvo que no podrá convocar a otras criaturas del bosque o animar a otros árboles, como hacen los verdaderos treants. Esta criatura combatirá como un treant, y obedecerá todas las órdenes del druida hasta que sea destruido o se llegue a la duración máxima del conjuro.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "1 hora/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Druida": 7}
+            },
+		    "Convocar bestia mágica o feérica": {  
+		        "Descripción": "Permite convocar criaturas con una suma total de dados de golpe igual al nivel del lanzador. Las criaturas deben ser de naturaleza feérica o bestias mágicas. El lanzador puede repartir los dados de golpe en una o varias criaturas, según su criterio, aunque el lanzador no puede elegir a la criatura específica, ya que será el Narrador quien decidirá que criatura determinada aparece, según la región donde se encuentre el conjurador. El lanzador podrá convocar o bien bestias mágicas o bien criaturas feéricas, pero no una combinación de ambas.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Druida": 7}
+            },
+		    "Marabunta": {  
+		        "Descripción": "Crea una marabunta conformada por 1.000 pequeñas arañas venenosas, escorpiones, escarabajos perforadores y escolopendras. Esta masa reptante avanza ocupando un área de 8x8 m. A las órdenes del conjurador, la marabunta se mueve en una determinada dirección avanzando 3 metros por asalto, hasta un máximo de 50 metros. Cada sabandija de las mil presentes en la marabunta causará 1 punto de daño a las criaturas afectadas, muriendo después. Las criaturas se ven afectadas por la marabunta por orden creciente de distancia al lanzador. Si la marabunta avanza más allá de los 50 metros, perderá 50 miembros por cada 3 metros recorridos de más. Cualquier cosa que destruya o impida el paso de insectos normales también afectará a los bichos de la marabunta.",
+                "TL": "1",
+                "Alcance": "45 m",
+                "Componentes": "V y S",
+                "Duración": "1 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Druida": 7}
+            },
+		    "Tormenta de fuego": {  
+		        "Descripción": "El conjurador podrá desencadenar una brutal tormenta de fuego en un área de 3 metros cuadrados por nivel del lanzador, causando 1d6 puntos de daño por nivel del lanzador. Una tirada de salvación exitosa de DES reduce el daño a la mitad.",
+                "TL": "1",
+                "Alcance": "50 m.",
+                "Componentes": "V y S",
+                "Duración": "Instantáneo",
+                "TS": "DES",
+                "RC": "Sí",
+                "Nivel": { "Druida": 7, "Clerigo": 8}
+            },
+		    "Transmutar metal en madera": {  
+		        "Descripción": "Permite convertir un objeto en madera, incluyendo objetos mágicos (teniendo en cuenta que la resistencia a conjuros de un objeto mágico es de 16). Las armas convertidas en madera sufren un penalizador de -2 a las tiradas de ataque y daño, y se romperán con un resultado natural de 5 o menos en la tirada de ataque. Una armadura transmutada a madera perderá 1 punto de CA por cada golpe que reciba con un resultado natural de 14 o más en el d20, rompiéndose totalmente con un resultado de 20 natural.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Druida": 7}
+            },
+            "Atemorizar": {  
+		        "Descripción": "El lanzador parece emitir energía contra aquellos que le desean algún mal. Toda criatura que pueda ver al conjurador y que desee hacerle daño comienza a sufrir náuseas, dolor corporal y una pérdida temporal de 1 un punto en todas sus características. Además, también pasará a considerar todas sus características como secundarias en cualquier tirada o salvación que involucre al lanzador. El conjuro, y cualquier pérdida asociada, duran mientras la criatura afectada siga deseando hacer daño al lanzador, o solo durante tres asaltos si la criatura tiene éxito en una TS de INT.",
+                "TL": "2",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "ver texto",
+                "RC": "Sí",
+                "Nivel": { "Ilusionista": 7}
+            },
+		    "Invisibilidad de masas": {  
+		        "Descripción": "Este conjuro funciona igual que invisibilidad de grupo, aunque el número de criaturas afectadas puede ser bastante mayor al incrementarse el área afectada hasta los 15 metros de radio.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Ilusionista": 7, "Mago": 7}
+            },
+		    "Laberinto": {  
+		        "Descripción": "El conjurador enviará a la víctima de este hechizo a un laberinto extradimensional. El número de asaltos que el sujeto permanecerá allí retenido es determinado por su inteligencia (los minotauros son inmunes):\n - 0-2 -> 2d4 días\n - 3-5 -> 1d4 días\n - 6-8 -> 5d4 horas\n - 9-12 -> 4d4 minutos\n - 13-15 -> 3d4 asaltos\n - 16-17 -> 2d4 asaltos\n - 18+ -> 1d4 asaltos",
+                "TL": "1",
+                "Alcance": "Personal",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 7, "Mago": 8}
+            },
+		    "Locura": {  
+		        "Descripción": "Provoca locura en una criatura elegida por el lanzador. La criatura afectada se comportará de forma aleatoria, según establezca el DJ utilizando por ejemplo una tirada de dado. Entre los posibles comportamientos están: alejarse, mirar fijamente a la distancia, balbucear incoherencias, sucumbir a la paranoia, oír voces en la cabeza o incluso actuar con normalidad. Cualquiera de estos comportamientos puede durar desde un asalto hasta varios días o años (a discreción del DJ). La víctima tiene derecho a una TS de INT para evitar los efectos. Atacar a una criatura afectada por este hechizo no ofrece ninguna ventaja, ya que la víctima se defenderá incluso devolviendo los ataques. Solo un conjuro como restablecimiento mayor, deseo limitado o deseo pueden sanar a la víctima, mientras que uno del estilo de quitar maldición no tendrá efecto alguno.",
+                "TL": "1",
+                "Alcance": "15 m.",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "INT",
+                "RC": "Sí",
+                "Nivel": { "Ilusionista": 7}
+            },
+		    "Palabra poderosa aturdir": {  
+		        "Descripción": "El lanzador podrá pronunciar una palabra que provocará un estado de estupor (atontada o aturdida) en una criatura de su elección, tanto si la criatura es capaz de oír esta palabra como si no. Una criatura aturdida no puede actuar mientras dure el hechizo. La duración del conjuro dependerá de la cantidad de PG que tenga la criatura afectada. Con más de 120 PG no resultarán afectadas.\n - 0-30 -> 4d4 asaltos\n - 31-60 -> 2d4 asaltos\n - 61-120 -> 1d4 asaltos",
+                "TL": "1",
+                "Alcance": "20 m.",
+                "Componentes": "V",
+                "Duración": "ver texto",
+                "TS": "ver texto",
+                "RC": "Sí",
+                "Nivel": { "Ilusionista": 7, "Mago": 7}
+            },
+		    "Reclusión": {  
+		        "Descripción": "Este potente conjuro garantiza al receptor u objeto una inmunidad total a conjuros de escudriñamiento o similares y/o artefactos adivinatorios de cualquier tipo. Si el blanco no desea recibir los efectos del conjuro, tiene derecho a una tirada de salvación de CAR para evitarlo.",
+                "TL": "3",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "1 día/nivel",
+                "TS": "ver texto",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 7, "Mago": 7}
+            },
+		    "Rociada prismática": {  
+		        "Descripción": "7 rayos de luz multicolor salen proyectados desde la mano del lanzador cubriendo un área cónica de 8 metros de ancho por 15 de largo. Las criaturas dentro del área que tengan 8 DG o menos, quedan cegadas durante 2d4 asaltos de forma automática. Además, todas las criaturas en el área (sin importar sus DG) reciben el impacto aleatorio de uno o más rayos, lo que se determina tirando un 1d8 por criatura, provocando los siguientes efectos según el color del rayo:\n - 1. Rojo -> 10 puntos de daño\n - 2. Naranja -> 20 puntos de daño\n - 3. Amarillo -> 40 puntos de daño\n - 4. Verde -> TS CON o muerte\n - 5. Azul -> TS CAR o petrificación\n - 6. Índigo -> TS SAB o locura permanente\n - 7. Violeta -> TS INT o es trasladado a otro plano\n - 8. 2 rayos -> Tirar 2d8 en la tabla ignorando el 8",
+                "TL": "1",
+                "Alcance": "15 m.",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "ver texto",
+                "RC": "ver texto",
+                "Nivel": { "Ilusionista": 7}
+            },
+		    "Simulacro": {  
+		        "Descripción": "Crea un duplicado de cualquier criatura. El proceso requiere de un buen laboratorio, gemas en polvo por valor de 1.000 monedas de oro y algo de la criatura que se va a duplicar. El duplicado tendrá la apariencia exacta de la criatura copiada, si bien solo contará con el 51% - 60% (50 + 1d10) de los PG y conocimientos del original (lo que incluye el nivel, las habilidades de especie, recuerdos y capacidad de habla).\nEl simulacro permanece bajo las órdenes del lanzador en todo momento. El duplicado no tiene la capacidad de ganar nuevos niveles y la magia curativa no restaura sus puntos de golpe. Para reparar cualquier daño es necesario invertir al menos 1 día, 100 monedas de oro en materiales por PG a restaurar y un laboratorio mágico completamente equipado. Si el duplicado llega a 0 PG, se derretirá hasta desaparecer por completo.",
+                "TL": "12 horas",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 7}
+            },
+		    "Viajar mediante sombras": {  
+		        "Descripción": "Permite viajar rápidamente a lo largo de un camino hecho de sombras. El lanzador debe estar en un área de sombras densas para que funcione. Una vez lanzado, el conjurador y hasta 1 criatura adicional por nivel (que debe tocar), son absorbidos por las sombras para aparecer ante un corredor brumoso en el plano de las sombras, donde todo es un reflejo sombrío y alterado del plano material. El viaje por el plano de las sombras es seguro porque la gran mayoría de él es solo una ilusión creada por el lanzador. El grupo se desplaza a través de la ilusión a una velocidad de 10 km/min aunque para ellos el desplazamiento ocurre a una velocidad normal. El lanzador es consciente de la ubicación relativa al plano material y puede elegir el punto exacto donde emerger, si bien el lugar escogido debe contar también con sombras. Cualquier criatura que abandone el corredor quedará atrapada en el plano de las sombras o volverá a un lugar aleatorio del plano material (50%-50%).\nViajar mediante sombras también se puede usar para visitar otros planos de existencia, aunque ello exige atravesar realmente el plano de las sombras y enfrentarse a sus peligros. Tal viaje tiene una duración aleatoria de 1d4 horas.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "1 hora/nivel",
+                "TS": "INT",
+                "RC": "Sí",
+                "Nivel": { "Ilusionista": 7}
+            },
+		    "Visiones oníricas": {  
+		        "Descripción": "El lanzador hace una pregunta sobre alguna persona, lugar u objeto, lanza este conjuro y entra en un trance parecido al sueño. Si el conjurador tiene éxito en una tirada de INT, recibirá visiones con información extraída de las leyendas sobre el objeto de su pregunta (estas leyendas pueden ser bien conocidas o haber existido para ser luego olvidadas). El DJ establece qué cantidad de información se puede recibir dentro de la duración del conjuro. Si la criatura u objeto está a mano, o si el lanzador está en el lugar en cuestión, la tirada de INT se hace sin penalizadores. Si el objeto de la pregunta no está a mano, pero el conjurador conoce información detallada, la tirada recibe un penalizador de -5 y la información obtenida será menos precisa. Si solo se dispone de rumores y algunos datos generales, la tirada se realiza con un -10 y cualquier información obtenida será muy vaga.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Ilusionista": 7}
+            },
+            "Bola de fuego de explosión retardada": {  
+		        "Descripción": "Este conjuro es similar al de bola de fuego, salvo que el daño es 1d6+1 por nivel del lanzador y el mago puede elegir el momento en que detonará la bola de fuego dentro de un intervalo de 5 asaltos desde que el hechizo es lanzado. Si el objetivo supera una TS de DES recibe la mitad de daño",
+                "TL": "1",
+                "Alcance": "150 m.",
+                "Componentes": "V y S",
+                "Duración": "Hasta 5 asaltos",
+                "TS": "DES",
+                "RC": "No",
+                "Nivel": { "Mago": 7}
+            },
+		    "Convocación instantánea de Nébula": {  
+		        "Descripción": "Mediante este conjuro, el lanzador puede convocar un objeto previamente designado a su mano desde cualquier ubicación. Debe tratarse de un único objeto cuyo peso no exceda los 20 kilos.",
+                "TL": "1",
+                "Alcance": "ver texto",
+                "Componentes": "V",
+                "Duración": "Instantáneo",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Mago": 7}
+            },
+		    "Deseo limitado": {  
+		        "Descripción": "Este conjuro permite al lanzador crear casi cualquier efecto que se le antoje. Por ejemplo, este conjuro permitiría al lanzador obtener los mismos resultados que cualquier conjuro de mago de nivel 6 o inferior, de ilusionista a nivel 5 o inferior, o de clérigo y druida a nivel 4 o inferior. Podría conseguir también que un compañero tenga éxito automático en la siguiente tirada de ataque o tirada de salvación, disipar efectos nocivos de un hechizo ofensivo, eliminar un hechizo defensivo y otras acciones similares en relevancia a las anteriormente citadas. También sería posible que, mediante su uso, el lanzador pudiera averiguar el funcionamiento de un mecanismo, resolver un acertijo, etc. Es aconsejable que el Narrador no se extralimite y evite que el poder de este conjuro rebase lo razonable.",
+                "TL": "1",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "ver texto",
+                "RC": "Sí",
+                "Nivel": { "Mago": 7}
+            },
+		    "Desvanecer": {  
+		        "Descripción": "Este hechizo funciona exactamente como teletransportarse, excepto que solo afecta a objetos. El lanzador puede teletransportar hasta 25 kilos o 1 metro cúbico de materia por nivel. Mediante este conjuro no es posible hacer desaparecer criaturas ni efectos mágicos en funcionamiento.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V",
+                "Duración": "Instantáneo",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Mago": 7}
+            },
+		    "Mano apresadora de Fistan": {  
+		        "Descripción": "Crea una enorme mano fantasmal que puede actuar como barrera entre el lanzador y otra criatura u objeto (+10 a la CA del lanzador). El tamaño de la mano puede variar a elección del conjurador desde una talla normal a una enorme mano de 3 metros de largo. No se puede engañar a la mano, que cuenta con una CA de 20 y tantos PG como el máximo del lanzador. Se la puede dañar por métodos mundanos o mágicos, aunque los conjuros que no causen daño directo no le afectan. Sí lo hará un disipar magia o un escudo antimagia. Si la mano se ve forzada a realizar una TS, usará los valores del lanzador. La mano bloquea por completo a cualquier criatura de hasta 1.000 kilos, reduciendo el rango de movimiento a la mitad para las que superen ese peso. También es posible aferrar cosas con esta mano mágica. Para ello la mano puede hacer un ataque de presa por asalto, con un bonificador de FUE de +10. Por último, se puede utilizar la mano apresadora para desplazar cosas de hasta 2.000 kilos de peso hasta a 3 metros de distancia.",
+                "TL": "1",
+                "Alcance": "3 m/nivel",
+                "Componentes": "V",
+                "Duración": "1 asalto/nivel",
+                "TS": "ver texto",
+                "RC": "Sí",
+                "Nivel": { "Ilusionista": 9, "Mago": 7}
+            },
+		    "Puerta de fase": {  
+		        "Descripción": "Este útil conjuro crea un portal etéreo que permitirá al lanzador atravesar muros de piedra, yeso, ladrillo o madera. Esta puerta o pasaje podrá tener una longitud de 3 metros y una anchura de 2 metros. La puerta de fase solo será visible para el lanzador y solo él podrá activarla. El lanzador desaparecerá cuando utilice la puerta para aparecer de nuevo al salir del pasaje. El conjuro es permanente hasta que el lanzador haya hecho uso de la puerta un número de veces igual a 1 por cada dos niveles del conjurador. Si el lanzador lo desea, podrá atravesar la puerta en compañía de otra criatura de su elección (de tamaño humano), pero esta acción contará como dos usos. No se puede ver a través de la puerta, ni trasmite la luz o el sonido. La puerta de fase puede anularse con un conjuro de disipar magia. Si se lanza un conjuro de disipar magia cuando alguien está usándola, esta criatura será despedida violentamente por donde entró.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V",
+                "Duración": "ver texto",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 7}
+            },
+		    "Rayo de muerte": {  
+		        "Descripción": "Este letal conjuro matará instantáneamente a toda criatura que falle la tirada de salvación de CAR. En caso de tener éxito en la misma, la víctima sufrirá 3d6 más 1 punto de daño por nivel del lanzador.",
+                "TL": "1",
+                "Alcance": "20 m.",
+                "Componentes": "V y S",
+                "Duración": "Instantáneo",
+                "TS": "ver texto",
+                "RC": "Sí",
+                "Nivel": { "Druida": 8, "Mago": 7}
             }
         }
 }
