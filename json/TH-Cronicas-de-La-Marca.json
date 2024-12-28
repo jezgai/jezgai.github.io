@@ -3450,6 +3450,236 @@
                 "TS": "ver texto",
                 "RC": "Sí",
                 "Nivel": { "Druida": 8, "Mago": 7}
+            },
+            "Aura sagrada/impía": {  
+		        "Descripción": "Provoca que un aura mágica envuelva a todas las criaturas (hasta 1 criatura por nivel dentro de un radio de 6 metros) aumentando sus defensas ante cualquier ataque, incluso contra los efectos de conjuros. De este modo, las criaturas así protegidas ganan un +4 a sus CA y una resistencia a conjuros de 16 contra conjuros lanzados por criaturas malignas. El aura sagrada también impide que conjuros de posesión o dominación y control mental surtan efecto. Y, por último, cualquier criatura maligna que consiga golpear a los sujetos protegidos será cegada por una poderosa luz, y deberá realizar una tirada de salvación de INT para no quedar cegada durante 1d6 asaltos. El reverso de este conjuro produce los mismos efectos pero contra criaturas del bien.",
+                "TL": "1",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "ver texto",
+                "RC": "Sí",
+                "Nivel": { "Clerigo": 8}
+            },
+		    "Crear muerto viviente mayor": {  
+		        "Descripción": "Este conjuro permitirá al lanzador crear poderosos muertos vivientes, dependiendo de su nivel: momia (nivel 13), espectro (nivel 15), fantasma (nivel 17) o vampiro (nivel 19). El conjurador podrá crear muertos vivientes de poder inferior a los listados anteriormente. Por cada uso de este conjuro, solo se podrá crear una criatura a elección del lanzador. La criatura así creada no estará bajo el control del conjurador, que deberá usar su habilidad de expulsión/control para dominar a la misma o hacer uso de otro medio similar. Este conjuro solo se puede llevar a cabo durante la noche.",
+                "TL": "1 hora",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 8}
+            },
+		    "Discernir/ocultar ubicación": {  
+		        "Descripción": "Este potente hechizo nos permitirá averiguar la ubicación exacta de una criatura u objeto, por lejos que esté, incluso si anduviera en otro plano. Por regla general, el conjuro de discernir ubicación puede ignorar conjuros que bloqueen el escudriñamiento o similares (a discreción del Narrador). Sin embargo, el reverso de este conjuro, ocultar ubicación, además de ofrecer protección contra escudriñamientos, objetos de visión como bolas mágicas, etc., también proporciona protección contra este mismo conjuro en su versión estándar.",
+                "TL": "10 minutos",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "Instantáneo",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 8}
+            },
+		    "Sanar/dañar en masa": {  
+		        "Descripción": "Sana todas las heridas de todas las criaturas en un radio de 6 metros del lanzador, restaurando sus PG totales, eliminando cualquier enfermedad sufrida, así como la sordera y ceguera eventuales. También restaurará puntos de característica perdidos temporalmente. También eliminará venenos del cuerpo de las víctimas, y efectos mentales provocados de manera natural o mágica, como la locura u otros desórdenes mentales. Sin embargo, no restaura niveles ni puntos de característica perdidos de manera permanente.\nPor otra parte, con la versión inversa (dañar en masa), puede causar 10d12 puntos de daño a todos los muertos vivientes dentro del área.",
+                "TL": "1",
+                "Alcance": "6 m",
+                "Componentes": "V y S",
+                "Duración": "Instantáneo",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Clerigo": 8}
+            },
+		    "Símbolo": {  
+		        "Descripción": "Permite inscribir una runa o marca arcana en una superficie. Hay 8 tipos de símbolos o glifos que se activarán cuando alguien las toque, pase sobre ellas, las lea o manipule de algún modo, según los designios del lanzador. La única manera de identificar uno de estos símbolos es leyéndolo, aunque hacerlo provocará que se active. Los símbolos son:\n - Conflicto: al activarse todas las criaturas en un radio de 10 metros comenzarán a discutir entre ellas de forma acalorada durante 5d4 asaltos si fallan una TS de INT. Criaturas con alineamientos contrapuestos tienen un 50% de posibilidades de llegar a pelear durante 2d4 asaltos.\n - Muerte: la criatura más próxima (radio de 10 metros) que no tenga más de 80 PG morirá de forma instantánea si falla una TS de CON.\n - Desesperación: todas las criaturas en un radio de 10 metros deberán realizar una TS de SAB o abandonarán el área de efecto presas de la desesperanza. Durará 3d4 asaltos, intervalo en el cual las criaturas afectadas se mostrarán incapaces de luchar y huirán de cualquier combate.\n - Locura: al activar la runa, todos los seres próximos (10 metros de radio) enloquecerán irremediablemente, como si estuvieran bajo los efectos de un conjuro de confusión permanente. Las víctimas tendrán derecho a una TS de INT. Pueden curarse mediante un conjuro de deseo o sanar.\n - Dolor: cada criatura dentro de un radio de 10 metros sufrirá un fuerte y súbito ataque de dolor que les penalizará con un -4 en todas sus tiradas de característica así como un -2 a su DES, si fallan la correspondiente TS de CON. Permanecerá activo durante 2d10 asaltos.\n - Sueño: todas las criaturas de 8 DG o menos en un radio de 10 metros caerán sumidas en un profundo sueño durante 1d12+4 turnos si fallan una TS de INT. Las criaturas no se despertarán hasta que concluya el tiempo establecido por la tirada, salvo que se les lance un deseo, sanar, deseo limitado o disipar magia.\n - Aturdimiento: odas las criaturas en un radio de 10 metros que no pasen la TS de CON quedarán aturdidas y confusas durante 3d4 asaltos (vagarán sin rumbo y no podrán llevar a cabo ninguna acción). Todo lo que lleven en sus manos en ese momento caerá al suelo.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "ver texto",
+                "RC": "Sí",
+                "Nivel": { "Clerigo": 8, "Ilusionista": 9, "Mago": 8}
+            },
+		    "Terremoto": {  
+		        "Descripción": "Produce un enorme temblor dentro de un área de 20 x 20 metros a partir del punto que designe el lanzador. El efecto dura un asalto y afecta a todo lo que se encuentre en el área: criaturas, objetos, estructuras, vegetación, etc. Este conjuro provoca un daño de 20d6 puntos de base, que puede incrementarse (a discreción del Narrador) por la caída de objetos y cascotes, sobre todo en interiores. Una estructura se derrumbará si pierde el 50% de sus puntos de golpe estructurales.",
+                "TL": "10 min",
+                "Alcance": "120 m",
+                "Componentes": "V y S",
+                "Duración": "1 asalto",
+                "TS": "ver texto",
+                "RC": "No",
+                "Nivel": { "Clerigo": 8, "Druida": 9}
+            },
+            "Comandar plantas": {  
+		        "Descripción": "Permite al lanzador controlar todas las plantas y seres animados de tipo planta en un área de 15 metros de diámetro desde el punto elegido. La fuerza de este conjuro es tal que las plantas inanimadas dentro del área de efecto podrán moverse, en la dirección indicada por el conjurador, y llevar a cabo acciones sencillas, como, por ejemplo, bloquear el paso totalmente en el área afectada a toda criatura ajena al conjurador. En cualquier caso, el grado de comunicación será muy básico.",
+                "TL": "1",
+                "Alcance": "50 m",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Druida": 8}
+            },
+		    "Explosión solar": {  
+		        "Descripción": "Produce una explosión de luz solar de 6 metros de radio dentro del alcance del conjuro, en el punto elegido por el lanzador. Cualquier criatura en dicho punto, quedará cegada y recibirá 3d6 puntos de daño. Aquellos que tengan éxito en una tirada de salvación de DES evitarán la ceguera y recibirán solo la mitad de daño. Las criaturas sensibles a la luz solar reciben el doble de daño. Los muertos vivientes que fallen la tirada de salvación recibirán 1d6 puntos de daño adicionales por nivel del lanzador, y aquellos que son destruidos por la luz solar, como los vampiros, serán destruidos sin derecho a TS.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "Instantáneo",
+                "TS": "ver texto",
+                "RC": "Sí",
+                "Nivel": { "Druida": 8, "Ilusionista": 8}
+            },
+		    "Formas de animal": {  
+		        "Descripción": "Puede transformar a una criatura por nivel en un área de 7 x 7 metros en un animal de su elección. Las criaturas así afectadas continuarán en esta forma hasta que expire el conjuro o el lanzador decida darlo por terminado. Cuando un sujeto se convierta en animal mediante este conjuro, recuperará todos sus puntos de vida. Además, las criaturas transformadas adquirirán todas las habilidades del animal elegido, conservando a la par su conciencia y recuerdos. Todo el equipo transportado por cada individuo transformado se funde en su nueva forma, y será recuperado intacto una vez acabe el conjuro. Las criaturas afectadas retendrán sus puntuaciones de INT, SAB y CAR, y obtendrán las de FUE, DES y CON de la forma animal adoptada.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "1 hora/nivel",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Druida": 8}
+            },
+		    "Repeler piedra o metal": {  
+		        "Descripción": "Puede emplear este conjuro para invocar una ola de potente energía mágica frente a él en un corredor de 50 metros de largo por 35 de ancho y 3 metros de alto, que apartará todo objeto de roca o metal del camino del lanzador. Objetos de piedra o metal de más de 10 centímetros de ancho que estén firmemente fijados en el suelo o que pesen más de 250 kilogramos no se moverán, pero sí lo harán otros objetos que estén fabricados en roca o metal y anden sueltos, como armas (incluyendo máquinas de asedio), armaduras, escudos, barriles e incluso objetos mágicos con partes fabricadas en piedra o metal. Los objetos serán expulsados en dirección contraria al lanzador a una velocidad de 12 metros por asalto. Las criaturas que porten dichos objetos y no puedan soltarlos serán apartadas junto con ellos.",
+                "TL": "1",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Druida": 8}
+            },
+		    "Torbellino": {  
+		        "Descripción": "El lanzador podrá crear un torbellino de viento huracanado de 3 metros de ancho en su base, 10 metros de ancho en la parte superior y 10 metros de altura. Este torbellino podrá moverse a voluntad del lanzador a una velocidad de 20 metros por asalto. Cualquier criatura que no supere los 12 metros de altura y entre en contacto con dicho torbellino deberá realizar una tirada de salvación de DES para no sufrir 3d6 puntos de daño. Criaturas de tamaño medio o pequeño tendrán que realizar una segunda TS de DES para no ser arrastrados y elevados en el aire por la fuerza del torbellino, sufriendo 1d8 puntos de daño cada asalto posterior sin derecho a TS",
+                "TL": "1",
+                "Alcance": "120 m",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "ver texto",
+                "RC": "Sí",
+                "Nivel": { "Druida": 8}
+            },
+		    "Atrapar el alma": {  
+		        "Descripción": "Provocará que la esencia vital de una criatura determinada a no más de 15 metros del lanzador, incluyendo su cuerpo material, quede atrapada en el interior de una gema. Esta piedra preciosa contenedora retendrá el alma indefinidamente a no ser que la gema se rompa, en cuyo caso, el alma quedará libre y el cuerpo físico volverá a su estado natural. Para lanzar este conjuro es preciso disponer de una gema valorada en, al menos, 1.000 monedas de oro por cada dado de golpe que posea la criatura que se quiera atrapar. La criatura tendrá derecho a una TS de CAR para evitar el efecto de este conjuro, en cuyo caso, la gema se resquebrajará para romperse en muchos trozos pequeños. Una criatura atrapada no podrá ser liberada de ninguna manera que no sea por deseo expreso del lanzador o rompiendo la gema, ni siquiera un conjuro de deseo puede realizar tal proeza.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "CAR",
+                "RC": "Sí",
+                "Nivel": { "Clerigo": 9, "Ilusionista": 8, "Mago": 8}
+            },
+		    "Distorsionar la realidad": {  
+		        "Descripción": "Similar a deseo limitado, y como tal, el lanzador debe tener cuidado y ser muy explícito sobre lo que quiere conseguir. Como guía, se pueden duplicar los efectos de cualquier hechizo de ilusionista de nivel 7 o inferior, de mago de nivel 5 o inferior o cualquier hechizo de clérigo o druida de nivel 4 o inferior. También puede proporcionar otros resultados en línea con el poder de los conjuros citados. Como siempre, la última palabra la tendrá el Narrador. Si el conjuro que se desea duplicar permite normalmente tiradas de salvación o se ve afectado por la resistencia a conjuros, se debería aplicar de igual modo en este caso, excepto porque cualquier TS siempre será de INT.",
+                "TL": "1",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "10 minutos/nivel",
+                "TS": "ver texto",
+                "RC": "Sí",
+                "Nivel": { "Ilusionista": 8}
+            },
+		    "Encubrir verdadero": {  
+		        "Descripción": "El lanzador cubre un área de 8 metros cúbicos por nivel con un velo mágico, protegiendo el interior de cualquier intento de observación tanto mundana como mágica. En el momento del lanzamiento, el conjurador debe definir una imagen que será la percibida por cualquier intento de espionaje. La observación mágica no puede darse cuenta del engaño. En el caso de la observación directa real de la escena, si el Narrador lo considera oportuno, se podría permitir que se detectase la ilusión mediante una TS de INT.",
+                "TL": "10 min",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "1 día",
+                "TS": "ver texto",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 8}
+            },
+		    "Hechizar a las masas": {  
+		        "Descripción": "Este potente conjuro funciona como hechizar persona. Sin embargo, el total de DG/niveles que se verán afectados se eleva hasta el doble del nivel del lanzador. Todas las criaturas afectadas realizarán sus tiradas de salvación de CAR con un penalizador de -2. Si hay más criaturas dentro del alcance de las que pueden ser hechizadas, el lanzador elige una a una el orden en el que se ven afectadas, hasta llegar al límite de DG/niveles permitido.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "1 día/nivel",
+                "TS": "CAR",
+                "RC": "Sí",
+                "Nivel": { "Ilusionista": 8, "Mago": 8}
+            },
+		    "Muro prismático": {  
+		        "Descripción": "Este conjuro actúa de manera similar al conjuro de esfera prismática, salvo que en lugar de una esfera toma la forma de una pared. Las dimensiones del muro serán como máximo de 1,5 metros de anchura por nivel del lanzador, y medio metro de altura por nivel del lanzador. No se puede lanzar este conjuro en el área que ocupe una criatura.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "ver texto",
+                "RC": "ver texto",
+                "Nivel": { "Druida": 9, "Ilusionista": 8}
+            },
+		    "Nube incendiaria": {  
+		        "Descripción": "El lanzador podrá crear una nube de la que brotarán llamaradas. Este denso humo negruzco bloqueará la visión por completo dentro o a través del área afectada, que será de 15 x 15 metros y 5 metros de alto. Toda criatura dentro de la nube recibirá un daño equivalente a 1d6 por nivel del lanzador durante cada asalto que permanezca en el área de efecto del conjuro. Las víctimas afectadas tienen derecho a una TS de DES para reducir el daño a la mitad.",
+                "TL": "1",
+                "Alcance": "50 m",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/2 niveles",
+                "TS": "DES",
+                "RC": "Sí",
+                "Nivel": { "Ilusionista": 8, "Mago": 8}
+            },
+		    "Palabra poderosa cegar": {  
+		        "Descripción": "Deja a ciegas a todas las criaturas en un área de 10 x 10 metros hasta un total combinado de 100 puntos de golpe. Las criaturas se ven afectadas en orden ascendente de puntos de golpe hasta que no queden criaturas o se sobrepase el límite. Las criaturas de más de 100 PG son inmunes. La duración de la ceguera depende de los puntos de golpe de la criatura afectada: entre 1 y 50 puntos la ceguera dura 1d4 horas, mientras que si tiene entre 51 y 100 queda cegada durante 1d4 + 1 asaltos.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V",
+                "Duración": "ver texto",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Ilusionista": 8, "Mago": 8}
+            },
+		    "Círculo de teleportación": {  
+		        "Descripción": "Mediante este hechizo, el conjurador podrá crear un círculo de unos tres metros de diámetro sobre una superficie sólida que teleportará a cualquiera que penetre en el mismo a una ubicación previamente designada. Una vez elegida la misma, no será posible cambiarla. El círculo mágico es prácticamente indistinguible de la superficie sobre la que descansa.",
+                "TL": "10 min",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "1 turno/nivel",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Mago": 8}
+            },
+		    "Clonar": {  
+		        "Descripción": "Crea un duplicado de una criatura determinada. Para ello deberá poseer un pedazo de carne de la criatura a clonar (no serán válidos trozos de uña, cabellos, escamas o similares). La muestra de carne deberá estar en un estado relativamente fresco. Una vez el conjuro sea lanzado, el duplicado se desarrollará lentamente por espacio de 2d4 meses en un lugar adecuado, tranquilo y fresco. Cuando el clon alcance la madurez y despierte, si la criatura duplicada está viva, clon y criatura original establecerán un lazo psíquico durante 1 mes. Durante ese tiempo, sentirán un irrefrenable impulso que empujará a ambos a matarse. Si resultara imposible, hay un 95 % de posibilidades de que, bien el clon o la criatura clonada, pierdan la cordura. Si esto ocurre finalmente, en un 25% de los casos enloquecerá la criatura original, en un 70% el clon y en un 5% ambos. Tras esta semana, si ninguno de los dos ha acabado con el otro, el lazo psíquico se extinguirá, así como la pulsión asesina. Además de duplicar el físico e intelecto de la criatura, el clon posee todos los conocimientos, experiencias, recuerdos y vivencias de la criatura origen. Este conjuro no clonará ninguna de las posesiones de la criatura base.",
+                "TL": "10 min",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Ilusionista": 9, "Mago": 8}
+            },
+		    "Danza irresistible de Nébula": {  
+		        "Descripción": "La víctima de este peculiar conjuro sentirá un irrefrenable deseo de bailar alocadamente, no pudiendo llevar a cabo ninguna otra acción mientras duren los efectos. Mientras la criatura esté hechizada sufrirá un penalizador de -4 a su CA (tampoco será efectivo un escudo), no podrá atacar y fallará automáticamente todas las tiradas de salvación ligadas a las características físicas (FUE, DES y CON).",
+                "TL": "1",
+                "Alcance": "30 m",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Mago": 8}
+            },
+		    "Mente en blanco": {  
+		        "Descripción": "El lanzador, o la criatura elegida, será inmune a cualquier efecto que detecte, lea, influya o altere los pensamientos y emociones. También estará protegido frente a conjuros de adivinación o detección de alineamiento, incluyendo conjuros tan potentes como deseo limitado o deseo. La criatura bajo los efectos del conjuro será de igual modo indetectable para los hechizos de escudriñamiento y otros conjuros del estilo.",
+                "TL": "1",
+                "Alcance": "10 m",
+                "Componentes": "V y S",
+                "Duración": "2 asaltos/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 9, "Ilusionista": 9, "Mago": 8}
+            },
+		    "Polimorfar objeto": {  
+		        "Descripción": "Este conjuro es una versión mejorada de polimorfar, ya que no solo afecta a criaturas, también puede alterar o transformar el aspecto de un objeto, o incluso convertir una criatura en un objeto. Si la criatura elegida se resiste a la transformación, tendrá derecho a una TS de SAB para evitar el cambio. El conjuro es permanente cuando se transforma un objeto en otro objeto. En otro caso, la transformación se revierte pasadas 12 horas.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "SAB",
+                "RC": "Sí",
+                "Nivel": { "Ilusionista": 9, "Mago": 8}
             }
         }
 }
