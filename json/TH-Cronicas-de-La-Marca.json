@@ -2909,7 +2909,7 @@
                 "Duración": "Permanente",
                 "TS": "no",
                 "RC": "sí",
-                "Nivel": { "Clerigo": 6, "Druida": 9}
+                "Nivel": { "Clerigo": 6, "Druida": 9, "Ilusionista": 9}
             },
 		    "Transitar por el aire": {  
 		        "Descripción": "Este conjuro permite al lanzador y a una criatura adicional por cada ocho niveles en la clase que otorga este poder, transformar su cuerpo en gas y formar una nube. Una vez en ese estado, un viento mágico impulsa la nube con un rango de movimiento de 20 metros/asalto como máximo. La nube se puede mover en la dirección que desee el lanzador. Mientras está en forma gaseosa, no puede realizar ninguna acción que no sea desplazarse, aunque verá perfectamente lo que tiene alrededor.",
@@ -3619,7 +3619,7 @@
                 "Duración": "1 asalto/2 niveles",
                 "TS": "DES",
                 "RC": "Sí",
-                "Nivel": { "Ilusionista": 8, "Mago": 8}
+                "Nivel": { "Ilusionista": 8, "Mago": 8 }
             },
 		    "Palabra poderosa cegar": {  
 		        "Descripción": "Deja a ciegas a todas las criaturas en un área de 10 x 10 metros hasta un total combinado de 100 puntos de golpe. Las criaturas se ven afectadas en orden ascendente de puntos de golpe hasta que no queden criaturas o se sobrepase el límite. Las criaturas de más de 100 PG son inmunes. La duración de la ceguera depende de los puntos de golpe de la criatura afectada: entre 1 y 50 puntos la ceguera dura 1d4 horas, mientras que si tiene entre 51 y 100 queda cegada durante 1d4 + 1 asaltos.",
@@ -3680,6 +3680,186 @@
                 "TS": "SAB",
                 "RC": "Sí",
                 "Nivel": { "Ilusionista": 9, "Mago": 8}
+            },
+		    "Atar alma": {  
+		        "Descripción": "Extrae el alma de una criatura recién muerta y la encierra en una gema (de al menos 5.000 mo de valor). La víctima debe haber fallecido no hace más de 1 asalto por nivel de lanzador. Una vez que el alma está contenida en la gema, no se puede devolver a la vida mediante clon, revivir a los muertos, resurrección, resurrección verdadera ni incluso mediante un milagro o uso de deseo. Solo destruir la gema puede liberar el alma.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 9}
+            },
+		    "Drenar energía": {  
+		        "Descripción": "Drenar energía es uno de los hechizos más odiados, ya que es capaz de drenar 2d4 niveles de experiencia del desafortunado blanco. Eso sí, la víctima tiene derecho a una tirada de salvación de CON para evitar los efectos. Si este hechizo se lanza sobre un muerto viviente, este gana 2d4x5 PG temporales durante 1 hora.",
+                "TL": "1",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "CON",
+                "RC": "Sí",
+                "Nivel": { "Clerigo": 9}
+            },
+		    "Portal interdimensional": {  
+		        "Descripción": "Crea una puerta interdimensional entre el plano de existencia del lanzador y el de una criatura específica de gran poder (dios, demonio, ...), que permite a esta última cruzar la puerta para llegar al plano del lanzador. Al lanzar el conjuro debe mencionar el nombre de la criatura que quiere que le ayude y que puede cruzar la puerta. Una vez que la criatura aparece, el mago solicita ayuda a la criatura, la cual, en función de su alineamiento y del cometido que se le solicita, puede acceder a conceder la ayuda al conjurador y pedir un pago a cambio, o decidir que el asunto no tiene la importancia como para que lo hayan molestado y marcharse, o bien colegir que lo que le piden va contra sus convicciones y atacar al propio lanzador, en cualquier caso será el Narrador quien decida la actitud de la criatura llamada. También es posible usar este conjuro para viajar entre planos.",
+                "TL": "2",
+                "Alcance": "15 m",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 9, "Mago": 9}
+            },
+		    "Proyección astral": {  
+		        "Descripción": "Puede crear una proyección astral de su yo, incluyendo todo su equipo, que le permitirá viajar al plano astral y a otros planos conectados por tiempo indefinido. Adicionalmente, el conjurador podrá viajar junto a las proyecciones astrales de otroscompañeros, sumando una criatura adicional por cada dos niveles que posea. Los cuerpos del lanzador y sus posibles acompañantes quedarán en un estado de estasis temporal o animación suspendida. Mientras viajen por el plano astral o cualquier otro plano, permanecerán conectados a su cuerpo físico por un cordón plateado. Si el cordón se corta, el viajero morirá tanto en su versión astral como física, si bien hay muy pocas cosas capaces de romper dicho cordón...",
+                "TL": "30 min",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 9, "Druida": 9, "Ilusionista": 9, "Mago": 9}
+            },
+		    "Resurrección verdadera": {  
+		        "Descripción": "Puede retornar a la vida a cualquier criatura, incluso aquellos que murieron desintegrados, por un conjuro de muerte o han sido reanimados como muertos vivientes. El individuo volverá completamente sanado, con todos sus miembros restaurados, así como libre de enfermedades y venenos. Tampoco perderá niveles ni puntos de CON debidos a la resurrección. La única limitación para este conjuro son las criaturas muertas de forma natural por la edad y aquellas que pertenecen a otros planos o son constructos (como un gólem).",
+                "TL": "3 horas",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Clerigo": 9}
+            },
+		    "Cambiar de forma": {  
+		        "Descripción": "Permite al lanzador cambiar su forma por la de cualquier cosa viva que conozca una vez por asalto, excepto por un dios o su avatar. Una vez transformado, el lanzador asume todas las características de la criatura en la que se transforma, excepto la resistencia a la magia y las habilidades mágicas innatas (la capacidad de petrificar de un basilisco por ejemplo). El lanzador retiene la inteligencia de su forma anterior, pudiendo lanzar sus conjuros de forma normal, siempre que la criatura tenga la capacidad de hablar y brazos para realizar los movimientos necesarios que desencadenan un conjuro. El lanzador puede cambiar tantas veces como desee de forma mientras dure el hechizo, aunque solo una vez en un mismo asalto. Cualquier criatura en la que se transforme el conjurador mantendrá los PG que tuviera el lanzador en el momento del cambio. No es necesaria ningún tipo de tirada, de característica o de salvación, para realizar las transformaciones, pues se producen de manera automática. Este conjuro no se puede lanzar sobre ninguna criatura, únicamente tiene efecto sobre el propio lanzador.",
+                "TL": "1",
+                "Alcance": "Ver texto",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Druida": 9, "Mago": 9}
+            },
+		    "Enjambre elemental": {  
+		        "Descripción": "Puede convocar a un pequeño ejército de elementales de un tipo determinado (fuego, aire, agua, tierra) que acudirá en su ayuda. Una vez realizado el conjuro, habrán sido convocados 2d4 elementales grandes (8 DG). 10 minutos después aparecerán 1d4 elementales enormes (12 DG), y 10 minutos después 1 elemental mayor (16 DG). Cada elemental tiene al menos 5 puntos de golpe por cada DG. Los elementales obedecerán al lanzador y jamás le atacarán, incluso si otra criatura toma el control de los mismos.",
+                "TL": "10 min",
+                "Alcance": "50 m",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Druida": 9}
+            },
+		    "Tormenta divina": {  
+		        "Descripción": "Permite crear una tormenta mágica que afecta un área de 100 metros de radio, convocada a una distancia máxima de 200 metros desde el lanzador. Todas las criaturas dentro del área sufrirán los siguientes efectos:\n- Asalto 1: llueve ácido, causando 1d6 de daño sin TS.\n- Asalto 2: Truena y las víctimas deben superar una TS de CON para no quedar sordas 1d4x10 minutos\n- Asalto 3: podrá dirigir 6 rayos, cada uno golpeará a una criatura u objeto de su elección provocando 10d6 de daño. Superar TS de DES lo reduce a la mitad.\n- Asalto 4: tremenda granizada, causando 5d6 de daño contundente, sin TS.\nAsalto 5 al 10: llueve de manera torrencial con viento muy fuerte racheado, dificultando la visibilidad enormemente, reduciendo el movimiento de las criaturas afectadas a la mitad, así como la concentración de las mismas, que tendrán un 50% de posibilidades de perder sus conjuros durante el lanzamiento.",
+                "TL": "1",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "10 asaltos",
+                "TS": "ver texto",
+                "RC": "ver texto",
+                "Nivel": { "Druida": 9}
+            },
+		    "Asesino fantasma de masas": {  
+		        "Descripción": "Afecta a todas las criaturas designadas por el conjurador en un área de 8 por 8 metros. El lanzador proyecta en la mente de los blancos la imagen de la criatura más horrible que la víctima se pueda imaginar. Solo el lanzador y cada uno de los blancos pueden ver a la criatura invocada, que simulará atacar a la víctima. Si el blanco falla una TS de INT, morirá instantáneamente a causa del miedo y el daño psíquico sufridos. Una tirada de salvación exitosa resulta en 8d6 puntos de daño y quedar aturdido durante un asalto (el blanco no podrá llevar a cabo ninguna acción). Este conjuro no puede atravesar ciertas protecciones mágicas, como una esfera invulnerable o un área de antimagia.",
+                "TL": "1",
+                "Alcance": "50 m",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "ver texto",
+                "RC": "Sí",
+                "Nivel": { "Ilusionista": 9}
+            },
+		    "Esfera prismática": {  
+		        "Descripción": "Forma un enorme globo opaco de resplandeciente luz multicolor del tamaño necesario para rodear al lanzador, protegiéndolo ante cualquier tipo de ataque, aunque podrá salir y entrar a voluntad. Dentro de la esfera no podrá lanzar conjuros cuyo efecto precise de atravesar el orbe. Cualquier criatura que intente traspasar la esfera sufrirá los efectos de cada color en orden, salvo que use los conjuros adecuados para poder atravesar las diferentes capas. Tabla a continuación (entre paréntesis el conjuro que lo niega).\n-1º. Rojo. Detiene ataques de armas convencionales. Causa 10 de daño por fuego .(Pasadizo arcano)\n2º. Naranja. Detiene ataques de armas mágicas. Causa 20 de daño. (Volar)\n3º. Amarillo. Elimina los efectos del veneno, gas y petrificación. Causa 40 de daño. (Desintegrar)\n4º. Verde. Detiene ataques de armas de aliento. Muerte si no supera TS de CON. (Pasadizo arcano)\n5º. Azul. Impide conjuros de adivinación y ataques mentales. Petrificación si no supera TS de SAB. (Proyectil mágico)\n6º. Añil. Detiene todos los conjuros. Locura si no supera TS de SAB. (Luz permanente)\n7º. Violeta. Campo de energía que envía a la criatura a otro plano si falla TS de INT. (Disipar magia)",
+                "TL": "1",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "ver texto",
+                "RC": "ver texto",
+                "Nivel": { "Ilusionista": 9, "Mago": 9}
+            },
+		    "Palabra poderosa matar": {  
+		        "Descripción": "Con una sola palabra, el conjurador es capaz de acabar con la vida de un solo oponente o de un grupo de criaturas a no más de 30 metros, sin importar si las víctimas son capaces de escuchar la palabra pronunciada. El lanzador debe decidir si seleccionar como objetivo a una criatura individual o a un grupo antes de lanzar el hechizo. Si apunta a una sola criatura, esta muere si tiene 70 puntos de golpe o menos. Si se lanza contra un grupo, matará a todas las criaturas en un radio de 10 metros del punto designado por el lanzador, siempre que tengan 15 puntos de golpe o menos, y hasta sumar un total acumulado de 140 puntos de golpe como máximo. El hechizo afecta a las criaturas en orden ascendente de puntos de golpe.",
+                "TL": "1",
+                "Alcance": "30 m",
+                "Componentes": "V",
+                "Duración": "Instantáneo",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Ilusionista": 9, "Mago": 9}
+            },
+		    "Trance onírico": {  
+		        "Descripción": "Puede infundir un trance similar al coma en la criatura tocada. La víctima no puede realizar ninguna TS. Si el ataque de toque tiene éxito, el cuerpo de la víctima cae en un estado de coma mientras su mente comienza a soñar, aunque la criatura creerá en todo momento que sigue despierta y en el mundo real.\nSi deja de tocar a la víctima, permanece en coma hasta que termine el hechizo o hasta que sea despertada con éxito. La víctima solo puede despertar si se le causa daño, en cuyo caso tiene derecho a hacer una TS de INT para salir de su ensoñación.\nSi continúa tocando a la víctima, no puede despertar. Además, el conjurador puede asaltar la mente de la víctima introduciéndose en sus sueños. Podrá interactuar con la víctima para obtener información o atacarla lanzándole hechizos como lo haría en el mundo real. Los ataques de la víctima sobre el lanzador no tendrán efecto, aunque a discreción del DJ, podría ser posible expulsar al lanzador del sueño. Si los PG de la víctima se reducen a 0, morirá. Dentro del sueño, la víctima tiene derecho a realizar cualquier TS que los conjuros lanzados contra ella permitirían en el mundo real. Aunque, para resistirse a aquellos conjuros que se usen para obtener información, debe aplicar una penalización de -6.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "1 asalto/nivel",
+                "TS": "ver texto",
+                "RC": "Sí",
+                "Nivel": { "Ilusionista": 9}
+            },
+		    "Aprisionar/liberar": {  
+		        "Descripción": "Cuando el lanzador use este conjuro, debe tener éxito en un ataque sin armas y tocar a la criatura elegida. Esta quedará inmediatamente paralizada, en un estado de animación suspendida, en el interior de una esfera ubicada en otra dimensión. La víctima no sufrirá los efectos del paso del tiempo, y permanecerá encerrada hasta que se lance un conjuro de liberar (reverso de aprisionar) en el mismo lugar donde tuvo lugar el aprisionamiento. Ni siquiera un conjuro de Deseo puede liberar a una criatura así confinada, aunque sí revelará su condición. A discreción del Narrador, es posible que el lanzador necesite conocer el nombre de la criatura que se quiere aprisionar para que el conjuro tenga efecto.",
+                "TL": "1",
+                "Alcance": "Toque",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 9}
+            },
+		    "Deseo": {  
+		        "Descripción": "Con un simple gesto y una escueta frase, será capaz de alterar la realidad. Puede proporcionar los efectos de cualquier conjuro de nivel 9 o inferior, más otros efectos como los descritos para deseo limitado (siempre a discreción del DJ). Sin embargo, incluso este hechizo tiene límites. El lanzador puede desear cualquier cosa concebible, pero el deseo debe expresarse con precisión. Cuanto más largo y complicado es el deseo, más peligroso se vuelve el hechizo. Un deseo mal expresado puede pervertir la intención inicial del lanzador y producir un resultado literal pero indeseable. Un deseo nunca restaurará un nivel o la pérdida de constitución por haber sido resucitado. El pago por el uso de este poderoso conjuro es envejecer debido a los efectos debilitantes del hechizo. El lanzador debe hacer una TS de CON (con un GD de 9). El éxito significa que el lanzador solo envejece 1 año mientras que fallar significa envejecer 3.",
+                "TL": "1",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "ver texto",
+                "TS": "No",
+                "RC": "No",
+                "Nivel": { "Mago": 9}
+            },
+		    "Detener el tiempo": {  
+		        "Descripción": "Este potente hechizo es capaz de alterar el normal devenir temporal, deteniendo su avance momentáneamente excepto para el lanzador, que podrá actuar libremente durante los asaltos que dure el conjuro.",
+                "TL": "1",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "1d4+1",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Mago": 9}
+            },
+		    "Disipación mayor de Nébula": {  
+		        "Descripción": "Una vez lanzado este conjuro, todos los sortilegios, efectos y objetos mágicos en un radio de 20 metros, excepto los del lanzador y las criaturas elegidas por él, son disipados automáticamente. Es decir, cualquier hechizo activo en ese momento termina y los objetos mágicos pierden sus propiedades (que se recuperan si salen del rango de alcance o cuanto termina el hechizo). Únicamente se libran de los efectos de este conjuro los artefactos mágicos más poderosos, aunque a discreción del DJ, podrían tener que superar una TS, tal y como se describe en el epígrafe sobre TS de objetos del capítulo 6",
+                "TL": "1",
+                "Alcance": "ver texto",
+                "Componentes": "V y S",
+                "Duración": "10 min/nivel",
+                "TS": "ver texto",
+                "RC": "Sí",
+                "Nivel": { "Mago": 9}
+            },
+		    "Estasis temporal": {  
+		        "Descripción": "Para ejecutar este hechizo, el lanzador debe tener éxito en una tirada de ataque si el blanco se resiste. La víctima caerá en un estado de suspensión animada. Durante este letargo inducido, el tiempo dejará de fluir para la criatura dormida, no envejeciendo y deteniendo los efectos de cualquier enfermedad, veneno o herida. Todas sus funciones vitales cesarán. Este estado de suspensión animada perdurará indefinidamente hasta que la magia sea interrumpida con un conjuro de disipar magia o el lanzador lo de por terminado. No se permite TS.",
+                "TL": "1",
+                "Alcance": "3 m",
+                "Componentes": "V y S",
+                "Duración": "Permanente",
+                "TS": "No",
+                "RC": "Sí",
+                "Nivel": { "Mago": 9}
+            },
+		    "Lluvia de meteoritos": {  
+		        "Descripción": "Crea 4 esferas pétreas ígneas de 1 metro de diámetro que surgirán de la mano extendida del mago para dirigirse rápidamente hacia el objetivo fijado, dejando tras de sí una estela flamígera y estallando en el punto elegido por el lanzador (siempre dentro del alcance del conjuro).\nLos meteoritos pueden golpear objetivos diferentes o concentrarse en un solo punto. Las criaturas en la trayectoria de los meteoritos sufren 9d6 puntos de daño sin tirada de salvación. Las criaturas afectadas por la explosión final (5 metros de radio), sufren 1d4 x 10 puntos de daño por fuego, que pueden reducirse a la mitad con una TS de DES exitosa (cada meteorito debe salvarse por separado).",
+                "TL": "1",
+                "Alcance": "150 m",
+                "Componentes": "V y S",
+                "Duración": "Instantáneo",
+                "TS": "ver texto",
+                "RC": "Sí",
+                "Nivel": { "Mago": 9}
             }
         }
 }
