@@ -29,7 +29,8 @@
 			  var fields = pj.rellenaPDF(nivelcero);
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  saveAs(blob, 'PJ.pdf'); 
+			  //var nombre = fields[ "Nombre" ][0] + " - " + fields[ "Nombre_1" ][0] + ".pdf";
+			  saveAs(blob,  'PJ.pdf'); 
 			}
 		};
 
@@ -52,7 +53,7 @@
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
 		
 		document.getElementById("botonpdf").style.visibility="visible";
-		document.getElementById("botonjson").style.visibility="visible"; //"hidden";
+		//document.getElementById("botonjson").style.visibility="visible"; //"hidden";
 	}
 		
 	function calcula() {
