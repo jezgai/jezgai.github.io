@@ -29,8 +29,8 @@
 			  var fields = pj.rellenaPDF(nivelcero);
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  //var nombre = fields[ "Nombre" ][0] + " - " + fields[ "Nombre_1" ][0] + ".pdf";
-			  saveAs(blob,  'PJ.pdf'); 
+			  var nombre = fields[ "Nombre" ][0] + " - " + fields[ "Nombre_1" ][0] + ".pdf";
+			  saveAs(blob, nombre); // 'PJ.pdf'); 
 			}
 		};
 
