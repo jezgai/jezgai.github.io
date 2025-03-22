@@ -42,20 +42,49 @@ Array.prototype.clone = function() {
 
 class Nombres {
     constructor() {
-        this.nombresF = [ "Agune", "Beatriz", "Breagan", "Bronwyn", "Cannora",
-                            "Drelil", "Elgile", "Esme", "Griya", "Henaine",
-                            "Lirann", "Lirathil", "Lisabeth", "Moralil", "Morgwen",
-                            "Sybil", "Theune", "Wenain", "Ygwal", "Yslen" ];
-        this.nombresM = [ "Arwel", "Bevan", "Boroth", "Borrid", "Breagle",
-                            "Breglor", "Canhoreal", "Emrys", "Ethex", "Gringle",
-                            "Grinwit", "Gruwid", "Gruwth", "Gwestin", "Mannog",
-                            "Melnax", "Orthax", "Triunein", "Wenlan", "Yirmeor" ];
-        this.apellidos = [ "Abernathy", "Addercap", "Burl", "Candlewick", "Cormick",
-                            "Crumwaller", "Dunswallow", "Getri", "Glass", "Harkness",
-                            "Harper", "Loomer", "Malksmilk", "Smythe", "Sunderman",
-                            "Swinney", "Thatcher", "Tolmen", "Weaver", "Wolder" ];
+                            
+		// https://iotools.cloud/es/tool/name-generator/
+		this.nombresRaza = { "Elfo": {  
+										"M": [ "Curufinwe", "Aegnor", "Legolas", "Lómion", "Lindirion", "Gael", "Aeron", "Vardamir", "Thranduil", "Eölon", "Angrod", "Duilin", "Ancalimon", "Arminas", "Faelar", "Thalion", "Lindir", "Vaelorian", "Glorfindel", "Celeborn", "Hirgon", "Valthor", "Turin", "Anarion", "Dagorhir", "Orodreth", "Voragorn", "Laelon", "Poldon", "Ragnor", "Morfindel", "Elthoron", "Lúthrandir", "Boromir", "Laeron" ], 
+										"F": [ "Elentari", "Tharanel", "Galadriel", "Noldorin", "Galadwen", "Melian", "Silanya", "Adunaphel", "Nolwen", "Morwen", "Aerithil", "Nirnaeth", "Aethra", "Hithriel", "Narmiriel", "Arwen", "Aerlinn", "Laerwen", "Aranel", "Lyssora", "Anya", "Aurelin", "Lyra", "Finduilas", "Vanya", "Nimlot", "Nimrodel", "Amarie", "Eleana", "Eirien", "Elenwe", "Faniel", "Aelyndil", "Lómeanor", "Faervel" ], 
+										"Apellidos": [ ] 
+									  },
+							 "Enano": {  
+										"M": [ "Steinn", "Eorik", "Belgar", "Valgim", "Salin", "Yalgim", "Ulgim", "Ingmar", "Ulin", "Oin", "Farin", "Jalin", "Kili", "Gunnar", "Paldor", "Falin", "Palin", "Brokkr", "Faldor", "Hafgrim", "Korik", "Haldin", "Halvar", "Ralin", "Dagnir", "Walgim", "Korin", "Calgrim", "Raldor", "Eldgrim", "Orin", "Walgim", "Xalgim", "Norik", "Zorik" ], 
+										"F": [ "Hilda", "Kelda", "Tora", "Bodil", "Dis", "Dagnal", "Yngvild", "Sif", "Freyja", "Edda", "Wanda", "Elin", "Jorunn", "Gunnvor", "Eira", "Kara", "Mina", "Ylva", "Olga", "Sigrid", "Thora", "Ragna", "Alvilda", "Vigdis", "Zofia", "Hilda", "Zara", "Kari", "Marta", "Ingrid", "Yrsa", "Tora", "Eira", "Ida", "Cara" ], 
+										"Apellidos": [ "Stoneworker", "Ironshaper", "Mightyprotector", "Orehewer", "Stoneguard", "Rockminer", "Stonewalker", "Famouswarrior", "Stonetamer", "Healguard", "Goldkeeper", "Earthworker", "Swiftarrow", "Ironclad", "Ironkeeper", "Earthcaller", "Rockminer", "Tirelessworker", "Mountainprotector", "Seaguard", "Earthguard", "Hiddenminer", "Rockguardian", "Deepdelver", "Skilltracker", "Deepworker", "Gemstone", "Ironbeard", "Orecarver", "Ironbeard", "Deepdelver", "Rockmender", "Earthwarden", "Rockshaper", "Deepexplorer" ] 
+									  },
+							 "Gnomo": {  
+										"M": [ "Boffin", "Topper", "Clank", "Jingle", "Rumble", "Whistle", "Pip", "Fizzwick", "Barnaby", "Zook", "Clank", "Brimble", "Boffin", "Rubble", "Jingle", "Fizzwick", "Niggle", "Tinker", "Topper", "Cogsworth", "Toadstool", "Whimsy", "Coggle", "Glimmer", "Sprig", "Nibbles", "Fizzwick", "Bumble", "Digger", "Jumbles" ], 
+										"F": [ "Zinnia", "Iris", "Beryl", "Azalea", "Rosie", "Petunia", "Lily", "Violeta", "Daisy", "Poppy", "Coralia", "Petunia", "Brisa", "Ámbar", "Lila", "Flora", "Esmeralda", "Rosita", "Azulina", "Violeta", "Magnolia", "Burbuja", "Petunia", "Rosita", "Flora", "Camelia", "Violeta", "Azucena", "Hortensia", "Dalia" ], 
+										"Apellidos": [ "Estornudo", "Despistado", "Martillazo", "Cogsworth", "Hierbamora", "Brotabotas", "Chispeante", "Engranaje", "Cascabonzuelos", "Tuercaloca", "Remache", "Despierto", "Hierro", "Campanas", "Chispa", "Brotabrisa", "Silbato", "Tropezón", "Engranes", "Vástago", "Remache", "Tuerca", "Filo", "Tejedor", "Rumor", "Topo", "Muelle", "Tintineo", "Vapor", "Zumbido" ] 
+									  },
+							 "Humano": {  
+										"M": [ "Arwel", "Bevan", "Boroth", "Borrid", "Breagle", "Breglor", "Canhoreal", "Emrys", "Ethex", "Gringle", "Grinwit", "Gruwid", "Gruwth", "Gwestin", "Mannog", "Melnax", "Orthax", "Triunein", "Wenlan", "Yirmeor", "Faelan", "Hadrian", "Fastrid", "Bartholomew", "Renaldo", "Silas", "Torin", "Jafar", "Harkon", "Eldrin", "Caorlán", "Torvino", "Vladok", "Grimdúro", "Borgunn", "Kaelvar", "Ragnarok", "Albrekt", "Ervindo", "Stanimir" ], 
+										"F": [ "Agune", "Beatriz", "Breagan", "Bronwyn", "Cannora", "Drelil", "Elgile", "Esme", "Griya", "Henaine", "Lirann", "Lirathil", "Lisabeth", "Moralil", "Morgwen", "Sybil", "Theune", "Wenain", "Ygwal", "Yslen", "Esmeralda", "Lysandra", "Linnea", "Zara", "Sasha", "Mara", "Solveig", "Imara", "Alessia", "Brynn", "Zelia", "Solveig", "Mara", "Esme", "Anya", "Briallen", "Lyra", "Katrina", "Rosalind", "Elara" ], 
+										"Apellidos": [ "Abernathy", "Addercap", "Burl", "Candlewick", "Cormick", "Crumwaller", "Dunswallow", "Getri", "Glass", "Harkness", "Harper", "Loomer", "Malksmilk", "Smythe", "Sunderman", "Swinney", "Thatcher", "Tolmen", "Weaver", "Wolder", "Moonwhisper", "Rivers", "Ulfsson", "Croft", "Vancaskerkin", "Blackwood", "Colm", "al-Nasir", "Battlehammer", "Barrowight", "Holt", "Moonbrook", "Petrova", "Evenwood", "Chanthal", "Halfmoon" ] 
+									  },
+							 "Mediano": {  
+										"M": [ "Quirino", "Gerardo", "Isidoro", "Peregrino", "Rosendo", "Anselmo", "Ferdinando", "Rolo", "Tobías", "Milo", "Simón", "Rufus", "Chester", "Tobías", "Arlo", "Ernie", "Pippin", "Milo", "Eldon", "Filbo", "Rori", "Osric", "Eldon", "Pimienta", "Cosme", "Finian", "Elwood", "Filbo", "Gilberto", "Odo" ], 
+										"F": [ "Iris", "Freesia", "Jazmín", "Gisela", "Dalila", "Clavelina", "Eulalia", "Ailiana", "Brisa", "Hortensia", "Daisy", "Posie", "Linnet", "Willow", "Poppy", "Hazel", "Primrose", "Juniper", "Bryony", "Clover", "Serena", "Clarita", "Flora", "Clementina", "Tilia", "Lilia", "Melisa", "Rosita", "Violeta", "Belinda" ], 
+										"Apellidos": [ "Topobueno", "Pradogrande", "Cerezuelo", "Cavatumbas", "Bolsóncerrado", "Madrigal", "Manzanilla", "Barrilbuena", "Colinaverde", "Corazónhogar", "Sotomonte", "Pradoaprisco", "Arroyuelo", "Trébol", "Pradoalto", "Topocálido", "Setoalto", "Tierrabuena", "Campoviejo", "Zarzamora", "Manzanares", "Pradollano", "Buenabodega", "Cardoncillo", "Zarzamora", "Cantoalegre", "Campoviejo", "Quebradizo", "Tragaluz", "Sotomonte" ] 
+									  },
+							 "Semielfo": {  
+										"M": [ "Lysander", "Eldrin", "Kaelen", "Torvin", "Zephyr", "Eamon", "Lorien", "Gavril", "Silvan", "Rhysand", "Ronan", "Aric", "Adrian", "Lucian", "Caspian", "Silas", "Darian", "Tristan", "Quentin", "Cedric", "Lysander", "Arion", "Caspian", "Eldar", "Kaelen", "Zephyr", "Eamon", "Lorien", "Cedric", "Alderon" ], 
+										"F": [ "Elysia", "Rowena", "Aeliana", "Isolde", "Liliana", "Seraphina", "Elowen", "Genevieve", "Aurora", "Vivienne", "Juliana", "Miriel", "Elaria", "Anya", "Rhiannon", "Seraphina", "Elowen", "Cassandra", "Genevieve", "Viviana", "Beatrix", "Rowena", "Silvania", "Seraphina", "Winifred", "Gwendolyn", "Aeliana", "Valencia", "Liliana", "Morwenna" ], 
+										"Apellidos": [ "Cormak", "Baruk", "Voron", "Aerion", "Theron", "Valerius", "Casimir", "Halan", "Josua", "Marek", "Sylvandir", "Meliamne", "Baruk", "Cormak", "Faelan", "Valerius", "Morningsong", "Aerion", "Elion", "Galanor", "Torvin", "Gavril", "Voronwe", "Baruklyn", "Aerion", "Valerius", "Silvanus", "Theron", "Meliamne", "Zaltys" ] 
+									  },
+							 "Semiorco": {  
+										"M": [ "Brendor", "Wesgar", "Garrock", "Brynda", "Torvin", "Jesk", "Grimmalk", "Vorka", "Falkrum", "Rhyland", "Rorgath", "Vargon", "Garrock", "Drogar", "Jortan", "Valga", "Hogar", "Gromar", "Borak", "Krell", "Bryssa", "Torvin", "Kazrin", "Maraak", "Grimm", "Lyza", "Falkrum", "Jessa", "Grelda", "Harkon" ], 
+										"F": [ "Zaltira", "Griselda", "Waldruta", "Brunhilda", "Solveig", "Astrid", "Sigrid", "Iolanda", "Gerarda", "Hildegarda", "Valeria", "Brunilda", "Griselda", "Astrid", "Sigrid", "Hilda", "Matilda", "Godiva", "Reinhilda", "Ermengarda", "Adriana", "Aryana", "Valeria", "Daniela", "Camila", "Isolda", "Sofia", "Luciana", "Renata", "Elara" ], 
+										"Apellidos": [ "Rompecráneos", "Corazónférreo", "Dienteacerado", "Hachasangrienta", "Ojosombrío", "Puñoférreo", "Pielverde", "Crinroja", "Lanzarrápida", "Gritoardiente", "Cuchilla", "Piedrahacha", "Cortaroca", "Rompefuego", "Hachafiel", "Dientenegro", "Quebrantahuesos", "Mazagrís", "Colmillos", "Rompehierro", "Earthshaker", "Warcaller", "Bloodaxe", "Steelheart", "Battlecry", "Skullcrusher", "Colmarrow", "Darkblade", "Ironfist", "Stoneshield" ] 
+									  } };
+        this.nombresF = this.nombresRaza.Humano.F;
+        this.nombresM = this.nombresRaza.Humano.M;
+        this.apellidos = this.nombresRaza.Humano.Apellidos;
     }
     
+    /*
     nombre(genero) {
 		var nombre = "";
 		if ( genero == "F" ) {
@@ -66,6 +95,15 @@ class Nombres {
 		}
 		
 		nombre += " " + this.apellidos[Comun.random(20,0)];
+		return nombre;
+	}*/
+	nombre(raza, genero) {
+		var longitudnombre = this.nombresRaza[raza][genero].length;
+		var longitudapellido = this.nombresRaza[raza]["Apellidos"].length;
+		var nombre = this.nombresRaza[raza][genero][Comun.random(longitudnombre, 0)];
+		if ( longitudapellido > 0 ) {
+			nombre += " " + this.nombresRaza[raza]["Apellidos"][Comun.random(longitudapellido, 0)];
+		}
 		return nombre;
 	}
     

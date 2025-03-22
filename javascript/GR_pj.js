@@ -189,7 +189,7 @@ class PJ {
 			this.genero = "M"; // Masculino;
 		else
 			this.genero = "F"; // Femenino;
-		this.nombre = nombres.nombre(this.genero);
+		this.nombre = nombres.nombre(this.raza.nombre, this.genero);
 		
 	}
 	
