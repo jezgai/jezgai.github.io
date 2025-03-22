@@ -290,6 +290,13 @@ class PJ {
 			fields[ 'Arma1' + sufijo ] = [ pj.arma.arma ];
 			fields[ 'dArma1' + sufijo ] = [ daño  ];
 			fields[ 'cArma1' + sufijo ] = [ pj.arma.calidad ];
+			
+			var srasgosarma = pj.arma.rasgos[0];
+			if ( pj.arma.rasgos.length > 1 ) {
+				srasgosarma += "," + pj.arma.rasgos[i];
+			}
+			fields [ 'rArma1' + sufijo ] = [ srasgosarma ];
+			
 			iarmadura++;
 			for (i=1; i<pj.arma.huecos; i++) {
 				fields[ 'Equipo' + iarmadura + sufijo ] = [ "X" ];
