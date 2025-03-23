@@ -59,12 +59,12 @@ class PJ {
 		satrs += "<strong>DA:</strong> " + this.da;
 		
 		var ihab=0;
-		satrs += "<hr/><h3>Habilidades</h3>" + this.raza.habilidades[0];
+		satrs += "<hr/><h3>Habilidades</h3>" + "<span onclick=" + '"' + "descripcionhabilidad('" + this.raza.habilidades[0] + "');" + '"' + ">" + this.raza.habilidades[0] + "</span>";
 		for (ihab=1; ihab<this.raza.habilidades.length; ihab++) {
-			satrs += "<br/>" + this.raza.habilidades[ihab];
+			satrs += "<br/>" + "<span onclick=" + '"' + "descripcionhabilidad('" + this.raza.habilidades[ihab] + "');" + '"' + ">" + this.raza.habilidades[ihab] + "</span>";
 		}
 		if ( this.habilidad != "" ) {
-			satrs += "<br/>" + this.habilidad;
+			satrs += "<br/>" + "<span onclick=" + '"' + "descripcionhabilidad('" + this.habilidad + "');" + '"' + ">" + this.habilidad + "</span>";
 		}
 		return satrs;
 	}

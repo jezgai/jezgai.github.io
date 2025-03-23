@@ -18,6 +18,7 @@
 	let nivelcero = false;
 	let pj = new PJ();
 	
+		
 	function rellenaPDF() {
 		var xhr = new XMLHttpRequest();
 		var contenido;
@@ -68,6 +69,25 @@
 		rellenaPJ(pj);
 	}
 	
+	function inicio() {
+		document.getElementById("razas").innerHTML = razas.desplegableRazas("seleccionarazas");
+		calcula();
+	}
+	
+	function descripcionhabilidad(nombrehabilidad) {
+		alert(habilidades.descripcion(nombrehabilidad));
+	}
+	
+	function seleccionarazas(thelist) {
+		//vaciaDiv();
+		var idx = thelist.selectedIndex;
+		var seleccionado = thelist.options[idx].innerHTML;
+		if ( idx < 1 ) {
+			seleccionado = 'random';
+		}
+		var nombreraza = seleccionado;
+		razas.cambiaRaza(nombreraza);
+	}
 	
 	function exportaJSON() {
 
@@ -188,6 +208,9 @@
 	  <h2>Granujas - Ayuda para crear personajes</h2>
 	</div>
 	<div style="overflow:auto">
+		<div class="minileft" id="razas">
+			<p><button class='w3-button w3-block w3-teal' onclick='inicio()'>Razas</button></p>
+		</div>
 		<div class="minileft"><p><button class='w3-button w3-block w3-blue' onclick='calcula()'>Calcula</button></p></div>
 		<div class="minileft"><p><button class='w3-button w3-block w3-blue' onclick='calculaN0()'>Calcula Nivel 0</button></p></div>
 		<div class="minileft" id="botonpdf"><p><button class='w3-button w3-block w3-blue' onclick='rellenaPDF()'>Genera PDF</button></p></div>
@@ -219,7 +242,7 @@
 		</div>
 	</div>
 	
-	<script>calcula();</script>
+	<script>inicio();</script>
 </body>
 </html>
 
