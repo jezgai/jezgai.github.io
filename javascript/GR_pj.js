@@ -293,7 +293,9 @@ class PJ {
 			
 			var srasgosarma = pj.arma.rasgos[0];
 			if ( pj.arma.rasgos.length > 1 ) {
-				srasgosarma += "," + pj.arma.rasgos[i];
+				for (i=1; i< pj.arma.rasgos.length; i++) {
+					srasgosarma += "," + pj.arma.rasgos[i];
+				}
 			}
 			fields [ 'rArma1' + sufijo ] = [ srasgosarma ];
 			
