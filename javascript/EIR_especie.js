@@ -140,6 +140,17 @@ class Especies {
 			  clases: [ "Bardo", "Druida", "Explorador", "Hechicero", "Pícaro", "Hoja de Otoño" ],
 			},
 			{
+			  nombre : "Goblin",
+			  descripcion : "",
+			  claves : [ "[Goblin]", "[Feérico]", "[Medio]" ],
+              idiomas: [ "Trasgo", "Común" ],
+			  movimiento : "9",
+			  talentos: [ "<strong>Salvar el pellejo</strong><br/>Puedes salir del combate sin generar ataque de oportunidad o esconderte como acción adicional.", 
+					"<strong>Visión en la oscuridad</strong><br/>Ves en la oscuridad a 24 metros de distancia" ],
+			  ltalentos: [ "Salvar el pellejo", "Visión en la oscuridad" ],
+			  clases: [ "Bardo", "Druida", "Explorador", "Hechicero", "Pícaro", "Guerrero" ],
+			},
+			{
 			  nombre : "Halfling",
 			  descripcion : "Medianos, halfling, hobbits (para ambientanciones distintas a la de Eirendor)",
 			  claves : [ "[Halfling]", "[Humanoide]", "[Pequeño]" ],
