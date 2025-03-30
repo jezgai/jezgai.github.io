@@ -319,7 +319,7 @@ class PJ {
 			habilidades += "\n" + pj.habilidad;
 		}
 		fields[ 'Habilidades' + sufijo ] = [ habilidades ];
-		fields[ 'Dinero' + sufijo ] = [ pj.monedas ];
+		//fields[ 'Dinero' + sufijo ] = [ pj.monedas ];
 		
 		fields[ 'vExploracion' + sufijo ] = [ pj.raza.movimiento * 3 ];
 		fields[ 'vCombate' + sufijo ] = [ pj.raza.movimiento ];
