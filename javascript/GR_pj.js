@@ -21,10 +21,18 @@ class PJ {
 		this.equipo = [];
 		this.da = 11;
 		this.plantillaPDF = "pdf/GranujasPJ.pdf"; // "pdf/KnavePJ.pdf";
+		this.plantillaPDFAlt = "pdf/GranujasPJHerugor.pdf";
 		this.rasgos = [];
 		this.monedas = 0;
 		this.habilidad = "";
 		this.raza = {};
+	}
+	
+	plantilla(alt) {
+		if (alt == true) {
+			return this.plantillaPDFAlt;
+		}
+		return this.plantillaPDF;
 	}
 	
 	bonificador(defensa) {
@@ -193,7 +201,7 @@ class PJ {
 		
 	}
 	
-	static rellenaPDFPJ(fields, pj, sufijo) {
+	static rellenaPDFPJ(fields, pj, sufijo, plantillaalt) {
 		fields['Nombre' + sufijo] = [ pj.nombre + " (" + pj.genero + ")" ];
 		fields['Nivel' + sufijo] = [ pj.nivel ];
 		fields['PGMax' + sufijo] = [ pj.pg ];
@@ -219,6 +227,7 @@ class PJ {
 		
 				
 		var i=0;
+		
 		var inota = 1;		
 		var srasgo = pj.raza.nombre;
 		var listaCamposRasgos = rasgos.lcamposrasgos();
@@ -235,7 +244,13 @@ class PJ {
 				j++;
 			}
 		}
-		fields[ 'Notas' + sufijo ] = [ srasgo ];
+		if ( plantillaalt == true ) {
+			fields['Raza' + sufijo] = [ pj.raza.nombre ];
+			fields['EspaciosEquipo' + sufijo ] = [ pj.atributos[2].defensa ];
+		}
+		else {
+			fields[ 'Notas' + sufijo ] = [ srasgo ];
+		}
 
 		var iarmadura=1;
 		i=0;
@@ -328,91 +343,19 @@ class PJ {
 	}
 	
 	
-	rellenaPDF(nivelcero) {
+	rellenaPDF(nivelcero, plantillaalt) {
 		
 		var fields = {};
-		fields = PJ.rellenaPDFPJ(fields, this, "");
+		fields = PJ.rellenaPDFPJ(fields, this, "", plantillaalt);
 		
-		var pj2 = new PJ();
-		pj2.genera(nivelcero);
-		
-		fields = PJ.rellenaPDFPJ(fields, pj2, "_1");
+		if ( plantillaalt == false ) {
+			var pj2 = new PJ();
+			pj2.genera(nivelcero);
+			
+			fields = PJ.rellenaPDFPJ(fields, pj2, "_1", false);
+		}
 		return fields;
 				
 	}
 	
-	rellenaPDFOld() {
-			  var fields = {
-					'Nivel' : [ 1 ],
-					'PGMax' : [ this.pg ],
-					'PGActual' : [ this.pg ],
-					'Armadura' : [ this.da ],
-					'bArmadura' : [ this.bonificador(this.da) ],
-					'FUE' : [ this.atributos[0].defensa ],
-					'bFUE' : [ this.bonificador(this.atributos[0].defensa) ],
-					'DES' : [ this.atributos[1].defensa ],
-					'bDES' : [ this.bonificador(this.atributos[1].defensa) ],
-					'CON' : [ this.atributos[2].defensa ],
-					'bCON' : [ this.bonificador(this.atributos[2].defensa) ],
-					'INT' : [ this.atributos[3].defensa ],
-					'bINT' : [ this.bonificador(this.atributos[3].defensa) ],
-					'SAB' : [ this.atributos[4].defensa ],
-					'bSAB' : [ this.bonificador(this.atributos[4].defensa) ],
-					'CAR' : [ this.atributos[5].defensa ],
-					'bCAR' : [ this.bonificador(this.atributos[5].defensa) ],
-					'Notas' : [ document.getElementById("rasgos").innerText ],
-				};
-				
-				var iarmadura=1;
-				var i=0;
-				if ( this.armadura.armadura != "Sin armadura" ) {
-					fields[ 'Inventario' + iarmadura ] = [ "Armadura " + this.armadura.armadura ];
-					iarmadura++;
-					for (i=1; i<this.armadura.huecos; i++) {
-						fields[ 'Inventario' + iarmadura ] = [ "X" ];
-						iarmadura++;
-					}
-				}
-				if ( this.escudo.armadura != "" ) {
-					fields[ 'Inventario' + iarmadura ] = [ this.escudo.armadura ];
-					iarmadura++;
-					for (i=1; i<this.escudo.huecos; i++) {
-						fields[ 'Inventario' + iarmadura ] = [ "X" ];
-						iarmadura++;
-					}
-				}				
-				
-				if ( this.yelmo.armadura != "" ) {
-					fields[ 'Inventario' + iarmadura ] = [ this.yelmo.armadura ];
-					iarmadura++;
-					for (i=1; i<this.yelmo.huecos; i++) {
-						fields[ 'Inventario' + iarmadura ] = [ "X" ];
-						iarmadura++;
-					}
-				}
-						
-				
-				if ( this.arma.arma != "" ) {
-					var daño = "";
-					if ( this.arma.dañoCaC != null ) {
-						daño += " (d" + this.arma.dañoCaC + " CaC)";
-					}
-					if ( this.arma.dañoAD != null ) {
-						daño += " (d" + this.arma.dañoAD + " AD)";
-					}
-					fields[ 'Inventario' + iarmadura ] = [ this.arma.arma + daño  ];
-					iarmadura++;
-					for (i=1; i<this.arma.huecos; i++) {
-						fields[ 'Inventario' + iarmadura ] = [ "X" ];
-						iarmadura++;
-					}
-				}
-				
-				for (i = 0; i < this.equipo.length; i++, iarmadura++) {
-					fields[ 'Inventario' + iarmadura ] = [ this.equipo[i] ];
-				}
-				
-				return fields;
-				
-	}
 }

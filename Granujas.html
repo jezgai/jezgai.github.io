@@ -18,8 +18,7 @@
 	let nivelcero = false;
 	let pj = new PJ();
 	
-		
-	function rellenaPDF() {
+	function rellenaPlantillaPDF(plantillaalt) {
 		var xhr = new XMLHttpRequest();
 		var contenido;
 		var competencias = '';
@@ -27,20 +26,31 @@
 		xhr.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 			  contenido = this.response;
-			  var fields = pj.rellenaPDF(nivelcero);
+			  var fields = pj.rellenaPDF(nivelcero, plantillaalt);
 			  var out_buf = pdfform().transform(contenido, fields);
 			  var blob = new Blob([out_buf], {type: 'application/pdf'});
-			  var nombre = fields[ "Nombre" ][0] + " - " + fields[ "Nombre_1" ][0] + ".pdf";
+			  var nombre = fields[ "Nombre" ][0];
+			  if ( plantillaalt == false) {
+				  nombre += " - " + fields[ "Nombre_1" ][0];
+			  }
+			  nombre += ".pdf";
 			  saveAs(blob, nombre); // 'PJ.pdf'); 
 			}
 		};
 
 
-		xhr.open('GET', pj.plantillaPDF, true);
+		xhr.open('GET', pj.plantilla(plantillaalt), true);
 		xhr.responseType = 'arraybuffer';
 		xhr.setRequestHeader("Content-Type", "application/json");
-		xhr.send();		
+		xhr.send();	
+	}
 		
+	function rellenaPDF() {
+		rellenaPlantillaPDF(false);
+	}
+	
+	function rellenaPDFAlt() {
+		rellenaPlantillaPDF(true);
 	}	
 	
 	function rellenaPJ(pj) {
@@ -54,6 +64,7 @@
 		document.getElementById("rasgos").innerHTML = pj.tablaRasgos();
 		
 		document.getElementById("botonpdf").style.visibility="visible";
+		document.getElementById("botonpdfalt").style.visibility="visible";
 		//document.getElementById("botonjson").style.visibility="visible"; //"hidden";
 	}
 		
@@ -214,6 +225,7 @@
 		<div class="minileft"><p><button class='w3-button w3-block w3-blue' onclick='calcula()'>Calcula</button></p></div>
 		<div class="minileft"><p><button class='w3-button w3-block w3-blue' onclick='calculaN0()'>Calcula Nivel 0</button></p></div>
 		<div class="minileft" id="botonpdf"><p><button class='w3-button w3-block w3-blue' onclick='rellenaPDF()'>Genera PDF</button></p></div>
+		<div class="minileft" id="botonpdfalt"><p><button class='w3-button w3-block w3-blue' onclick='rellenaPDFAlt()'>Genera PDF (1 PJ)</button></p></div>
 	</div>
 	<div style="overflow:auto">
 	
