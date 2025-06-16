@@ -51,6 +51,9 @@ class PJ {
 	
 	calcula_da() {
 		this.da = this.armadura.da + this.yelmo.da + this.escudo.da;
+		if ( this.armadura.sumadestreza ) {
+			this.da += Math.trunc(this.bonificador(this.atributos[1].defensa) / 2);
+		}
 	}
 	
 	
@@ -85,6 +88,9 @@ class PJ {
 		}
 		if ( this.escudo.armadura != "" ) {
 			stabla += "<tr><td>" + this.escudo.armadura + "</td><td>+" + this.escudo.da + "</td><td>" + this.escudo.huecos + "</td></tr>";
+		}
+		if ( this.armadura.sumadestreza == true ) {
+			stabla += "<tr><td>DES si no cargado</td><td>+" + Math.trunc(this.bonificador(this.atributos[1].defensa) / 2) + "</td><td></td></tr>";
 		}
 		stabla += "</table>";
 		return stabla;

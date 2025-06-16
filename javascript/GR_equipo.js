@@ -1,13 +1,13 @@
 
 class ArmasyArmaduras {
 	constructor() {
-		this.armaduras = [ { armadura: "Escudo", da: 1, huecos: 1, calidad: 1 },
-						   { armadura: "Casco", da: 1, huecos: 1, calidad: 1 },
-						   { armadura: "Gambesón", da: 12, huecos: 1, calidad: 3 },
-						   { armadura: "Brigantina", da: 13, huecos: 2, calidad: 4 },
-						   { armadura: "Cota", da: 14, huecos: 3, calidad: 5 },
-						   { armadura: "Placas", da: 15, huecos: 4, calidad: 6 },
-						   { armadura: "Placas completa", da: 16, huecos: 5, calidad: 7 } ];
+		this.armaduras = [ { armadura: "Escudo", da: 1, huecos: 1, calidad: 1, sumadestreza: false },
+						   { armadura: "Casco", da: 1, huecos: 1, calidad: 1, sumadestreza: false },
+						   { armadura: "Gambesón", da: 12, huecos: 1, calidad: 3, sumadestreza: false },
+						   { armadura: "Brigantina", da: 13, huecos: 2, calidad: 4, sumadestreza: false },
+						   { armadura: "Cota", da: 14, huecos: 3, calidad: 5, sumadestreza: false },
+						   { armadura: "Placas", da: 15, huecos: 4, calidad: 6, sumadestreza: false },
+						   { armadura: "Placas completa", da: 16, huecos: 5, calidad: 7, sumadestreza: false } ];
 						   
 		this.armas = [ { arma: "Cuchillo", tipo: "CaC", dañoAD: 4, dañoCaC: 4, manos: 1, huecos: 0.5, calidad: 3, rasgos: [ "Ligera", "Burda" ] },
 					   { arma: "Porra", tipo: "CaC", dañoAD: null, dañoCaC: 6, manos: 1, huecos: 1, calidad: 3, rasgos: [ "Burda" ] },
@@ -51,7 +51,7 @@ class ArmasyArmaduras {
 				return this.armaduras[i];
 			}
 		}
-		return { armadura: "Sin armadura", da: 11, huecos: 0, calidad: 0};
+		return { armadura: "Sin armadura", da: 11, huecos: 0, calidad: 0, sumadestreza: true};
 	}
 	
 	recuperaarma(nombre) {
