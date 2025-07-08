@@ -90,7 +90,7 @@ class PJ {
 			stabla += "<tr><td>" + this.escudo.armadura + "</td><td>+" + this.escudo.da + "</td><td>" + this.escudo.huecos + "</td></tr>";
 		}
 		if ( this.armadura.sumadestreza == true ) {
-			stabla += "<tr><td>DES si no cargado</td><td>+" + Math.trunc(this.bonificador(this.atributos[1].defensa) / 2) + "</td><td></td></tr>";
+			stabla += "<tr><td>DES si no cargado</td><td>+" + Math.round(this.bonificador(this.atributos[1].defensa) / 2) + "</td><td></td></tr>";
 		}
 		stabla += "</table>";
 		return stabla;
