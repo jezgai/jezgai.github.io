@@ -810,7 +810,7 @@ class Clases {
               ],
               idiomas: [ "Mediano" ],
               boniftipoarmas: -1,
-              periciasespeciales: { puntos: 2, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Sigilo", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
+              periciasespeciales: { puntos: 4, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Sigilo", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
               pericias: { puntos: 2, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Daga", "Espada corta" ] ],

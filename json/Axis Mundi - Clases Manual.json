@@ -1481,7 +1481,7 @@
     ],
     "boniftipoarmas": 0,
     "periciasespeciales": {
-      "puntos": 2,
+      "puntos": 4,
       "pericias": [
         {
           "nombre": "Curar",
