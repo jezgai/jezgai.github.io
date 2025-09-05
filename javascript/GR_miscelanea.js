@@ -315,7 +315,7 @@ class Razas {
 						{ nombre: "Semiorco", peso: 2, habilidades: [ "Infravisión" ], habilidadesInfravision: [ "Vivaz" ], modificadores: [ 1, 0, 0, 0, 0, 0], movimiento: 12 }
 					 ];
 		this.razasTotal = this.razasOriginal.clone();
-		this.razasTotal.push ( { nombre: "Goblin", peso: 1, habilidades: [ "Pequeño", "Emboscar" ], modificadores: [ 0, 1, 0, -1, 1, 0], movimiento: 8 } );
+		this.razasTotal.push ( { nombre: "Goblin", peso: 1, habilidades: [ "Pequeño", "Emboscar" ], habilidadesInfravision: [ "Infravisión" ], modificadores: [ 0, 1, 0, -1, 1, 0], movimiento: 8 } );
 
 		this.razas = this.razasOriginal.clone();
 	}
