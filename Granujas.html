@@ -54,7 +54,11 @@
 	}	
 	
 	function rellenaPJ(pj) {
-		pj.genera(nivelcero);
+		var reglaInfravision = 0;
+		if (document.getElementById('cReglaInfravision').checked == true) 
+			reglaInfravision = 1;
+		
+		pj.genera(nivelcero, reglaInfravision);
 		
 		var satrs = pj.tablaAtributos();
 		document.getElementById("atributos").innerHTML = satrs;
@@ -66,6 +70,15 @@
 		document.getElementById("botonpdf").style.visibility="visible";
 		document.getElementById("botonpdfalt").style.visibility="visible";
 		//document.getElementById("botonjson").style.visibility="visible"; //"hidden";
+	}
+	
+	function cambiaReglaOpcional() {
+		pj.reglaInfravision = 0;
+		if (document.getElementById('cReglaInfravision').checked == true) 
+			pj.reglaInfravision = 1;
+		
+		var satrs = pj.tablaAtributos();
+		document.getElementById("atributos").innerHTML = satrs;
 	}
 		
 	function calcula() {
@@ -222,6 +235,8 @@
 		<div class="minileft" id="razas">
 			<p><button class='w3-button w3-block w3-teal' onclick='inicio()'>Razas</button></p>
 		</div>
+		<div class="minileft"><br/><input type="checkbox" id="cReglaInfravision" name="ReglaInfravision" value="ReglaInfravision" onclick="cambiaReglaOpcional()">
+			<label for="cReglaInfravision">Regla opcional infravisión</label></div>
 		<div class="minileft"><p><button class='w3-button w3-block w3-blue' onclick='calcula()'>Calcula</button></p></div>
 		<div class="minileft"><p><button class='w3-button w3-block w3-blue' onclick='calculaN0()'>Calcula Nivel 0</button></p></div>
 		<div class="minileft" id="botonpdf"><p><button class='w3-button w3-block w3-blue' onclick='rellenaPDF()'>Genera PDF</button></p></div>

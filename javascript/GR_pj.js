@@ -26,6 +26,7 @@ class PJ {
 		this.monedas = 0;
 		this.habilidad = "";
 		this.raza = {};
+		this.reglaInfravision = 0;
 	}
 	
 	plantilla(alt) {
@@ -73,6 +74,12 @@ class PJ {
 		satrs += "<hr/><h3>Habilidades</h3>" + "<span onclick=" + '"' + "descripcionhabilidad('" + this.raza.habilidades[0] + "');" + '"' + ">" + this.raza.habilidades[0] + "</span>";
 		for (ihab=1; ihab<this.raza.habilidades.length; ihab++) {
 			satrs += "<br/>" + "<span onclick=" + '"' + "descripcionhabilidad('" + this.raza.habilidades[ihab] + "');" + '"' + ">" + this.raza.habilidades[ihab] + "</span>";
+		}
+		if ( this.reglaInfravision == 1 && this.raza.habilidadesInfravision.length > 0) {
+			satrs += "<br/>" + "<span onclick=" + '"' + "descripcionhabilidad('" + this.raza.habilidadesInfravision[0] + "');" + '"' + ">" + this.raza.habilidadesInfravision[0] + "</span>";
+			for (ihab=1; ihab<this.raza.habilidadesInfravision.length; ihab++) {
+				satrs += "<br/>" + "<span onclick=" + '"' + "descripcionhabilidad('" + this.raza.habilidadesInfravision[ihab] + "');" + '"' + ">" + this.raza.habilidadesInfravision[ihab] + "</span>";
+			}
 		}
 		if ( this.habilidad != "" ) {
 			satrs += "<br/>" + "<span onclick=" + '"' + "descripcionhabilidad('" + this.habilidad + "');" + '"' + ">" + this.habilidad + "</span>";
@@ -137,7 +144,7 @@ class PJ {
 	}
 	
 	
-	genera(nivelcero) {
+	genera(nivelcero, reglaInfravision) {
 		var i=0;
 		var attrs = Comun.shuffle( [ 0, 1, 2, 3, 4, 5 ] );
 		var dadopg = 8;
@@ -145,6 +152,7 @@ class PJ {
 		var multipmonedas = 20;
 		var tipoarmadura = "Sin armadura";
 		var yelmoescudo = "Ninguno";
+		this.reglaInfravision = reglaInfravision;
 		if ( nivelcero ) {
 			this.nivel = 0;
 			this.atributos[attrs[0]].defensa = 12;
@@ -335,6 +343,12 @@ class PJ {
 		for (i = 1; i< pj.raza.habilidades.length; i++) {
 			habilidades += ". " + pj.raza.habilidades[i];
 		}
+		if ( pj.reglaInfravision == 1 && pj.raza.habilidadesInfravision.length > 0) {
+			habilidades += ". " + pj.raza.habilidadesInfravision[0];
+			for (i = 1; i< pj.raza.habilidadesInfravision.length; i++) {
+				habilidades += ". " + pj.raza.habilidadesInfravision[i];
+			}
+		}
 		
 		if ( pj.habilidad != "" ) {
 			habilidades += "\n" + pj.habilidad;
@@ -356,7 +370,7 @@ class PJ {
 		
 		if ( plantillaalt == false ) {
 			var pj2 = new PJ();
-			pj2.genera(nivelcero);
+			pj2.genera(nivelcero, this.reglaInfravision);
 			
 			fields = PJ.rellenaPDFPJ(fields, pj2, "_1", false);
 		}

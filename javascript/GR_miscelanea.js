@@ -247,16 +247,16 @@ class Habilidades {
 							 "Lengua de plata", "Liderar", "Manos sanadoras", "Pies ligeros", "Preparado", "Primeros auxilios", "Puntería", 
 							 "Reacción rápida", "Remedios naturales", "Ritual", "Supervivencia", "Sutileza con armas", "Tirador", "Uso experto" ];
 		this.descripcionHabilidades = {
-								"Longevo": "Los elfos necesitan 1 100 PX para subir a nivel 2 y después suben de nivel más lentamente.",
+								"Longevo": "Los elfos necesitan 1100 PX para subir a nivel 2 y después suben de nivel más lentamente.",
 								"Feérico": "Los elfos tienen ventaja en las tiradas de salvación de Carisma y Sabiduría, son inmunes al sueño mágico y a la parálisis y pueden dormir sólo 4 horas al día para considerar que han hecho un descanso largo.",
 								"Rotundo": "Los enanos tienen el paso corto y no tienen una gran agilidad para compensarlo. Su velocidad de combate es de 30 pies (8 metros) y tienen desventaja en las tiradas relacionadas con saltar y nadar debido a su gran densidad corporal.",
 								"Sentidos pétreos": "Los enanos tienen ventaja para notar cambios y defectos en construcciones y cavidades subterráneas. Además tienen +1 a la sorpresa en subterráneos y construcciones.",
 								"Comprender a los animales": "Los gnomos pueden entender de forma sencilla a los animales, así como hacerse entender por ellos. Aunque no pueden mantener una conversación complicada con un animal, los gnomos son capaces de dar y entender mensajes simples como «peligro», «ayuda», «haz guardia» y cosas similares.",
-								"Vivaz": "Los humanos suben al nivel 2 con 900 PX, y después suben de nivel más rápidamente.",
+								"Vivaz": "Progresión rápida. Suben al nivel 2 con 900 PX, y después suben de nivel más rápidamente.",
 								"Pequeño": "La velocidad de combate de los medianos es de 30 pies (8 metros) y, además, son incapaces de usar armas que hagan d10 de daño. En cuanto a las armas que hacen d8 de daño, deben usarlas con ambas manos debido a su pequeño tamaño.",
 								"Sigilo natural": "Los medianos tienen ventaja en todas las tiradas de Destreza para esconderse o pasar desapercibidos. Pueden intentar esconderse justo antes de un combate.",
 								"Herencia feérica": "Tienes ventaja en las tiradas de salvación de Carisma y Sabiduría y eres inmune al sueño mágico.",
-								"Infravisión": "Los semiorcos cuentan con infravisión, pudiendo ver en la oscuridad hasta 80 pies (24 metros) sin problema. Esta visión es en blanco y negro.",
+								"Infravisión": "La infravisión les permite ver en la oscuridad hasta 80 pies (24 metros) sin problema. Esta visión es en blanco y negro.",
 								"Arma favorita": "(I-II). Tras entrenar una semana con un arma, puedes convertirla en tu arma de especialista. Al hacerlo, aumentas el rango de crítico de un arma (harás críticos con 19-20 en vez de con 20). Al escoger por segunda vez este rasgo, aumenta el rango de crítico en otro punto (18-20 en vez de 20). Puedes cambiar de arma favorita con una semana de entrenamiento, pero solo puedes tener una.",
 								"Armero": "Una vez al día y al descansar por lo menos 1 hora, puedes recuperar 1 punto de Calidad de un arma o armadura siempre que tengas las herramientas apropiadas. Además puedes ignorar 1 espacio de Peso que ocupe un arma y una armadura (hasta dos espacios en total).",
 								"Ataque furtivo": "(I-II). Contra un enemigo desprevenido tienes ventaja al golpear y +1 dado de daño por rango de este rasgo siempre que uses un arma con Peso 1 o menor.",
@@ -287,7 +287,8 @@ class Habilidades {
 								"Sutileza con armas": "Puedes atacar con Destreza en vez de con Fuerza con armas cuerpo a cuerpo de Peso 1 o menor.",
 								"Tirador": "Si no te mueves en tu ronda puedes decidir disparar dos veces con -4 (con arma sin Recarga), disparar y mover con -2 (con arma con Recarga) o disparar un sólo disparo con +2.",
 								"Uso experto": "(I-III). Al usar un grimorio, tira 1d4. Si sacas igual o menos que tus rangos de este rasgo, el grimorio no se gasta y lo puedes volver a usar. Puedes emplear este rasgo tantas veces al día como rangos tengas, sin contar intentos fallidos.",
-								"Emboscar": "Cuando en un combate el bando rival (y solo el bando rival) es sorprendido, los PJ goblin tiran con ventaja su ataque."
+								"Emboscar": "Cuando en un combate el bando rival (y solo el bando rival) es sorprendido, los PJ goblin tiran con ventaja su ataque.",
+								"Potencial": "Ganan +1 a una característica a su elección, y un +1 adicional cada 3 niveles (a nivel 3, 6 y 9)"
 									  };
 	}
 	habilidad() {
@@ -305,13 +306,13 @@ class Razas {
 	constructor() {
 		
 		this.razasOriginal = [
-						{ nombre: "Humano", peso: 75, habilidades: [ "Vivaz" ], modificadores: [ 0, 0, 0, 0, 0, 0], movimiento: 12 },
-						{ nombre: "Elfo", peso: 5, habilidades: [ "Longevo", "Feérico" ], modificadores: [ 0, 1, -1, 0, 1, 0], movimiento: 12 },
-						{ nombre: "Enano", peso: 5, habilidades: [ "Rotundo", "Sentidos pétreos" ], modificadores: [ 0, 1, -1, 0, 1, 0], movimiento: 8 },
-						{ nombre: "Gnomo", peso: 5, habilidades: [ "Pequeño", "Comprender a los animales" ], modificadores: [ -1, 0, 1, 1, 0, 0], movimiento: 8 },
+						{ nombre: "Humano", peso: 75, habilidades: [ "Vivaz" ], habilidadesInfravision: [ "Potencial" ], modificadores: [ 0, 0, 0, 0, 0, 0], movimiento: 12 },
+						{ nombre: "Elfo", peso: 5, habilidades: [ "Longevo", "Feérico" ], habilidadesInfravision: [ "Infravisión" ], modificadores: [ 0, 1, -1, 0, 1, 0], movimiento: 12 },
+						{ nombre: "Enano", peso: 5, habilidades: [ "Rotundo", "Sentidos pétreos" ], habilidadesInfravision: [ "Infravisión" ], modificadores: [ 0, 1, -1, 0, 1, 0], movimiento: 8 },
+						{ nombre: "Gnomo", peso: 5, habilidades: [ "Pequeño", "Comprender a los animales" ], habilidadesInfravision: [ "Infravisión" ], modificadores: [ -1, 0, 1, 1, 0, 0], movimiento: 8 },
 						{ nombre: "Mediano", peso: 5, habilidades: [ "Pequeño", "Sigilo natural" ], modificadores: [ -1, 1, 0, 0, 0, 1], movimiento: 8 },
-						{ nombre: "Semielfo", peso: 3, habilidades: [ "Herencia feérica" ], modificadores: [ 0, 1, 0, 0, 0, 0], movimiento: 12 },
-						{ nombre: "Semiorco", peso: 2, habilidades: [ "Infravisión" ], modificadores: [ 1, 0, 0, 0, 0, 0], movimiento: 12 }
+						{ nombre: "Semielfo", peso: 3, habilidades: [ "Herencia feérica" ], habilidadesInfravision: [ "Vivaz" ], modificadores: [ 0, 1, 0, 0, 0, 0], movimiento: 12 },
+						{ nombre: "Semiorco", peso: 2, habilidades: [ "Infravisión" ], habilidadesInfravision: [ "Vivaz" ], modificadores: [ 1, 0, 0, 0, 0, 0], movimiento: 12 }
 					 ];
 		this.razasTotal = this.razasOriginal.clone();
 		this.razasTotal.push ( { nombre: "Goblin", peso: 1, habilidades: [ "Pequeño", "Emboscar" ], modificadores: [ 0, 1, 0, -1, 1, 0], movimiento: 8 } );
