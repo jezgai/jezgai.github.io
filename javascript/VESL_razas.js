@@ -54,7 +54,7 @@ class RazaSL extends Especie {
 class RazasSL {
 	constructor() {
 		this._razas = [];
-		this._razas.push( new RazaSL("Enano", { "NumeroIniciales": 2, "Iniciales": [ "Imparable" , "Infravisión", "Trasfondo enfocado" ], "NumPosterior": 0, "Nivel": null, "Posteriores": [ ] }, 10, [ "Brom", "Grorea", "Dumgal", "Moregard", "Rundhas" ]) );
+		this._razas.push( new RazaSL("Enano", { "NumeroIniciales": 3, "Iniciales": [ "Imparable" , "Infravisión", "Trasfondo enfocado" ], "NumPosterior": 0, "Nivel": null, "Posteriores": [ ] }, 10, [ "Brom", "Grorea", "Dumgal", "Moregard", "Rundhas" ]) );
 		this._razas.push( new RazaSL("Elfo", { "NumeroIniciales": 2, "Iniciales": [ "Visión en luz tenue" , "Pies ligeros" ], "NumPosterior": 0, "Nivel": null, "Posteriores": [  ] }, 14, [ "Gharil", "Siriel", "Mitindel", "Varsil", "Deasing", "Gilead" ]) );
 		this._razas.push( new RazaSL("Semielfo", { "NumeroIniciales": 2, "Iniciales": [ "Visión en luz tenue" , "Superviviente" ], "NumPosterior": 0, "Nivel": null, "Posteriores": [  ] }, 14, [ "Gharil", "Siriel", "Mitindel", "Varsil", "Deasing", "Gilead" ]) );
 		this._razas.push( new RazaSL("Semigigante", { "NumeroIniciales": 2, "Iniciales": [ "Sangre de gigante" , "Grande" ], "NumPosterior": 0, "Nivel": null, "Posteriores": [  ] }, 12, [ "Grama", "Thrum", "Gorrum", "Agra", "Karg", "Dragga", "Wanla" ]) );
