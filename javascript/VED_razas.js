@@ -19,14 +19,14 @@ class RazaDj extends Especie {
 class RazasDj {
 	constructor() {
 		this._razas = [];
-		this._razas.push( new Raza("Elfo",     [ "Vista Aguda" , "Infravisión élfica" ],         14, [ "Gharil", "Siriel", "Mitindel", "Varsil", "Deasing", "Gilead" ]) );
-		this._razas.push( new Raza("Enano",    [ "Resistencia al desierto" , "Infravisión enana" ],    10, [ "Brom", "Grorea", "Dumgal", "Moregard", "Rundhas" ])             );
-		this._razas.push( new Raza("Mediano",  [ "Escurridizo" , "Certero"  ],             8, [ "Senda", "Seraphin", "Resa", "Muf", "Milena" ])                  );
-		this._razas.push( new Raza("Humano",   [ "Ímpetu Emprendedor",  "Adaptable" ],    12, [ "Nat", "Patia", "Belf", "Sinta", "Wanla" ])                      );
-		this._razas.push( new Raza("Semielfo", [ "Vista Aguda" , "Ímpetu Emprendedor" ],  12, [ "Gharil", "Siriel", "Mitindel", "Varsil", "Deasing", "Gilead" ]) );
-		this._razas.push( new Raza("Gnomo",    [ "Pillo" , "Certero"  ],      8, [ "Senda", "Seraphin", "Resa", "Muf", "Milena" ])                  );
-		this._razas.push( new Raza("Trasgo",   [ "Escurridizo" , "Odio a la luz solar"  ], 8, [ "Grom", "Hargu", "Drog", "Igrim", "Harg", "Thurg", "Grima" ])    );
-		this._razas.push( new Raza("Semiorco", [ "Agresivo" , "Ímpetu Emprendedor" ],     12, [ "Grama", "Thrum", "Gorrum", "Agra", "Karg", "Dragga", "Wanla" ]) );
+		this._razas.push( new RazaDj("Elfo",     [ "Vista Aguda" , "Infravisión élfica" ],         14, [ "Gharil", "Siriel", "Mitindel", "Varsil", "Deasing", "Gilead" ]) );
+		this._razas.push( new RazaDj("Enano",    [ "Resistencia al desierto" , "Infravisión enana" ],    10, [ "Brom", "Grorea", "Dumgal", "Moregard", "Rundhas" ])             );
+		this._razas.push( new RazaDj("Mediano",  [ "Escurridizo" , "Certero"  ],             8, [ "Senda", "Seraphin", "Resa", "Muf", "Milena" ])                  );
+		this._razas.push( new RazaDj("Humano",   [ "Ímpetu Emprendedor",  "Adaptable" ],    12, [ "Nat", "Patia", "Belf", "Sinta", "Wanla" ])                      );
+		this._razas.push( new RazaDj("Semielfo", [ "Vista Aguda" , "Ímpetu Emprendedor" ],  12, [ "Gharil", "Siriel", "Mitindel", "Varsil", "Deasing", "Gilead" ]) );
+		this._razas.push( new RazaDj("Gnomo",    [ "Pillo" , "Certero"  ],      8, [ "Senda", "Seraphin", "Resa", "Muf", "Milena" ])                  );
+		this._razas.push( new RazaDj("Trasgo",   [ "Escurridizo" , "Odio a la luz solar"  ], 8, [ "Grom", "Hargu", "Drog", "Igrim", "Harg", "Thurg", "Grima" ])    );
+		this._razas.push( new RazaDj("Semiorco", [ "Agresivo" , "Ímpetu Emprendedor" ],     12, [ "Grama", "Thrum", "Gorrum", "Agra", "Karg", "Dragga", "Wanla" ]) );
 	}
 	
 	get razas() {
