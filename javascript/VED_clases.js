@@ -134,10 +134,10 @@ class ClasesDj {
 		var iclases=0;
 		for (iclases=0; iclases<this._clases.length; iclases++) {
 			if ( this._clases[iclases].nombre == nombre ) {
-				return new Clase(this._clases[iclases]);
+				return new ClaseDj(this._clases[iclases]);
 			}
 		}
-		return new Clase(this._clases[Comun.random(this._clases.length, 0)]);
+		return new ClaseDj(this._clases[Comun.random(this._clases.length, 0)]);
 	}
 }
 

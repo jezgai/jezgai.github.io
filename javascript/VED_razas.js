@@ -19,7 +19,7 @@ class RazaDj extends Especie {
 class RazasDj {
 	constructor() {
 		this._razas = [];
-		this._razas.push( new Raza("Elfo",     [ "Vista Aguda" , "Infravisión élfica" ],         12, [ "Gharil", "Siriel", "Mitindel", "Varsil", "Deasing", "Gilead" ]) );
+		this._razas.push( new Raza("Elfo",     [ "Vista Aguda" , "Infravisión élfica" ],         14, [ "Gharil", "Siriel", "Mitindel", "Varsil", "Deasing", "Gilead" ]) );
 		this._razas.push( new Raza("Enano",    [ "Resistencia al desierto" , "Infravisión enana" ],    10, [ "Brom", "Grorea", "Dumgal", "Moregard", "Rundhas" ])             );
 		this._razas.push( new Raza("Mediano",  [ "Escurridizo" , "Certero"  ],             8, [ "Senda", "Seraphin", "Resa", "Muf", "Milena" ])                  );
 		this._razas.push( new Raza("Humano",   [ "Ímpetu Emprendedor",  "Adaptable" ],    12, [ "Nat", "Patia", "Belf", "Sinta", "Wanla" ])                      );
