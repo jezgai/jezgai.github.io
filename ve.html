@@ -41,6 +41,9 @@
 <script src="javascript/VEA_pj.js"></script>
 <script src="javascript/VM_clases.js"></script>
 <script src="javascript/VM_pj.js"></script>
+<script src="javascript/VED_razas.js"></script>
+<script src="javascript/VED_clases.js"></script>
+<script src="javascript/VED_pj.js"></script>
 
 <script src="javascript/pdfform.minipdf.dist.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
@@ -576,6 +579,30 @@
 		document.getElementById("bgenera").innerHTML = sboton;
 	}	
 	
+	function cargadesplegableVDj() {
+		recalculahabilidades = false;
+		//document.getElementById("desplegables").innerHTML = "";
+		document.getElementById("sclases").innerHTML = "";
+		document.getElementById("snivel").innerHTML = "";
+		document.getElementById("srazas").innerHTML = "";
+		document.getElementById("bgenera").innerHTML = "";
+		document.getElementById("srazas").style.visibility="hidden";
+		document.getElementById("bgenerapdf").innerHTML = "";
+		document.getElementById("bgenerapdf").style.visibility="hidden";
+		
+		var srazas = Comun.desplegableRazas(razasDj, "seleccionaraza");
+		var sclases = Comun.desplegableClases(clasesDj, "seleccionaclase");
+		var snivel = Comun.desplegableNivel(14, "seleccionanivel", "generaVDj");
+		var sboton = Comun.botonGenera("generaVDj");
+		//document.getElementById("desplegables").innerHTML = srazas + sclases + snivel;	
+		
+		document.getElementById("srazas").innerHTML = srazas;
+		document.getElementById("sclases").innerHTML = sclases;
+		document.getElementById("snivel").innerHTML = snivel;
+		document.getElementById("bgenera").innerHTML = sboton;
+		document.getElementById("srazas").style.visibility="visible";
+		
+	}	
 	
 	function vacia() {
 		parametrosimg = "";
@@ -1027,6 +1054,46 @@
 		document.getElementById("bgenerapdf").style.visibility="visible";
 	}	
 	
+	
+	
+	function generaVDj() {
+		if ( numeronivel == 0 ) {
+			generapj0();
+			return;
+		}
+		vacia();
+		
+		pj = new PJDj(numeronivel);
+		pj.raza = nombreraza;
+		pj.clase = nombreclase;
+		
+		pj.genera();
+		
+		dinero = pj.din; // Comun.random(6,1) * 100;
+		
+		
+		var satrs = Comun.tablaAtributos();
+		
+		var shabs = Comun.tablaHabilidades();
+		
+		var stals = Comun.tablaTalentos();
+
+		document.getElementById("dtalentos").innerHTML = "";
+		document.getElementById("dtalentos").style.visibility="hidden";
+		
+		document.getElementById("datos").innerHTML = "<table  class='w3-table'><tr><td style='padding-left: 15px;padding-right: 25px;'><strong>Nombre:</strong> " + pj.nombre + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Raza:</strong> " + pj.raza + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Clase:</strong> " + pj.clase + " </td><td style='padding-left: 15px;padding-right: 25px;'><strong>Nivel:</strong> " + numeronivel + " </td></tr></table>";
+		document.getElementById("rasgos").innerHTML = pj.tablaRasgos(); 
+													  
+		document.getElementById("atributos").innerHTML = satrs;
+		document.getElementById("talentos").innerHTML = stals;
+		document.getElementById("habilidades").innerHTML = shabs;
+		document.getElementById("dinero").innerHTML = "<br/><strong>Trasfondo y Dinero: </strong> <br/>" + pj.trasfondo + "<br/>" + dinero + " mo";
+    
+		document.getElementById("bgenerapdf").innerHTML = "<button class='w3-button w3-block w3-teal' onclick='rellenaPDF()'>Genera PDF</button>";
+		document.getElementById("bgenerapdf").style.visibility="visible";
+	}
+	
+	
 	function seleccionajdr(thelist) {
 		vacia();
 		var idx = thelist.selectedIndex;
@@ -1080,6 +1147,9 @@
 		}
 		else if ( idx == 12 ) {
 			cargadesplegableVM();
+		}
+		else if ( idx == 13 ) {
+			cargadesplegableVDj();
 		}
 	}
 	
@@ -1153,7 +1223,8 @@
 				<option>Vieja Escuela: Zombies</option>
 				<option>Vieja Ciudad</option>
 				<option>Vieja Escuela: Japon</option>
-				<option>Vieja Máscara</option>
+				<option>Vieja Máscara</option>>
+				<option>Viejo Djinn</option>
 			</select>
 		</div>
 		
