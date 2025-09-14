@@ -9,6 +9,7 @@ class Habilidades {
 		this._habilidadesVC = [ "Ciudadano", "Ocultista", "Político", "Ratero", "Manitas", "Veterano" ];
 		this._habilidadesVES = [ "Alerta", "Comunicación", "Erudición", "Subterfugio", "Supervivencia", "Tecnología" ];
 		this._habilidadesVM = [ "Ciudadano", "Detective", "Profesor", "Ingeniero", "Idolo", "Sombra" ];
+		this._habilidadesCO = [ "Alerta", "Atletismo", "Conocimientos", "Precision", "Relaciones", "Tecnologia" ];
 		this._habilidades = this._habilidadesGen.slice(0);
 	}
 	
@@ -60,6 +61,10 @@ class Habilidades {
 	
 	habilidadesVM() {
 		this._habilidades = this._habilidadesVM.slice(0);
+	}
+	
+	habilidadesCO() {
+		this._habilidades = this._habilidadesCO.slice(0);
 	}
 	
 	puntuaciones1(nivel, mod_ptos_ini ) {
