@@ -145,7 +145,7 @@ class PJCO extends PJBase {
 			'Relaciones' : [ this.habilidades[4] ],
 			'Tecnologia' : [ this.habilidades[5] ],
 			'Talentos' : [ stalentos ],
-			'Notas' : [ "Dinero: " + this.din + "\n" + this.strEquipo() ],
+			'Acciones' : [ this.din ],
 		};
 		return fields;
 	}
