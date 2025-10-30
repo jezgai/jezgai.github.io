@@ -173,7 +173,7 @@ class PJ {
 		
 		this.raza = razas.raza();
 		for (i=0; i<this.raza.modificadores.length; i++) {
-			this.atributos[attrs[i]].defensa += this.raza.modificadores[i];
+			this.atributos[i].defensa += this.raza.modificadores[i];
 		}
 		
 		for (i=0; i<6; i++) {
