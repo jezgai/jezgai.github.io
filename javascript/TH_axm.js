@@ -4,8 +4,8 @@ class AxM extends SistemaBase {
         super();
         this.hechizos.EtiquetaTipos = "Listas de hechizos";
         this.hechizos.Tipos = {
-                    "Arcana": { "Numero": 4, "PDF": "pdf/TH_AxM_Hechizos.pdf" },
-                    "Divina": { "Numero": 4, "PDF": "pdf/TH_AxM_Hechizos.pdf" }
+                    "Arcana": { "Numero": 4, "PDF": "pdf/TH_AxM_Hechizos_Arcana.pdf" },
+                    "Divina": { "Numero": 4, "PDF": "pdf/TH_AxM_Hechizos_Divina.pdf" }
                 };
         this.hechizos.Arcana = [ ];
         this.hechizos.Divina = [ ];
@@ -87,6 +87,7 @@ class AxM extends SistemaBase {
 			fields["Alcance" + (i+1) ] = [ this.hechizos.Hechizos[lHechizos[i]].Alcance ];
 			fields["Duracion" + (i+1) ] = [ this.hechizos.Hechizos[lHechizos[i]]["Duración"] ];
 			fields["Nivel" + (i+1) ] = [ this.nivelHechizo(this.hechizos.Hechizos[lHechizos[i]].Nivel) ];
+			fields["TNivel" + (i+1) ] = [ this.nivelHechizo(this.hechizos.Hechizos[lHechizos[i]].Nivel) ];
 		}
 		return fields;
 	}
