@@ -217,11 +217,11 @@ class Rasgos {
 		campos.push("Ropa");
 		campos.push("Habla");
 		campos.push("Fisico");
-		campos.push("");
+		campos.push("Piel");
 		campos.push("Rostro");
 		campos.push("Pelo");
 		campos.push("Virtud");
-		campos.push("");
+		campos.push("Vicio");
 		return campos;
 	}
 	
