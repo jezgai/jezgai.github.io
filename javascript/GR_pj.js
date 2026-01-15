@@ -53,7 +53,7 @@ class PJ {
 	calcula_da() {
 		this.da = this.armadura.da + this.yelmo.da + this.escudo.da;
 		if ( this.armadura.sumadestreza ) {
-			this.da += Math.trunc(this.bonificador(this.atributos[1].defensa) / 2);
+			this.da += Math.round(this.bonificador(this.atributos[1].defensa) / 2);
 		}
 	}
 	
