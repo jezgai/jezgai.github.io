@@ -373,7 +373,7 @@ class PJ {
 		var fields = {};
 		fields = PJ.rellenaPDFPJ(fields, this, "", plantillaalt);
 		
-		if ( plantillaalt == false ) {
+		if ( plantillaalt == 1 ) {
 			var pj2 = new PJ();
 			pj2.genera(nivelcero, this.reglaInfravision);
 			
