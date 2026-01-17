@@ -20,8 +20,11 @@ class PJ {
 		this.pg = 0;
 		this.equipo = [];
 		this.da = 11;
-		this.plantillaPDF = "pdf/GranujasPJ.pdf"; // "pdf/KnavePJ.pdf";
-		this.plantillaPDFAlt = "pdf/GranujasPJHerugor.pdf";
+		this.plantillasPDF = [ 
+			"pdf/GranujasPJ.pdf",
+			"pdf/GranujasPJHerugor.pdf",
+			"pdf/GranujasPJTamManResumen.pdf",
+		];
 		this.rasgos = [];
 		this.monedas = 0;
 		this.habilidad = "";
@@ -30,10 +33,7 @@ class PJ {
 	}
 	
 	plantilla(alt) {
-		if (alt == true) {
-			return this.plantillaPDFAlt;
-		}
-		return this.plantillaPDF;
+		return this.plantillasPDF[alt-1];
 	}
 	
 	bonificador(defensa) {
@@ -52,9 +52,6 @@ class PJ {
 	
 	calcula_da() {
 		this.da = this.armadura.da + this.yelmo.da + this.escudo.da;
-		if ( this.armadura.sumadestreza ) {
-			this.da += Math.round(this.bonificador(this.atributos[1].defensa) / 2);
-		}
 	}
 	
 	
@@ -97,7 +94,7 @@ class PJ {
 			stabla += "<tr><td>" + this.escudo.armadura + "</td><td>+" + this.escudo.da + "</td><td>" + this.escudo.huecos + "</td></tr>";
 		}
 		if ( this.armadura.sumadestreza == true ) {
-			stabla += "<tr><td>DES si no cargado</td><td>+" + Math.round(this.bonificador(this.atributos[1].defensa) / 2) + "</td><td></td></tr>";
+			stabla += "<tr><td>DES si no cargado</td><td>+" + Math.trunc(this.bonificador(this.atributos[1].defensa) / 2) + "</td><td></td></tr>";
 		}
 		stabla += "</table>";
 		return stabla;
@@ -216,11 +213,16 @@ class PJ {
 	}
 	
 	static rellenaPDFPJ(fields, pj, sufijo, plantillaalt) {
+		var pjarmadura = pj.armadura.armadura;
+		if ( pj.armadura.sumadestreza ) {
+			pjarmadura += " (+" + Math.trunc(pj.bonificador(pj.atributos[1].defensa) / 2) + " si no va cargado)";
+		}
+		
 		fields['Nombre' + sufijo] = [ pj.nombre + " (" + pj.genero + ")" ];
 		fields['Nivel' + sufijo] = [ pj.nivel ];
 		fields['PGMax' + sufijo] = [ pj.pg ];
 		fields['PGActuales' + sufijo] = [ pj.pg ];
-		fields['Armadura' + sufijo] = [ pj.armadura.armadura ];
+		fields['Armadura' + sufijo] = [ pjarmadura ];
 		fields['dArmadura' + sufijo] = [ pj.da ];
 		if ( pj.armadura.calidad > 0 ) {
 			fields['cArmadura' + sufijo] = [ pj.armadura.calidad ];
@@ -258,9 +260,12 @@ class PJ {
 				j++;
 			}
 		}
-		if ( plantillaalt == true ) {
+		if ( plantillaalt > 1 ) { // == true ) {
 			fields['Raza' + sufijo] = [ pj.raza.nombre ];
 			fields['EspaciosEquipo' + sufijo ] = [ pj.atributos[2].defensa ];
+			if ( plantillaalt == 3 ) {
+				fields['LimiteCargado' + sufijo ] = [ Math.trunc( pj.atributos[2].defensa / 2 ) ];
+			}
 		}
 		else {
 			fields[ 'Notas' + sufijo ] = [ srasgo ];
