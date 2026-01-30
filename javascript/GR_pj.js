@@ -23,7 +23,7 @@ class PJ {
 		this.plantillasPDF = [ 
 			"pdf/GranujasPJ.pdf",
 			"pdf/GranujasPJHerugor.pdf",
-			"pdf/GranujasPJTamManResumen.pdf",
+			"pdf/Granujas-PJ-Vertical.pdf",
 		];
 		this.rasgos = [];
 		this.monedas = 0;
