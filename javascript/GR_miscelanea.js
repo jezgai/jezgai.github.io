@@ -310,7 +310,7 @@ class Razas {
 						{ nombre: "Elfo", peso: 5, habilidades: [ "Longevo", "Feérico" ], habilidadesInfravision: [ "Infravisión" ], modificadores: [ 0, 1, -1, 0, 1, 0], movimiento: 12 },
 						{ nombre: "Enano", peso: 5, habilidades: [ "Rotundo", "Sentidos pétreos" ], habilidadesInfravision: [ "Infravisión" ], modificadores: [ 0, 1, -1, 0, 1, 0], movimiento: 8 },
 						{ nombre: "Gnomo", peso: 5, habilidades: [ "Pequeño", "Comprender a los animales" ], habilidadesInfravision: [ "Infravisión" ], modificadores: [ -1, 0, 1, 1, 0, 0], movimiento: 8 },
-						{ nombre: "Mediano", peso: 5, habilidades: [ "Pequeño", "Sigilo natural" ], modificadores: [ -1, 1, 0, 0, 0, 1], movimiento: 8 },
+						{ nombre: "Mediano", peso: 5, habilidades: [ "Pequeño", "Sigilo natural" ], habilidadesInfravision: [ "Vivaz" ], modificadores: [ -1, 1, 0, 0, 0, 1], movimiento: 8 },
 						{ nombre: "Semielfo", peso: 3, habilidades: [ "Herencia feérica" ], habilidadesInfravision: [ "Vivaz" ], modificadores: [ 0, 1, 0, 0, 0, 0], movimiento: 12 },
 						{ nombre: "Semiorco", peso: 2, habilidades: [ "Infravisión" ], habilidadesInfravision: [ "Vivaz" ], modificadores: [ 1, 0, 0, 0, 0, 0], movimiento: 12 }
 					 ];
