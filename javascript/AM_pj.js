@@ -50,8 +50,8 @@ class PJ {
 													  " </td></tr><tr><td><strong>CAAD:</strong> " + this._caad + 
 													  " </td></tr><tr><td><strong>AtqCC:</strong> " + this._atqcc + 
 													  " </td></tr><tr><td><strong>AtqAD:</strong> " + this._atqad + 
-													  " </td></tr><tr><td><strong>Dinero:</strong> " + this._dinero + 
-													  " monedas de oro</td></tr></table";
+													  " </td></tr><tr><td><strong>Dinero:</strong> " + this._dinero + " " + this._objClase.monedabase() +
+													  "</td></tr></table";
 	}
 	
 	recalculaPericiasBasicas() {
@@ -88,28 +88,67 @@ class PJ {
 		return satrs;
 	}
 	
+	danoArma(dano) {
+		if ( dano.hasOwnProperty("tipo") ) {
+			var aux = "d" + dano.tipo;
+			if ( dano.hasOwnProperty("dados") && dano.dados > 1 ) {
+				aux = dano.dados + aux;
+			}
+			if ( dano.hasOwnProperty("modif")) {
+				if ( dado.modif > 0 ) {
+					aux = aux + "+";
+				}
+				aux = aux + dano.modif;
+			}
+			return aux;
+			
+		}
+		
+		return "d" + dano;
+	}
+	
+	tieneArma(dano) {
+		if ( dano.hasOwnProperty("tipo") ) {
+			if ( dano.tipo > 0 ) {
+				return true;
+			}
+		}
+		else if ( dano > 0 ) {
+			return true;
+		}
+		return false;
+	}
+		
 	
 	tablaArmas() {
 		var iarma = 0;
 		var sarma = "<table class='w3-table  w3-striped w3-border'><tr><th>Arma</strong></th><th>Tipo</th><th>Daño</th></tr>";
 		for (iarma = 0; iarma < this.armas.length; iarma++) {
 			sarma += "<tr><td>" + this.armas[iarma].nombre + "</td><td align='center'>" + this.armas[iarma].tipo;
-			if ( this.armas[iarma].tipo == "CaC" && this.armas[iarma].danoAD > 0)
+			//if ( this.armas[iarma].tipo == "CaC" && this.armas[iarma].danoAD > 0)
+			if ( this.armas[iarma].tipo == "CaC" && this.tieneArma(this.armas[iarma].danoAD))
 				sarma += " (AD)";
-			else if ( this.armas[iarma].tipo == "AD" && this.armas[iarma].danoCaC > 0)
+			//else if ( this.armas[iarma].tipo == "AD" && this.armas[iarma].danoCaC > 0)
+			else if ( this.armas[iarma].tipo == "CaC" && this.tieneArma(this.armas[iarma].danoCaC))
 				sarma += " (CaC)";
 			sarma += "</td><td align='center'>";
 			if ( this.armas[iarma].tipo == "CaC" ) 
 			{
-				sarma += "d" + this.armas[iarma].danoCaC;
-				if ( this.armas[iarma].danoAD != "" ) 
-					sarma += " (d" + this.armas[iarma].danoAD + ")";
+				//sarma += "d" + this.armas[iarma].danoCaC;
+				sarma += this.danoArma(this.armas[iarma].danoCaC);
+				//if ( this.armas[iarma].danoAD != "" ) 
+				if ( this.tieneArma(this.armas[iarma].danoAD) )
+					sarma += " (" + this.danoArma(this.armas[iarma].danoAD) + ")";
+					//sarma += " (d" + this.armas[iarma].danoAD + ")";
 			}
 			else 
 			{
-				sarma += "d"+ this.armas[iarma].danoAD ;
-				if ( this.armas[iarma].danoCaC != "" ) 
-					sarma += " (d" + this.armas[iarma].danoCaC + ")";
+				//sarma += "d"+ this.armas[iarma].danoAD ;
+				sarma += this.danoArma(this.armas[iarma].danoAD);
+				//if ( this.armas[iarma].danoCaC != "" ) 
+				if ( this.tieneArma(this.armas[iarma].danoCaC) )
+					sarma += " (" + this.danoArma(this.armas[iarma].danoCaC) + ")";
+					//sarma += " (d" + this.armas[iarma].danoCaC + ")";
 			}
 			sarma += "</td></tr>";
 		}
@@ -238,6 +277,7 @@ class PJ {
 		this._clase = this._objClase.nombre;
 		this._pv = this._pvclase + Atributos.modificador(this._atributos._atributos[2].valor + this._objClase.modifadicional[2]);
 		this.calculaConjuros();
+				
 		this._objClase.calculapericias(this._atributos._atributos);
 		this._pericias = this._objClase.ptospericia;
 		this._atqcc = this._objClase.ataque + Atributos.modificador(this._atributos._atributos[0].valor + this._objClase.modifadicional[0]);
@@ -313,7 +353,7 @@ class PJ {
 			return "pdf/AxisMundi.pdf";
 		}*/
 	}
-		
+	
 	rellenaPDF() {
 		
 			  var movimientoBase = this._objClase.movimiento ;
@@ -471,16 +511,23 @@ class PJ {
 					var nombrearma = this.armas[iarma].nombre;
 					var danoarma = "";
 					if ( this.armas[iarma].tipo == "CaC" ) {
-						danoarma = "d" + this.armas[iarma].danoCaC;
-						if ( this.armas[iarma].danoAD > 0) {
-							danoarma += " (d" + this.armas[iarma].danoAD + ")";
+						//danoarma = "d" + this.armas[iarma].danoCaC;
+						danoarma = this.danoArma(this.armas[iarma].danoCaC);
+						
+						//if ( this.armas[iarma].danoAD > 0) {
+						if ( this.tieneArma(this.armas[iarma].danoAD) ) {
+							//danoarma += " (d" + this.armas[iarma].danoAD + ")";
+							danoarma += " (" + this.danoArma(this.armas[iarma].danoAD) + ")";
 							nombrearma += " (CaC)";
 						}
 					}
 					else {
-						danoarma = "d" + this.armas[iarma].danoAD;
-						if ( this.armas[iarma].danoCaC > 0) {
-							danoarma += " (d" + this.armas[iarma].danoCaC + ")";
+						//danoarma = "d" + this.armas[iarma].danoAD;
+						danoarma = this.danoArma(this.armas[iarma].danoAD);
+						//if ( this.armas[iarma].danoCaC > 0) {
+						if ( this.tieneArma(this.armas[iarma].danoCaC) ) {
+							//danoarma += " (d" + this.armas[iarma].danoCaC + ")";
+							danoarma += " (" + this.danoArma(this.armas[iarma].danoCaC) + ")";
 							nombrearma += " (AD)";
 						}
 					}

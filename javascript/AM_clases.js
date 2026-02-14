@@ -1,3 +1,21 @@
+class SistemaMonetario {
+	constructor(sistemamonetario) {
+		if ( sistemamonetario == null ) {
+			this.monedabaseoro = "monedas de oro";
+			this.conversionbase = 1;
+			this.monedas = [ "monedas de oro", "monedas de plata", "monedas de cobre" ];
+		}
+		else {
+			this.monedabaseoro = sistemamonetario.monedabaseoro;
+			this.conversionbase = sistemamonetario.conversionbase;
+			this.monedas = sistemamonetario.monedas;
+		}
+	}
+	moneda() {
+		return this.monedabaseoro;
+	}
+}
+
 class Clase {
 	constructor(clase) {
 		this.nombre = clase.nombre;
@@ -23,6 +41,11 @@ class Clase {
 		this.modifadicional = clase.modifadicional;
 		this.armas = clase.armas;
 		this.plantilla = clase.plantilla;
+		this.sistemamonetario = new SistemaMonetario(clase.sistemamonetario);
+	}
+	
+	monedabase() {
+		return this.sistemamonetario.moneda();
 	}
 	
 	buscapericia(nombrepericia, tablapericias) {
@@ -34,11 +57,21 @@ class Clase {
 		return -1;
 	}
 	
+	
+	buscapericianombre(nombrepericia, tablapericias) {
+		var indice=0;
+		for (indice=0; indice<tablapericias.length; indice++) {
+			if ( tablapericias[indice].nombre == nombrepericia )
+				return indice;
+		}
+		return -1;
+	}
+	
 	ptosbasepericia(nombrepericia) {
-		var indice=this.buscapericia(nombrepericia, this.pericias.pericias);
+		var indice=this.buscapericianombre(nombrepericia, this.pericias.pericias);
 		if (indice != -1)
 			return this.pericias.pericias[indice].puntos;
-		indice=this.buscapericia(nombrepericia, this.periciasespeciales.pericias);
+		indice=this.buscapericianombre(nombrepericia, this.periciasespeciales.pericias);
 		if (indice != -1)
 			return this.periciasespeciales.pericias[indice].puntos;
 		return 0;
@@ -111,91 +144,14 @@ class Clase {
 		return armaspj;
 	}
 	
-	
 	calculapericias(atributospj) {
-		this.ptospericia = [ ];
-		var indice = 0;
-		
-		var pericia = new Object();
-		pericia.tipo = "Básica";
-		pericia.pericia = "Alerta";
-		pericia.puntosbase = (atributospj[4].modif + this.modifadicional[4]) < -1 ? 1 : 2 + Atributos.modificador(atributospj[4].valor + this.modifadicional[4]);
-		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
-		pericia.puntos = 0;
-		pericia.especial = false;
-		pericia.puntosespecial = 0;
-		this.ptospericia.push(pericia);
-		
-		pericia = new Object();
-		pericia.tipo = "Básica";
-		pericia.pericia = "Arquitectura";
-		pericia.puntosbase = 1;
-		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
-		pericia.puntos = 0;
-		pericia.especial = false;
-		pericia.puntosespecial = 0;
-		this.ptospericia.push(pericia);
-		
-		pericia = new Object();
-		pericia.tipo = "Básica";
-		pericia.pericia = "Escalada";
-		pericia.puntosbase = (atributospj[2].modif + this.modifadicional[2]) < 0 ? 1 : 1 + Atributos.modificador(atributospj[2].valor + this.modifadicional[2]);
-		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
-		pericia.puntos = 0;
-		pericia.especial = false;
-		pericia.puntosespecial = 0;
-		this.ptospericia.push(pericia);
-		
-		pericia = new Object();
-		pericia.tipo = "Básica";
-		pericia.pericia = "Detectar";
-		pericia.puntosbase = 1;
-		pericia.puntos = 0;
-		pericia.especial = false;
-		pericia.puntosespecial = 0;
-		this.ptospericia.push(pericia);
-		
-		pericia = new Object();
-		pericia.tipo = "Básica";
-		pericia.pericia = "Forzar Puertas";
-		pericia.puntosbase = (atributospj[0].modif + this.modifadicional[0]) < 0 ? 1 : 1 + Atributos.modificador(atributospj[0].valor + this.modifadicional[0]);
-		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
-		pericia.puntos = 0;
-		pericia.especial = false;
-		pericia.puntosespecial = 0;
-		this.ptospericia.push(pericia);
-		
-		pericia = new Object();
-		pericia.tipo = "Básica";
-		pericia.pericia = "Idiomas";
-		pericia.puntosbase = (atributospj[3].modif + this.modifadicional[3]) < 0 ? 0 : Atributos.modificador(atributospj[3].valor + this.modifadicional[3]);
-		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
-		pericia.puntos = 0;
-		pericia.especial = false;
-		pericia.puntosespecial = 0;
-		this.ptospericia.push(pericia);
-		
-		pericia = new Object();
-		pericia.tipo = "Básica";
-		pericia.pericia = "Sigilo";
-		pericia.puntosbase = (atributospj[1].modif + this.modifadicional[1]) < -1 ? 1 : 2 + Atributos.modificador(atributospj[1].valor + this.modifadicional[1]);
-		pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
-		pericia.puntos = 0;
-		pericia.especial = false;
-		pericia.puntosespecial = 0;
-		this.ptospericia.push(pericia);
-		
-		for (indice=0; indice < this.pericias.pericias.length; indice++ ) {
-			if ( this.buscapericia(this.pericias.pericias[indice].nombre, this.ptospericia) == -1 ) {
-				var pericia = new Object();
-				pericia.tipo = "Avanzada";
-				pericia.pericia = this.pericias.pericias[indice].nombre;
-				pericia.puntosbase = this.pericias.pericias[indice].puntos;
-				pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
-				pericia.puntos = 0;
-				pericia.especial = false;
-				pericia.puntosespecial = 0;
-				this.ptospericia.push(pericia);
+		this.ptospericia = pericias.basicas(atributospj, this.modifadicional);
+		var indice=0;
+		for (indice=0;indice<this.pericias.pericias.length; indice++ ) {
+			var periciaadicional=pericias.buscapericia(this.pericias.pericias[indice].nombre);
+			if ( periciaadicional != null && periciaadicional.tipo == "Avanzada" ) {
+				periciaadicional.calculapuntos(atributospj, this.modifadicional);
+				this.ptospericia.push(periciaadicional);
 			}
 		}
 		
@@ -216,30 +172,26 @@ class Clase {
 			}
 		}
 		
-		if ( this.periciasespeciales.puntos > 0 ) {
-			var indice2=0;
-			for (indice=0; indice < this.periciasespeciales.pericias.length; indice++ ) {
-				for (indice2=0; indice2 < this.ptospericia.length; indice2++) {
-					if ( this.ptospericia[indice2].pericia == this.periciasespeciales.pericias[indice].nombre ) {
+		if ( this.periciasespeciales.pericias.length > 0 ) {
+			for (indice=0;indice<this.periciasespeciales.pericias;indice++) {
+				var indice2=0;
+				for (indice2=0; indice2<this.ptospericia.length;indice2++) {
+					if ( this.periciasespeciales[indice].nombre == this.ptospericia[indice2].pericia ) {
 						this.ptospericia[indice2].especial = true;
 						break;
 					}
 				}
 				if ( indice2 == this.ptospericia.length ) {
-					
-					if ( this.buscapericia(this.periciasespeciales.pericias[indice].nombre, this.ptospericia) == -1 ) {
-						var pericia = new Object();
-						pericia.tipo = "Avanzada";
-						pericia.pericia = this.periciasespeciales.pericias[indice].nombre;
-						pericia.puntosbase = this.periciasespeciales.pericias[indice].puntos;
-						pericia.puntosbase += this.ptosbasepericia(pericia.pericia);
-						pericia.puntos = 0;
-						pericia.especial = true;
-						pericia.puntosespecial = 0;
-						this.ptospericia.push(pericia);
-					}
+					var periciaadicional=pericias.buscapericia(this.pericias.pericias[indice].nombre);
+					periciaadicional.especial = true;
+					periciaadicional.calculapuntos(atributospj, this.modifadicional);
+					this.ptospericia.push(periciaadicional);
 				}
 			}
+		}
+		
+		
+		if ( this.periciasespeciales.puntos > 0 ) {			
 			var ptos = this.periciasespeciales.puntos;
 			var ptoinicial = 1;
 			if ( this.periciasespeciales.puntos > this.periciasespeciales.pericias.length ) {
@@ -255,6 +207,7 @@ class Clase {
 			}
 			
 			puntos = Comun.shuffle(puntos);
+			
 			indice2=0;
 			for (indice = 0; indice < this.ptospericia.length; indice++) {
 				if ( this.ptospericia[indice].especial == true ) {
@@ -297,10 +250,12 @@ class Clases {
               ],
               idiomas: [ ],
               boniftipoarmas: 1,
+              bonifpericias: [],
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Espada corta", "Jabalina" ], [ "Espada larga" ], [ "Daga", "Lanza" ] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Mago",
@@ -335,6 +290,7 @@ class Clases {
 													  "Levitar", "Localizar objeto", "Luz continua", "Oscuridad continua", "Percepción extrasensorial", 
 													  "Protección contra el mal", "Telaraña" ] },
 			  armas: [ [ "Bastón", "Daga" ] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Especialista",
@@ -363,9 +319,10 @@ class Clases {
               idiomas: [ ],
               boniftipoarmas: 0,
               periciasespeciales: { puntos: 0, pericias: [ ] },
-              pericias: { puntos: 4, pericias: [ { nombre: "Apuñalar", puntos: 0}, { nombre: "Detectar Trampas", puntos: 1}, { nombre: "Juego de Manos", puntos: 0}, { nombre: "Mecanismos", puntos: 0} ] },
+              pericias: { puntos: 4, pericias: [ { nombre: "Apuñalar", puntos: 0}, { nombre: "Detectar trampas", puntos: 1}, { nombre: "Juego de Manos", puntos: 0}, { nombre: "Mecanismos", puntos: 0} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Daga", "Ballesta ligera" ], [ "Espada ropera", "Daga"] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Sacerdote",
@@ -399,6 +356,7 @@ class Clases {
 													  "Protección contra el mal", "Purificar comida y agua", "Pudrir comida y agua", "Resistir frío", "Retirar miedo", "Causar miedo", "Santuario" ], 
 						  numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Bastón" ] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Clérigo",
@@ -433,6 +391,7 @@ class Clases {
 													  "Protección contra el mal", "Purificar comida y agua", "Pudrir comida y agua", "Resistir frío", "Retirar miedo", "Causar miedo", "Santuario" ], 
 						  numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Martillo ligero" ], [ "Maza"] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Paladín",
@@ -464,6 +423,7 @@ class Clases {
               pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Espada larga" ], [ "Espadón"] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Montaraz",
@@ -495,6 +455,7 @@ class Clases {
               pericias: { puntos: 2, pericias: [ { nombre: "Supervivencia", puntos: 0} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Espada corta", "Arco corto" ], [ "Daga", "Arco corto" ], [ "Daga", "Jabalina" ] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Bardo",
@@ -527,6 +488,7 @@ class Clases {
 						  numeroN1: 0, conjurosN1: [ ], 
 						  numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Espada ropera", "Daga"] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Bárbaro",
@@ -558,6 +520,7 @@ class Clases {
               pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Espadón", "Hacha de mano"], [ "Gran hacha", "Hacha de mano" ], [ "Hacha de batalla", "Hacha de mano"] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Asesino",
@@ -589,6 +552,7 @@ class Clases {
               pericias: { puntos: 2, pericias: [ { nombre: "Apuñalar", puntos: 0} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Daga" ], [ "Estoque", "Daga"] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Monje",
@@ -619,6 +583,7 @@ class Clases {
               pericias: { puntos: 2, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Jō (bastón)", "Sai" ], [ "Jian (espada)", "Sai"], [ "Dadao (sable)", "Sai" ] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Guerrero arcano elfo",
@@ -654,6 +619,7 @@ class Clases {
 													  "Levitar", "Localizar objeto", "Luz continua", "Oscuridad continua", "Percepción extrasensorial", 
 													  "Protección contra el mal", "Telaraña" ] },
 			  armas: [ [ "Espada corta", "Arco corto" ], [ "Daga", "Arco corto" ] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Capellán elfo",
@@ -687,6 +653,7 @@ class Clases {
 													  "Protección contra el mal", "Purificar comida y agua", "Pudrir comida y agua", "Resistir frío", "Retirar miedo", "Causar miedo", "Santuario" ], 
 						  numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Martillo ligero" ], [ "Maza"] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Defensor enano",
@@ -718,6 +685,7 @@ class Clases {
               pericias: { puntos: 0, pericias: [ { nombre: "Sigilo", puntos: 1} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Gran hacha", "Hacha de mano" ], [ "Hacha de batalla", "Hacha de mano"] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Luchador enano",
@@ -748,6 +716,7 @@ class Clases {
               pericias: { puntos: 0, pericias: [ { nombre: "Sigilo", puntos: 1} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Gran hacha", "Hacha de mano" ], [ "Hacha de batalla", "Martillo ligero"], [ "Martillo de guerra", "Hacha de mano" ] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Clérigo enano",
@@ -783,6 +752,7 @@ class Clases {
 													  "Protección contra el mal", "Purificar comida y agua", "Resistir frío", "Retirar miedo", "Santuario" ], 
 						  numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Gran hacha", "Hacha de mano" ], [ "Hacha", "Hacha de mano" ], [ "Hacha de batalla", "Martillo ligero"], [ "Martillo de guerra", "Hacha de mano" ] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Alguacil mediano",
@@ -810,10 +780,11 @@ class Clases {
               ],
               idiomas: [ "Mediano" ],
               boniftipoarmas: -1,
-              periciasespeciales: { puntos: 4, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Sigilo", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
-              pericias: { puntos: 2, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1} ] },
+              periciasespeciales: { puntos: 4, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de Manos", puntos: 0},  { nombre: "Sigilo", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
+              pericias: { puntos: 2, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de Manos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Daga", "Espada corta" ] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Saqueador mediano",
@@ -841,10 +812,11 @@ class Clases {
               ],
               idiomas: [ "Mediano" ],
               boniftipoarmas: -1,
-              periciasespeciales: { puntos: 6, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Sigilo", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
-              pericias: { puntos: 4, pericias: [ { nombre: "Apuñalar", puntos: 0}, { nombre: "Curar", puntos: 0}, { nombre: "Juego de manos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1}, { nombre: "Mecanismos", puntos: 0} ] },
+              periciasespeciales: { puntos: 6, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de Manos", puntos: 0},  { nombre: "Sigilo", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
+              pericias: { puntos: 4, pericias: [ { nombre: "Apuñalar", puntos: 0}, { nombre: "Curar", puntos: 0}, { nombre: "Juego de Manos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1}, { nombre: "Mecanismos", puntos: 0} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Daga", "Honda" ] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Mercenario semiogro",
@@ -872,10 +844,11 @@ class Clases {
               ],
               idiomas: [ ],
               boniftipoarmas: 1,
-              periciasespeciales: { puntos: 0, pericias: [ ] },
-              pericias: { puntos: 0, pericias: [ { nombre: "Sigilo", puntos: -1} ] },
+              periciasespeciales: { puntos: 0, pericias: [ { nombre: "Sigilo", puntos: -1} ] },
+              pericias: { puntos: 0, pericias: [ ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Espadón", "Alfanje"], [ "Gran hacha", "Cimitarra" ], [ "Hacha de batalla", "Maza"] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Ladrón semielfo",
@@ -904,9 +877,10 @@ class Clases {
               idiomas: [ ],
               boniftipoarmas: 0,
               periciasespeciales: { puntos: 0, pericias: [ ] },
-              pericias: { puntos: 4, pericias: [ { nombre: "Apuñalar", puntos: 0}, { nombre: "Detectar Trampas", puntos: 1}, { nombre: "Juego de Manos", puntos: 0}, { nombre: "Mecanismos", puntos: 0} ] },
+              pericias: { puntos: 4, pericias: [ { nombre: "Apuñalar", puntos: 0}, { nombre: "Detectar trampas", puntos: 1}, { nombre: "Juego de Manos", puntos: 0}, { nombre: "Mecanismos", puntos: 0} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Daga", "Ballesta ligera" ], [ "Espada ropera", "Daga"], [ "Espada corta", "Arco corto" ] ],
+			  sistemamonetario: null,
 			},
 			{
 			  nombre : "Guardián de la floresta élfico",
@@ -938,7 +912,826 @@ class Clases {
               pericias: { puntos: 2, pericias: [ { nombre: "Supervivencia", puntos: 0} ] },
 			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Espada corta", "Arco corto" ], [ "Daga", "Arco corto" ], [ "Daga", "Jabalina" ], [ "Espada corta", "Jabalina" ] ],
+			  sistemamonetario: null,
+			},  
+			{
+			nombre: "El Carroñero",
+			requisitos: [
+			  {
+				atributo: "DES",
+				valor: 9
+			  }
+			],
+			reqprimario: "DES",
+			modifadicional: [
+			  0,
+			  0,
+			  0,
+			  0,
+			  0,
+			  0
+			],
+			dg: 6,
+			caracteristicas: [
+			  "Puede usar cualquier armadura hasta malla",
+			  "Emboscar. Este trasto debería de funcionar.",
+			  "Ventaja al escalar (N3), Arcanista aficionado (N10)"
+			],
+			ca: 0,
+			ataque: 1,
+			ataquead: 0,
+			dano: 1,
+			tipobonifdano: "AD",
+			barridos: 0,
+			movimiento: 40,
+			experiencia: 1400,
+			tsalvacion: [
+			  {
+				nombre: "Captura",
+				valor: 13
+			  },
+			  {
+				nombre: "Aflicciones",
+				valor: 13
+			  },
+			  {
+				nombre: "Ataque de area",
+				valor: 16
+			  },
+			  {
+				nombre: "Artefactos magicos",
+				valor: 14
+			  },
+			  {
+				nombre: "Conjuros",
+				valor: 15
+			  }
+			],
+			idiomas: [],
+			boniftipoarmas: 0,
+			periciasespeciales: {
+			  puntos: 0,
+			  pericias: []
 			},
+			pericias: {
+			  puntos: 6,
+			  pericias: [
+				{
+				  nombre: "Supervivencia",
+				  puntos: 0
+				},
+				{
+				  nombre: "Reciclaje (Munición)",
+				  puntos: 0
+				},
+				{
+				  nombre: "Reciclaje (Armas)",
+				  puntos: 0
+				},
+				{
+				  nombre: "Reciclaje (Armaduras)",
+				  puntos: 0
+				},
+				{
+				  nombre: "Uso de armas de fuego",
+				  puntos: 0
+				},
+				{
+				  nombre: "Detectar trampas",
+				  puntos: 1
+				},
+				{
+				  nombre: "Mecanismos",
+				  puntos: 0
+				}
+			  ]
+			},
+			conjuros: {
+			  fijos: [],
+			  numeroN1: 0,
+			  conjurosN1: [],
+			  numeroN2: 0,
+			  conjurosN2: []
+			},
+			armas: [
+			],
+			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+		  },
+		  {
+			nombre: "El Incinerador",
+			requisitos: [
+			  {
+				atributo: "FUE",
+				valor: 9
+			  }
+			],
+			reqprimario: "FUE",
+			modifadicional: [
+			  0,
+			  0,
+			  0,
+			  0,
+			  0,
+			  0
+			],
+			dg: 8,
+			caracteristicas: [
+			  "Solo puede usar armaduras de cuero sin escudo",
+			  "Daño +1 (y +1/nivel par) en ataques con fuego",
+			  "Incinerar. Especialista en fuego cruzado (N2).",
+			  "¿Quieres sentir el calor? (N5). Siervo de las llamas (N8)"
+			],
+			ca: 0,
+			ataque: 1,
+			ataquead: 0,
+			dano: 0,
+			tipobonifdano: "CC y AD",
+			barridos: 1,
+			movimiento: 40,
+			experiencia: 2300,
+			tsalvacion: [
+			  {
+				nombre: "Captura",
+				valor: 15
+			  },
+			  {
+				nombre: "Aflicciones",
+				valor: 14
+			  },
+			  {
+				nombre: "Ataque de area",
+				valor: 16
+			  },
+			  {
+				nombre: "Artefactos magicos",
+				valor: 16
+			  },
+			  {
+				nombre: "Conjuros",
+				valor: 17
+			  }
+			],
+			idiomas: [],
+			boniftipoarmas: 1,
+			periciasespeciales: {
+			  puntos: 0,
+			  pericias: []
+			},
+			pericias: {
+			  puntos: 2,
+			  pericias: [
+			  ]
+			},
+			conjuros: {
+			  fijos: [],
+			  numeroN1: 0,
+			  conjurosN1: [],
+			  numeroN2: 0,
+			  conjurosN2: []
+			},
+			armas: [
+			],
+			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+		  },
+		  {
+			nombre: "Tecnomago",
+			requisitos: [
+			  {
+				atributo: "INT",
+				valor: 9
+			  }
+			],
+			reqprimario: "INT",
+			modifadicional: [
+			  0,
+			  0,
+			  0,
+			  0,
+			  0,
+			  0
+			],
+			dg: 4,
+			caracteristicas: [
+			  "No pueden usar ningún tipo de armadura",
+			  "Puede memorizar y lanzar Tecnomagia"
+			],
+			ca: 0,
+			ataque: 1,
+			ataquead: 0,
+			dano: 0,
+			tipobonifdano: "CC y AD",
+			barridos: 0,
+			movimiento: 40,
+			experiencia: 2100,
+			tsalvacion: [
+			  {
+				nombre: "Captura",
+				valor: 13
+			  },
+			  {
+				nombre: "Aflicciones",
+				valor: 13
+			  },
+			  {
+				nombre: "Ataque de area",
+				valor: 15
+			  },
+			  {
+				nombre: "Artefactos magicos",
+				valor: 11
+			  },
+			  {
+				nombre: "Conjuros",
+				valor: 12
+			  }
+			],
+			idiomas: [],
+			boniftipoarmas: 0,
+			periciasespeciales: {
+			  puntos: 0,
+			  pericias: []
+			},
+			pericias: {
+			  puntos: 2,
+			  pericias: [
+				{
+				  nombre: "Mecanismos",
+				  puntos: 0
+				},
+				{
+				  nombre: "Ingeniería",
+				  puntos: 1
+				},
+				{
+				  nombre: "Curar",
+				  puntos: 0
+				}
+			  ]
+			},
+			conjuros: {
+			  fijos: [
+			  ],
+			  numeroN1: 2,
+			  conjurosN1: [
+				"Barrera de luz",
+				"Cargar batería menor",
+				"Guantes de tirador",
+				"Reanimar dispositivo"
+			  ],
+			  numeroN2: 0,
+			  conjurosN2: [
+			  ]
+			},
+			armas: [
+			],
+			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+		  },
+		  {
+			nombre: "El Tirador Chatarrero",
+			requisitos: [
+			  {
+				atributo: "DES",
+				valor: 9
+			  }
+			],
+			reqprimario: "DES",
+			modifadicional: [
+			  0,
+			  0,
+			  0,
+			  0,
+			  0,
+			  0
+			],
+			dg: 6,
+			caracteristicas: [
+			  "Puede usar cualquier armadura hasta malla",
+			  "Emboscar. Puntería. Supervivencia (N4).",
+			  "Disparo de precisión (N10)"
+			],
+			ca: 0,
+			ataque: 1,
+			ataquead: 0,
+			dano: 1,
+			tipobonifdano: "AD",
+			barridos: 1,
+			movimiento: 40,
+			experiencia: 2300,
+			tsalvacion: [
+			  {
+				nombre: "Captura",
+				valor: 15
+			  },
+			  {
+				nombre: "Aflicciones",
+				valor: 14
+			  },
+			  {
+				nombre: "Ataque de area",
+				valor: 16
+			  },
+			  {
+				nombre: "Artefactos magicos",
+				valor: 16
+			  },
+			  {
+				nombre: "Conjuros",
+				valor: 17
+			  }
+			],
+			idiomas: [],
+			boniftipoarmas: 1,
+			periciasespeciales: {
+			  puntos: 0,
+			  pericias: []
+			},
+			pericias: {
+			  puntos: 2,
+			  pericias: [
+				{
+				  nombre: "Reciclaje (Munición)",
+				  puntos: 0
+				},
+				{
+				  nombre: "Uso de armas de fuego",
+				  puntos: 0
+				},
+				{
+				  nombre: "Detectar trampas",
+				  puntos: 1
+				}
+			  ]
+			},
+			conjuros: {
+			  fijos: [],
+			  numeroN1: 0,
+			  conjurosN1: [],
+			  numeroN2: 0,
+			  conjurosN2: []
+			},
+			armas: [
+			],
+			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+		  },
+		  {
+			nombre: "El Tocho",
+			requisitos: [
+			  {
+				atributo: "FUE",
+				valor: 9
+			  },
+			  {
+				atributo: "CON",
+				valor: 9
+			  }
+			],
+			reqprimario: "CON",
+			modifadicional: [
+			  0,
+			  0,
+			  0,
+			  0,
+			  0,
+			  0
+			],
+			dg: 10,
+			caracteristicas: [
+			  "Puede usar cualquier armadura hasta malla",
+			  "Agarre firme. Fornido. Difícil de matar."
+			],
+			ca: 0,
+			ataque: 1,
+			ataquead: 0,
+			dano: 0,
+			tipobonifdano: "CC y AD",
+			barridos: 0,
+			movimiento: 40,
+			experiencia: 2000,
+			tsalvacion: [
+			  {
+				nombre: "Captura",
+				valor: 15
+			  },
+			  {
+				nombre: "Aflicciones",
+				valor: 14
+			  },
+			  {
+				nombre: "Ataque de area",
+				valor: 16
+			  },
+			  {
+				nombre: "Artefactos magicos",
+				valor: 16
+			  },
+			  {
+				nombre: "Conjuros",
+				valor: 17
+			  }
+			],
+			idiomas: [],
+			boniftipoarmas: 1,
+			periciasespeciales: {
+			  puntos: 0,
+			  pericias: []
+			},
+			pericias: {
+			  puntos: 2,
+			  pericias: [
+			  ]
+			},
+			conjuros: {
+			  fijos: [],
+			  numeroN1: 0,
+			  conjurosN1: [],
+			  numeroN2: 0,
+			  conjurosN2: []
+			},
+			armas: [
+			],
+			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+		  },
+		  {
+			nombre: "Tecnomago Kobold",
+			requisitos: [
+			  {
+				atributo: "INT",
+				valor: 11
+			  },
+			  {
+				atributo: "DES",
+				valor: 11
+			  }
+			],
+			reqprimario: "INT",
+			modifadicional: [
+			  0,
+			  0,
+			  0,
+			  0,
+			  0,
+			  0
+			],
+			dg: 4,
+			caracteristicas: [
+			  "Solo puede usar armaduras de cuero sin escudo",
+			  "Puede memorizar y lanzar Tecnomagia (N3)",
+			  "Correr por su vida."
+			],
+			ca: 1,
+			ataque: 1,
+			ataquead: 0,
+			dano: 0,
+			tipobonifdano: "CC y AD",
+			barridos: 0,
+			movimiento: 30,
+			experiencia: 2525,
+			tsalvacion: [
+			  {
+				nombre: "Captura",
+				valor: 13
+			  },
+			  {
+				nombre: "Aflicciones",
+				valor: 13
+			  },
+			  {
+				nombre: "Ataque de area",
+				valor: 15
+			  },
+			  {
+				nombre: "Artefactos magicos",
+				valor: 11
+			  },
+			  {
+				nombre: "Conjuros",
+				valor: 12
+			  }
+			],
+			idiomas: [],
+			boniftipoarmas: -1,
+			periciasespeciales: {
+			  puntos: 3,
+			  pericias: [ 
+				{
+					nombre: "Sigilo",
+					puntos: 1
+				},
+				{
+				  nombre: "Mecanismos",
+				  puntos: 0
+				},
+				{
+				  nombre: "Uso de armas de fuego",
+				  puntos: 0
+				},
+				{
+				  nombre: "Reciclaje (____)",
+				  puntos: 0
+				},
+				{
+				  nombre: "Detectar trampas",
+				  puntos: 1
+				} 
+			  ]
+			},
+			pericias: {
+			  puntos: 2,
+			  pericias: [
+				{
+				  nombre: "Mecanismos",
+				  puntos: 0
+				},
+				{
+				  nombre: "Uso de armas de fuego",
+				  puntos: 0
+				},
+				{
+				  nombre: "Reciclaje (____)",
+				  puntos: 0
+				},
+				{
+				  nombre: "Reciclaje (_____)",
+				  puntos: 0
+				}
+			  ]
+			},
+			conjuros: {
+			  fijos: [
+			  ],
+			  numeroN1: 2,
+			  conjurosN1: [
+				"Barrera de luz",
+				"Cargar batería menor",
+				"Guantes de tirador",
+				"Reanimar dispositivo"
+			  ],
+			  numeroN2: 0,
+			  conjurosN2: [
+			  ]
+			},
+			armas: [
+			],
+			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+		  },
+		  {
+			nombre: "Chamán Kobold",
+			requisitos: [
+			  {
+				atributo: "SAB",
+				valor: 11
+			  },
+			  {
+				atributo: "DES",
+				valor: 11
+			  }
+			],
+			reqprimario: "SAB",
+			modifadicional: [
+			  0,
+			  0,
+			  0,
+			  0,
+			  0,
+			  0
+			],
+			dg: 6,
+			caracteristicas: [
+			  "No puede usar ningún tipo de armadura",
+			  "Puede memorizar y lanzar magia divina",
+			  "Correr por su vida. Carisma oscuro.",
+			  "Arcanista aficionado (N6). Profecias (N8)"
+			],
+			ca: 1,
+			ataque: 1,
+			ataquead: 0,
+			dano: 0,
+			tipobonifdano: "CC y AD",
+			barridos: 0,
+			movimiento: 30,
+			experiencia: 1650,
+			tsalvacion: [
+			  {
+				nombre: "Captura",
+				valor: 13
+			  },
+			  {
+				nombre: "Aflicciones",
+				valor: 13
+			  },
+			  {
+				nombre: "Ataque de area",
+				valor: 15
+			  },
+			  {
+				nombre: "Artefactos magicos",
+				valor: 11
+			  },
+			  {
+				nombre: "Conjuros",
+				valor: 12
+			  }
+			],
+			idiomas: [],
+			boniftipoarmas: -1,
+			periciasespeciales: {
+			  puntos: 3,
+			  pericias: [ 
+				{
+					nombre: "Sigilo",
+					puntos: 1
+				},
+				{
+				  nombre: "Mecanismos",
+				  puntos: 0
+				},
+				{
+				  nombre: "Reciclaje (____)",
+				  puntos: 0
+				},
+				{
+				  nombre: "Detectar trampas",
+				  puntos: 1
+				} 
+			  ]
+			},
+			pericias: {
+			  puntos: 6,
+			  pericias: [
+				{
+				  nombre: "Curar",
+				  puntos: 0
+				},
+				{
+				  nombre: "Mecanismos",
+				  puntos: 0
+				},
+				{
+				  nombre: "Uso de armas de fuego",
+				  puntos: 0
+				},
+				{
+				  nombre: "Reciclaje (____)",
+				  puntos: 0
+				},
+				{
+				  nombre: "Reciclaje (_____)",
+				  puntos: 0
+				}
+			  ]
+			},
+			conjuros: {
+			  fijos: [
+			  ],
+			  numeroN1: -1,
+			  conjurosN1: [
+				"Curar heridas leves",
+				"Causar heridas leves",
+				"Detectar magia",
+				"Detectar bien",
+				"Detectar mal",
+				"Luz",
+				"Oscuridad",
+				"Palabra de mando",
+				"Protección contra el mal",
+				"Purificar comida y agua",
+				"Pudrir comida y agua",
+				"Resistir frío",
+				"Retirar miedo",
+				"Causar miedo",
+				"Santuario"
+			  ],
+			  numeroN2: 0,
+			  conjurosN2: [
+			  ]
+			},
+			armas: [
+			],
+			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+		  },
+		  {
+			nombre: "Recuperador Kobold",
+			requisitos: [
+			  {
+				atributo: "FUE",
+				valor: 11
+			  },
+			  {
+				atributo: "DES",
+				valor: 11
+			  }
+			],
+			reqprimario: "SAB",
+			modifadicional: [
+			  0,
+			  0,
+			  0,
+			  0,
+			  0,
+			  0
+			],
+			dg: 6,
+			caracteristicas: [
+			  "Solo puede usar armadura de cuero sin escudo",
+			  "Correr por su vida. Pasar desapercibido.",
+			  "Nada se le escapa (N3). Ventaja al escalar (N6)"
+			],
+			ca: 1,
+			ataque: 1,
+			ataquead: 0,
+			dano: 0,
+			tipobonifdano: "CC y AD",
+			barridos: 1,
+			movimiento: 30,
+			experiencia: 1650,
+			tsalvacion: [
+			  {
+				nombre: "Captura",
+				valor: 15
+			  },
+			  {
+				nombre: "Aflicciones",
+				valor: 14
+			  },
+			  {
+				nombre: "Ataque de area",
+				valor: 16
+			  },
+			  {
+				nombre: "Artefactos magicos",
+				valor: 16
+			  },
+			  {
+				nombre: "Conjuros",
+				valor: 17
+			  }
+			],
+			idiomas: [],
+			boniftipoarmas: 0,
+			periciasespeciales: {
+			  puntos: 3,
+			  pericias: [ 
+				{
+					nombre: "Sigilo",
+					puntos: 1
+				},
+				{
+				  nombre: "Mecanismos",
+				  puntos: 0
+				},
+				{
+				  nombre: "Reciclaje (____)",
+				  puntos: 0
+				},
+				{
+				  nombre: "Detectar trampas",
+				  puntos: 1
+				} 
+			  ]
+			},
+			pericias: {
+			  puntos: 4,
+			  pericias: [
+				{
+				  nombre: "Apuñalar",
+				  puntos: 0
+				},
+				{
+				  nombre: "Mecanismos",
+				  puntos: 0
+				},
+				{
+				  nombre: "Uso de armas de fuego",
+				  puntos: 0
+				},
+				{
+				  nombre: "Reciclaje (____)",
+				  puntos: 0
+				},
+				{
+				  nombre: "Reciclaje (_____)",
+				  puntos: 0
+				},
+				{
+				  nombre: "Supervivencia",
+				  puntos: 0
+				}
+			  ]
+			},
+			conjuros: {
+			  fijos: [
+			  ],
+			  numeroN1: 0,
+			  conjurosN1: [
+			  ],
+			  numeroN2: 0,
+			  conjurosN2: [
+			  ]
+			},
+			armas: [
+			],
+			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+		  },
 		]
 	}
 	

@@ -1,0 +1,820 @@
+[
+  {
+    "nombre": "El Carroñero",
+    "requisitos": [
+      {
+        "atributo": "DES",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "DES",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Puede usar cualquier armadura hasta malla",
+      "Emboscar. Este trasto debería de funcionar.",
+      "Ventaja al escalar (N3), Arcanista aficionado (N10)"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "AD",
+    "barridos": 0,
+    "movimiento": 40,
+    "experiencia": 1400,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 14
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 15
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 6,
+      "pericias": [
+        {
+          "nombre": "Supervivencia",
+          "puntos": 0
+        },
+        {
+          "nombre": "Reciclaje (Munición)",
+          "puntos": 0
+        },
+        {
+          "nombre": "Reciclaje (Armas)",
+          "puntos": 0
+        },
+        {
+          "nombre": "Reciclaje (Armaduras)",
+          "puntos": 0
+        },
+        {
+          "nombre": "Uso de armas de fuego",
+          "puntos": 0
+        },
+        {
+          "nombre": "Detectar trampas",
+          "puntos": 1
+        },
+        {
+          "nombre": "Mecanismos",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+    ],
+	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+  },
+  {
+    "nombre": "El Incinerador",
+    "requisitos": [
+      {
+        "atributo": "FUE",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "FUE",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 8,
+    "caracteristicas": [
+      "Solo puede usar armaduras de cuero sin escudo",
+      "Daño +1 (y +1/nivel par) en ataques con fuego",
+      "Incinerar. Especialista en fuego cruzado (N2).",
+      "¿Quieres sentir el calor? (N5). Siervo de las llamas (N8)"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 2300,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 1,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": [
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+    ],
+	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+  },
+  {
+    "nombre": "Tecnomago",
+    "requisitos": [
+      {
+        "atributo": "INT",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "INT",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 4,
+    "caracteristicas": [
+      "No pueden usar ningún tipo de armadura",
+      "Puede memorizar y lanzar Tecnomagia"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 0,
+    "movimiento": 40,
+    "experiencia": 2100,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 15
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 11
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 12
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": [
+        {
+          "nombre": "Mecanismos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Ingeniería",
+          "puntos": 1
+        },
+        {
+          "nombre": "Curar",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [
+      ],
+      "numeroN1": 2,
+      "conjurosN1": [
+        "Barrera de luz",
+        "Cargar batería menor",
+        "Guantes de tirador",
+        "Reanimar dispositivo"
+      ],
+      "numeroN2": 0,
+      "conjurosN2": [
+      ]
+    },
+    "armas": [
+    ],
+	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+  },
+  {
+    "nombre": "El Tirador Chatarrero",
+    "requisitos": [
+      {
+        "atributo": "DES",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "DES",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Puede usar cualquier armadura hasta malla",
+      "Emboscar. Puntería. Supervivencia (N4).",
+      "Disparo de precisión (N10)"
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 1,
+    "tipobonifdano": "AD",
+    "barridos": 1,
+    "movimiento": 40,
+    "experiencia": 2300,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 1,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": [
+        {
+          "nombre": "Reciclaje (Munición)",
+          "puntos": 0
+        },
+        {
+          "nombre": "Uso de armas de fuego",
+          "puntos": 0
+        },
+        {
+          "nombre": "Detectar trampas",
+          "puntos": 1
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+    ],
+	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+  },
+  {
+    "nombre": "El Tocho",
+    "requisitos": [
+      {
+        "atributo": "FUE",
+        "valor": 9
+      },
+      {
+        "atributo": "CON",
+        "valor": 9
+      }
+    ],
+    "reqprimario": "CON",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 10,
+    "caracteristicas": [
+      "Puede usar cualquier armadura hasta malla",
+      "Agarre firme. Fornido. Difícil de matar."
+    ],
+    "ca": 0,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 0,
+    "movimiento": 40,
+    "experiencia": 2000,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 1,
+    "periciasespeciales": {
+      "puntos": 0,
+      "pericias": []
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": [
+      ]
+    },
+    "conjuros": {
+      "fijos": [],
+      "numeroN1": 0,
+      "conjurosN1": [],
+      "numeroN2": 0,
+      "conjurosN2": []
+    },
+    "armas": [
+    ],
+	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+  },
+  {
+    "nombre": "Tecnomago Kobold",
+    "requisitos": [
+      {
+        "atributo": "INT",
+        "valor": 11
+      },
+      {
+        "atributo": "DES",
+        "valor": 11
+      }
+    ],
+    "reqprimario": "INT",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 4,
+    "caracteristicas": [
+      "Solo puede usar armaduras de cuero sin escudo",
+      "Puede memorizar y lanzar Tecnomagia (N3)",
+      "Correr por su vida."
+    ],
+    "ca": 1,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 0,
+    "movimiento": 30,
+    "experiencia": 2525,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 15
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 11
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 12
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": -1,
+    "periciasespeciales": {
+      "puntos": 3,
+      "pericias": [ 
+        {
+            "nombre": "Sigilo",
+            "puntos": 1
+        },
+        {
+          "nombre": "Mecanismos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Uso de armas de fuego",
+          "puntos": 0
+        },
+        {
+          "nombre": "Reciclaje (____)",
+          "puntos": 0
+        },
+        {
+          "nombre": "Detectar trampas",
+          "puntos": 1
+        } 
+      ]
+    },
+    "pericias": {
+      "puntos": 2,
+      "pericias": [
+        {
+          "nombre": "Mecanismos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Uso de armas de fuego",
+          "puntos": 0
+        },
+        {
+          "nombre": "Reciclaje (____)",
+          "puntos": 0
+        },
+        {
+          "nombre": "Reciclaje (_____)",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [
+      ],
+      "numeroN1": 2,
+      "conjurosN1": [
+        "Barrera de luz",
+        "Cargar batería menor",
+        "Guantes de tirador",
+        "Reanimar dispositivo"
+      ],
+      "numeroN2": 0,
+      "conjurosN2": [
+      ]
+    },
+    "armas": [
+    ],
+	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+  },
+  {
+    "nombre": "Chamán Kobold",
+    "requisitos": [
+      {
+        "atributo": "SAB",
+        "valor": 11
+      },
+      {
+        "atributo": "DES",
+        "valor": 11
+      }
+    ],
+    "reqprimario": "SAB",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "No puede usar ningún tipo de armadura",
+      "Puede memorizar y lanzar magia divina",
+      "Correr por su vida. Carisma oscuro.",
+      "Arcanista aficionado (N6). Profecias (N8)"
+    ],
+    "ca": 1,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 0,
+    "movimiento": 30,
+    "experiencia": 1650,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 13
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 13
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 15
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 11
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 12
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": -1,
+    "periciasespeciales": {
+      "puntos": 3,
+      "pericias": [ 
+        {
+            "nombre": "Sigilo",
+            "puntos": 1
+        },
+        {
+          "nombre": "Mecanismos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Reciclaje (____)",
+          "puntos": 0
+        },
+        {
+          "nombre": "Detectar trampas",
+          "puntos": 1
+        } 
+      ]
+    },
+    "pericias": {
+      "puntos": 6,
+      "pericias": [
+        {
+          "nombre": "Curar",
+          "puntos": 0
+        },
+        {
+          "nombre": "Mecanismos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Uso de armas de fuego",
+          "puntos": 0
+        },
+        {
+          "nombre": "Reciclaje (____)",
+          "puntos": 0
+        },
+        {
+          "nombre": "Reciclaje (_____)",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [
+      ],
+      "numeroN1": -1,
+      "conjurosN1": [
+        "Curar heridas leves",
+        "Causar heridas leves",
+        "Detectar magia",
+        "Detectar bien",
+        "Detectar mal",
+        "Luz",
+        "Oscuridad",
+        "Palabra de mando",
+        "Protección contra el mal",
+        "Purificar comida y agua",
+        "Pudrir comida y agua",
+        "Resistir frío",
+        "Retirar miedo",
+        "Causar miedo",
+        "Santuario"
+      ],
+      "numeroN2": 0,
+      "conjurosN2": [
+      ]
+    },
+    "armas": [
+    ],
+	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+  },
+  {
+    "nombre": "Recuperador Kobold",
+    "requisitos": [
+      {
+        "atributo": "FUE",
+        "valor": 11
+      },
+      {
+        "atributo": "DES",
+        "valor": 11
+      }
+    ],
+    "reqprimario": "SAB",
+    "modifadicional": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "dg": 6,
+    "caracteristicas": [
+      "Solo puede usar armadura de cuero sin escudo",
+      "Correr por su vida. Pasar desapercibido.",
+      "Nada se le escapa (N3). Ventaja al escalar (N6)"
+    ],
+    "ca": 1,
+    "ataque": 1,
+    "ataquead": 0,
+    "dano": 0,
+    "tipobonifdano": "CC y AD",
+    "barridos": 1,
+    "movimiento": 30,
+    "experiencia": 1650,
+    "tsalvacion": [
+      {
+        "nombre": "Captura",
+        "valor": 15
+      },
+      {
+        "nombre": "Aflicciones",
+        "valor": 14
+      },
+      {
+        "nombre": "Ataque de area",
+        "valor": 16
+      },
+      {
+        "nombre": "Artefactos magicos",
+        "valor": 16
+      },
+      {
+        "nombre": "Conjuros",
+        "valor": 17
+      }
+    ],
+    "idiomas": [],
+    "boniftipoarmas": 0,
+    "periciasespeciales": {
+      "puntos": 3,
+      "pericias": [ 
+        {
+            "nombre": "Sigilo",
+            "puntos": 1
+        },
+        {
+          "nombre": "Mecanismos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Reciclaje (____)",
+          "puntos": 0
+        },
+        {
+          "nombre": "Detectar trampas",
+          "puntos": 1
+        } 
+      ]
+    },
+    "pericias": {
+      "puntos": 4,
+      "pericias": [
+        {
+          "nombre": "Apuñalar",
+          "puntos": 0
+        },
+        {
+          "nombre": "Mecanismos",
+          "puntos": 0
+        },
+        {
+          "nombre": "Uso de armas de fuego",
+          "puntos": 0
+        },
+        {
+          "nombre": "Reciclaje (____)",
+          "puntos": 0
+        },
+        {
+          "nombre": "Reciclaje (_____)",
+          "puntos": 0
+        },
+        {
+          "nombre": "Supervivencia",
+          "puntos": 0
+        }
+      ]
+    },
+    "conjuros": {
+      "fijos": [
+      ],
+      "numeroN1": 0,
+      "conjurosN1": [
+      ],
+      "numeroN2": 0,
+      "conjurosN2": [
+      ]
+    },
+    "armas": [
+    ],
+	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
+  }
+]

@@ -440,7 +440,7 @@
     },
     "conjuros": {
       "fijos": [],
-      "numeroN1": -1,
+      "numeroN1": 1,
       "conjurosN1": [
         "Curar heridas leves",
         "Causar heridas leves",
@@ -1289,7 +1289,12 @@
     },
     "pericias": {
       "puntos": 0,
-      "pericias": []
+      "pericias": [
+        {
+          "nombre": "Sigilo",
+          "puntos": 1
+        }
+      ]
     },
     "conjuros": {
       "fijos": [],
@@ -1395,7 +1400,12 @@
     },
     "pericias": {
       "puntos": 0,
-      "pericias": []
+      "pericias": [
+        {
+          "nombre": "Sigilo",
+          "puntos": 1
+        }
+      ]
     },
     "conjuros": {
       "fijos": [],
@@ -1515,6 +1525,10 @@
         {
           "nombre": "Detectar trampas",
           "puntos": 1
+        },
+        {
+          "nombre": "Sigilo",
+          "puntos": 1
         }
       ]
     },
@@ -1602,7 +1616,7 @@
         },
         {
           "nombre": "Sigilo",
-          "puntos": 0
+          "puntos": 1
         },
         {
           "nombre": "Detectar",
@@ -1710,7 +1724,11 @@
     },
     "pericias": {
       "puntos": 0,
-      "pericias": []
+      "pericias": [
+        {
+          "nombre": "Sigilo",
+          "puntos": -1
+        }]
     },
     "conjuros": {
       "fijos": [],

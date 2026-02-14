@@ -290,6 +290,30 @@ class Armas {
 				precio: 2000,
 				alcance: 100,
 			},
+			{
+				nombre: "Arma de fuego pequeña",
+				tipo: "AD",
+				dano: { dados: 1, tipo: 6, modif: 1 },
+				peso: 2000,
+				precio: 500,
+				alcance: 50,
+			},
+			{
+				nombre: "Arma de fuego media",
+				tipo: "AD",
+				dano: { dados: 2, tipo: 4, modif: 0 },
+				peso: 5000,
+				precio: 1500,
+				alcance: 150,
+			},
+			{
+				nombre: "Arma de fuego grande",
+				tipo: "AD",
+				dano: 10,
+				peso: 5000,
+				precio: 1500,
+				alcance: 300,
+			},
 		];
 		this.armas = 
 		[
@@ -592,6 +616,24 @@ class Armas {
 				tipo: "AD",
 				tipoCaC: "Arma grande", 
 				tipoAD: "Arma de pólvora grande",
+			},
+			{
+				nombre: "Revólver",
+				tipo: "AD",
+				tipoCaC: "Arma pequeña", 
+				tipoAD: "Arma de fuego pequeña",
+			},
+			{
+				nombre: "Subfusil",
+				tipo: "AD",
+				tipoCaC: "Arma media", 
+				tipoAD: "Arma de fuego media",
+			},
+			{
+				nombre: "Rifle",
+				tipo: "AD",
+				tipoCaC: "Arma grande", 
+				tipoAD: "Arma de fuego grande",
 			},
 		];
 	}
