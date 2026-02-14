@@ -1015,6 +1015,7 @@ class Clases {
 			},
 			armas: [
 			],
+			plantilla: "AxisMundiEN.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
 		  },
 		  {
@@ -1091,6 +1092,7 @@ class Clases {
 			},
 			armas: [
 			],
+			plantilla: "AxisMundiEN.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
 		  },
 		  {
@@ -1184,6 +1186,7 @@ class Clases {
 			},
 			armas: [
 			],
+			plantilla: "AxisMundiEN.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
 		  },
 		  {
@@ -1271,6 +1274,7 @@ class Clases {
 			},
 			armas: [
 			],
+			plantilla: "AxisMundiEN.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
 		  },
 		  {
@@ -1349,6 +1353,7 @@ class Clases {
 			},
 			armas: [
 			],
+			plantilla: "AxisMundiEN.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
 		  },
 		  {
@@ -1472,6 +1477,7 @@ class Clases {
 			},
 			armas: [
 			],
+			plantilla: "AxisMundiEN.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
 		  },
 		  {
@@ -1607,6 +1613,7 @@ class Clases {
 			},
 			armas: [
 			],
+			plantilla: "AxisMundiEN.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
 		  },
 		  {
@@ -1730,6 +1737,7 @@ class Clases {
 			},
 			armas: [
 			],
+			plantilla: "AxisMundiEN.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
 		  },
 		]
