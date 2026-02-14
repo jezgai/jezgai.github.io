@@ -116,7 +116,7 @@ class Clase {
 		return conjurosaux;
 	}
 	
-	buscaarmas(numtipoarmas, arma, armasaux) {
+	buscaarmasOLD(numtipoarmas, arma, armasaux) {
 		var indice=0;
 		var armaspj = []
 		for (indice=0; indice < armasaux[arma].length; indice++) {
@@ -130,14 +130,28 @@ class Clase {
 		return armaspj;
 	}
 	
-	sorteaarmas(tipoarmas) {
+	buscaarmas(bonifdano, arma, armasaux) {
+		var indice=0;
+		var armaspj = []
+		for (indice=0; indice < armasaux[arma].length; indice++) {
+			var objarma = listaarmas.arma(armasaux[arma][indice]);
+			if ( objarma != null ) {
+				if ( (objarma.tipo == "CaC" && objarma.tipodanoCaC <= bonifdano) || (objarma.tipo == "AD" && objarma.tipodanoAD <= bonifdano)) {
+					armaspj.push(objarma);
+				}
+			}
+		}
+		return armaspj;
+	}
+	
+	sorteaarmas(tipoarmas, bonifdano) {
 		var armasaux = Comun.shuffle(this.armas.clone());
 		var arma = 0;
 		var indice = 0;
 		var numtipoarmas = parseInt(tipoarmas.substring(1))
 		var armaspj = [];
 		for (arma=0; arma < armasaux.length; arma++) {
-			armaspj = this.buscaarmas(numtipoarmas, arma, armasaux);
+			armaspj = this.buscaarmas(bonifdano, arma, armasaux);
 			if ( armaspj.length > 0 )
 				break;
 		}
@@ -1013,7 +1027,7 @@ class Clases {
 			  numeroN2: 0,
 			  conjurosN2: []
 			},
-			armas: [
+			armas: [  [ "Llave de rueda de repuesto", "Cuchillo" ], [ "Llave de bujías", "Machete" ] 
 			],
 			plantilla: "AxisMundiEN.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
@@ -1090,8 +1104,7 @@ class Clases {
 			  numeroN2: 0,
 			  conjurosN2: []
 			},
-			armas: [
-			],
+			armas: [ [ "Lanzallamas", "Cuchillo" ], [ "Lanzallamas", "Machete" ], [ "Lanzallamas", "Hacha" ] ],
 			plantilla: "AxisMundiEN.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
 		  },
@@ -1184,7 +1197,7 @@ class Clases {
 			  conjurosN2: [
 			  ]
 			},
-			armas: [
+			armas: [ [ "Cuchillo" ], [ "Cuchillo", "Machete" ] 
 			],
 			plantilla: "AxisMundiENC.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
@@ -1272,7 +1285,7 @@ class Clases {
 			  numeroN2: 0,
 			  conjurosN2: []
 			},
-			armas: [
+			armas: [ [ "Subfusil", "Cuchillo" ], [ "Escopeta", "Machete" ], [ "Rifle", "Cuchillo de carnicero" ] 
 			],
 			plantilla: "AxisMundiEN.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
@@ -1351,7 +1364,7 @@ class Clases {
 			  numeroN2: 0,
 			  conjurosN2: []
 			},
-			armas: [
+			armas: [ [ "Señal de tráfico", "Machete" ], [ "Señal de tráfico", "Hacha" ], [ "Señal de tráfico", "Cuchillo de carnicero" ] 
 			],
 			plantilla: "AxisMundiEN.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
@@ -1475,7 +1488,7 @@ class Clases {
 			  conjurosN2: [
 			  ]
 			},
-			armas: [
+			armas: [ [ "Revólver", "Machete" ], [ "Pistola", "Hacha" ], [ "Pistolón", "Cuchillo de carnicero" ] 
 			],
 			plantilla: "AxisMundiENC.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
@@ -1611,7 +1624,7 @@ class Clases {
 			  conjurosN2: [
 			  ]
 			},
-			armas: [
+			armas: [ [ "Llave de bujías", "Machete" ], [ "Hacha" ], [ "Cuchillo de carnicero" ] 
 			],
 			plantilla: "AxisMundiENC.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
@@ -1735,7 +1748,7 @@ class Clases {
 			  conjurosN2: [
 			  ]
 			},
-			armas: [
+			armas: [ [ "Llave de bujías", "Machete" ], [ "Hacha", "Honda" ], [ "Cuchillo de carnicero", "Honda" ]
 			],
 			plantilla: "AxisMundiEN.pdf",
 			sistemamonetario: { monedabaseoro: "piezas de chatarra", conversionbase: 1, monedas: [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }

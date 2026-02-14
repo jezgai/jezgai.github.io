@@ -70,12 +70,12 @@
     "armas": [
       [
         "Espada corta",
-        "Pistola"
+        "Pistolón"
       ],
       [
         "Espada ropera",
         "Daga",
-        "Pistola"
+        "Pistolón"
       ],
       [
         "Fusil",
@@ -174,13 +174,13 @@
     "armas": [
       [
         "Daga",
-        "Pistola",
+        "Pistolón",
         "Estoque"
       ],
       [
         "Sable",
         "Daga",
-        "Pistola"
+        "Pistolón"
       ],
       [
         "Sable",
@@ -190,7 +190,7 @@
       [
         "Sable",
         "Mosquete",
-        "Pistola"
+        "Pistolón"
       ]
     ]
   },
@@ -494,7 +494,7 @@
     "armas": [
       [
         "Daga",
-        "Pistola"
+        "Pistolón"
       ],
       [
         "Estoque",
@@ -589,7 +589,7 @@
     },
     "armas": [
       [
-        "Pistola",
+        "Pistolón",
         "Daga"
       ],
       [
@@ -692,7 +692,7 @@
     "armas": [
       [
         "Daga",
-        "Pistola"
+        "Pistolón"
       ],
       [
         "Estoque",
@@ -776,17 +776,17 @@
     },
     "armas": [
       [
-        "Pistola",
+        "Pistolón",
         "Daga"
       ],
       [
-        "Pistola",
+        "Pistolón",
         "Estoque"
       ],
       [
         "Daga",
         "Espada ropera",
-        "Pistola"
+        "Pistolón"
       ]
     ]
   }

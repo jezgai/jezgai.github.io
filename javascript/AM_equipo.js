@@ -117,7 +117,8 @@ class Armas {
 				tipo: "CaC",
 				dano: 4,
 				peso: 1000,
-				precio: 150
+				precio: 150,
+				tipodano: 0
 			},
 			{
 				nombre: "Lanza de caballería",
@@ -125,6 +126,7 @@ class Armas {
 				dano: 10,
 				peso: 8000,
 				precio: 300,
+				tipodano: 3
 			},
 			{
 				nombre: "Arma de asta",
@@ -132,6 +134,7 @@ class Armas {
 				dano: 8,
 				peso: 8000,
 				precio: 300,
+				tipodano: 2
 			},
 			{
 				nombre: "Lanza",
@@ -139,6 +142,7 @@ class Armas {
 				dano: 6,
 				peso: 3000,
 				precio: 50,
+				tipodano: 1
 			},
 			{
 				nombre: "Vara",
@@ -146,6 +150,7 @@ class Armas {
 				dano: 4,
 				peso: 2000,
 				precio: 50,
+				tipodano: 0
 			},
 			{
 				nombre: "Arma pequeña",
@@ -153,6 +158,7 @@ class Armas {
 				dano: 4,
 				peso: 500,
 				precio: 50,
+				tipodano: 0
 			},
 			{
 				nombre: "Arma media",
@@ -160,6 +166,7 @@ class Armas {
 				dano: 6,
 				peso: 1000,
 				precio: 100,
+				tipodano: 1
 			},
 			{
 				nombre: "Arma a 2 manos",
@@ -167,6 +174,7 @@ class Armas {
 				dano: 8,
 				peso: 2000,
 				precio: 200,
+				tipodano: 2
 			},
 			{
 				nombre: "Arma enorme",
@@ -174,6 +182,7 @@ class Armas {
 				dano: 10,
 				peso: 4000,
 				precio: 500,
+				tipodano: 3
 			},
 		];
 		this.tiposAD = 
@@ -185,6 +194,7 @@ class Armas {
 				peso: 1000,
 				precio: 250,
 				alcance: 100,
+				tipodano: 1
 			},
 			{
 				nombre: "Arco largo",
@@ -193,6 +203,7 @@ class Armas {
 				peso: 2000,
 				precio: 750,
 				alcance: 200,
+				tipodano: 2
 			},
 			{
 				nombre: "Ballesta ligera",
@@ -201,6 +212,7 @@ class Armas {
 				peso: 2000,
 				precio: 250,
 				alcance: 50,
+				tipodano: 1
 			},
 			{
 				nombre: "Ballesta pesada",
@@ -209,6 +221,7 @@ class Armas {
 				peso: 4000,
 				precio: 300,
 				alcance: 65,
+				tipodano: 2
 			},
 			{
 				nombre: "Honda",
@@ -217,6 +230,7 @@ class Armas {
 				peso: 100,
 				precio: 1,
 				alcance: 100,
+				tipodano: 0
 			},
 			{
 				nombre: "Arrojadiza",
@@ -225,6 +239,7 @@ class Armas {
 				peso: 500,
 				precio: 50,
 				alcance: 6,
+				tipodano: 0
 			},
 			{
 				nombre: "Arrojadiza media",
@@ -233,6 +248,7 @@ class Armas {
 				peso: 1000,
 				precio: 100,
 				alcance: 5,
+				tipodano: 1
 			},
 			{
 				nombre: "Dardo",
@@ -241,6 +257,7 @@ class Armas {
 				peso: 100,
 				precio: 1,
 				alcance: 10,
+				tipodano: 0
 			},
 			{
 				nombre: "Venablo",
@@ -249,6 +266,7 @@ class Armas {
 				peso: 2000,
 				precio: 50,
 				alcance: 6,
+				tipodano: 1
 			},
 			{
 				nombre: "Cerbatana",
@@ -257,6 +275,7 @@ class Armas {
 				peso: 100,
 				precio: 5,
 				alcance: 15,
+				tipodano: 0
 			},
 			{
 				nombre: "Piedra",
@@ -265,6 +284,7 @@ class Armas {
 				peso: 0,
 				precio: 0,
 				alcance: 4,
+				tipodano: 0
 			},
 			{
 				nombre: "Arma de pólvora pequeña",
@@ -273,6 +293,7 @@ class Armas {
 				peso: 2000,
 				precio: 500,
 				alcance: 25,
+				tipodano: 1
 			},
 			{
 				nombre: "Arma de pólvora media",
@@ -281,6 +302,7 @@ class Armas {
 				peso: 5000,
 				precio: 1500,
 				alcance: 50,
+				tipodano: 2
 			},
 			{
 				nombre: "Arma de pólvora grande",
@@ -289,30 +311,61 @@ class Armas {
 				peso: 7000,
 				precio: 2000,
 				alcance: 100,
+				tipodano: 3
 			},
 			{
-				nombre: "Arma de fuego pequeña",
+				nombre: "Pistolas",
 				tipo: "AD",
-				dano: { dados: 1, tipo: 6, modif: 1 },
-				peso: 2000,
+				dano: { dados: 1, tipo: 6, modif: 0 },
+				peso: 1000,
 				precio: 500,
 				alcance: 50,
+				tipodano: 1
+			},
+			{
+				nombre: "Revolveres",
+				tipo: "AD",
+				dano: { dados: 1, tipo: 6, modif: 1 },
+				peso: 1000,
+				precio: 500,
+				alcance: 50,
+				tipodano: 1
+			},
+			{
+				nombre: "Escopetas",
+				tipo: "AD",
+				dano: { dados: 3, tipo: 6, modif: 0 },
+				peso: 3000,
+				precio: 50,
+				alcance: 10,
+				tipodano: 2
 			},
 			{
 				nombre: "Arma de fuego media",
 				tipo: "AD",
 				dano: { dados: 2, tipo: 4, modif: 0 },
 				peso: 5000,
-				precio: 1500,
+				precio: 300,
 				alcance: 150,
+				tipodano: 2
 			},
 			{
-				nombre: "Arma de fuego grande",
+				nombre: "Lanzallamas",
+				tipo: "AD",
+				dano: { dados: 2, tipo: 4, modif: 0 },
+				peso: 4000,
+				precio: 120,
+				alcance: 30,
+				tipodano: 2
+			},
+			{
+				nombre: "Rifles",
 				tipo: "AD",
 				dano: 10,
 				peso: 5000,
-				precio: 1500,
+				precio: 150,
 				alcance: 300,
+				tipodano: 3
 			},
 		];
 		this.armas = 
@@ -582,7 +635,7 @@ class Armas {
 				tipoAD: "Honda",
 			},
 			{
-				nombre: "Pistola",
+				nombre: "Pistolón",
 				tipo: "AD",
 				tipoCaC: "Arma pequeña", 
 				tipoAD: "Arma de pólvora pequeña",
@@ -614,26 +667,68 @@ class Armas {
 			{
 				nombre: "Fusil",
 				tipo: "AD",
-				tipoCaC: "Arma grande", 
+				tipoCaC: "", 
 				tipoAD: "Arma de pólvora grande",
+			},
+			{
+				nombre: "Pistola",
+				tipo: "AD",
+				tipoCaC: "", 
+				tipoAD: "Pistolas",
 			},
 			{
 				nombre: "Revólver",
 				tipo: "AD",
-				tipoCaC: "Arma pequeña", 
-				tipoAD: "Arma de fuego pequeña",
+				tipoCaC: "", 
+				tipoAD: "Revolveres",
+			},
+			{
+				nombre: "Escopeta",
+				tipo: "AD",
+				tipoCaC: "", 
+				tipoAD: "Escopetas",
 			},
 			{
 				nombre: "Subfusil",
 				tipo: "AD",
-				tipoCaC: "Arma media", 
+				tipoCaC: "", 
 				tipoAD: "Arma de fuego media",
 			},
 			{
 				nombre: "Rifle",
 				tipo: "AD",
 				tipoCaC: "Arma grande", 
-				tipoAD: "Arma de fuego grande",
+				tipoAD: "Rifles",
+			},
+			{
+				nombre: "Llave de bujías",
+				tipo: "CaC",
+				tipoCaC: "Arma pequeña", 
+				tipoAD: "",
+			},
+			{
+				nombre: "Llave de rueda de repuesto",
+				tipo: "CaC",
+				tipoCaC: "Arma media", 
+				tipoAD: "",
+			},
+			{
+				nombre: "Señal de tráfico",
+				tipo: "CaC",
+				tipoCaC: "Arma enorme", 
+				tipoAD: "",
+			},
+			{
+				nombre: "Lanzallamas",
+				tipo: "AD",
+				tipoCaC: "", 
+				tipoAD: "Lanzallamas",
+			},
+			{
+				nombre: "Cuchillo de carnicero",
+				tipo: "CaC", 
+				tipoCaC: "Arma pequeña", 
+				tipoAD: "",
 			},
 		];
 	}
@@ -668,6 +763,8 @@ class Armas {
 			if ( this.armas[indice].nombre == nombre ) {
 				objarma.nombre = this.armas[indice].nombre;
 				objarma.tipo = this.armas[indice].tipo;
+				objarma.tipodanoCaC = null;
+				objarma.tipodanoAD = null;
 				var tipoarmaAD = this.tipoarmaAD(this.armas[indice].tipoAD);
 				var tipoarmaCaC = this.tipoarmaCaC(this.armas[indice].tipoCaC);
 				if ( this.armas[indice].tipo == "AD" ) {
@@ -675,24 +772,30 @@ class Armas {
 					objarma.peso = tipoarmaAD.peso;
 					objarma.precio = tipoarmaAD.precio;
 					objarma.alcance = tipoarmaAD.alcance;
+					objarma.tipodanoAD = tipoarmaAD.tipodano;
 					if ( tipoarmaCaC != null ) {
 						objarma.danoCaC = tipoarmaCaC.dano;
+						objarma.tipodanoCaC = tipoarmaCaC.tipodano;
 					}
 					else {
 						objarma.danoCaC = 0;
+						objarma.tipodanoCaC = null;
 					}
 				}
 				else {
 					objarma.danoCaC = tipoarmaCaC.dano;
 					objarma.peso = tipoarmaCaC.peso;
 					objarma.precio = tipoarmaCaC.precio;
+					objarma.tipodanoCaC = tipoarmaCaC.tipodano;
 					if ( tipoarmaAD != null ) {
 						objarma.danoAD = tipoarmaAD.dano;
 						objarma.alcance = tipoarmaAD.alcance;
+						objarma.tipodanoAD = tipoarmaAD.tipodano;
 					}
 					else {
 						objarma.danoAD = 0;
 						objarma.alcance = 0;
+						objarma.tipodanoAD = null;
 					}
 					
 				}

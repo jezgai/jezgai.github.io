@@ -14,6 +14,7 @@ class PJ {
 		this._atqad = 0;
 		this._dinero = 0;
 		this._tipoarmas = "d4";
+		this._bonifdano = 0;
 		this.armas = [];
 		this.salvaciones = [];
 	}
@@ -94,8 +95,8 @@ class PJ {
 			if ( dano.hasOwnProperty("dados") && dano.dados > 1 ) {
 				aux = dano.dados + aux;
 			}
-			if ( dano.hasOwnProperty("modif")) {
-				if ( dado.modif > 0 ) {
+			if ( dano.hasOwnProperty("modif") && dano.modif != 0) {
+				if ( dano.modif > 0 ) {
 					aux = aux + "+";
 				}
 				aux = aux + dano.modif;
@@ -129,7 +130,7 @@ class PJ {
 			if ( this.armas[iarma].tipo == "CaC" && this.tieneArma(this.armas[iarma].danoAD))
 				sarma += " (AD)";
 			//else if ( this.armas[iarma].tipo == "AD" && this.armas[iarma].danoCaC > 0)
-			else if ( this.armas[iarma].tipo == "CaC" && this.tieneArma(this.armas[iarma].danoCaC))
+			else if ( this.armas[iarma].tipo == "AD" && this.tieneArma(this.armas[iarma].danoCaC))
 				sarma += " (CaC)";
 			sarma += "</td><td align='center'>";
 			if ( this.armas[iarma].tipo == "CaC" ) 
@@ -226,6 +227,10 @@ class PJ {
 	
 	calculaTipoArmas() {
 		var bonif = this._objClase.boniftipoarmas + Atributos.modificador(this._atributos._atributos[0].valor + this._objClase.modifadicional[0]);
+		this._bonifdano = bonif;
+		if ( bonif < 0 )
+			this._bonifdano = 0;
+			
 		this._tipoarmas = "d4";
 		if ( bonif == 1 ) {
 			this._tipoarmas = "d6";
@@ -270,7 +275,7 @@ class PJ {
 	}
 	
 	calculaArmas() {
-		this.armas = this._objClase.sorteaarmas(this._tipoarmas);
+		this.armas = this._objClase.sorteaarmas(this._tipoarmas, this._bonifdano);
 	}
 	
 	calculaDatosPJ() {

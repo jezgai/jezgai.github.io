@@ -98,7 +98,7 @@
       "numeroN2": 0,
       "conjurosN2": []
     },
-    "armas": [
+    "armas": [  [ "Llave de rueda de repuesto", "Cuchillo" ], [ "Llave de bujías", "Machete" ] 
     ],
 	"plantilla": "AxisMundiEN.pdf",
 	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
@@ -175,7 +175,7 @@
       "numeroN2": 0,
       "conjurosN2": []
     },
-    "armas": [
+    "armas": [  [ "Lanzallamas", "Cuchillo" ], [ "Lanzallamas", "Machete" ], [ "Lanzallamas", "Hacha" ] 
     ],
 	"plantilla": "AxisMundiEN.pdf",
 	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
@@ -269,7 +269,7 @@
       "conjurosN2": [
       ]
     },
-    "armas": [
+    "armas": [ [ "Cuchillo" ], [ "Cuchillo", "Machete" ] 
     ],
 	"plantilla": "AxisMundiENC.pdf",
 	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
@@ -357,7 +357,7 @@
       "numeroN2": 0,
       "conjurosN2": []
     },
-    "armas": [
+    "armas": [ [ "Subfusil", "Cuchillo" ], [ "Escopeta", "Machete" ], [ "Rifle", "Cuchillo de carnicero" ] 
     ],
 	"plantilla": "AxisMundiEN.pdf",
 	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
@@ -436,7 +436,7 @@
       "numeroN2": 0,
       "conjurosN2": []
     },
-    "armas": [
+    "armas": [ [ "Señal de tráfico", "Machete" ], [ "Señal de tráfico", "Hacha" ], [ "Señal de tráfico", "Cuchillo de carnicero" ] 
     ],
 	"plantilla": "AxisMundiEN.pdf",
 	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
@@ -560,7 +560,7 @@
       "conjurosN2": [
       ]
     },
-    "armas": [
+    "armas": [ [ "Revólver", "Machete" ], [ "Pistola", "Hacha" ], [ "Pistolón", "Cuchillo de carnicero" ] 
     ],
 	"plantilla": "AxisMundiENC.pdf",
 	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
@@ -696,7 +696,7 @@
       "conjurosN2": [
       ]
     },
-    "armas": [
+    "armas": [ [ "Llave de bujías", "Machete" ], [ "Hacha" ], [ "Cuchillo de carnicero" ] 
     ],
 	"plantilla": "AxisMundiENC.pdf",
 	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
@@ -820,7 +820,7 @@
       "conjurosN2": [
       ]
     },
-    "armas": [
+    "armas": [ [ "Llave de bujías", "Machete" ], [ "Hacha", "Honda" ], [ "Cuchillo de carnicero", "Honda" ] 
     ],
 	"plantilla": "AxisMundiEN.pdf",
 	"sistemamonetario": { "monedabaseoro": "piezas de chatarra", "conversionbase": 1, "monedas": [ "piezas de chatarra", "componentes de chatarra", "chatarra recuperable" ] }
