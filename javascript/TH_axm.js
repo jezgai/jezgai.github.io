@@ -5,10 +5,12 @@ class AxM extends SistemaBase {
         this.hechizos.EtiquetaTipos = "Listas de hechizos";
         this.hechizos.Tipos = {
                     "Arcana": { "Numero": 4, "PDF": "pdf/TH_AxM_Hechizos_Arcana.pdf" },
-                    "Divina": { "Numero": 4, "PDF": "pdf/TH_AxM_Hechizos_Divina.pdf" }
+                    "Divina": { "Numero": 4, "PDF": "pdf/TH_AxM_Hechizos_Divina.pdf" },
+                    "Tecnomagia": { "Numero": 4, "PDF": "pdf/TH_AxM_Hechizos_Tecnomagia.pdf" }
                 };
         this.hechizos.Arcana = [ ];
         this.hechizos.Divina = [ ];
+        this.hechizos.Tecnomagia = [ ];
         
         Comun.cargatablas("TH-Axis-Mundi.json", this);
     }
@@ -17,6 +19,7 @@ class AxM extends SistemaBase {
         this.hechizos.Hechizos = tablas.Hechizos;
         this.hechizos.Arcana = tablas.Arcana;
         this.hechizos.Divina = tablas.Divina;
+        this.hechizos.Tecnomagia = tablas.Tecnomagia;
     }
     
         
