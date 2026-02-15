@@ -11,6 +11,8 @@
 <script src="javascript/AM_pericias.js"></script>
 <script src="javascript/AM_clases.js"></script>
 <script src="javascript/AM_pj.js"></script>
+<script src="javascript/TH_sistemabase.js"></script>
+<script src="javascript/TH_axm.js"></script>
 
 <script src="javascript/pdfform.minipdf.dist.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.0.0/FileSaver.min.js"></script>
@@ -20,7 +22,7 @@
 
 	
 	let clases = new Clases();
-	
+	let conjurosAxM = new AxM();
 	/*
 	var queryString = window.location.search;
 	var urlParams = new URLSearchParams(queryString);
@@ -43,10 +45,9 @@
 	
 
 
-	function rellenaPDF() {
+	function rellenaPDFPJ() {
 		var xhr = new XMLHttpRequest();
 		var contenido;
-		var competencias = '';
 		
 		xhr.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
@@ -64,7 +65,17 @@
 		xhr.setRequestHeader("Content-Type", "application/json");
 		xhr.send();		
 		
-	}	
+	}
+	function rellenaPDFConjuros() {
+		if ( pj._conjuros.length > 0 && pj._objClase.conjuros.tipo != null ) {
+			conjurosAxM.generaPDF(pj._conjuros, pj._objClase.conjuros.tipo);
+		}
+	}
+	
+	function rellenaPDF() {
+		rellenaPDFPJ();
+		rellenaPDFConjuros();
+	}
 	
 	function vaciaDiv() {
 		document.getElementById("atributos").innerHTML="";
@@ -481,10 +492,6 @@
 		</div>
 	</div>
 	<div style="overflow:auto">
-		<!--<div class="left">
-			<div class="w3-container w3-blue w3-center"><p><strong>Competencias</strong></p></div> 
-			<div id="competencias"></div>
-		</div>-->
 		<div class="total" id="conjuros">
 			<div class="w3-container w3-blue w3-center"><p><strong>Conjuros</strong></p></div> 
 			<div class="casitotal" id="lconjuros"></div>

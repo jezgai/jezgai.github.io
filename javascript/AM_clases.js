@@ -267,7 +267,7 @@ class Clases {
               bonifpericias: [],
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
-			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  conjuros: { tipo: null, fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Espada corta", "Jabalina" ], [ "Espada larga" ], [ "Daga", "Lanza" ] ],
 			  sistemamonetario: null,
 			},
@@ -297,7 +297,7 @@ class Clases {
               boniftipoarmas: 0,
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
-			  conjuros: { fijos: [ "Leer Magia" ], 
+			  conjuros: { tipo: "Arcana", fijos: [ "Leer magia" ], 
 						  numeroN1: 2, conjurosN1: [ "Detectar magia", "Detectar mentiras", "Ocultar mentiras", "Disco flotante", "Escudo", 
 													 "Hechizar persona", "Leer lenguas", "Luz", "Oscuridad", "Misil mágico", "Retener portal", "Sueño", "Ventriloquía" ], 
 						  numeroN2: 1, conjurosN2: [ "Apertura", "Cerradura arcana", "Detectar lo invisible", "Fuerza fantasmal", "Imágenes múltiples", "Invisibilidad",
@@ -334,7 +334,7 @@ class Clases {
               boniftipoarmas: 0,
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 4, pericias: [ { nombre: "Apuñalar", puntos: 0}, { nombre: "Detectar trampas", puntos: 1}, { nombre: "Juego de Manos", puntos: 0}, { nombre: "Mecanismos", puntos: 0} ] },
-			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  conjuros: { tipo: null, fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Daga", "Ballesta ligera" ], [ "Espada ropera", "Daga"] ],
 			  sistemamonetario: null,
 			},
@@ -365,7 +365,7 @@ class Clases {
               boniftipoarmas: 0,
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
-			  conjuros: { fijos: [ ], 
+			  conjuros: { tipo: "Divina", fijos: [ ], 
 						  numeroN1: -1, conjurosN1: [ "Curar heridas leves", "Causar heridas leves", "Detectar magia", "Detectar bien", "Detectar mal", "Luz", "Oscuridad", "Palabra de mando", 
 													  "Protección contra el mal", "Purificar comida y agua", "Pudrir comida y agua", "Resistir frío", "Retirar miedo", "Causar miedo", "Santuario" ], 
 						  numeroN2: 0, conjurosN2: [ ] },
@@ -400,7 +400,7 @@ class Clases {
               boniftipoarmas: 0,
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
-			  conjuros: { fijos: [ ], 
+			  conjuros: { tipo: "Divina", fijos: [ ], 
 						  numeroN1: -1, conjurosN1: [ "Curar heridas leves", "Causar heridas leves", "Detectar magia", "Detectar bien", "Detectar mal", "Luz", "Oscuridad", "Palabra de mando", 
 													  "Protección contra el mal", "Purificar comida y agua", "Pudrir comida y agua", "Resistir frío", "Retirar miedo", "Causar miedo", "Santuario" ], 
 						  numeroN2: 0, conjurosN2: [ ] },
@@ -435,7 +435,7 @@ class Clases {
               boniftipoarmas: 1,
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
-			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  conjuros: { tipo: null, fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Espada larga" ], [ "Espadón"] ],
 			  sistemamonetario: null,
 			},
@@ -467,7 +467,7 @@ class Clases {
               boniftipoarmas: 1,
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 2, pericias: [ { nombre: "Supervivencia", puntos: 0} ] },
-			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  conjuros: { tipo: null, fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Espada corta", "Arco corto" ], [ "Daga", "Arco corto" ], [ "Daga", "Jabalina" ] ],
 			  sistemamonetario: null,
 			},
@@ -498,7 +498,7 @@ class Clases {
               boniftipoarmas: 0,
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 2, pericias: [ { nombre: "Historia antigua", puntos: 1} ] },
-			  conjuros: { fijos: [ ], 
+			  conjuros: { tipo: null, fijos: [ ], 
 						  numeroN1: 0, conjurosN1: [ ], 
 						  numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Espada ropera", "Daga"] ],
@@ -532,7 +532,7 @@ class Clases {
               boniftipoarmas: 1,
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ ] },
-			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  conjuros: { tipo: null, fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Espadón", "Hacha de mano"], [ "Gran hacha", "Hacha de mano" ], [ "Hacha de batalla", "Hacha de mano"] ],
 			  sistemamonetario: null,
 			},
@@ -564,7 +564,7 @@ class Clases {
               boniftipoarmas: 1,
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 2, pericias: [ { nombre: "Apuñalar", puntos: 0} ] },
-			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  conjuros: { tipo: null, fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Daga" ], [ "Estoque", "Daga"] ],
 			  sistemamonetario: null,
 			},
@@ -595,7 +595,7 @@ class Clases {
               boniftipoarmas: 1,
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 2, pericias: [ ] },
-			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  conjuros: { tipo: null, fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Jō (bastón)", "Sai" ], [ "Jian (espada)", "Sai"], [ "Dadao (sable)", "Sai" ] ],
 			  sistemamonetario: null,
 			},
@@ -626,7 +626,7 @@ class Clases {
               boniftipoarmas: 0,
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ { nombre: "Señor de las bestias", puntos: 0} ] },
-			  conjuros: { fijos: [ "Leer Magia" ], 
+			  conjuros: { tipo: "Arcana", fijos: [ "Leer magia" ], 
 						  numeroN1: 2, conjurosN1: [ "Detectar magia", "Detectar mentiras", "Ocultar mentiras", "Disco flotante", "Escudo", 
 													 "Hechizar persona", "Leer lenguas", "Luz", "Oscuridad", "Misil mágico", "Retener portal", "Sueño", "Ventriloquía" ], 
 						  numeroN2: 1, conjurosN2: [ "Apertura", "Cerradura arcana", "Detectar lo invisible", "Fuerza fantasmal", "Imágenes múltiples", "Invisibilidad",
@@ -662,7 +662,7 @@ class Clases {
               boniftipoarmas: 0,
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 0, pericias: [ { nombre: "Señor de las bestias", puntos: 0} ] },
-			  conjuros: { fijos: [ ], 
+			  conjuros: { tipo: "Divina", fijos: [ ], 
 						  numeroN1: -1, conjurosN1: [ "Curar heridas leves", "Causar heridas leves", "Detectar magia", "Detectar bien", "Detectar mal", "Luz", "Oscuridad", "Palabra de mando", 
 													  "Protección contra el mal", "Purificar comida y agua", "Pudrir comida y agua", "Resistir frío", "Retirar miedo", "Causar miedo", "Santuario" ], 
 						  numeroN2: 0, conjurosN2: [ ] },
@@ -697,7 +697,7 @@ class Clases {
               boniftipoarmas: -1,
               periciasespeciales: { puntos: 4, pericias: [ { nombre: "Arquitectura", puntos: 1}, { nombre: "Detectar trampas", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
               pericias: { puntos: 0, pericias: [ { nombre: "Sigilo", puntos: 1} ] },
-			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  conjuros: { tipo: null, fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Gran hacha", "Hacha de mano" ], [ "Hacha de batalla", "Hacha de mano"] ],
 			  sistemamonetario: null,
 			},
@@ -728,7 +728,7 @@ class Clases {
               boniftipoarmas: -1,
               periciasespeciales: { puntos: 2, pericias: [ { nombre: "Arquitectura", puntos: 1}, { nombre: "Detectar trampas", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
               pericias: { puntos: 0, pericias: [ { nombre: "Sigilo", puntos: 1} ] },
-			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  conjuros: { tipo: null, fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Gran hacha", "Hacha de mano" ], [ "Hacha de batalla", "Martillo ligero"], [ "Martillo de guerra", "Hacha de mano" ] ],
 			  sistemamonetario: null,
 			},
@@ -760,7 +760,7 @@ class Clases {
               idiomas: [ "Enano", "Gnomo", "Trasgo", "Kobold" ],
               boniftipoarmas: 0,
               periciasespeciales: { puntos: 4, pericias: [ { nombre: "Arquitectura", puntos: 1}, { nombre: "Detectar trampas", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
-              pericias: { puntos: 0, pericias: [ { nombre: "Sigilo", puntos: 1} ] },
+              pericias: { tipo: "Divina", puntos: 0, pericias: [ { nombre: "Sigilo", puntos: 1} ] },
 			  conjuros: { fijos: [ ], 
 						  numeroN1: -1, conjurosN1: [ "Curar heridas leves", "Detectar magia", "Detectar mal", "Luz", "Palabra de mando", 
 													  "Protección contra el mal", "Purificar comida y agua", "Resistir frío", "Retirar miedo", "Santuario" ], 
@@ -796,7 +796,7 @@ class Clases {
               boniftipoarmas: -1,
               periciasespeciales: { puntos: 4, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de Manos", puntos: 0},  { nombre: "Sigilo", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
               pericias: { puntos: 2, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de Manos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1} ] },
-			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  conjuros: { tipo: null, fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Daga", "Espada corta" ] ],
 			  sistemamonetario: null,
 			},
@@ -828,7 +828,7 @@ class Clases {
               boniftipoarmas: -1,
               periciasespeciales: { puntos: 6, pericias: [ { nombre: "Curar", puntos: 0}, { nombre: "Juego de Manos", puntos: 0},  { nombre: "Sigilo", puntos: 1},  { nombre: "Detectar", puntos: 1} ] },
               pericias: { puntos: 4, pericias: [ { nombre: "Apuñalar", puntos: 0}, { nombre: "Curar", puntos: 0}, { nombre: "Juego de Manos", puntos: 0},  { nombre: "Detectar trampas", puntos: 1}, { nombre: "Mecanismos", puntos: 0} ] },
-			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  conjuros: { tipo: null, fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Daga", "Honda" ] ],
 			  sistemamonetario: null,
 			},
@@ -860,7 +860,7 @@ class Clases {
               boniftipoarmas: 1,
               periciasespeciales: { puntos: 0, pericias: [ { nombre: "Sigilo", puntos: -1} ] },
               pericias: { puntos: 0, pericias: [ ] },
-			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  conjuros: { tipo: null, fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Espadón", "Alfanje"], [ "Gran hacha", "Cimitarra" ], [ "Hacha de batalla", "Maza"] ],
 			  sistemamonetario: null,
 			},
@@ -924,7 +924,7 @@ class Clases {
               boniftipoarmas: 1,
               periciasespeciales: { puntos: 0, pericias: [ ] },
               pericias: { puntos: 2, pericias: [ { nombre: "Supervivencia", puntos: 0} ] },
-			  conjuros: { fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
+			  conjuros: { tipo: null, fijos: [ ], numeroN1: 0, conjurosN1: [ ], numeroN2: 0, conjurosN2: [ ] },
 			  armas: [ [ "Espada corta", "Arco corto" ], [ "Daga", "Arco corto" ], [ "Daga", "Jabalina" ], [ "Espada corta", "Jabalina" ] ],
 			  sistemamonetario: null,
 			},  
@@ -1021,7 +1021,7 @@ class Clases {
 			  ]
 			},
 			conjuros: {
-			  fijos: [],
+			  tipo: null, fijos: [],
 			  numeroN1: 0,
 			  conjurosN1: [],
 			  numeroN2: 0,
@@ -1098,7 +1098,7 @@ class Clases {
 			  ]
 			},
 			conjuros: {
-			  fijos: [],
+			  tipo: null, fijos: [],
 			  numeroN1: 0,
 			  conjurosN1: [],
 			  numeroN2: 0,
@@ -1184,7 +1184,7 @@ class Clases {
 			  ]
 			},
 			conjuros: {
-			  fijos: [
+			  tipo: "Tecnomagia", fijos: [
 			  ],
 			  numeroN1: 2,
 			  conjurosN1: [
@@ -1279,7 +1279,7 @@ class Clases {
 			  ]
 			},
 			conjuros: {
-			  fijos: [],
+			  tipo: null, fijos: [],
 			  numeroN1: 0,
 			  conjurosN1: [],
 			  numeroN2: 0,
@@ -1358,7 +1358,7 @@ class Clases {
 			  ]
 			},
 			conjuros: {
-			  fijos: [],
+			  tipo: null, fijos: [],
 			  numeroN1: 0,
 			  conjurosN1: [],
 			  numeroN2: 0,
@@ -1475,9 +1475,9 @@ class Clases {
 			  ]
 			},
 			conjuros: {
-			  fijos: [
+			  tipo: "Tecnomagia", fijos: [
 			  ],
-			  numeroN1: 2,
+			  numeroN1: 0,
 			  conjurosN1: [
 				"Barrera de luz",
 				"Cargar batería menor",
@@ -1600,7 +1600,7 @@ class Clases {
 			  ]
 			},
 			conjuros: {
-			  fijos: [
+			  tipo: "Divina", fijos: [
 			  ],
 			  numeroN1: -1,
 			  conjurosN1: [
@@ -1739,7 +1739,7 @@ class Clases {
 			  ]
 			},
 			conjuros: {
-			  fijos: [
+			  tipo: null, fijos: [
 			  ],
 			  numeroN1: 0,
 			  conjurosN1: [

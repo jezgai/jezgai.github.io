@@ -61,7 +61,7 @@
       "pericias": []
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -165,7 +165,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -263,7 +263,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -312,7 +312,7 @@
     "boniftipoarmas": 1,
     "periciasespeciales": { "puntos": 0, "pericias": [ ] },
     "pericias": { "puntos": 2, "pericias": [ { "nombre": "Supervivencia", "puntos": 0} ] },
-    "conjuros": { "fijos": [ ], "numeroN1": 0, "conjurosN1": [ ], "numeroN2": 0, "conjurosN2": [ ] },
+    "conjuros": { "tipo": null, "fijos": [ ], "numeroN1": 0, "conjurosN1": [ ], "numeroN2": 0, "conjurosN2": [ ] },
     "armas": [
       [
         "Machete",
@@ -392,7 +392,7 @@
       "pericias": []
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -485,7 +485,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -581,7 +581,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -683,7 +683,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -768,7 +768,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,

@@ -117,5 +117,24 @@ class SistemaBase {
     	    return lHechizos;
 	}
 	
+	// Para llamadas desde generador de PJ
+	cargaPDF(lHechizos, nombrePlantillaPDF, nombrePDF, sistema) {		
+		var xhr = new XMLHttpRequest();
+		var contenido;
+		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  contenido = this.response;
+			  var fields = sistema.rellenaPDF(lHechizos);
+			  var out_buf = pdfform().transform(contenido, fields);
+			  var blob = new Blob([out_buf], {type: 'application/pdf'});
+			  saveAs(blob, 'Tarjeta ' + nombrePDF + '.pdf'); 
+			}
+		};
+		xhr.open('GET', nombrePlantillaPDF, true);
+		xhr.responseType = 'arraybuffer';
+		xhr.setRequestHeader("Content-Type", "application/json");
+		xhr.send();	
+	}
 	
 }

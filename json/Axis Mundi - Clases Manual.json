@@ -61,7 +61,7 @@
       "pericias": []
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -143,8 +143,8 @@
       "pericias": []
     },
     "conjuros": {
-      "fijos": [
-        "Leer Magia"
+      "tipo": "Arcana", "fijos": [
+        "Leer magia"
       ],
       "numeroN1": 2,
       "conjurosN1": [
@@ -267,7 +267,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -347,7 +347,7 @@
       "pericias": []
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": "Divina", "fijos": [],
       "numeroN1": -1,
       "conjurosN1": [
         "Curar heridas leves",
@@ -439,7 +439,7 @@
       "pericias": []
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": "Divina", "fijos": [],
       "numeroN1": 1,
       "conjurosN1": [
         "Curar heridas leves",
@@ -534,7 +534,7 @@
       "pericias": []
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -618,7 +618,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -707,7 +707,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -784,7 +784,7 @@
       "pericias": []
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -874,7 +874,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -953,7 +953,7 @@
       "pericias": []
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -1047,8 +1047,8 @@
       ]
     },
     "conjuros": {
-      "fijos": [
-        "Leer Magia"
+      "tipo": "Arcana", "fijos": [
+        "Leer magia"
       ],
       "numeroN1": 2,
       "conjurosN1": [
@@ -1172,7 +1172,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": "Divina", "fijos": [],
       "numeroN1": -1,
       "conjurosN1": [
         "Curar heridas leves",
@@ -1297,7 +1297,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -1408,7 +1408,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -1533,7 +1533,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -1650,7 +1650,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -1731,7 +1731,7 @@
         }]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,

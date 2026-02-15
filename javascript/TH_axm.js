@@ -94,4 +94,28 @@ class AxM extends SistemaBase {
 		}
 		return fields;
 	}
+	
+	// Para llamarlo desde el generador de PJ
+	generaPDF(lHechizos, tipo) {
+		this.tiposconjuros[0] = tipo;
+		var numero = this.hechizos.Tipos[tipo].Numero;
+		var plantillaPDF = this.hechizos.Tipos[tipo].PDF;
+		
+		var j=1;
+		var i=0;
+		var lHechizosAux = [];
+		for(i=0; i<lHechizos.length; i++) {
+			lHechizosAux.push(lHechizos[i]);
+			if ((i+1)%4 == 0) {
+				this.cargaPDF(lHechizosAux, plantillaPDF, tipo + " " + j, this);
+				j++;
+				lHechizosAux = [];
+			}
+		}
+		if ( lHechizosAux.length > 0 ) {
+			this.cargaPDF(lHechizosAux, plantillaPDF, tipo + " " + j, this);
+		}
+	}
+	
+	
 }

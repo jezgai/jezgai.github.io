@@ -92,7 +92,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -169,7 +169,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -256,7 +256,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [
+      "tipo": "Tecnomagia", "fijos": [
       ],
       "numeroN1": 2,
       "conjurosN1": [
@@ -351,7 +351,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -430,7 +430,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [],
+      "tipo": null, "fijos": [],
       "numeroN1": 0,
       "conjurosN1": [],
       "numeroN2": 0,
@@ -547,9 +547,9 @@
       ]
     },
     "conjuros": {
-      "fijos": [
+      "tipo": "Tecnomagia", "fijos": [
       ],
-      "numeroN1": 2,
+      "numeroN1": 0,
       "conjurosN1": [
         "Barrera de luz",
         "Cargar batería menor",
@@ -672,7 +672,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [
+      "tipo": "Divina", "fijos": [
       ],
       "numeroN1": -1,
       "conjurosN1": [
@@ -811,7 +811,7 @@
       ]
     },
     "conjuros": {
-      "fijos": [
+      "tipo": null, "fijos": [
       ],
       "numeroN1": 0,
       "conjurosN1": [
