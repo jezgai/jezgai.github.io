@@ -31,6 +31,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script>
 
@@ -82,6 +83,8 @@
 		}
 	}
 	rawFile.send();
+	
+	funcMenu();
   }
   
 	function muestraventanacargatablas() {
@@ -131,6 +134,10 @@
 			this.resultado += "<br>";
 		  this.resultado += resultados[iresultado].resultados[isub].texto;
 		  
+		  if ( resultados[iresultado].resultados[isub].hasOwnProperty('descripcion') == true ) {
+			  this.resultado += "<br/>" + resultados[iresultado].resultados[isub].descripcion;
+		  }
+	  
 		  return isub;
 	  }
   }
@@ -177,7 +184,10 @@
 	  
 	  var resultado = "<button onclick=" + '"' + "acordeon('resultado" + indiceresultado + "')" + '"' + " class='w3-button w3-block w3-left-align w3-blue'>" + tablas.tablas[indice].titulo + "</button>";
 	  resultado += "<div id='resultado" + indiceresultado + "' class='w3-hide w3-container'>" + resultadotirada + tablas.tablas[indice].resultados[iresultado].texto;
-	    
+	  
+	  if ( tablas.tablas[indice].resultados[iresultado].hasOwnProperty('descripcion') == true ) {
+		  resultado += "<br/>" + tablas.tablas[indice].resultados[iresultado].descripcion;
+	  }  
 	  
 	  if ( tablas.tablas[indice].resultados[iresultado].resultados != null ) {
 		  resultado = subresultado(tablas.tablas[indice].resultados, iresultado, resultado);
@@ -229,7 +239,7 @@
 	  //var contenido = "<div class='dostercios'><h2>Tablas aleatorias</h2></div><div class='tercio'<center><button onclick='limpiaresultados()' class='w3-button w3-block w3-center-align w3-blue'>Limpiar resultados</button></center></div>";
 	  //document.getElementById("titulo").innerHTML = contenido;
 	  
-	  if (document.getElementById('caddtablas').checked == false) 
+	  //if (document.getElementById('caddtablas').checked == false) 
 		indicetablas = 1;
 	  
 	  var contenido = "<button onclick=" + '"' + "acordeon('tabla" + indicetablas + "')" + '"' + " class='w3-button w3-block w3-left-align w3-blue'>" + tablas.titulo + "</button>";
@@ -258,8 +268,8 @@
 	  contenido += "</table>";
 	  contenido += "</div>";
 	  
-	  if (document.getElementById('caddtablas').checked == true) 
-		contenido = document.getElementById("listatablas").innerHTML + contenido;
+	  //if (document.getElementById('caddtablas').checked == true) 
+		//contenido = document.getElementById("listatablas").innerHTML + contenido;
 	  document.getElementById("listatablas").innerHTML = contenido;
 	  muestra('tabla' + indicetablas);  
 	  indicetablas++;
@@ -353,16 +363,83 @@
   
 </style>
 
+<style>
+	
+.topnav {
+  overflow: hidden;
+  background-color: #2196f3;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2196f3;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+</style>
+
 </head>
 
 <body>
-	
 	<div class="w3-container w3-blue w3-center">
-	  <h2>Tablas Aleatorias</h2>
+	<div class="topnav" id="myTopnav">
+		<a href="javascript:void(0);" class="active" onclick="funcMenu()">Tablas aleatorias</a>
+		<a href="javascript:void(0);" onclick='muestraventanacargatablas()'>Carga de fichero</a>
+		<a href="javascript:void(0);" onclick="cargatablas('Tablas-Vestir-un-Dungeon.json')">Vestir un Dungeon</a>
+		<a href="javascript:void(0);" onclick="cargatablas('Tablas-d12-Paladin.json')">Un paladín en el infierno (1-12)</a>
+		<a href="javascript:void(0);" onclick="cargatablas('Tablas-Dios-Azul.json')">Incursión a la tierra del Dios Azul</a>
+		<a href="javascript:void(0);" onclick="cargatablas('Nombres-Apellidos-Cyberpunk.json')">Nombres y Apellidos Cyberpunk</a>
+		<a href="javascript:void(0);" onclick="cargatablas('Tablas-Cairn.json')">Tablas de Cairn</a>
+		<a href="javascript:void(0);" class="icon" onclick="funcMenu()">
+		<i class="fa fa-bars"></i>
+		</a>
 	</div>
+	</div>
+	<!--<div class="w3-container w3-blue w3-center">
+	  <h2>Tablas Aleatorias</h2>
+	</div>-->
 
 	<div style="overflow:auto">
-		<div class="microleft" id="botoncargaclases"><p><button class='w3-button w3-block w3-blue' onclick='muestraventanacargatablas()'>Carga de fichero de Tablas</button></p></div>
+		<!--<div class="microleft" id="botoncargaclases"><p><button class='w3-button w3-block w3-blue' onclick='muestraventanacargatablas()'>Carga de fichero de Tablas</button></p></div>
 		<div class="noveno" id="botoncargavestirdungeon"><p><button class='w3-button w3-block w3-blue' onclick="cargatablas('Tablas-Vestir-un-Dungeon.json')">Tablas Vestir Dungeon</button></p></div>
 		<div class="microleft" id="botoncargapaladin"><p><button class='w3-button w3-block w3-blue' onclick="cargatablas('Tablas-d12-Paladin.json')">Un paladín en el infierno (1-12)</button></p></div>
 		<div class="microleft" id="botoncargadiosazul"><p><button class='w3-button w3-block w3-blue' onclick="cargatablas('Tablas-Dios-Azul.json')">Incursión a la tierra del Dios Azul</button></p></div>
@@ -370,7 +447,7 @@
 		<div class="noveno" id="botoncargacairn"><p><button class='w3-button w3-block w3-blue' onclick="cargatablas('Tablas-Cairn.json')">Tablas de Cairn</button></p></div>
 		<div class="noveno"><br/><input type="checkbox" id="caddtablas" name="AddTablas" value="AddTablas">
 			<label for="caddtablas">Añadir tablas</label>
-		</div>
+		</div>-->
 		<div class="dostercios" id="listatablas"></div>
 		<div class="tercio" >
 			<button id="limpiaresultados" onclick="limpiaresultados()" class="w3-hide w3-button w3-block w3-center-align w3-blue">Limpiar resultados</button>
@@ -397,6 +474,17 @@
 <script type="text/javascript">
 	
   inicial();
+</script>
+
+<script>
+function funcMenu() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
 </script>
 </body>
 
