@@ -3,30 +3,41 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/Ayudante-AdC.css">
 <script src="javascript/Ayudante-AdC.js"></script>
+<script src="javascript/drawdown.js"></script>
+<style>
 
+</style>
 </head>
 <body>
 
-<div id="barraAxM" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="javascript:void(0)" onclick="textos.muestraTexto('AcercaDe')">Acerca de</a>
-  <a href="javascript:void(0)" onclick="textos.muestraTexto('Glosario')">Glosario</a>
-  <a href="javascript:void(0)" onclick="textos.muestraTexto('CreacionPJ')">Creación PJ</a>
-  <a href="javascript:void(0)" onclick="textos.muestraTexto('Sistema')">Sistema</a>
-  <a href="javascript:void(0)" onclick="textos.muestraTexto('Combate')">Combate</a>
-  <a href="javascript:void(0)" onclick="textos.muestraTexto('Exploracion')">Exploración</a>
-  <a href="javascript:void(0)" onclick="textos.muestraTexto('Curacion')">Curación</a>
-  <a href="javascript:void(0)" onclick="textos.muestraTexto('Persecuciones')">Persecuciones</a>
+<div class="topnav">
+  <a href="javascript:void(0)" onclick="muestraTexto('AcercaDe')" class="active">Ayudante del AdC</a>
+  <div id="barraMenu" class="sidebar" >
+    <a href="javascript:void(0)" class="closebtn" onclick="cierraMenu()">×</a>
+  <a href="javascript:void(0)" onclick="muestraTexto('AcercaDe')">Acerca de</a>
+  <a href="javascript:void(0)" onclick="muestraTexto('Glosario')">Glosario</a>
+  <a href="javascript:void(0)" onclick="muestraTexto('CreacionPJ')">Creación PJ</a>
+  <a href="javascript:void(0)" onclick="muestraTexto('Sistema')">Sistema</a>
+  <a href="javascript:void(0)" onclick="muestraTexto('Combate')">Combate</a>
+  <a href="javascript:void(0)" onclick="muestraTexto('Exploracion')">Exploración</a>
+  <a href="javascript:void(0)" onclick="muestraTexto('Curacion')">Curación</a>
+  <a href="javascript:void(0)" onclick="muestraTexto('Persecuciones')">Persecuciones</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="abreMenu()">
+    <i class="fa fa-bars"></i>
+  </a>
 </div>
 
-<div id="main">
-  <button class="openbtn" onclick="openNav()">&#9776; <strong>Ayudante del Amo del Calabozo<strong></button>  
-  <div id="seccion"></div>
+<div id="principal" style="padding-left:16px">
   <div id="contenido"></div>
 </div>
 
+<script>
+</script>
+
 </body>
-</html> 
+</html>
 
