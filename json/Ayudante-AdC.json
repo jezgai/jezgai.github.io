@@ -16,9 +16,10 @@
         "Luz": { "titulo": "Iluminación", "referencias": [ "Exploracion" ] },
         "Caracteristicas": { "titulo": "Características", "referencias": [ "Glosario", "CreacionPJ", "Sistema" ] },
         "Salvacion": { "titulo": "Salvaciones", "referencias": [ "Glosario", "CreacionPJ" ] },
-        "HojasPJ": { "titulo": "Hojas no oficiales de PJ por clase", "referencias": [ "CreacionPJ" ] }
+        "HojasPJ": { "titulo": "Hojas no oficiales de PJ por clase", "referencias": [ "CreacionPJ" ] },
+        "Magia": { "titulo": "Magia", "referencias": [ ] }
     },
-    "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones" ],
+    "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones", "Magia" ],
     "Titulo": "Ayudante del AdC"
 }
 
