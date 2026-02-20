@@ -16,7 +16,11 @@ function cargaPaginas(paginaInicial) {
     rawFile.onreadystatechange = function() {
         if (rawFile.readyState === 4) {
 	        var allText = rawFile.responseText;
-	        paginas.paginas = JSON.parse(allText);
+	        var ficherojson = JSON.parse(allText);
+	        paginas.paginas = ficherojson.Paginas;
+	        pagina.menu = ficherojson.Menu;
+	        pagina.titulo = ficherojson.Titulo;
+	        pagina.muestraMenu();
 	        muestraTexto(paginaInicial);
         }
     }
@@ -38,6 +42,31 @@ function muestraTexto(clave) {
     cierraMenu();
 }
 
+class Pagina {
+    constructor() {
+        this.menu = [ "AcercaDe" ];
+        this.titulo = "Ayudante";
+    }
+    
+    enlacemenu(pagina, clase) {
+        return '<a href="javascript:void(0)" onclick="muestraTexto(' + "'" + pagina + "')" + '">' + paginas.paginas[pagina].titulo + '</a>';
+    }
+    
+    enlacemenu(pagina, texto, adicional) {
+        return '<a href="javascript:void(0)" onclick="muestraTexto(' + "'" + pagina + "')" + '"' + adicional + '>' + texto + '</a>';
+    }
+    
+    muestraMenu() {
+        
+        var i=0;
+        var barramenu='<a href="javascript:void(0)" class="closebtn" onclick="cierraMenu()">×</a>'
+        for (i=0;i<this.menu.length;i++) {
+            barramenu += " " + this.enlacemenu(this.menu[i], paginas.paginas[this.menu[i]].titulo, "");
+        }
+        document.getElementById("Ayudante").innerHTML = this.enlacemenu(this.menu[0], this.titulo, " class='active'");
+        document.getElementById("barraMenu").innerHTML = barramenu;
+    }
+}
 
 class Paginas {
     constructor() {
@@ -56,6 +85,7 @@ class Paginas {
             Trampas: { titulo: "", referencias: [] },
             Luz: { titulo: "", referencias: [] }
        };
+       this.menu = [ "AcercaDe", "Glosario", "CracionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones" ]
     }
     
     
@@ -98,6 +128,7 @@ class Paginas {
 }
 
 
+let pagina=new Pagina();
 let paginas=new Paginas();
 cargaPaginas("AcercaDe");
 

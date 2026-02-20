@@ -1,21 +1,25 @@
 {
-    "AcercaDe": { "titulo": "Acerca de", "referencias": [] },
-    "Glosario": { "titulo": "Glosario", "referencias": [] },
-    "CreacionPJ": { "titulo": "Creación del PJ", "referencias": [] },
-    "Sistema": { "titulo": "Sistema", "referencias": [] },
-    "Combate": { "titulo": "Combate", "referencias": [] },
-    "Exploracion": { "titulo": "Exploración", "referencias": [] },
-    "Velocidad": { "titulo": "Velocidad", "referencias": [ "Exploracion" ] },
-    "Descansos": { "titulo": "Descansos", "referencias": [ "Exploracion" ] },
-    "Persecuciones": { "titulo": "Persecuciones", "referencias": [] },
-    "Tiempo": { "titulo": "Gestión del tiempo", "referencias": [ "Exploracion" ] },
-    "Trampas": { "titulo": "Trampas", "referencias": [ "Exploracion" ] },
-    "Daño": { "titulo": "Daño", "referencias": [ "Combate" ] },
-    "Curacion": { "titulo": "Curación", "referencias": [] },
-    "Luz": { "titulo": "Iluminación", "referencias": [ "Exploracion" ] },
-    "Caracteristicas": { "titulo": "Características", "referencias": [ "Glosario", "CreacionPJ", "Sistema" ] },
-    "Salvacion": { "titulo": "Salvaciones", "referencias": [ "Glosario", "CreacionPJ" ] },
-    "HojasPJ": { "titulo": "Hojas no oficiales de PJ por clase", "referencias": [ "CreacionPJ" ] }
+    "Paginas": {
+        "AcercaDe": { "titulo": "Acerca de", "referencias": [] },
+        "Glosario": { "titulo": "Glosario", "referencias": [] },
+        "CreacionPJ": { "titulo": "Creación del PJ", "referencias": [] },
+        "Sistema": { "titulo": "Sistema", "referencias": [] },
+        "Combate": { "titulo": "Combate", "referencias": [] },
+        "Exploracion": { "titulo": "Exploración", "referencias": [] },
+        "Velocidad": { "titulo": "Velocidad", "referencias": [ "Exploracion" ] },
+        "Descansos": { "titulo": "Descansos", "referencias": [ "Exploracion" ] },
+        "Persecuciones": { "titulo": "Persecuciones", "referencias": [] },
+        "Tiempo": { "titulo": "Gestión del tiempo", "referencias": [ "Exploracion" ] },
+        "Trampas": { "titulo": "Trampas", "referencias": [ "Exploracion" ] },
+        "Daño": { "titulo": "Daño", "referencias": [ "Combate" ] },
+        "Curacion": { "titulo": "Curación", "referencias": [] },
+        "Luz": { "titulo": "Iluminación", "referencias": [ "Exploracion" ] },
+        "Caracteristicas": { "titulo": "Características", "referencias": [ "Glosario", "CreacionPJ", "Sistema" ] },
+        "Salvacion": { "titulo": "Salvaciones", "referencias": [ "Glosario", "CreacionPJ" ] },
+        "HojasPJ": { "titulo": "Hojas no oficiales de PJ por clase", "referencias": [ "CreacionPJ" ] }
+    },
+    "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Sistema", "Combate", "Exploracion" ],
+    "Titulo": "Ayudante del AdC"
 }
 
 
