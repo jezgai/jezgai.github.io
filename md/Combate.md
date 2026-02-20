@@ -9,7 +9,7 @@ Consta de los siguientes pasos:
 - Tirada de iniciativa
 - Resolver ataques y {{Daño}}
 
-**++Distancia de encuentro (metros)++**
+**++{{Distancia}} (metros)++**
 
 Lanza 3d6 (2 o 1 con poca visibilidad) y la suma se multiplica por 10 (100 en entornos abiertos).
 

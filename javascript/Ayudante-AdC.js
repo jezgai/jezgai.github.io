@@ -9,6 +9,36 @@ function cierraMenu() {
   document.getElementById("principal").style.marginLeft= "0";
 }
 
+
+function calculaencuentro() {
+    var visibilidad = document.querySelector('input[name="visibilidad"]:checked').value;
+    var entorno = document.getElementsByName("entorno")[0];
+    
+    var ndados = 3;
+    switch (visibilidad) {
+        case 'Normal': ndados = 3;
+                        break;
+        case 'Baja': ndados = 2;
+                        break;
+        case 'MBaja': ndados = 1;
+                        break;
+        default:
+                        break;
+    }
+    var mult=1;
+    if ( entorno.checked == true ) {
+        mult=100;
+    }
+    
+    var valor=0;
+    var i=0;
+    for(i=0;i<ndados;i++) {
+        valor += Math.floor(Math.random() * 6) + 1;
+    }
+    valor = Math.trunc(valor*mult);
+    document.getElementById("resultadoencuentro").innerHTML = "<br/><br><strong>Distancia de encuentro</strong>: " + valor + " metros.";
+}
+
 function cargaPaginas(paginaInicial) {
     var rawFile = new XMLHttpRequest();
     rawFile.open("GET", "json/Ayudante-AdC.json", true);
@@ -29,13 +59,23 @@ function cargaPaginas(paginaInicial) {
 }
 
 function muestraTexto(clave) {
+    var tipofichero="md";
+    if ( paginas.paginas[clave].hasOwnProperty("html") && paginas.paginas[clave].html == true ) {
+        tipofichero="html";
+    }
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "md/" + clave + ".md", true);
+    
+    
+    rawFile.open("GET", tipofichero + "/" + clave + "." + tipofichero, true);
     rawFile.onreadystatechange = function() {
         if (rawFile.readyState === 4) {
             var allText = rawFile.responseText;
-             
-            document.getElementById("contenido").innerHTML = paginas.parsea(markdown(allText)) + paginas.referencias(clave);
+            if ( tipofichero == "html" ) {
+                document.getElementById("contenido").innerHTML = allText + paginas.referencias(clave);
+            }
+            else {
+                document.getElementById("contenido").innerHTML = paginas.parsea(markdown(allText)) + paginas.referencias(clave);
+            }
         }
     }
     rawFile.send();

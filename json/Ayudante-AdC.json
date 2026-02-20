@@ -17,7 +17,8 @@
         "Caracteristicas": { "titulo": "Características", "referencias": [ "Glosario", "CreacionPJ", "Sistema" ] },
         "Salvacion": { "titulo": "Salvaciones", "referencias": [ "Glosario", "CreacionPJ" ] },
         "HojasPJ": { "titulo": "Hojas no oficiales de PJ por clase", "referencias": [ "CreacionPJ" ] },
-        "Magia": { "titulo": "Magia", "referencias": [ ] }
+        "Magia": { "titulo": "Magia", "referencias": [ ] },
+        "Distancia": { "titulo": "Distancia de encuentro", "referencias": [ "Combate" ], "html": true }
     },
     "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones", "Magia" ],
     "Titulo": "Ayudante del AdC"
