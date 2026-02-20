@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Tarjetas de hechizos</title>
+<title>Tarjetas de hechizos de Axis Mundi</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -103,7 +103,7 @@
 	function cargaTipos() {
 	    if ( objsistema != null ) {
 	        tipossistema = objsistema.listaTipos();
-	        var tiposhtml = objsistema.construyeSelectTipos(tipossistema);
+	        var tiposhtml = objsistema.construyeSelectTipos(tipossistema).replaceAll('-blue','-white');
 	        document.getElementById("divtipo").innerHTML = tiposhtml;
     	    document.getElementById("divtipo").style.visibility="visible";
 	    }
@@ -140,6 +140,12 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  background-color: #333;
+  color: white;
+}
+
 .minileft {
   float:left;
   width:16%;
@@ -205,17 +211,17 @@
 </head>
 <body >
 
-	<div class="w3-container w3-blue w3-center">
+	<div class="w3-container w3-brown w3-center">
 	  <h2>Tarjetas de hechizos</h2>
 	</div>
 	<div style="overflow:auto">
 	    <div class="main" id="divtipo">	        
 	    </div>
-		<div class="left" id="botonpdf"><p><button class='w3-button w3-block w3-blue' onclick='generaPDF()'>Genera PDF</button></p></div>
+		<div class="left" id="botonpdf"><p><button class='w3-button w3-block w3-brown' onclick='generaPDF()'>Genera PDF</button></p></div>
 	</div>
 	<div style="overflow:auto">
 		<div class="total" id="listahechizos">
-			<div class="w3-container w3-blue w3-center"><p><strong>Hechizos</strong></p></div> 
+			<div class="w3-container w3-brown w3-center"><p><strong>Hechizos</strong></p></div> 
 			<div class="left" id="hechizos1"></div>
 			<div class="main" id="hechizos2"></div>
 			<div class="left" id="hechizos3"></div>
