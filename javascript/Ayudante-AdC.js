@@ -25,7 +25,7 @@ function calculaencuentro() {
         default:
                         break;
     }
-    var mult=1;
+    var mult=10;
     if ( entorno.checked == true ) {
         mult=100;
     }
