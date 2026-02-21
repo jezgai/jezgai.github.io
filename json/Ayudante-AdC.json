@@ -25,7 +25,7 @@
         "Clases": { "titulo": "Clase", "referencias": [ "CreacionPJ" ] },
         "Pericias": { "titulo": "Pericias", "referencias": [ "CreacionPJ" ] },
         "TiradaAtaque": { "titulo": "Tirada de ataque", "referencias": [ "Combate" ] },
-        "TiradaReaccion": { "titulo": "Tirada de reacción", "referencias": [ "Combate" ] }
+        "TiradaReaccion": { "titulo": "Tirada de reacción", "referencias": [ "Combate", "Sistema" ] }
     },
     "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones", "Magia" ],
     "Titulo": "Ayudante del AdC"
