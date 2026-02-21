@@ -15,7 +15,7 @@
         "Curacion": { "titulo": "Curación", "referencias": [] },
         "Luz": { "titulo": "Iluminación", "referencias": [ "Exploracion" ] },
         "Caracteristicas": { "titulo": "Características", "referencias": [ "Glosario", "CreacionPJ", "Sistema" ] },
-        "Salvacion": { "titulo": "Salvaciones", "referencias": [ "Glosario", "CreacionPJ" ] },
+        "Salvaciones": { "titulo": "Salvaciones", "referencias": [ "Glosario", "CreacionPJ" ] },
         "HojasPJ": { "titulo": "Hojas no oficiales de PJ por clase", "referencias": [ "CreacionPJ" ] },
         "Magia": { "titulo": "Magia", "referencias": [ ] },
         "Distancia": { "titulo": "Distancia de encuentro", "referencias": [ "Combate" ], "html": true },
