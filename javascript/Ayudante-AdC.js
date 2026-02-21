@@ -25,7 +25,7 @@ function calculaencuentro() {
         default:
                         break;
     }
-    var mult=10;
+    var mult=3;
     if ( entorno.checked == true ) {
         mult=100;
     }
@@ -37,6 +37,57 @@ function calculaencuentro() {
     }
     valor = Math.trunc(valor*mult);
     document.getElementById("resultadoencuentro").innerHTML = "<br/><br><strong>Distancia de encuentro</strong>: " + valor + " metros.";
+}
+
+function tiradademoral() {
+    var moral=document.getElementById("moral").value;
+    moral = Math.trunc(moral);
+    var valor = Math.floor(Math.random() * 6) + 1 + Math.floor(Math.random() * 6) + 1;
+    if ( valor <= moral ) {
+        document.getElementById("resultadomoral").innerHTML = "<br/><br>Deciden <strong>seguir luchando</strong>";
+    }
+    else {
+        document.getElementById("resultadomoral").innerHTML = "<br/><br>Se <strong>rinden</strong> o si pueden <strong>huyen</strong>";
+    }
+}
+
+function lanzad6(mensajeprevio, mensajepost, idresultado) {
+    var valor = Math.floor(Math.random() * 6) + 1;
+    document.getElementById(idresultado).innerHTML = mensajeprevio + valor + mensajepost;
+}
+
+function lanzapericia(pericia, haybonificacion, haypenalizacion, idresultado, mensajetrue, mensajefalse) {
+    var valorpericia=document.getElementById(pericia).value;
+    valorpericia = Math.abs(Math.trunc(valorpericia));
+    var bonificacion = 0;
+    var penalizacion = 0;
+    if ( haybonificacion == true ) {
+        bonificacion=document.getElementById("bonificador").value;
+        bonificacion = Math.abs(Math.trunc(bonificacion));
+    }
+    if ( haypenalizacion == true ) {
+        penalizacion=document.getElementById("penalizador").value;
+        penalizacion = Math.abs(Math.trunc(penalizacion));
+    }
+    valorpericia = valorpericia + bonificacion - penalizacion;
+    var valor = Math.floor(Math.random() * 6) + 1;
+    var conseguido = false;
+    if ( valor <= valorpericia ) {
+        if ( valor == 6 ) {
+            valor = Math.abs(Math.trunc(valorpericia));
+            if ( valor != 6 )
+                conseguido = true;
+        }
+        else
+            conseguido = true;
+    }
+    
+    if ( conseguido == true ) {
+        document.getElementById(idresultado).innerHTML = mensajetrue;
+    }
+    else {
+        document.getElementById(idresultado).innerHTML = mensajefalse;
+    }
 }
 
 function cargaPaginas(paginaInicial) {

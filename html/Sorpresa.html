@@ -1,0 +1,22 @@
+<h2>Tirada de sorpresa</h2>
+<form>
+  <div><label for="sigilo">Valor de Sigilo (el más bajo de los PJ):</label><br>
+  <input type="text" id="sigilo" name="sigilo" value="2"></div>
+  <div><label for="bonificador">Bonificador (PNJ distraidos, PJ ocultos...):</label><br>
+  <input type="text" id="bonificador" name="bonificador" value="0"></div>
+</form>
+<button class="button button1" onclick="lanzapericia('sigilo',true,false,'resultadosigilo','Los <strong>PNJ son</strong> sorprendidos', 'Los <strong>PNJ no</strong> son sorprendidos')">Los PJ pueden sorprender</button>
+<div id="resultadosigilo"></div>
+
+<hr/>
+<form>
+  <div><label for="alerta">Valor de Alerta (el más alto de los PJ):</label><br>
+  <input type="text" id="alerta" name="alerta" value="3"></div>
+  <div><label for="penalizador">Penalizador (PJ distraidos, PNJ emboscados...):</label><br>
+  <input type="text" id="penalizador" name="penalizador" value="0"></div>
+</form>
+<button class="button button1" onclick="lanzapericia('alerta',false,true,'resultadoalerta','Los <strong>PJ no</strong> son sorprendidos', 'Los <strong>PJ son</strong> sorprendidos')">Los PJ pueden ser sorprendidos</button>
+<div id="resultadoalerta"></div>
+
+
+<br/><br/>
