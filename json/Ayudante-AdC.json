@@ -23,7 +23,8 @@
         "Iniciativa": { "titulo": "Tirada de iniciativa", "referencias": [ "Combate" ], "html": true },
         "Sorpresa": { "titulo": "Tirada de sorpresa", "referencias": [ "Combate" ], "html": true },
         "Clases": { "titulo": "Clase", "referencias": [ "CreacionPJ" ] },
-        "Pericias": { "titulo": "Pericias", "referencias": [ "CreacionPJ" ] }
+        "Pericias": { "titulo": "Pericias", "referencias": [ "CreacionPJ" ] },
+        "TiradaAtaque": { "titulo": "Tirada de ataque", "referencias": [ "Combate" ] }
     },
     "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones", "Magia" ],
     "Titulo": "Ayudante del AdC"

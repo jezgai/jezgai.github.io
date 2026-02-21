@@ -21,7 +21,7 @@ Si los PJ pueden sorprender, el PJ con el Sigilo más bajo hace una tirada de pe
 
 Al inicio de cada ronda se tira 1d6 y cada PJ suma su DES. El AdC tira otro d6, que será la iniciativa de todos los PNJ. El orden de actuación es primero los PJ con más iniciativa que los PNJ, luego los PNJ y por último el resto de PJ
 
-**++Tirada de ataque++**
+**++{{TiradaAtaque}}++**
 
 Lanza 1d20, suma el BA que corresponda (cuerpo a cuerpo o a distancia) y el resultado tiene que ser mayor o igual a la CA del rival para impactar. El bono de ataque de los PNJ es el número de sus DG. Un 20 en el dado es un crítico (siempre es éxito y duplica daño). Un 1 en el dado es una pifia (el AdC determina las consecuencias).
 
