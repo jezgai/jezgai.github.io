@@ -3,11 +3,11 @@
 **Resumen de pasos**
 
 - **{{Caracteristicas}}**. Se lanzan los dados para calcular sus valores (3d6 por cada).
-- **Clase**. Elección de la clase PJ.
+- **{{Clases}}**. Elección de la clase PJ.
 - **Nivel y PX**. Apunta el nivel del PJ (normalmente será 1), los PX según su nivel y los necesarios para el siguiente nivel.
 - **PG**. Calcula los PG según la clase, nivel y CON.
 - **TS**. Apunta los valores de sus {{Salvaciones}} según la clase y nivel y SAB.
-- **Pericias iniciales**. Apunta el valor de las pericias generales y en aquellas clases que tengan puntos adicionales y pericias específicas, reparte los que toquen según el nivel.
+- **{{Pericias}} iniciales**. Apunta el valor de las pericias básicas y en aquellas clases que tengan puntos adicionales y pericias específicas, reparte los que toquen según el nivel.
 - **Equipo y dinero inicial**. El PJ tiene inicialmente 3d8×6 monedas de oro con las que comprar su equipo.
 - **CA**. Se apunta su CA teniendo en cuenta si lleva armadura o escudo y sumando el valor de DES.
 - **BA**. Se apuntan las 2 BA según la clase y nivel y sumando FUE o DES según sea la BA para ataques cuerpo a cuerpo o a distancia.

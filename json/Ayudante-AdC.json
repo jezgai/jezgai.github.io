@@ -21,7 +21,9 @@
         "Distancia": { "titulo": "Distancia de encuentro", "referencias": [ "Combate" ], "html": true },
         "Moral": { "titulo": "Tirada de moral", "referencias": [ "Combate" ], "html": true },
         "Iniciativa": { "titulo": "Tirada de iniciativa", "referencias": [ "Combate" ], "html": true },
-        "Sorpresa": { "titulo": "Tirada de sorpresa", "referencias": [ "Combate" ], "html": true }
+        "Sorpresa": { "titulo": "Tirada de sorpresa", "referencias": [ "Combate" ], "html": true },
+        "Clases": { "titulo": "Clase", "referencias": [ "CreacionPJ" ] },
+        "Pericias": { "titulo": "Pericias", "referencias": [ "CreacionPJ" ] }
     },
     "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones", "Magia" ],
     "Titulo": "Ayudante del AdC"

@@ -23,12 +23,20 @@ a {
 
 .button1 {background-color: #77131e; color: #fff;}
 
-td {
-  text-align: center;
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
 }
-table, th, td {
-  border: 1px solid;
-  border-style: solid;
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #494848;
 }
 
 .topnav {

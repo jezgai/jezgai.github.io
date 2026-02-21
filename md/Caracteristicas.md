@@ -1,3 +1,5 @@
+## Características
+
 Los personajes tienen 6 características que se calculan lanzando 3 dados de 6 y sumando el resultado. Asociado al valor tienen un modificador (al que se refieren las abreviaturas que están entre paréntesis) y que pueden afectar a algunas tiradas o a otros atributos derivados.
 
 - __Fuerza (FUE)__: la potencia física del PJ. Afecta al combate cuerpo a cuerpo y a la carga máxima.
