@@ -1,9 +1,9 @@
 ## Clases
 
 Las clases disponibles en el manual de [Axis Mundi](https://77mundos.es/tienda/axis-mundi/1684/) son:
-- **++Guerrero++**
-- **++Especialista++**
-- **++Mago++**
+- **++{{Guerrero}}++**
+- **++{{Especialista}}++**
+- **++{{Mago}}++**
 - **++Sacerdote++**
 - **++Clérigo++**
 - **++Paladín++**

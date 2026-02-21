@@ -25,7 +25,13 @@
         "Clases": { "titulo": "Clase", "referencias": [ "CreacionPJ" ] },
         "Pericias": { "titulo": "Pericias", "referencias": [ "CreacionPJ" ] },
         "TiradaAtaque": { "titulo": "Tirada de ataque", "referencias": [ "Combate" ] },
-        "TiradaReaccion": { "titulo": "Tirada de reacción", "referencias": [ "Combate", "Sistema" ] }
+        "TiradaReaccion": { "titulo": "Tirada de reacción", "referencias": [ "Combate", "Sistema" ] },
+        "Guerrero": { "titulo": "Guerrero", "referencias": [ "Clases" ] },
+        "Mago": { "titulo": "Mago", "referencias": [ "Clases" ] },
+        "Especialista": { "titulo": "Especialista", "referencias": [ "Clases" ] },
+        "TSGuerrero": { "titulo": "Guerrero", "referencias": [ "Guerrero" ] },
+        "TSMago": { "titulo": "Mago", "referencias": [ "Mago" ] },
+        "TSEspecialista": { "titulo": "Especialista", "referencias": [ "Especialista" ] }
     },
     "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones", "Magia" ],
     "Titulo": "Ayudante del AdC"
