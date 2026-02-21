@@ -17,6 +17,10 @@ Lanza 3d6 (2 o 1 con poca visibilidad) y la suma se multiplica por 3 (100 en ent
 
 Si los PJ pueden sorprender, el PJ con el Sigilo más bajo hace una tirada de pericia (si los PNJ están distraidos se bonifica su Sigilo con 1 o 2 si los PJ están ocultos). Si son los PJ los que pueden ser sorprendidos, el PJ con la Alerta más alta hace una tirada de pericia (si los PJ están distraidos se penaliza con 1 y si los PNJ les esperaban o emboscaban con 2). Quien quede sorprendido no puede actuar en la ronda.
 
+**++{{TiradaReaccion}}++**
+
+Si el AdC tiene dudas sobre la actitud de los PNJ lanza 2d6, sumando el valor de CAR del portavoz/líder de los PJ, si los PNJ tienen un bonificador a la reacción, se lo suma también y comprueba el resultado en una tabla.
+
 **++{{Iniciativa}}++**
 
 Al inicio de cada ronda se tira 1d6 y cada PJ suma su DES. El AdC tira otro d6, que será la iniciativa de todos los PNJ. El orden de actuación es primero los PJ con más iniciativa que los PNJ, luego los PNJ y por último el resto de PJ

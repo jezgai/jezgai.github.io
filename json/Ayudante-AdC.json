@@ -24,7 +24,8 @@
         "Sorpresa": { "titulo": "Tirada de sorpresa", "referencias": [ "Combate" ], "html": true },
         "Clases": { "titulo": "Clase", "referencias": [ "CreacionPJ" ] },
         "Pericias": { "titulo": "Pericias", "referencias": [ "CreacionPJ" ] },
-        "TiradaAtaque": { "titulo": "Tirada de ataque", "referencias": [ "Combate" ] }
+        "TiradaAtaque": { "titulo": "Tirada de ataque", "referencias": [ "Combate" ] },
+        "TiradaReaccion": { "titulo": "Tirada de reacción", "referencias": [ "Combate" ] }
     },
     "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones", "Magia" ],
     "Titulo": "Ayudante del AdC"
