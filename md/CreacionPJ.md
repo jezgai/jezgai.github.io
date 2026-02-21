@@ -5,7 +5,7 @@
 - **{{Caracteristicas}}**. Se lanzan los dados para calcular sus valores (3d6 por cada).
 - **{{Clases}}**. Elección de la clase PJ.
 - **Nivel y PX**. Apunta el nivel del PJ (normalmente será 1), los PX según su nivel y los necesarios para el siguiente nivel.
-- **PG**. Calcula los PG según la clase, nivel y CON.
+- **PG**. Calcula los PG según el dado de golpe indicado por la clase, nivel y CON (desde el nivel 10 en adelante no se le suma el bonificador de Constitución y tampoco se tira el dado de golpe sino que se le suma un valor fijo).
 - **TS**. Apunta los valores de sus {{Salvaciones}} según la clase y nivel y SAB.
 - **{{Pericias}} iniciales**. Apunta el valor de las pericias básicas y en aquellas clases que tengan puntos adicionales y pericias específicas, reparte los que toquen según el nivel.
 - **Equipo y dinero inicial**. El PJ tiene inicialmente 3d8×6 monedas de oro con las que comprar su equipo.
