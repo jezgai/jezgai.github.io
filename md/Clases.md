@@ -4,14 +4,14 @@ Las clases disponibles en el manual de [Axis Mundi](https://77mundos.es/tienda/a
 - **++{{Guerrero}}++**
 - **++{{Especialista}}++**
 - **++{{Mago}}++**
-- **++Sacerdote++**
-- **++Clérigo++**
-- **++Paladín++**
-- **++Montaraz++**
-- **++Bardo++**
-- **++Bárbaro++**
-- **++Asesino++**
-- **++Monje++**
+- **++{{Sacerdote}}++**
+- **++{{Clerigo}}++**
+- **++{{Paladin}}++**
+- **++{{Montaraz}}++**
+- **++{{Bardo}}++**
+- **++{{Barbaro}}++**
+- **++{{Asesino}}++**
+- **++{{Monje}}++**
 - **++Guerrero arcano elfo++**
 - **++Capellán elfo++**
 - **++Defensor enano++**

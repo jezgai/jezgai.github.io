@@ -3,6 +3,7 @@
 - **Requisitos**: DES 9   **Primario**: DES
 - **Progresión Salvación**: {{TSEspecialista}}
 - **Tipo de armadura**: Cuero. Sin escudos.
+- **Barrido**: Si acaban con un enemigo, pueden volver a atacar ese asalto tantas veces como la mitad de su nivel.
 - **Pericias**: Apuñalar, Detectar Trampas, Juego de Manos y Mecanismos. Arcanista aficionado (N10)
 - **Ventaja al escalar**: Pueden usar la pericia de Escalada en superficies difíciles o con carga
 - **Lingüista**: (Nivel 4) Pueden usar su pericia de Idiomas para leer mágicamente cualquier idioma.
