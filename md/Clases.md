@@ -12,13 +12,13 @@ Las clases disponibles en el manual de [Axis Mundi](https://77mundos.es/tienda/a
 - **++{{Barbaro}}++**
 - **++{{Asesino}}++**
 - **++{{Monje}}++**
-- **++Guerrero arcano elfo++**
-- **++Capellán elfo++**
-- **++Defensor enano++**
-- **++Luchador enano++**
-- **++Alguacil mediano++**
-- **++Saqueador mediano++**
-- **++Mercenario semiogro++**
+- **++{{GuerreroArcanoElfo}}++**
+- **++{{CapellanElfo}}++**
+- **++{{DefensorEnano}}++**
+- **++{{LuchadorEnano}}++**
+- **++{{AlguacilMediano}}++**
+- **++{{SaqueadorMediano}}++**
+- **++{{MercenarioSemiogro}}++**
 
 En el módulo [Estación Norte](https://77mundos.es/tienda/axis-mundi/preventa-estacion-norte/) se añaden las siguientes clases:
 - **++Carroñero++**

@@ -37,9 +37,16 @@
         "Barbaro": { "titulo": "Bárbaro", "referencias": [ "Clases" ] },
         "Asesino": { "titulo": "Asesino", "referencias": [ "Clases" ] },
         "Monje": { "titulo": "Monje", "referencias": [ "Clases" ] },
-        "TSGuerrero": { "titulo": "Guerrero", "referencias": [ "Guerrero", "Paladin", "Montaraz", "Barbaro", "Asesino", "Monje" ] },
-        "TSMago": { "titulo": "Mago", "referencias": [ "Mago", "Sacerdote", "Clerigo", "Bardo" ] },
-        "TSEspecialista": { "titulo": "Especialista", "referencias": [ "Especialista" ] }
+        "GuerreroArcanoElfo": { "titulo": "Guerrero arcano elfo", "referencias": [ "Clases" ] },
+        "CapellanElfo": { "titulo": "Capellán elfo", "referencias": [ "Clases" ] },
+        "DefensorEnano": { "titulo": "Defensor enano", "referencias": [ "Clases" ] },
+        "LuchadorEnano": { "titulo": "Luchador enano", "referencias": [ "Clases" ] },
+        "AlguacilMediano": { "titulo": "Alguacil mediano", "referencias": [ "Clases" ] },
+        "SaqueadorMediano": { "titulo": "Saqueador mediano", "referencias": [ "Clases" ] },
+        "MercenarioSemiogro": { "titulo": "Mercenario semiogro", "referencias": [ "Clases" ] },
+        "TSGuerrero": { "titulo": "Guerrero", "referencias": [ "Guerrero", "Paladin", "Montaraz", "Barbaro", "Asesino", "Monje", "DefensorEnano", "LuchadorEnano", "AlguacilMediano", "MercenarioSemiogro" ] },
+        "TSMago": { "titulo": "Mago", "referencias": [ "Mago", "Sacerdote", "Clerigo", "Bardo", "GuerreroArcanoElfo", "CapellanElfo" ] },
+        "TSEspecialista": { "titulo": "Especialista", "referencias": [ "Especialista", "SaqueadorMediano" ] }
     },
     "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones", "Magia" ],
     "Titulo": "Ayudante del AdC"
