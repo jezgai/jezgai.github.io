@@ -26,16 +26,16 @@ En el módulo [Estación Norte](https://77mundos.es/tienda/axis-mundi/preventa-e
 - **++{{Tecnomago}}++**
 - **++{{TiradorChatarrero}}++**
 - **++{{Tocho}}++**
-- **++Tecnomago Kobold++**
-- **++Chamán Kobold++**
-- **++Recuperador Kobold++**
+- **++{{TecnomagoKobold}}++**
+- **++{{ChamanKobold}}++**
+- **++{{RecuperadorKobold}}++**
 
 Además existen algunas oficiosas:
-- **++Clérigo Enano++**
+- **++{{ClerigoEnano}}++**
 - **++Druida++**
 - **++Druida Semielfo++**
 - **++Escolta Kenku++**
 - **++Guardián de la floresta élfico++**
 - **++Ladrón Semielfo++**
-- **++{{Vagabundo}}++** (Estación Norte).
+- **++{{Vagabundo}}++** (Montaraz para Estación Norte).
 
