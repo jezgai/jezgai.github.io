@@ -32,8 +32,8 @@ En el módulo [Estación Norte](https://77mundos.es/tienda/axis-mundi/preventa-e
 
 Además existen algunas oficiosas:
 - **++{{ClerigoEnano}}++**
-- **++Druida++**
-- **++Druida Semielfo++**
+- **++{{Druida}}++**
+- **++{{DruidaSemielfo}}++**
 - **++Escolta Kenku++**
 - **++Guardián de la floresta élfico++**
 - **++Ladrón Semielfo++**

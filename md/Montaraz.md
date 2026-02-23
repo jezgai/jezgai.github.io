@@ -7,7 +7,7 @@
 - **Barrido**: Si acaban con un rival, pueden volver a atacar ese asalto tantas veces como su nivel.
 - **Puntería**: +1 al atacar con armas AD.
 - **Camuflaje natural**: +2 a Sigilo en entornos naturales a los que esté habituado.
-- **Compañero animal**: (Nivel 4) consigue un com-pañero animal de 1DG que obedece sus órdenes.
+- **Compañero animal**: (Nivel 4) Consigue un compañero animal de 1DG que obedece sus órdenes.
 - **Voz del bosque**: (Nivel 11) +2 a la reacción con mamíferos salvajes.
 - **Pericias**: Supervivencia.
 
