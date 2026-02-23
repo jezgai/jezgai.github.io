@@ -23,7 +23,7 @@
         "Iniciativa": { "titulo": "Tirada de iniciativa", "referencias": [ "Combate" ], "html": true },
         "Sorpresa": { "titulo": "Tirada de sorpresa", "referencias": [ "Combate" ], "html": true },
         "Clases": { "titulo": "Clase", "referencias": [ "CreacionPJ" ] },
-        "Pericias": { "titulo": "Pericias", "referencias": [ "CreacionPJ" ] },
+        "Pericias": { "titulo": "Pericias", "referencias": [ "CreacionPJ", "Glosario" ] },
         "TiradaAtaque": { "titulo": "Tirada de ataque", "referencias": [ "Combate" ] },
         "TiradaReaccion": { "titulo": "Tirada de reacción", "referencias": [ "Combate", "Sistema" ] },
         "Guerrero": { "titulo": "Guerrero", "referencias": [ "Clases" ] },
@@ -44,9 +44,16 @@
         "AlguacilMediano": { "titulo": "Alguacil mediano", "referencias": [ "Clases" ] },
         "SaqueadorMediano": { "titulo": "Saqueador mediano", "referencias": [ "Clases" ] },
         "MercenarioSemiogro": { "titulo": "Mercenario semiogro", "referencias": [ "Clases" ] },
-        "TSGuerrero": { "titulo": "Guerrero", "referencias": [ "Guerrero", "Paladin", "Montaraz", "Barbaro", "Asesino", "Monje", "DefensorEnano", "LuchadorEnano", "AlguacilMediano", "MercenarioSemiogro" ] },
-        "TSMago": { "titulo": "Mago", "referencias": [ "Mago", "Sacerdote", "Clerigo", "Bardo", "GuerreroArcanoElfo", "CapellanElfo" ] },
-        "TSEspecialista": { "titulo": "Especialista", "referencias": [ "Especialista", "SaqueadorMediano" ] }
+        "Carronero": { "titulo": "Carroñero", "referencias": [ "Clases" ] },
+        "Incinerador": { "titulo": "Incinerador", "referencias": [ "Clases" ] },
+        "Tecnomago": { "titulo": "Tecnomago", "referencias": [ "Clases" ] },
+        "TiradorChatarrero": { "titulo": "Tirador chatarrero", "referencias": [ "Clases" ] },
+        "Tocho": { "titulo": "El Tocho", "referencias": [ "Clases" ] },
+        "Vagabundo": { "titulo": "Vagabundo", "referencias": [ "Clases" ] },
+        "Prender": { "titulo": "Prender", "referencias": [ "Incinerador" ] },
+        "TSGuerrero": { "titulo": "Guerrero", "referencias": [ "Guerrero", "Paladin", "Montaraz", "Barbaro", "Asesino", "Monje", "DefensorEnano", "LuchadorEnano", "AlguacilMediano", "MercenarioSemiogro", "Incinerador", "TiradorChatarrero", "Tocho", "Vagabundo" ] },
+        "TSMago": { "titulo": "Mago", "referencias": [ "Mago", "Sacerdote", "Clerigo", "Bardo", "GuerreroArcanoElfo", "CapellanElfo", "Tecnomago" ] },
+        "TSEspecialista": { "titulo": "Especialista", "referencias": [ "Especialista", "SaqueadorMediano", "Carronero" ] }
     },
     "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones", "Magia" ],
     "Titulo": "Ayudante del AdC"

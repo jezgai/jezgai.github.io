@@ -21,14 +21,14 @@ Las clases disponibles en el manual de [Axis Mundi](https://77mundos.es/tienda/a
 - **++{{MercenarioSemiogro}}++**
 
 En el módulo [Estación Norte](https://77mundos.es/tienda/axis-mundi/preventa-estacion-norte/) se añaden las siguientes clases:
-- **++Carroñero++**
-- **++Chamán Kobold++**
-- **++El Tocho++**
-- **++Incinerador++**
-- **++Recuperador Kobold++**
-- **++Tecnomago++**
+- **++{{Carronero}}++**
+- **++{{Incinerador}}++**
+- **++{{Tecnomago}}++**
+- **++{{TiradorChatarrero}}++**
+- **++{{Tocho}}++**
 - **++Tecnomago Kobold++**
-- **++Tirador Chatarrero++**
+- **++Chamán Kobold++**
+- **++Recuperador Kobold++**
 
 Además existen algunas oficiosas:
 - **++Clérigo Enano++**
@@ -37,4 +37,5 @@ Además existen algunas oficiosas:
 - **++Escolta Kenku++**
 - **++Guardián de la floresta élfico++**
 - **++Ladrón Semielfo++**
+- **++{{Vagabundo}}++** (Estación Norte).
 

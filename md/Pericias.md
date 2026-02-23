@@ -24,3 +24,8 @@ Hay que tener en cuenta que si el valor de la pericia es 6 y al tirar el dado sa
 - **Señor de las bestias** (0). Puede identificar flora y fauna. +2 a la reacción de los animales y puede tomar animales como empleados y secuaces.
 - **Supervivencia** (0). Orientarse, buscar agua y co-mida o rastrear. 
 
+### Estación Norte
+- **Reciclaje** (0). Se divide en tres tareas distintas: _Armaduras_, _Armas_ y _Munición_. Permite obtener chatarra destruyendo elemento (1/10 del coste de venta) o construir elementos usando chatarra (1/2 del coste de venta).
+- **Ingeniería** (1). Permite intuir para que pueden usarse elementos tecnológicos y también permite (con tiempo) planificar grandes proyectos (construir recolectores de agua, levantar puentes, etc)
+- **Uso de armas de fuego**. Permite comprender y usar las armas de fuego.
+
