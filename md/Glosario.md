@@ -13,7 +13,7 @@ Listado de conceptos básicos del sistema:
 - **CA**. Clase de Armadura. Determina la dificultad para ser golpeado.
 - **BA**. Bonificador de Ataque. Modificador que se suma a la tirada de ataque (cuanto más alto mejor).
 - **Barridos**. Ataques extra que algunos PJ pueden hacer en el mismo asalto cuando derrotan a un rival
-- **{{Pericia}}**. Son simplemente habilidades.
+- **{{Pericias}}**. Son simplemente habilidades.
 - **PM**. Puntos de Movimiento.
 - **AdC**. Amo del Calabozo. Es el Director de Juego, quien controla el mundo de juego y aquellos personajes secundarios (**PNJ**) con quienes interaccionan los PJ
 
