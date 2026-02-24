@@ -34,8 +34,8 @@ Además existen algunas oficiosas:
 - **++{{ClerigoEnano}}++**
 - **++{{Druida}}++**
 - **++{{DruidaSemielfo}}++**
-- **++Escolta Kenku++**
-- **++Guardián de la floresta élfico++**
-- **++Ladrón Semielfo++**
+- **++{{EscoltaKenku}}++**
+- **++{{GuardianFlorestaElfo}}++**
+- **++{{LadronSemielfo}}++**
 - **++{{Vagabundo}}++** (Montaraz para Estación Norte).
 

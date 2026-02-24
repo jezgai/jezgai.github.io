@@ -55,14 +55,17 @@
         "ClerigoEnano": { "titulo": "Clérigo enano", "referencias": [ "Clases" ] },
         "Druida": { "titulo": "Druida", "referencias": [ "Clases" ] },
         "DruidaSemielfo": { "titulo": "Druida semielfo", "referencias": [ "Clases" ] },
+        "EscoltaKenku": { "titulo": "Escolta Kenku", "referencias": [ "Clases" ] },
+        "GuardianFlorestaElfo": { "titulo": "Guardián de la floresta elfo", "referencias": [ "Clases" ] },
+        "LadronSemielfo": { "titulo": "Ladrón semielfo", "referencias": [ "Clases" ] },
         "Vagabundo": { "titulo": "Vagabundo", "referencias": [ "Clases" ] },
         "Comunion": { "titulo": "Comunión", "referencias": [ "ChamanKobold" ] },
         "Prender": { "titulo": "Prender", "referencias": [ "Incinerador" ] },
         "Polimorfarse": { "titulo": "Polimorfarse", "referencias": [ "Druida", "DruidaSemielfo" ] },
         "HablarConAnimales": { "titulo": "Hablar con animales", "referencias": [ "DruidaSemielfo" ] },
-        "TSGuerrero": { "titulo": "Guerrero", "referencias": [ "Guerrero", "Paladin", "Montaraz", "Barbaro", "Asesino", "Monje", "DefensorEnano", "LuchadorEnano", "AlguacilMediano", "MercenarioSemiogro", "Incinerador", "TiradorChatarrero", "Tocho", "RecuperadorKobold", "Vagabundo" ] },
+        "TSGuerrero": { "titulo": "Guerrero", "referencias": [ "Guerrero", "Paladin", "Montaraz", "Barbaro", "Asesino", "Monje", "DefensorEnano", "LuchadorEnano", "AlguacilMediano", "MercenarioSemiogro", "Incinerador", "TiradorChatarrero", "Tocho", "RecuperadorKobold", "Vagabundo", "EscoltaKenku", "GuardianFlorestaElfo" ] },
         "TSMago": { "titulo": "Mago", "referencias": [ "Mago", "Sacerdote", "Clerigo", "Bardo", "GuerreroArcanoElfo", "CapellanElfo", "Tecnomago", "TecnomagoKobold", "ChamanKobold", "ClerigoEnano", "Druida", "DruidaSemielfo" ] },
-        "TSEspecialista": { "titulo": "Especialista", "referencias": [ "Especialista", "SaqueadorMediano", "Carronero" ] }
+        "TSEspecialista": { "titulo": "Especialista", "referencias": [ "Especialista", "SaqueadorMediano", "Carronero", "LadronSemielfo" ] }
     },
     "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones", "Magia" ],
     "Titulo": "Ayudante del AdC"
