@@ -28,4 +28,5 @@
 | 13 | 720000 | 9 | 14 | 7 | 13 | +3 |
 | 14 | 840000 | 10 | 15 | 8 | 14 | +3 |
 
+[Hoja PJ](https://drive.google.com/file/d/1Fnu0WPlkH_Um7QTVQ8MjmXjiD03aav9A/view?usp=drive_link)
 
