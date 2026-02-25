@@ -40,4 +40,5 @@
 
 ** Estación Norte No oficiales **
 - [Vagabundo](https://drive.google.com/file/d/16zMlqtRnTu0UYlHBRYoAS-rkPZdfvdbn/view?usp=sharing)
+- [Monje Budista](https://drive.google.com/file/d/18Q2I-0uqGVodCd9e6pnTg5HWfL71__7a/view?usp=drive_link)
 

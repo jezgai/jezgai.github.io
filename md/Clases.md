@@ -38,4 +38,5 @@ Además existen algunas oficiosas:
 - **++{{GuardianFlorestaElfo}}++**
 - **++{{LadronSemielfo}}++**
 - **++{{Vagabundo}}++** (Montaraz para Estación Norte).
+- **++{{MonjeBudista}}++** (Monje para Estación Norte).
 

@@ -9,7 +9,7 @@
 - **Camuflaje natural**: +2 a Sigilo en entornos naturales a los que esté habituado.
 - **Compañero animal**: (Nivel 4) Consigue un compañero animal de 1DG que obedece sus órdenes.
 - **Voz del bosque**: (Nivel 11) +2 a la reacción con mamíferos salvajes.
-- **Pericias**: Supervivencia.
+- **Pericias**: _Supervivencia_.
 
 | Nivel | PX | BA | Daño | Pericias | Barrido | PG |
 | ----- | -- | -- | -------- | -------- | ------- | -- |
