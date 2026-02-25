@@ -27,3 +27,5 @@
 | 13 | 540000 | 7 | x4 | 28 | 6 | +2 |
 | 14 | 630000 | 7 | x4 | 30 | 7 | +2 |
 
+[Hoja PJ](https://drive.google.com/file/d/1EoHMUX90sfMvnCI7CbF41WCMaxaSxvv1/view?usp=drive_link)
+
