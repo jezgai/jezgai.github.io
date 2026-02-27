@@ -9,6 +9,12 @@ a {
 }
 
 
+.copyright {
+    font-size: 12px;
+    text-align: right;
+}
+
+
 .button {
   border: none;
   color: white;
