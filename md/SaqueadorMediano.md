@@ -30,5 +30,5 @@
 | 9 | 290000 | 5 | x3 | 20 | 4 | +1d6 |
 | 10 | 435000 | 5 | x3 | 22 | 5 | +2 |
 
-[Hoja PJ](https://drive.google.com/file/d/1BrokSp30ez134jgXicktBaqJWeUk43QH/view?usp=drive_link)
+[Hoja PJ](https://drive.google.com/file/d/1BrokSp30ez134jgXicktBaqJWeUk43QH/view?usp=drive_link "_blank")
 
