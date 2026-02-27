@@ -1,5 +1,12 @@
 ## Cambios de versión
 
+
+### Versión 1.0.2
+
+- Arreglo de bugs por cambio de librería de formateo de markdown: página {{Daño}}
+- Reorganización de la página de {{Combate}}
+- Se incluye scroll en algunas partes de las páginas: {{CreacionPJ}} y {{Pericias}} (puede ser útil para el uso con móvil, que es para lo que está hecha la app, pero queda molesto al usarlo en ordenador)
+
 ### Versión 1.0.1
 
 - Se utiliza [marked.js](https://marked.js.org/ "_blank") para el formateo de los markdown

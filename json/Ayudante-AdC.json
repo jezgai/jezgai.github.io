@@ -67,7 +67,7 @@
         "TSGuerrero": { "titulo": "Guerrero", "referencias": [ "Guerrero", "Paladin", "Montaraz", "Barbaro", "Asesino", "Monje", "DefensorEnano", "LuchadorEnano", "AlguacilMediano", "MercenarioSemiogro", "Incinerador", "TiradorChatarrero", "Tocho", "RecuperadorKobold", "Vagabundo", "EscoltaKenku", "GuardianFlorestaElfo", "MonjeBudista" ] },
         "TSMago": { "titulo": "Mago", "referencias": [ "Mago", "Sacerdote", "Clerigo", "Bardo", "GuerreroArcanoElfo", "CapellanElfo", "Tecnomago", "TecnomagoKobold", "ChamanKobold", "ClerigoEnano", "Druida", "DruidaSemielfo" ] },
         "TSEspecialista": { "titulo": "Especialista", "referencias": [ "Especialista", "SaqueadorMediano", "Carronero", "LadronSemielfo" ] },
-        "CambiosVersion": { "titulo": "v1.0.1", "referencias": [ "AcercaDe" ] }
+        "CambiosVersion": { "titulo": "v1.0.2", "referencias": [ "AcercaDe" ] }
     },
     "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones", "Magia" ],
     "Titulo": "Ayudante del AdC"

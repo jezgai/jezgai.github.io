@@ -3,6 +3,8 @@ Para determinar el éxito se lanza 1d6 y se compara con el valor de la pericia (
 
 Hay que tener en cuenta que si el valor de la pericia es 6 y al tirar el dado sale 6 se tira de nuevo y será un éxito siempre que no saque otro 6.
 
+<div id="overflowTest">
+
 ### Básicas
 - **Alerta** (2+SAB). Detectar emboscadas y ataques por sorpresa antes de que sea tarde.
 - **Arquitectura** (1). Obtener datos sobre construcciones, bajadas imperceptibles, muros de material distinto, etc.
@@ -29,3 +31,4 @@ Hay que tener en cuenta que si el valor de la pericia es 6 y al tirar el dado sa
 - **Ingeniería** (1). Permite intuir para que pueden usarse elementos tecnológicos y también permite (con tiempo) planificar grandes proyectos (construir recolectores de agua, levantar puentes, etc)
 - **Uso de armas de fuego**. Permite comprender y usar las armas de fuego.
 
+</div>

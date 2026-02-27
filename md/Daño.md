@@ -1,6 +1,8 @@
 ## Daño
 
 Lanza el dado del daño del arma y se suman los bonos que tenga. El total se resta de los PG del rival. Al llegar a 0, si es un PNJ muere/inconsciente, y si es un PJ hace 2 TS de Aflicciones, si falla la 1a (penalizada por los PG negativos que tenga) cae inconsciente, si falla la 2a (sin penalizar) recibe una herida y tira 1d8 para localizarla:
+| 1d8 | Localización |
+| --- | ------------ |
 | 1 | Cabeza |
 | 2-3 | Torso |
 | 4 | Brazo derecho |
@@ -9,7 +11,9 @@ Lanza el dado del daño del arma y se suman los bonos que tenga. El total se res
 | 7 | Pierna izquierda |
 | 8 | Inmencionables |
 
-Y 1d10 menos los PG para la gravedad
+Y 1d10 más el valor absoluto de los PG del PJ (en este punto son negativos) para determinar la gravedad:
+| 1d10 | Gravedad |
+| ---- | -------- |
 | 1-3 | Cicatriz |
 | 4-6 | Leve. -3 si la usa. Recupera en 1d6+5 días |
 | 7-8 | Grave. -5 si usa esa parte. Recupera en 1d3+1 semanas |
