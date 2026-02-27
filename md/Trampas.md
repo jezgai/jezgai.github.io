@@ -8,4 +8,4 @@ Si los PJ invierten un turno buscando trampas, diciendo qué busca y dónde, el 
 
 Si en el lugar donde buscan hay algo por lo que no han preguntado se puede tirar _Detectar Trampas_.
 
-Si no la descubren se tira _Detectar_ por si la encuentran por casualidad.
+Si no la descubren se tira *Detectar* por si la encuentran por casualidad.

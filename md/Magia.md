@@ -10,4 +10,4 @@ Para lanzar un hechizo el mago o clérigo deben poder gesticular y hablar para p
 
 Si no hay nada que le distraiga el hechizo tiene efecto y se borrará de la lista de preparados. Si es distraído y falla una TS contra Conjuros se pierde también el conjuro, aunque si supera la tirada lo conserva.
 
-Si buscas sacar conjuros en formatos de tarjeta puedes obtenerlos en [aquí](https://jezgai.github.io/TarjetasHechizosAxM.html).
+Si buscas sacar conjuros en formatos de tarjeta puedes obtenerlos en [aquí](https://jezgai.github.io/TarjetasHechizosAxM.html "_blank").

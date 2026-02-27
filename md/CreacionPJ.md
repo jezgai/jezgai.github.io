@@ -15,8 +15,8 @@
 - **Límite de armas**. Aunque no hay lugar en la hoja, anotamos el daño máximo que pueden tener las armas que puede usar (d10 con FUE 2, d8 si es 2, d6 si es 1 y d4 resto).
 - **Nombre y descripción del PJ**. Hasta un mindundi de personaje tiene derecho a un nombre
 
-Existe un [Generador aleatorio de PJ](https://jezgai.github.io/AxisMundi.html) que puede ayudar a esta sencilla tarea.
+Existe un [Generador aleatorio de PJ](https://jezgai.github.io/AxisMundi.html "_blank") que puede ayudar a esta sencilla tarea.
 
-El pdf de la hoja del PJ lo puedes descargar de la web de [77 Mundos](https://77mundos.es/descargas/material-para-axis-mundi/ficha-de-personaje-para-axis-mundi/).
+El pdf de la hoja del PJ lo puedes descargar de la web de [77 Mundos](https://77mundos.es/descargas/material-para-axis-mundi/ficha-de-personaje-para-axis-mundi/ "_blank").
 
 Y si prefieres otras hojas con información específica de cada clase (no son oficiales) las tienes en {{HojasPJ}}

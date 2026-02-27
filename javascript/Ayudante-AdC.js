@@ -122,10 +122,10 @@ function muestraTexto(clave) {
         if (rawFile.readyState === 4) {
             var allText = rawFile.responseText;
             if ( tipofichero == "html" ) {
-                document.getElementById("contenido").innerHTML = allText + paginas.referencias(clave);
+                document.getElementById("contenido").innerHTML = paginas.enlaceinterno(allText) + paginas.referencias(clave);
             }
             else {
-                document.getElementById("contenido").innerHTML = paginas.parsea(markdown(allText)) + paginas.referencias(clave);
+                document.getElementById("contenido").innerHTML = paginas.parsea(marked.parse(allText)) + paginas.referencias(clave);
             }
         }
     }
@@ -199,19 +199,24 @@ class Paginas {
         return "";
     }
     
-    parsea(textomd) {
-        var texto = textomd;
-        var iniciomarca = textomd.indexOf("{{");
-        while (iniciomarca != -1) {
-            var finmarca = textomd.indexOf("}}",iniciomarca);
-            if (finmarca != -1 ) {
-                var marca = textomd.substring(iniciomarca+2,finmarca);
-                if ( this.paginas.hasOwnProperty(marca) ) {
-                    texto = texto.replace(textomd.substring(iniciomarca,finmarca+2), this.enlaceSeccion(marca, this.paginas[marca].titulo));
-                }
-            }
-            iniciomarca =  textomd.indexOf("{{", iniciomarca+2);
+    creaenlace(pagina) {
+        if ( this.paginas.hasOwnProperty(pagina) ) {
+            return this.enlaceSeccion(pagina, this.paginas[pagina].titulo);
         }
+        else {
+            return "<b>" + pagina + "</b>";
+        }
+    }
+    
+    enlaceinterno(texto) {
+        return texto.replace(/\{\{(.*?)\}\}/g, (_, p1) => this.creaenlace(p1));
+    }
+    
+    parsea(textomd) {
+        var texto = textomd.replace(/title="_blank"/gim,'target="_blank"');
+        texto = texto.replace(/\+\+(.*?)\+\+/g, (_, p1) => "<big>" + p1 + "</big>");
+        texto = texto.replace(/\^\^(.*?)\^\^/g, (_, p1) => "<small>" + p1 + "</small>");
+        texto = this.enlaceinterno(texto);
         return texto;
     }
         

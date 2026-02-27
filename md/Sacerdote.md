@@ -42,5 +42,5 @@
 | 13 | 6 | 6 | 6 | 5 | 5 | 3 |
 | 14 | 6 | 6 | 6 | 6 | 5 | 5 |
 
-[Hoja PJ](https://drive.google.com/file/d/1N1swuJkxOap4LMK8-jRhoyWWB_Yi1Fwa/view?usp=drive_link)
+[Hoja PJ](https://drive.google.com/file/d/1N1swuJkxOap4LMK8-jRhoyWWB_Yi1Fwa/view?usp=drive_link "_blank")
 

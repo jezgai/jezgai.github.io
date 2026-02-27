@@ -34,5 +34,5 @@
 | 13 | 720000 | 9 | 28 | 5 | 13 | +2 |
 | 14 | 840000 | 10 | 30 | 5 | 14 | +2 |
 
-[Hoja PJ](https://drive.google.com/file/d/18Q2I-0uqGVodCd9e6pnTg5HWfL71__7a/view?usp=drive_link)
+[Hoja PJ](https://drive.google.com/file/d/18Q2I-0uqGVodCd9e6pnTg5HWfL71__7a/view?usp=drive_link "_blank")
 

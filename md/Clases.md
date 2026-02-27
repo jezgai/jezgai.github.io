@@ -1,6 +1,6 @@
 ## Clases
 
-Las clases disponibles en el manual de [Axis Mundi](https://77mundos.es/tienda/axis-mundi/1684/) son:
+Las clases disponibles en el manual de [Axis Mundi](https://77mundos.es/tienda/axis-mundi/1684/ "_blank") son:
 - **++{{Guerrero}}++**
 - **++{{Especialista}}++**
 - **++{{Mago}}++**
@@ -20,7 +20,7 @@ Las clases disponibles en el manual de [Axis Mundi](https://77mundos.es/tienda/a
 - **++{{SaqueadorMediano}}++**
 - **++{{MercenarioSemiogro}}++**
 
-En el módulo [Estación Norte](https://77mundos.es/tienda/axis-mundi/preventa-estacion-norte/) se añaden las siguientes clases:
+En el módulo [Estación Norte](https://77mundos.es/tienda/axis-mundi/preventa-estacion-norte/ "_blank") se añaden las siguientes clases:
 - **++{{Carronero}}++**
 - **++{{Incinerador}}++**
 - **++{{Tecnomago}}++**

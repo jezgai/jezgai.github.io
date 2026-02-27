@@ -25,5 +25,5 @@
 | 10 | 540000 | 5 | 5 | +4 |
 | 11 | 720000 | 6 | 5 | +4 |
 
-[Hoja PJ](https://drive.google.com/file/d/17uvKhYD84GhrWjWHXomfp4ddcDUV86eF/view?usp=drive_link)
+[Hoja PJ](https://drive.google.com/file/d/17uvKhYD84GhrWjWHXomfp4ddcDUV86eF/view?usp=drive_link "_blank")
 
