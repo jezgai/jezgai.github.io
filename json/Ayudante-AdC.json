@@ -1,6 +1,6 @@
 {
     "Paginas": {
-        "AcercaDe": { "titulo": "Acerca de", "referencias": [] },
+        "AcercaDe": { "titulo": "Acerca de", "referencias": [], "html": true },
         "Glosario": { "titulo": "Glosario", "referencias": [] },
         "CreacionPJ": { "titulo": "Creación del PJ", "referencias": [] },
         "Sistema": { "titulo": "Sistema", "referencias": [] },
