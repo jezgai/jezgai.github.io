@@ -1,5 +1,9 @@
 ## Cambios de versión
 
+### Versión 1.1
+
+- Cambio en las páginas de lanzadores de dados (iniciativa, moral, ...) para que ahora sean como ventanas emergentes sobre la de Combate
+- Por el motivo anterior la página de Combate ya no es markdown y ha tenido que pasar a ser html.
 
 ### Versión 1.0.2
 

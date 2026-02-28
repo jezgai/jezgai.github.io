@@ -4,7 +4,7 @@
         "Glosario": { "titulo": "Glosario", "referencias": [] },
         "CreacionPJ": { "titulo": "Creación del PJ", "referencias": [] },
         "Sistema": { "titulo": "Sistema", "referencias": [] },
-        "Combate": { "titulo": "Combate", "referencias": [] },
+        "Combate": { "titulo": "Combate", "referencias": [], "html": true },
         "Exploracion": { "titulo": "Exploración", "referencias": [] },
         "Velocidad": { "titulo": "Velocidad", "referencias": [ "Exploracion" ] },
         "Descansos": { "titulo": "Descansos", "referencias": [ "Exploracion" ] },
@@ -67,7 +67,7 @@
         "TSGuerrero": { "titulo": "Guerrero", "referencias": [ "Guerrero", "Paladin", "Montaraz", "Barbaro", "Asesino", "Monje", "DefensorEnano", "LuchadorEnano", "AlguacilMediano", "MercenarioSemiogro", "Incinerador", "TiradorChatarrero", "Tocho", "RecuperadorKobold", "Vagabundo", "EscoltaKenku", "GuardianFlorestaElfo", "MonjeBudista" ] },
         "TSMago": { "titulo": "Mago", "referencias": [ "Mago", "Sacerdote", "Clerigo", "Bardo", "GuerreroArcanoElfo", "CapellanElfo", "Tecnomago", "TecnomagoKobold", "ChamanKobold", "ClerigoEnano", "Druida", "DruidaSemielfo" ] },
         "TSEspecialista": { "titulo": "Especialista", "referencias": [ "Especialista", "SaqueadorMediano", "Carronero", "LadronSemielfo" ] },
-        "CambiosVersion": { "titulo": "v1.0.2", "referencias": [ "AcercaDe" ] }
+        "CambiosVersion": { "titulo": "v1.1", "referencias": [ "AcercaDe" ] }
     },
     "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones", "Magia" ],
     "Titulo": "Ayudante del AdC"

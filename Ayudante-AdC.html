@@ -31,9 +31,110 @@
   </a>
 </div>
 
+<div class="modal" id="formSorpresa">
+    <div class="modal-content"">
+    <h2>Tirada de sorpresa</h2>
+    <form>
+      <div><label for="sigilo">Valor de Sigilo (el más bajo de los PJ):</label><br>
+      <input type="text" id="sigilo" name="sigilo" value="2"></div>
+      <div><label for="bonificador">Bonificador (PNJ distraidos, PJ ocultos...):</label><br>
+      <input type="text" id="bonificador" name="bonificador" value="0"></div>
+    </form>
+    <button class="button button1" onclick="lanzapericia('sigilo',true,false,'resultadosigilo','Los <strong>PNJ son</strong> sorprendidos', 'Los <strong>PNJ no</strong> son sorprendidos')">Los PJ pueden sorprender</button>
+    <div id="resultadosigilo"></div>
+
+    <hr/>
+    <form>
+      <div><label for="alerta">Valor de Alerta (el más alto de los PJ):</label><br>
+      <input type="text" id="alerta" name="alerta" value="3"></div>
+      <div><label for="penalizador">Penalizador (PJ distraidos, PNJ emboscados...):</label><br>
+      <input type="text" id="penalizador" name="penalizador" value="0"></div>
+    </form>
+    <button class="button button1" onclick="lanzapericia('alerta',false,true,'resultadoalerta','Los <strong>PJ no</strong> son sorprendidos', 'Los <strong>PJ son</strong> sorprendidos')">Los PJ pueden ser sorprendidos</button>
+    <div id="resultadoalerta"></div>
+    <br/><br/>
+    <button type="button" class="button button1" onclick="cierraForm('formSorpresa')">Cerrar</button>
+    </div>
+</div>
+<div class="modal" id="formIniciativa">
+    <div class="modal-content">
+    <h2>Tirada de iniciativa</h2>
+    <p>Pulsa sobre el botón para calcular la iniciativa de los PNJ y de los PJ. Ten en cuenta que al resultado de los PJ, cada uno deberá sumar el modificador de Destreza para obtener su iniciativa final</p>
+    <div><button class="button button1" onclick="tiradainiciativa()">Iniciativa</button></div>
+    <div id="iniciativapnj"></div>
+    <br/>
+    <div id="iniciativapj"></div>
+    <br/><br/>
+    <button type="button" class="button button1" onclick="cierraForm('formIniciativa')">Cerrar</button>
+    </div>
+</div>
+<div class="modal" id="formReaccion">
+    <div class="modal-content">
+    <h2>Reaccion</h2>
+    <p><strong>Visibilidad</strong></p>
+    <form>
+      <label for="carisma">Modificador Carisma:</label><br>
+      <input type="text" id="carisma" name="carisma" value="0"><br>
+      <label for="modificador">Otros modificadores:</label><br>
+      <input type="text" id="modificador" name="modificador" value="0">
+    </form>
+
+    <button class="button button1" onclick="calculareaccion()">Calcula</button>
+
+    <div id="resultadoreaccion"></div>
+    <br/><br/>
+    <button type="button" class="button button1" onclick="cierraForm('formReaccion')">Cerrar</button>
+    </div>
+</div>
+<div class="modal" id="formDistancia">
+    <div class="modal-content">
+    <h2>Distancia de encuentro</h2>
+    <p><strong>Visibilidad</strong></p>
+    <form>
+      <input type="radio" id="visnormal" name="visibilidad" value="Normal" checked>
+      <label for="visnormal">Normal</label><br>
+      <input type="radio" id="visbaja" name="visibilidad" value="Baja">
+      <label for="visbaja">Baja</label><br>
+      <input type="radio" id="vismuybaja" name="visibilidad" value="MBaja">
+      <label for="vismuybaja">Muy Baja</label>
+    </form>
+
+    <p><strong>Tipo de entorno</strong></p>
+    <form>
+      <input type="checkbox" id="entornoab" name="entorno" value="Abierto">
+      <label for="entornoab">Entorno abierto</label><br>
+    </form>
+
+    <button class="button button1" onclick="calculaencuentro()">Calcula</button>
+
+    <div id="resultadoencuentro"></div>
+
+    <br/><br/>
+    <button type="button" class="button button1" onclick="cierraForm('formDistancia')">Cerrar</button>
+    </div>
+</div>
+
+<div class="modal" id="formMoral">
+    <div class="modal-content">
+    <h2>Tirada de moral</h2>
+    <form>
+      <label for="moral">Valor de Moral:</label><br>
+      <input type="text" id="moral" name="moral" value="6">
+    </form>
+
+    <button class="button button1" onclick="tiradademoral()">Calcula</button>
+
+    <div id="resultadomoral"></div>
+    <br/><br/>
+    <button type="button" class="button button1" onclick="cierraForm('formMoral')">Cerrar</button>
+    </div>
+</div>
+
+
 <div id="principal" style="padding-left:16px">
   <div id="contenido"></div>
 </div>
+
 
 <script>
 </script>

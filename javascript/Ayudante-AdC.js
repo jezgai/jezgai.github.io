@@ -9,6 +9,35 @@ function cierraMenu() {
   document.getElementById("principal").style.marginLeft= "0";
 }
 
+function muestraForm(idElemento) {
+    document.getElementById(idElemento).style.display = "block";
+}
+
+function cierraForm(idElemento) {
+    document.getElementById(idElemento).style.display = "none";
+}
+
+function calculareaccion() {
+    var carisma=document.getElementById("carisma").value;
+    carisma = Math.trunc(carisma);
+    var modif=document.getElementById("modificador").value;
+    modif = Math.trunc(modif);
+    var valor = Math.floor(Math.random() * 6) + Math.floor(Math.random() * 6) + carisma + modif;
+    var reaccion = "Amistoso";
+    if ( valor <= 2 ) {
+        reaccion = "Hostil";
+    }
+    else if ( valor <= 5 ) {
+        reaccion = "Antipático";
+    }
+    else if ( valor <= 8 ) {
+        reaccion = "Indeciso";
+    }
+    else if ( valor <= 11) {
+        reaccion = "Indiferente";
+    }
+    document.getElementById("resultadoreaccion").innerHTML = "<br/>La reacción de los PNJ es: <strong>" + reaccion + "</strong>";
+}
 
 function calculaencuentro() {
     var visibilidad = document.querySelector('input[name="visibilidad"]:checked').value;
@@ -54,6 +83,11 @@ function tiradademoral() {
 function lanzad6(mensajeprevio, mensajepost, idresultado) {
     var valor = Math.floor(Math.random() * 6) + 1;
     document.getElementById(idresultado).innerHTML = mensajeprevio + valor + mensajepost;
+}
+
+function tiradainiciativa() {
+    lanzad6('La <strong>iniciativa</strong> de los <strong>PNJ</strong> es: ','','iniciativapnj');
+    lanzad6('La <strong>iniciativa</strong> de los <strong>PJ</strong> es: ','. Cada <strong>PJ</strong> debe <strong>añadir</strong> su <strong>DES</strong>', 'iniciativapj');
 }
 
 function lanzapericia(pericia, haybonificacion, haypenalizacion, idresultado, mensajetrue, mensajefalse) {

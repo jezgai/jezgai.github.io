@@ -1,0 +1,32 @@
+<h2>Combate</h2>
+
+<p>Se divide en <b>rondas</b> en las que cada personaje, cuando le toca (<b>asalto</b>), hace una acción.</p>
+<p>Consta de los siguientes pasos:</p>
+<ul>
+<li>Decidir la <a href="javascript:void(0)" onclick="muestraForm('formDistancia')">Distancia de encuentro</a></li>
+<li>Determinar si algún grupo es <a href="javascript:void(0)" onclick="muestraForm('formSorpresa')">Sorprendido</a></li>
+<li>Ver la <a href="javascript:void(0)" onclick="muestraForm('formReaccion')">Reacción</a> de los de los PNJ</li>
+<li>Calcular <a href="javascript:void(0)" onclick="muestraForm('formIniciativa')">Iniciativa</a></li>
+<li>Resolver ataques y {{Daño}}</li>
+<li>Lanzar <a href="javascript:void(0)" onclick="muestraForm('formMoral')">Moral</a> para ver si los PNJ se rinden o huyen</li>
+</ul>
+
+<p><strong>Distancia de encuentro</strong><br/>
+Lanza 3d6 (2 o 1 con poca visibilidad) y la suma se multiplica por 3 (100 en entornos abiertos).</p>
+
+<p><strong>Tirada de sorpresa</strong><br/>
+Si los PJ pueden sorprender, el PJ con el Sigilo más bajo hace una tirada de pericia (si los PNJ están distraidos se bonifica su Sigilo con 1 o 2 si los PJ están ocultos). Si son los PJ los que pueden ser sorprendidos, el PJ con la Alerta más alta hace una tirada de pericia (si los PJ están distraidos se penaliza con 1 y si los PNJ les esperaban o emboscaban con 2). Quien quede sorprendido no puede actuar en la ronda.</p>
+
+<p><strong>{{TiradaReaccion}}</strong><br/>
+Se lanzan 2d6 se suma el modificador de Carisma del portavoz y cualquier modificador que estime el Amo del Calabozo y se consulta en la tabla para determinar la actitud de los PNJ-</p>
+
+<p><strong>Tirada de iniciativa</strong><br/>
+Al inicio de cada ronda se tira 1d6 y cada PJ suma su DES. El AdC tira otro d6, que será la iniciativa de todos los PNJ. El orden de actuación es primero los PJ con más iniciativa que los PNJ, luego los PNJ y por último el resto de PJ</p>
+
+<p><strong>Tirada de ataque</strong><br/>
+Lanza 1d20, suma el BA que corresponda (cuerpo a cuerpo o a distancia) y el resultado tiene que ser mayor o igual a la CA del rival para impactar. El bono de ataque de los PNJ es el número de sus DG. Un 20 en el dado es un crítico (siempre es éxito y duplica daño). Un 1 en el dado es una pifia (el AdC determina las consecuencias).</p>
+
+<p><strong>Tirada de moral</strong><br/>
+Cuando los PNJ son claramente superados, muere el primer PNJ o el grupo se reduce a la mitad, chequean la moral para decidir si no huyen/rinden.
+<br/>
+Para ello lanzan 2d6 y si sale igual o menos que su valor de moral, siguen en la lucha.</p>
