@@ -141,6 +141,43 @@
   box-sizing: border-box;
 }
 
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(25,24,25); /* Fallback color */
+  background-color: rgba(25,24,24,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #181717;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #77131e; color: #fff;}
+
+
 body {
   background-color: #333;
   color: white;
@@ -218,6 +255,12 @@ body {
 	    <div class="main" id="divtipo">	        
 	    </div>
 		<div class="left" id="botonpdf"><p><button class='w3-button w3-block w3-coloraxm' onclick='generaPDF()'>Genera tarjetas (PDF)</button></p></div>
+	</div>
+	<div class="modal" id="Conjuro">
+	    <div class="modal-content">
+	        <div id="detalleConjuro"></div>
+            <button type="button" class="button button1" onclick="ocultaconjuro()">Cerrar</button>
+        </div>
 	</div>
 	<div style="overflow:auto">
 		<div class="total" id="listahechizos">

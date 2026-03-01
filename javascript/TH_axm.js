@@ -11,6 +11,7 @@ class AxM extends SistemaBase {
         this.hechizos.Arcana = [ ];
         this.hechizos.Divina = [ ];
         this.hechizos.Tecnomagia = [ ];
+        this.detalleconjuro = false;
         
         Comun.cargatablas("TH-Axis-Mundi.json", this);
     }
@@ -46,6 +47,13 @@ class AxM extends SistemaBase {
 			}
 		}
 		return lHechizos;
+	}
+	
+	
+	nombreHechizo(nombre) {
+	    if ( this.detalleconjuro == false )
+	        return nombre;
+	    return '<a href="javascript:void(0)" onclick="muestraConjuro(' + "'" + nombre + "')" + '">' + nombre + '</a>';
 	}
 	
 	cargaHechizos() {

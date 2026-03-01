@@ -4,6 +4,7 @@ class Sistemas {
 		this.nombressistemas = [ "", "Axis Mundi" ];
         this.sistemas = new Map();
         this.sistemas.set(this.nombressistemas[1], new AxM());
+        this.sistemas.get(this.nombressistemas[1]).detalleconjuro = true;
     }
     
     getSistema(_sistema) {

@@ -89,13 +89,17 @@ class SistemaBase {
 		return nivel;
 	}
 	
+	nombreHechizo(nombre) {
+	    return nombre;
+	}
+	
     
 	pintaHechizos(lHechizos) {
 	        var i=0;
 	        var hechizoshtml = [ "<ul>", "<ul>", "<ul>" ];
 	        for (i=0; i<lHechizos.length; i++) {
 	            var indicehechizo = math.mod(i,3);
-			    hechizoshtml[indicehechizo] += "<li><label><input type='checkbox' id='chechizos"+i+"' /> " + lHechizos[i].nombre;
+			    hechizoshtml[indicehechizo] += "<li><label><input type='checkbox' id='chechizos"+i+"' /> " + this.nombreHechizo(lHechizos[i].nombre);
 				if ( lHechizos[i].nivel != null) 
 					hechizoshtml[indicehechizo] += " (nivel " + this.nivelHechizo(lHechizos[i].nivel) + ")";
 				hechizoshtml[indicehechizo] += "</label></li>";
