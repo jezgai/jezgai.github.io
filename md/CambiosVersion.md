@@ -1,5 +1,9 @@
 ## Cambios de versión
 
+### Versión 1.2.1
+
+- Corrección de error html en la página de Acerca De
+
 ### Versión 1.2
 
 - Se cambian las páginas específicas de conjuro por ventanas emergentes que muestra el contenido del conjuro que obtiene del mismo json usado para sacar las tarjetas en pdf.
