@@ -11,8 +11,8 @@
 - **Voz del bosque**: +2 a la reacción con mamíferos salvajes.
 - **Compañero animal**: Consigue un compañero animal de 1DG que obedece sus órdenes.
 - **Magia**: Lanza magia divina según la tabla. 
-- **Cambiar forma**: (Nivel 4) Como el conjuro _{{Polimorfarse}}_. Una vez al día.
-- **Hablar con los animales**: (Nivel 10) Usar a voluntad el conjuro _{{HablarConAnimales}}_ (1 turno de preparación).
+- **Cambiar forma**: (Nivel 4) Como el conjuro _{{Polimorfarse|Conjuro}}_. Una vez al día.
+- **Hablar con los animales**: (Nivel 10) Usar a voluntad el conjuro _{{Hablar con animales|Conjuro}}_ (1 turno de preparación).
 
 | Nivel | PX | BA  | Barrido | PG | 
 | ----- | -- | -- | ------- | -- | 

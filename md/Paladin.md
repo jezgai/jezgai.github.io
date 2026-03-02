@@ -7,7 +7,7 @@
 - **Barrido**: Si acaban con un rival, pueden volver a atacar ese asalto tantas veces como su nivel.
 - **Purificación**: Inmunidad contra cualquier enfermedad (mágica o no), así como maldiciones.
 - **Imponer manos**: Una vez al día puede curar 2 PG por nivel
-- **Detectar el mal**: (Nivel 3) Puede usar 1 vez por hora el conjuro del mismo nombre.
+- **Detectar el mal**: (Nivel 3) Puede usar 1 vez por hora el conjuro _{{Detectar mal|Conjuro}}_.
 - **Aura de protección**: (Nivel 11) +1 a la CA y +1 a salvaciones contra criaturas malignas.
 
 | Nivel | PX | BA | Daño | Pericias | Barrido | PG |

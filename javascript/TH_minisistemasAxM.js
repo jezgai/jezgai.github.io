@@ -25,3 +25,4 @@ class Sistemas {
 }
 
 let sistemas = new Sistemas();
+let sistemaAxC = sistemas.seleccionasistema(1);

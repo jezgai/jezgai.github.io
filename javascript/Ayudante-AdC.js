@@ -234,11 +234,18 @@ class Paginas {
     }
     
     creaenlace(pagina) {
-        if ( this.paginas.hasOwnProperty(pagina) ) {
-            return this.enlaceSeccion(pagina, this.paginas[pagina].titulo);
+        var partesPagina = pagina.split("|");
+        if ( partesPagina.length >1 && partesPagina[1] == "Conjuro" ) {
+            sistemaAxC.detalleconjuro=true;
+            return sistemaAxC.nombreHechizo(partesPagina[0]);
         }
         else {
-            return "<b>" + pagina + "</b>";
+            if ( this.paginas.hasOwnProperty(pagina) ) {
+                return this.enlaceSeccion(pagina, this.paginas[pagina].titulo);
+            }
+            else {
+                return "<b>" + pagina + "</b>";
+            }
         }
     }
     

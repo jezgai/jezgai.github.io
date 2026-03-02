@@ -8,7 +8,7 @@
 - **Correr por su vida**: Gana 10 m de velocidad efectiva cuando huye de algo.
 - **Carisma oscuro**: +2 a las tiradas de reacción de los monstruos inteligentes malvados y -2 a sus tiradas de salvación contra conjuros de Control lanzados por el personaje.
 - **Arcanista aficionado**: (Nivel 6) Pueden usar pergaminos, varas y objetos mágicos de la clase de mago si superan una tirada de pericia
-- **Profecías**: (Nivel 8) Puede lanzar el conjuro _{{Comunion}}_ una vez por semana (lleva 1 turno de preparación).
+- **Profecías**: (Nivel 8) Puede lanzar el conjuro _{{Comunión|Conjuro}}_ una vez por semana (lleva 1 turno de preparación).
 - **Magia**: Lanza magia divina según la tabla con código de conducta 2. Solo puede hacer conjuros que tengan relación con el elemento del elemental al que adore (agua, fuego, tierra o aire).
 
 | Nivel | PX | BA  | Pericias | PG | 

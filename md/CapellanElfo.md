@@ -1,10 +1,10 @@
-## Guerrero Arcano Elfo
+## Capellán Elfo
 
 - **Requisitos**: INT 9. SAB 9. **Primario**: SAB
 - **Progresión Salvación**: {{TSMago}}
 - **Armas**: Dos armas preferidas de entre arcos, jabalinas, espadas o dagas.
 - **Tipo de armadura**: Ninguna
-- **Magia**: Conoce _Leer Magia_, 2 conjuros de nivel 1 y 1 de nivel 2 elegidos al azar (página 189).
+- **Magia**: Lanza magia divina según la tabla. Lleva vida monacal y cumplir un voto adicional.
 - **Pericias**: _Señor de las bestias_.
 - **Alma liberada**: El personaje es inmune a la parálisis de los guls y recibe un +1 a salvaciones contra Captura.
 - **Camuflaje natural**: +2 a Sigilo en entornos naturales a los que esté habituado.

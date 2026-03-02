@@ -4,7 +4,7 @@
 - **Progresión Salvación**: {{TSMago}}
 - **Armas**: Dos armas preferidas de entre arcos, jabalinas, espadas o dagas.
 - **Tipo de armadura**: Hasta malla incluída.
-- **Magia**: Conoce _Leer Magia_, 2 conjuros de nivel 1 y 1 de nivel 2 elegidos al azar (página 189).
+- **Magia**: Conoce _{{Leer magia|Conjuro}}_, 2 conjuros de nivel 1 y 1 de nivel 2 elegidos al azar (página 189).
 - **Pericias**: _Señor de las bestias_.
 - **Alma liberada**: El personaje es inmune a la parálisis de los guls y recibe un +1 a salvaciones contra Captura.
 - **Camuflaje natural**: +2 a Sigilo en entornos naturales a los que esté habituado.

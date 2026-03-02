@@ -1,5 +1,9 @@
 ## Cambios de versión
 
+### Versión 1.2
+
+- Se cambian las páginas específicas de conjuro por ventanas emergentes que muestra el contenido del conjuro que obtiene del mismo json usado para sacar las tarjetas en pdf.
+
 ### Versión 1.1
 
 - Cambio en las páginas de lanzadores de dados (iniciativa, moral, ...) para que ahora sean como ventanas emergentes sobre la de Combate

@@ -7,7 +7,7 @@
 - **Música tranquilizadora**: Tocando al menos 1 minuto, hechiza o duerme a 1d6DG de bestias o animales.
 - **Lingüista**: (Nivel 4) Puede usar Idiomas para leer y entender cualquier texto escrito.
 - **Glamour**: (Nivel 10) +2 a la reacción si puede tocar a su objetivo mientras habla.
-- **Pericias**:  Historia antigua.
+- **Pericias**:  _Historia antigua_.
 
 | Nivel | PX | BA | Pericias | Barrido | PG |
 | ----- | -- | -- | -------- | ------- | -- |

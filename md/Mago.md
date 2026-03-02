@@ -3,7 +3,7 @@
 - **Requisitos**: INT 9. **Primario**: INT
 - **Progresión Salvación**: {{TSMago}}
 - **Tipo de armadura**: Ningún tipo de armadura
-- **Magia**: Conoce _Leer Magia_, 2 conjuros de nivel 1 y 1 de nivel 2 elegidos al azar (página 189).
+- **Magia**: Conoce _{{Leer magia|Conjuro}}_, 2 conjuros de nivel 1 y 1 de nivel 2 elegidos al azar (página 189).
 
 | Nivel | PX | BA  | PG | 
 | ----- | -- | -- | -- | 

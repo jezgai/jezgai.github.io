@@ -8,8 +8,8 @@
 - **Incinerar**: +1 al atacar con armas cuerpo a cuerpo o a distancia que contengan fuego.
 - **Daño**: El bono de daño solo aplica en los ataques que contengan fuego.
 - **Especialista en fuego cruzado**: (Nivel 2) Gana un +4 en las tiradas de salvación contra ataques de área.
-- **¿Quieres sentir el calor?**: (Nivel 5) Puede lanzar el conjuro _{{Prender}}_ una vez por hora.
-- **Siervo de las llamas**: (Nivel 8) Puede lanzar _Conjurar elemental_ (de fuego) si crea una pila de chatarra (150 pc) a la que debe prender fuego.
+- **¿Quieres sentir el calor?**: (Nivel 5) Puede lanzar el conjuro _{{Prender|Conjuro}}_ una vez por hora.
+- **Siervo de las llamas**: (Nivel 8) Puede lanzar _{{Conjurar elemental|Conjuro}}_ (de fuego) si crea una pila de chatarra (150 pc) a la que debe prender fuego.
 
 | Nivel | PX | BA | Pericias | Daño | Barrido | PG |
 | ----- | -- | -- | -------- | ---- | ------- | -- |
