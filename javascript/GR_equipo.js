@@ -41,7 +41,8 @@ class ArmasyArmaduras {
 					   { arma: "Hachuelas", tipo: "AD", dañoAD: 6, dañoCaC: null, manos: 1, huecos: 0.5, calidad: 2, rasgos: [ "Arrojadiza" ] },
 					   { arma: "Arco compuesto", tipo: "AD", dañoAD: 8, dañoCaC: null, manos: 2, huecos: 2, calidad: 3, rasgos: [ "Ligera" ] },
 					   { arma: "Arbalesta", tipo: "AD", dañoAD: 10, dañoCaC: null, manos: 2, huecos: 3, calidad: 3, rasgos: [ "Recarga" ] },
-					   { arma: "Jabalinas", tipo: "AD", dañoAD: 8, dañoCaC: null, manos: 1, huecos: 1, calidad: 2, rasgos: [ "Arrojadiza" ] } ];
+					   { arma: "Jabalinas", tipo: "AD", dañoAD: 8, dañoCaC: null, manos: 1, huecos: 1, calidad: 2, rasgos: [ "Arrojadiza" ] },
+					   { arma: "Palo", tipo: "CaC", dañoAD: null, dañoCaC: 4, mano: 1, huecos: 0.5, calidad: 3, rasgos: [ "Ligera", "Burda" ] } ];
 	}
 	
 	recuperaarmadura(nombre) {
@@ -70,7 +71,8 @@ class ArmasyArmaduras {
 class Equipo {
 	constructor() {
 		this.armas         = [  { arma: "Cuchillo", valor: 2 },
-								{ arma: "Porra", valor: 5 },
+								{ arma: "Porra", valor: 4 },
+								{ arma: "Palo", valor: 5 },
 								{ arma: "Daga", valor: 15 },
 								{ arma: "Látigo", valor: 17 },
 								{ arma: "Maza", valor: 20 },
