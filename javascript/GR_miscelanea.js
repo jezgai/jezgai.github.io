@@ -83,6 +83,26 @@ class Nombres {
 										"M": [ "Colmillo Astuto", "Tripasucia", "Nariztorcida", "Muerdespada", "Chirridoz", "Roñoso el Breve", "Zurrón de Setas", "Ojos de Brasa", "Garrapata", "Piedralaguna", "Moco Brillante", "Mordisco Ruin", "Chasquido Óseo", "Sombra Veloz", "Garra Mugrienta", "Diente Agudo", "Piedra Astuta", "Pedrusco Rancio", "Mano Pegajosa", "Hedor Fétido", "Muerdespina", "Garrazo Oscuro", "Roñoso", "Chapucero", "Tripasalada", "Piedraloca", "Mocobrón", "Escarbadientes", "Trampuzas", "Hedor Gruñón", "Pedrusco Ágil", "Zarcillo Nudoso", "Muerdebarro", "Chirrido Vil", "Cachivache Cráneo", "Merdacio Loco", "Rataña Roída", "Tizón Astuto", "Risitas Filosas", "Hedor Cieno", "Nariz de Hongo", "Mano Pegajosa", "Mordisco de Hierro", "Zurrón Lleno", "Chirrido Siniestro", "Garra Rápida", "Brebaje Bubónico", "Ojo Bizco", "Trotamundos", "Colmillo Astuto" ], 
 										"F": [ "Mala Hierbalagrima", "Cascabel Huesudo", "Tijera Filosarnosa", "Moquita Pegajosa", "Musgosa Dedopodrido", "Grus Gruñegrita", "Piedrita Resbalosa", "Carcajada Tinieblosa", "Bolsita de Abalorios", "Grumosa Robahuevos", "Piel de Sombra", "Garra Gemela", "Danza de Hongos", "Carcajada Verde", "Susurro de Oro", "Eco de la Cueva", "Ojo de Búho", "Chispa de Ruina", "Uña de Hierro", "Brisa de Barro", "Risa Descompuesta", "Bolsita de Chasquidos", "Chispa Siniestra", "Trepadora Chirriante", "Lengua Mordaz", "Púa Retorcida", "Ojo Bizco", "Uña Roída", "Joroba Saltarina", "Mano Pegajosa", "Piltrafilla Saltarina", "Verrugosa Chispeante", "Crujilda Dientesrotos", "Maloliente Gruñona", "Merdelina Robaplanes", "Carcajada Tenebrosa", "Burbuja Venenosa", "Chirriona Escurridiza", "Trompetilla Oxidada", "Engañifa Astuta", "Pócima Pícara", "Malicia Chispa", "Trepa Zarzal", "Burbuja Sombría", "Murmullo Ruinoso", "Carcajada Ácida", "Trizadura Veloz", "Joya Fétida", "Greñitas Húmedas", "Trampa Centelleante" ], 
 										"Apellidos": [  ] 
+									  },
+							 "Gnoll": {  
+										"M": [ "Rakkar", "Ghrash", "Bruknar", "Zarkhul", "Thrag", "Kroshnak", "Vrakk", "Drashkul", "Grimrak", "Skarn", "Urzgak", "Brath", "Kraghul", "Zrakkar", "Morgrash" ], 
+										"F": [ "Rakka", "Ghrasha", "Brukra", "Zarkha", "Thraga", "Kroshra", "Vrakka", "Drashra", "Grimra", "Skarra", "Urzga", "Bratha", "Kragra", "Zrakka", "Morgrasha" ], 
+										"Apellidos": [ "Colmillo de Hueso", "Risa de Hiena", "Devoracráneos", "Sangre de Carroña", "Garra Polvorienta", "Acechanoches", "Dientes Rotos", "Mandíbula Negra", "Ojo de Carroñero", "Cazador de Tumbas", "Rugido del Yermo", "Hueso Quebrado", "Acechador de Manadas", "Lengua Sangrienta", "Desgarravísceras", "Acechante", "Devorarostro" ] 
+									  },
+							 "Jann": {  
+										"M": [ "Azrakir", "Malzahir", "Qadryon", "Zafirim", "Ishrakel", "Nahrizad", "Kalimar", "Zayrath", "Omirzak", "Rathimel", "Jazirun", "Vasharid", "Khezir", "Talzahir", "Samarqir" ], 
+										"F": [ "Azmira", "Lazirah", "Qamisha", "Zafirael", "Ishara", "Nahriza", "Kalisha", "Zayrina", "Omiraya", "Rathira", "Jazira", "Vashara", "Khezira", "Talzira", "Samariah" ], 
+										"Apellidos": [  ] 
+									  },
+							 "Ogro": {  
+										"M": [ "Gromnak", "Thurgol", "Braknor", "Drulgash", "Morkath", "Zrugmar", "Karnog", "Brulgoth", "Thrakzul", "Gornak", "Drogmash", "Krulgar", "Morgath", "Zarnok", "Brakthul" ], 
+										"F": [ "Grulsha", "Throgna", "Brakka", "Zurmala", "Drulsha", "Morgra", "Krugna", "Tharsha", "Brugla", "Zargra", "Grishna", "Droshka", "Kragna", "Morvasha", "Brulsha" ], 
+										"Apellidos": [ "Rompehuesos", "Tripasnegras", "Dienteférreo", "Aplastacráneos", "Garrafangosa", "Ojosangre", "Huesomordido", "Puñorroca", "Barrigafuego", "ColmilloRoto", "Manopodrida", "Lomopesado", "Tragapiedras", "Gritograve", "Pielceniza" ] 
+									  },
+							 "Orco": {  
+										"M": [ "Grommash", "Thraggor", "Kargath", "Mogor", "Durotan", "Rendrak", "Zogar", "Borgrim", "Haggar", "Skulmar", "Gorath", "Morkash", "Thoktar", "Vorgrim", "Krogar" ], 
+										"F": [ "Groma", "Thrassa", "Kargha", "Mogara", "Dura", "Rendra", "Zogara", "Borga", "Hagga", "Skula", "Gorha", "Morka", "Thokra", "Vorga", "Kroga" ], 
+										"Apellidos": [ "Rompehuesos", "Sangriento", "Matador", "Dientedesierra", "Manosucia", "Rompecráneos", "Quebrantahuesos", "Hendedor", "Desgarrador", "Machacador", "Cazascarabajos", "Ojonublado", "Narizpartida", "Sangrelunar", "Colmillonegro" ] 
 									  } };
         this.nombresF = this.nombresRaza.Humano.F;
         this.nombresM = this.nombresRaza.Humano.M;
@@ -245,7 +265,8 @@ class Habilidades {
 		this.habilidades = [ "Arma favorita", "Armero", "Ataque furtivo", "Atención", "Bendecir", "Blindado", "Compañero animal", "Daño brutal", 
 							 "Defender", "Diplomacia", "Doble empuñadura", "Duro", "Exorcismo", "Hechicería", "Intuición", "Latrocinio", 
 							 "Lengua de plata", "Liderar", "Manos sanadoras", "Pies ligeros", "Preparado", "Primeros auxilios", "Puntería", 
-							 "Reacción rápida", "Remedios naturales", "Ritual", "Supervivencia", "Sutileza con armas", "Tirador", "Uso experto" ];
+							 "Reacción rápida", "Remedios naturales", "Ritual", "Supervivencia", "Sutileza con armas", "Tirador", "Uso experto",
+							 "Afortunado", "Danza ofensiva", "Escalador nato", "Lanzador de cuchillos", "Navegante" ];
 		this.descripcionHabilidades = {
 								"Longevo": "Los elfos necesitan 1100 PX para subir a nivel 2 y después suben de nivel más lentamente.",
 								"Feérico": "Los elfos tienen ventaja en las tiradas de salvación de Carisma y Sabiduría, son inmunes al sueño mágico y a la parálisis y pueden dormir sólo 4 horas al día para considerar que han hecho un descanso largo.",
@@ -282,13 +303,28 @@ class Habilidades {
 								"Puntería": "Puedes decidir disparar al combate cuerpo a cuerpo con un -2 y sin la posibilidad de dar a aliados.",
 								"Reacción rápida": "Al principio de un combate, tienes 1/2 de posibilidades de poder actuar antes de tirar las iniciativas. Después se tiran las iniciativas y puedes actuar con normalidad (este rasgo te da un turno gratuito de actuación si se activa). En caso de que hayas sido sorprendido, conseguir acertar con este rasgo te permite actuar con normalidad.",
 								"Remedios naturales": "Gracias a tus conocimientos de herboristería puedes mejorar la curación natural de tus aliados. Si tienes acceso a materiales naturales puedes ayudar a tu grupo, mejorando en +1 los PG que recuperan, y añadiendo +1 por cada 2 Dados de Golpe completos de la criatura herida. Así una criatura con 1 DG se curaría 1d4+Con+1, mientras que si tuviera 4 DG se curaría 1d4+Con+3.",
-								"Ritual": "Puedes usar un grimorio dedicando 10 minutos a un ritual. El conjuro pasa a tener una duración de N horas en vez de N×10 minutos. Al hacer el ritual, el grimorio se gasta con normalidad.",
+								"Ritual": "Puedes usar un grimorio dedicando 10 minutos a un ritual. El conjuro pasa a tener una duración de N horas en vez de N×10 minutos. Al hacer el ritual, el grimorio se gasta con normalidad.","Afortunado": "Una vez por sesión puede repetir una tirada con la que no esté satisfecho, pero debe quedarse con el segundo resultado.",
+								"Danza defensiva": "Es necesario que vaya ligero* para ejecutar esta danza. Al atacar usando esta técnica tiene +2 a su defensa de armadura y -1 a su ataque",
+								"Danza ofensiva": "Es necesario que vaya ligero* para ejecutar esta danza. Al atacar usando esta técnica tiene +2 a su ataque y -1 a su defensa de armadura",
+								"Escalador nato": "Diestro en la escalada. Tiene ventaja cuando escale superficies utilizando material apropiado o aprovechando salientes y recovecos.",
+								"Lanzador de cuchillos": "(I-II). Es capaz de lanzar con gran efectividad cuchillos por lo que gana +1 tanto al ataque como al daño cuando arroje estos cuchillos. A rango 2 puedes además tirar 2 cuchillos por turno.",
 								"Supervivencia": "(I-II). Tienes ventaja en todas las tiradas para rastrear, buscar recursos naturales, cazar, escuchar ruidos y pasar inadvertido en la naturaleza. Con un segundo rango en este rasgo puedes tirar 3d20 y quedarte con el mejor (¡súper ventaja!).",
 								"Sutileza con armas": "Puedes atacar con Destreza en vez de con Fuerza con armas cuerpo a cuerpo de Peso 1 o menor.",
 								"Tirador": "Si no te mueves en tu ronda puedes decidir disparar dos veces con -4 (con arma sin Recarga), disparar y mover con -2 (con arma con Recarga) o disparar un sólo disparo con +2.",
 								"Uso experto": "(I-III). Al usar un grimorio, tira 1d4. Si sacas igual o menos que tus rangos de este rasgo, el grimorio no se gasta y lo puedes volver a usar. Puedes emplear este rasgo tantas veces al día como rangos tengas, sin contar intentos fallidos.",
 								"Emboscar": "Cuando en un combate el bando rival (y solo el bando rival) es sorprendido, los PJ goblin tiran con ventaja su ataque.",
-								"Potencial": "Ganan +1 a una característica a su elección, y un +1 adicional cada 3 niveles (a nivel 3, 6 y 9)"
+								"Potencial": "Ganan +1 a una característica a su elección, y un +1 adicional cada 3 niveles (a nivel 3, 6 y 9)",
+								"Rastreador nato": "Ventaja al rastrear tanto en desiertos como en grutas y cavernas.",
+								"Cambiaformas": "Pueden mutar sus facciones ocultando sus rasgos de genio. El rostro sigue recordando al suyo. Una vez vuelve a su aspecto original debe esperar una hora antes de volver a cambiar. Cuando oculta sus rasgos de Jann no aplica el -1 a Carisma.",
+								"Metabolismo mágico": "Tiene ventaja en la tirada de recuperación de PG cuando es por curación mágica o por una poción curativa.",
+								"Grande": "Tu gran tamaño es tan bueno como malo. No puedes usar armas de d6, pero pasas a considerar todos los objetos de Peso 1 Ligeros (1/2 Peso). Ocupas el doble de espacio y necesitas comer el doble. Todas las armaduras te cuestan el doble debido a que hay que adaptarlas a tu tamaño. Tienes desventaja en las tiradas de sigilo, que se convierte en super desventaja (3d20) si vas Cargado.",
+								"Furia": "Si decide entrar en estado de furia, el orco suma +1 al daño pero tiene una penalización de -1 a su defensa de armadura",
+								"Afortunado": "Una vez por sesión puede repetir una tirada con la que no esté satisfecho, pero debe quedarse con el segundo resultado.",
+								"Danza defensiva": "Es necesario que vaya ligero* para ejecutar esta danza. Al atacar usando esta técnica tiene +2 a su defensa de armadura y -1 a su ataque",
+								"Danza ofensiva": "Es necesario que vaya ligero* para ejecutar esta danza. Al atacar usando esta técnica tiene +2 a su ataque y -1 a su defensa de armadura",
+								"Escalador nato": "Diestro en la escalada. Tiene ventaja cuando escale superficies utilizando material apropiado o aprovechando salientes y recovecos.",
+								"Lanzador de cuchillos": "(I-II). Es capaz de lanzar con gran efectividad cuchillos por lo que gana +1 tanto al ataque como al daño cuando arroje estos cuchillos. A rango 2 puedes además tirar 2 cuchillos por turno.",
+								"Navegante": "Tiene ventaja en las tiradas de orientación en el mar o cualquier otra tirada relacionada con la actividad de navegar."
 									  };
 	}
 	habilidad() {
@@ -316,6 +352,15 @@ class Razas {
 					 ];
 		this.razasTotal = this.razasOriginal.clone();
 		this.razasTotal.push ( { nombre: "Goblin", peso: 1, habilidades: [ "Pequeño", "Emboscar" ], habilidadesInfravision: [ "Infravisión" ], modificadores: [ 0, 1, 0, -1, 1, 0], movimiento: 8 } );
+		
+		var razasVisirtan = [ 
+						{ nombre: "Gnoll", peso: 0, habilidades: [ "Rastreador nato", "Vivaz" ], habilidadesInfravision: [ ], modificadores: [ 1, 1, 0, 0, 0, -1], movimiento: 12 },
+						{ nombre: "Jann", peso: 0, habilidades: [ "Longevo", "Cambiaformas", "Metabolismo mágico" ], habilidadesInfravision: [ ], modificadores: [ 0, 1, 0, 1, 0, -1], movimiento: 12 },
+						{ nombre: "Ogro", peso: 0, habilidades: [ "Grande", "Daño brutal", "Vivaz" ], habilidadesInfravision: [ ], modificadores: [ 2, 0, 1, -1, 0, -1], movimiento: 12 },
+						{ nombre: "Orco", peso: 0, habilidades: [ "Infravisión", "Furia" ], habilidadesInfravision: [ ], modificadores: [ 1, 0, 0, 0, 0, -1], movimiento: 12 }
+		];
+		
+		this.razasTotal.push(...razasVisirtan);
 
 		this.razas = this.razasOriginal.clone();
 	}
