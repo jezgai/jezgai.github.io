@@ -1,0 +1,34 @@
+## Combate
+
+- **Iniciativa**
+    - D6 + Valor de Iniciativa (se pueden aplicar modificadores)
+    - El Valido realiza una única tirada para todos los secundarios.
+    - Con un Éxito crítico: se gana una acción adicional anterior a la primera ronda (en la que se actúa en solitario) y se actúa en primer lugar todo el combate.
+    - Con un Fallo catastrófico no actúa el primer asalto y es el último todo el combate.
+    - El orden de iniciativa se mantiene inalterable todo el combate.
+- **Acciones** realizables durante un combate: correr una distancia corta, desenvainar un arma, atacar (+ moverse un par de pasos) y acciones breves (solo una durante un asalto).
+- **Ataque**: hay que igualar o superar el Valor de Defensa del objetivo (modificado según su cobertura). Se admiten modificadores. Los Éxitos críticos causan +2 de daño y los Fallos catastróficos hacen al personaje perder el arma (un turno para recuperarla) u otra desgracia ideada por el Valido.
+    - Sin armas: D6 + Brío + 2 (con la pericia)
+    - Con un arma cuerpo a cuerpo: D6 + Brío + 2 (con la pericia)
+    - Con un arma arrojadiza: D6 + Brío + 2 (con la pericia)
+    - Con un arma de proyectiles: D6 + Picaresca + 2 (con la pericia)
+- Parada:
+    - El personaje debe ser consciente del ataque y utilizar escudo o sujetar su capa. Se pueden aplicar modificadores.
+    - Consume la acción de combate del turno.
+    - Si ya se ha actuado, se puede intentar parar sacrificando la acción de combate del turno siguiente.
+    - Parar: D6 + Brío + 2 (si dispone de la Pericia “*Combate cuerpo a cuerpo*”). Debe superarse el resultado de la tirada de ataque.
+- **Esquiva**:
+    - El personaje debe ser consciente del ataque. Se pueden aplicar modificadores.
+    - Consume la acción de combate del turno.
+    - Si ya se ha actuado, se puede intentar parar sacrificando la acción de combate del turno siguiente.
+    - Parar: D6 + Picaresca + 2 (si dispone de la Pericia “*Acrobacias*”). Debe superarse el resultado de la tirada de ataque.
+- **Daño**:
+    - Daño = Daño del arma + diferencia entre tirada de ataque y la Defensa – la armadura. Se resta de los PV del objetivo. 
+      - Daño del arma: Sin armas es 1 y para el resto de armas consultar la tabla de {{Armas}}.
+    - Con 1 PV: agotado o herido. Las tiradas se hacen con desventaja: se lanzan dos dados y se elije el resultado menor.
+    - Con 0 PV: el Valido decide si se está inconsciente, moribundo o muerto. Quien controle al Encubierto puede decidir que muere.
+- **Descanso y recuperación**:
+    - Tras un descanso corto (habitualmente 1 hora), un encubierto con 0 PV pasa a tener 1 PV.
+    - Cada día completo de descanso se recupera una cantidad de PV igual a la puntuación del atributo más alto. Solo actividad poco extenuante. Si solo se descansa por la noche se recupera la mitad. No puede superarse el máximo.
+    - Con la Pericia “Medicina” se recuperan 2 PV adicionales al día (puede usarse con uno mismo), incluso con actividad extenuante. No es necesario tirar pero el Valido puede exigirlo.
+

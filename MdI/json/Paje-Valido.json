@@ -1,0 +1,27 @@
+{
+    "Paginas": {
+        "AcercaDe": { "titulo": "Acerca de", "referencias": [], "html": true },
+        "Glosario": { "titulo": "Glosario", "referencias": [] },
+        "CreaEncubierto": { "titulo": "Creación del Encubierto", "referencias": [], "html": true },
+        "Reglas": { "titulo": "Reglas", "referencias": [] },
+        "Combate": { "titulo": "Combate", "referencias": [] },
+        "Alquimia": { "titulo": "Alquimia", "referencias": [] },
+        "CambiosVersion": { "titulo": "v1.0", "referencias": [ "AcercaDe" ] },
+        "Pericias": { "titulo": "Pericias", "referencias": [ "CreaEncubierto", "Glosario" ] },
+        "Talentos": { "titulo": "Talentos", "referencias": [ "CreaEncubierto", "Glosario" ] },
+        "Armas": { "titulo": "armas", "referencias": [ "CreaEncubierto", "Combate" ] },
+        "Armaduras": { "titulo": "armaduras/escudos", "referencias": [ "CreaEncubierto" ] },
+        "Moda": { "titulo": "moda", "referencias": [ "CreaEncubierto" ] },
+        "Comida": { "titulo": "comida", "referencias": [ "CreaEncubierto" ] },
+        "Vehiculos": { "titulo": "vehículos", "referencias": [ "CreaEncubierto" ] },
+        "EquipoVariado": { "titulo": "equipo variado", "referencias": [ "CreaEncubierto" ] }
+    },
+    "Menu": [ "AcercaDe", "Glosario", "CreaEncubierto", "Reglas", "Combate", "Alquimia" ],
+    "Titulo": "Paje del Valido"
+}
+
+
+
+
+
+

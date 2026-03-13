@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/Paje-Valido.css">
+<script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+<script src="javascript/Paje-Valido.js"></script>
+<style>
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <div id="Ayudante"><a href="javascript:void(0)" onclick="muestraTexto('AcercaDe')" class="active">Paje del Valido</a></div>
+  <div id="barraMenu" class="sidebar" >
+    <a href="javascript:void(0)" class="closebtn" onclick="cierraMenu()">×</a>
+  <a href="javascript:void(0)" onclick="muestraTexto('AcercaDe')">Acerca de</a>
+  <a href="javascript:void(0)" onclick="muestraTexto('Glosario')">Glosario</a>
+  <a href="javascript:void(0)" onclick="muestraTexto('CreaEncubierto')">Creación del Encubierto</a>
+  <a href="javascript:void(0)" onclick="muestraTexto('Sistema')">Sistema</a>
+  <a href="javascript:void(0)" onclick="muestraTexto('Combate')">Combate</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="abreMenu()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+<div class="modal" id="Emergente">
+    <div class="modal-content">
+        <div id="contenidoEmergente"></div>
+        <button type="button" class="button buttoncerrar" onclick="cierraEmergente()">Cerrar</button>
+    </div>
+</div>
+
+
+<div id="principal" style="padding-left:16px">
+  <div id="contenido"></div>
+</div>
+
+
+<script>
+</script>
+
+</body>
+</html>
+
