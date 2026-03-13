@@ -7,12 +7,12 @@
     - Con un Fallo catastrófico no actúa el primer asalto y es el último todo el combate.
     - El orden de iniciativa se mantiene inalterable todo el combate.
 - **Acciones** realizables durante un combate: correr una distancia corta, desenvainar un arma, atacar (+ moverse un par de pasos) y acciones breves (solo una durante un asalto).
-- **Ataque**: hay que igualar o superar el Valor de Defensa del objetivo (modificado según su cobertura). Se admiten modificadores. Los Éxitos críticos causan +2 de daño y los Fallos catastróficos hacen al personaje perder el arma (un turno para recuperarla) u otra desgracia ideada por el Valido.
+- **Ataque**: hay que igualar o superar el Valor de Defensa del objetivo (modificado según su cobertura) con la {{TiradaMdI|TiradaMdI|tirada de ataque}}. Se admiten modificadores. Los Éxitos críticos causan +2 de daño y los Fallos catastróficos hacen al personaje perder el arma (un turno para recuperarla) u otra desgracia ideada por el Valido.
     - Sin armas: D6 + Brío + 2 (con la pericia)
     - Con un arma cuerpo a cuerpo: D6 + Brío + 2 (con la pericia)
     - Con un arma arrojadiza: D6 + Brío + 2 (con la pericia)
     - Con un arma de proyectiles: D6 + Picaresca + 2 (con la pericia)
-- Parada:
+- **Parada**:
     - El personaje debe ser consciente del ataque y utilizar escudo o sujetar su capa. Se pueden aplicar modificadores.
     - Consume la acción de combate del turno.
     - Si ya se ha actuado, se puede intentar parar sacrificando la acción de combate del turno siguiente.

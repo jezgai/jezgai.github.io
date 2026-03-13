@@ -2,6 +2,8 @@
 
 ### Resolución de acciones
 
+La {{TiradaMdI|TiradaMdI|tirada básica}} consiste en lanzar 1d6 y sumarle el valor del atributo que corresponda y +2 si se dispone de una pericia adecuada.
+
 - 1d6 + Atributo + 2 (si dispone de una Pericia adecuada)
 - Hay que igualar o superar la dificultad impuesta por el Valido:
   - Sin oposición activa: Ver tabla al final
