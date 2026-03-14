@@ -45,6 +45,7 @@ class Paginas {
        this.menu = [ "AcercaDe", "Glosario", "CracionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones" ]
        this.puntosfortuna = { };
        this.combate = { };
+       this.conceptos = { };
        this.pericias = { };
        this.talentos = { };
     }

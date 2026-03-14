@@ -3,11 +3,7 @@
 Listado de conceptos básicos del sistema:
 
 - **Encubierto**. Personaje que interpreta/conduce/guía el jugador. También denominado **PJ**.
-- **Atributos**. Dicen lo ágil, fuerte, listo, vigoroso o simpático que es el PJ.
-  - **Brío**. Fuerza, resistencia, valor y arrestos
-  - **Picaresca**. Astucia, sigilo, rapidez de mente y reflejos.
-  - **Galantería**. Belleza, presencia, porte, educación y estatus social.
-  - **Erudición**. Inteligencia, conocimiento y disciplina mental.
+- **{{Atributos|Descripcion|conceptos}}**. Dicen lo ágil, fuerte, listo, vigoroso o simpático que es el PJ.
 - **{{Pericias}}**. Son las habilidades del **Encubierto**. Si se tiene una pericia que tiene que ver con la acción que quiere realizar suma 2 a la tirada.
 - **{{Talentos}}**. Son capacidades especiales del **Encubierto**.
 - **PF**. Puntos de Fortuna.

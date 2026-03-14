@@ -160,6 +160,7 @@ function cargaPaginas(paginaInicial) {
 	        pagina.titulo = ficherojson.Titulo;
 	        pagina.muestraMenu();
 	        paginas.puntosfortuna = ficherojson.PuntosFortuna;
+	        paginas.conceptos = ficherojson.Conceptos;
 	        paginas.combate = ficherojson.Combate;
 	        paginas.pericias = ficherojson.Pericias;
 	        paginas.talentos = ficherojson.Talentos;
