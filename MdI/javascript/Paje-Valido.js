@@ -43,11 +43,24 @@ class Paginas {
             Luz: { titulo: "", referencias: [] }
        };
        this.menu = [ "AcercaDe", "Glosario", "CracionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones" ]
+       this.puntosfortuna = { };
+       this.pericias = { };
+       this.talentos = { };
     }
     
     
     enlaceSeccion(nbseccion, titulo) {
         return "<a href='javascript:void(0)' onclick='muestraTexto(" + '"' + nbseccion + '"' + ")'>" + titulo + "</a>";
+    }
+    
+    descripcion(nombre, clave) {
+        if (this.hasOwnProperty(clave) && this[clave].hasOwnProperty(nombre) )
+            return this[clave][nombre];
+        return nombre;
+    }
+    
+    talento(nombre) {
+        return this.descripcion(nombre, "talentos");
     }
     
     referencias(pagina) {
@@ -74,12 +87,20 @@ class Paginas {
         //    //return sistemaAxC.nombreHechizo(partesPagina[0]);
         //}
         
-        if ( partesPagina.length > 1 ) {
+        if ( partesPagina.length > 1 && funciones.existe(partesPagina[1])) {
             return funciones.pinta(partesPagina[1], pagina);
         }
         else {
-            if ( this.paginas.hasOwnProperty(pagina) ) {
-                return this.enlaceSeccion(pagina, this.paginas[pagina].titulo);
+            var nombrepagina = pagina;
+            var titulopagina = "";
+            if (partesPagina.length > 1) {
+                nombrepagina = partesPagina[0];
+                titulopagina = partesPagina[1];
+            }
+            if ( this.paginas.hasOwnProperty(nombrepagina) ) {
+                if ( titulopagina == "" )
+                    titulopagina = this.paginas[nombrepagina].titulo;
+                return this.enlaceSeccion(nombrepagina, titulopagina);
             }
             else {
                 return "<b>" + pagina + "</b>";
@@ -150,9 +171,35 @@ class TiradaMdI extends Funcion {
 }
 
 
+class Descripcion extends Funcion {
+    constructor() {
+        super();
+    }
+    pinta(strparametros) {
+        var parametros = strparametros.split("|");
+        return "<a href='javascript:void(0)' onclick='funciones.funcion(" + '"Descripcion").ejecuta("' + strparametros + '")' + "'>" + parametros[0] + '</a>';    
+    }
+    ejecuta(strparametros) {
+        var parametros = strparametros.split("|");
+        var descripcion = parametros[0];
+        if (paginas.hasOwnProperty(parametros[2])) {
+            
+            descripcion = paginas.descripcion(parametros[0],parametros[2]);
+        }
+        
+        document.getElementById("detalleDescripcion").innerHTML = "<strong>" + parametros[0] + "</strong>: " + descripcion + "<br/>";
+        muestraElemento("Descripciones");
+    }
+}
+
 class Funciones {
     constructor() {
-        this.funciones = { "Default": new Funcion(), "TiradaMdI": new TiradaMdI() };
+        this.funciones = { "Default": new Funcion(), "TiradaMdI": new TiradaMdI(), "Descripcion": new Descripcion() };
+    }
+    existe(nombre) {
+        if ( this.funciones.hasOwnProperty(nombre) )
+            return true
+        return false;
     }
     funcion(nombre) {
         if ( this.funciones.hasOwnProperty(nombre) )

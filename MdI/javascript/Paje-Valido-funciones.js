@@ -1,6 +1,14 @@
 
+function muestraElemento(nombre) {
+    document.getElementById(nombre).style.display = "block";
+}
+
+function ocultaElemento(nombre) {
+    document.getElementById(nombre).style.display = "none";
+}
+
 function ocultaEmergente() {
-    document.getElementById("Emergente").style.display = "none";
+    ocultaElemento("Emergente");
 }
 
 function abreMenu() {
@@ -14,11 +22,11 @@ function cierraMenu() {
 }
 
 function muestraForm(idElemento) {
-    document.getElementById(idElemento).style.display = "block";
+    muestraElemento(idElemento);
 }
 
 function cierraForm(idElemento) {
-    document.getElementById(idElemento).style.display = "none";
+    ocultaElemento(idElemento);
 }
 
 function calculareaccion() {
@@ -151,6 +159,9 @@ function cargaPaginas(paginaInicial) {
 	        pagina.menu = ficherojson.Menu;
 	        pagina.titulo = ficherojson.Titulo;
 	        pagina.muestraMenu();
+	        paginas.puntosfortuna = ficherojson.PuntosFortuna;
+	        paginas.pericias = ficherojson.Pericias;
+	        paginas.talentos = ficherojson.Talentos;
 	        muestraTexto(paginaInicial);
         }
     }
