@@ -1,5 +1,9 @@
 ## Cambios de versión
 
+### Versión 1.1.1
+
+- Reorganización de la página de Combate
+
 ### Versión 1.1
 
 - Se sacan descripciones a *ventanas* emergentes

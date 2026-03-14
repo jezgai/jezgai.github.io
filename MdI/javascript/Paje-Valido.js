@@ -44,6 +44,7 @@ class Paginas {
        };
        this.menu = [ "AcercaDe", "Glosario", "CracionPJ", "Sistema", "Combate", "Exploracion", "Curacion", "Persecuciones" ]
        this.puntosfortuna = { };
+       this.combate = { };
        this.pericias = { };
        this.talentos = { };
     }
@@ -187,7 +188,7 @@ class Descripcion extends Funcion {
             descripcion = paginas.descripcion(parametros[0],parametros[2]);
         }
         
-        document.getElementById("detalleDescripcion").innerHTML = "<strong>" + parametros[0] + "</strong>: " + descripcion + "<br/>";
+        document.getElementById("detalleDescripcion").innerHTML = "<strong>" + parametros[0] + "</strong>: " + paginas.enlaceinterno(descripcion) + "<br/>";
         muestraElemento("Descripciones");
     }
 }

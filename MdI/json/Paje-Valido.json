@@ -6,7 +6,7 @@
         "Reglas": { "titulo": "Reglas", "referencias": [] },
         "Combate": { "titulo": "Combate", "referencias": [] },
         "Alquimia": { "titulo": "Alquimia", "referencias": [] },
-        "CambiosVersion": { "titulo": "v1.1", "referencias": [ "AcercaDe" ] },
+        "CambiosVersion": { "titulo": "v1.1.1", "referencias": [ "AcercaDe" ] },
         "Pericias": { "titulo": "Pericias", "referencias": [ "CreaEncubierto", "Glosario" ] },
         "Talentos": { "titulo": "Talentos", "referencias": [ "CreaEncubierto", "Glosario" ] },
         "Armas": { "titulo": "armas", "referencias": [ "CreaEncubierto", "Combate" ] },
@@ -21,6 +21,14 @@
     "PuntosFortuna": {
         "Usos": "<ul><li>Ignorar un ataque que deje a 0 PV (Puntos de Vida) al personaje. Se puede hacer “a posteriori”.</li><li>Añadir +2 a una tirada. Solo “a priori”. Solo una vez por tirada.</li><li>Repetir una tirada. Solo una vez por tirada. Si se ha usado un PF para añadir +2, este “bonus” no se contabiliza ahora.</li></ul>",
         "Recuperación": "<ul><li>Se recuperan todos al finalizar una sesión (hasta el máximo).</li><li>Se gana 1 PF al obtener un Fallo catastrófico (sin superar el máximo)</li></ul>"
+    },
+    "Combate": {
+        "Iniciativa": "<ul><li>D6 + Valor de Iniciativa (se pueden aplicar modificadores)</li><li>El Valido realiza una única tirada para todos los secundarios.</li><li>Con un Éxito crítico: se gana una acción adicional anterior a la primera ronda (en la que se actúa en solitario) y se actúa en primer lugar todo el combate.</li><li>Con un Fallo catastrófico no actúa el primer asalto y es el último todo el combate.</li><li>El orden de iniciativa se mantiene inalterable todo el combate.</li></ul>",
+        "Daño": "<ul><li>Daño = Daño del arma + diferencia entre tirada de ataque y la Defensa – la armadura. Se resta de los PV del objetivo. <ul><li>Daño del arma: Sin armas es 1 y para el resto de armas consultar la tabla de {{Armas}}</li></ul></li><li>Con 1 PV: agotado o herido. Las tiradas se hacen con desventaja: se lanzan dos dados y se elije el resultado menor.</li><li>Con 0 PV: el Valido decide si se está inconsciente, moribundo o muerto. Quien controle al Encubierto puede decidir que muere.</li></ul>",
+        "Ataque": "<ul><li>Sin armas: D6 + Brío + 2 (con la pericia <em>Combate sin armas</em>)</li><li>Con un arma cuerpo a cuerpo: D6 + Brío + 2 (con la pericia <em>Combate cuerpo a cuerpo</em>)</li><li>Con un arma arrojadiza: D6 + Brío + 2 (con la pericia <em>Atletismo</em>)</li><li>Con un arma de proyectiles: D6 + Picaresca + 2 (con la pericia <em>Combate a distancia</em>)</li></ul>",
+        "Parada": "<ul><li>El personaje debe ser consciente del ataque y utilizar escudo o sujetar su capa. Se pueden aplicar modificadores.</li><li>Consume la acción de combate del turno.</li><li>Si ya se ha actuado, se puede intentar parar sacrificando la acción de combate del turno siguiente.</li><li>Parar: D6 + Brío + 2 (si dispone de la pericia “<em>Combate cuerpo a cuerpo</em>”). Debe superarse el resultado de la tirada de ataque.</li></ul>",
+        "Esquiva": "<ul><li>El personaje debe ser consciente del ataque. Se pueden aplicar modificadores.</li><li>Consume la acción de combate del turno.</li><li>Si ya se ha actuado, se puede intentar parar sacrificando la acción de combate del turno siguiente.</li><li>Parar: D6 + Picaresca + 2 (si dispone de la Pericia “<em>Acrobacias</em>”). Debe superarse el resultado de la tirada de ataque.</li></ul>",
+        "Descanso y recuperación": "<ul><li>Tras un descanso corto (habitualmente 1 hora), un encubierto con 0 PV pasa a tener 1 PV.</li><li>Cada día completo de descanso se recupera una cantidad de PV igual a la puntuación del atributo más alto. Solo actividad poco extenuante. Si solo se descansa por la noche se recupera la mitad. No puede superarse el máximo.</li><li>Con la Pericia “<em>Medicina</em>” se recuperan 2 PV adicionales al día (puede usarse con uno mismo), incluso con actividad extenuante. No es necesario tirar pero el Valido puede exigirlo.</li></ul>"
     },
     "Pericias": {
         "Atletismo": "Actividades físicas como trepar, nadar, correr, saltar...",

@@ -2,7 +2,7 @@
 
 Listado de conceptos básicos del sistema:
 
-- **Encubierto**. Personaje que interpreta/conduce/guía el jugador.
+- **Encubierto**. Personaje que interpreta/conduce/guía el jugador. También denominado **PJ**.
 - **Atributos**. Dicen lo ágil, fuerte, listo, vigoroso o simpático que es el PJ.
   - **Brío**. Fuerza, resistencia, valor y arrestos
   - **Picaresca**. Astucia, sigilo, rapidez de mente y reflejos.
