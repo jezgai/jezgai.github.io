@@ -1,5 +1,9 @@
 ## Cambios de versión
 
+### Versión 1.1.3
+
+- Reorganización de la página de {{Reglas}}
+
 ### Versión 1.1.2
 
 - Reorganización de las páginas de {{Glosario}} y {{CreaEncubierto}}

@@ -12,6 +12,7 @@ Listado de conceptos básicos del sistema:
 - **PV**. Puntos de vida del **Encubierto**. Es como la vida del personaje. Si baja malo.
 - **Iniciativa**. Sirve para determinar el orden de actuación en un combate.
 - **Defensa**. Determina la dificultad para ser golpeado.
+- **VD**. Valor de Defensa, es decir el valor numérico de la defensa. 
 - **Valido**. Es el Director de Juego, quien controla el mundo de juego y aquellos personajes secundarios (**PNJ**) con quienes interaccionan los **Encubiertos**
 
 
