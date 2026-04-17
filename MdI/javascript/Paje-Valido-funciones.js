@@ -164,6 +164,7 @@ function cargaPaginas(paginaInicial) {
 	        paginas.combate = ficherojson.Combate;
 	        paginas.pericias = ficherojson.Pericias;
 	        paginas.talentos = ficherojson.Talentos;
+	        paginas.bestiario = ficherojson.Bestiario;
 	        muestraTexto(paginaInicial);
         }
     }

@@ -48,6 +48,7 @@ class Paginas {
        this.conceptos = { };
        this.pericias = { };
        this.talentos = { };
+       this.bestiario = { };
     }
     
     

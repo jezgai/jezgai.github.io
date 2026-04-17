@@ -1,5 +1,9 @@
 ## Cambios de versión
 
+### Versión 1.1.4
+
+- Se completa el bestiario y talentos específicos de seres sobrenaturales
+
 ### Versión 1.1.3
 
 - Reorganización de la página de {{Reglas}}

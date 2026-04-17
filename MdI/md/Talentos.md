@@ -14,6 +14,11 @@
 - **{{Ordenado|Descripcion|talentos}}** - **{{Piel de bronce|Descripcion|talentos}}** - **{{Poderoso caballero...|Descripcion|talentos}}**    
 - **{{Predestinado|Descripcion|talentos}}** - **{{Recarga rápida|Descripcion|talentos}}** - **{{Reflejos felinos|Descripcion|talentos}}**    
 - **{{Reliquia|Descripcion|talentos}}** - **{{Sentido del peligro|Descripcion|talentos}}** - **{{Sombra nocturna|Descripcion|talentos}}**    
-- **{{Superviviente|Descripcion|talentos}}** - **{{Titiritero|Descripcion|talentos}}** - **{{Vista de águila|Descripcion|talentos}}**    
+- **{{Superviviente|Descripcion|talentos}}** - **{{Titiritero|Descripcion|talentos}}** - **{{Vista de águila|Descripcion|talentos}}**
 
-
+### De autómatas y seres sobrenaturales
+- **{{Intangible|Descripcion|talentos}}** - **{{Invisible|Descripcion|talentos}}**
+- **{{Invulnerable (plata)|Descripcion|talentos}}** - **{{Invulnerable (plomo)|Descripcion|talentos}}** - **{{Invulnerable (sagrado)|Descripcion|talentos}}**
+- **{{No muerto|Descripcion|talentos}}** - **{{Ojo de Hécate|Descripcion|talentos}}**
+- **{{Toque de la Gorgona|Descripcion|talentos}}** - **{{Tormenta del desierto|Descripcion|talentos}}**
+- **{{Vínculo vital|Descripcion|talentos}}** - **{{Vida artificial|Descripcion|talentos}}**
