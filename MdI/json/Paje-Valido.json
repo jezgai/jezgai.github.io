@@ -6,7 +6,7 @@
         "Reglas": { "titulo": "Reglas", "referencias": [] },
         "Combate": { "titulo": "Combate", "referencias": [] },
         "Alquimia": { "titulo": "Alquimia", "referencias": [] },
-        "CambiosVersion": { "titulo": "v1.1.3", "referencias": [ "AcercaDe" ] },
+        "CambiosVersion": { "titulo": "v1.1.4", "referencias": [ "AcercaDe" ] },
         "Pericias": { "titulo": "Pericias", "referencias": [ "CreaEncubierto", "Glosario" ] },
         "Talentos": { "titulo": "Talentos", "referencias": [ "CreaEncubierto", "Glosario" ] },
         "Armas": { "titulo": "armas", "referencias": [ "CreaEncubierto", "Combate" ] },
