@@ -8,6 +8,7 @@ Consta de los siguientes pasos:
 - Determinar si hay **{{Sorpresa|Descripcion|combate}}** para alguno de los bandos
 - Ver la **{{Reacción|Descripcion|combate}}** de los de los PNJ
 - Calcular **{{Iniciativa|Descripcion|combate}}**
-- Resolver **{{Ataques|Descripcion|combate}}** y **Daño**
+- Resolver **{{Ataques|Descripcion|combate}}** y **{{Daño}}**
 - Lanzar **{{Moral|Descripcion|combate}}** para ver si los PNJ se rinden o huyen
 
+Una vez finalizado el combate se puede tratar a los heridos que se recuperarán según lo indicado en {{Curacion}}

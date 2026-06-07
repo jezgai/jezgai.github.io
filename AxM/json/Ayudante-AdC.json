@@ -12,6 +12,8 @@
         "Clases": { "titulo": "Clases", "referencias": [ "Glosario", "CreacionPJ", "Reglas" ] },
         "Caracteristicas": { "titulo": "Características", "referencias": [ "Glosario", "CreacionPJ", "Reglas" ] },
         "Exploracion": { "titulo": "Exploración", "referencias": [ ] },
+        "Daño": { "titulo": "Daño", "referencias": [ "Combate" ] },
+        "Curacion": { "titulo": "Curación", "referencias": [ "Combate" ] },
         "Guerrero": { "titulo": "Guerrero", "referencias": [ "Clases" ] },
         "Mago": { "titulo": "Mago", "referencias": [ "Clases" ] },
         "Especialista": { "titulo": "Especialista", "referencias": [ "Clases" ] },
