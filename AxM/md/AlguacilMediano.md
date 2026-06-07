@@ -1,7 +1,7 @@
 ## Alguacil Mediano
 
 - **Requisitos**: DES 11   **Primario**: DES
-- **{{Alguacil mediano|DadoGolpe|Dado de Golpe}}**: d6
+- **{{Alguacil mediano|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSGuerrero}}
 - **Tipo de armadura**: Cuero. Sin escudos.
 - **Barrido**: Si acaban con un rival, pueden volver a atacar ese asalto tantas veces como su nivel.

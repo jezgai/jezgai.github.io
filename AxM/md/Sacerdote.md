@@ -1,7 +1,7 @@
 ## Sacerdote
 
 - **Requisitos**: SAB 9. **Primario**: SAB
-- **{{Sacerdote|DadoGolpe|Dado de Golpe}}**: d4
+- **{{Sacerdote|DadoGolpe|4}}**: d4
 - **Progresión Salvación**: {{TSMago}}
 - **Tipo de armadura**: Ningún tipo de armadura
 - **Magia**: Lanza magia divina según la tabla. Lleva vida monacal y cumplir un voto adicional.

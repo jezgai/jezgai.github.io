@@ -1,7 +1,7 @@
 ## Monje
 
 - **Requisitos**: CON 9   **Primario**: CON
-- **{{Monje|DadoGolpe|Dado de Golpe}}**: d6
+- **{{Monje|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSGuerrero}}
 - **Armas**: Límite de armas según FUE+1.
 - **Tipo de armadura**: Ninguna.

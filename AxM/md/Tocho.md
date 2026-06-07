@@ -1,7 +1,7 @@
 ## Tocho
 
 - **Requisitos**: FUE 9. CON 9. **Primario**: CON
-- **{{El Tocho|DadoGolpe|Dado de Golpe}}**: d10
+- **{{El Tocho|DadoGolpe|10}}**: d10
 - **Progresión Salvación**: {{TSGuerrero}}
 - **Tipo de armadura**: Hasta malla incluída.
 - **Agarre firme**: +1 al atacar y al daño con armas cuerpo a cuerpo a dos manos.

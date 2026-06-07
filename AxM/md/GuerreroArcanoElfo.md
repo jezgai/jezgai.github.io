@@ -1,7 +1,7 @@
 ## Guerrero Arcano Elfo
 
 - **Requisitos**: INT 11. **Primario**: INT
-- **{{Guerrero arcano elfo|DadoGolpe|Dado de Golpe}}**: d6
+- **{{Guerrero arcano elfo|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSMago}}
 - **Armas**: Dos armas preferidas de entre arcos, jabalinas, espadas o dagas.
 - **Tipo de armadura**: Hasta malla incluída.

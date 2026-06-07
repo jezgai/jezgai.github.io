@@ -1,7 +1,7 @@
 ## Chamán Kobold
 
 - **Requisitos**: SAB 11. DES 11. **Primario**: SAB
-- **{{Chamán Kobold|DadoGolpe|Dado de Golpe}}**: d6
+- **{{Chamán Kobold|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSMago}}
 - **Tipo de armadura**: Ningún tipo de armadura.
 - **Pericias**: _Mecanismos_, _Uso de armas de fuego_, _Reciclar (a elegir)_, _Reciclar (a elegir)_ y _Curar_. 3 puntos iniciales para _Mecanismos_, _Reciclar (a elegir)s_, _Sigilo_ o _Detectar trampas_

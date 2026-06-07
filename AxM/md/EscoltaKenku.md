@@ -1,7 +1,7 @@
 ## Escolta Kenku
 
 - **Requisitos**: FUE 9. SAB 9   **Primario**: FUE
-- **{{Guerrero|DadoGolpe|Dado de Golpe}}**: d8
+- **{{Guerrero|DadoGolpe|8}}**: d8
 - **Progresión Salvación**: {{TSGuerrero}}
 - **Armas**: Límite de armas según FUE+1.
 - **Tipo de armadura**: Cualquiera.

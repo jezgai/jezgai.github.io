@@ -1,7 +1,7 @@
 ## Mercenario semiogro
 
 - **Requisitos**: FUE 11. **Primario**: FUE
-- **{{Mercenario semiogro|DadoGolpe|Dado de Golpe}}**: d10
+- **{{Mercenario semiogro|DadoGolpe|10}}**: d10
 - **Progresión Salvación**: {{TSGuerrero}}
 - **Armas**: Límite de armas según FUE+2 (punto adicional por tamaño).
 - **Tipo de armadura**: Hasta malla incluída

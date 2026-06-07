@@ -1,7 +1,7 @@
 ## Bardo
 
 - **Requisitos**: SAB 9. **Primario**: SAB
-- **{{Bardo|DadoGolpe|Dado de Golpe}}**: d6
+- **{{Bardo|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSMago}}
 - **Tipo de armadura**: Hasta malla incluída.
 - **Magia**: Lanza magia arcana como un mago de un tercio de su nivel, empezando a nivel 8.

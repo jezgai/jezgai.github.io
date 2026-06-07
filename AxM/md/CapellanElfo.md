@@ -1,7 +1,7 @@
 ## Capellán Elfo
 
 - **Requisitos**: INT 9. SAB 9. **Primario**: SAB
-- **{{Capellán elfo|DadoGolpe|Dado de Golpe}}**: d4
+- **{{Capellán elfo|DadoGolpe|4}}**: d4
 - **Progresión Salvación**: {{TSMago}}
 - **Armas**: Dos armas preferidas de entre arcos, jabalinas, espadas o dagas.
 - **Tipo de armadura**: Ninguna

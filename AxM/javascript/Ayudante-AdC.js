@@ -173,6 +173,23 @@ class TiradaMdI extends Funcion {
     }
 }
 
+class DadoGolpe extends Funcion {
+    constructor() {
+        super();
+    }
+    pinta(strparametros) {
+        var parametros = strparametros.split("|");
+        return "<a href='javascript:void(0)' onclick='funciones.funcion(" + '"DadoGolpe").ejecuta("' + strparametros + '")' + "'>" + parametros[0] + '</a>';    
+    }
+    ejecuta(strparametros) {
+        var parametros = strparametros.split("|");
+        var dado = parseInt(parametros[2], 10)
+        var pg = Math.trunc( (Math.random() * dado) + 1);
+        
+        document.getElementById("detalleDescripcion").innerHTML = "<strong>" + parametros[0] + "</strong>:<br/>PG " + pg + "<br/>";
+        muestraElemento("Descripciones");
+    }
+}
 
 class Descripcion extends Funcion {
     constructor() {
@@ -197,7 +214,7 @@ class Descripcion extends Funcion {
 
 class Funciones {
     constructor() {
-        this.funciones = { "Default": new Funcion(), "TiradaMdI": new TiradaMdI(), "Descripcion": new Descripcion() };
+        this.funciones = { "Default": new Funcion(), "DadoGolpe": new DadoGolpe(), "Descripcion": new Descripcion() };
     }
     existe(nombre) {
         if ( this.funciones.hasOwnProperty(nombre) )

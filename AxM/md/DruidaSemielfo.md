@@ -1,7 +1,7 @@
 ## Druida semielfo
 
 - **Requisitos**: SAB 9. INT 9. **Primario**: SAB
-- **{{Bardo|DadoGolpe|Dado de Golpe}}**: d6
+- **{{Bardo|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSMago}}
 - **Armas**: Dos armas preferidas de entre arcos, jabalinas, espadas o dagas.
 - **Tipo de armadura**: Cuero.

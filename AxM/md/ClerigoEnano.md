@@ -1,7 +1,7 @@
 ## Clérigo Enano
 
 - **Requisitos**: SAB 9. CON 9. **Primario**: SAB
-- **{{Clérigo enano|DadoGolpe|Dado de Golpe}}**: d8
+- **{{Clérigo enano|DadoGolpe|8}}**: d8
 - **Progresión Salvación**: {{TSMago}}
 - **Armas**: Cualquiera.
 - **Tipo de armadura**: Cualquiera.

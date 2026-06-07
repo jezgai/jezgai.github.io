@@ -1,7 +1,7 @@
 ## Mago
 
 - **Requisitos**: INT 9. **Primario**: INT
-- **{{Mago|DadoGolpe|Dado de Golpe}}**: d4
+- **{{Mago|DadoGolpe|4}}**: d4
 - **Progresión Salvación**: {{TSMago}}
 - **Tipo de armadura**: Ningún tipo de armadura
 - **Magia**: Conoce _{{Leer magia|Conjuro}}_, 2 conjuros de nivel 1 y 1 de nivel 2 elegidos al azar (página 189).

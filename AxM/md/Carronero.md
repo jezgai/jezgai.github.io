@@ -1,7 +1,7 @@
 ## Carroñero
 
 - **Requisitos**: DES 9   **Primario**: DES
-- **{{El Carroñero|DadoGolpe|Dado de Golpe}}**: d6
+- **{{El Carroñero|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSEspecialista}}
 - **Tipo de armadura**: Hasta malla incluída
 - **Barrido**: Si acaban con un enemigo, pueden volver a atacar ese asalto tantas veces como la mitad de su nivel.

@@ -1,7 +1,7 @@
 ## Saqueador Mediano
 
 - **Requisitos**: DES 11   **Primario**: DES
-- **{{Saqueador mediano|DadoGolpe|Dado de Golpe}}**: d6
+- **{{Saqueador mediano|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSEspecialista}}
 - **Armas**: Límite de armas según FUE-1.
 - **Tipo de armadura**: Cuero. Sin escudos.

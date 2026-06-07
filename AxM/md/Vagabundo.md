@@ -1,7 +1,7 @@
 ## Vagabundo (Estacion Norte)
 
 - **Requisitos**: CON 9   **Primario**: CON
-- **{{Especialista|DadoGolpe|Dado de Golpe}}**: d6
+- **{{Especialista|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSGuerrero}}
 - **Armas**: Límite de armas según FUE+1.
 - **Tipo de armadura**: Hasta malla incluída.

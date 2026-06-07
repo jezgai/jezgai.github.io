@@ -1,7 +1,7 @@
 ## Recuperador Kobold
 
 - **Requisitos**: FUE 11. DES 11. **Primario**: FUE
-- **{{Recuperador Kobold|DadoGolpe|Dado de Golpe}}**: d6
+- **{{Recuperador Kobold|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSGuerrero}}
 - **Armas**: Límite de armas según FUE+1.
 - **Tipo de armadura**: Ningún tipo de armadura.

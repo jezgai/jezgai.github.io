@@ -1,7 +1,7 @@
 ## Tecnomago
 
 - **Requisitos**: INT 9. **Primario**: INT
-- **{{Tecnomago|DadoGolpe|Dado de Golpe}}**: d4
+- **{{Tecnomago|DadoGolpe|4}}**: d4
 - **Progresión Salvación**: {{TSMago}}
 - **Tipo de armadura**: Ningún tipo de armadura
 - **Pericias**: _Mecanismos_, _Ingeniería_, _Curar_

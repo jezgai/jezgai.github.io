@@ -1,7 +1,7 @@
 ## Guardián de la floresta elfo
 
 - **Requisitos**: CON 9. INT 9. **Primario**: CON
-- **{{Guardián de la floresta élfico|DadoGolpe|Dado de Golpe}}**: d6
+- **{{Guardián de la floresta élfico|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSGuerrero}}
 - **Armas**: Límite de armas según FUE+1. Dos armas preferidas de entre arcos, jabalinas, espadas o dagas.
 - **Tipo de armadura**: Hasta malla incluída.

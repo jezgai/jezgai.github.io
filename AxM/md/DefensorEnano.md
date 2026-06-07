@@ -1,7 +1,7 @@
 ## Defensor Enano
 
 - **Requisitos**: FUE 9. CON 9. **Primario**: FUE
-- **{{Defensor enano|DadoGolpe|Dado de Golpe}}**: d8
+- **{{Defensor enano|DadoGolpe|8}}**: d8
 - **Progresión Salvación**: {{TSGuerrero}}
 - **Armas**: Cualquiera. Preferidas: Hachas, mayales, martillos y maza
 - **Tipo de armadura**: Cualquiera.

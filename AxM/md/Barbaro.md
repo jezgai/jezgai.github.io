@@ -1,7 +1,7 @@
 ## Bárbaro
 
 - **Requisitos**: CON 9. **Primario**: CON
-- **{{Bárbaro|DadoGolpe|Dado de Golpe}}**: d8
+- **{{Bárbaro|DadoGolpe|8}}**: d8
 - **Progresión Salvación**: {{TSGuerrero}}
 - **Armas**: Límite de armas según FUE+1.
 - **Tipo de armadura**: Hasta malla incluída

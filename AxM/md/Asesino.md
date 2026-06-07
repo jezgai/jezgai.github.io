@@ -1,7 +1,7 @@
 ## Asesino
 
 - **Requisitos**: FUE 9   **Primario**: FUE
-- **{{Asesino|DadoGolpe|Dado de Golpe}}**: d6
+- **{{Asesino|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSGuerrero}}
 - **Armas**: Límite de armas según FUE+1.
 - **Tipo de armadura**: Cuero. Sin escudos.

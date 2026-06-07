@@ -1,7 +1,7 @@
 ## Clérigo
 
 - **Requisitos**: SAB 9. **Primario**: SAB
-- **{{Clérigo|DadoGolpe|Dado de Golpe}}**: d6
+- **{{Clérigo|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSMago}}
 - **Armas**: Solo armas romas (en CaC).
 - **Tipo de armadura**: Cualquiera

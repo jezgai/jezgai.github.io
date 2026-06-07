@@ -1,7 +1,7 @@
 ## Tecnomago Kobold
 
 - **Requisitos**: INT 11. DES 11. **Primario**: INT
-- **{{Tecnomago Kobold|DadoGolpe|Dado de Golpe}}**: d4
+- **{{Tecnomago Kobold|DadoGolpe|4}}**: d4
 - **Progresión Salvación**: {{TSMago}}
 - **Tipo de armadura**: Cuero. Sin escudos.
 - **Barrido**: Si acaban con un enemigo, pueden volver a atacar ese asalto tantas veces como la mitad de su nivel.

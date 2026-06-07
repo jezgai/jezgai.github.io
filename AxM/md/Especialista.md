@@ -1,7 +1,7 @@
 ## Especialista
 
 - **Requisitos**: DES 9   **Primario**: DES
-- **{{Especialista|DadoGolpe|Dado de Golpe}}**: d6
+- **{{Especialista|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSEspecialista}}
 - **Tipo de armadura**: Cuero. Sin escudos.
 - **Barrido**: Si acaban con un enemigo, pueden volver a atacar ese asalto tantas veces como la mitad de su nivel.
