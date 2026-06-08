@@ -156,7 +156,7 @@ class Conjuros extends Funcion {
         var parametros = strparametros.split("|");
         var nombre = parametros[0];
         var hechizo = sistemaAxC.hechizos.Hechizos[nombre];
-        var texto = "<h2>Conjuro: " + nombre + "</h2>";
+        var texto = "<p><big><strong><u>Conjuro</u>: " + nombre + "</strong></big>. <a href='javascript:void(0)' onclick='ocultaEmergente()'>[X]</a></p>";
         var i=0;
         var aNiveles = Object.keys(hechizo.Nivel);
         var niveles = "";
@@ -209,7 +209,6 @@ class Descripcion extends Funcion {
             
             descripcion = paginas.descripcion(parametros[0],parametros[2]);
         }
-        
         document.getElementById("detalleDescripcion").innerHTML = "<strong>" + parametros[0] + "</strong>: " + paginas.enlaceinterno(descripcion) + "<br/>";
         muestraElemento("Descripciones");
     }
