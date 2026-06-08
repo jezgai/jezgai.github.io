@@ -13,4 +13,4 @@ Consta de los siguientes pasos:
 
 Una vez finalizado el combate se puede tratar a los heridos que se recuperarán según lo indicado en {{Curacion}}
 
-Pudiera ocurrir que no tenga lugar el combate (o si se ha iniciado que se pueda interrumpir) si uno de los dos bandos intenta huir, iniciandose una {{Persecuciones}}
+Si uno de los dos bandos intenta huir, bien porque cuando se encuentran les separa una distancia que lo permita o porque intentan escapar una veziniciado el combate, puede dar lugar a una {{Persecuciones}}

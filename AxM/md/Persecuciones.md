@@ -9,6 +9,8 @@ Cada ronda se tira 1d6 por bando y se le suma su velocidad corriendo dividido po
 
 Si intenta alguna acción arriesgada (como una finta muy brusca) no le suma el bono al d6, en este caso el vencedor de la tirada añade a su avance la diferencia multiplicada por 10.
 
+Cuando se encuentran con un obstáculo deben superar una tirada de salvación de Captura para superarlo sin problemas.
+
 Si la distancia se queda en 10 metros o menos comienza el combate y si supera 4 veces la velocidad corriendo de los perseguidores les dan esquinazo.
 
 ### A distancia
