@@ -143,35 +143,38 @@ class Funcion {
 }
 
 
-class TiradaMdI extends Funcion {
+
+class Conjuros extends Funcion {
     constructor() {
         super();
     }
     pinta(strparametros) {
         var parametros = strparametros.split("|");
-        return "<a href='javascript:void(0)' onclick='funciones.funcion(" + '"TiradaMdI").ejecuta("' + strparametros + '")' + "'>" + parametros[2] + '</a>';    
+        return "<a href='javascript:void(0)' onclick='funciones.funcion(" + '"Conjuro").ejecuta("' + strparametros + '")' + "'>" + parametros[0] + '</a>';
     }
-    ejecuta(strparametros) {        
-        var resultado = this.tiraDadod6();
-        document.getElementById("detalleEmergente").innerHTML = "<strong>Resultado</strong>: " + resultado.valor + " (dados:" + resultado.dados + ")<br/>";
-        document.getElementById("Emergente").style.display = "block";
-    }
-    
-    tiraDadod6() {
-        var resultado = {};
-        var d6 = Math.trunc((Math.random() * 6) + 1);
-        if ( d6 == 6 ) {
-            resultado = { valor: 5, dados: " 6" };
-            var explosion = this.tiraDadod6();
-            resultado.valor += explosion.valor;
-            resultado.dados += explosion.dados;
+    ejecuta(strparametros) {
+        var parametros = strparametros.split("|");
+        var nombre = parametros[0];
+        var hechizo = sistemaAxC.hechizos.Hechizos[nombre];
+        var texto = "<h2>Conjuro: " + nombre + "</h2>";
+        var i=0;
+        var aNiveles = Object.keys(hechizo.Nivel);
+        var niveles = "";
+        for (i=0;i<aNiveles.length;i++) {
+            niveles += aNiveles[i] + " (" + hechizo.Nivel[aNiveles[i]] + "). ";
         }
-        else {
-            resultado = { valor: d6, dados: " " + d6 };
-        }
-        return resultado;
-    }
+        texto += "<ul><li><b>Nivel</b>: " + niveles + "</li>";
+        texto += "<li><b>Categoría</b>: " + hechizo.Categoria + "</li>";
+        texto += "<li><b>Efectos</b>: "+ hechizo.Descripción + "</li>";
+        texto += "<li><b>Alcance</b>: " + hechizo.Alcance + "</li>";
+        texto += "<li><b>Duración</b>: " + hechizo.Duración + "</li>";
+        texto += "<li><b>Resistencia</b>: " + hechizo.Resistencia + "</li></ul>";
+        
+        document.getElementById("detalleEmergente").innerHTML = texto;
+        muestraElemento("Emergente");
+    }    
 }
+
 
 class DadoGolpe extends Funcion {
     constructor() {
@@ -214,7 +217,7 @@ class Descripcion extends Funcion {
 
 class Funciones {
     constructor() {
-        this.funciones = { "Default": new Funcion(), "DadoGolpe": new DadoGolpe(), "Descripcion": new Descripcion() };
+        this.funciones = { "Default": new Funcion(), "DadoGolpe": new DadoGolpe(), "Descripcion": new Descripcion(), "Conjuro": new Conjuros() };
     }
     existe(nombre) {
         if ( this.funciones.hasOwnProperty(nombre) )
@@ -241,7 +244,7 @@ let pagina=new Pagina();
 let paginas=new Paginas();
 cargaPaginas("AcercaDe");
 	
-//let clases = new Clases();
-//let conjurosAxM = new AxM();
+let clases = new Clases();
+let conjurosAxM = new AxM();
 
 
