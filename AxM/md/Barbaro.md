@@ -3,12 +3,12 @@
 - **Requisitos**: CON 9. **Primario**: CON
 - **{{Bárbaro|DadoGolpe|8}}**: d8
 - **Progresión Salvación**: {{TSGuerrero}}
-- **Armas**: Límite de armas según FUE+1.
+- **Armas**: {{Límite de armas|Descripcion|conceptos}} según FUE+1.
 - **Tipo de armadura**: Hasta malla incluída
 - **Barrido**: Si acaban con un rival, pueden volver a atacar ese asalto tantas veces como su nivel.
-- **Ventaja al escalar**: Pueden usar la pericia de Escalada en superficies difíciles o con carga
-- **Fornido**: Puede usar armas de una categoría de daño superior.
-- **Difícil de matar**: Si sufre una herida grave puede generar 2 y quedarse con la que desee. El nivel se resta del número de días de reposo en cama.
+- **{{Ventaja al escalar|Descripcion|talentos}}**
+- **{{Fornido|Descripcion|talentos}}**
+- **{{Difícil de matar|Descripcion|talentos}}**
 - **Daño**: El bonificador de daño solo se aplica al ataque cuerpo a cuerpo.
 
 | Nivel | PX | BA | Daño | Barrido | PG |

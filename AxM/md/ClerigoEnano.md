@@ -6,13 +6,13 @@
 - **Armas**: Cualquiera.
 - **Tipo de armadura**: Cualquiera.
 - **Barrido**: Si acaban con un enemigo, pueden volver a atacar ese asalto tantas veces como la mitad de su nivel.
-- **Pericias**: Tiene 4 puntos para repartir entre _Arquitectura_, _Mecanismos_, _Detectar_ y _Detectar Trampas_.
+- **Pericias**: Tiene 4 puntos para repartir entre _{{Arquitectura|Descripcion|pericias}}_, _{{Mecanismos|Descripcion|pericias}}_, _{{Detectar|Descripcion|pericias}}_ y _{{Detectar Trampas|Descripcion|pericias}}_.
 - **Tamaño**: Pequeño (CA+1). Mov (¾ humano). +1 a Sigilo.
-- **Armadura natural**: +1 a la CA.
-- **Sensitivo con la piedra**: +2 a Arquitectura y Alerta en subterráneos.
-- **Fornido**: Límite de armas según FUE+1.
-- **Magia**: Lanza magia divina según la tabla. Debe comportarse como un ministro de su fe y atender a sus correligionarios.
-- **Expulsar no muertos**: Una vez al día por nivel si con 2d6 saca 7+ (+2 por cada nivel del PJ y -2 por cada DG) expulsa a tantos DG como su nivel+1d6
+- **{{Armadura natural|Descripcion|talentos}}**
+- **{{Sensitivo con la piedra|Descripcion|talentos}}**
+- **{{Fornido|Descripcion|talentos}}**
+- **Magia**: Lanza {{MagiaDivina}} según la tabla. Debe comportarse como un ministro de su fe y atender a sus correligionarios.
+- **{{Expulsar no muertos|Descripcion|talentos}}**
 - **Lenguas**: Enano, Trasgo, Gnomo, Kobold
 
 | Nivel | PX | BA | Barrido | PG |

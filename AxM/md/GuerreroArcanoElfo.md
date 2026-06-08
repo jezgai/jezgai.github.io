@@ -5,11 +5,11 @@
 - **Progresión Salvación**: {{TSMago}}
 - **Armas**: Dos armas preferidas de entre arcos, jabalinas, espadas o dagas.
 - **Tipo de armadura**: Hasta malla incluída.
-- **Magia**: Conoce _{{Leer magia|Conjuro}}_, 2 conjuros de nivel 1 y 1 de nivel 2 elegidos al azar (página 189).
-- **Pericias**: _Señor de las bestias_.
-- **Alma liberada**: El personaje es inmune a la parálisis de los guls y recibe un +1 a salvaciones contra Captura.
-- **Camuflaje natural**: +2 a Sigilo en entornos naturales a los que esté habituado.
-- **Nada se le escapa**: Puede volver a tirar Detectar para encontrar cosas ocultas.
+- **Magia**: Lanza {{MagiaArcana}} según la tabla. Conoce _{{Leer magia|Conjuro}}_, 2 {{Arcana|ListaConjuros|1|conjuros de nivel}} y 1 {{Arcana|ListaConjuros|2|conjuro de nivel}} elegidos al azar (página 189).
+- **Pericias**: _{{Señor de las bestias|Descripcion|pericias}}_.
+- **{{Alma liberada|Descripcion|talentos}}**
+- **{{Camuflaje natural|Descripcion|talentos}}**
+- **{{Nada se le escapa|Descripcion|talentos}}**
 - **Lenguas**: Elfo, Gnoll, Grantrasgo, Orco
 
 | Nivel | PX | BA  | PG | 

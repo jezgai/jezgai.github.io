@@ -4,8 +4,8 @@
 - **{{Sacerdote|DadoGolpe|4}}**: d4
 - **Progresión Salvación**: {{TSMago}}
 - **Tipo de armadura**: Ningún tipo de armadura
-- **Magia**: Lanza magia divina según la tabla. Lleva vida monacal y cumplir un voto adicional.
-- **Expulsar no muertos**: Una vez al día por nivel si con 2d6 saca 7+ (+2 por cada nivel del PJ y -2 por cada DG) expulsa a tantos DG como su nivel+1d6
+- **Magia**: Lanza {{MagiaDivina}} según la tabla. Lleva vida monacal y cumplir un voto adicional.
+- **{{Expulsar no muertos|Descripcion|talentos}}**
 
 | Nivel | PX | BA  | PG | 
 | ----- | -- | -- | -- | 

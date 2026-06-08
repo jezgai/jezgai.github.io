@@ -3,20 +3,20 @@
 - **Requisitos**: CON 9   **Primario**: CON
 - **{{Monje|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSGuerrero}}
-- **Armas**: Límite de armas según FUE+1.
+- **Armas**: {{Límite de armas|Descripcion|conceptos}} según FUE+1.
 - **Tipo de armadura**: Ninguna.
 - **Barrido**: Si acaban con un rival, pueden volver a atacar ese asalto tantas veces como su nivel.
-- **Armas naturales**: 1d3 de daño con las manos.
-- **Escurridizo**: Sin armadura +2 a la CA (+3 a Niv 8)
-- **Purificación**: (Nivel 3) Inmunidad contra cualquier enfermedad y maldición.
-- **Perspicacia**: (Nivel 4) +1 a Alerta, Detectar y Detectar trampas
-- **Espíritu infranqueable**: (Nivel 5) Inmune al miedo natural o mágico.
-- **Reflejos finos**: (Nivel 6) +1 Iniciativa y sorpresa.
-- **Inmunidad a toxinas**: (Nivel 7) No le afecta el veneno mundano o mágico 
-- **Imponer manos**: (Nivel 9) Una vez al día puede curar 2 PG por nivel
-- **Protección sobrenatural**: (Nivel 11) +2 a TS
-- **Voz de mando**: (Nivel 13) +1 a reacción (con 12 queda hechizado).
-- **Pericias**: _Detectar trampas_ y _Supervivencia_
+- **{{Armas naturales|Descripcion|talentos}}**: 1d3 de daño con las manos.
+- **{{Escurridizo|Descripcion|talentos}}**: Sin armadura +2 a la CA (+3 a Niv 8)
+- **{{Purificación|Descripcion|talentos}}**: (Nivel 3)
+- **{{Perspicacia|Descripcion|talentos}}**: (Nivel 4)
+- **{{Espíritu infranqueable|Descripcion|talentos}}**: (Nivel 5)
+- **{{Reflejos finos|Descripcion|talentos}}**: (Nivel 6)
+- **{{Inmunidad a toxinas|Descripcion|talentos}}**: (Nivel 7)
+- **{{Imponer manos|Descripcion|talentos}}**: (Nivel 9)
+- **{{Protección sobrenatural|Descripcion|talentos}}**: (Nivel 11)
+- **{{Voz de mando|Descripcion|talentos}}**: (Nivel 13)
+- **Pericias**: _{{Detectar trampas|Descripcion|pericias}}_ y _{{Supervivencia|Descripcion|pericias}}_
 
 | Nivel | PX | BA | Pericias | Daño | Barrido | PG |
 | ----- | -- | -- | -------- | ---- | ------- | -- |

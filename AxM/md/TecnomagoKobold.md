@@ -5,10 +5,10 @@
 - **Progresión Salvación**: {{TSMago}}
 - **Tipo de armadura**: Cuero. Sin escudos.
 - **Barrido**: Si acaban con un enemigo, pueden volver a atacar ese asalto tantas veces como la mitad de su nivel.
-- **Pericias**: _Mecanismos_, _Uso de armas de fuego_, _Reciclar (a elegir)_ y _Reciclar (a elegir)_. 3 puntos iniciales para _Mecanismos_, _Reciclar (a elegir)s_, _Sigilo_ o _Detectar trampas_
+- **Pericias**: _{{Mecanismos|Descripcion|pericias}}_, _{{Uso de armas de fuego|Descripcion|pericias}}_, _{{Reciclar|Descripcion|pericias}} (a elegir)_ y _{{Reciclar|Descripcion|pericias}} (a elegir)_. 3 puntos iniciales para _{{Mecanismos|Descripcion|pericias}}_, _{{Reciclar|Descripcion|pericias}} (a elegir)_, _{{Sigilo|Descripcion|pericias}}_ o _{{Detectar trampas|Descripcion|pericias}}_
 - **Tamaño**: Pequeño (CA+1). Mov (¾ humano). +1 a Sigilo.
-- **Correr por su vida**: Gana 10 m de velocidad efectiva cuando huye de algo.
-- **Magia**: Puede memorizar y lanzar Tecnomagia a partir del nivel 3.
+- **{{Correr por su vida|Descripcion|talentos}}**
+- **Magia**: Puede memorizar y lanzar {{Tecnomagia}} a partir del nivel 3.
 
 | Nivel | PX | BA  | Pericias | PG | 
 | ----- | -- | -- | -------- | -- | 

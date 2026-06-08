@@ -6,13 +6,13 @@
 - **Armas**: Cualquiera. Preferidas: Hachas, mayales, martillos y maza
 - **Tipo de armadura**: Cualquiera.
 - **Barrido**: Si acaban con un rival, pueden volver a atacar ese asalto tantas veces como su nivel.
-- **Pericias**: Tiene 4 puntos para repartir entre _Arquitectura_, _Mecanismos_, _Detectar_ y _Detectar Trampas_.
+- **Pericias**: Tiene 4 puntos para repartir entre _{{Arquitectura|Descripcion|pericias}}_, _{{Mecanismos|Descripcion|pericias}}_, _{{Detectar|Descripcion|pericias}}_ y _{{Detectar Trampas|Descripcion|pericias}}_.
 - **Tamaño**: Pequeño (CA+1). Mov (¾ humano). +1 a Sigilo.
-- **Armadura natural**: +1 a la CA.
-- **Sensitivo con la piedra**: +2 a Arquitectura y Alerta en subterráneos.
-- **Furia de batalla**: (Nivel 4) +2 al daño e inmune al miedo, incluyendo el mágico. Si invoca la furia de batalla, no puede retirarse del combate.
-- **Difícil de matar**: (Nivel 10)  Si sufre una herida grave, puede generar 2 y quedarse con la que desee. Su nivel se resta del número de días de reposo en cama
-- **Piel de piedra**: +3 a las salvaciones contra Ataques en área y +4 a las demás salvaciones.
+- **{{Armadura natural|Descripcion|talentos}}**
+- **{{Sensitivo con la piedra|Descripcion|talentos}}**
+- **{{Furia de batalla|Descripcion|talentos}}**: (Nivel 4)
+- **{{Difícil de matar|Descripcion|talentos}}**: (Nivel 10)
+- **{{Piel de piedra|Descripcion|talentos}}**
 - **Daño**: El bonificador de daño solo se aplica al ataque cuerpo a cuerpo.
 - **Lenguas**: Enano, Trasgo, Gnomo, Kobold
 

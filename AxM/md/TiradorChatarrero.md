@@ -3,15 +3,14 @@
 - **Requisitos**: DES 9   **Primario**: DES
 - **{{El Tirador Chatarrero|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSGuerrero}}
-- **Armas**: Límite de armas según FUE+1.
+- **Armas**: {{Límite de armas|Descripcion|conceptos}} según FUE+1.
 - **Tipo de armadura**: Hasta malla incluída
 - **Barrido**: Si acaban con un rival pueden volver a atacar ese asalto tantas veces como su nivel.
-- **Pericias**: _Reciclaje (Munición)_, _Uso de armas de fuego_, _Detectar trampas_. _Supervivencia_ (N4)
-- **Emboscar**: Al atacar a un enemigo desprevenido multiplica por dos el bono de ataque y el daño.
-- **Punteria**: +1 al atacar con armas AD.
+- **Pericias**: _{{Reciclaje|Descripcion|pericias}} (Munición)_, _{{Uso de armas de fuego|Descripcion|pericias}}_, _{{Detectar trampas|Descripcion|pericias}}_. _{{Supervivencia|Descripcion|pericias}}_ (N4)
+- **{{Emboscar|Descripcion|talentos}}**
+- **{{Punteria|Descripcion|talentos}}**
 - **Daño**: El bono de daño solo aplica a los atacas a distancia.
-- **Disparo de precisión**: (N10) Puede disparar a un combate cuerpo a cuerpo con -4 a cambio de no tener posiblidad de dar a sus aliados.
-
+- **{{Disparo de precisión|Descripcion|talentos}}**: (Nivel 10)
 
 | Nivel | PX | BA | Pericias | Daño | Barrido | PG |
 | ----- | -- | -- | -------- | ---- | ------- | -- |

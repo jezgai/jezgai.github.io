@@ -3,7 +3,7 @@
 - **Requisitos**: FUE 9. **Primario**: FUE
 - **{{Guerrero|DadoGolpe|8}}**: d8
 - **Progresión Salvación**: {{TSGuerrero}}
-- **Armas**: Límite de armas según FUE+1.
+- **Armas**: {{Límite de armas|Descripcion|conceptos}} según FUE+1.
 - **Tipo de armadura**: Cualquier tipo de armadura
 - **Barrido**: Si acaban con un rival, pueden volver a atacar ese asalto tantas veces como su nivel.
 

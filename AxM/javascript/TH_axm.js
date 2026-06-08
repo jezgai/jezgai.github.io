@@ -152,3 +152,6 @@ class AxM extends SistemaBase {
 	
 	
 }
+
+let conjurosAxM = new AxM();
+

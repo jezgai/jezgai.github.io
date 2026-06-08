@@ -4,8 +4,8 @@
 - **{{Tecnomago|DadoGolpe|4}}**: d4
 - **Progresión Salvación**: {{TSMago}}
 - **Tipo de armadura**: Ningún tipo de armadura
-- **Pericias**: _Mecanismos_, _Ingeniería_, _Curar_
-- **Magia**: Puede memorizar y lanzar Tecnomagia.
+- **Pericias**: _{Mecanismos|Descripcion|pericias}}_, _{{Ingeniería|Descripcion|pericias}}_, _{{Curar|Descripcion|pericias}}_
+- **Magia**: Puede memorizar y lanzar {{Tecnomagia}}.
 
 | Nivel | PX | BA  | Pericias | PG | 
 | ----- | -- | -- | -------- | -- | 

@@ -6,11 +6,11 @@
 - **Armas**: Dos armas preferidas de entre arcos, jabalinas, espadas o dagas.
 - **Tipo de armadura**: Cuero sin escudo.
 - **Barrido**: Si acaban con un enemigo, pueden volver a atacar ese asalto tantas veces como la mitad de su nivel.
-- **Alma liberada**: El personaje es inmune a la parálisis de los guls y recibe un +1 a salvaciones contra Captura.
-- **Camuflaje natural**: +2 a Sigilo en entornos naturales a los que esté habituado.
-- **Nada se le escapa**: Puede volver a tirar Detectar para encontrar cosas ocultas.
-- **Lingüista**: (Nivel 4) Pueden usar su pericia de Idiomas para leer mágicamente cualquier idioma.
-- **Pericias**: _Apuñalar_, _Detectar Trampas_, _Juego de Manos_, _Mecanismos_, _Señor de las bestias_ y _Arcanista aficionado_ (nivel 10).
+- **{{Alma liberada|Descripcion|talentos}}**
+- **{{Camuflaje natural|Descripcion|talentos}}**
+- **{{Nada se le escapa|Descripcion|talentos}}**
+- **{{Lingüista|Descripcion|talentos}}**: (Nivel 4)
+- **Pericias**: _{{Apuñalar|Descripcion|pericias}}_, _{{Detectar Trampas|Descripcion|pericias}}_, _{{Juego de Manos|Descripcion|pericias}}_, _{{Mecanismos|Descripcion|pericias}}_, _{{Señor de las bestias|Descripcion|pericias}}_ y _{{Arcanista aficionado|Descripcion|pericias}}_ (nivel 10).
 
 | Nivel | PX | BA  | Pericias | Barrido | PG | 
 | ----- | -- | -- | -------- | ------- | -- | 

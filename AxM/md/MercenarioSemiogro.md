@@ -3,13 +3,13 @@
 - **Requisitos**: FUE 11. **Primario**: FUE
 - **{{Mercenario semiogro|DadoGolpe|10}}**: d10
 - **Progresión Salvación**: {{TSGuerrero}}
-- **Armas**: Límite de armas según FUE+2 (punto adicional por tamaño).
+- **Armas**: {{Límite de armas|Descripcion|conceptos}} según FUE+2 (punto adicional por tamaño).
 - **Tipo de armadura**: Hasta malla incluída
 - **Barrido**: Si acaban con un rival, pueden volver a atacar ese asalto tantas veces como la mitad de su nivel.
-- **Armas naturales**: 1d5+1 de daño
-- **Infravisión**: Puede ver en la oscuridad a 10 m. Cada 10 m adicionales cuentan como otro poder.
-- **Armadura natural**: CA +2.
-- **Personalidad feroz**: -2 a la reacción excepto con monstruos con reacción negativa, que la suman como si fuera positiva.
+- **{{Armas naturales|Descripcion|talentos}}**
+- **{{Infravisión|Descripcion|talentos}}**
+- **{{Armadura natural|Descripcion|talentos}}**
+- **{{Personalidad feroz|Descripcion|talentos}}**
 - **Grande**: +2 a la Fuerza. Mov (5/4 humano). -1 a Sigilo. CA -1.
 
 | Nivel | PX | BA | Barrido | PG |

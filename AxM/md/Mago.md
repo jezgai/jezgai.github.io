@@ -4,7 +4,7 @@
 - **{{Mago|DadoGolpe|4}}**: d4
 - **Progresión Salvación**: {{TSMago}}
 - **Tipo de armadura**: Ningún tipo de armadura
-- **Magia**: Conoce _{{Leer magia|Conjuro}}_, 2 conjuros de nivel 1 y 1 de nivel 2 elegidos al azar (página 189).
+- **Magia**: Lanza {{MagiaArcana}} según la tabla. Conoce _{{Leer magia|Conjuro}}_, 2 {{Arcana|ListaConjuros|1|conjuros de nivel}} y 1 {{Arcana|ListaConjuros|2|conjuro de nivel}} elegidos al azar (página 189).
 
 | Nivel | PX | BA  | PG | 
 | ----- | -- | -- | -- | 

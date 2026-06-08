@@ -142,7 +142,45 @@ class Funcion {
     }
 }
 
-
+class ListaConjuros extends Funcion {
+    constructor() {
+        super();
+    }
+    pintalista(strparametros, cerrar) {
+        var parametros = strparametros.split("|");
+        var tipo = parametros[0];
+        var nivel = parseInt(parametros[2],10);
+        var lista = conjurosAxM.listaHechizosTipoNivel(tipo, nivel);
+        var conjuros = "<p><big><strong><u>Conjuros de magia " + tipo + "</u> de nivel " + nivel + "</strong></big></p><p>";
+        if ( cerrar == true) {
+            conjuros = "<p><big><strong><u>Conjuros de magia " + tipo + "</u> de nivel " + nivel + "</strong></big>. <a href='javascript:void(0)' onclick='ocultaElemento(" + '"Emergente")' + "'>[X]</a></p><p>";
+        }
+        for (var i=0; i<lista.length; i++) {           
+            conjuros += "<a href='javascript:void(0)' onclick='funciones.funcion(" + '"Conjuro").ejecuta("' + lista[i].nombre + '|Conjuro")' + "'>" + lista[i].nombre + '</a>. '
+        }
+        conjuros += "</p>";
+        return conjuros;
+    }
+    pinta(strparametros) {
+        var parametros = strparametros.split("|");
+        var tipo = parametros[0];
+        var nivel = parseInt(parametros[2],10);
+        var conjuros = "";
+        if (parametros.length == 4) {
+            var textomostrar = parametros[3] + " " + parametros[2];
+            return "<a href='javascript:void(0)' onclick='funciones.funcion(" + '"ListaConjuros").ejecuta("' + strparametros + '")' + "'>" + textomostrar + '</a>';
+        }
+        else {
+            return this.pintalista(strparametros, false);
+        }
+        return "";
+    }
+    ejecuta(strparametros) {
+        var texto = this.pintalista(strparametros, true);
+        document.getElementById("detalleEmergente").innerHTML = texto;
+        muestraElemento("Emergente");
+    }    
+}
 
 class Conjuros extends Funcion {
     constructor() {
@@ -194,6 +232,47 @@ class DadoGolpe extends Funcion {
     }
 }
 
+class TiraCaracteristica extends Funcion {
+    constructor() {
+        super();
+    }
+    pinta(strparametros) {
+        var parametros = strparametros.split("|");
+        return "<a href='javascript:void(0)' onclick='funciones.funcion(" + '"TiraCaracteristica").ejecuta("' + strparametros + '")' + "'>" + parametros[0] + '</a>';    
+    }
+    modificador(valor) {
+        var modif = 3;
+        if ( valor <= 3 ) {
+            modif = -3;
+        }
+        else if (valor <= 5 ) {
+            modif = -2;
+        }
+        else if (valor <= 8 ) {
+            modif = -1;
+        }
+        else if (valor <= 12 ) {
+            modif = 0;
+        }
+        else if (valor <= 15 ) {
+            modif = 1;
+        }
+        else if (valor <= 17 ) {
+            modif = 2;
+        }
+        return modif;
+    }
+    ejecuta(strparametros) {
+        var parametros = strparametros.split("|");
+        var valor = Math.trunc( (Math.random() * 6) + 1) + Math.trunc( (Math.random() * 6) + 1) + Math.trunc( (Math.random() * 6) + 1);
+        var modif = this.modificador(valor);
+        
+        document.getElementById("detalleDescripcion").innerHTML = "<strong>" + parametros[0] + "</strong>: " + valor + " (" + modif + ")<br/>";
+        muestraElemento("Descripciones");
+    }
+}
+
+
 class Descripcion extends Funcion {
     constructor() {
         super();
@@ -216,7 +295,7 @@ class Descripcion extends Funcion {
 
 class Funciones {
     constructor() {
-        this.funciones = { "Default": new Funcion(), "DadoGolpe": new DadoGolpe(), "Descripcion": new Descripcion(), "Conjuro": new Conjuros() };
+        this.funciones = { "Default": new Funcion(), "DadoGolpe": new DadoGolpe(), "Descripcion": new Descripcion(), "Conjuro": new Conjuros(), "ListaConjuros": new ListaConjuros(), "TiraCaracteristica": new TiraCaracteristica() };
     }
     existe(nombre) {
         if ( this.funciones.hasOwnProperty(nombre) )
@@ -243,7 +322,6 @@ let pagina=new Pagina();
 let paginas=new Paginas();
 cargaPaginas("AcercaDe");
 	
-let clases = new Clases();
-let conjurosAxM = new AxM();
+//let clases = new Clases();
 
 

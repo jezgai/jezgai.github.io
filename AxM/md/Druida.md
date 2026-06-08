@@ -6,10 +6,10 @@
 - **Armas**: Cualquiera.
 - **Tipo de armadura**: Cuero.
 - **Barrido**: Si acaban con un enemigo, pueden volver a atacar ese asalto tantas veces como la mitad de su nivel.
-- **Voz del bosque**: +2 a la reacción con mamíferos salvajes.
-- **Magia**: Lanza magia divina según la tabla. 
+- **{{Voz del bosque|Descripcion|talentos}}**
+- **Magia**: Lanza {{MagiaDivina}} según la tabla. 
 - **Cambiar forma**: (Nivel 4) Como el conjuro _{{Polimorfarse|Conjuro}}_. Una vez al día.
-- **Camuflaje natural**: (Nivel 10) +2 a Sigilo en entornos naturales a los que esté habituado.
+- **{{Camuflaje natural|Descripcion|talentos}}**: (Nivel 10)
 
 | Nivel | PX | BA  | Barrido | PG | 
 | ----- | -- | -- | ------- | -- | 

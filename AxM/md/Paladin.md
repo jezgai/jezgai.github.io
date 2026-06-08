@@ -3,13 +3,13 @@
 - **Requisitos**: FUE 9   **Primario**: FUE
 - **{{Paladín|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSGuerrero}}
-- **Armas**: Límite de armas según FUE+1.
+- **Armas**: {{Límite de armas|Descripcion|conceptos}} según FUE+1.
 - **Tipo de armadura**: Cualquier tipo de armadura
 - **Barrido**: Si acaban con un rival, pueden volver a atacar ese asalto tantas veces como su nivel.
-- **Purificación**: Inmunidad contra cualquier enfermedad (mágica o no), así como maldiciones.
-- **Imponer manos**: Una vez al día puede curar 2 PG por nivel
+- **{{Purificación|Descripcion|talentos}}**: Inmunidad contra cualquier enfermedad (mágica o no), así como maldiciones.
+- **{{Imponer manos|Descripcion|talentos}}**: Una vez al día puede curar 2 PG por nivel
 - **Detectar el mal**: (Nivel 3) Puede usar 1 vez por hora el conjuro _{{Detectar mal|Conjuro}}_.
-- **Aura de protección**: (Nivel 11) +1 a la CA y +1 a salvaciones contra criaturas malignas.
+- **{{Aura de protección|Descripcion|talentos}}**: (Nivel 11) +1 a la CA y +1 a salvaciones contra criaturas malignas.
 
 | Nivel | PX | BA | Daño | Pericias | Barrido | PG |
 | ----- | -- | -- | -------- | -------- | ------- | -- |

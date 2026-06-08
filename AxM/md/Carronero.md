@@ -5,12 +5,11 @@
 - **Progresión Salvación**: {{TSEspecialista}}
 - **Tipo de armadura**: Hasta malla incluída
 - **Barrido**: Si acaban con un enemigo, pueden volver a atacar ese asalto tantas veces como la mitad de su nivel.
-- **Pericias**: _Supervivencia_, _Reciclaje (Munición)_, _Reciclaje (Armas)_, _Reciclaje (Armaduras)_, _Uso de armas de fuego_, _Detectar trampas_ y _Mecanismos_. _Arcanista aficionado_ (N11)
-- **Emboscar**: Al atacar a un enemigo desprevenido multiplica por dos el bono de ataque y el daño.
-- **Este trasto debería de funcionar**: Como el conjuro Reanimar dispositivo. A voluntad mientras tenga componentes.
-- **Ventaja al escalar**: (N3) Pueden usar la pericia de Escalada en superficies difíciles o con carga
-- **Arcanista aficionado**: (Nivel 10) Pueden usar pergaminos, varas y objetos mágicos de la clase de mago si superan una tirada de pericia
-- **Apuñalar**: Atacando por la espalda y superando tirada de apuñalar los bonos de ataque y resultado de la tirada del daño se multiplican según indica la tabla.
+- **Pericias**: _{{Supervivencia|Descripcion|pericias}}_, _{{Reciclaje|Descripcion|pericias}} (Munición)_, _{{Reciclaje|Descripcion|pericias}} (Armas)_, _{{Reciclaje|Descripcion|pericias}} (Armaduras)_, _{{Uso de armas de fuego|Descripcion|pericias}}_, _{{Detectar trampas|Descripcion|pericias}}_ y _{{Mecanismos|Descripcion|pericias}}_. _{{Arcanista aficionado|Descripcion|pericias}}_ (N11)
+- **{{Emboscar|Descripcion|talentos}}**
+- **Este trasto debería de funcionar**: Como el conjuro {{Reanimar dispositivo|Conjuro}}. A voluntad mientras tenga componentes.
+- **{{Ventaja al escalar|Descripcion|talentos}}**: (Nivel 3)
+- **{{Arcanista aficionado|Descripcion|pericias}}**: (Nivel 10)
 
 | Nivel | PX | BA | Pericias | Barrido | PG |
 | ----- | -- | -- | -------- | ------- | -- |

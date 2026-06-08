@@ -5,10 +5,10 @@
 - **Progresión Salvación**: {{TSMago}}
 - **Tipo de armadura**: Hasta malla incluída.
 - **Magia**: Lanza magia arcana como un mago de un tercio de su nivel, empezando a nivel 8.
-- **Música tranquilizadora**: Tocando al menos 1 minuto, hechiza o duerme a 1d6DG de bestias o animales.
-- **Lingüista**: (Nivel 4) Puede usar Idiomas para leer y entender cualquier texto escrito.
-- **Glamour**: (Nivel 10) +2 a la reacción si puede tocar a su objetivo mientras habla.
-- **Pericias**:  _Historia antigua_.
+- **{{Música tranquilizadora|Descripcion|talentos}}**
+- **{{Lingüista|Descripcion|talentos}}**: (Nivel 4)
+- **{{Glamour|Descripcion|talentos}}**: (Nivel 10)
+- **Pericias**:  _{{Historia antigua|Descripcion|pericias}}_.
 
 | Nivel | PX | BA | Pericias | Barrido | PG |
 | ----- | -- | -- | -------- | ------- | -- |

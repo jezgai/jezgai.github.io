@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv='refresh' content='0; URL=http://jezgai.github.io/AxM/Ayudante.html'>
+
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/Ayudante-AdC.css">
 <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
-<script src="javascript/Ayudante-AdC.js"></script>
-<script src="javascript/TH_comun.js"></script>
+<script src="javascript/Ayudante-AdC-comun.js"></script>
+<!--<script src="javascript/TH_comun.js"></script>-->
+<script src="javascript/Ayudante-AdC-funciones.js"></script>
+<script src="javascript/AM_clases.js"></script>
 <script src="javascript/TH_sistemabase.js"></script>
 <script src="javascript/TH_axm.js"></script>
 <script src="javascript/TH_minisistemasAxM.js"></script>
+<script src="javascript/Ayudante-AdC.js"></script>
 <style>
 
 </style>
@@ -35,6 +40,14 @@
   </a>
 </div>
 
+
+<div class="modal" id="Emergente">
+    <div class="modal-content">
+        <div id="detalleEmergente"></div>
+        <button type="button" class="button button1" onclick="ocultaEmergente()">Cerrar</button>
+    </div>
+</div>
+
 <div class="modal" id="Conjuro">
     <div class="modal-content">
         <div id="detalleConjuro"></div>
@@ -43,7 +56,7 @@
 </div>
 
 <div class="modal" id="formSorpresa">
-    <div class="modal-content"">
+    <div class="modal-content">
     <h2>Tirada de sorpresa</h2>
     <form>
       <div><label for="sigilo">Valor de Sigilo (el más bajo de los PJ):</label><br>

@@ -6,12 +6,12 @@
 - **Armas**: Dos armas preferidas de entre arcos, jabalinas, espadas o dagas.
 - **Tipo de armadura**: Cuero.
 - **Barrido**: Si acaban con un enemigo, pueden volver a atacar ese asalto tantas veces como la mitad de su nivel.
-- **Alma liberada**: El personaje es inmune a la parálisis de los guls y recibe un +1 a salvaciones contra Captura.
-- **Camuflaje natural**: +2 a Sigilo en entornos naturales a los que esté habituado.
-- **Nada se le escapa**: Puede volver a tirar Detectar para encontrar cosas ocultas.
-- **Voz del bosque**: +2 a la reacción con mamíferos salvajes.
-- **Compañero animal**: Consigue un compañero animal de 1DG que obedece sus órdenes.
-- **Magia**: Lanza magia divina según la tabla. 
+- **{{Alma liberada|Descripcion|talentos}}**
+- **{{Camuflaje natural|Descripcion|talentos}}**
+- **{{Nada se le escapa|Descripcion|talentos}}**
+- **{{Voz del bosque|Descripcion|talentos}}**
+- **{{Compañero animal|Descripcion|talentos}}**
+- **Magia**: Lanza {{MagiaDivina}} según la tabla. 
 - **Cambiar forma**: (Nivel 4) Como el conjuro _{{Polimorfarse|Conjuro}}_. Una vez al día.
 - **Hablar con los animales**: (Nivel 10) Usar a voluntad el conjuro _{{Hablar con animales|Conjuro}}_ (1 turno de preparación).
 

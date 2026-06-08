@@ -6,8 +6,8 @@
 - **Armas**: Solo armas romas (en CaC).
 - **Tipo de armadura**: Cualquiera
 - **Barrido**: Si acaban con un enemigo, pueden volver a atacar ese asalto tantas veces como la mitad de su nivel.
-- **Magia**: Lanza magia divina según la tabla. Debe comportarse como un ministro de su fe y atender a sus correligionarios.
-- **Expulsar no muertos**: Una vez al día por nivel si con 2d6 saca 7+ (+2 por cada nivel del PJ y -2 por cada DG) expulsa a tantos DG como su nivel+1d6
+- **Magia**: Lanza {{MagiaDivina}} según la tabla. Debe comportarse como un ministro de su fe y atender a sus correligionarios.
+- **{{Expulsar no muertos|Descripcion|talentos}}**
 
 | Nivel | PX | BA  | Barrido | PG | 
 | ----- | -- | -- | ------- | -- | 

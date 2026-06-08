@@ -3,14 +3,14 @@
 - **Requisitos**: CON 9   **Primario**: CON
 - **{{Montaraz|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSGuerrero}}
-- **Armas**: Límite de armas según FUE+1.
+- **Armas**: {{Límite de armas|Descripcion|conceptos}} según FUE+1.
 - **Tipo de armadura**: Hasta malla incluída.
 - **Barrido**: Si acaban con un rival, pueden volver a atacar ese asalto tantas veces como su nivel.
-- **Puntería**: +1 al atacar con armas AD.
-- **Camuflaje natural**: +2 a Sigilo en entornos naturales a los que esté habituado.
-- **Compañero animal**: (Nivel 4) Consigue un compañero animal de 1DG que obedece sus órdenes.
-- **Voz del bosque**: (Nivel 11) +2 a la reacción con mamíferos salvajes.
-- **Pericias**: _Supervivencia_.
+- **{{Puntería|Descripcion|talentos}}**
+- **{{Camuflaje natural|Descripcion|talentos}}**
+- **{{Compañero animal|Descripcion|talentos}}**: (Nivel 4)
+- **{{Voz del bosque|Descripcion|talentos}}**: (Nivel 11)
+- **Pericias**: _{{Supervivencia|Descripcion|pericias}}_.
 
 | Nivel | PX | BA | Daño | Pericias | Barrido | PG |
 | ----- | -- | -- | -------- | -------- | ------- | -- |

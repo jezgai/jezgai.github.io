@@ -3,19 +3,18 @@
 - **Requisitos**: DES 11   **Primario**: DES
 - **{{Saqueador mediano|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSEspecialista}}
-- **Armas**: Límite de armas según FUE-1.
+- **Armas**: {{Límite de armas|Descripcion|conceptos}} según FUE-1.
 - **Tipo de armadura**: Cuero. Sin escudos.
 - **Barrido**: Si acaban con un enemigo, pueden volver a atacar ese asalto tantas veces como la mitad de su nivel.
-- **Pericias**: _Apuñalar_, _Curar_, _Detectar Trampas_, _Juego de Manos_ y _Mecanismos_. _Arcanista aficionado_ (N10). 6 puntos iniciales para _Curar_, _Juego de manos_, _Sigilo_ o _Detectar_
+- **Pericias**: _{{Apuñalar|Descripcion|pericias}}_, _{{Curar|Descripcion|pericias}}_, _{{Detectar Trampas|Descripcion|pericias}}_, _{{Juego de Manos|Descripcion|pericias}}_ y _{{Mecanismos|Descripcion|pericias}}_. _{{Arcanista aficionado|Descripcion|pericias}}_ (N10). 6 puntos iniciales para _{{Curar|Descripcion|pericias}}_, _{{Juego de manos|Descripcion|pericias}}_, _{{Sigilo|Descripcion|pericias}}_ o _{{Detectar|Descripcion|pericias}}_
 - **Tamaño**: Pequeño (CA+1). Mov (¾ humano). +1 a Sigilo.
-- **Buen trato**: +1 a las tiradas de lealtad
-- **Correr por su vida**: Gana 10 m de velocidad efectiva cuando huye de algo.
-- **Mal de ojo**: Como el conjuro maldecir una vez al día con un turno de preparación.
-- **Pasar desapercibido**: +2 a Sigilo si está quieto y a cubierto.
-- **Puntería**: +1 al atacar con armas AD.
-- **Camuflaje natural**: +2 a Sigilo en entornos naturales a los que esté habituado.
-- **Lingüista**: (Nivel 4) Pueden usar su pericia de Idiomas para leer mágicamente cualquier idioma.
-- **Arcanista aficionado**: (Nivel 10) Pueden usar pergaminos, varas y objetos mágicos de la clase de mago si superan una tirada de pericia
+- **{{Buen trato|Descripcion|talentos}}**
+- **{{Correr por su vida|Descripcion|talentos}}**
+- **{{Mal de ojo|Descripcion|talentos}}**
+- **{{Pasar desapercibido|Descripcion|talentos}}**
+- **{{Puntería|Descripcion|talentos}}**
+- **{{Camuflaje natural|Descripcion|talentos}}**
+- **{{Lingüista|Descripcion|talentos}}**: (Nivel 4)
 - **Apuñalar**: Atacando por la espalda y superando tirada de apuñalar los bonos de ataque y resultado de la tirada del daño se multiplican según indica la tabla.
 
 | Nivel | PX | BA | Apuñalar | Pericias | Barrido | PG |

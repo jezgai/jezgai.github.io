@@ -1,5 +1,9 @@
 ## Cambios de versión
 
+### Versión 2.0
+
+Se incluye el listado de conjuros por niveles y tipo
+
 ### Versión 1.3
 
 - Modificación total de la estructura

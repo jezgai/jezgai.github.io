@@ -3,16 +3,16 @@
 - **Requisitos**: FUE 9. SAB 9   **Primario**: FUE
 - **{{Guerrero|DadoGolpe|8}}**: d8
 - **Progresión Salvación**: {{TSGuerrero}}
-- **Armas**: Límite de armas según FUE+1.
+- **Armas**: {{Límite de armas|Descripcion|conceptos}} según FUE+1.
 - **Tipo de armadura**: Cualquiera.
 - **Barrido**: Si acaban con un rival, pueden volver a atacar ese asalto tantas veces como su nivel.
-- **Compañero animal**: Consigue un compañero animal de 1DG que obedece sus órdenes.
-- **Guía experto**: Puede usar _Supervivencia_ para orientarse en cualquier sitio y si ha pasado al menos una semana tiene +1.
-- **Imitar voz**: Capacidad para reproducir  sonidos y frases que haya escuchado.
-- **Pasar desapercibido**: +2 a Sigilo si está quieto y a cubierto.
-- **Emboscar**: x2 al ataque y daño si el rival está desprevenido.
-- **Golpe preciso**: +1 a ataques cuerpo a cuerpo.
-- **Pericias**: _Supervivencia_
+- **{{Compañero animal|Descripcion|talentos}}**
+- **{{Guía experto|Descripcion|talentos}}**
+- **{{Imitar voz|Descripcion|talentos}}**
+- **{{Pasar desapercibido|Descripcion|talentos}}**
+- **{{Emboscar|Descripcion|talentos}}**
+- **{{Golpe preciso|Descripcion|talentos}}**
+- **Pericias**: _{{Supervivencia|Descripcion|pericias}}_
 - **Lenguas**: Córvido. Común.
 
 | Nivel | PX | BA | Daño | Pericias | Barrido | PG |

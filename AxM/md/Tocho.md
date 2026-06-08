@@ -4,9 +4,9 @@
 - **{{El Tocho|DadoGolpe|10}}**: d10
 - **Progresión Salvación**: {{TSGuerrero}}
 - **Tipo de armadura**: Hasta malla incluída.
-- **Agarre firme**: +1 al atacar y al daño con armas cuerpo a cuerpo a dos manos.
-- **Fornido**: Límite de armas según FUE+1.
-- **Difícil de matar**: Si sufre una herida grave, puede generar dos y quedarse con la que desee. Su nivel se resta del número de días de reposo en cama.
+- **{{Agarre firme|Descripcion|talentos}}**
+- **{{Fornido|Descripcion|talentos}}**
+- **{{Difícil de matar|Descripcion|talentos}}**
 
 
 | Nivel | PX | BA | Pericias | PG |

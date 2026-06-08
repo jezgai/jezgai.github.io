@@ -5,10 +5,10 @@
 - **Progresión Salvación**: {{TSEspecialista}}
 - **Tipo de armadura**: Cuero. Sin escudos.
 - **Barrido**: Si acaban con un enemigo, pueden volver a atacar ese asalto tantas veces como la mitad de su nivel.
-- **Pericias**: _Apuñalar_, _Detectar Trampas_, _Juego de Manos_ y _Mecanismos_. _Arcanista aficionado_ (N10)
-- **Ventaja al escalar**: Pueden usar la pericia de Escalada en superficies difíciles o con carga
-- **Lingüista**: (Nivel 4) Pueden usar su pericia de Idiomas para leer mágicamente cualquier idioma.
-- **Arcanista aficionado**: (Nivel 10) Pueden usar pergaminos, varas y objetos mágicos de la clase de mago si superan una tirada de pericia
+- **Pericias**: _{{Apuñalar|Descripcion|pericias}}_, _{{Detectar Trampas|Descripcion|pericias}}_, _{{Juego de Manos|Descripcion|pericias}}_ y _{{Mecanismos|Descripcion|pericias}}_. _{{Arcanista aficionado|Descripcion|pericias}}_ (N10)
+- **{{Ventaja al escalar|Descripcion|talentos}}**
+- **{{Lingüista|Descripcion|talentos}}**: (Nivel 4)
+- **{{Arcanista aficionado|Descripcion|talentos}}**: (Nivel 10)
 - **Apuñalar**: Atacando por la espalda y superando tirada de apuñalar los bonos de ataque y resultado de la tirada del daño se multiplican según indica la tabla.
 
 | Nivel | PX | BA | Apuñalar | Pericias | Barrido | PG |

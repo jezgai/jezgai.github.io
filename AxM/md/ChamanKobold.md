@@ -4,13 +4,13 @@
 - **{{Chamán Kobold|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSMago}}
 - **Tipo de armadura**: Ningún tipo de armadura.
-- **Pericias**: _Mecanismos_, _Uso de armas de fuego_, _Reciclar (a elegir)_, _Reciclar (a elegir)_ y _Curar_. 3 puntos iniciales para _Mecanismos_, _Reciclar (a elegir)s_, _Sigilo_ o _Detectar trampas_
+- **Pericias**: _{{Mecanismos|Descripcion|pericias}}_, _{{Uso de armas de fuego|Descripcion|pericias}}_, _{{Reciclar|Descripcion|pericias}} (a elegir)_, _{{Reciclar|Descripcion|pericias}} (a elegir)_ y _{{Curar|Descripcion|pericias}}_. 3 puntos iniciales para _{{Mecanismos|Descripcion|pericias}}_, _{{Reciclar|Descripcion|pericias}} (a elegir)_, _{{Sigilo|Descripcion|pericias}}_ o _{{Detectar trampas|Descripcion|pericias}}_
 - **Tamaño**: Pequeño (CA+1). Mov (¾ humano). +1 a Sigilo.
-- **Correr por su vida**: Gana 10 m de velocidad efectiva cuando huye de algo.
-- **Carisma oscuro**: +2 a las tiradas de reacción de los monstruos inteligentes malvados y -2 a sus tiradas de salvación contra conjuros de Control lanzados por el personaje.
-- **Arcanista aficionado**: (Nivel 6) Pueden usar pergaminos, varas y objetos mágicos de la clase de mago si superan una tirada de pericia
+- **{{Correr por su vida|Descripcion|talentos}}**
+- **{{Carisma oscuro|Descripcion|talentos}}**
+- **{{Arcanista aficionado|Descripcion|talentos}}**: (Nivel 6)
 - **Profecías**: (Nivel 8) Puede lanzar el conjuro _{{Comunión|Conjuro}}_ una vez por semana (lleva 1 turno de preparación).
-- **Magia**: Lanza magia divina según la tabla con código de conducta 2. Solo puede hacer conjuros que tengan relación con el elemento del elemental al que adore (agua, fuego, tierra o aire).
+- **Magia**: Lanza {{MagiaDivina}} según la tabla con código de conducta 2. Solo puede hacer conjuros que tengan relación con el elemento del elemental al que adore (agua, fuego, tierra o aire).
 
 | Nivel | PX | BA  | Pericias | PG | 
 | ----- | -- | -- | -------- | -- | 

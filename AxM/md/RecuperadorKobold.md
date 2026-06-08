@@ -3,15 +3,15 @@
 - **Requisitos**: FUE 11. DES 11. **Primario**: FUE
 - **{{Recuperador Kobold|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSGuerrero}}
-- **Armas**: Límite de armas según FUE+1.
+- **Armas**: {{Límite de armas|Descripcion|conceptos}} según FUE+1.
 - **Tipo de armadura**: Ningún tipo de armadura.
 - **Barrido**: Si acaban con un rival, pueden volver a atacar ese asalto tantas veces como su nivel.
-- **Pericias**: _Mecanismos_, _Uso de armas de fuego_, _Reciclar (a elegir)_, _Reciclar (a elegir)_, _Supervivencia_ y _Apuñalar_. 3 puntos iniciales para _Mecanismos_, _Reciclar (a elegir)s_, _Sigilo_ o _Detectar trampas_
+- **Pericias**: _{{Mecanismos|Descripcion|pericias}}_, _{{Uso de armas de fuego|Descripcion|pericias}}_, _{{Reciclar|Descripcion|pericias}} (a elegir)_, _{{Reciclar|Descripcion|pericias}} (a elegir)_, _{{Supervivencia|Descripcion|pericias}}_ y _{{Apuñalar|Descripcion|pericias}}_. 3 puntos iniciales para _{{Mecanismos|Descripcion|pericias}}_, _{{Reciclar|Descripcion|pericias}} (a elegir)_, _{{Sigilo|Descripcion|pericias}}_ o _{{Detectar trampas|Descripcion|pericias}}_
 - **Tamaño**: Pequeño (CA+1). Mov (¾ humano). +1 a Sigilo.
-- **Correr por su vida**: Gana 10 m de velocidad efectiva cuando huye de algo.
+- **{{Correr por su vida|Descripcion|talentos}}**
 - **Apuñalar**: Atacando por la espalda y superando tirada de apuñalar los bonos de ataque y resultado de la tirada del daño se multiplican según indica la tabla.
-- **Nada se le escapa**: (Nivel 3) Puede volver a tirar Detectar para encontrar cosas ocultas.
-- **Ventaja al escalar**: (Nivel 6) Pueden usar la pericia de Escalada en superficies difíciles o con carga
+- **{{Nada se le escapa|Descripcion|talentos}}**: (Nivel 3)
+- **{{Ventaja al escalar|Descripcion|talentos}}**: (Nivel 6)
 
 
 | Nivel | PX | BA  | Apuñalar | Pericias | PG | 

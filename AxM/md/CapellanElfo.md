@@ -5,12 +5,12 @@
 - **Progresión Salvación**: {{TSMago}}
 - **Armas**: Dos armas preferidas de entre arcos, jabalinas, espadas o dagas.
 - **Tipo de armadura**: Ninguna
-- **Magia**: Lanza magia divina según la tabla. Lleva vida monacal y cumplir un voto adicional.
-- **Pericias**: _Señor de las bestias_.
-- **Alma liberada**: El personaje es inmune a la parálisis de los guls y recibe un +1 a salvaciones contra Captura.
-- **Camuflaje natural**: +2 a Sigilo en entornos naturales a los que esté habituado.
-- **Expulsar no muertos**: Una vez al día por nivel si con 2d6 saca 7+ (+2 por cada nivel del PJ y -2 por cada DG) expulsa a tantos DG como su nivel+1d6.
-- **Nada se le escapa**: Puede volver a tirar Detectar para encontrar cosas ocultas.
+- **Magia**: Lanza {{MagiaDivina}} según la tabla. Lleva vida monacal y cumplir un voto adicional.
+- **Pericias**: _{{Señor de las bestias|Descripcion|pericias}}_.
+- **{{Alma liberada|Descripcion|talentos}}**
+- **{{Camuflaje natural|Descripcion|talentos}}**
+- **{{Expulsar no muertos|Descripcion|talentos}}**
+- **{{Nada se le escapa|Descripcion|talentos}}**
 - **Lenguas**: Elfo, Gnoll, Grantrasgo, Orco
 
 | Nivel | PX | BA  | PG | 

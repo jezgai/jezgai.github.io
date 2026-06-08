@@ -6,11 +6,11 @@
 - **Armas**: Cualquiera. Preferidas: Hachas, mayales, martillos y maza
 - **Tipo de armadura**: Cualquiera.
 - **Barrido**: Si acaban con un rival, pueden volver a atacar ese asalto tantas veces como su nivel.
-- **Pericias**: Tiene 2 puntos para repartir entre _Arquitectura_, _Mecanismos_, _Detectar_ y _Detectar Trampas_.
+- **Pericias**: Tiene 2 puntos para repartir entre _{{Arquitectura|Descripcion|pericias}}_, _{{Mecanismos|Descripcion|pericias}}_, _{{Detectar|Descripcion|pericias}}_ y _{{Detectar Trampas|Descripcion|pericias}}_.
 - **Pericia profesional**: A elegir entre Herrero, Minero o Artesano.
 - **Tamaño**: Pequeño (CA+1). Mov (¾ humano). +1 a Sigilo.
-- **Armadura natural**: +1 a la CA.
-- **Sensitivo con la piedra**: +2 a Arquitectura y Alerta en subterráneos.
+- **{{Armadura natural|Descripcion|talentos}}**
+- **{{Sensitivo con la piedra|Descripcion|talentos}}**
 - **Daño**: El bonificador de daño solo se aplica al ataque cuerpo a cuerpo.
 - **Lenguas**: Enano, Trasgo, Gnomo, Kobold
 

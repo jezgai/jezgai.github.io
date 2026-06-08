@@ -3,16 +3,16 @@
 - **Requisitos**: FUE 9   **Primario**: FUE
 - **{{Asesino|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSGuerrero}}
-- **Armas**: Límite de armas según FUE+1.
+- **Armas**: {{Límite de armas|Descripcion|conceptos}} según FUE+1.
 - **Tipo de armadura**: Cuero. Sin escudos.
 - **Barrido**: Si acaban con un rival, pueden volver a atacar ese asalto tantas veces como su nivel.
-- **Pericias**: _Apuñalar_ y a partir del nivel 10 también _Veneno_
+- **Pericias**: _{{Apuñalar|Descripcion|pericias}}_ y a partir del nivel 10 también _{{Veneno|Descripcion|pericias}}_
 - **Apuñalar**: Atacando por la espalda y superando tirada de apuñalar los bonos de ataque y resultado de la tirada del daño se multiplican según indica la tabla.
-- **Reflejos finos**: +1 a Iniciativa y a Sorpresa.
-- **Ventaja al escalar**: Pueden usar Escalada en superficies difíciles o con carga
-- **Pasar desapercibido**: +2 a Sigilo si está quieto y a cubierto.
-- **Lingüista**: (Nivel 4) Pueden usar Idiomas para leer mágicamente cualquier idioma.
-- **Veneno**: (Nivel 10) Entrenado en el uso de venenos y, si compra una dosis por 25 mo y pasa una tirada, la habrá aplicado correctamente a un arma, que matará instantáneamente durante 24 horas. Si la tirada de pericia falla, la dosis de veneno se habrá desperdiciado).
+- **{{Reflejos finos|Descripcion|talentos}}** 
+- **{{Ventaja al escalar|Descripcion|talentos}}**: 
+- **{{Pasar desapercibido|Descripcion|talentos}}** 
+- **{{Lingüista|Descripcion|talentos}}**: (Nivel 4)
+- **{{Veneno|Descripcion|pericias}}**: (Nivel 10)
 
 | Nivel | PX | BA | Apuñalar | Pericias | Daño | Barrido | PG |
 | ----- | -- | -- | -------- | -------- | ---- | ------- | -- |
