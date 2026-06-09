@@ -1,7 +1,7 @@
 ## Incinerador
 
 - **Requisitos**: FUE 9. **Primario**: FUE
-- **{{Incinerador|DadoGolpe|Dado de Golpe}}**: d8
+- **{{Incinerador|DadoGolpe|8}}**: d8
 - **Progresión Salvación**: {{TSGuerrero}}
 - **Armas**: {{Límite de armas|Descripcion|conceptos}} según FUE+1.
 - **Tipo de armadura**: Cuero. Sin escudos.
