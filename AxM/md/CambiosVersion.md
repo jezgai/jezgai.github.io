@@ -1,5 +1,10 @@
 ## Cambios de versión
 
+
+### Versión 2.0.1
+
+Se añaden Armas y Armaduras
+
 ### Versión 2.0
 
 Se incluye el listado de conjuros por niveles y tipo

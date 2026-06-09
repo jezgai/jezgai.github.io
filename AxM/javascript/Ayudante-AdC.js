@@ -232,6 +232,37 @@ class DadoGolpe extends Funcion {
     }
 }
 
+
+class Tirada extends Funcion {
+    constructor() {
+        super();
+    }
+    pinta(strparametros) {
+        var parametros = strparametros.split("|");
+        return "<a href='javascript:void(0)' onclick='funciones.funcion(" + '"Tirada").ejecuta("' + strparametros + '")' + "'>" + parametros[0] + '</a>';    
+    }
+    ejecuta(strparametros) {
+        var parametros = strparametros.split("|");
+        var dado = parseInt(parametros[3], 10);
+        var numdados = parseInt(parametros[4], 10);
+        var modificador = parseInt(parametros[5], 10);
+        var multiplicador = parseInt(parametros[6], 10);
+        var total = 0;
+        for (var i=0;i<numdados;i++) {
+            total += Math.trunc( (Math.random() * dado) + 1);
+        }
+        if ( multiplicador != 0 ) {
+            total *= multiplicador;
+        }
+        total += modificador;
+        var pg = Math.trunc( (Math.random() * dado) + 1);
+        
+        document.getElementById("detalleDescripcion").innerHTML = "<strong>" + parametros[2] + "</strong>:<br/> " + total + "<br/>";
+        muestraElemento("Descripciones");
+    }
+}
+
+
 class TiraCaracteristica extends Funcion {
     constructor() {
         super();
@@ -295,7 +326,7 @@ class Descripcion extends Funcion {
 
 class Funciones {
     constructor() {
-        this.funciones = { "Default": new Funcion(), "DadoGolpe": new DadoGolpe(), "Descripcion": new Descripcion(), "Conjuro": new Conjuros(), "ListaConjuros": new ListaConjuros(), "TiraCaracteristica": new TiraCaracteristica() };
+        this.funciones = { "Default": new Funcion(), "DadoGolpe": new DadoGolpe(), "Descripcion": new Descripcion(), "Conjuro": new Conjuros(), "ListaConjuros": new ListaConjuros(), "TiraCaracteristica": new TiraCaracteristica(), "Tirada": new Tirada() };
     }
     existe(nombre) {
         if ( this.funciones.hasOwnProperty(nombre) )

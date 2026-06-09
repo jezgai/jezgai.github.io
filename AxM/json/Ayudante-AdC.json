@@ -11,7 +11,9 @@
         "MagiaDivina": { "titulo": "Magia Divina", "referencias": [ "Clerigo", "CapellanElfo", "Sacerdote", "ChamanKobold", "ClerigoEnano", "Druida", "DruidaSemielfo" ] },
         "Tecnomagia": { "titulo": "Tecnomagia", "referencias": [ "Clerigo", "CapellanElfo", "ClerigoEnano", "Druida", "DruidaSemielfo" ] },
         "Pericias": { "titulo": "Pericias", "referencias": [ "Glosario", "CreacionPJ", "Reglas" ] },
-        "CambiosVersion": { "titulo": "v2.0", "referencias": [ "AcercaDe" ] },
+        "CambiosVersion": { "titulo": "v2.0.1", "referencias": [ "AcercaDe" ] },
+        "Armas": { "titulo": "Armas", "referencias": [ "CreacionPJ" ] },
+        "Armaduras": { "titulo": "Armaduras", "referencias": [ "CreacionPJ" ] },
         "HojasPJ": { "titulo": "Hojas no oficiales de PJ por clase", "referencias": [ "CreacionPJ" ] },
         "Clases": { "titulo": "Clases", "referencias": [ "Glosario", "CreacionPJ", "Reglas" ] },
         "Caracteristicas": { "titulo": "Características", "referencias": [ "Glosario", "CreacionPJ", "Reglas" ] },
@@ -72,7 +74,11 @@
         "PJ": "<p>Personaje Jugador</p>",
         "PNJ": "<p>Personaje No Jugador</p>",
         "AdC": "<p>Amo del Calabozo</p>",
-        "Límite de armas": "<p>El mod de FUE determina el daño máximo de las armas que puede usar sin problemas.</p><table><tr><th>Modificador</th><th>Daño</th></tr><tr><td>0 o menos</td><td>d4</td></tr><tr><td>1</td><td>d6</td></tr><tr><td>2</td><td>d8</td></tr><tr><td>3</td><td>d10</td></tr></table>"
+        "Límite de armas": "<p>El mod de FUE determina el daño máximo de las armas que puede usar sin problemas.</p><table><tr><th>Modificador</th><th>Daño</th></tr><tr><td>0 o menos</td><td>d4</td></tr><tr><td>1</td><td>d6</td></tr><tr><td>2</td><td>d8</td></tr><tr><td>3</td><td>d10</td></tr></table>",
+        "BA": "Bonificador de Ataque. Modificador que se suma a la tirada de ataque (cuanto más alto mejor)",
+        "CA": "Clase de Armadura. Determina la dificultad para ser golpeado.",
+        "Barridos": "Ataques extra que algunos PJ pueden hacer en el mismo asalto cuando derrotan a un rival",
+        "PG": "Puntos de Golpe del PJ. Es como la vida del personaje. Si baja malo."
     },
     "Combate": {
         "Ataques": "<p>Lanza 1d20, suma el BA que corresponda (cuerpo a cuerpo o a distancia) y el resultado tiene que ser mayor o igual a la CA del rival para impactar.<br/>El bono de ataque de los PNJ es el número de sus DG.<br/>Un 20 en el dado es un <u>crítico</u> (siempre es éxito y duplica daño).<br/>Un 1 en el dado es una <u>pifia</u> (el AdC determina las consecuencias).</p>",
