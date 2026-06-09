@@ -1,5 +1,7 @@
 ## Sala 8
 
+Hay {{1d6|Tirada|1d6|6|1|0|0}} {{gatos|Descripcion|conceptos}}.
+
 Hay comida, té, café, vasos, mesas y otras cosas propias de un café por valor de 1200 mo. 
 
 Una de las bolsas de té está marcada como mágica y permite hablar con felinos (200mo).

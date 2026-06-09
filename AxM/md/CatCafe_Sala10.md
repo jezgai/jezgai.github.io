@@ -1,5 +1,7 @@
 ## Sala 10
 
+Hay {{1d6|Tirada|1d6|6|1|0|0}} {{gatos|Descripcion|conceptos}}.
+
 Por la pared norte hay un {{CatCafe_Pasillo4}}
 
 Al este se habre otro pasillo que conduce a la {{CatCafe_Sala11}}

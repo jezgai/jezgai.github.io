@@ -1,5 +1,7 @@
 ## Sala 6
 
+Hay {{1d6|Tirada|1d6|6|1|0|0}} {{gatos|Descripcion|conceptos}}.
+
 En el centro hay un pequeño altar a Bastet. Ídolos por valor de 400 mo.
 
 ![Sala6](img/CatCafe_Sala6.png)

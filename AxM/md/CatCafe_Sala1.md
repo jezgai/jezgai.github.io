@@ -1,5 +1,7 @@
 ## Sala 1
 
+Hay {{1d6|Tirada|1d6|6|1|0|0}} {{gatos|Descripcion|conceptos}}.
+
 Sala rectangular con 4 columnas. 
 
 En la pared norte están las escaleras que bajan desde el {{CatCafe_Cafe}}

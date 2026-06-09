@@ -25,6 +25,7 @@
     "Conceptos": {
         "puerta cerrada": "<p>Todas las puertas del subterráneo tienen una gatera por la que cabe un mediano muy delgado</p>",
         "escaleras que descienden": "<p>Las escaleras de este pasillo se abaten cuando se pisan y producen daño por caída si vas bajando.</p>",
+        "gatos": "<ul><li><strong>CA</strong>: 12</li><li><strong>DG</strong>: 1d4</li><li><strong>Daño</strong>: 1, 1, 1d2</li><li><strong>Salvación</strong>: 0</li><li><strong>Reacción</strong>: 0</li><li><strong>Moral</strong>: 6</li><li><strong>PX</strong>: 5</li></ul>",
         "Hombre Pantera": "<ul><li><strong>CA</strong>: 13</li><li><strong>DG</strong>: 3</li><li><strong>Daño</strong>: 1d3, 1d3, 1d6</li><li><strong>Salvación</strong>: 3</li><li><strong>Reacción</strong>: 0</li><li><strong>Moral</strong>: 8</li><li><strong>PX</strong>: 120</li></ul>",
         "Montañés": "<ul><li><strong>CA</strong>: 12</li><li><strong>DG</strong>: 1</li><li><strong>Daño</strong>: Arma o 1d6</li><li><strong>Salvación</strong>: 1</li><li><strong>Reacción</strong>: 0</li><li><strong>Moral</strong>: 8</li><li><strong>PX</strong>: 8</li></ul>",
         "Cultista": "<ul><li><strong>CA</strong>: 12</li><li><strong>DG</strong>: 1</li><li><strong>Daño</strong>: Arma o 1d6</li><li><strong>Salvación</strong>: 1</li><li><strong>Reacción</strong>: 0</li><li><strong>Moral</strong>: 10</li><li><strong>PX</strong>: 8</li></ul>",

@@ -1,6 +1,6 @@
 ## Sala 3
 
-Al abrir la puerta salen 10 gatos encerrados. TS Ataques de área para evitar daños por zarpazos.
+Al abrir la puerta salen 10 {{gatos|Descripcion|conceptos}} encerrados. TS Ataques de área para evitar daños por zarpazos.
 
 ![Sala3](img/CatCafe_Sala3.png)
 

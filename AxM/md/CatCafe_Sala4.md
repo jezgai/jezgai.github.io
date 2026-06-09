@@ -1,5 +1,7 @@
 ## Sala 4
 
+Hay {{1d6|Tirada|1d6|6|1|0|0}} {{gatos|Descripcion|conceptos}}.
+
 Sala rectangular con 6 columnas. 
 
 En la pared del norte hay un {{CatCafe_Pasillo1}}

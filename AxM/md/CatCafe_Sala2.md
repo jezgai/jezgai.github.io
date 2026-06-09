@@ -1,5 +1,7 @@
 ## Sala 2
 
+Hay {{1d6|Tirada|1d6|6|1|0|0}} {{gatos|Descripcion|conceptos}}.
+
 Sala rectangular con 2 columnas. Huele a hierbas y mentas. 
 
 En la esquina nordeste unas escaleras suben a la {{CatCafe_Sala1}}
