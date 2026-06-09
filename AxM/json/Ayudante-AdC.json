@@ -5,7 +5,9 @@
         "CreacionPJ": { "titulo": "Creación del PJ", "referencias": [] },
         "Reglas": { "titulo": "Reglas", "referencias": [] },
         "Combate": { "titulo": "Combate", "referencias": [] },
+        "Exploracion": { "titulo": "Exploración", "referencias": [ ] },
         "Magia": { "titulo": "Magia", "referencias": [ ] },
+        "Aventuras": { "titulo": "Aventuras", "referencias": [ ] },
         "Grimorio": { "titulo": "Listado de conjuros", "referencias": [ "Magia" ] },
         "MagiaArcana": { "titulo": "Magia Arcana", "referencias": [ "Mago", "GuerreroArcanoElfo" ] },
         "MagiaDivina": { "titulo": "Magia Divina", "referencias": [ "Clerigo", "CapellanElfo", "Sacerdote", "ChamanKobold", "ClerigoEnano", "Druida", "DruidaSemielfo" ] },
@@ -17,7 +19,6 @@
         "HojasPJ": { "titulo": "Hojas no oficiales de PJ por clase", "referencias": [ "CreacionPJ" ] },
         "Clases": { "titulo": "Clases", "referencias": [ "Glosario", "CreacionPJ", "Reglas" ] },
         "Caracteristicas": { "titulo": "Características", "referencias": [ "Glosario", "CreacionPJ", "Reglas" ] },
-        "Exploracion": { "titulo": "Exploración", "referencias": [ ] },
         "Tiempo": { "titulo": "Gestión del tiempo", "referencias": [ "Exploracion" ] },
         "Luz": { "titulo": "Iluminación", "referencias": [ "Exploracion" ] },
         "Velocidad": { "titulo": "Velocidad", "referencias": [ "Exploracion" ] },
@@ -63,7 +64,7 @@
         "TSEspecialista": { "titulo": "Especialista", "referencias": [ "Especialista", "SaqueadorMediano", "Carronero", "LadronSemielfo" ] },
         "Comunion": { "titulo": "Comunión", "referencias": [ "ChamanKobold" ] }
     },
-    "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Reglas", "Combate", "Exploracion", "Magia" ],
+    "Menu": [ "AcercaDe", "Glosario", "CreacionPJ", "Reglas", "Combate", "Exploracion", "Magia", "Aventuras" ],
     "Titulo": "Ayudante del AdC",
     "Conceptos": {
         "Distancia de encuentro": "<p>Lanza 3d6 (2 o 1 con poca visibilidad) y la suma se multiplica por 3 (100 en entornos abiertos).</p>",

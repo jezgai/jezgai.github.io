@@ -20,7 +20,7 @@ class Pagina {
         for (i=0;i<this.menu.length;i++) {
             barramenu += " " + this.enlacemenu(this.menu[i], paginas.paginas[this.menu[i]].titulo, "");
         }
-        document.getElementById("Ayudante").innerHTML = this.enlacemenu(this.menu[0], this.titulo, " class='active'");
+        document.getElementById("Titulo").innerHTML = this.enlacemenu(this.menu[0], this.titulo, " class='active'");
         document.getElementById("barraMenu").innerHTML = barramenu;
     }
 }
@@ -324,9 +324,32 @@ class Descripcion extends Funcion {
     }
 }
 
+class Cuestion extends Funcion {
+    constructor() {
+        super();
+    }
+    pinta(strparametros) {
+        var parametros = strparametros.split("|");
+        return "<a href='javascript:void(0)' onclick='funciones.funcion(" + '"Cuestion").ejecuta("' + strparametros + '")' + "'>" + parametros[0] + '</a>';    
+    }
+    ejecuta(strparametros) {
+        var parametros = strparametros.split("|");
+        var descripcion = parametros[0];
+        if (paginas.hasOwnProperty(parametros[2])) {
+            descripcion = paginas.descripcion(parametros[0],parametros[2]);
+        }
+        var titulo=parametros[0];
+        if (parametros[3]!="") {
+            titulo=parametros[3];
+        }
+        document.getElementById("detalleDescripcion").innerHTML = "<strong>" + titulo + "</strong>: " + paginas.enlaceinterno(descripcion) + "<br/>";
+        muestraElemento("Descripciones");
+    }
+}
+
 class Funciones {
     constructor() {
-        this.funciones = { "Default": new Funcion(), "DadoGolpe": new DadoGolpe(), "Descripcion": new Descripcion(), "Conjuro": new Conjuros(), "ListaConjuros": new ListaConjuros(), "TiraCaracteristica": new TiraCaracteristica(), "Tirada": new Tirada() };
+        this.funciones = { "Default": new Funcion(), "DadoGolpe": new DadoGolpe(), "Descripcion": new Descripcion(), "Conjuro": new Conjuros(), "ListaConjuros": new ListaConjuros(), "TiraCaracteristica": new TiraCaracteristica(), "Tirada": new Tirada(), "Cuestion": new Cuestion() };
     }
     existe(nombre) {
         if ( this.funciones.hasOwnProperty(nombre) )
@@ -351,7 +374,7 @@ class Funciones {
 let funciones = new Funciones();
 let pagina=new Pagina();
 let paginas=new Paginas();
-cargaPaginas("AcercaDe");
+//cargaPaginas("AcercaDe");
 	
 //let clases = new Clases();
 

@@ -147,9 +147,9 @@ function lanzapericia(pericia, haybonificacion, haypenalizacion, idresultado, me
     }
 }
 
-function cargaPaginas(paginaInicial) {
+function cargaPaginas(ficherojson, paginaInicial) {
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "json/Ayudante-AdC.json", true);
+    rawFile.open("GET", ficherojson, true);
     
     rawFile.onreadystatechange = function() {
         if (rawFile.readyState === 4) {
@@ -159,12 +159,21 @@ function cargaPaginas(paginaInicial) {
 	        pagina.menu = ficherojson.Menu;
 	        pagina.titulo = ficherojson.Titulo;
 	        pagina.muestraMenu();
-	        paginas.puntosfortuna = ficherojson.PuntosFortuna;
+	        //paginas.puntosfortuna = ficherojson.PuntosFortuna;
 	        paginas.conceptos = ficherojson.Conceptos;
 	        paginas.combate = ficherojson.Combate;
 	        paginas.pericias = ficherojson.Pericias;
 	        paginas.talentos = ficherojson.Talentos;
-	        paginas.bestiario = ficherojson.Bestiario;
+	       // paginas.bestiario = ficherojson.Bestiario;
+	        if ( ficherojson.hasOwnProperty("ComportamientoCafe") ) {
+	            paginas.comportamientocafe = ficherojson.ComportamientoCafe;
+	        }
+	        if ( ficherojson.hasOwnProperty("ObtenerPassword") ) {
+    	        paginas.obtenerpassword = ficherojson.ObtenerPassword;
+	        }
+	        if ( ficherojson.hasOwnProperty("ComportamientoSubterraneo") ) {
+    	        paginas.comportamientosubterraneo = ficherojson.ComportamientoSubterraneo;
+	        }
 	        muestraTexto(paginaInicial);
         }
     }
