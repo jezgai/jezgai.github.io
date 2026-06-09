@@ -220,7 +220,7 @@ class DadoGolpe extends Funcion {
     }
     pinta(strparametros) {
         var parametros = strparametros.split("|");
-        return "<a href='javascript:void(0)' onclick='funciones.funcion(" + '"DadoGolpe").ejecuta("' + strparametros + '")' + "'>" + parametros[0] + '</a>';    
+        return "<a href='javascript:void(0)' onclick='funciones.funcion(" + '"DadoGolpe").ejecuta("' + strparametros + '")' + "'>DG " + parametros[0] + '</a>';    
     }
     ejecuta(strparametros) {
         var parametros = strparametros.split("|");

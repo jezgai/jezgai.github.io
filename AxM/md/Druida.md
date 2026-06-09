@@ -1,7 +1,7 @@
 ## Druida
 
 - **Requisitos**: SAB 9. **Primario**: SAB
-- **{{Bardo|DadoGolpe|6}}**: d6
+- **{{Druida|DadoGolpe|6}}**: d6
 - **Progresión Salvación**: {{TSMago}}
 - **Armas**: Cualquiera.
 - **Tipo de armadura**: Cuero.

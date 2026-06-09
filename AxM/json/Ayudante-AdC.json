@@ -156,7 +156,9 @@
         "Voz de mando": "+1 a reacción (con 12 queda hechizado)",
         "Purificación": "Inmunidad contra cualquier enfermedad y maldición.",
         "Voz del bosque": "+2 a la reacción con mamíferos salvajes.",
-        "Imitar voz": "Capacidad para reproducir  sonidos y frases que haya escuchado."
+        "Imitar voz": "Capacidad para reproducir  sonidos y frases que haya escuchado.",
+        "Incinerar": "+1 al atacar con armas cuerpo a cuerpo o a distancia que contengan fuego.",
+        "Especialista en fuego cruzado": "Gana un +4 en las tiradas de salvación contra ataques de área."
     }
 }
 
