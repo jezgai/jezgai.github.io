@@ -12,4 +12,6 @@ En el lado norte hay una puerta doble que lleva a la {{CatCafe_Sala4}}
 
 ![Sala7](img/CatCafe_Sala7.png)
 
-Cada 10 minutos comprueba si hay {{CatCafe_EncuentrosSubterraneo}} con una probabilidad de {{50%|Tirada|50 o menos|100|1|0|0}}
+Cada 10 minutos comprueba si hay {{Encuentros en el Subterráneo|Encuentro|encuentrossubterraneo|1|2}}
+
+La probabilidad de los {{CatCafe_EncuentrosSubterraneo}} es de {{50%|Tirada|50 o menos|100|1|0|0}}

@@ -174,6 +174,12 @@ function cargaPaginas(ficherojson, paginaInicial) {
 	        if ( ficherojson.hasOwnProperty("ComportamientoSubterraneo") ) {
     	        paginas.comportamientosubterraneo = ficherojson.ComportamientoSubterraneo;
 	        }
+	        if ( ficherojson.hasOwnProperty("EncuentrosCafe") ) {
+	            paginas.encuentroscafe = ficherojson.EncuentrosCafe;
+	        }
+	        if ( ficherojson.hasOwnProperty("EncuentrosSubterraneo") ) {
+	            paginas.encuentrossubterraneo = ficherojson.EncuentrosSubterraneo;
+	        }
 	        muestraTexto(paginaInicial);
         }
     }

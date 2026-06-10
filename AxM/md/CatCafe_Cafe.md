@@ -9,4 +9,7 @@
 - Tras esta puerta se ocultan unas escaleras que conducen a un complejo subterráneo en {{CatCafe_Sala1}}.
 - Si los personajes intentan cruzarla el dueño les advertirá de que abajo aguardan grandes peligros, pero no intentará detenerlos.
 
-Cada 10 minutos comprueba si hay {{CatCafe_EncuentrosCafe}} con una probabilidad de {{50%|Tirada|50 o menos|100|1|0|0}}
+Cada 10 minutos comprueba si hay {{Encuentros en el Café|Encuentro|encuentroscafe|1|2}}
+
+La probabilidad de los {{CatCafe_EncuentrosCafe}} es de {{50%|Tirada|50 o menos|100|1|0|0}}
+

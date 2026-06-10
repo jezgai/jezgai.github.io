@@ -66,6 +66,11 @@ class Paginas {
         return this.descripcion(nombre, "talentos");
     }
     
+    tabla(nombre) {
+        if (this.hasOwnProperty(nombre) )
+            return this[nombre];
+        return [];
+    }
     referencias(pagina) {
         if ( this.paginas[pagina].referencias.length > 0 ) {
             var i=0;
@@ -324,6 +329,26 @@ class Descripcion extends Funcion {
     }
 }
 
+class Texto extends Funcion {
+    constructor() {
+        super();
+    }
+    pinta(strparametros) {
+        var parametros = strparametros.split("|");
+        return "<a href='javascript:void(0)' onclick='funciones.funcion(" + '"Texto").ejecuta("' + strparametros + '")' + "'>" + parametros[0] + '</a>';    
+    }
+    ejecuta(strparametros) {
+        var parametros = strparametros.split("|");
+        var descripcion = parametros[0];
+        if (paginas.hasOwnProperty(parametros[2])) {
+            
+            descripcion = paginas.descripcion(parametros[0],parametros[2]);
+        }
+        document.getElementById("detalleDescripcion").innerHTML = paginas.enlaceinterno(descripcion) + "<br/>";
+        muestraElemento("Descripciones");
+    }
+}
+
 class Cuestion extends Funcion {
     constructor() {
         super();
@@ -347,9 +372,42 @@ class Cuestion extends Funcion {
     }
 }
 
+// Encuentro
+// {{Literal|Encuentro|Tabla|minencuentro|total}}
+
+class Encuentro extends Funcion {
+    constructor() {
+        super();
+    }
+    pinta(strparametros) {
+        var parametros = strparametros.split("|");
+        return "<a href='javascript:void(0)' onclick='funciones.funcion(" + '"Encuentro").ejecuta("' + strparametros + '")' + "'>" + parametros[0] + '</a>';    
+    }
+    ejecuta(strparametros) {
+        var parametros = strparametros.split("|");
+        var descripcion = parametros[0];
+        var min = parseInt(parametros[3],10);
+        var tot = parseInt(parametros[4],10);
+        if (Math.trunc( (Math.random() * tot) + 1) > min ) {
+            descripcion = "No hay encuentro";
+        }
+        else {
+            var encuentros = paginas.tabla(parametros[2]);
+            if ( encuentros.length > 0 ) {
+                descripcion = encuentros[Math.trunc( (Math.random() * encuentros.length) )];
+            }
+            else {
+                descripcion = "No hay encuentro";
+            }
+        }
+        document.getElementById("detalleEmergente").innerHTML = paginas.enlaceinterno(descripcion) + "<br/>";
+        muestraElemento("Emergente");
+    }
+}
+
 class Funciones {
     constructor() {
-        this.funciones = { "Default": new Funcion(), "DadoGolpe": new DadoGolpe(), "Descripcion": new Descripcion(), "Conjuro": new Conjuros(), "ListaConjuros": new ListaConjuros(), "TiraCaracteristica": new TiraCaracteristica(), "Tirada": new Tirada(), "Cuestion": new Cuestion() };
+        this.funciones = { "Default": new Funcion(), "DadoGolpe": new DadoGolpe(), "Descripcion": new Descripcion(), "Conjuro": new Conjuros(), "ListaConjuros": new ListaConjuros(), "TiraCaracteristica": new TiraCaracteristica(), "Tirada": new Tirada(), "Cuestion": new Cuestion(), "Texto": new Texto(), "Encuentro": new Encuentro() };
     }
     existe(nombre) {
         if ( this.funciones.hasOwnProperty(nombre) )
