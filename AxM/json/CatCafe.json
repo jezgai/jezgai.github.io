@@ -1,16 +1,17 @@
 {
     "Paginas": {
         "CatCafeIntro": { "titulo": "Introducción", "referencias": [] },
+        "CatCafe_IrA": { "titulo": "Ir A", "referencias": [ ] },
         "CatCafe_Cafe": { "titulo": "Café", "referencias": [ "CatCafeIntro" ] },
         "CatCafe_Sala1": { "titulo": "Sala 1", "referencias": [ "CatCafe_Cafe" ] },
         "CatCafe_Sala2": { "titulo": "Sala 2", "referencias": [ "CatCafe_Sala1" ] },
         "CatCafe_Sala3": { "titulo": "Sala 3", "referencias": [ "CatCafe_Sala1" ] },
-        "CatCafe_Pasillo1": { "titulo": "Pasillo", "referencias": [ "CatCafe_Sala1" ] },
+        "CatCafe_Pasillo1": { "titulo": "Pasillo 1", "referencias": [ "CatCafe_Sala1" ] },
         "CatCafe_Sala4": { "titulo": "Sala 4", "referencias": [ "CatCafe_Pasillo1" ] },
-        "CatCafe_Pasillo2": { "titulo": "Pasillo", "referencias": [ "CatCafe_Sala2" ] },
+        "CatCafe_Pasillo2": { "titulo": "Pasillo 2", "referencias": [ "CatCafe_Sala2" ] },
         "CatCafe_Sala5": { "titulo": "Sala 5", "referencias": [ "CatCafe_Pasillo2" ] },
-        "CatCafe_Pasillo3": { "titulo": "Pasillo", "referencias": [ "CatCafe_Sala5", "CatCafe_Sala7" ] },
-        "CatCafe_Pasillo4": { "titulo": "Pasillo", "referencias": [ "CatCafe_Sala7" ] },
+        "CatCafe_Pasillo3": { "titulo": "Pasillo 3", "referencias": [ "CatCafe_Sala5", "CatCafe_Sala7" ] },
+        "CatCafe_Pasillo4": { "titulo": "Pasillo 4", "referencias": [ "CatCafe_Sala7" ] },
         "CatCafe_Sala6": { "titulo": "Sala 6", "referencias": [ "CatCafe_Sala4" ] },
         "CatCafe_Sala7": { "titulo": "Sala 7", "referencias": [ "CatCafe_Sala4" ] },
         "CatCafe_Sala8": { "titulo": "Sala 8", "referencias": [ "CatCafe_Pasillo3" ] },
@@ -20,7 +21,7 @@
         "CatCafe_EncuentrosCafe": { "titulo": "Encuentros", "referencias": [ "CatCafe_Cafe" ] },
         "CatCafe_EncuentrosSubterraneo": { "titulo": "Encuentros", "referencias": [ "CatCafe_Sala1", "CatCafe_Sala2", "CatCafe_Sala3", "CatCafe_Sala4", "CatCafe_Sala5", "CatCafe_Sala6", "CatCafe_Sala7", "CatCafe_Sala8", "CatCafe_Sala9", "CatCafe_Sala10", "CatCafe_Sala11" ] }
     },
-    "Menu": [ "CatCafeIntro", "CatCafe_Cafe", "CatCafe_Sala1" ],
+    "Menu": [ "CatCafeIntro", "CatCafe_Cafe", "CatCafe_Sala1", "CatCafe_IrA" ],
     "Titulo": "La curiosa clientela del Cat Café",
     "Conceptos": {
         "puerta cerrada": "<p>Todas las puertas del subterráneo tienen una gatera por la que cabe un mediano muy delgado</p>",

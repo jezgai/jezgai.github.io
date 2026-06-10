@@ -1,6 +1,6 @@
 ## Sala 5
 
-Sala rectangular con un {{CatCafe_Pasillo3}} que se abre en la pared sur (hacia el oeste) y otro {{CatCafe_Pasillo2}} que se encuentra en la pared norte (hacia el este)
+Sala rectangular con el {{CatCafe_Pasillo3}} que se abre en la pared sur (hacia el oeste) y el {{CatCafe_Pasillo2}} que se encuentra en la pared norte (hacia el este)
 
 Hay {{3d6|Tirada|3d6|6|3|0|0}} {{gatos|Descripcion|conceptos}} y 30kg de gatuña. Si llevas alguna, los gatos no dejarán de seguirte y maullar.
 
