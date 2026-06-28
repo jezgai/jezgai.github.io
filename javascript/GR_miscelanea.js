@@ -262,11 +262,11 @@ class Rasgos {
 
 class Habilidades {
 	constructor() {
-		this.habilidades = [ "Arma favorita", "Armero", "Ataque furtivo", "Atención", "Bendecir", "Blindado", "Compañero animal", "Daño brutal", 
+		this.habilidadesOriginal = [ "Arma favorita", "Armero", "Ataque furtivo", "Atención", "Bendecir", "Blindado", "Compañero animal", "Daño brutal", 
 							 "Defender", "Diplomacia", "Doble empuñadura", "Duro", "Exorcismo", "Hechicería", "Intuición", "Latrocinio", 
 							 "Lengua de plata", "Liderar", "Manos sanadoras", "Pies ligeros", "Preparado", "Primeros auxilios", "Puntería", 
-							 "Reacción rápida", "Remedios naturales", "Ritual", "Supervivencia", "Sutileza con armas", "Tirador", "Uso experto",
-							 "Afortunado", "Danza ofensiva", "Escalador nato", "Lanzador de cuchillos", "Navegante" ];
+							 "Reacción rápida", "Remedios naturales", "Ritual", "Supervivencia", "Sutileza con armas", "Tirador", "Uso experto" ];
+		var habilidadesVisirtan = [ "Afortunado", "Danza defensiva", "Danza ofensiva", "Escalador nato", "Lanzador de cuchillos", "Navegante" ];
 		this.descripcionHabilidades = {
 								"Longevo": "Los elfos necesitan 1100 PX para subir a nivel 2 y después suben de nivel más lentamente.",
 								"Feérico": "Los elfos tienen ventaja en las tiradas de salvación de Carisma y Sabiduría, son inmunes al sueño mágico y a la parálisis y pueden dormir sólo 4 horas al día para considerar que han hecho un descanso largo.",
@@ -326,6 +326,9 @@ class Habilidades {
 								"Lanzador de cuchillos": "(I-II). Es capaz de lanzar con gran efectividad cuchillos por lo que gana +1 tanto al ataque como al daño cuando arroje estos cuchillos. A rango 2 puedes además tirar 2 cuchillos por turno.",
 								"Navegante": "Tiene ventaja en las tiradas de orientación en el mar o cualquier otra tirada relacionada con la actividad de navegar."
 									  };
+		this.habilidades = this.habilidadesOriginal.clone();
+		this.habilidadesTotal = this.habilidadesOriginal.clone();
+		this.habilidadesTotal.push(...habilidadesVisirtan);
 	}
 	habilidad() {
 		return this.habilidades[Comun.random(this.habilidades.length, 0)];
@@ -335,6 +338,15 @@ class Habilidades {
 			return this.descripcionHabilidades[nombrehabilidad];
 		}
 		return nombrehabilidad;
+	}
+	
+	cambiaHabilidades(original) {
+		if ( original == true ) {
+			this.habilidades = this.habilidadesOriginal.clone();
+		}
+		else {
+			this.habilidades = this.habilidadesTotal.clone();
+		}
 	}
 }
 
@@ -378,7 +390,7 @@ class Razas {
 	}
 	
 	cambiaRaza(nuevaraza) {
-		if ( nuevaraza == "" ) {
+		if ( nuevaraza == "" || nuevaraza == 'random' ) {
 			this.razas = this.razasOriginal.clone();
 		}
 		else {
@@ -394,6 +406,20 @@ class Razas {
 				this.razas = this.razasOriginal.clone();
 			}
 		}
+	}
+	razaOriginal(razaSeleccionada) {
+	    if ( razaSeleccionada == "" || razaSeleccionada == 'random' ) {
+	        return true;
+	    }
+	    else {
+	        var i=0;
+	        for (i=0; i<this.razasOriginal.length; i++) {
+	            if ( this.razasOriginal[i].nombre == razaSeleccionada ) {
+	                return true;
+	            }
+	        }
+	    }
+	    return false;
 	}
 	
 	desplegableRazas(nbFuncSel) {

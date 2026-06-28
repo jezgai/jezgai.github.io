@@ -115,6 +115,14 @@
 		}
 		var nombreraza = seleccionado;
 		razas.cambiaRaza(nombreraza);
+		if ( razas.razaOriginal(nombreraza) )
+		{
+		    habilidades.cambiaHabilidades(true);
+		}
+		else 
+		{
+		    habilidades.cambiaHabilidades(false);
+		}
 	}
 	
 	function exportaJSON() {
