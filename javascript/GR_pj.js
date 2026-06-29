@@ -150,6 +150,7 @@ class PJ {
 		var tipoarmadura = "Sin armadura";
 		var yelmoescudo = "Ninguno";
 		this.reglaInfravision = reglaInfravision;
+		this.equipo = [ "Raciones, 1 semana" ];
 		if ( nivelcero ) {
 			this.nivel = 0;
 			this.atributos[attrs[0]].defensa = 12;
@@ -163,7 +164,8 @@ class PJ {
 			this.atributos[attrs[2]].defensa = 12;
 			
 			this.habilidad = habilidades.habilidad();
-			this.equipo = equipos.equipomazmorreo();
+			var equipomazmorreo = equipos.equipomazmorreo();
+			this.equipo.push(...equipomazmorreo);
 			tipoarmadura = equipos.armadura();
 			yelmoescudo = equipos.yelmos()
 		}
