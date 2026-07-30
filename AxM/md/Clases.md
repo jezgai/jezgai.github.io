@@ -39,5 +39,6 @@ Además existen algunas oficiosas:
 - **++{{LadronSemielfo}}++**
 - **++{{Vagabundo}}++** (Montaraz para Estación Norte).
 - **++{{MonjeBudista}}++** (Monje para Estación Norte).
+- **++{{Recuperador}}++** (Pseudoespecialista para Estación Norte o Recuperador Kobold sin ser Kobold)
 
 

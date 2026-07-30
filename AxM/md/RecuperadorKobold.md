@@ -9,7 +9,7 @@
 - **Pericias**: _{{Mecanismos|Descripcion|pericias}}_, _{{Uso de armas de fuego|Descripcion|pericias}}_, _{{Reciclar|Descripcion|pericias}} (a elegir)_, _{{Reciclar|Descripcion|pericias}} (a elegir)_, _{{Supervivencia|Descripcion|pericias}}_ y _{{Apuñalar|Descripcion|pericias}}_. 3 puntos iniciales para _{{Mecanismos|Descripcion|pericias}}_, _{{Reciclar|Descripcion|pericias}} (a elegir)_, _{{Sigilo|Descripcion|pericias}}_ o _{{Detectar trampas|Descripcion|pericias}}_
 - **Tamaño**: Pequeño (CA+1). Mov (¾ humano). +1 a Sigilo.
 - **{{Correr por su vida|Descripcion|talentos}}**
-- **Apuñalar**: Atacando por la espalda y superando tirada de apuñalar los bonos de ataque y resultado de la tirada del daño se multiplican según indica la tabla.
+- **{{Apuñalar|Descripcion|pericias}}**: Atacando por la espalda y superando tirada de apuñalar los bonos de ataque y resultado de la tirada del daño se multiplican según indica la tabla.
 - **{{Nada se le escapa|Descripcion|talentos}}**: (Nivel 3)
 - **{{Ventaja al escalar|Descripcion|talentos}}**: (Nivel 6)
 

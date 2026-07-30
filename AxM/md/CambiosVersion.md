@@ -1,6 +1,10 @@
 ## Cambios de versión
 
 
+### Versión 2.0.2
+
+Se añade clase Recuperador
+
 ### Versión 2.0.1
 
 Se añaden Armas y Armaduras
