@@ -11,7 +11,7 @@
         "Grimorio": { "titulo": "Listado de conjuros", "referencias": [ "Magia" ] },
         "MagiaArcana": { "titulo": "Magia Arcana", "referencias": [ "Mago", "GuerreroArcanoElfo" ] },
         "MagiaDivina": { "titulo": "Magia Divina", "referencias": [ "Clerigo", "CapellanElfo", "Sacerdote", "ChamanKobold", "ClerigoEnano", "Druida", "DruidaSemielfo" ] },
-        "Tecnomagia": { "titulo": "Tecnomagia", "referencias": [ "Clerigo", "CapellanElfo", "ClerigoEnano", "Druida", "DruidaSemielfo" ] },
+        "Tecnomagia": { "titulo": "Tecnomagia", "referencias": [ "Tecnomago", "TecnomagoKobold" ] },
         "Pericias": { "titulo": "Pericias", "referencias": [ "Glosario", "CreacionPJ", "Reglas" ] },
         "CambiosVersion": { "titulo": "v2.0.2", "referencias": [ "AcercaDe" ] },
         "Armas": { "titulo": "Armas", "referencias": [ "CreacionPJ" ] },
@@ -136,7 +136,7 @@
         "Espíritu infranqueable": "Es inmune al miedo natural o mágico.",
         "Expulsar no muertos": "El personaje causa miedo (como el efecto mágico) a tantos DG de no muertos como su nivel más 1d6. Al usarlo, tirará 2d6 y, para que funcione con un tipo de no muerto, el resultado debe ser de 7 o más, con un +2 por cada nivel del personaje y -2 por cada DG de la criatura, así un resultado de 7 con un personaje de nivel 1 expulsaría a no muertos de 1 DG, pero no de más. Si el nivel del personaje supera en 3 los DG de la criatura, la expulsa automáticamente. Si el nivel lo supera en 6, cuenta como la mitad de los DG. Si lo supera en 9, es destruida inmediatamente y sigue contando como la mitad de los DG. Si lo supera en 12, la criatura es gratis y no cuenta para el total de DG. El poder afecta en primer lugar a los no muertos con menos DG. Duración: 2 turnos. Alcance: 40 m. Usos: 1/día por nivel.",
         "Furia de batalla": "+2 al daño e inmune al miedo, incluyendo el mágico. Si invoca la furia de batalla, no puede retirarse del combate.",
-        "Golpe preciso": "+1 al atacar con armas cuerpo a cuerpo.",
+        "Golpe preciso": "+1 al atacar con armas cuerpo a cuerpo.",Este conjuro crea una barrera de luz intangible que emite un fulgor frente al lanzador. Puede ver lo que se encuentra iluminado frente a él, pero desde el otro lado no se le puede ver (impide ver, pero permite el paso de luz). La barrera se puede mover a 6 m/ronda, pero no se puede alejar más de 10 m del objetivo, en cuyo caso se desvanece (puede ser controlado mientras mantenga la concentración). Emite luz como si de una antorcha se tratase y no impide el movimiento, 10 m2 de área, grosor 3 cm, se puede invocar en posiciones ocupadas. No permite revertirlo ni causa ceguera a las criaturas que se encuentren en contacto con la barrera a la hora de ser lanzado
         "Puntería": "+1 al atacar con armas a distancia.",
         "Reflejos finos": "+1 a Iniciativa y a las tiradas de sorpresa.",
         "Fervor religioso": "Aumenta en +1 la moral de los correligionarios del personaje que se hallen presentes.",
