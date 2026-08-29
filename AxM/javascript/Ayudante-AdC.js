@@ -3,6 +3,7 @@ class Pagina {
     constructor() {
         this.menu = [ "AcercaDe" ];
         this.titulo = "Ayudante";
+        this.classactive = "active";
     }
     
     enlacemenu(pagina, clase) {
@@ -20,7 +21,7 @@ class Pagina {
         for (i=0;i<this.menu.length;i++) {
             barramenu += " " + this.enlacemenu(this.menu[i], paginas.paginas[this.menu[i]].titulo, "");
         }
-        document.getElementById("Titulo").innerHTML = this.enlacemenu(this.menu[0], this.titulo, " class='active'");
+        document.getElementById("Titulo").innerHTML = this.enlacemenu(this.menu[0], this.titulo, " class='" + this.classactive + "'");
         document.getElementById("barraMenu").innerHTML = barramenu;
     }
 }

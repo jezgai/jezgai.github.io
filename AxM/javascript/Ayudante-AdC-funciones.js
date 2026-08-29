@@ -158,6 +158,9 @@ function cargaPaginas(ficherojson, paginaInicial) {
 	        paginas.paginas = ficherojson.Paginas;
 	        pagina.menu = ficherojson.Menu;
 	        pagina.titulo = ficherojson.Titulo;
+	        if (ficherojson.hasOwnProperty("ClassActive")) {
+	            pagina.classactive = ficherojson.ClassActive;
+	        }
 	        pagina.muestraMenu();
 	        //paginas.puntosfortuna = ficherojson.PuntosFortuna;
 	        paginas.conceptos = ficherojson.Conceptos;
