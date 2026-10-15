@@ -65,7 +65,9 @@ class PJ {
 		
 		satrs += "</table>";
 		satrs += "<strong>PG:</strong> " + this.pg + "<br/>";
-		satrs += "<strong>DA:</strong> " + this.da;
+		satrs += "<strong>DA:</strong> " + this.da + "<br/>";
+		satrs += "<strong>Movimiento:</strong> " + this.raza.movimiento;
+		
 		
 		var ihab=0;
 		satrs += "<hr/><h3>Habilidades</h3>" + "<span onclick=" + '"' + "descripcionhabilidad('" + this.raza.habilidades[0] + "');" + '"' + ">" + this.raza.habilidades[0] + "</span>";

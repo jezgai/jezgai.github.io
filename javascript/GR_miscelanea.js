@@ -94,6 +94,16 @@ class Nombres {
 										"F": [ "Azmira", "Lazirah", "Qamisha", "Zafirael", "Ishara", "Nahriza", "Kalisha", "Zayrina", "Omiraya", "Rathira", "Jazira", "Vashara", "Khezira", "Talzira", "Samariah" ], 
 										"Apellidos": [  ] 
 									  },
+							 "Leporino": {  
+										"M": [ "Silvestre", "Musgo", "Bambú", "Cardo", "Brinco", "Roble", "Sauce", "Vendaval", "Raíz", "Zarcillo", "Brezo", "Helecho", "Ventoso", "Otoño", "Espino" ], 
+										"F": [ "Trébola", "Brezina", "Malva", "Dalia", "Nieve", "Brisa", "Luna", "Rocío", "Anémona", "Savia", "Pluma", "Pétalo", "Helecha", "Espiga", "Niebla" ], 
+										"Apellidos": [ "Piesvelados", "Saltacharcas", "Vientoligero", "Brincasotos", "Sendaverde", "Cavahondo", "Raízfuerte", "Piedramusgo", "Terrón", "Corteza", "Buscaesporas", "Tejehojas", "Dulcemiel", "Afilaspinas", "Cosechacorta" ] 
+									  },
+							 "Leporino Acróbata": {  
+										"M": [ "Silvestre", "Musgo", "Bambú", "Cardo", "Brinco", "Roble", "Sauce", "Vendaval", "Raíz", "Zarcillo", "Brezo", "Helecho", "Ventoso", "Otoño", "Espino" ], 
+										"F": [ "Trébola", "Brezina", "Malva", "Dalia", "Nieve", "Brisa", "Luna", "Rocío", "Anémona", "Savia", "Pluma", "Pétalo", "Helecha", "Espiga", "Niebla" ], 
+										"Apellidos": [ "Piesvelados", "Saltacharcas", "Vientoligero", "Brincasotos", "Sendaverde", "Cavahondo", "Raízfuerte", "Piedramusgo", "Terrón", "Corteza", "Buscaesporas", "Tejehojas", "Dulcemiel", "Afilaspinas", "Cosechacorta" ] 
+									  },
 							 "Ogro": {  
 										"M": [ "Gromnak", "Thurgol", "Braknor", "Drulgash", "Morkath", "Zrugmar", "Karnog", "Brulgoth", "Thrakzul", "Gornak", "Drogmash", "Krulgar", "Morgath", "Zarnok", "Brakthul" ], 
 										"F": [ "Grulsha", "Throgna", "Brakka", "Zurmala", "Drulsha", "Morgra", "Krugna", "Tharsha", "Brugla", "Zargra", "Grishna", "Droshka", "Kragna", "Morvasha", "Brulsha" ], 
@@ -324,7 +334,9 @@ class Habilidades {
 								"Danza ofensiva": "Es necesario que vaya ligero* para ejecutar esta danza. Al atacar usando esta técnica tiene +2 a su ataque y -1 a su defensa de armadura",
 								"Escalador nato": "Diestro en la escalada. Tiene ventaja cuando escale superficies utilizando material apropiado o aprovechando salientes y recovecos.",
 								"Lanzador de cuchillos": "(I-II). Es capaz de lanzar con gran efectividad cuchillos por lo que gana +1 tanto al ataque como al daño cuando arroje estos cuchillos. A rango 2 puedes además tirar 2 cuchillos por turno.",
-								"Navegante": "Tiene ventaja en las tiradas de orientación en el mar o cualquier otra tirada relacionada con la actividad de navegar."
+								"Navegante": "Tiene ventaja en las tiradas de orientación en el mar o cualquier otra tirada relacionada con la actividad de navegar.",
+								"Tierno y temerario": "Tiene ventaja en las tiradas de Carisma y Sabiduría y es inmune al miedo mágico",
+								"Patas de liebre": "Tiene ventaja en las tiradas de salvación relacionadas con saltar o acrobacias similares (normalmente Destreza y Fuerza) y es inmune al sueño mágico"
 									  };
 		this.habilidades = this.habilidadesOriginal.clone();
 		this.habilidadesTotal = this.habilidadesOriginal.clone();
@@ -363,7 +375,10 @@ class Razas {
 						{ nombre: "Semiorco", peso: 2, habilidades: [ "Infravisión" ], habilidadesInfravision: [ "Vivaz" ], modificadores: [ 1, 0, 0, 0, 0, 0], movimiento: 12 }
 					 ];
 		this.razasTotal = this.razasOriginal.clone();
-		this.razasTotal.push ( { nombre: "Goblin", peso: 1, habilidades: [ "Pequeño", "Emboscar" ], habilidadesInfravision: [ "Infravisión" ], modificadores: [ 0, 1, 0, -1, 1, 0], movimiento: 8 } );
+		this.razasTotal.push ( { nombre: "Goblin", peso: 0, habilidades: [ "Pequeño", "Emboscar" ], habilidadesInfravision: [ "Infravisión" ], modificadores: [ 0, 1, 0, -1, 1, 0], movimiento: 8 } );
+		
+		this.razasTotal.push ( { nombre: "Leporino", peso: 0, habilidades: [ "Tierno y temerario" ], habilidadesInfravision: [ "Vivaz" ], modificadores: [ 0, 1, 0, 0, 0, 0 ], movimiento: 12 } );
+		this.razasTotal.push ( { nombre: "Leporino Acróbata", peso: 0, habilidades: [ "Patas de liebre" ], habilidadesInfravision: [ "Vivaz" ], modificadores: [ 0, 1, 0, 0, 0, 0 ], movimiento: 15 } );
 		
 		var razasVisirtan = [ 
 						{ nombre: "Gnoll", peso: 0, habilidades: [ "Rastreador nato", "Vivaz" ], habilidadesInfravision: [ ], modificadores: [ 1, 1, 0, 0, 0, -1], movimiento: 12 },
